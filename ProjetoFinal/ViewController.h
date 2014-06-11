@@ -7,16 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <SpriteKit/SpriteKit.h>
 
 @interface ViewController : UIViewController
-
-@property SKSpriteNode *meuNo;
-@property (weak, nonatomic) IBOutlet SKView *minhaCena;
-
-@property (weak, nonatomic) IBOutlet UILabel *minhaLabel;
-
-
-- (IBAction)mudarLabel:(id)sender;
 
 @end
