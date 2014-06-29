@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ConteudoViewController : UIViewController <UIPageViewControllerDataSource>
+@interface ConteudoViewController : UIViewController
 
-@property (strong, nonatomic) UIPageViewController *pageController;
-
-@property (weak, nonatomic) IBOutlet UIView *viewDeConteudo;
 
 @end

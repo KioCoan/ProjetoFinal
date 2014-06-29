@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="-1231" y="-125"/>
         </scene>
-        <!--View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="menu" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menu" id="BYZ-38-t0r" customClass="MenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GSt-Kp-7LC"/>
                         <viewControllerLayoutGuide type="bottom" id="fER-p7-rne"/>
@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="-332" y="-125"/>
         </scene>
-        <!--View Controller-->
+        <!--Conteudo View Controller-->
         <scene sceneID="5gT-Sf-nHQ">
             <objects>
-                <viewController storyboardIdentifier="conteudo" id="wLQ-Hg-AQ8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="conteudo" id="wLQ-Hg-AQ8" customClass="ConteudoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T6y-Rp-uwO"/>
                         <viewControllerLayoutGuide type="bottom" id="30u-z1-R7X"/>
