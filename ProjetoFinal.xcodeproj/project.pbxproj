@@ -21,10 +21,8 @@
 		120E8F98192FC0A200CDEF95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120E8F7A192FC0A200CDEF95 /* UIKit.framework */; };
 		120E8FA0192FC0A200CDEF95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 120E8F9E192FC0A200CDEF95 /* InfoPlist.strings */; };
 		120E8FA2192FC0A200CDEF95 /* ProjetoFinalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 120E8FA1192FC0A200CDEF95 /* ProjetoFinalTests.m */; };
-		BD630CA91948E3A100AF13E7 /* item-variavel2.png in Resources */ = {isa = PBXBuildFile; fileRef = BD630CA81948E3A100AF13E7 /* item-variavel2.png */; };
 		BD630CAB1948E3F400AF13E7 /* item-variavel3.png in Resources */ = {isa = PBXBuildFile; fileRef = BD630CAA1948E3F400AF13E7 /* item-variavel3.png */; };
 		E501FA6B192FCD3800B56B5C /* item-memoria.png in Resources */ = {isa = PBXBuildFile; fileRef = E501FA6A192FCD3800B56B5C /* item-memoria.png */; };
-		E52BBA39192FEA23006EA645 /* item-variavel.png in Resources */ = {isa = PBXBuildFile; fileRef = E52BBA38192FEA23006EA645 /* item-variavel.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,10 +55,8 @@
 		120E8F9D192FC0A200CDEF95 /* ProjetoFinalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProjetoFinalTests-Info.plist"; sourceTree = "<group>"; };
 		120E8F9F192FC0A200CDEF95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		120E8FA1192FC0A200CDEF95 /* ProjetoFinalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjetoFinalTests.m; sourceTree = "<group>"; };
-		BD630CA81948E3A100AF13E7 /* item-variavel2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-variavel2.png"; path = "Imagens/item-variavel2.png"; sourceTree = "<group>"; };
 		BD630CAA1948E3F400AF13E7 /* item-variavel3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-variavel3.png"; path = "Imagens/item-variavel3.png"; sourceTree = "<group>"; };
 		E501FA6A192FCD3800B56B5C /* item-memoria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-memoria.png"; path = "Imagens/item-memoria.png"; sourceTree = "<group>"; };
-		E52BBA38192FEA23006EA645 /* item-variavel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-variavel.png"; path = "Imagens/item-variavel.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,8 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				BD630CAA1948E3F400AF13E7 /* item-variavel3.png */,
-				BD630CA81948E3A100AF13E7 /* item-variavel2.png */,
-				E52BBA38192FEA23006EA645 /* item-variavel.png */,
 				E501FA6A192FCD3800B56B5C /* item-memoria.png */,
 			);
 			name = Imagens;
@@ -251,9 +245,7 @@
 				120E8F8F192FC0A200CDEF95 /* Images.xcassets in Resources */,
 				E501FA6B192FCD3800B56B5C /* item-memoria.png in Resources */,
 				120E8F81192FC0A200CDEF95 /* InfoPlist.strings in Resources */,
-				BD630CA91948E3A100AF13E7 /* item-variavel2.png in Resources */,
 				120E8F8A192FC0A200CDEF95 /* Main.storyboard in Resources */,
-				E52BBA39192FEA23006EA645 /* item-variavel.png in Resources */,
 				BD630CAB1948E3F400AF13E7 /* item-variavel3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
