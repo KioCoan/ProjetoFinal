@@ -12,11 +12,11 @@
 
 @end
 
-static int BOTAO_WIDTH = 165;
+static int BOTAO_WIDTH = 166;
 static int BOTAO_HEIGHT = 113;
+static int ESPACAMENTO_BOTOES = 50;
 
 @implementation MenuViewController
-
 
 
 -(id)initWithCoder:(NSCoder *)aDecoder{
@@ -59,7 +59,7 @@ static int BOTAO_HEIGHT = 113;
         [scroll addSubview:view];
         
         //INICIALIZA OS NUMEROS EXIBIDOS NA TELA
-        UILabel *numero = [[UILabel alloc] initWithFrame:CGRectMake(view.frame.origin.x + 10, 93, 10, 14)];
+        UILabel *numero = [[UILabel alloc] initWithFrame:CGRectMake(10, 93, 10, 14)];
         [numero setText:[NSString stringWithFormat:@"%d", (i + 1)]];
         [numero setTextColor:[UIColor blackColor]];
         [view addSubview:numero];
@@ -95,38 +95,67 @@ static int BOTAO_HEIGHT = 113;
 
 //METODO QUE INSERE UM BOTÃO NA LINHA
 -(void)posicionarUmBotao:(UIView*)view :(int)posicaoXBotao :(int)posicaoYBotao{
+    UIImage *imgCaixa = [UIImage imageNamed:@"item-variavel.png"];
+    
     //INICIALIZA BOTAO
     UIButton *botao = [[UIButton alloc] initWithFrame:CGRectMake(posicaoXBotao, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
-    UIImage *imgCaixa = [UIImage imageNamed:@"item-variavel.png"];
     [botao setImage:imgCaixa forState:UIControlStateNormal];
-    [botao setTitle:@"BTN" forState:UIControlStateNormal];
+    //[botao setTitle:@"BTN" forState:UIControlStateNormal];
     [botao addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:botao];
 }
 
+//METODO QUE INSERE DOIS BOTÕES NA LINHA
 -(void)posicionarDoisBotoes:(UIView*)view :(int)posicaoXBotao :(int)posicaoYBotao{
-    //INICIALIZA BOTAO
-    UIButton *botao = [[UIButton alloc] initWithFrame:CGRectMake(posicaoXBotao, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
+    
+    int posicaoBotao1 = posicaoXBotao - (BOTAO_WIDTH /2) - (ESPACAMENTO_BOTOES / 2);
+    int posicaoBotao2 = posicaoXBotao + (BOTAO_WIDTH /2) + (ESPACAMENTO_BOTOES / 2);
+
+    
     UIImage *imgCaixa = [UIImage imageNamed:@"item-variavel.png"];
+    
+    //INICIALIZA BOTAO
+    UIButton *botao = [[UIButton alloc] initWithFrame:CGRectMake(posicaoBotao1, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
     [botao setImage:imgCaixa forState:UIControlStateNormal];
-    [botao setTitle:@"BTN" forState:UIControlStateNormal];
     [botao addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
+    //[botao setTitle:@"BTN" forState:UIControlStateNormal];
+    
+    //INICIALIZA SEGUNDO BOTÃO
+    UIButton *botao2 = [[UIButton alloc] initWithFrame:CGRectMake(posicaoBotao2, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
+    [botao2 setImage:imgCaixa forState:UIControlStateNormal];
+    [botao2 addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
+    
     [view addSubview:botao];
+    [view addSubview:botao2];
 }
 
+//METODO QUE INSERE TRÊS BOTÕES NA LINHA
 -(void)posicionarTresBotoes:(UIView*)view :(int)posicaoXBotao :(int)posicaoYBotao{
-    //INICIALIZA BOTAO
-    UIButton *botao = [[UIButton alloc] initWithFrame:CGRectMake(posicaoXBotao, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
+    int posicaoBotao1 = posicaoXBotao - BOTAO_WIDTH - ESPACAMENTO_BOTOES;
+    int posicaoBotao2 = posicaoXBotao + BOTAO_WIDTH + ESPACAMENTO_BOTOES;
     UIImage *imgCaixa = [UIImage imageNamed:@"item-variavel.png"];
+    
+    //INICIALIZA BOTAO DA ESQUERDA
+    UIButton *botao = [[UIButton alloc] initWithFrame:CGRectMake(posicaoBotao1, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
     [botao setImage:imgCaixa forState:UIControlStateNormal];
-    [botao setTitle:@"BTN" forState:UIControlStateNormal];
     [botao addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
+    //[botao setTitle:@"BTN" forState:UIControlStateNormal];
+    
+    //INICIALIZA BOTÃO DO MEIO
+    [self posicionarUmBotao:view :posicaoXBotao :posicaoYBotao];
+    
+    //INICIALIZA BOTÃO DA DIREITA
+    UIButton *botao2 = [[UIButton alloc] initWithFrame:CGRectMake(posicaoBotao2, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
+    [botao2 setImage:imgCaixa forState:UIControlStateNormal];
+    [botao2 addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
+    
     [view addSubview:botao];
+    [view addSubview:botao2];
 }
 
 
 -(void)mostrarAssunto:(id)sender{
-    NSLog(@"Clicou %@", [sender currentTitle]);
+    //NSLog(@"Clicou %@", [sender currentTitle]);
     
     [self performSegueWithIdentifier:@"conteudoController" sender:nil];
 }
