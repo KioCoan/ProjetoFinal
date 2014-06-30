@@ -17,16 +17,17 @@ static int BOTAO_HEIGHT = 113;
 
 @implementation MenuViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+
+
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
     if (self) {
         nBotoesNasLinhas = [NSArray arrayWithObjects:[NSNumber numberWithInt:1],
-                                                     [NSNumber numberWithInt:1],
-                                                     [NSNumber numberWithInt:2],
-                                                     [NSNumber numberWithInt:3],
-                                                     [NSNumber numberWithInt:2],
-                                                     [NSNumber numberWithInt:3], nil];
+                            [NSNumber numberWithInt:1],
+                            [NSNumber numberWithInt:2],
+                            [NSNumber numberWithInt:3],
+                            [NSNumber numberWithInt:2],
+                            [NSNumber numberWithInt:3], nil];
     }
     return self;
 }
@@ -51,7 +52,7 @@ static int BOTAO_HEIGHT = 113;
     
     int posicaoYView = 1;
     
-    for(int i=0; i<7; i++){
+    for(int i=0; i<nBotoesNasLinhas.count; i++){
         //INICIALIZA VIEW DE FUNDO
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(scroll.frame.origin.x, posicaoYView, scroll.frame.size.width, 200)];
         [view setBackgroundColor:[UIColor whiteColor]];
