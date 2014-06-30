@@ -25,7 +25,7 @@
 		A597F0F51960A7A6006429C7 /* APPChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0EF1960A7A6006429C7 /* APPChildViewController.m */; };
 		A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F11960A7A6006429C7 /* MenuViewController.m */; };
 		A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F31960A7A6006429C7 /* ConteudoViewController.m */; };
-		BD630CAB1948E3F400AF13E7 /* item-variavel3.png in Resources */ = {isa = PBXBuildFile; fileRef = BD630CAA1948E3F400AF13E7 /* item-variavel3.png */; };
+		BD630CAB1948E3F400AF13E7 /* item-variavel.png in Resources */ = {isa = PBXBuildFile; fileRef = BD630CAA1948E3F400AF13E7 /* item-variavel.png */; };
 		E501FA6B192FCD3800B56B5C /* item-memoria.png in Resources */ = {isa = PBXBuildFile; fileRef = E501FA6A192FCD3800B56B5C /* item-memoria.png */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +67,7 @@
 		A597F0F11960A7A6006429C7 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		A597F0F21960A7A6006429C7 /* ConteudoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConteudoViewController.h; sourceTree = "<group>"; };
 		A597F0F31960A7A6006429C7 /* ConteudoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConteudoViewController.m; sourceTree = "<group>"; };
-		BD630CAA1948E3F400AF13E7 /* item-variavel3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-variavel3.png"; path = "Imagens/item-variavel3.png"; sourceTree = "<group>"; };
+		BD630CAA1948E3F400AF13E7 /* item-variavel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-variavel.png"; path = "Imagens/item-variavel.png"; sourceTree = "<group>"; };
 		E501FA6A192FCD3800B56B5C /* item-memoria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-memoria.png"; path = "Imagens/item-memoria.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,8 +128,8 @@
 		120E8F7C192FC0A200CDEF95 /* ProjetoFinal */ = {
 			isa = PBXGroup;
 			children = (
-				A597F0EB1960A78E006429C7 /* ViewControllers */,
 				E501FA69192FCD1600B56B5C /* Imagens */,
+				A597F0EB1960A78E006429C7 /* ViewControllers */,
 				120E8F85192FC0A200CDEF95 /* AppDelegate.h */,
 				120E8F86192FC0A200CDEF95 /* AppDelegate.m */,
 				120E8F88192FC0A200CDEF95 /* Main.storyboard */,
@@ -188,7 +188,7 @@
 		E501FA69192FCD1600B56B5C /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
-				BD630CAA1948E3F400AF13E7 /* item-variavel3.png */,
+				BD630CAA1948E3F400AF13E7 /* item-variavel.png */,
 				E501FA6A192FCD3800B56B5C /* item-memoria.png */,
 			);
 			name = Imagens;
@@ -274,7 +274,7 @@
 				E501FA6B192FCD3800B56B5C /* item-memoria.png in Resources */,
 				120E8F81192FC0A200CDEF95 /* InfoPlist.strings in Resources */,
 				120E8F8A192FC0A200CDEF95 /* Main.storyboard in Resources */,
-				BD630CAB1948E3F400AF13E7 /* item-variavel3.png in Resources */,
+				BD630CAB1948E3F400AF13E7 /* item-variavel.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +431,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjetoFinal/ProjetoFinal-Prefix.pch";
 				INFOPLIST_FILE = "ProjetoFinal/ProjetoFinal-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -444,6 +445,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjetoFinal/ProjetoFinal-Prefix.pch";
 				INFOPLIST_FILE = "ProjetoFinal/ProjetoFinal-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

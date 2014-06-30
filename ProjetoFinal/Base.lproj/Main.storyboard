@@ -33,6 +33,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Algorítmos" id="606-HT-dcC"/>
+                    <connections>
+                        <segue destination="wLQ-Hg-AQ8" kind="push" identifier="conteudoController" id="GP0-AC-7Ja"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
