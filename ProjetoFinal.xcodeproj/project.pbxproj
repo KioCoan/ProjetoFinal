@@ -25,6 +25,7 @@
 		91A98615196232B900EA1074 /* Animacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98614196232B900EA1074 /* Animacao.m */; };
 		91A98619196232F800EA1074 /* Exercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98618196232F800EA1074 /* Exercicio.m */; };
 		91A9861B196233CD00EA1074 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A9861A196233CD00EA1074 /* SpriteKit.framework */; };
+		91A9861E1962392400EA1074 /* GerenciadorDeAssunto.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9861D1962392400EA1074 /* GerenciadorDeAssunto.m */; };
 		A597F0F41960A7A6006429C7 /* APPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0ED1960A7A6006429C7 /* APPViewController.m */; };
 		A597F0F51960A7A6006429C7 /* APPChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0EF1960A7A6006429C7 /* APPChildViewController.m */; };
 		A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F11960A7A6006429C7 /* MenuViewController.m */; };
@@ -70,6 +71,8 @@
 		91A98617196232F800EA1074 /* Exercicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exercicio.h; path = Exercicios/Exercicio.h; sourceTree = "<group>"; };
 		91A98618196232F800EA1074 /* Exercicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Exercicio.m; path = Exercicios/Exercicio.m; sourceTree = "<group>"; };
 		91A9861A196233CD00EA1074 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		91A9861C1962392400EA1074 /* GerenciadorDeAssunto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GerenciadorDeAssunto.h; sourceTree = "<group>"; };
+		91A9861D1962392400EA1074 /* GerenciadorDeAssunto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GerenciadorDeAssunto.m; sourceTree = "<group>"; };
 		A597F0EC1960A7A6006429C7 /* APPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPViewController.h; sourceTree = "<group>"; };
 		A597F0ED1960A7A6006429C7 /* APPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPViewController.m; sourceTree = "<group>"; };
 		A597F0EE1960A7A6006429C7 /* APPChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPChildViewController.h; sourceTree = "<group>"; };
@@ -190,6 +193,8 @@
 				91A98616196232DF00EA1074 /* Exercicios */,
 				91A986121962328800EA1074 /* Animacoes */,
 				91A9860E1962320500EA1074 /* Assuntos */,
+				91A9861C1962392400EA1074 /* GerenciadorDeAssunto.h */,
+				91A9861D1962392400EA1074 /* GerenciadorDeAssunto.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 				120E8F87192FC0A200CDEF95 /* AppDelegate.m in Sources */,
 				91A98619196232F800EA1074 /* Exercicio.m in Sources */,
 				A597F0F41960A7A6006429C7 /* APPViewController.m in Sources */,
+				91A9861E1962392400EA1074 /* GerenciadorDeAssunto.m in Sources */,
 				120E8F83192FC0A200CDEF95 /* main.m in Sources */,
 				A597F0F51960A7A6006429C7 /* APPChildViewController.m in Sources */,
 				91A98615196232B900EA1074 /* Animacao.m in Sources */,
