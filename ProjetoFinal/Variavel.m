@@ -25,8 +25,16 @@
     NSString* path = [[NSBundle mainBundle] pathForResource:@"ConceitosVariaveis" ofType:@"txt"];
     
     self.teoria = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
+
+    NSLog(@"%@",self.teoria);
     
-    NSArray *myWords = [self.teoria componentsSeparatedByString:@" "];
+    
+    
+    NSArray *myWords = [self.teoria componentsSeparatedByString:@"#"];
+    NSArray *stt = [self.teoria ]
+    
+    NSLog(@"%@",myWords);
+    
     
     [self setTeoriaFormatada:[[NSMutableArray alloc] initWithArray:myWords]];
 

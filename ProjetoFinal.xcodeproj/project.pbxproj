@@ -26,7 +26,7 @@
 		91A98619196232F800EA1074 /* Exercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98618196232F800EA1074 /* Exercicio.m */; };
 		91A9861B196233CD00EA1074 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A9861A196233CD00EA1074 /* SpriteKit.framework */; };
 		A52974D81962DB1F009A50DD /* Variavel.m in Sources */ = {isa = PBXBuildFile; fileRef = A52974D71962DB1F009A50DD /* Variavel.m */; };
-		A52974DF1962E386009A50DD /* ConceitosVariaveis.txt in Resources */ = {isa = PBXBuildFile; fileRef = A52974DE1962E386009A50DD /* ConceitosVariaveis.txt */; };
+		A52974E31962EF6B009A50DD /* ConceitosVariaveis.txt in Resources */ = {isa = PBXBuildFile; fileRef = A52974E21962EF6B009A50DD /* ConceitosVariaveis.txt */; };
 		A597F0F41960A7A6006429C7 /* SubViewConteudo.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0ED1960A7A6006429C7 /* SubViewConteudo.m */; };
 		A597F0F51960A7A6006429C7 /* SubViewConteudoFilho.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0EF1960A7A6006429C7 /* SubViewConteudoFilho.m */; };
 		A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F11960A7A6006429C7 /* MenuViewController.m */; };
@@ -74,7 +74,7 @@
 		91A9861A196233CD00EA1074 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		A52974D61962DB1F009A50DD /* Variavel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variavel.h; sourceTree = "<group>"; };
 		A52974D71962DB1F009A50DD /* Variavel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Variavel.m; sourceTree = "<group>"; };
-		A52974DE1962E386009A50DD /* ConceitosVariaveis.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConceitosVariaveis.txt; sourceTree = "<group>"; };
+		A52974E21962EF6B009A50DD /* ConceitosVariaveis.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConceitosVariaveis.txt; sourceTree = "<group>"; };
 		A597F0EC1960A7A6006429C7 /* SubViewConteudo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubViewConteudo.h; sourceTree = "<group>"; };
 		A597F0ED1960A7A6006429C7 /* SubViewConteudo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SubViewConteudo.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A597F0EE1960A7A6006429C7 /* SubViewConteudoFilho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SubViewConteudoFilho.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -232,7 +232,7 @@
 		A52974D91962DDEC009A50DD /* Conteudo */ = {
 			isa = PBXGroup;
 			children = (
-				A52974DE1962E386009A50DD /* ConceitosVariaveis.txt */,
+				A52974E21962EF6B009A50DD /* ConceitosVariaveis.txt */,
 			);
 			name = Conteudo;
 			sourceTree = "<group>";
@@ -340,7 +340,7 @@
 				120E8F8F192FC0A200CDEF95 /* Images.xcassets in Resources */,
 				E501FA6B192FCD3800B56B5C /* item-memoria.png in Resources */,
 				120E8F81192FC0A200CDEF95 /* InfoPlist.strings in Resources */,
-				A52974DF1962E386009A50DD /* ConceitosVariaveis.txt in Resources */,
+				A52974E31962EF6B009A50DD /* ConceitosVariaveis.txt in Resources */,
 				120E8F8A192FC0A200CDEF95 /* Main.storyboard in Resources */,
 				BD630CAB1948E3F400AF13E7 /* item-variavel.png in Resources */,
 			);
