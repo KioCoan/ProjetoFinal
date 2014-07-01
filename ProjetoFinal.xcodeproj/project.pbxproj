@@ -21,6 +21,10 @@
 		120E8F98192FC0A200CDEF95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120E8F7A192FC0A200CDEF95 /* UIKit.framework */; };
 		120E8FA0192FC0A200CDEF95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 120E8F9E192FC0A200CDEF95 /* InfoPlist.strings */; };
 		120E8FA2192FC0A200CDEF95 /* ProjetoFinalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 120E8FA1192FC0A200CDEF95 /* ProjetoFinalTests.m */; };
+		91A986111962324500EA1074 /* Assunto.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A986101962324500EA1074 /* Assunto.m */; };
+		91A98615196232B900EA1074 /* Animacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98614196232B900EA1074 /* Animacao.m */; };
+		91A98619196232F800EA1074 /* Exercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98618196232F800EA1074 /* Exercicio.m */; };
+		91A9861B196233CD00EA1074 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A9861A196233CD00EA1074 /* SpriteKit.framework */; };
 		A597F0F41960A7A6006429C7 /* APPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0ED1960A7A6006429C7 /* APPViewController.m */; };
 		A597F0F51960A7A6006429C7 /* APPChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0EF1960A7A6006429C7 /* APPChildViewController.m */; };
 		A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F11960A7A6006429C7 /* MenuViewController.m */; };
@@ -59,6 +63,13 @@
 		120E8F9D192FC0A200CDEF95 /* ProjetoFinalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProjetoFinalTests-Info.plist"; sourceTree = "<group>"; };
 		120E8F9F192FC0A200CDEF95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		120E8FA1192FC0A200CDEF95 /* ProjetoFinalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjetoFinalTests.m; sourceTree = "<group>"; };
+		91A9860F1962324500EA1074 /* Assunto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Assunto.h; path = Assuntos/Assunto.h; sourceTree = "<group>"; };
+		91A986101962324500EA1074 /* Assunto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Assunto.m; path = Assuntos/Assunto.m; sourceTree = "<group>"; };
+		91A98613196232B900EA1074 /* Animacao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Animacao.h; path = Animacoes/Animacao.h; sourceTree = "<group>"; };
+		91A98614196232B900EA1074 /* Animacao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Animacao.m; path = Animacoes/Animacao.m; sourceTree = "<group>"; };
+		91A98617196232F800EA1074 /* Exercicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exercicio.h; path = Exercicios/Exercicio.h; sourceTree = "<group>"; };
+		91A98618196232F800EA1074 /* Exercicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Exercicio.m; path = Exercicios/Exercicio.m; sourceTree = "<group>"; };
+		91A9861A196233CD00EA1074 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		A597F0EC1960A7A6006429C7 /* APPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPViewController.h; sourceTree = "<group>"; };
 		A597F0ED1960A7A6006429C7 /* APPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPViewController.m; sourceTree = "<group>"; };
 		A597F0EE1960A7A6006429C7 /* APPChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPChildViewController.h; sourceTree = "<group>"; };
@@ -76,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91A9861B196233CD00EA1074 /* SpriteKit.framework in Frameworks */,
 				120E8F79192FC0A200CDEF95 /* CoreGraphics.framework in Frameworks */,
 				120E8F7B192FC0A200CDEF95 /* UIKit.framework in Frameworks */,
 				120E8F77192FC0A200CDEF95 /* Foundation.framework in Frameworks */,
@@ -117,6 +129,7 @@
 		120E8F75192FC0A200CDEF95 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91A9861A196233CD00EA1074 /* SpriteKit.framework */,
 				120E8F76192FC0A200CDEF95 /* Foundation.framework */,
 				120E8F78192FC0A200CDEF95 /* CoreGraphics.framework */,
 				120E8F7A192FC0A200CDEF95 /* UIKit.framework */,
@@ -128,6 +141,7 @@
 		120E8F7C192FC0A200CDEF95 /* ProjetoFinal */ = {
 			isa = PBXGroup;
 			children = (
+				91A9860D196231F500EA1074 /* Classes */,
 				E501FA69192FCD1600B56B5C /* Imagens */,
 				A597F0EB1960A78E006429C7 /* ViewControllers */,
 				120E8F85192FC0A200CDEF95 /* AppDelegate.h */,
@@ -168,6 +182,43 @@
 				120E8F9E192FC0A200CDEF95 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		91A9860D196231F500EA1074 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				91A98616196232DF00EA1074 /* Exercicios */,
+				91A986121962328800EA1074 /* Animacoes */,
+				91A9860E1962320500EA1074 /* Assuntos */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		91A9860E1962320500EA1074 /* Assuntos */ = {
+			isa = PBXGroup;
+			children = (
+				91A9860F1962324500EA1074 /* Assunto.h */,
+				91A986101962324500EA1074 /* Assunto.m */,
+			);
+			name = Assuntos;
+			sourceTree = "<group>";
+		};
+		91A986121962328800EA1074 /* Animacoes */ = {
+			isa = PBXGroup;
+			children = (
+				91A98613196232B900EA1074 /* Animacao.h */,
+				91A98614196232B900EA1074 /* Animacao.m */,
+			);
+			name = Animacoes;
+			sourceTree = "<group>";
+		};
+		91A98616196232DF00EA1074 /* Exercicios */ = {
+			isa = PBXGroup;
+			children = (
+				91A98617196232F800EA1074 /* Exercicio.h */,
+				91A98618196232F800EA1074 /* Exercicio.m */,
+			);
+			name = Exercicios;
 			sourceTree = "<group>";
 		};
 		A597F0EB1960A78E006429C7 /* ViewControllers */ = {
@@ -294,12 +345,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */,
+				91A986111962324500EA1074 /* Assunto.m in Sources */,
 				120E8F8D192FC0A200CDEF95 /* ViewController.m in Sources */,
 				A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */,
 				120E8F87192FC0A200CDEF95 /* AppDelegate.m in Sources */,
+				91A98619196232F800EA1074 /* Exercicio.m in Sources */,
 				A597F0F41960A7A6006429C7 /* APPViewController.m in Sources */,
 				120E8F83192FC0A200CDEF95 /* main.m in Sources */,
 				A597F0F51960A7A6006429C7 /* APPChildViewController.m in Sources */,
+				91A98615196232B900EA1074 /* Animacao.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
