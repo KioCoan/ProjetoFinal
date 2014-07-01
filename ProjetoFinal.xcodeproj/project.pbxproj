@@ -25,8 +25,8 @@
 		91A98615196232B900EA1074 /* Animacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98614196232B900EA1074 /* Animacao.m */; };
 		91A98619196232F800EA1074 /* Exercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98618196232F800EA1074 /* Exercicio.m */; };
 		91A9861B196233CD00EA1074 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A9861A196233CD00EA1074 /* SpriteKit.framework */; };
-		A597F0F41960A7A6006429C7 /* APPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0ED1960A7A6006429C7 /* APPViewController.m */; };
-		A597F0F51960A7A6006429C7 /* APPChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0EF1960A7A6006429C7 /* APPChildViewController.m */; };
+		A597F0F41960A7A6006429C7 /* SubViewConteudo.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0ED1960A7A6006429C7 /* SubViewConteudo.m */; };
+		A597F0F51960A7A6006429C7 /* SubViewConteudoFilho.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0EF1960A7A6006429C7 /* SubViewConteudoFilho.m */; };
 		A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F11960A7A6006429C7 /* MenuViewController.m */; };
 		A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F31960A7A6006429C7 /* ConteudoViewController.m */; };
 		BD630CAB1948E3F400AF13E7 /* item-variavel.png in Resources */ = {isa = PBXBuildFile; fileRef = BD630CAA1948E3F400AF13E7 /* item-variavel.png */; };
@@ -70,14 +70,14 @@
 		91A98617196232F800EA1074 /* Exercicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exercicio.h; path = Exercicios/Exercicio.h; sourceTree = "<group>"; };
 		91A98618196232F800EA1074 /* Exercicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Exercicio.m; path = Exercicios/Exercicio.m; sourceTree = "<group>"; };
 		91A9861A196233CD00EA1074 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		A597F0EC1960A7A6006429C7 /* APPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPViewController.h; sourceTree = "<group>"; };
-		A597F0ED1960A7A6006429C7 /* APPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPViewController.m; sourceTree = "<group>"; };
-		A597F0EE1960A7A6006429C7 /* APPChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPChildViewController.h; sourceTree = "<group>"; };
-		A597F0EF1960A7A6006429C7 /* APPChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPChildViewController.m; sourceTree = "<group>"; };
+		A597F0EC1960A7A6006429C7 /* SubViewConteudo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubViewConteudo.h; sourceTree = "<group>"; };
+		A597F0ED1960A7A6006429C7 /* SubViewConteudo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SubViewConteudo.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A597F0EE1960A7A6006429C7 /* SubViewConteudoFilho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SubViewConteudoFilho.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		A597F0EF1960A7A6006429C7 /* SubViewConteudoFilho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SubViewConteudoFilho.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A597F0F01960A7A6006429C7 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		A597F0F11960A7A6006429C7 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		A597F0F21960A7A6006429C7 /* ConteudoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConteudoViewController.h; sourceTree = "<group>"; };
-		A597F0F31960A7A6006429C7 /* ConteudoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConteudoViewController.m; sourceTree = "<group>"; };
+		A597F0F31960A7A6006429C7 /* ConteudoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ConteudoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		BD630CAA1948E3F400AF13E7 /* item-variavel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-variavel.png"; path = "Imagens/item-variavel.png"; sourceTree = "<group>"; };
 		E501FA6A192FCD3800B56B5C /* item-memoria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-memoria.png"; path = "Imagens/item-memoria.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,10 +224,10 @@
 		A597F0EB1960A78E006429C7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A597F0EC1960A7A6006429C7 /* APPViewController.h */,
-				A597F0ED1960A7A6006429C7 /* APPViewController.m */,
-				A597F0EE1960A7A6006429C7 /* APPChildViewController.h */,
-				A597F0EF1960A7A6006429C7 /* APPChildViewController.m */,
+				A597F0EC1960A7A6006429C7 /* SubViewConteudo.h */,
+				A597F0ED1960A7A6006429C7 /* SubViewConteudo.m */,
+				A597F0EE1960A7A6006429C7 /* SubViewConteudoFilho.h */,
+				A597F0EF1960A7A6006429C7 /* SubViewConteudoFilho.m */,
 				A597F0F01960A7A6006429C7 /* MenuViewController.h */,
 				A597F0F11960A7A6006429C7 /* MenuViewController.m */,
 				A597F0F21960A7A6006429C7 /* ConteudoViewController.h */,
@@ -350,9 +350,9 @@
 				A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */,
 				120E8F87192FC0A200CDEF95 /* AppDelegate.m in Sources */,
 				91A98619196232F800EA1074 /* Exercicio.m in Sources */,
-				A597F0F41960A7A6006429C7 /* APPViewController.m in Sources */,
+				A597F0F41960A7A6006429C7 /* SubViewConteudo.m in Sources */,
 				120E8F83192FC0A200CDEF95 /* main.m in Sources */,
-				A597F0F51960A7A6006429C7 /* APPChildViewController.m in Sources */,
+				A597F0F51960A7A6006429C7 /* SubViewConteudoFilho.m in Sources */,
 				91A98615196232B900EA1074 /* Animacao.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
