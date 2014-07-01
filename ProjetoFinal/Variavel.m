@@ -26,20 +26,12 @@
     
     self.teoria = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
 
-    NSLog(@"%@",self.teoria);
-    
-    
-    
     NSArray *myWords = [self.teoria componentsSeparatedByString:@"#"];
-    NSArray *stt = [self.teoria ]
-    
-    NSLog(@"%@",myWords);
-    
     
     [self setTeoriaFormatada:[[NSMutableArray alloc] initWithArray:myWords]];
 
     
-    NSLog(@"%@",self.teoriaFormatada);
+    NSLog(@"%@",[self.teoriaFormatada objectAtIndex:0]);
     
 }
 
