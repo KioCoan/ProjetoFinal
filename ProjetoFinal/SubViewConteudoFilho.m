@@ -7,7 +7,7 @@
 //
 
 #import "SubViewConteudoFilho.h"
-
+#import "Variavel.h"
 @interface SubViewConteudoFilho ()
 
 @end
@@ -30,7 +30,7 @@
     
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    Variavel *v = [[Variavel alloc] init];
     self.lblConteudo.text = [NSString stringWithFormat:@"Screen #%d", self.index];
     
 }
