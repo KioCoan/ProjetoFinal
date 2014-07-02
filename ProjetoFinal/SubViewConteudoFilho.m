@@ -1,18 +1,18 @@
 //
-//  APPChildViewController.m
+//  SubViewConteudoFilho.m
 //  PageApp
 //
 //  Created by Rafael Garcia Leiva on 10/06/13.
 //  Copyright (c) 2013 Appcoda. All rights reserved.
 //
 
-#import "APPChildViewController.h"
-
-@interface APPChildViewController ()
+#import "SubViewConteudoFilho.h"
+#import "Variavel.h"
+@interface SubViewConteudoFilho ()
 
 @end
 
-@implementation APPChildViewController
+@implementation SubViewConteudoFilho
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
@@ -30,7 +30,7 @@
     
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    Variavel *v = [[Variavel alloc] init];
     self.lblConteudo.text = [NSString stringWithFormat:@"Screen #%d", self.index];
     
 }

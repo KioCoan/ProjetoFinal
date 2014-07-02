@@ -1,19 +1,19 @@
 //
-//  APPViewController.m
+//  SubViewConteudo.m
 //  PageApp
 //
 //  Created by Rafael Garcia Leiva on 10/06/13.
 //  Copyright (c) 2013 Appcoda. All rights reserved.
 //
 
-#import "APPViewController.h"
-#import "APPChildViewController.h"
+#import "SubViewConteudo.h"
+#import "SubViewConteudoFilho.h"
 
-@interface APPViewController ()
+@interface SubViewConteudo ()
 
 @end
 
-@implementation APPViewController
+@implementation SubViewConteudo
 
 - (void)viewDidLoad {
     
@@ -24,7 +24,7 @@
     self.pageController.dataSource = self;
     [[self.pageController view] setFrame:[[self view] bounds]];
     
-    APPChildViewController *initialViewController = [self viewControllerAtIndex:0];
+    SubViewConteudoFilho *initialViewController = [self viewControllerAtIndex:0];
     
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
     
@@ -43,9 +43,9 @@
     
 }
 
-- (APPChildViewController *)viewControllerAtIndex:(NSUInteger)index {
+- (SubViewConteudoFilho *)viewControllerAtIndex:(NSUInteger)index {
         
-    APPChildViewController *childViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"textoConteudo"];
+    SubViewConteudoFilho *childViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"textoConteudo"];
 
     
     childViewController.index = index;
@@ -59,7 +59,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     
-    NSUInteger index = [(APPChildViewController *)viewController index];
+    NSUInteger index = [(SubViewConteudoFilho *)viewController index];
     
     if (index == 0) {
         return nil;
@@ -74,7 +74,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     
-    NSUInteger index = [(APPChildViewController *)viewController index];
+    NSUInteger index = [(SubViewConteudoFilho *)viewController index];
     
     index++;
     
