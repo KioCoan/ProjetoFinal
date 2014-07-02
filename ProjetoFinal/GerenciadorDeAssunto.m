@@ -7,7 +7,7 @@
 //
 
 #import "GerenciadorDeAssunto.h"
-
+#import "Variavel.h"
 //static GerenciadorDeAssunto* gerenciador;
 
 @implementation GerenciadorDeAssunto
@@ -27,6 +27,15 @@
     return [self sharedGerenciador];
 }
 
+
+-(void)mudarTemaEstudado{
+    [self setAssunto:[[Variavel alloc]init]];
+    
+    
+}
+-(NSMutableArray*)retornaTeoriaFormatada{
+    return [[self assunto]teoriaFormatada];
+}
 
 
 //+(id)gerenciador{

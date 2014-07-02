@@ -158,6 +158,12 @@ static int ESPACAMENTO_BOTOES = 50;
     //NSLog(@"Clicou %@", [sender currentTitle]);
     
     [self performSegueWithIdentifier:@"conteudoController" sender:nil];
+    
+    gerenciadorDeAssuntos = [GerenciadorDeAssunto sharedGerenciador];
+    
+    [gerenciadorDeAssuntos mudarTemaEstudado];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

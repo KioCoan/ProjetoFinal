@@ -18,4 +18,7 @@
 
 + (GerenciadorDeAssunto *)sharedGerenciador;
 + (id)allocWithZone:(struct _NSZone *)zone;
+
+-(void)mudarTemaEstudado;
+-(NSMutableArray*)retornaTeoriaFormatada;
 @end

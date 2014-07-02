@@ -31,10 +31,13 @@
     NSString* content = [NSString stringWithContentsOfFile:path
                                                   encoding:NSUTF8StringEncoding
                                                      error:NULL];
+
     
-    NSArray *arrComponents = [content componentsSeparatedByString:@"#"];
+    [self setTeoriaFormatada:[NSMutableArray arrayWithArray:[content componentsSeparatedByString:@"#"]]];
     
-    NSLog(@"%@",[arrComponents objectAtIndex:0]);
+  
+    
+    
     
 }
 

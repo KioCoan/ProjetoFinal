@@ -34,6 +34,18 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    gerenciadorDeAssuntos = [GerenciadorDeAssunto sharedGerenciador];
+    
+    teoria = [gerenciadorDeAssuntos retornaTeoriaFormatada];
+    
+    
+    
+    
+    
+}
+
 - (void)didReceiveMemoryWarning {
     
     [super didReceiveMemoryWarning];
@@ -76,7 +88,7 @@
     
     index++;
     
-    if (index == 5) {
+    if (index == [teoria count]) {
         return nil;
     }
     
@@ -86,7 +98,7 @@
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
     // The number of items reflected in the page indicator.
-    return 5;
+    return [teoria count];
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {

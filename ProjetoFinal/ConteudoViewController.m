@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    Variavel *v = [[Variavel alloc] init];
+    //Variavel *v = [[Variavel alloc] init];
     
 }
 
@@ -39,16 +39,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-- (SubViewConteudoFilho *)viewControllerAtIndex:(NSUInteger)index {
-    
-    SubViewConteudoFilho *childViewController = [[SubViewConteudoFilho alloc] init];
-    childViewController.index = index;
-    
-    
-    
-    
-    return childViewController;
-    
-}
 @end
