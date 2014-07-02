@@ -12,9 +12,10 @@
 @interface GerenciadorDeAssunto : NSObject
 
 @property Assunto* assunto;
+//
+//+(id)gerenciador;
+//+(void)mudarAssunto:(Assunto*)assunto;
 
-+(id)gerenciador;
-+(void)mudarAssunto:(Assunto*)assunto;
-
-
++ (GerenciadorDeAssunto *)sharedGerenciador;
++ (id)allocWithZone:(struct _NSZone *)zone;
 @end

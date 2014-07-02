@@ -8,23 +8,40 @@
 
 #import "GerenciadorDeAssunto.h"
 
-static GerenciadorDeAssunto* gerenciador;
+//static GerenciadorDeAssunto* gerenciador;
 
 @implementation GerenciadorDeAssunto
 
-+(id)gerenciador{
-    @synchronized(self){
-        if (gerenciador == nil) {
-            gerenciador = [[self alloc]init];
-        }
+
++ (GerenciadorDeAssunto *)sharedGerenciador{
+    static GerenciadorDeAssunto *gerencidaorAssunto = nil;
+    
+    if (!gerencidaorAssunto) {
+        gerencidaorAssunto = [[super allocWithZone:nil]init];
+        
     }
-    return gerenciador;
+    return gerencidaorAssunto;
 }
 
-+(void)mudarAssunto:(Assunto *)assunto{
-    @synchronized(self){
-        gerenciador.assunto = assunto;
-    }
++ (id)allocWithZone:(struct _NSZone *)zone{
+    return [self sharedGerenciador];
 }
+
+
+
+//+(id)gerenciador{
+//    @synchronized(self){
+//        if (gerenciador == nil) {
+//            gerenciador = [[self alloc]init];
+//        }
+//    }
+//    return gerenciador;
+//}
+//
+//+(void)mudarAssunto:(Assunto *)assunto{
+//    @synchronized(self){
+//        gerenciador.assunto = assunto;
+//    }
+//}
 
 @end
