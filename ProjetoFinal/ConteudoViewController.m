@@ -7,7 +7,7 @@
 //
 
 #import "ConteudoViewController.h"
-#import "SubViewConteudoFilho.h"
+#import "APPChildViewController.h"
 @interface ConteudoViewController ()
 
 @end
@@ -38,9 +38,9 @@
 }
 
 
-- (SubViewConteudoFilho *)viewControllerAtIndex:(NSUInteger)index {
+- (APPChildViewController *)viewControllerAtIndex:(NSUInteger)index {
     
-    SubViewConteudoFilho *childViewController = [[SubViewConteudoFilho alloc] init];
+    APPChildViewController *childViewController = [[APPChildViewController alloc] init];
     childViewController.index = index;
     
     

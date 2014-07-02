@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="548" y="-125"/>
         </scene>
-        <!--Sub View Conteudo Filho-->
+        <!--Child View Controller-->
         <scene sceneID="wGG-hT-Pmj">
             <objects>
-                <viewController storyboardIdentifier="textoConteudo" id="mb5-FA-vEN" customClass="SubViewConteudoFilho" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="textoConteudo" id="mb5-FA-vEN" customClass="APPChildViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PTh-v6-vwy"/>
                         <viewControllerLayoutGuide type="bottom" id="sgM-6z-vip"/>
@@ -99,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="552" y="1020"/>
         </scene>
-        <!--Sub View Conteudo-->
+        <!--View Controller-->
         <scene sceneID="9wj-8y-ED1">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="sIv-jj-fJc" customClass="SubViewConteudo" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="sIv-jj-fJc" customClass="APPViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lAa-yz-GEm"/>
                         <viewControllerLayoutGuide type="bottom" id="qWw-cE-iFA"/>

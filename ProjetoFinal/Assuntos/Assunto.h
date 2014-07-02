@@ -16,8 +16,6 @@
 @property int paginas;
 @property Animacao* animacao;
 @property NSMutableArray* exercicios;
-@property NSMutableArray* teoriaFormatada;
-
 
 -(void)addExercicio:(Exercicio*)exercicio;
 

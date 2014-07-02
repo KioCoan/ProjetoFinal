@@ -1,19 +1,19 @@
 //
-//  SubViewConteudo.m
+//  APPViewController.m
 //  PageApp
 //
 //  Created by Rafael Garcia Leiva on 10/06/13.
 //  Copyright (c) 2013 Appcoda. All rights reserved.
 //
 
-#import "SubViewConteudo.h"
-#import "SubViewConteudoFilho.h"
+#import "APPViewController.h"
+#import "APPChildViewController.h"
 
-@interface SubViewConteudo ()
+@interface APPViewController ()
 
 @end
 
-@implementation SubViewConteudo
+@implementation APPViewController
 
 - (void)viewDidLoad {
     
@@ -24,7 +24,7 @@
     self.pageController.dataSource = self;
     [[self.pageController view] setFrame:[[self view] bounds]];
     
-    SubViewConteudoFilho *initialViewController = [self viewControllerAtIndex:0];
+    APPChildViewController *initialViewController = [self viewControllerAtIndex:0];
     
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
     
@@ -43,9 +43,9 @@
     
 }
 
-- (SubViewConteudoFilho *)viewControllerAtIndex:(NSUInteger)index {
+- (APPChildViewController *)viewControllerAtIndex:(NSUInteger)index {
         
-    SubViewConteudoFilho *childViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"textoConteudo"];
+    APPChildViewController *childViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"textoConteudo"];
 
     
     childViewController.index = index;
@@ -59,7 +59,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     
-    NSUInteger index = [(SubViewConteudoFilho *)viewController index];
+    NSUInteger index = [(APPChildViewController *)viewController index];
     
     if (index == 0) {
         return nil;
@@ -74,7 +74,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     
-    NSUInteger index = [(SubViewConteudoFilho *)viewController index];
+    NSUInteger index = [(APPChildViewController *)viewController index];
     
     index++;
     

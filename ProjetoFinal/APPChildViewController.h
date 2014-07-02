@@ -1,5 +1,5 @@
 //
-//  SubViewConteudoFilho.h
+//  APPChildViewController.h
 //  PageApp
 //
 //  Created by Rafael Garcia Leiva on 10/06/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SubViewConteudoFilho : UIViewController
+@interface APPChildViewController : UIViewController
 
 @property (assign, nonatomic) NSInteger index;
 //@property (strong, nonatomic) IBOutlet UILabel *screenNumber;

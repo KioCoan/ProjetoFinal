@@ -12,8 +12,8 @@
 
 @end
 
-static int BOTAO_WIDTH = 150;
-static int BOTAO_HEIGHT = 102;
+static int BOTAO_WIDTH = 166;
+static int BOTAO_HEIGHT = 113;
 static int ESPACAMENTO_BOTOES = 50;
 
 @implementation MenuViewController
@@ -52,7 +52,6 @@ static int ESPACAMENTO_BOTOES = 50;
     
     int posicaoYView = 1;
     
-    //LAÇO QUE RODA COM BASE NO VETOR QUE CONTÉM O NÚMERO DE BOTÕES QUE TERÁ EM CADA "LINHA"
     for(int i=0; i<nBotoesNasLinhas.count; i++){
         //INICIALIZA VIEW DE FUNDO
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(scroll.frame.origin.x, posicaoYView, scroll.frame.size.width, 200)];
