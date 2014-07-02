@@ -1,5 +1,5 @@
 //
-//  APPViewController.h
+//  SubViewConteudo.h
 //  PageApp
 //
 //  Created by Rafael Garcia Leiva on 10/06/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface APPViewController : UIViewController <UIPageViewControllerDataSource>
+@interface SubViewConteudo : UIViewController <UIPageViewControllerDataSource>
 
 @property (strong, nonatomic) UIPageViewController *pageController;
 

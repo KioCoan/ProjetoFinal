@@ -7,7 +7,9 @@
 //
 
 #import "ConteudoViewController.h"
-#import "APPChildViewController.h"
+#import "SubViewConteudoFilho.h"
+#import "Variavel.h"
+
 @interface ConteudoViewController ()
 
 @end
@@ -27,7 +29,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    Variavel *v = [[Variavel alloc] init];
     
 }
 
@@ -38,9 +40,9 @@
 }
 
 
-- (APPChildViewController *)viewControllerAtIndex:(NSUInteger)index {
+- (SubViewConteudoFilho *)viewControllerAtIndex:(NSUInteger)index {
     
-    APPChildViewController *childViewController = [[APPChildViewController alloc] init];
+    SubViewConteudoFilho *childViewController = [[SubViewConteudoFilho alloc] init];
     childViewController.index = index;
     
     

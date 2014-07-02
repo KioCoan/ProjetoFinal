@@ -1,18 +1,18 @@
 //
-//  APPChildViewController.m
+//  SubViewConteudoFilho.m
 //  PageApp
 //
 //  Created by Rafael Garcia Leiva on 10/06/13.
 //  Copyright (c) 2013 Appcoda. All rights reserved.
 //
 
-#import "APPChildViewController.h"
+#import "SubViewConteudoFilho.h"
 
-@interface APPChildViewController ()
+@interface SubViewConteudoFilho ()
 
 @end
 
-@implementation APPChildViewController
+@implementation SubViewConteudoFilho
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
