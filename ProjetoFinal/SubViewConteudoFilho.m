@@ -31,20 +31,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    //self.lblConteudo.text = [NSString stringWithFormat:@"Screen #%d", self.index];
+    
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    
     [super viewWillAppear:animated];
     gerenciadorDeAssuntos = [GerenciadorDeAssunto sharedGerenciador];
     
     teoria = [gerenciadorDeAssuntos retornaTeoriaFormatada];
     
     
-    self.lblConteudo.text = [teoria objectAtIndex:self.index];
     txtConteudo.text = [teoria objectAtIndex:self.index];
-    [txtConteudo setFont:[UIFont fontWithName:@"System" size:19.0]];
+   
+    //[txtConteudo setFont:[UIFont fontWithName:@"System" size:19.0]];
     
 }
 
