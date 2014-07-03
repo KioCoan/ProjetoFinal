@@ -1,9 +1,9 @@
 //
 //  SubViewConteudo.h
-//  PageApp
+//  ProjetoFinal
 //
-//  Created by Rafael Garcia Leiva on 10/06/13.
-//  Copyright (c) 2013 Appcoda. All rights reserved.
+//  Created by Rafael Aparecido de Freitas on 02/07/14.
+//  Copyright (c) 2014 SENAC - iOS. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
