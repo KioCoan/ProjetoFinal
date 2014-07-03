@@ -26,6 +26,10 @@
 		91A98619196232F800EA1074 /* Exercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98618196232F800EA1074 /* Exercicio.m */; };
 		91A9861B196233CD00EA1074 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A9861A196233CD00EA1074 /* SpriteKit.framework */; };
 		91A9861E1962392400EA1074 /* GerenciadorDeAssunto.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9861D1962392400EA1074 /* GerenciadorDeAssunto.m */; };
+		A529DF1B1965DB7500A3D9FB /* Relacional.m in Sources */ = {isa = PBXBuildFile; fileRef = A529DF161965DB7500A3D9FB /* Relacional.m */; };
+		A529DF1C1965DB7500A3D9FB /* Aritimetico.m in Sources */ = {isa = PBXBuildFile; fileRef = A529DF181965DB7500A3D9FB /* Aritimetico.m */; };
+		A529DF1D1965DB7500A3D9FB /* Logico.m in Sources */ = {isa = PBXBuildFile; fileRef = A529DF1A1965DB7500A3D9FB /* Logico.m */; };
+		A529DF201965DB8A00A3D9FB /* Calculador.m in Sources */ = {isa = PBXBuildFile; fileRef = A529DF1F1965DB8A00A3D9FB /* Calculador.m */; };
 		A55F2B411964879A00111BEB /* Variavel.m in Sources */ = {isa = PBXBuildFile; fileRef = A55F2B401964879A00111BEB /* Variavel.m */; };
 		A55F2B4419648C0600111BEB /* ConceitosVariaveis.txt in Resources */ = {isa = PBXBuildFile; fileRef = A55F2B4319648C0600111BEB /* ConceitosVariaveis.txt */; };
 		A597F0F41960A7A6006429C7 /* SubViewConteudo.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0ED1960A7A6006429C7 /* SubViewConteudo.m */; };
@@ -75,6 +79,14 @@
 		91A9861A196233CD00EA1074 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		91A9861C1962392400EA1074 /* GerenciadorDeAssunto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GerenciadorDeAssunto.h; sourceTree = "<group>"; };
 		91A9861D1962392400EA1074 /* GerenciadorDeAssunto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GerenciadorDeAssunto.m; sourceTree = "<group>"; };
+		A529DF151965DB7500A3D9FB /* Relacional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relacional.h; sourceTree = "<group>"; };
+		A529DF161965DB7500A3D9FB /* Relacional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relacional.m; sourceTree = "<group>"; };
+		A529DF171965DB7500A3D9FB /* Aritimetico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aritimetico.h; sourceTree = "<group>"; };
+		A529DF181965DB7500A3D9FB /* Aritimetico.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aritimetico.m; sourceTree = "<group>"; };
+		A529DF191965DB7500A3D9FB /* Logico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logico.h; sourceTree = "<group>"; };
+		A529DF1A1965DB7500A3D9FB /* Logico.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logico.m; sourceTree = "<group>"; };
+		A529DF1E1965DB8A00A3D9FB /* Calculador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculador.h; sourceTree = "<group>"; };
+		A529DF1F1965DB8A00A3D9FB /* Calculador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculador.m; sourceTree = "<group>"; };
 		A55F2B3F1964879A00111BEB /* Variavel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variavel.h; sourceTree = "<group>"; };
 		A55F2B401964879A00111BEB /* Variavel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Variavel.m; sourceTree = "<group>"; };
 		A55F2B4319648C0600111BEB /* ConceitosVariaveis.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConceitosVariaveis.txt; sourceTree = "<group>"; };
@@ -149,6 +161,7 @@
 		120E8F7C192FC0A200CDEF95 /* ProjetoFinal */ = {
 			isa = PBXGroup;
 			children = (
+				A529DF0A1965DB2200A3D9FB /* Calculador */,
 				91A9860D196231F500EA1074 /* Classes */,
 				E501FA69192FCD1600B56B5C /* Imagens */,
 				A597F0EB1960A78E006429C7 /* ViewControllers */,
@@ -232,6 +245,29 @@
 				91A98618196232F800EA1074 /* Exercicio.m */,
 			);
 			name = Exercicios;
+			sourceTree = "<group>";
+		};
+		A529DF0A1965DB2200A3D9FB /* Calculador */ = {
+			isa = PBXGroup;
+			children = (
+				A529DF1E1965DB8A00A3D9FB /* Calculador.h */,
+				A529DF1F1965DB8A00A3D9FB /* Calculador.m */,
+				A529DF0B1965DB3800A3D9FB /* Operações */,
+			);
+			name = Calculador;
+			sourceTree = "<group>";
+		};
+		A529DF0B1965DB3800A3D9FB /* Operações */ = {
+			isa = PBXGroup;
+			children = (
+				A529DF151965DB7500A3D9FB /* Relacional.h */,
+				A529DF161965DB7500A3D9FB /* Relacional.m */,
+				A529DF171965DB7500A3D9FB /* Aritimetico.h */,
+				A529DF181965DB7500A3D9FB /* Aritimetico.m */,
+				A529DF191965DB7500A3D9FB /* Logico.h */,
+				A529DF1A1965DB7500A3D9FB /* Logico.m */,
+			);
+			name = "Operações";
 			sourceTree = "<group>";
 		};
 		A55F2B4219648BE000111BEB /* Conteudos */ = {
@@ -367,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */,
+				A529DF201965DB8A00A3D9FB /* Calculador.m in Sources */,
 				91A986111962324500EA1074 /* Assunto.m in Sources */,
 				120E8F8D192FC0A200CDEF95 /* ViewController.m in Sources */,
 				A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */,
@@ -374,10 +411,13 @@
 				91A98619196232F800EA1074 /* Exercicio.m in Sources */,
 				A597F0F41960A7A6006429C7 /* SubViewConteudo.m in Sources */,
 				91A9861E1962392400EA1074 /* GerenciadorDeAssunto.m in Sources */,
+				A529DF1D1965DB7500A3D9FB /* Logico.m in Sources */,
 				120E8F83192FC0A200CDEF95 /* main.m in Sources */,
 				A597F0F51960A7A6006429C7 /* SubViewConteudoFilho.m in Sources */,
+				A529DF1C1965DB7500A3D9FB /* Aritimetico.m in Sources */,
 				91A98615196232B900EA1074 /* Animacao.m in Sources */,
 				A55F2B411964879A00111BEB /* Variavel.m in Sources */,
+				A529DF1B1965DB7500A3D9FB /* Relacional.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
