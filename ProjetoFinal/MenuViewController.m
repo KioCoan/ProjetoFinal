@@ -12,8 +12,8 @@
 
 @end
 
-static int BOTAO_WIDTH = 166;
-static int BOTAO_HEIGHT = 113;
+static int BOTAO_WIDTH = 150;
+static int BOTAO_HEIGHT = 102;
 static int ESPACAMENTO_BOTOES = 50;
 
 @implementation MenuViewController
