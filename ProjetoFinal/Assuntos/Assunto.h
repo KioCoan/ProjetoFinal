@@ -14,7 +14,7 @@
 
 @property NSString* nome, *teoria;
 @property int paginas;
-@property Animacao* animacao;
+@property SKScene *animacao;
 @property NSMutableArray* exercicios;
 @property NSMutableArray *teoriaFormatada;
 

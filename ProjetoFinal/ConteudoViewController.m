@@ -20,7 +20,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
+        
     }
     return self;
 }
@@ -31,6 +32,24 @@
     // Do any additional setup after loading the view.
     //Variavel *v = [[Variavel alloc] init];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //CRIO UMA SKVIEW PARA INSERIR A SKSCENE
+    SKView *viewAnimacao = [[SKView alloc] initWithFrame:CGRectMake(0, 65, self.view.frame.size.width, 600)];
+    [viewAnimacao setBackgroundColor:[UIColor blackColor]];
+    
+    //INSTANCIO UM GERENCIADOR PARA BUSCAR AS INFORMAÇOES DO ASSUNTO
+    GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
+    //INSTANCIO A SKSCENE DO ASSUNTO ATUAL
+    SKScene *cena = gerenciador.assunto.animacao;
+    
+    //DEFININDO TAMANHO DA SKSCENE E ADICIONANDO-A NA SKVIEW
+    [cena setSize: viewAnimacao.frame.size];
+    [viewAnimacao presentScene:cena];
+    
+    [[self view] addSubview:viewAnimacao];
 }
 
 - (void)didReceiveMemoryWarning

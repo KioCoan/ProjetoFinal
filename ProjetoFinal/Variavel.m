@@ -17,6 +17,7 @@
     self = [super init];
     
     if (self) {
+        [self setAnimacao:[[AnimaVariavel alloc] init]];
         [self montaTeoria];
     }
     return self;

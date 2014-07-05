@@ -7,6 +7,7 @@
 //
 
 #import "Assunto.h"
+#import "AnimaVariavel.h"
 
 @interface Variavel : Assunto
 
