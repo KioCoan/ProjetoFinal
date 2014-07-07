@@ -21,6 +21,7 @@
 		120E8F98192FC0A200CDEF95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120E8F7A192FC0A200CDEF95 /* UIKit.framework */; };
 		120E8FA0192FC0A200CDEF95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 120E8F9E192FC0A200CDEF95 /* InfoPlist.strings */; };
 		120E8FA2192FC0A200CDEF95 /* ProjetoFinalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 120E8FA1192FC0A200CDEF95 /* ProjetoFinalTests.m */; };
+		84EF4B77196A39640023CC9D /* Teste.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF4B76196A39640023CC9D /* Teste.m */; };
 		91A986111962324500EA1074 /* Assunto.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A986101962324500EA1074 /* Assunto.m */; };
 		91A98615196232B900EA1074 /* Animacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98614196232B900EA1074 /* Animacao.m */; };
 		91A98619196232F800EA1074 /* Exercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98618196232F800EA1074 /* Exercicio.m */; };
@@ -84,6 +85,8 @@
 		120E8F9D192FC0A200CDEF95 /* ProjetoFinalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProjetoFinalTests-Info.plist"; sourceTree = "<group>"; };
 		120E8F9F192FC0A200CDEF95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		120E8FA1192FC0A200CDEF95 /* ProjetoFinalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjetoFinalTests.m; sourceTree = "<group>"; };
+		84EF4B75196A39640023CC9D /* Teste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teste.h; sourceTree = "<group>"; };
+		84EF4B76196A39640023CC9D /* Teste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teste.m; sourceTree = "<group>"; };
 		91A9860F1962324500EA1074 /* Assunto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Assunto.h; path = Assuntos/Assunto.h; sourceTree = "<group>"; };
 		91A986101962324500EA1074 /* Assunto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Assunto.m; path = Assuntos/Assunto.m; sourceTree = "<group>"; };
 		91A98613196232B900EA1074 /* Animacao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Animacao.h; path = Animacoes/Animacao.h; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 				120E8F85192FC0A200CDEF95 /* AppDelegate.h */,
 				120E8F86192FC0A200CDEF95 /* AppDelegate.m */,
 				120E8F88192FC0A200CDEF95 /* Main.storyboard */,
+				84EF4B75196A39640023CC9D /* Teste.h */,
+				84EF4B76196A39640023CC9D /* Teste.m */,
 				120E8F8B192FC0A200CDEF95 /* ViewController.h */,
 				120E8F8C192FC0A200CDEF95 /* ViewController.m */,
 				120E8F8E192FC0A200CDEF95 /* Images.xcassets */,
@@ -482,6 +487,7 @@
 				A597F0F51960A7A6006429C7 /* SubViewConteudoFilho.m in Sources */,
 				A529DF1C1965DB7500A3D9FB /* Aritimetico.m in Sources */,
 				91A98615196232B900EA1074 /* Animacao.m in Sources */,
+				84EF4B77196A39640023CC9D /* Teste.m in Sources */,
 				A55F2B411964879A00111BEB /* Variavel.m in Sources */,
 				A529DF1B1965DB7500A3D9FB /* Relacional.m in Sources */,
 			);
