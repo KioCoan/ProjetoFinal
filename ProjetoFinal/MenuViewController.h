@@ -12,6 +12,7 @@
 {
     NSArray *nBotoesNasLinhas;
     NSArray *imagensDosBotoes;
+    NSArray *nomesDosAssuntos;
     GerenciadorDeAssunto *gerenciadorDeAssuntos;
     
 }

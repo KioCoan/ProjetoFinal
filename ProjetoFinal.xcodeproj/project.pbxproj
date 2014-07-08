@@ -38,6 +38,8 @@
 		A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F11960A7A6006429C7 /* MenuViewController.m */; };
 		A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F31960A7A6006429C7 /* ConteudoViewController.m */; };
 		BD630CAB1948E3F400AF13E7 /* item-variavel.png in Resources */ = {isa = PBXBuildFile; fileRef = BD630CAA1948E3F400AF13E7 /* item-variavel.png */; };
+		BDB4810B196CB7FC00D5901A /* Operadores.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB4810A196CB7FC00D5901A /* Operadores.m */; };
+		BDB48111196CB89400D5901A /* AnimaOperadores.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB48110196CB89400D5901A /* AnimaOperadores.m */; };
 		BDB893D719677B3A009C105C /* AnimaVariavel.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB893D619677B3A009C105C /* AnimaVariavel.m */; };
 		BDC7579E196787E700DB8380 /* abrir-caixa1.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC75791196787E700DB8380 /* abrir-caixa1.png */; };
 		BDC7579F196787E700DB8380 /* abrir-caixa2.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC75792196787E700DB8380 /* abrir-caixa2.png */; };
@@ -116,6 +118,10 @@
 		A597F0F21960A7A6006429C7 /* ConteudoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConteudoViewController.h; sourceTree = "<group>"; };
 		A597F0F31960A7A6006429C7 /* ConteudoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ConteudoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		BD630CAA1948E3F400AF13E7 /* item-variavel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-variavel.png"; path = "Imagens/item-variavel.png"; sourceTree = "<group>"; };
+		BDB48109196CB7FC00D5901A /* Operadores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operadores.h; sourceTree = "<group>"; };
+		BDB4810A196CB7FC00D5901A /* Operadores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operadores.m; sourceTree = "<group>"; };
+		BDB4810F196CB89400D5901A /* AnimaOperadores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimaOperadores.h; sourceTree = "<group>"; };
+		BDB48110196CB89400D5901A /* AnimaOperadores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimaOperadores.m; sourceTree = "<group>"; };
 		BDB893D519677B3A009C105C /* AnimaVariavel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimaVariavel.h; sourceTree = "<group>"; };
 		BDB893D619677B3A009C105C /* AnimaVariavel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimaVariavel.m; sourceTree = "<group>"; };
 		BDC75791196787E700DB8380 /* abrir-caixa1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "abrir-caixa1.png"; path = "Imagens/Sprites/variavel.atlas/abrir-caixa1.png"; sourceTree = "<group>"; };
@@ -246,8 +252,6 @@
 				91A98616196232DF00EA1074 /* Exercicios */,
 				91A986121962328800EA1074 /* Animacoes */,
 				91A9860E1962320500EA1074 /* Assuntos */,
-				91A9861C1962392400EA1074 /* GerenciadorDeAssunto.h */,
-				91A9861D1962392400EA1074 /* GerenciadorDeAssunto.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -255,10 +259,14 @@
 		91A9860E1962320500EA1074 /* Assuntos */ = {
 			isa = PBXGroup;
 			children = (
+				91A9861C1962392400EA1074 /* GerenciadorDeAssunto.h */,
+				91A9861D1962392400EA1074 /* GerenciadorDeAssunto.m */,
 				91A9860F1962324500EA1074 /* Assunto.h */,
 				91A986101962324500EA1074 /* Assunto.m */,
 				A55F2B3F1964879A00111BEB /* Variavel.h */,
 				A55F2B401964879A00111BEB /* Variavel.m */,
+				BDB48109196CB7FC00D5901A /* Operadores.h */,
+				BDB4810A196CB7FC00D5901A /* Operadores.m */,
 			);
 			name = Assuntos;
 			sourceTree = "<group>";
@@ -270,6 +278,8 @@
 				91A98614196232B900EA1074 /* Animacao.m */,
 				BDB893D519677B3A009C105C /* AnimaVariavel.h */,
 				BDB893D619677B3A009C105C /* AnimaVariavel.m */,
+				BDB4810F196CB89400D5901A /* AnimaOperadores.h */,
+				BDB48110196CB89400D5901A /* AnimaOperadores.m */,
 			);
 			name = Animacoes;
 			sourceTree = "<group>";
@@ -478,7 +488,9 @@
 				120E8F8D192FC0A200CDEF95 /* ViewController.m in Sources */,
 				A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */,
 				120E8F87192FC0A200CDEF95 /* AppDelegate.m in Sources */,
+				BDB48111196CB89400D5901A /* AnimaOperadores.m in Sources */,
 				91A98619196232F800EA1074 /* Exercicio.m in Sources */,
+				BDB4810B196CB7FC00D5901A /* Operadores.m in Sources */,
 				A597F0F41960A7A6006429C7 /* SubViewConteudo.m in Sources */,
 				91A9861E1962392400EA1074 /* GerenciadorDeAssunto.m in Sources */,
 				A529DF1D1965DB7500A3D9FB /* Logico.m in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="tHn-97-uZ9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="tHn-97-uZ9">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -64,7 +64,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tin-9L-uIK"/>
+                    <navigationItem key="navigationItem" id="tin-9L-uIK">
+                        <barButtonItem key="rightBarButtonItem" title="Exercitar" style="done" id="8fF-UR-4z5">
+                            <connections>
+                                <segue destination="tQW-Gq-m4D" kind="push" id="yys-ON-v3k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rwh-5a-MlG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1De-U9-E6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="552" y="1020"/>
+            <point key="canvasLocation" x="430" y="1034"/>
         </scene>
         <!--Sub View Conteudo-->
         <scene sceneID="9wj-8y-ED1">
@@ -122,9 +128,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="byk-aF-pSr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1681" y="1359"/>
+            <point key="canvasLocation" x="1521" y="1381"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - controlador q tem a lista de exercicios-->
         <scene sceneID="dzV-zg-u19">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="tQW-Gq-m4D" sceneMemberID="viewController">
@@ -138,10 +144,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="controlador q tem a lista de exercicios" id="JZK-R4-l7x"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5sD-gj-Hhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1879" y="-502"/>
+            <point key="canvasLocation" x="1687" y="-125"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

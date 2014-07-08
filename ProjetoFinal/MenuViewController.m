@@ -28,9 +28,16 @@ static int ESPACAMENTO_BOTOES = 50;
                             [NSNumber numberWithInt:3],
                             [NSNumber numberWithInt:2],
                             [NSNumber numberWithInt:3], nil];
+        
+        [self inicializaNomesDosAssuntos];
     }
     return self;
 }
+
+-(void)inicializaNomesDosAssuntos{
+    //INICIALIZAR O ARRAY QUE CONTÉM OS NOMES DOS ASSUNTOS. BUSCAR ESTES NOMES DE UM ARQUIVO TEXTO
+}
+
 
 - (void)viewDidLoad
 {
@@ -93,6 +100,7 @@ static int ESPACAMENTO_BOTOES = 50;
     [scroll setContentSize:CGSizeMake(scroll.frame.size.width, posicaoYView)];
 }
 
+
 //METODO QUE INSERE UM BOTÃO NA LINHA
 -(void)posicionarUmBotao:(UIView*)view :(int)posicaoXBotao :(int)posicaoYBotao{
     UIImage *imgCaixa = [UIImage imageNamed:@"item-variavel.png"];
@@ -128,6 +136,7 @@ static int ESPACAMENTO_BOTOES = 50;
     [view addSubview:botao];
     [view addSubview:botao2];
 }
+
 
 //METODO QUE INSERE TRÊS BOTÕES NA LINHA
 -(void)posicionarTresBotoes:(UIView*)view :(int)posicaoXBotao :(int)posicaoYBotao{
@@ -165,6 +174,7 @@ static int ESPACAMENTO_BOTOES = 50;
     
     
 }
+
 
 - (void)didReceiveMemoryWarning
 {
