@@ -10,6 +10,10 @@
 #import "Assunto.h"
 
 @interface GerenciadorDeAssunto : NSObject
+{
+    NSArray *nomesDosAssuntos;
+
+}
 
 @property Assunto* assunto;
 //
@@ -21,4 +25,5 @@
 
 -(void)mudarTemaEstudado;
 -(NSMutableArray*)retornaTeoriaFormatada;
+-(NSString*)getNomedoAssunto:(int)pos;
 @end

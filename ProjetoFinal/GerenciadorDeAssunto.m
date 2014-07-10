@@ -12,6 +12,27 @@
 
 @implementation GerenciadorDeAssunto
 
+-(id)init{
+    self = [super init];
+    
+    if(self){
+        nomesDosAssuntos = [NSArray arrayWithObjects:@"variavel",
+                            @"operadores",
+                            @"condicaoSimples",
+                            @"condicaoComposta",
+                            @"lacoFor",
+                            @"lacoWhile",
+                            @"lacoDoWhile",
+                            @"vetor",
+                            @"matriz",
+                            @"funcaoSimples",
+                            @"funcaoComParametro",
+                            @"funcaoComRetorno", nil];
+    }
+    
+    return self;
+}
+
 
 + (GerenciadorDeAssunto *)sharedGerenciador{
     static GerenciadorDeAssunto *gerencidaorAssunto = nil;
@@ -35,6 +56,11 @@
 }
 -(NSMutableArray*)retornaTeoriaFormatada{
     return [[self assunto]teoriaFormatada];
+}
+
+
+-(NSString*)getNomedoAssunto:(int)pos{
+    return [nomesDosAssuntos objectAtIndex:pos];
 }
 
 

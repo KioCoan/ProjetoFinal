@@ -22,6 +22,8 @@ static int ESPACAMENTO_BOTOES = 50;
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     if (self) {
+        gerenciadorDeAssuntos = [GerenciadorDeAssunto sharedGerenciador];
+        
         nBotoesNasLinhas = [NSArray arrayWithObjects:[NSNumber numberWithInt:1],
                             [NSNumber numberWithInt:1],
                             [NSNumber numberWithInt:2],
@@ -36,6 +38,7 @@ static int ESPACAMENTO_BOTOES = 50;
 
 -(void)inicializaNomesDosAssuntos{
     //INICIALIZAR O ARRAY QUE CONTÉM OS NOMES DOS ASSUNTOS. BUSCAR ESTES NOMES DE UM ARQUIVO TEXTO
+    
 }
 
 
@@ -56,7 +59,7 @@ static int ESPACAMENTO_BOTOES = 50;
     [scroll setScrollEnabled:YES];
     [[self view] addSubview:scroll];
     
-    
+    int contadorNomes = 0;
     int posicaoYView = 1;
     
     for(int i=0; i<nBotoesNasLinhas.count; i++){
@@ -77,15 +80,15 @@ static int ESPACAMENTO_BOTOES = 50;
         
         switch ([[nBotoesNasLinhas objectAtIndex:i] intValue]) {
             case 1:
-                [self posicionarUmBotao:view :posicaoXBotao :posicaoYBotao];
+                contadorNomes += [self posicionarUmBotao:view :posicaoXBotao :posicaoYBotao :contadorNomes];
                 break;
                 
             case 2:
-                [self posicionarDoisBotoes:view :posicaoXBotao :posicaoYBotao];
+                contadorNomes += [self posicionarDoisBotoes:view :posicaoXBotao :posicaoYBotao :contadorNomes];
                 break;
                 
             case 3:
-                [self posicionarTresBotoes:view :posicaoXBotao :posicaoYBotao];
+                contadorNomes += [self posicionarTresBotoes:view :posicaoXBotao :posicaoYBotao :contadorNomes];
                 break;
                 
             default:
@@ -102,19 +105,21 @@ static int ESPACAMENTO_BOTOES = 50;
 
 
 //METODO QUE INSERE UM BOTÃO NA LINHA
--(void)posicionarUmBotao:(UIView*)view :(int)posicaoXBotao :(int)posicaoYBotao{
+-(int)posicionarUmBotao:(UIView*)view :(int)posicaoXBotao :(int)posicaoYBotao :(int)contadorNomes{
     UIImage *imgCaixa = [UIImage imageNamed:@"item-variavel.png"];
     
     //INICIALIZA BOTAO
     UIButton *botao = [[UIButton alloc] initWithFrame:CGRectMake(posicaoXBotao, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
     [botao setImage:imgCaixa forState:UIControlStateNormal];
-    //[botao setTitle:@"BTN" forState:UIControlStateNormal];
+    [botao setTitle:[gerenciadorDeAssuntos getNomedoAssunto:contadorNomes] forState:UIControlStateNormal];
     [botao addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:botao];
+    
+    return 1;
 }
 
 //METODO QUE INSERE DOIS BOTÕES NA LINHA
--(void)posicionarDoisBotoes:(UIView*)view :(int)posicaoXBotao :(int)posicaoYBotao{
+-(int)posicionarDoisBotoes:(UIView*)view :(int)posicaoXBotao :(int)posicaoYBotao :(int)contadorNomes{
     
     int posicaoBotao1 = posicaoXBotao - (BOTAO_WIDTH /2) - (ESPACAMENTO_BOTOES / 2);
     int posicaoBotao2 = posicaoXBotao + (BOTAO_WIDTH /2) + (ESPACAMENTO_BOTOES / 2);
@@ -126,20 +131,24 @@ static int ESPACAMENTO_BOTOES = 50;
     UIButton *botao = [[UIButton alloc] initWithFrame:CGRectMake(posicaoBotao1, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
     [botao setImage:imgCaixa forState:UIControlStateNormal];
     [botao addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
-    //[botao setTitle:@"BTN" forState:UIControlStateNormal];
+    [botao setTitle:[gerenciadorDeAssuntos getNomedoAssunto:contadorNomes++] forState:UIControlStateNormal];
+    
     
     //INICIALIZA SEGUNDO BOTÃO
     UIButton *botao2 = [[UIButton alloc] initWithFrame:CGRectMake(posicaoBotao2, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
     [botao2 setImage:imgCaixa forState:UIControlStateNormal];
     [botao2 addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
+    [botao2 setTitle:[gerenciadorDeAssuntos getNomedoAssunto:contadorNomes] forState:UIControlStateNormal];
     
     [view addSubview:botao];
     [view addSubview:botao2];
+    
+    return 2;
 }
 
 
 //METODO QUE INSERE TRÊS BOTÕES NA LINHA
--(void)posicionarTresBotoes:(UIView*)view :(int)posicaoXBotao :(int)posicaoYBotao{
+-(int)posicionarTresBotoes:(UIView*)view :(int)posicaoXBotao :(int)posicaoYBotao :(int)contadorNomes{
     int posicaoBotao1 = posicaoXBotao - BOTAO_WIDTH - ESPACAMENTO_BOTOES;
     int posicaoBotao2 = posicaoXBotao + BOTAO_WIDTH + ESPACAMENTO_BOTOES;
     UIImage *imgCaixa = [UIImage imageNamed:@"item-variavel.png"];
@@ -148,27 +157,29 @@ static int ESPACAMENTO_BOTOES = 50;
     UIButton *botao = [[UIButton alloc] initWithFrame:CGRectMake(posicaoBotao1, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
     [botao setImage:imgCaixa forState:UIControlStateNormal];
     [botao addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
-    //[botao setTitle:@"BTN" forState:UIControlStateNormal];
+    [botao setTitle:[gerenciadorDeAssuntos getNomedoAssunto:contadorNomes++] forState:UIControlStateNormal];
     
     //INICIALIZA BOTÃO DO MEIO
-    [self posicionarUmBotao:view :posicaoXBotao :posicaoYBotao];
+    [self posicionarUmBotao:view :posicaoXBotao :posicaoYBotao :contadorNomes++];
     
     //INICIALIZA BOTÃO DA DIREITA
     UIButton *botao2 = [[UIButton alloc] initWithFrame:CGRectMake(posicaoBotao2, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
     [botao2 setImage:imgCaixa forState:UIControlStateNormal];
     [botao2 addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
+    [botao2 setTitle:[gerenciadorDeAssuntos getNomedoAssunto:contadorNomes] forState:UIControlStateNormal];
     
     [view addSubview:botao];
     [view addSubview:botao2];
+    
+    return 3;
 }
 
 
 -(void)mostrarAssunto:(id)sender{
-    //NSLog(@"Clicou %@", [sender currentTitle]);
+    NSLog(@"Clicou %@", [sender currentTitle]);
     
     [self performSegueWithIdentifier:@"conteudoController" sender:nil];
-    
-    gerenciadorDeAssuntos = [GerenciadorDeAssunto sharedGerenciador];
+
     
     [gerenciadorDeAssuntos mudarTemaEstudado];
     
