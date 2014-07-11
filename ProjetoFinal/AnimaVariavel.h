@@ -8,13 +8,9 @@
 
 
 #import <SpriteKit/SpriteKit.h>
+#import "SpriteCaixaNode.h"
 
 @interface AnimaVariavel : SKScene
 
-@property SKSpriteNode *caixa;
-@property SKAction *animacaoAbrir;
-@property SKAction *animacaoFechar;
-
-@property BOOL movendoCaixa;
-@property BOOL caixaAberta;
+@property SpriteCaixaNode *caixa;
 @end

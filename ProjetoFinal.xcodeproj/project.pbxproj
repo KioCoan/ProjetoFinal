@@ -38,6 +38,7 @@
 		A597F0F51960A7A6006429C7 /* SubViewConteudoFilho.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0EF1960A7A6006429C7 /* SubViewConteudoFilho.m */; };
 		A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F11960A7A6006429C7 /* MenuViewController.m */; };
 		A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F31960A7A6006429C7 /* ConteudoViewController.m */; };
+		BD4B4BDB197075BD00D6E839 /* SpriteCaixaNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */; };
 		BD630CAB1948E3F400AF13E7 /* item-variavel.png in Resources */ = {isa = PBXBuildFile; fileRef = BD630CAA1948E3F400AF13E7 /* item-variavel.png */; };
 		BDB4810B196CB7FC00D5901A /* Operadores.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB4810A196CB7FC00D5901A /* Operadores.m */; };
 		BDB48111196CB89400D5901A /* AnimaOperadores.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB48110196CB89400D5901A /* AnimaOperadores.m */; };
@@ -120,6 +121,8 @@
 		A597F0F11960A7A6006429C7 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		A597F0F21960A7A6006429C7 /* ConteudoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConteudoViewController.h; sourceTree = "<group>"; };
 		A597F0F31960A7A6006429C7 /* ConteudoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ConteudoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteCaixaNode.h; sourceTree = "<group>"; };
+		BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteCaixaNode.m; sourceTree = "<group>"; };
 		BD630CAA1948E3F400AF13E7 /* item-variavel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-variavel.png"; path = "Imagens/item-variavel.png"; sourceTree = "<group>"; };
 		BDB48109196CB7FC00D5901A /* Operadores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operadores.h; sourceTree = "<group>"; };
 		BDB4810A196CB7FC00D5901A /* Operadores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operadores.m; sourceTree = "<group>"; };
@@ -277,6 +280,8 @@
 		91A986121962328800EA1074 /* Animacoes */ = {
 			isa = PBXGroup;
 			children = (
+				BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */,
+				BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */,
 				91A98613196232B900EA1074 /* Animacao.h */,
 				91A98614196232B900EA1074 /* Animacao.m */,
 				BDB893D519677B3A009C105C /* AnimaVariavel.h */,
@@ -487,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD4B4BDB197075BD00D6E839 /* SpriteCaixaNode.m in Sources */,
 				A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */,
 				A529DF201965DB8A00A3D9FB /* Calculador.m in Sources */,
 				91A986111962324500EA1074 /* Assunto.m in Sources */,
