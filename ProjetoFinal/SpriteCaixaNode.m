@@ -49,6 +49,7 @@
     [lblConteudo setFontSize:18];
     [lblConteudo setFontColor:[SKColor grayColor]];
     [lblConteudo setPosition:CGPointMake(50, 70)];
+    [lblConteudo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeRight];
     [lblConteudo setHidden:YES];
     
     lblNome = [[SKLabelNode alloc] init];
@@ -56,12 +57,14 @@
     [lblNome setFontSize:18];
     [lblNome setFontColor:[SKColor grayColor]];
     [lblNome setPosition:CGPointMake(-50, -25)];
+    [lblNome setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeRight];
     
     lblTipo = [[SKLabelNode alloc] init];
     [lblTipo setText:@"Insira um tipo"];
     [lblTipo setFontSize:18];
     [lblTipo setFontColor:[SKColor grayColor]];
     [lblTipo setPosition:CGPointMake(-60, -95)];
+    [lblTipo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeRight];
     
     [self addChild:lblConteudo];
     [self addChild:lblNome];
