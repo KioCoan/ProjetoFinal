@@ -13,7 +13,7 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
-        self.caixa = [[SpriteCaixaNode alloc] init];
+        self.caixa = [[SpriteCaixaNode alloc] initWithConteudo:@"Oi gente" Nome:@"Mensagem" Tipo:@"String" tamanho:CGSizeMake(307, 328)];
         [[self caixa] setPosition:CGPointMake(400, 400)];
         [[self caixa] setName:@"caixa"];
         [self addChild:self.caixa];
@@ -21,15 +21,6 @@
     return self;
 }
 
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    UITouch *touch = [touches anyObject];
-    CGPoint location = [touch locationInNode:self];
-    SKNode *node = [self nodeAtPoint:location];
-    
-    if([node.name isEqualToString:@"caixa"]){
-        [[self caixa] animacaoAbrirOuFechar];
-    }
-}
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */

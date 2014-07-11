@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExercicioVIewContollerViewController : UIViewController
+@interface ExercicioVIewContoller : UIViewController
 
 @end

@@ -23,7 +23,7 @@
 		120E8FA2192FC0A200CDEF95 /* ProjetoFinalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 120E8FA1192FC0A200CDEF95 /* ProjetoFinalTests.m */; };
 		8418F87C1970817000781F82 /* ConteudoDasCaixas.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F8791970817000781F82 /* ConteudoDasCaixas.m */; };
 		8418F87D1970817000781F82 /* Exercicio1Variavel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F87B1970817000781F82 /* Exercicio1Variavel.m */; };
-		8418F88119708B0900781F82 /* ExercicioVIewContollerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F88019708B0900781F82 /* ExercicioVIewContollerViewController.m */; };
+		8418F88119708B0900781F82 /* ExercicioVIewContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F88019708B0900781F82 /* ExercicioVIewContoller.m */; };
 		91A986111962324500EA1074 /* Assunto.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A986101962324500EA1074 /* Assunto.m */; };
 		91A98615196232B900EA1074 /* Animacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98614196232B900EA1074 /* Animacao.m */; };
 		91A98619196232F800EA1074 /* Exercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98618196232F800EA1074 /* Exercicio.m */; };
@@ -95,8 +95,8 @@
 		8418F8791970817000781F82 /* ConteudoDasCaixas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConteudoDasCaixas.m; sourceTree = "<group>"; };
 		8418F87A1970817000781F82 /* Exercicio1Variavel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercicio1Variavel.h; sourceTree = "<group>"; };
 		8418F87B1970817000781F82 /* Exercicio1Variavel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercicio1Variavel.m; sourceTree = "<group>"; };
-		8418F87F19708B0900781F82 /* ExercicioVIewContollerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExercicioVIewContollerViewController.h; sourceTree = "<group>"; };
-		8418F88019708B0900781F82 /* ExercicioVIewContollerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExercicioVIewContollerViewController.m; sourceTree = "<group>"; };
+		8418F87F19708B0900781F82 /* ExercicioVIewContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExercicioVIewContoller.h; sourceTree = "<group>"; };
+		8418F88019708B0900781F82 /* ExercicioVIewContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExercicioVIewContoller.m; sourceTree = "<group>"; };
 		91A9860F1962324500EA1074 /* Assunto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Assunto.h; path = Assuntos/Assunto.h; sourceTree = "<group>"; };
 		91A986101962324500EA1074 /* Assunto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Assunto.m; path = Assuntos/Assunto.m; sourceTree = "<group>"; };
 		91A98613196232B900EA1074 /* Animacao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Animacao.h; path = Animacoes/Animacao.h; sourceTree = "<group>"; };
@@ -353,8 +353,8 @@
 		A597F0EB1960A78E006429C7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8418F87F19708B0900781F82 /* ExercicioVIewContollerViewController.h */,
-				8418F88019708B0900781F82 /* ExercicioVIewContollerViewController.m */,
+				8418F87F19708B0900781F82 /* ExercicioVIewContoller.h */,
+				8418F88019708B0900781F82 /* ExercicioVIewContoller.m */,
 				A597F0EC1960A7A6006429C7 /* SubViewConteudo.h */,
 				A597F0ED1960A7A6006429C7 /* SubViewConteudo.m */,
 				A597F0EE1960A7A6006429C7 /* SubViewConteudoFilho.h */,
@@ -510,7 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8418F88119708B0900781F82 /* ExercicioVIewContollerViewController.m in Sources */,
+				8418F88119708B0900781F82 /* ExercicioVIewContoller.m in Sources */,
 				8418F87D1970817000781F82 /* Exercicio1Variavel.m in Sources */,
 				BD4B4BDB197075BD00D6E839 /* SpriteCaixaNode.m in Sources */,
 				A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */,

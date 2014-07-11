@@ -19,6 +19,8 @@
         [self inicializaLabels];
         [self inicializaAnimacaoAbrirCaixa];
         [self inicializaAnimacaoFecharCaixa];
+        
+        [self setUserInteractionEnabled:YES];
     }
     
     return self;
@@ -36,35 +38,42 @@
         [self setLabelNome:nome];
         [self setLabelTipo:tipo];
         
+        [lblConteudo setFontColor:[SKColor blackColor]];
+        [lblNome setFontColor:[SKColor blackColor]];
+        [lblTipo setFontColor:[SKColor blackColor]];
+        
         [self inicializaAnimacaoAbrirCaixa];
         [self inicializaAnimacaoFecharCaixa];
+        
+        [self setUserInteractionEnabled:YES];
     }
     
     return self;
 }
 
 -(void)inicializaLabels{
-    lblConteudo = [[SKLabelNode alloc] init];
+    lblConteudo = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
     [lblConteudo setText:@"Insira um conteúdo"];
-    [lblConteudo setFontSize:18];
+    [lblConteudo setFontSize:20];
     [lblConteudo setFontColor:[SKColor grayColor]];
-    [lblConteudo setPosition:CGPointMake(50, 70)];
-    [lblConteudo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeRight];
+    [lblConteudo setPosition:CGPointMake(self.frame.origin.x * 0.2, 70)];
+    [lblConteudo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
     [lblConteudo setHidden:YES];
     
-    lblNome = [[SKLabelNode alloc] init];
+    lblNome = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
     [lblNome setText:@"Insira um nome"];
-    [lblNome setFontSize:18];
+    [lblNome setFontSize:24];
     [lblNome setFontColor:[SKColor grayColor]];
-    [lblNome setPosition:CGPointMake(-50, -25)];
-    [lblNome setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeRight];
+    [lblNome setPosition:CGPointMake(self.frame.origin.x * 0.75, -30)];
+    [lblNome setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
     
-    lblTipo = [[SKLabelNode alloc] init];
+    lblTipo = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
     [lblTipo setText:@"Insira um tipo"];
-    [lblTipo setFontSize:18];
+    [lblTipo setFontSize:24];
     [lblTipo setFontColor:[SKColor grayColor]];
-    [lblTipo setPosition:CGPointMake(-60, -95)];
-    [lblTipo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeRight];
+    [lblTipo setPosition:CGPointMake(self.frame.origin.x * 0.75, -105)];
+    [lblTipo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+
     
     [self addChild:lblConteudo];
     [self addChild:lblNome];
@@ -84,14 +93,15 @@
 }
 
 
-
--(void)animacaoAbrirOuFechar{
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self setUserInteractionEnabled:NO];
+    
     if(caixaAberta){
         [lblConteudo setHidden:YES];
         [self runAction:animacaoFechar completion:^{
             [self removeAllActions];
             caixaAberta = NO;
-            
+            [self setUserInteractionEnabled:YES];
         }];
         
         
@@ -100,10 +110,12 @@
             [self removeAllActions];
             caixaAberta = YES;
             [lblConteudo setHidden:NO];
+            [self setUserInteractionEnabled:YES];
         }];
     }
 
 }
+
 
 
 -(void)inicializaAnimacaoAbrirCaixa{

@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 SENAC - iOS. All rights reserved.
 //
 
-#import "ExercicioVIewContollerViewController.h"
+#import "ExercicioVIewContoller.h"
 
-@interface ExercicioVIewContollerViewController ()
+@interface ExercicioVIewContoller ()
 
 @end
 
-@implementation ExercicioVIewContollerViewController
+@implementation ExercicioVIewContoller
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
