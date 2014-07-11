@@ -17,5 +17,6 @@
 @property Aritimetico *aritimetico;
 @property Logico *logico;
 
+-(BOOL)oDado:(NSString*)dado eDoTipo:(NSString*)tipo;
 
 @end

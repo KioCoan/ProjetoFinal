@@ -21,13 +21,33 @@
         self.logico = [[Logico alloc] init];
         
         
-        
-        
-        
-        
     }
     return self;
     
+}
+
+-(BOOL)oDado:(NSString*)dado eDoTipo:(NSString*)tipo{
+    
+    if ([tipo isEqualToString:@"inteiro"]) {
+        @try {
+            int i = [dado intValue];
+            NSLog(@"%d", i);
+        }
+        @catch (NSException *exception) {
+            return NO;
+        }
+        @finally {
+            NSLog(@"Passou");
+        }
+    }else if ([tipo isEqualToString:@"inteiro"]){
+        
+    }else if ([tipo isEqualToString:@"inteiro"]){
+        
+    }
+    
+    
+    
+    return YES;
 }
 
 

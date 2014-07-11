@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Calculador.h"
 @interface ConteudoViewController : UIViewController
 
 

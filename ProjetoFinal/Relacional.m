@@ -27,6 +27,8 @@
         oper = 5;
     }else if ([operacao isEqualToString:@"Diferente"]){
         oper = 6;
+    }else{
+        oper = -1;
     }
     
     int n1 = [numero1 intValue];
