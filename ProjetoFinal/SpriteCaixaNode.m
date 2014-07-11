@@ -38,7 +38,7 @@
         [self setLabelNome:nome];
         [self setLabelTipo:tipo];
         
-        [lblConteudo setFontColor:[SKColor blackColor]];
+        [lblConteudo setFontColor:[SKColor colorWithRed:0.9 green:0.5 blue:0.2 alpha:1.0]];
         [lblNome setFontColor:[SKColor blackColor]];
         [lblTipo setFontColor:[SKColor blackColor]];
         
@@ -54,24 +54,24 @@
 -(void)inicializaLabels{
     lblConteudo = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
     [lblConteudo setText:@"Insira um conteúdo"];
-    [lblConteudo setFontSize:20];
+    [lblConteudo setFontSize:self.frame.size.width * 0.08];
     [lblConteudo setFontColor:[SKColor grayColor]];
-    [lblConteudo setPosition:CGPointMake(self.frame.origin.x * 0.2, 70)];
-    [lblConteudo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    [lblConteudo setPosition:CGPointMake(self.frame.origin.x * -0.35, self.frame.origin.y * -0.43)];
+    [lblConteudo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
     [lblConteudo setHidden:YES];
     
     lblNome = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
     [lblNome setText:@"Insira um nome"];
     [lblNome setFontSize:24];
     [lblNome setFontColor:[SKColor grayColor]];
-    [lblNome setPosition:CGPointMake(self.frame.origin.x * 0.75, -30)];
+    [lblNome setPosition:CGPointMake(self.frame.origin.x * 0.75, self.frame.origin.y * 0.2)];
     [lblNome setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
     
     lblTipo = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
     [lblTipo setText:@"Insira um tipo"];
     [lblTipo setFontSize:24];
     [lblTipo setFontColor:[SKColor grayColor]];
-    [lblTipo setPosition:CGPointMake(self.frame.origin.x * 0.75, -105)];
+    [lblTipo setPosition:CGPointMake(self.frame.origin.x * 0.75, self.frame.origin.y * 0.65)];
     [lblTipo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
 
     
