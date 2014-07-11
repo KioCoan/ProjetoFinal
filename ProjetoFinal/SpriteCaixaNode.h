@@ -21,11 +21,13 @@
     BOOL caixaAberta;
 }
 
--(id)initWithConteudo:(NSString*)conteudo Nome:(NSString*)nome Tipo:(NSString*)tipo;
+-(id)initWithConteudo:(NSString*)conteudo Nome:(NSString*)nome Tipo:(NSString*)tipo tamanho:(CGSize)tamanho;
 
 -(void)animacaoAbrirOuFechar;
 -(void)setLabelConteudo:(NSString*)text;
 -(void)setLabelNome:(NSString*)text;
 -(void)setLabelTipo:(NSString*)text;
+-(NSString *)retornaTipo;
+
 
 @end

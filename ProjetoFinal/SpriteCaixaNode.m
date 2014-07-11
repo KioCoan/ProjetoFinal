@@ -24,12 +24,12 @@
     return self;
 }
 
--(id)initWithConteudo:(NSString*)conteudo Nome:(NSString*)nome Tipo:(NSString*)tipo{
+-(id)initWithConteudo:(NSString*)conteudo Nome:(NSString*)nome Tipo:(NSString*)tipo tamanho:(CGSize)tamanho{
     self = [super init];
     
     if(self){
         [self setTexture:[SKTexture textureWithImageNamed:@"abrir-caixa1.png"]];
-        [self setSize:CGSizeMake(307, 328)];
+        [self setSize:tamanho];
         
         [self inicializaLabels];
         [self setLabelConteudo:conteudo];
@@ -148,6 +148,10 @@
     
     //INSTANCIO A SKACTION COM O ARRAY DE TEXTURAS CRIADO
     animacaoFechar = [SKAction animateWithTextures:array timePerFrame:0.05];
+}
+
+-(NSString *)retornaTipo{
+    return lblTipo.text;
 }
 
 
