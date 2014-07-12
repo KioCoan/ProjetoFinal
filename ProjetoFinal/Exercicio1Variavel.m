@@ -136,7 +136,7 @@
     
     //criando e inserindo posicoes
     
-    CGPoint primeiraPosicao = CGPointMake(self.frame.size.width * 200.0, self.frame.size.height * 700.0);
+    CGPoint primeiraPosicao = CGPointMake(self.frame.size.width * 200.0, self.frame.size.height * 600.0);
     
     CGPoint posicao = primeiraPosicao;
     NSLog(@"x = %f, y = %f",self.frame.size.width,self.frame.size.height);
@@ -146,7 +146,7 @@
         if (i == 2) {
             
             posicao = primeiraPosicao;
-            posicao.x += tamanho.width * 1.5;
+            posicao.x += tamanho.width * 1.2;
             [[caixas objectAtIndex:i] setPosition:posicao];
             posicao.y -= tamanho.height * 1.15;
             
