@@ -27,7 +27,7 @@
         
         tipo = [NSArray arrayWithObjects:@"inteiro",@"real",@"caractere",@"logico", nil];
         
-        
+        [self criaEnunciado];
         [self criarCaixas];
         [self criarLabels];
     }
@@ -51,6 +51,38 @@
 //    }
 //    return self;
 //}
+
+- (void)criaEnunciado{
+    
+    SKLabelNode *enunciado1 = [[SKLabelNode alloc]initWithFontNamed:@"HeadLine"];
+    
+    SKLabelNode *enunciado2 = [[SKLabelNode alloc]initWithFontNamed:@"HeadLine"];
+    
+    CGPoint posicao = CGPointMake(self.frame.size.width * 400, self.frame.size.height * 850);
+    
+    CGPoint posicao2 = posicao;
+    
+    posicao2.y -= enunciado1.fontSize * 1.2 ;
+    
+    NSString *texto1 = @"Arraste cada conteudo para";
+    
+    NSString *texto2 = @"dentro da variável adequada";
+    
+    [enunciado1 setText:texto1];
+    
+    [enunciado2 setText:texto2];
+    
+    [enunciado1 setPosition:posicao];
+    
+    [enunciado2 setPosition:posicao2];
+    
+    
+    
+    [self addChild:enunciado1];
+    
+    [self addChild:enunciado2];
+    
+}
 
 - (void)criarLabels{
     
