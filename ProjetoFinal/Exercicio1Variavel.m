@@ -55,7 +55,7 @@
     
     //embaralhando labels
     
-    conteudos = [self embarralha:conteudos];
+    conteudos = [self embaralha:conteudos];
     
     // criando e inserindo posicoes
     
@@ -64,9 +64,7 @@
     int font = self.frame.size.height * 0.03;
     
     for (int i = 0; i < conteudos.count; i++) {
-        
-        
-        
+
         
         [[conteudos objectAtIndex:i] setFontSize:font];
         
@@ -83,7 +81,7 @@
     
 }
 
-- (NSMutableArray *)embarralha : (NSMutableArray *)antigo{
+- (NSMutableArray *)embaralha : (NSMutableArray *)antigo{
     
     int n;
     NSMutableArray *novo = [NSMutableArray array];
@@ -117,7 +115,7 @@
     [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"falso" Nome:@"aprovado" Tipo:@"logico" tamanho:tamanho]];
     
     //embaralha ordem das caixas
-    caixas = [self embarralha:caixas];
+    caixas = [self embaralha:caixas];
     
     //criando e inserindo posicoes
     
@@ -197,40 +195,35 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     if (conteudoAtivo) {
-        for (SpriteCaixaNode * c in caixas) {
+       
+        for (SpriteCaixaNode * c in caixas) { //Ao soltar o node de resposta em algum lugar varre o vetor de caixas para descobrir sobre quem está
             float xInicio = c.frame.origin.x;
             float xFim = xInicio + c.frame.size.width;
             float xMeio = (xInicio + xFim)/2;
             float yInicio = c.frame.origin.y;
             float yFim = yInicio + c.frame.size.height;
             float yMeio = (yInicio + yFim)/2;
-            if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) {
+            
+            if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
                 
-                if ([[conteudoAtivo tipo] isEqualToString: [c retornaTipo]]) {
+                if ([[conteudoAtivo tipo] isEqualToString: [c retornaTipo]]) { // Caso a resposta esteja correta (Nó de resposta no local correto)
+                    
+                    //Ação a ser feita caso a resposta esteja correta
+                    
                     NSLog(@"Ta ceeeeerto!");
                     conteudoAtivo = nil;
                 }
                 
-                [conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)];
+                [conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa
             }
-
-    }
-        
-    
-    
-    
-    
-//    NSLog(@"%f %f %f %f",xInicio , xFim, yInicio,yFim);
-//    
-//    NSLog(@"%f %f",caixa2.position.x,caixa2.position.y);
-    
-    
+            
+        }
         
         
         
     }
     
-   
+    
 }
 /*
 

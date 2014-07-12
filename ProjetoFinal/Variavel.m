@@ -20,6 +20,9 @@
         [self setAnimacao:[[AnimaVariavel alloc] init]];
         [self montaTeoria];
         [self setNome:@"Variável"];
+        self.exercicios = [[NSMutableArray alloc] init];
+        [self.exercicios addObject:[[Exercicio1Variavel alloc] init]];
+        
     }
     return self;
 }

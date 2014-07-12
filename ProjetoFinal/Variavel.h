@@ -8,7 +8,14 @@
 
 #import "Assunto.h"
 #import "AnimaVariavel.h"
+#import "Exercicio1Variavel.h"
 
 @interface Variavel : Assunto
 
+{
+    
+    Exercicio1Variavel *exercicio1;
+    
+    
+}
 @end

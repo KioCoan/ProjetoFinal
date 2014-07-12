@@ -259,9 +259,9 @@
 			isa = PBXGroup;
 			children = (
 				8418F87A1970817000781F82 /* Exercicio1Variavel.h */,
+				8418F87B1970817000781F82 /* Exercicio1Variavel.m */,
 				8418F8781970817000781F82 /* ConteudoDasCaixas.h */,
 				8418F8791970817000781F82 /* ConteudoDasCaixas.m */,
-				8418F87B1970817000781F82 /* Exercicio1Variavel.m */,
 			);
 			name = Variaveis;
 			sourceTree = "<group>";

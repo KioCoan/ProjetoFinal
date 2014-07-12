@@ -36,9 +36,7 @@
         @catch (NSException *exception) {
             return NO;
         }
-        @finally {
-            NSLog(@"Passou");
-        }
+        
     }else if ([tipo isEqualToString:@"inteiro"]){
         
     }else if ([tipo isEqualToString:@"inteiro"]){

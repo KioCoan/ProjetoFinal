@@ -29,6 +29,32 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    
+    //INSTANCIO UM GERENCIADOR PARA BUSCAR AS INFORMAÇOES DO ASSUNTO
+    GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
+    
+    //DEFINO O TITULO DO NAVIGATION CONTROLLER DE ACORDO COM O NOME DO ASSUNTO
+    [[self navigationItem] setTitle:gerenciador.assunto.nome];
+    
+    //CRIO UMA SKVIEW PARA INSERIR A SKSCENE
+    SKView *viewExercicio = [[SKView alloc] initWithFrame:viewMolde.frame];
+    [viewExercicio setBackgroundColor:[UIColor grayColor]];
+    
+    
+    //INSTANCIO A SKSCENE DO ASSUNTO ATUAL
+    SKScene *cena = [gerenciador.assunto.exercicios objectAtIndex:0];
+    
+    //DEFININDO TAMANHO DA SKSCENE E ADICIONANDO-A NA SKVIEW
+    [cena setSize: viewExercicio.frame.size];
+    [viewExercicio presentScene:cena];
+    
+    [[self view] addSubview:viewExercicio];
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
