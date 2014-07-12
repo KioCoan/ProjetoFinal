@@ -17,10 +17,11 @@
     NSArray *tipo;
 }
 
--(id)initWithSize:(CGSize)size {    
-    if (self = [super initWithSize:size]) {
-        /* Setup your scene here */
-        
+
+-(id)init{
+    self = [super init];
+    
+    if (self) {
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         self.physicsWorld.contactDelegate = self;
         
@@ -29,11 +30,27 @@
         
         [self criarCaixas];
         [self criarLabels];
-        
-
     }
     return self;
 }
+
+//-(id)initWithSize:(CGSize)size {    
+//    if (self = [super initWithSize:size]) {
+//        /* Setup your scene here */
+//        
+//        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+//        self.physicsWorld.contactDelegate = self;
+//        
+//        tipo = [NSArray arrayWithObjects:@"inteiro",@"real",@"caractere",@"logico", nil];
+//        
+//        
+//        //[self criarCaixas];
+//        [self criarLabels];
+//        
+//
+//    }
+//    return self;
+//}
 
 - (void)criarLabels{
     
@@ -106,8 +123,8 @@
     
     // Criar as caixas
     caixas = [NSMutableArray array];
-    CGSize tamanho = CGSizeMake(self.frame.size.height * 0.20, self.frame.size.height * 0.2);
-    
+    CGSize tamanho = CGSizeMake(self.frame.size.height * 200, self.frame.size.height * 213);
+    //CGSize tamanho = CGSizeMake(200, 213.6);
     
     [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"23" Nome:@"idade" Tipo:@"inteiro" tamanho:tamanho]];
     [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"3.2" Nome:@"nota" Tipo:@"real" tamanho:tamanho]];
@@ -119,13 +136,14 @@
     
     //criando e inserindo posicoes
     
-    CGPoint primeiraPosicao = CGPointMake(self.frame.size.width * 0.2, self.frame.size.height * 0.7);
-    CGPoint posicao = primeiraPosicao;
+    CGPoint primeiraPosicao = CGPointMake(self.frame.size.width * 200.0, self.frame.size.height * 700.0);
     
+    CGPoint posicao = primeiraPosicao;
+    NSLog(@"x = %f, y = %f",self.frame.size.width,self.frame.size.height);
     for (int i = 0; i < caixas.count; i++) {
         
         // caixas do lado direito
-        if (i == 3) {
+        if (i == 2) {
             
             posicao = primeiraPosicao;
             posicao.x += tamanho.width * 1.5;
@@ -133,23 +151,16 @@
             posicao.y -= tamanho.height * 1.15;
             
             
+            
         }else{
             [[caixas objectAtIndex:i] setPosition:posicao];
             posicao.y -= tamanho.height * 1.15;
+            
         }
         
-        
-        
-    }
-
-    // inserindo nó
-    for (int i = 0; i < caixas.count; i++) {
+        // inserindo nó
         [self addChild:[caixas objectAtIndex:i]];
     }
-    
-    
-    
-    
     
 }
 
@@ -174,8 +185,6 @@
     location.y = (location.y* (500.0f / 500.0f));
     
     //SE A POSIÇÃO QUE FOI CLICADA É A MESMA DO SPRITE DA CAIXA, O SPRITE É MOVIDO
-    //if([node.name isEqualToString:@"conteudo"]){
-    
     
     if ([conteudoAtivo.name isEqualToString:@"conteudo"]) {
         [conteudoAtivo setPosition:location];
@@ -209,7 +218,8 @@
                 if ([[conteudoAtivo tipo] isEqualToString: [c retornaTipo]]) { // Caso a resposta esteja correta (Nó de resposta no local correto)
                     
                     //Ação a ser feita caso a resposta esteja correta
-                    
+                    [c abreCaixa];
+                    [conteudoAtivo removeFromParent];
                     NSLog(@"Ta ceeeeerto!");
                     conteudoAtivo = nil;
                 }

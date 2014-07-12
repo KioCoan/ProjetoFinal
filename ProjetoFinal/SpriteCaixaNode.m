@@ -115,7 +115,14 @@
     }
 
 }
-
+-(void)abreCaixa{
+    [self runAction:animacaoAbrir completion:^{
+        [self removeAllActions];
+        caixaAberta = YES;
+        [lblConteudo setHidden:NO];
+        [self setUserInteractionEnabled:YES];
+    }];
+}
 
 
 -(void)inicializaAnimacaoAbrirCaixa{

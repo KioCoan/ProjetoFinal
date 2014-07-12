@@ -41,6 +41,7 @@
     
     //CRIO UMA SKVIEW PARA INSERIR A SKSCENE
     SKView *viewExercicio = [[SKView alloc] initWithFrame:viewMolde.frame];
+    NSLog(@"%f, %f", viewMolde.frame.size.width, viewMolde.frame.size.height);
     [viewExercicio setBackgroundColor:[UIColor grayColor]];
     
     
@@ -48,7 +49,9 @@
     SKScene *cena = [gerenciador.assunto.exercicios objectAtIndex:0];
     
     //DEFININDO TAMANHO DA SKSCENE E ADICIONANDO-A NA SKVIEW
+    
     [cena setSize: viewExercicio.frame.size];
+    
     [viewExercicio presentScene:cena];
     
     [[self view] addSubview:viewExercicio];

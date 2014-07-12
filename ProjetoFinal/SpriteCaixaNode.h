@@ -27,6 +27,6 @@
 -(void)setLabelNome:(NSString*)text;
 -(void)setLabelTipo:(NSString*)text;
 -(NSString *)retornaTipo;
-
+-(void)abreCaixa;
 
 @end
