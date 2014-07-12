@@ -38,7 +38,7 @@
         [self setLabelNome:nome];
         [self setLabelTipo:tipo];
         
-        [lblConteudo setFontColor:[SKColor colorWithRed:0.9 green:0.5 blue:0.2 alpha:1.0]];
+        
         [lblNome setFontColor:[SKColor blackColor]];
         [lblTipo setFontColor:[SKColor blackColor]];
         
@@ -82,6 +82,13 @@
 
 -(void)setLabelConteudo:(NSString*)text{
     [lblConteudo setText: text];
+    
+    if([[text substringToIndex:1] isEqualToString:@"\""]){
+        [lblConteudo setFontColor:[SKColor colorWithRed:0.9 green:0.5 blue:0.2 alpha:1.0]];
+    
+    }else{
+        [lblConteudo setFontColor:[SKColor blackColor]];
+    }
 }
 
 -(void)setLabelNome:(NSString*)text{
