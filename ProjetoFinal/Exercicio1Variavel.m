@@ -76,9 +76,9 @@
     
     // criando e inserindo posicoes
     
-    CGPoint posicaoOriginal = CGPointMake(self.frame.size.width * 0.85, self.frame.size.height * 0.8);
+    CGPoint posicaoOriginal = CGPointMake(self.frame.size.width * 650, self.frame.size.height * 650);
     CGPoint posicao = posicaoOriginal;
-    int font = self.frame.size.height * 0.03;
+    int font = self.frame.size.height * 30;
     
     for (int i = 0; i < conteudos.count; i++) {
 
@@ -136,7 +136,7 @@
     
     //criando e inserindo posicoes
     
-    CGPoint primeiraPosicao = CGPointMake(self.frame.size.width * 200.0, self.frame.size.height * 600.0);
+    CGPoint primeiraPosicao = CGPointMake(self.frame.size.width * 200.0, self.frame.size.height * 550.0);
     
     CGPoint posicao = primeiraPosicao;
     NSLog(@"x = %f, y = %f",self.frame.size.width,self.frame.size.height);
