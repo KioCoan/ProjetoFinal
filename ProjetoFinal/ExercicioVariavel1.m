@@ -16,8 +16,7 @@
     NSArray *sprite;
     SKAction *executaSprite;
     NSArray *tipo;
-    NSString *tituloExercicio;
-    NSString *descricaoExercicio;
+   
 }
 
 
@@ -33,30 +32,13 @@
         [self criaEnunciado];
         [self criarCaixas];
         [self criarLabels];
-        tituloExercicio = [NSString stringWithFormat:@"Exercicio 1"];
-        descricaoExercicio = [NSString stringWithFormat:@"Arraste os valores para cima das variáveis de acordo com o tipo de dado."];
+        self.tituloExercicio = [NSString stringWithFormat:@"Exercicio 1"];
+        self.descricaoExercicio = [NSString stringWithFormat:@"Arraste os valores para cima das variáveis de acordo com o tipo de dado."];
         
     }
     return self;
 }
 
-//-(id)initWithSize:(CGSize)size {    
-//    if (self = [super initWithSize:size]) {
-//        /* Setup your scene here */
-//        
-//        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
-//        self.physicsWorld.contactDelegate = self;
-//        
-//        tipo = [NSArray arrayWithObjects:@"inteiro",@"real",@"caractere",@"logico", nil];
-//        
-//        
-//        //[self criarCaixas];
-//        [self criarLabels];
-//        
-//
-//    }
-//    return self;
-//}
 
 - (void)criaEnunciado{
     

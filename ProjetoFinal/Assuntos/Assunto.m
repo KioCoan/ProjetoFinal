@@ -14,4 +14,16 @@
     [self.exercicios addObject:exercicio];
 }
 
+-(void)selecionaExercicio:(NSInteger)index{
+    indiceExercicio = index;
+}
+
+-(Exercicio*)retornaExercicioSelecionado{
+    
+    return [self.exercicios objectAtIndex:indiceExercicio];
+}
+
+-(void)preparaExercicios{
+   //Sobrescrever método nas classes filho
+}
 @end

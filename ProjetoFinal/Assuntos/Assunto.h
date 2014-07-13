@@ -12,6 +12,9 @@
 
 @interface Assunto : NSObject
 
+{
+    int indiceExercicio;
+}
 @property NSString *nome, *teoria;
 @property int paginas;
 @property SKScene *animacao;
@@ -19,5 +22,7 @@
 @property NSMutableArray *teoriaFormatada;
 
 -(void)addExercicio:(Exercicio*)exercicio;
-
+-(void)selecionaExercicio:(NSInteger)index;
+-(Exercicio*)retornaExercicioSelecionado;
+-(void)preparaExercicios;
 @end

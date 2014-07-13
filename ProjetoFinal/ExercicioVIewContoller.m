@@ -46,7 +46,7 @@
     
     
     //INSTANCIO A SKSCENE DO ASSUNTO ATUAL
-    SKScene *cena = [gerenciador.assunto.exercicios objectAtIndex:0];
+    SKScene *cena = [gerenciador.assunto retornaExercicioSelecionado];
     
     //DEFININDO TAMANHO DA SKSCENE E ADICIONANDO-A NA SKVIEW
     

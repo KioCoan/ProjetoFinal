@@ -50,7 +50,8 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    cell.textLabel.text = [[[gerenciador assunto] exercicios] objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[[[gerenciador assunto] exercicios] objectAtIndex:indexPath.row] tituloExercicio];
+    cell.detailTextLabel.text = [[[[gerenciador assunto] exercicios] objectAtIndex:indexPath.row] descricaoExercicio];
     
     return cell;
     
@@ -60,4 +61,19 @@
     return [[[gerenciador assunto]exercicios]count];
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    txtDescricao.text = [[[[gerenciador assunto] exercicios] objectAtIndex:indexPath.row] descricaoExercicio];
+    [btnExercitar setHidden:NO];
+    selectedCell = indexPath.row;
+    [[gerenciador assunto]selecionaExercicio:selectedCell];
+    
+}
+
+
+- (IBAction)btnExercitarAction:(id)sender {
+
+    
+
+}
 @end

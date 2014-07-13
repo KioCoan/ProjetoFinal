@@ -9,10 +9,12 @@
 #import <SpriteKit/SpriteKit.h>
 #import "SpriteCaixaNode.h"
 #import "LabelConteudoCaixa.h"
+#import "Exercicio.h"
 
 
 
-@interface ExercicioVariavel1 : SKScene <SKPhysicsContactDelegate>
+
+@interface ExercicioVariavel1 : Exercicio
 
 @property BOOL movendoCaixa;
 @property (nonatomic, strong) SKSpriteNode *selectedNode;

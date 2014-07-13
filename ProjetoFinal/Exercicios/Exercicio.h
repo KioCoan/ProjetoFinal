@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SpriteKit/SpriteKit.h>
 
-@interface Exercicio : NSObject
+@interface Exercicio : SKScene <SKPhysicsContactDelegate>
 
-@property NSString *titulo,*descricao;
+@property NSString *tituloExercicio,*descricaoExercicio;
 @property UIImage* icone;
+
+
 
 @end

@@ -13,7 +13,12 @@
 
 {
     GerenciadorDeAssunto *gerenciador;
+    __weak IBOutlet UITextView *txtDescricao;
+    __weak IBOutlet UIButton *btnExercitar;
+    int selectedCell;
     
 }
+
+- (IBAction)btnExercitarAction:(id)sender;
 
 @end
