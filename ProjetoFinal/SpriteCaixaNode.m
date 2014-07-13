@@ -77,11 +77,27 @@
     [lblTipo setPosition:CGPointMake(self.frame.origin.x * 0.75, self.frame.origin.y * 0.65)];
     [lblTipo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
 
+    [self criarLabelEndereco];
     
     //ADICIONA AS LABELS COMO FILHO DESTE NODE
     [self addChild:lblConteudo];
     [self addChild:lblNome];
     [self addChild:lblTipo];
+}
+
+
+-(void)criarLabelEndereco{
+    //CRIA A SKLABELNODE QUE SIMBOLIZA O ENDEREÇO DE MEMÓRIA DA VARIÁVEL
+    lblEndereco = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
+    [lblEndereco setText:@"0x001"];
+    [lblEndereco setFontSize:self.frame.size.width * 0.06];
+    [lblEndereco setFontColor:[SKColor blackColor]];
+    [lblEndereco setPosition:CGPointMake(self.frame.origin.x * -0.255, self.frame.origin.y * 0.6)];
+    [lblEndereco setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
+    [lblEndereco setZRotation:6.07];
+    
+    //ADICIONA A LABEL COMO FILHO DESTE NODE
+    [self addChild:lblEndereco];
 }
 
 -(void)setLabelConteudo:(NSString*)text{

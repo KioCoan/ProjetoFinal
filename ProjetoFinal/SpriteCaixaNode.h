@@ -14,6 +14,7 @@
     SKLabelNode *lblConteudo;
     SKLabelNode *lblNome;
     SKLabelNode *lblTipo;
+    SKLabelNode *lblEndereco;
     
     SKAction *animacaoAbrir;
     SKAction *animacaoFechar;
