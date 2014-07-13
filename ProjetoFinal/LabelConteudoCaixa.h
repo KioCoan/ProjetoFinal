@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface ConteudoDasCaixas : SKLabelNode
+@interface LabelConteudoCaixa : SKLabelNode
 
 @property NSString *tipo;
 

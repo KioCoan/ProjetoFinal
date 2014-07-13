@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Henrique Pereira de Lima. All rights reserved.
 //
 
-#import "ConteudoDasCaixas.h"
+#import "LabelConteudoCaixa.h"
 
 
-@implementation ConteudoDasCaixas
+@implementation LabelConteudoCaixa
 
 - (id)initWithType:(NSString *)tipo texto:(NSString *)texto{
     
@@ -23,6 +23,14 @@
         [self setFontName:@"Chalkduster"];
         
         
+        
+        //COLOQUEI UM CORPO PARA AS LABELS MAS AINDA ESTA RUIM DE MOVER ELAS
+        CGSize tamanhoCorpo = CGSizeMake(self.frame.size.width, self.frame.size.height);
+        tamanhoCorpo.width *= 2;
+        tamanhoCorpo.height *= 2;
+        
+        [self setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:tamanhoCorpo]];
+        self.physicsBody.dynamic = NO;
         
     }
     

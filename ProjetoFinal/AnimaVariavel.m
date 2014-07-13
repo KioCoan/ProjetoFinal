@@ -14,8 +14,9 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         self.caixa = [[SpriteCaixaNode alloc] initWithConteudo:@"\"Hello World\"" Nome:@"Mensagem" Tipo:@"String" tamanho:CGSizeMake(250, 267)];
+        
         [[self caixa] setPosition:CGPointMake(400, 400)];
-        [[self caixa] setName:@"caixa"];
+        
         [self addChild:self.caixa];
         [self setBackgroundColor:[UIColor whiteColor]];
     }

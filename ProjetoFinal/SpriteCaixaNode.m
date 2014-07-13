@@ -52,6 +52,7 @@
 }
 
 -(void)inicializaLabels{
+    //CRIA A SKLABELNODE QUE MOSTRA O CONTEÚDO DA VARIÁVEL
     lblConteudo = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
     [lblConteudo setText:@"Insira um conteúdo"];
     [lblConteudo setFontSize:self.frame.size.width * 0.08];
@@ -60,6 +61,7 @@
     [lblConteudo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
     [lblConteudo setHidden:YES];
     
+    //CRIA A SKLABELNODE QUE MOSTRA O NOME DA VARIÁVEL
     lblNome = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
     [lblNome setText:@"Insira um nome"];
     [lblNome setFontSize:24];
@@ -67,6 +69,7 @@
     [lblNome setPosition:CGPointMake(self.frame.origin.x * 0.75, self.frame.origin.y * 0.2)];
     [lblNome setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
     
+    //CRIA A SKLABELNODE QUE MOSTRA O TIPO DA VARIÁVEL
     lblTipo = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
     [lblTipo setText:@"Insira um tipo"];
     [lblTipo setFontSize:24];
@@ -75,6 +78,7 @@
     [lblTipo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
 
     
+    //ADICIONA AS LABELS COMO FILHO DESTE NODE
     [self addChild:lblConteudo];
     [self addChild:lblNome];
     [self addChild:lblTipo];
@@ -83,6 +87,7 @@
 -(void)setLabelConteudo:(NSString*)text{
     [lblConteudo setText: text];
     
+    //VERIFICA SE O TEXTO TEM ASPAS PARA ENTÃO DEIXÁ-LO LARANJA
     if([[text substringToIndex:1] isEqualToString:@"\""]){
         [lblConteudo setFontColor:[SKColor colorWithRed:0.9 green:0.5 blue:0.2 alpha:1.0]];
     
@@ -103,26 +108,30 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [self setUserInteractionEnabled:NO];
     
+    //VERIFICA O ESTADO DA CAIXA, SE ELA ESTÁ ABERTA OU FECHADA PARA ACIONAR A SKACTION CORRETA
     if(caixaAberta){
-        [lblConteudo setHidden:YES];
-        [self runAction:animacaoFechar completion:^{
-            [self removeAllActions];
-            caixaAberta = NO;
-            [self setUserInteractionEnabled:YES];
-        }];
-        
+        [self fecharCaixa];
         
     }else{
-        [self runAction:animacaoAbrir completion:^{
-            [self removeAllActions];
-            caixaAberta = YES;
-            [lblConteudo setHidden:NO];
-            [self setUserInteractionEnabled:YES];
-        }];
+        [self abrirCaixa];
     }
 
 }
--(void)abreCaixa{
+
+
+-(void)fecharCaixa{
+    //INICIA A SKACTION QUE FECHA A CAIXA
+    [lblConteudo setHidden:YES];
+    [self runAction:animacaoFechar completion:^{
+        [self removeAllActions];
+        caixaAberta = NO;
+        [self setUserInteractionEnabled:YES];
+    }];
+}
+
+
+-(void)abrirCaixa{
+    //INICIA A SKACTION QUE ABRE A CAIXA
     [self runAction:animacaoAbrir completion:^{
         [self removeAllActions];
         caixaAberta = YES;

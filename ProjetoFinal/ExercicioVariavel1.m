@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Henrique Pereira de Lima. All rights reserved.
 //
 
-#import "Exercicio1Variavel.h"
+#import "ExercicioVariavel1.h"
 
-@implementation Exercicio1Variavel{
+@implementation ExercicioVariavel1{
     NSMutableArray *caixas;
     NSMutableArray *conteudos;
-    ConteudoDasCaixas *conteudoAtivo;
+    LabelConteudoCaixa *conteudoAtivo;
     NSArray *sprite;
     SKAction *executaSprite;
     NSArray *tipo;
@@ -25,7 +25,7 @@
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         self.physicsWorld.contactDelegate = self;
         
-        tipo = [NSArray arrayWithObjects:@"inteiro",@"real",@"caractere",@"logico", nil];
+        tipo = [NSArray arrayWithObjects:@"inteiro",@"real",@"string",@"logico", nil];
         
         [self criaEnunciado];
         [self criarCaixas];
@@ -57,6 +57,7 @@
     SKLabelNode *enunciado1 = [[SKLabelNode alloc]initWithFontNamed:@"HeadLine"];
     
     SKLabelNode *enunciado2 = [[SKLabelNode alloc]initWithFontNamed:@"HeadLine"];
+
     
     CGPoint posicao = CGPointMake(self.frame.size.width * 400, self.frame.size.height * 850);
     
@@ -87,17 +88,13 @@
 - (void)criarLabels{
     
     // criando vetor e labels
-    
-    
-    
-    
     conteudos = [NSMutableArray array];
     
     
-    [conteudos addObject:[[ConteudoDasCaixas alloc] initWithType:@"inteiro" texto:@"23"]];
-    [conteudos addObject:[[ConteudoDasCaixas alloc] initWithType:@"real" texto:@"3.5"]];
-    [conteudos addObject:[[ConteudoDasCaixas alloc] initWithType:@"caractere" texto:@"\"João \""]];
-    [conteudos addObject:[[ConteudoDasCaixas alloc] initWithType:@"logico" texto:@"falso"]];
+    [conteudos addObject:[[LabelConteudoCaixa alloc] initWithType:@"inteiro" texto:@"23"]];
+    [conteudos addObject:[[LabelConteudoCaixa alloc] initWithType:@"real" texto:@"3.5"]];
+    [conteudos addObject:[[LabelConteudoCaixa alloc] initWithType:@"string" texto:@"\"João\""]];
+    [conteudos addObject:[[LabelConteudoCaixa alloc] initWithType:@"logico" texto:@"falso"]];
     
 
     
@@ -133,19 +130,19 @@
 - (NSMutableArray *)embaralha : (NSMutableArray *)antigo{
     
     int n;
-    NSMutableArray *novo = [NSMutableArray array];
+    NSMutableArray *vetorEmbaralhado = [NSMutableArray array];
     
     while (antigo.count > 0) {
         n = arc4random() % antigo.count;
         
-        [novo addObject:[antigo objectAtIndex:n]];
+        [vetorEmbaralhado addObject:[antigo objectAtIndex:n]];
         [antigo removeObjectAtIndex:n];
     }
     
     
     
     
-    return novo;
+    return vetorEmbaralhado;
     
     
     
@@ -160,7 +157,7 @@
     
     [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"23" Nome:@"idade" Tipo:@"inteiro" tamanho:tamanho]];
     [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"3.2" Nome:@"nota" Tipo:@"real" tamanho:tamanho]];
-    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"\"João\"" Nome:@"nome" Tipo:@"caractere" tamanho:tamanho]];
+    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"\"João\"" Nome:@"nome" Tipo:@"string" tamanho:tamanho]];
     [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"falso" Nome:@"aprovado" Tipo:@"logico" tamanho:tamanho]];
     
     //embaralha ordem das caixas
@@ -211,7 +208,7 @@
    
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
-    conteudoAtivo = (ConteudoDasCaixas *) [self nodeAtPoint:location];
+    conteudoAtivo = (LabelConteudoCaixa *) [self nodeAtPoint:location];
     //SKNode *node = [self nodeAtPoint:location];
     
     location.y = (location.y* (500.0f / 500.0f));
@@ -219,6 +216,7 @@
     //SE A POSIÇÃO QUE FOI CLICADA É A MESMA DO SPRITE DA CAIXA, O SPRITE É MOVIDO
     
     if ([conteudoAtivo.name isEqualToString:@"conteudo"]) {
+    
         [conteudoAtivo setPosition:location];
         //NSLog(@"tipo %d", conteudoAtivo.tipo);
     }else{
@@ -250,7 +248,7 @@
                 if ([[conteudoAtivo tipo] isEqualToString: [c retornaTipo]]) { // Caso a resposta esteja correta (Nó de resposta no local correto)
                     
                     //Ação a ser feita caso a resposta esteja correta
-                    [c abreCaixa];
+                    [c abrirCaixa];
                     [conteudoAtivo removeFromParent];
                     NSLog(@"Ta ceeeeerto!");
                     conteudoAtivo = nil;

@@ -21,7 +21,7 @@
         [self montaTeoria];
         [self setNome:@"Variável"];
         self.exercicios = [[NSMutableArray alloc] init];
-        [self.exercicios addObject:[[Exercicio1Variavel alloc] init]];
+        [self.exercicios addObject:[[ExercicioVariavel1 alloc] init]];
         
     }
     return self;

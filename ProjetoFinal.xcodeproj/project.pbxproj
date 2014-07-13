@@ -21,11 +21,10 @@
 		120E8F98192FC0A200CDEF95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120E8F7A192FC0A200CDEF95 /* UIKit.framework */; };
 		120E8FA0192FC0A200CDEF95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 120E8F9E192FC0A200CDEF95 /* InfoPlist.strings */; };
 		120E8FA2192FC0A200CDEF95 /* ProjetoFinalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 120E8FA1192FC0A200CDEF95 /* ProjetoFinalTests.m */; };
-		8418F87C1970817000781F82 /* ConteudoDasCaixas.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F8791970817000781F82 /* ConteudoDasCaixas.m */; };
-		8418F87D1970817000781F82 /* Exercicio1Variavel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F87B1970817000781F82 /* Exercicio1Variavel.m */; };
+		8418F87C1970817000781F82 /* LabelConteudoCaixa.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F8791970817000781F82 /* LabelConteudoCaixa.m */; };
+		8418F87D1970817000781F82 /* ExercicioVariavel1.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F87B1970817000781F82 /* ExercicioVariavel1.m */; };
 		8418F88119708B0900781F82 /* ExercicioVIewContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F88019708B0900781F82 /* ExercicioVIewContoller.m */; };
 		91A986111962324500EA1074 /* Assunto.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A986101962324500EA1074 /* Assunto.m */; };
-		91A98615196232B900EA1074 /* Animacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98614196232B900EA1074 /* Animacao.m */; };
 		91A98619196232F800EA1074 /* Exercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98618196232F800EA1074 /* Exercicio.m */; };
 		91A9861B196233CD00EA1074 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A9861A196233CD00EA1074 /* SpriteKit.framework */; };
 		91A9861E1962392400EA1074 /* GerenciadorDeAssunto.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9861D1962392400EA1074 /* GerenciadorDeAssunto.m */; };
@@ -91,16 +90,14 @@
 		120E8F9D192FC0A200CDEF95 /* ProjetoFinalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProjetoFinalTests-Info.plist"; sourceTree = "<group>"; };
 		120E8F9F192FC0A200CDEF95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		120E8FA1192FC0A200CDEF95 /* ProjetoFinalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjetoFinalTests.m; sourceTree = "<group>"; };
-		8418F8781970817000781F82 /* ConteudoDasCaixas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConteudoDasCaixas.h; sourceTree = "<group>"; };
-		8418F8791970817000781F82 /* ConteudoDasCaixas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConteudoDasCaixas.m; sourceTree = "<group>"; };
-		8418F87A1970817000781F82 /* Exercicio1Variavel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercicio1Variavel.h; sourceTree = "<group>"; };
-		8418F87B1970817000781F82 /* Exercicio1Variavel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercicio1Variavel.m; sourceTree = "<group>"; };
+		8418F8781970817000781F82 /* LabelConteudoCaixa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelConteudoCaixa.h; sourceTree = "<group>"; };
+		8418F8791970817000781F82 /* LabelConteudoCaixa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelConteudoCaixa.m; sourceTree = "<group>"; };
+		8418F87A1970817000781F82 /* ExercicioVariavel1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExercicioVariavel1.h; sourceTree = "<group>"; };
+		8418F87B1970817000781F82 /* ExercicioVariavel1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExercicioVariavel1.m; sourceTree = "<group>"; };
 		8418F87F19708B0900781F82 /* ExercicioVIewContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExercicioVIewContoller.h; sourceTree = "<group>"; };
 		8418F88019708B0900781F82 /* ExercicioVIewContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExercicioVIewContoller.m; sourceTree = "<group>"; };
 		91A9860F1962324500EA1074 /* Assunto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Assunto.h; path = Assuntos/Assunto.h; sourceTree = "<group>"; };
 		91A986101962324500EA1074 /* Assunto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Assunto.m; path = Assuntos/Assunto.m; sourceTree = "<group>"; };
-		91A98613196232B900EA1074 /* Animacao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Animacao.h; path = Animacoes/Animacao.h; sourceTree = "<group>"; };
-		91A98614196232B900EA1074 /* Animacao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Animacao.m; path = Animacoes/Animacao.m; sourceTree = "<group>"; };
 		91A98617196232F800EA1074 /* Exercicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exercicio.h; path = Exercicios/Exercicio.h; sourceTree = "<group>"; };
 		91A98618196232F800EA1074 /* Exercicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Exercicio.m; path = Exercicios/Exercicio.m; sourceTree = "<group>"; };
 		91A9861A196233CD00EA1074 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
@@ -258,10 +255,10 @@
 		8418F87E1970895500781F82 /* Variaveis */ = {
 			isa = PBXGroup;
 			children = (
-				8418F87A1970817000781F82 /* Exercicio1Variavel.h */,
-				8418F87B1970817000781F82 /* Exercicio1Variavel.m */,
-				8418F8781970817000781F82 /* ConteudoDasCaixas.h */,
-				8418F8791970817000781F82 /* ConteudoDasCaixas.m */,
+				8418F87A1970817000781F82 /* ExercicioVariavel1.h */,
+				8418F87B1970817000781F82 /* ExercicioVariavel1.m */,
+				8418F8781970817000781F82 /* LabelConteudoCaixa.h */,
+				8418F8791970817000781F82 /* LabelConteudoCaixa.m */,
 			);
 			name = Variaveis;
 			sourceTree = "<group>";
@@ -297,8 +294,6 @@
 			children = (
 				BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */,
 				BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */,
-				91A98613196232B900EA1074 /* Animacao.h */,
-				91A98614196232B900EA1074 /* Animacao.m */,
 				BDB893D519677B3A009C105C /* AnimaVariavel.h */,
 				BDB893D619677B3A009C105C /* AnimaVariavel.m */,
 				BDB4810F196CB89400D5901A /* AnimaOperadores.h */,
@@ -511,13 +506,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8418F88119708B0900781F82 /* ExercicioVIewContoller.m in Sources */,
-				8418F87D1970817000781F82 /* Exercicio1Variavel.m in Sources */,
+				8418F87D1970817000781F82 /* ExercicioVariavel1.m in Sources */,
 				BD4B4BDB197075BD00D6E839 /* SpriteCaixaNode.m in Sources */,
 				A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */,
 				A529DF201965DB8A00A3D9FB /* Calculador.m in Sources */,
 				91A986111962324500EA1074 /* Assunto.m in Sources */,
 				120E8F8D192FC0A200CDEF95 /* ViewController.m in Sources */,
-				8418F87C1970817000781F82 /* ConteudoDasCaixas.m in Sources */,
+				8418F87C1970817000781F82 /* LabelConteudoCaixa.m in Sources */,
 				A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */,
 				120E8F87192FC0A200CDEF95 /* AppDelegate.m in Sources */,
 				BDB48111196CB89400D5901A /* AnimaOperadores.m in Sources */,
@@ -531,7 +526,6 @@
 				A597F0F51960A7A6006429C7 /* SubViewConteudoFilho.m in Sources */,
 				A529DF1C1965DB7500A3D9FB /* Aritimetico.m in Sources */,
 				A559E4111970524100BDFDB8 /* Validador.m in Sources */,
-				91A98615196232B900EA1074 /* Animacao.m in Sources */,
 				A55F2B411964879A00111BEB /* Variavel.m in Sources */,
 				A529DF1B1965DB7500A3D9FB /* Relacional.m in Sources */,
 			);

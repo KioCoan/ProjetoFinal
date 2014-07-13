@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Animacao.h"
+#import <SpriteKit/SpriteKit.h>
 #import "Exercicio.h"
 
 @interface Assunto : NSObject
