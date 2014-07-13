@@ -8,13 +8,16 @@
 
 #import "ExercicioVariavel1.h"
 
-@implementation ExercicioVariavel1{
+@implementation ExercicioVariavel1
+{
     NSMutableArray *caixas;
     NSMutableArray *conteudos;
     LabelConteudoCaixa *conteudoAtivo;
     NSArray *sprite;
     SKAction *executaSprite;
     NSArray *tipo;
+    NSString *tituloExercicio;
+    NSString *descricaoExercicio;
 }
 
 
@@ -30,6 +33,9 @@
         [self criaEnunciado];
         [self criarCaixas];
         [self criarLabels];
+        tituloExercicio = [NSString stringWithFormat:@"Exercicio 1"];
+        descricaoExercicio = [NSString stringWithFormat:@"Arraste os valores para cima das variáveis de acordo com o tipo de dado."];
+        
     }
     return self;
 }
