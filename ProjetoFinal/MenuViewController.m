@@ -31,15 +31,10 @@ static int ESPACAMENTO_BOTOES = 50;
                             [NSNumber numberWithInt:2],
                             [NSNumber numberWithInt:3], nil];
         
-        [self inicializaNomesDosAssuntos];
     }
     return self;
 }
 
--(void)inicializaNomesDosAssuntos{
-    //INICIALIZAR O ARRAY QUE CONTÉM OS NOMES DOS ASSUNTOS. BUSCAR ESTES NOMES DE UM ARQUIVO TEXTO
-    
-}
 
 
 - (void)viewDidLoad
