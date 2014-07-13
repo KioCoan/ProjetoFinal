@@ -89,7 +89,7 @@
 -(void)criarLabelEndereco{
     //CRIA A SKLABELNODE QUE SIMBOLIZA O ENDEREÇO DE MEMÓRIA DA VARIÁVEL
     lblEndereco = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
-    [lblEndereco setText:@"0x001"];
+    [lblEndereco setText:@"0x000"];
     [lblEndereco setFontSize:self.frame.size.width * 0.06];
     [lblEndereco setFontColor:[SKColor blackColor]];
     [lblEndereco setPosition:CGPointMake(self.frame.origin.x * -0.255, self.frame.origin.y * 0.6)];
@@ -98,6 +98,23 @@
     
     //ADICIONA A LABEL COMO FILHO DESTE NODE
     [self addChild:lblEndereco];
+}
+
+
+-(void)setLabelEndereco:(int)numero{
+    if(numero < 0){
+        @throw [NSException exceptionWithName:@"Número de endereço inválido" reason:@"número informado é menor que zero." userInfo:nil];
+    }
+    
+    if(numero < 10){
+        [lblEndereco setText:[NSString stringWithFormat:@"0x00%d", numero]];
+    
+    }else if(numero > 9 && numero < 100){
+        [lblEndereco setText:[NSString stringWithFormat:@"0x0%d", numero]];
+    
+    }else{
+        [lblEndereco setText:[NSString stringWithFormat:@"0x%d", numero]];
+    }
 }
 
 -(void)setLabelConteudo:(NSString*)text{

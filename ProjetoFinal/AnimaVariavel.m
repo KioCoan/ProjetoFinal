@@ -13,7 +13,16 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
-        self.caixa = [[SpriteCaixaNode alloc] initWithConteudo:@"\"Hello World\"" Nome:@"Mensagem" Tipo:@"String" tamanho:CGSizeMake(250, 267)];
+        self.caixa = [[SpriteCaixaNode alloc] initWithConteudo:@"\"Hello World\"" Nome:@"mensagem" Tipo:@"String" tamanho:CGSizeMake(250, 267)];
+        
+        @try {
+            [self.caixa setLabelEndereco:1];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@", exception.reason);
+        }
+        
+        
         
         [[self caixa] setPosition:CGPointMake(400, 400)];
         
