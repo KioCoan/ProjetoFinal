@@ -143,10 +143,10 @@
     CGSize tamanho = CGSizeMake(self.frame.size.height * 200, self.frame.size.height * 213);
     //CGSize tamanho = CGSizeMake(200, 213.6);
     
-    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"23" Nome:@"idade" Tipo:@"inteiro" tamanho:tamanho]];
-    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"3.2" Nome:@"nota" Tipo:@"real" tamanho:tamanho]];
-    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"\"João\"" Nome:@"nome" Tipo:@"string" tamanho:tamanho]];
-    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"falso" Nome:@"aprovado" Tipo:@"logico" tamanho:tamanho]];
+    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"23" nome:@"idade" tipo:@"inteiro" tamanho:tamanho]];
+    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"3.2" nome:@"nota" tipo:@"real" tamanho:tamanho]];
+    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"\"João\"" nome:@"nome" tipo:@"string" tamanho:tamanho]];
+    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"falso" nome:@"aprovado" tipo:@"logico" tamanho:tamanho]];
     
     //embaralha ordem das caixas
     caixas = [self embaralha:caixas];

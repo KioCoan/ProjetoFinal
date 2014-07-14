@@ -26,7 +26,7 @@
     return self;
 }
 
--(id)initWithConteudo:(NSString*)conteudo Nome:(NSString*)nome Tipo:(NSString*)tipo tamanho:(CGSize)tamanho{
+-(id)initWithConteudo:(NSString*)conteudo nome:(NSString*)nome tipo:(NSString*)tipo tamanho:(CGSize)tamanho{
     self = [super init];
     
     if(self){
@@ -92,7 +92,7 @@
     [lblEndereco setText:@"0x000"];
     [lblEndereco setFontSize:self.frame.size.width * 0.06];
     [lblEndereco setFontColor:[SKColor blackColor]];
-    [lblEndereco setPosition:CGPointMake(self.frame.origin.x * -0.255, self.frame.origin.y * 0.6)];
+    [lblEndereco setPosition:CGPointMake(self.frame.origin.x * -0.27, self.frame.origin.y * 0.6)];
     [lblEndereco setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
     [lblEndereco setZRotation:6.07];
     

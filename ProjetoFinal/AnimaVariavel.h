@@ -11,6 +11,10 @@
 #import "SpriteCaixaNode.h"
 
 @interface AnimaVariavel : SKScene
+{
+    CGSize tamanhoCaixa;
+    int enderecoCaixa;
+}
 
-@property SpriteCaixaNode *caixa;
+
 @end

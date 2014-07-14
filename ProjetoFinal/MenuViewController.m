@@ -12,9 +12,9 @@
 
 @end
 
-static int BOTAO_WIDTH = 150;
-static int BOTAO_HEIGHT = 102;
-static int ESPACAMENTO_BOTOES = 50;
+static const int BOTAO_WIDTH = 150;
+static const int BOTAO_HEIGHT = 102;
+static const int ESPACAMENTO_BOTOES = 50;
 
 @implementation MenuViewController
 

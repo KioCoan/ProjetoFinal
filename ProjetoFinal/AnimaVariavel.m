@@ -13,23 +13,39 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
-        self.caixa = [[SpriteCaixaNode alloc] initWithConteudo:@"\"Hello World\"" Nome:@"mensagem" Tipo:@"String" tamanho:CGSizeMake(250, 267)];
+        enderecoCaixa = 1;
+        tamanhoCaixa = CGSizeMake(250, 267);
         
-        @try {
-            [self.caixa setLabelEndereco:1];
-        }
-        @catch (NSException *exception) {
-            NSLog(@"%@", exception.reason);
-        }
+        //ADICIONA UMA CAIXA NO CANTO SUPERIOR ESQUERDO DA TELA
+        CGPoint position = CGPointMake(tamanhoCaixa.width / 1.2, tamanhoCaixa.height * 1.7);
+        [self criarNovaCaixaComConteudo:@"\"Hello World\"" nome:@"mensagem" tipo:@"String" posicao:position];
+      
+        //ADICIONA UMA CAIXA NO CANTO INFERIOR ESQUERDO DA TELA
+        position = CGPointMake(tamanhoCaixa.width / 1.2, tamanhoCaixa.height / 2);
+        [self criarNovaCaixaComConteudo:@"148" nome:@"pessoas" tipo:@"inteiro" posicao:position];
         
+        //ADICIONA UMA CAIXA NO CANTO SUPERIOR DIREITO DA TELA
+        position = CGPointMake(tamanhoCaixa.width * 2.3, tamanhoCaixa.height * 1.7);
+        [self criarNovaCaixaComConteudo:@"259.90" nome:@"preco" tipo:@"real" posicao:position];
         
+        //ADICIONA UMA CAIXA NO CANTO INFERIOR DIREITO DA TELA
+        position = CGPointMake(tamanhoCaixa.width * 2.3, tamanhoCaixa.height / 2);
+        [self criarNovaCaixaComConteudo:@"verdadeiro" nome:@"luzAcesa" tipo:@"logico" posicao:position];
         
-        [[self caixa] setPosition:CGPointMake(400, 400)];
-        
-        [self addChild:self.caixa];
+
         [self setBackgroundColor:[UIColor whiteColor]];
     }
     return self;
+}
+
+//METODO QUE RECEBE OS PARAMETROS NECESSARIOS PARA CRIAR UMA CAIXA E DEFINE O ENDEREÇO AUTOMATICAMENTE
+-(void)criarNovaCaixaComConteudo:(NSString*)conteudo nome:(NSString*)nome tipo:(NSString*)tipo posicao:(CGPoint)posicao{
+    
+    SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc] initWithConteudo:conteudo nome:nome tipo:tipo tamanho:tamanhoCaixa];
+    [caixa setLabelEndereco:enderecoCaixa++];
+    [caixa setPosition:posicao];
+    
+    [self addChild:caixa];
 }
 
 

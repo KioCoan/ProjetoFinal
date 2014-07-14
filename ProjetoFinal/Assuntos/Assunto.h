@@ -15,11 +15,13 @@
 {
     int indiceExercicio;
 }
+
 @property NSString *nome, *teoria;
 @property int paginas;
 @property SKScene *animacao;
 @property NSMutableArray *exercicios;
 @property NSMutableArray *teoriaFormatada;
+
 
 -(void)addExercicio:(Exercicio*)exercicio;
 -(void)selecionaExercicio:(NSInteger)index;

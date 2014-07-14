@@ -24,14 +24,6 @@
         
         
         
-        //COLOQUEI UM CORPO PARA AS LABELS MAS AINDA ESTA RUIM DE MOVER ELAS
-        CGSize tamanhoCorpo = CGSizeMake(self.frame.size.width, self.frame.size.height);
-        tamanhoCorpo.width *= 2;
-        tamanhoCorpo.height *= 2;
-        
-        [self setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:tamanhoCorpo]];
-        self.physicsBody.dynamic = NO;
-        
     }
     
     

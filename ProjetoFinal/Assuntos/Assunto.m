@@ -10,6 +10,7 @@
 
 @implementation Assunto
 
+
 -(void)addExercicio:(Exercicio *)exercicio{
     [self.exercicios addObject:exercicio];
 }

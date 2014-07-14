@@ -22,7 +22,7 @@
     BOOL caixaAberta;
 }
 
--(id)initWithConteudo:(NSString*)conteudo Nome:(NSString*)nome Tipo:(NSString*)tipo tamanho:(CGSize)tamanho;
+-(id)initWithConteudo:(NSString*)conteudo nome:(NSString*)nome tipo:(NSString*)tipo tamanho:(CGSize)tamanho;
 
 -(void)setLabelEndereco:(int)numero;
 -(void)setLabelConteudo:(NSString*)text;
