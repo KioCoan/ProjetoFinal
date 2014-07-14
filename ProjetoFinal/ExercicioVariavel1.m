@@ -183,7 +183,9 @@
 
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    conteudoAtivo = (LabelConteudoCaixa *) [self nodeAtPoint:location];
     
     
 }
@@ -191,15 +193,11 @@
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     
     
-    self.movendoCaixa = true;
+    //self.movendoCaixa = true;
     
    
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
-    conteudoAtivo = (LabelConteudoCaixa *) [self nodeAtPoint:location];
-    //SKNode *node = [self nodeAtPoint:location];
-    
-    location.y = (location.y* (500.0f / 500.0f));
     
     //SE A POSIÇÃO QUE FOI CLICADA É A MESMA DO SPRITE DA CAIXA, O SPRITE É MOVIDO
     
