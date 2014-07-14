@@ -186,7 +186,13 @@
 
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+
     UITouch *touch = [touches anyObject];
+    
+    if([touch tapCount] > 1){// DA PAU SEM ISSO!
+        return;
+    }
+    
     CGPoint location = [touch locationInNode:self];
     conteudoAtivo = (LabelConteudoCaixa *) [self nodeAtPoint:location];
     
