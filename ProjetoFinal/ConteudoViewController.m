@@ -66,11 +66,13 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    
+    //Após exibir a tela prepara a lista de exercícios (Aloca todos eles)para que sejam exibidos seus Titulos e descriçoes na póxima tela
     [super viewDidAppear:animated];
     GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
-//    
-    [[gerenciador assunto]preparaExercicios];
-//    
+    
+    [[gerenciador assunto]preparaExercicios];// Chamada do método que aloca os exercícios
+    
     
 }
 

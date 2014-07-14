@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Henrique Pereira de Lima. All rights reserved.
 //
 
+// ##### Classe Especializada utilizada pelo exercício 1 de variáveis ######
+
+
 #import <SpriteKit/SpriteKit.h>
 
 @interface LabelConteudoCaixa : SKLabelNode

@@ -10,6 +10,8 @@
 #import "AnimaVariavel.h"
 #import "ExeVariavel1.h"
 
+// #### Classe herdeira de Assunto trata de variáveis ######
+
 @interface Variavel : Assunto
 
 

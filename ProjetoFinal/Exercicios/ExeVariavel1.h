@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 SENAC - iOS. All rights reserved.
 //
 
+
+// ##### Classe Especializada herdeira de Exercício ######
+// A classe responsável pela cena deste exercício é CenaEcercicioVariavel1
+
 #import "Exercicio.h"
 
 @interface ExeVariavel1 : Exercicio

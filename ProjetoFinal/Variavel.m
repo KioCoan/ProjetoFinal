@@ -18,7 +18,7 @@
     
     if (self) {
         [self setAnimacao:[[AnimaVariavel alloc] init]];
-        [self montaTeoria];
+        [self montaTeoria:@"ConceitosVariaveis"];
         [self setNome:@"Variável"];
         
         
@@ -27,42 +27,15 @@
 }
 
 
--(void)montaTeoria{
-    
-    NSString* path = [[NSBundle mainBundle] pathForResource:@"ConceitosVariaveis"
-                                                     ofType:@"txt"];
-    
-    NSString* content = [NSString stringWithContentsOfFile:path
-                                                  encoding:NSUTF8StringEncoding
-                                                     error:NULL];
-
-    
-    [self setTeoriaFormatada:[NSMutableArray arrayWithArray:[content componentsSeparatedByString:@"#"]]];
-    
-}
--(void)preparaExercicios{
+-(void)preparaExercicios{ // Aloca os objetos herdeiros, não instancia a cena dos exercícios
    
+    
+    
     self.exercicios = [[NSMutableArray alloc] init];
     [self.exercicios addObject:[[ExeVariavel1 alloc] init]];
     
 }
 
--(NSMutableArray*)retornaTitulosEDescricoesExercicios{
-    
-    
-    NSMutableArray *titulosEDescricoes = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i< self.exercicios.count;i++) {
-        
-        
-        
-        NSDictionary *dict = @{@"titulo": [[self.exercicios objectAtIndex:i] tituloExercicio],
-                                             @"descricao":[[self.exercicios objectAtIndex:i] descricaoExercicio]
-                                                     
-                                                     };
-        [titulosEDescricoes addObject:dict];
-    }
-    return titulosEDescricoes;
-}
+
 
 @end

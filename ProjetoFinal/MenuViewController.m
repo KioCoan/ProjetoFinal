@@ -176,7 +176,7 @@ static const int ESPACAMENTO_BOTOES = 50;
     [self performSegueWithIdentifier:@"conteudoController" sender:nil];
 
     
-    [gerenciadorDeAssuntos mudarTemaEstudado];
+    [gerenciadorDeAssuntos mudarTemaEstudado:[sender currentTitle]];
     
     
 }

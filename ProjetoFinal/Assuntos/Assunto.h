@@ -10,11 +10,16 @@
 #import <SpriteKit/SpriteKit.h>
 #import "Exercicio.h"
 
+// #### Classe genérica seus herdeiros serão os assuntos tratados individualmente ######
+
 @interface Assunto : NSObject
 
 {
     int indiceExercicio;
+    
 }
+
+
 
 @property NSString *nome, *teoria;
 @property int paginas;
@@ -22,10 +27,13 @@
 @property NSMutableArray *exercicios;
 @property NSMutableArray *teoriaFormatada;
 
+-(void)montaTeoria:(NSString*)nomeDoArquivo; // Usado somente em chamadas internas
 
--(void)addExercicio:(Exercicio*)exercicio;
 -(void)selecionaExercicio:(NSInteger)index;
+
 -(SKScene*)retornaExercicioSelecionado;
+
 -(void)preparaExercicios;
+
 -(NSMutableArray*)retornaTitulosEDescricoesExercicios;
 @end

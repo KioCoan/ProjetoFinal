@@ -67,8 +67,7 @@
     
     txtDescricao.text = [[titulosEDescricoes objectAtIndex:indexPath.row]valueForKey:@"descricao"];
     
-    
-    //txtDescricao.text = [[[[gerenciador assunto] exercicios] objectAtIndex:indexPath.row] descricaoExercicio];
+
     [btnExercitar setHidden:NO];
     selectedCell = indexPath.row;
     [[gerenciador assunto]selecionaExercicio:selectedCell];
@@ -78,6 +77,8 @@
 
 - (IBAction)btnExercitarAction:(id)sender {
 
+    
+    // Instancia somente o exercício clicado pelo usuário para que na proxima view ele esteja pronto para ser exibido
     [[[[gerenciador assunto] exercicios]objectAtIndex:selectedCell] instanciaCena];
 
 }
