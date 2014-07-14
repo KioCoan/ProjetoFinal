@@ -16,6 +16,8 @@
     __weak IBOutlet UITextView *txtDescricao;
     __weak IBOutlet UIButton *btnExercitar;
     int selectedCell;
+    NSMutableArray *titulosEDescricoes;
+    __weak IBOutlet UITableView *myTableView;
     
 }
 

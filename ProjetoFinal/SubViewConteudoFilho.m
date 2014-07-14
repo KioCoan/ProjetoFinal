@@ -45,7 +45,7 @@
     
     txtConteudo.text = [teoria objectAtIndex:self.index];
    
-    //[txtConteudo setFont:[UIFont fontWithName:@"System" size:19.0]];
+    [txtConteudo setFont:[UIFont fontWithName:@"Trebuchet MS" size:24.0]];
     
 }
 

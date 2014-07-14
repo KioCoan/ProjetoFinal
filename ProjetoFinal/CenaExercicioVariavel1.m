@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Henrique Pereira de Lima. All rights reserved.
 //
 
-#import "ExercicioVariavel1.h"
+#import "CenaExercicioVariavel1.h"
 
-@implementation ExercicioVariavel1
+@implementation CenaExercicioVariavel1
 {
     NSMutableArray *caixas;
     NSMutableArray *conteudos;
@@ -25,15 +25,14 @@
     
     if (self) {
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
-        self.physicsWorld.contactDelegate = self;
+        //self.physicsWorld.contactDelegate = self;
         
         tipo = [NSArray arrayWithObjects:@"inteiro",@"real",@"string",@"logico", nil];
         
         [self criaEnunciado];
         [self criarCaixas];
         [self criarLabels];
-        self.tituloExercicio = [NSString stringWithFormat:@"Movendo valores para suas respectivas variáveis"];
-        self.descricaoExercicio = [NSString stringWithFormat:@"Arraste os valores para cima das variáveis de acordo com o tipo de dado."];
+        
         
     }
     return self;

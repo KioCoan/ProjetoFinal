@@ -31,11 +31,12 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+    NSLog(@"viewWill");
     
     gerenciador = [GerenciadorDeAssunto sharedGerenciador];
+    titulosEDescricoes = [[gerenciador assunto]retornaTitulosEDescricoesExercicios];
     
-    
+    NSLog(@"viewWill");
     
 }
 
@@ -48,22 +49,26 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    NSLog(@"montando");
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    cell.textLabel.text = [[[[gerenciador assunto] exercicios] objectAtIndex:indexPath.row] tituloExercicio];
-    cell.detailTextLabel.text = [[[[gerenciador assunto] exercicios] objectAtIndex:indexPath.row] descricaoExercicio];
+    cell.textLabel.text = [[titulosEDescricoes objectAtIndex:indexPath.row]valueForKey:@"titulo"];
+    cell.detailTextLabel.text = [[titulosEDescricoes objectAtIndex:indexPath.row]valueForKey:@"descricao"];
     
     return cell;
     
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [[[gerenciador assunto]exercicios]count];
+    return [titulosEDescricoes count];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    txtDescricao.text = [[[[gerenciador assunto] exercicios] objectAtIndex:indexPath.row] descricaoExercicio];
+    txtDescricao.text = [[titulosEDescricoes objectAtIndex:indexPath.row]valueForKey:@"descricao"];
+    
+    
+    //txtDescricao.text = [[[[gerenciador assunto] exercicios] objectAtIndex:indexPath.row] descricaoExercicio];
     [btnExercitar setHidden:NO];
     selectedCell = indexPath.row;
     [[gerenciador assunto]selecionaExercicio:selectedCell];
@@ -73,7 +78,7 @@
 
 - (IBAction)btnExercitarAction:(id)sender {
 
-    
+    [[[[gerenciador assunto] exercicios]objectAtIndex:selectedCell] instanciaCena];
 
 }
 

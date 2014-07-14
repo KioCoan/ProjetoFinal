@@ -25,6 +25,7 @@
 
 -(void)addExercicio:(Exercicio*)exercicio;
 -(void)selecionaExercicio:(NSInteger)index;
--(Exercicio*)retornaExercicioSelecionado;
+-(SKScene*)retornaExercicioSelecionado;
 -(void)preparaExercicios;
+-(NSMutableArray*)retornaTitulosEDescricoesExercicios;
 @end

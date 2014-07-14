@@ -19,12 +19,19 @@
     indiceExercicio = index;
 }
 
--(Exercicio*)retornaExercicioSelecionado{
+-(SKScene*)retornaExercicioSelecionado{
     
-    return [self.exercicios objectAtIndex:indiceExercicio];
+    return [[self.exercicios objectAtIndex:indiceExercicio] retornaCena];
 }
 
 -(void)preparaExercicios{
    //Sobrescrever método nas classes filho
 }
+
+-(NSMutableArray*)retornaTitulosEDescricoesExercicios{
+    // Sobrescrever nos métodos filho
+    
+    return nil;
+}
+
 @end

@@ -41,8 +41,28 @@
     
 }
 -(void)preparaExercicios{
+   
     self.exercicios = [[NSMutableArray alloc] init];
-    [self.exercicios addObject:[[ExercicioVariavel1 alloc] init]];
+    [self.exercicios addObject:[[ExeVariavel1 alloc] init]];
+    
+}
+
+-(NSMutableArray*)retornaTitulosEDescricoesExercicios{
+    
+    
+    NSMutableArray *titulosEDescricoes = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i< self.exercicios.count;i++) {
+        
+        
+        
+        NSDictionary *dict = @{@"titulo": [[self.exercicios objectAtIndex:i] tituloExercicio],
+                                             @"descricao":[[self.exercicios objectAtIndex:i] descricaoExercicio]
+                                                     
+                                                     };
+        [titulosEDescricoes addObject:dict];
+    }
+    return titulosEDescricoes;
 }
 
 @end

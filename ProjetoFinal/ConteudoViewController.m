@@ -68,8 +68,9 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
+//    
     [[gerenciador assunto]preparaExercicios];
-    
+//    
     
 }
 

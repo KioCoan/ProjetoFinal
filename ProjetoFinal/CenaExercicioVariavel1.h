@@ -14,9 +14,9 @@
 
 
 
-@interface ExercicioVariavel1 : Exercicio
+@interface CenaExercicioVariavel1 : SKScene <SKPhysicsContactDelegate>
 
 @property BOOL movendoCaixa;
-@property (nonatomic, strong) SKSpriteNode *selectedNode;
+
 
 @end

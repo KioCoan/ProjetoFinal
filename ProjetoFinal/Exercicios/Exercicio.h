@@ -9,11 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
 
-@interface Exercicio : SKScene <SKPhysicsContactDelegate>
+@interface Exercicio : NSObject
 
+{
+    SKScene *cenaExercicio;
+}
 @property NSString *tituloExercicio,*descricaoExercicio;
 @property UIImage* icone;
 
-
-
+-(void)instanciaCena;
+-(SKScene*)retornaCena;
 @end

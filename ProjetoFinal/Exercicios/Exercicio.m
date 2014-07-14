@@ -11,5 +11,12 @@
 @implementation Exercicio
 
 
+-(void)instanciaCena{
+    //Sobrescrever o método nas classes filho
+}
+-(SKScene*)retornaCena{
+    //Sobrescrever o método nas classes filho
+    return nil;
+}
 
 @end

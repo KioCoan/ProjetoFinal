@@ -54,7 +54,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MDB-dg-lXx">
-                                <rect key="frame" x="20" y="675" width="728" height="329"/>
+                                <rect key="frame" x="20" y="675" width="728" height="349"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -131,6 +131,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="btnExercitarAction:" destination="cRh-hY-Bbp" eventType="touchUpInside" id="aWp-Xe-W3k"/>
                                     <segue destination="tQW-Gq-m4D" kind="push" id="fZo-ic-il3"/>
                                 </connections>
                             </button>
@@ -140,6 +141,7 @@
                     <navigationItem key="navigationItem" id="duk-ae-rW9"/>
                     <connections>
                         <outlet property="btnExercitar" destination="KIm-nW-7e3" id="m4v-LC-eGu"/>
+                        <outlet property="myTableView" destination="rpC-5F-fMZ" id="2Q8-Z2-t7E"/>
                         <outlet property="txtDescricao" destination="NXo-le-hFi" id="zCu-iN-o6J"/>
                     </connections>
                 </viewController>
@@ -160,7 +162,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ln9-vT-Y6r">
-                                <rect key="frame" x="20" y="20" width="679" height="266"/>
+                                <rect key="frame" x="20" y="20" width="679" height="343"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="aaa">
@@ -192,8 +194,9 @@
                         <viewControllerLayoutGuide type="bottom" id="qWw-cE-iFA"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="TlP-2c-K5g">
-                        <rect key="frame" x="0.0" y="0.0" width="728" height="329"/>
+                        <rect key="frame" x="0.0" y="0.0" width="728" height="349"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                 </viewController>
