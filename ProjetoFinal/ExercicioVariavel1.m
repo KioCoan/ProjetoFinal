@@ -103,7 +103,7 @@
         [[conteudos objectAtIndex:i] setFontSize:font];
         
         [[conteudos objectAtIndex:i] setPosition:posicao];
-        
+        [[conteudos objectAtIndex:i] setPosicaoInicial:posicao];
         
         
         posicao.y -= (font * 5) ;
@@ -143,10 +143,14 @@
     CGSize tamanho = CGSizeMake(self.frame.size.height * 200, self.frame.size.height * 213);
     //CGSize tamanho = CGSizeMake(200, 213.6);
     
-    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"23" nome:@"idade" tipo:@"inteiro" tamanho:tamanho]];
-    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"3.2" nome:@"nota" tipo:@"real" tamanho:tamanho]];
-    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"\"João\"" nome:@"nome" tipo:@"string" tamanho:tamanho]];
-    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"falso" nome:@"aprovado" tipo:@"logico" tamanho:tamanho]];
+    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@" " nome:@"idade" tipo:@"inteiro" tamanho:tamanho]];
+    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@" " nome:@"nota" tipo:@"real" tamanho:tamanho]];
+    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@" " nome:@"nome" tipo:@"string" tamanho:tamanho]];
+    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@" " nome:@"aprovado" tipo:@"logico" tamanho:tamanho]];
+    
+    for(int i=0; i<caixas.count; i++){
+        [[caixas objectAtIndex:i] setLabelEndereco:i+1];
+    }
     
     //embaralha ordem das caixas
     caixas = [self embaralha:caixas];
@@ -224,23 +228,31 @@
         for (SpriteCaixaNode * c in caixas) { //Ao soltar o node de resposta em algum lugar varre o vetor de caixas para descobrir sobre quem está
             float xInicio = c.frame.origin.x;
             float xFim = xInicio + c.frame.size.width;
-            float xMeio = (xInicio + xFim)/2;
+            //float xMeio = (xInicio + xFim)/2; PARA O FUTURO
             float yInicio = c.frame.origin.y;
             float yFim = yInicio + c.frame.size.height;
-            float yMeio = (yInicio + yFim)/2;
+            //float yMeio = (yInicio + yFim)/2; PARA O FUTURO
             
             if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
                 
                 if ([[conteudoAtivo tipo] isEqualToString: [c retornaTipo]]) { // Caso a resposta esteja correta (Nó de resposta no local correto)
+                    
+                    [c setLabelConteudo:conteudoAtivo.text];
                     
                     //Ação a ser feita caso a resposta esteja correta
                     [c abrirCaixa];
                     [conteudoAtivo removeFromParent];
                     NSLog(@"Ta ceeeeerto!");
                     conteudoAtivo = nil;
+                
+                }else{
+                    SKAction *animacaoVoltar = [SKAction moveTo:conteudoAtivo.posicaoInicial duration:0.5];
+                    [conteudoAtivo runAction:animacaoVoltar completion:^{
+                        [conteudoAtivo removeAllActions];
+                    }];
                 }
                 
-                [conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa
+                //[conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa
             }
             
         }

@@ -11,7 +11,7 @@
 @interface LabelConteudoCaixa : SKLabelNode
 
 @property NSString *tipo;
-
+@property CGPoint posicaoInicial;
 
 - (id)initWithType:(NSString *)tipo texto:(NSString *)texto;
 
