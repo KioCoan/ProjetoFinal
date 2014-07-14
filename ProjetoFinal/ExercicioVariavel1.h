@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "SpriteCaixaNode.h"
-#import "LabelConteudoCaixa.h"
+#import "ConteudoCaixaNode.h"
 #import "Exercicio.h"
 
 

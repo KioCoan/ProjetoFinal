@@ -12,7 +12,7 @@
 {
     NSMutableArray *caixas;
     NSMutableArray *conteudos;
-    LabelConteudoCaixa *conteudoAtivo;
+    ConteudoCaixaNode *conteudoAtivo;
     NSArray *sprite;
     SKAction *executaSprite;
     NSArray *tipo;
@@ -79,10 +79,10 @@
     conteudos = [NSMutableArray array];
     
     
-    [conteudos addObject:[[LabelConteudoCaixa alloc] initWithType:@"inteiro" texto:@"23"]];
-    [conteudos addObject:[[LabelConteudoCaixa alloc] initWithType:@"real" texto:@"3.5"]];
-    [conteudos addObject:[[LabelConteudoCaixa alloc] initWithType:@"string" texto:@"\"João\""]];
-    [conteudos addObject:[[LabelConteudoCaixa alloc] initWithType:@"logico" texto:@"falso"]];
+    [conteudos addObject:[[ConteudoCaixaNode alloc] initWithType:@"inteiro" texto:@"23"]];
+    [conteudos addObject:[[ConteudoCaixaNode alloc] initWithType:@"real" texto:@"3.5"]];
+    [conteudos addObject:[[ConteudoCaixaNode alloc] initWithType:@"string" texto:@"\"João\""]];
+    [conteudos addObject:[[ConteudoCaixaNode alloc] initWithType:@"logico" texto:@"falso"]];
     
 
     
@@ -100,10 +100,10 @@
     for (int i = 0; i < conteudos.count; i++) {
 
         
-        [[conteudos objectAtIndex:i] setFontSize:font];
+        //[[conteudos objectAtIndex:i] setFontSize:font];
         
         [[conteudos objectAtIndex:i] setPosition:posicao];
-        
+        [[conteudos objectAtIndex:i] setPosicaoInicial:posicao];
         
         
         posicao.y -= (font * 5) ;
@@ -143,11 +143,15 @@
     CGSize tamanho = CGSizeMake(self.frame.size.height * 200, self.frame.size.height * 213);
     //CGSize tamanho = CGSizeMake(200, 213.6);
     
-    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"23" nome:@"idade" tipo:@"inteiro" tamanho:tamanho]];
-    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"3.2" nome:@"nota" tipo:@"real" tamanho:tamanho]];
-    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"\"João\"" nome:@"nome" tipo:@"string" tamanho:tamanho]];
-    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@"falso" nome:@"aprovado" tipo:@"logico" tamanho:tamanho]];
+    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@" " nome:@"idade" tipo:@"inteiro" tamanho:tamanho]];
+    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@" " nome:@"nota" tipo:@"real" tamanho:tamanho]];
+    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@" " nome:@"nome" tipo:@"string" tamanho:tamanho]];
+    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@" " nome:@"aprovado" tipo:@"logico" tamanho:tamanho]];
     
+    
+    for(int i=0; i<caixas.count; i++){
+        [[caixas objectAtIndex:i] setLabelEndereco:i + 1];
+    }
     //embaralha ordem das caixas
     caixas = [self embaralha:caixas];
     
@@ -196,15 +200,15 @@
    
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
-    conteudoAtivo = (LabelConteudoCaixa *) [self nodeAtPoint:location];
+    conteudoAtivo = (ConteudoCaixaNode *) [self nodeAtPoint:location];
     //SKNode *node = [self nodeAtPoint:location];
     
-    location.y = (location.y* (500.0f / 500.0f));
+    //location.y = (location.y* (500.0f / 500.0f));
     
     //SE A POSIÇÃO QUE FOI CLICADA É A MESMA DO SPRITE DA CAIXA, O SPRITE É MOVIDO
     
     if ([conteudoAtivo.name isEqualToString:@"conteudo"]) {
-    
+        
         [conteudoAtivo setPosition:location];
         //NSLog(@"tipo %d", conteudoAtivo.tipo);
     }else{
@@ -226,23 +230,30 @@
         for (SpriteCaixaNode * c in caixas) { //Ao soltar o node de resposta em algum lugar varre o vetor de caixas para descobrir sobre quem está
             float xInicio = c.frame.origin.x;
             float xFim = xInicio + c.frame.size.width;
-            float xMeio = (xInicio + xFim)/2;
+            //float xMeio = (xInicio + xFim)/2; PARA USO FUTURO
             float yInicio = c.frame.origin.y;
             float yFim = yInicio + c.frame.size.height;
-            float yMeio = (yInicio + yFim)/2;
+            //float yMeio = (yInicio + yFim)/2; PARA USO FUTURO TBM
             
             if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
                 
                 if ([[conteudoAtivo tipo] isEqualToString: [c retornaTipo]]) { // Caso a resposta esteja correta (Nó de resposta no local correto)
                     
                     //Ação a ser feita caso a resposta esteja correta
+                    [c setLabelConteudo:conteudoAtivo.getText];
                     [c abrirCaixa];
                     [conteudoAtivo removeFromParent];
                     NSLog(@"Ta ceeeeerto!");
                     conteudoAtivo = nil;
+                }else{
+                    SKAction *voltarPosicao = [SKAction moveTo:conteudoAtivo.posicaoInicial duration:0.5];
+                    [conteudoAtivo runAction:voltarPosicao completion:^{
+                        [conteudoAtivo removeAllActions];
+                    }];
                 }
                 
-                [conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa
+                //[conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa EM BREVE
+            
             }
             
         }
@@ -253,111 +264,6 @@
     
     
 }
-/*
-
--(void)didBeginContact:(SKPhysicsContact *)contact{
-    
-    if (!self.movendoCaixa) {
-        NSLog(@"funcionou");
-    }
-    
-    
-    
-}
-
-- (void)selectNodeForTouch:(CGPoint)touchLocation {
-    
-    
-    SKSpriteNode *touchedNode = (SKSpriteNode *)[self nodeAtPoint:touchLocation];
-    
-    //2
-	if(![_selectedNode isEqual:touchedNode]) {
-		[_selectedNode removeAllActions];
-		[_selectedNode runAction:[SKAction rotateToAngle:0.0f duration:0.1]];
-        
-		_selectedNode = touchedNode;
-		//3
-		if([[touchedNode name] isEqualToString:@"conteudo"]) {
-			SKAction *sequence = [SKAction sequence:@[[SKAction rotateByAngle:degToRad(-4.0f) duration:0.1],
-													  [SKAction rotateByAngle:0.0 duration:0.1],
-													  [SKAction rotateByAngle:degToRad(4.0f) duration:0.1]]];
-			//[_selectedNode runAction:[SKAction repeatActionForever:sequence]];
-		}
-	}
-
-    
-}
-
-float degToRad(float degree) {
-	return degree / 180.0f * M_PI;
-}
-
-- (CGPoint)boundLayerPos:(CGPoint)newPos {
-    CGSize winSize = self.size;
-    CGPoint retval = newPos;
-    retval.x = MIN(retval.x, 0);
-    retval.x = MAX(retval.x, -[self size].width+ winSize.width);
-    retval.y = [self position].y;
-    return retval;
-}
-
-- (void)panForTranslation:(CGPoint)translation {
-    CGPoint position = [_selectedNode position];
-    if([[_selectedNode name] isEqualToString:@"conteudo"]) {
-        [_selectedNode setPosition:CGPointMake(position.x + translation.x, position.y + translation.y)];
-    } else {
-        CGPoint newPos = CGPointMake(position.x + translation.x, position.y + translation.y);
-        [self setPosition:[self boundLayerPos:newPos]];
-    }
-}
-
-- (void)didMoveToView:(SKView *)view {
-    UIPanGestureRecognizer *gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanFrom:)];
-    [[self view] addGestureRecognizer:gestureRecognizer];
-}
-
-- (void)handlePanFrom:(UIPanGestureRecognizer *)recognizer {
-	if (recognizer.state == UIGestureRecognizerStateBegan) {
-        
-        CGPoint touchLocation = [recognizer locationInView:recognizer.view];
-        
-        touchLocation = [self convertPointFromView:touchLocation];
-        
-        [self selectNodeForTouch:touchLocation];
-        
-        
-    } else if (recognizer.state == UIGestureRecognizerStateChanged) {
-        
-        CGPoint translation = [recognizer translationInView:recognizer.view];
-        translation = CGPointMake(translation.x, -translation.y);
-        [self panForTranslation:translation];
-        [recognizer setTranslation:CGPointZero inView:recognizer.view];
-        
-    } else if (recognizer.state == UIGestureRecognizerStateEnded) {
-        
-        if (![[_selectedNode name] isEqualToString:@"conteudo"]) {
-            float scrollDuration = 0.2;
-            CGPoint velocity = [recognizer velocityInView:recognizer.view];
-            CGPoint pos = [_selectedNode position];
-            CGPoint p = mult(velocity, scrollDuration);
-            
-            CGPoint newPos = CGPointMake(pos.x + p.x, pos.y + p.y);
-            newPos = [self boundLayerPos:newPos];
-            [_selectedNode removeAllActions];
-            
-            SKAction *moveTo = [SKAction moveTo:newPos duration:scrollDuration];
-            [moveTo setTimingMode:SKActionTimingEaseOut];
-            [_selectedNode runAction:moveTo];
-        }
-        
-    }
-}
-
-CGPoint mult(const CGPoint v, const CGFloat s) {
-	return CGPointMake(v.x*s, v.y*s);
-}
-
-*/
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */

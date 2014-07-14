@@ -21,7 +21,7 @@
 		120E8F98192FC0A200CDEF95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120E8F7A192FC0A200CDEF95 /* UIKit.framework */; };
 		120E8FA0192FC0A200CDEF95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 120E8F9E192FC0A200CDEF95 /* InfoPlist.strings */; };
 		120E8FA2192FC0A200CDEF95 /* ProjetoFinalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 120E8FA1192FC0A200CDEF95 /* ProjetoFinalTests.m */; };
-		8418F87C1970817000781F82 /* LabelConteudoCaixa.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F8791970817000781F82 /* LabelConteudoCaixa.m */; };
+		8418F87C1970817000781F82 /* ConteudoCaixaNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F8791970817000781F82 /* ConteudoCaixaNode.m */; };
 		8418F87D1970817000781F82 /* ExercicioVariavel1.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F87B1970817000781F82 /* ExercicioVariavel1.m */; };
 		8418F88119708B0900781F82 /* ExercicioVIewContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F88019708B0900781F82 /* ExercicioVIewContoller.m */; };
 		91A986111962324500EA1074 /* Assunto.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A986101962324500EA1074 /* Assunto.m */; };
@@ -91,8 +91,8 @@
 		120E8F9D192FC0A200CDEF95 /* ProjetoFinalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProjetoFinalTests-Info.plist"; sourceTree = "<group>"; };
 		120E8F9F192FC0A200CDEF95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		120E8FA1192FC0A200CDEF95 /* ProjetoFinalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjetoFinalTests.m; sourceTree = "<group>"; };
-		8418F8781970817000781F82 /* LabelConteudoCaixa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelConteudoCaixa.h; sourceTree = "<group>"; };
-		8418F8791970817000781F82 /* LabelConteudoCaixa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelConteudoCaixa.m; sourceTree = "<group>"; };
+		8418F8781970817000781F82 /* ConteudoCaixaNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConteudoCaixaNode.h; sourceTree = "<group>"; };
+		8418F8791970817000781F82 /* ConteudoCaixaNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConteudoCaixaNode.m; sourceTree = "<group>"; };
 		8418F87A1970817000781F82 /* ExercicioVariavel1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExercicioVariavel1.h; sourceTree = "<group>"; };
 		8418F87B1970817000781F82 /* ExercicioVariavel1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExercicioVariavel1.m; sourceTree = "<group>"; };
 		8418F87F19708B0900781F82 /* ExercicioVIewContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExercicioVIewContoller.h; sourceTree = "<group>"; };
@@ -260,8 +260,8 @@
 			children = (
 				8418F87A1970817000781F82 /* ExercicioVariavel1.h */,
 				8418F87B1970817000781F82 /* ExercicioVariavel1.m */,
-				8418F8781970817000781F82 /* LabelConteudoCaixa.h */,
-				8418F8791970817000781F82 /* LabelConteudoCaixa.m */,
+				8418F8781970817000781F82 /* ConteudoCaixaNode.h */,
+				8418F8791970817000781F82 /* ConteudoCaixaNode.m */,
 			);
 			name = Variaveis;
 			sourceTree = "<group>";
@@ -517,7 +517,7 @@
 				A529DF201965DB8A00A3D9FB /* Calculador.m in Sources */,
 				91A986111962324500EA1074 /* Assunto.m in Sources */,
 				120E8F8D192FC0A200CDEF95 /* ViewController.m in Sources */,
-				8418F87C1970817000781F82 /* LabelConteudoCaixa.m in Sources */,
+				8418F87C1970817000781F82 /* ConteudoCaixaNode.m in Sources */,
 				A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */,
 				120E8F87192FC0A200CDEF95 /* AppDelegate.m in Sources */,
 				BDB48111196CB89400D5901A /* AnimaOperadores.m in Sources */,

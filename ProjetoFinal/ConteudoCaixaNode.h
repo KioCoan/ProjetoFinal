@@ -8,11 +8,12 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface LabelConteudoCaixa : SKLabelNode
+@interface ConteudoCaixaNode : SKSpriteNode
 
+@property SKLabelNode *lblConteudo;
 @property NSString *tipo;
-
+@property CGPoint posicaoInicial;
 
 - (id)initWithType:(NSString *)tipo texto:(NSString *)texto;
-
+-(NSString*)getText;
 @end
