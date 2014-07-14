@@ -32,7 +32,7 @@
         [self criaEnunciado];
         [self criarCaixas];
         [self criarLabels];
-        self.tituloExercicio = [NSString stringWithFormat:@"Exercicio 1"];
+        self.tituloExercicio = [NSString stringWithFormat:@"Movendo valores para suas respectivas variáveis"];
         self.descricaoExercicio = [NSString stringWithFormat:@"Arraste os valores para cima das variáveis de acordo com o tipo de dado."];
         
     }
