@@ -31,12 +31,11 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    NSLog(@"viewWill");
     
     gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     titulosEDescricoes = [[gerenciador assunto]retornaTitulosEDescricoesExercicios];
     
-    NSLog(@"viewWill");
+    [[self navigationItem] setTitle:[NSString stringWithFormat:@"Exercícios %@", [[gerenciador assunto] nome]]];
     
 }
 
