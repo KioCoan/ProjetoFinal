@@ -165,6 +165,7 @@
 
 -(void)abrirCaixa{
     //INICIA A SKACTION QUE ABRE A CAIXA
+    [lblConteudo setHidden:YES];
     [self runAction:animacaoAbrir completion:^{
         [self removeAllActions];
         caixaAberta = YES;
