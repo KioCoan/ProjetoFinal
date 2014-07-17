@@ -10,6 +10,6 @@
 
 @interface Logico : NSObject
 
--(BOOL)calcularComOperadorNome:(NSString*)operacao eExpressao1:(NSString*)expressao1 eExpressao2:(NSString*)expressao2;
-
+-(NSString*)calcularELogicoExpressao1:(NSString*)expressao1 eExpressao2:(NSString*)expressao2;
+-(NSString*)calcularOULogicoExpressao1:(NSString*)expressao1 eExpressao2:(NSString*)expressao2;
 @end

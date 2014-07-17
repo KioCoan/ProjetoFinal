@@ -19,7 +19,7 @@
         self.relacional = [[Relacional alloc] init];
         self.aritimetico = [[Aritimetico alloc]init];
         self.logico = [[Logico alloc] init];
-        
+        self.geral = [[Geral alloc] init];
         
     }
     return self;

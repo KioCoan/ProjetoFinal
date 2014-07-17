@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GerenciadorDeAssunto.h"
+
 @interface MenuViewController : UIViewController
 {
     NSArray *nBotoesNasLinhas;

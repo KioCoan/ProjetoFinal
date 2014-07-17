@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SpriteLabelNode.h"
+#import "Logico.h"
+#import "Aritimetico.h"
+#import "Relacional.h"
 
 @interface Geral : NSObject
 
 
--(id)calculaOperador:(NSString*)operacao numero1:(NSString*)numero1 numero2:(NSString*)numero2;
+-(NSString*)calculaOperador:(NSString*)operacao numero1:(NSString*)numero1 numero2:(NSString*)numero2;
 
 @end

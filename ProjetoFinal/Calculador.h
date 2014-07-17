@@ -10,13 +10,14 @@
 #import "Relacional.h"
 #import "Aritimetico.h"
 #import "Logico.h"
+#import "Geral.h"
 @interface Calculador : NSObject
 
 
 @property Relacional *relacional;
 @property Aritimetico *aritimetico;
 @property Logico *logico;
-
+@property Geral *geral;
 //-(BOOL)oDado:(NSString*)dado eDoTipo:(NSString*)tipo;
 
 @end

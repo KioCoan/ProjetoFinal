@@ -11,52 +11,57 @@
 @implementation Relacional
 
 
--(BOOL)calcularComOperadorNome:(NSString*)operacao eNumero1:(NSString*)numero1 eNumero2:(NSString*)numero2{
+-(NSString*)calcularComOperadorNome:(int)operacao eNumero1:(float)n1 eNumero2:(float)n2{
+    NSString *resultado;
     
-    int oper;
-    
-    if ([operacao isEqualToString:@"Maior"]) {
-        oper = 1;
-    }else if ([operacao isEqualToString:@"MaiorOuIgual"]){
-        oper = 2;
-    }else if ([operacao isEqualToString:@"Menor"]){
-        oper = 3;
-    }else if ([operacao isEqualToString:@"MenoOuIgual"]){
-        oper = 4;
-    }else if ([operacao isEqualToString:@"Igual"]){
-        oper = 5;
-    }else if ([operacao isEqualToString:@"Diferente"]){
-        oper = 6;
-    }else{
-        oper = -1;
-    }
-    
-    int n1 = [numero1 intValue];
-    int n2 = [numero2 intValue];
-    
-    switch (oper) {
-        case 1: // n1 > n2
-            return n1 > n2;
-            break;
-        case 2: // n1 >= n2
-            return n1 >= n2;
-            break;
-        case 3: // n1 < n2
-            return n1 < n2;
-            break;
-        case 4: // n1 <= n2
-            return n1 <= n2;
-            break;
-        case 5: // n1 == n2
-            return n1 == n2;
-            break;
-        case 6: // n1 != n2
-            return n1 != n2;
-            break;
+    switch (operacao) {
+               case 1:
+               if (n1>n2) {
+                   resultado = @"Verdadeiro";
+               }else{
+                   resultado = @"Falso";
+               }
+               break;
+           case 2: // Maior ou igual
+               if (n1>=n2) {
+                   resultado = @"Verdadeiro";
+               }else{
+                   resultado = @"Falso";
+               }
+               break;
+           case 3: // Menor
+               if (n1<n2) {
+                   resultado = @"Verdadeiro";
+               }else{
+                   resultado = @"Falso";
+               }
+               break;
+           case 4: // Menor ou igual
+               if (n1<=n2) {
+                   resultado = @"Verdadeiro";
+               }else{
+                   resultado = @"Falso";
+               }
+               break;
+           case 5: // Igual
+               if (n1==n2) {
+                   resultado = @"Verdadeiro";
+               }else{
+                   resultado = @"Falso";
+               }
+               break;
+           case 6: // Diferente
+               if (n1!=n2) {
+                   resultado = @"Verdadeiro";
+               }else{
+                   resultado = @"Falso";
+               }
+               break;
         default:
-            return false;
+            return nil;
             break;
     }
+    return resultado;
 }
 
 @end

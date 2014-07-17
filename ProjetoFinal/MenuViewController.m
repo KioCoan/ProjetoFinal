@@ -7,6 +7,7 @@
 //
 
 #import "MenuViewController.h"
+#import "Calculador.h"
 
 @interface MenuViewController ()
 
@@ -41,6 +42,10 @@ static const int ESPACAMENTO_BOTOES = 50;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    Calculador *c = [[Calculador alloc] init];
+    
+    NSLog(@"%@",[[c geral]calculaOperador:@"<" numero1:@"2.1" numero2:@"2"]);
     
     //É DEFINIDO O TAMANHO E A POSIÇÃO DA SCROLLVIEW EM RELAÇÃO O TAMANHO DO NAVIGATION CONTROLLER
     CGRect frame = self.view.frame;

@@ -10,48 +10,112 @@
 
 @implementation Aritimetico
 
--(int)calcularComOperadorNome:(NSString*)operacao eNumero1:(NSString*)numero1 eNumero2:(NSString*)numero2{
+// Métodos dos operadores aritiméticos
+-(NSString*)soma:(float)n1 n2:(float)n2{
     
-    int oper = [operacao intValue];
-    
-    if ([operacao isEqualToString:@"Soma"]) {
-        oper = 1;
-    }else if ([operacao isEqualToString:@"Subtracao"]){
-        oper = 2;
-    }else if ([operacao isEqualToString:@"Multiplicacao"]){
-        oper = 3;
-    }else if ([operacao isEqualToString:@"Divisao"]){
-        oper = 4;
+    NSString *soma;
+    if (((floorf(n1)) == n1) && ((floorf(n2)) == n2)) {
+        // Caso  os dois sejam inteiros
+        
+        soma = [NSString stringWithFormat:@"%d",((int)n1) + ((int)n2)];
+        
+        
+        
+    }else if(((floorf(n1)) != n1) && ((floorf(n2)) == n2)) {
+        // Caso n1 float e n2 Inteiro
+        
+        soma = [NSString stringWithFormat:@"%f",(n1) + ((int)n2)];
+        
+    }else if(((floorf(n1)) == n1) && ((floorf(n2)) != n2)){
+        // Caso n1 inteiro e n2 Float
+        
+        soma = [NSString stringWithFormat:@"%f",((int)n1) + (n2)];
+    }else{
+        // Caso os dois sejam float
+        soma = [NSString stringWithFormat:@"%f",n1 + n2];
     }
     
+    return soma;
+}
+
+-(NSString*)subtrai:(float)n1 n2:(float)n2{
     
-    int n1 = [numero1 intValue];
-    int n2 = [numero2 intValue];
-    
-    
-    
-    
-    switch (oper) {
-        case 1: // soma
-            return n1 + n2;
-            break;
-        case 2: // subtração
-            return n1 - n2;
-            break;
-        case 3: // multiplicação
-            return n1 * n2;
-            break;
-        case 4: // divisão
-            return n1 / n2;
-            break;
-            
-        default:
-            return -1;
-            break;
+    NSString *subtracao;
+    if (((floorf(n1)) == n1) && ((floorf(n2)) == n2)) {
+        // Caso  os dois sejam inteiros
+        
+        subtracao = [NSString stringWithFormat:@"%d",((int)n1) - ((int)n2)];
+        
+        
+    }else if(((floorf(n1)) != n1) && ((floorf(n2)) == n2)) {
+        // Caso n1 float e n2 Inteiro
+        
+        subtracao = [NSString stringWithFormat:@"%f",(n1) - ((int)n2)];
+        
+    }else if(((floorf(n1)) == n1) && ((floorf(n2)) != n2)){
+        // Caso n1 inteiro e n2 Float
+        
+        subtracao = [NSString stringWithFormat:@"%f",((int)n1) - (n2)];
+    }else{
+        // Caso os dois sejam float
+        subtracao = [NSString stringWithFormat:@"%f",n1 - n2];
     }
     
+    return subtracao;
+}
+
+-(NSString*)multiplica:(float)n1 n2:(float)n2{
     
+    NSString *multiplicacao;
+    if (((floorf(n1)) == n1) && ((floorf(n2)) == n2)) {
+        // Caso  os dois sejam inteiros
+        
+        multiplicacao = [NSString stringWithFormat:@"%d",((int)n1) * ((int)n2)];
+        
+        
+    }else if(((floorf(n1)) != n1) && ((floorf(n2)) == n2)) {
+        // Caso n1 float e n2 Inteiro
+        
+        multiplicacao = [NSString stringWithFormat:@"%f",(n1) * ((int)n2)];
+        
+    }else if(((floorf(n1)) == n1) && ((floorf(n2)) != n2)){
+        // Caso n1 inteiro e n2 Float
+        
+        multiplicacao = [NSString stringWithFormat:@"%f",((int)n1) * (n2)];
+    }else{
+        // Caso os dois sejam float
+        multiplicacao = [NSString stringWithFormat:@"%f",n1 * n2];
+    }
     
+    return multiplicacao;
+}
+
+-(NSString*)divide:(float)n1 n2:(float)n2{
+    
+    NSString *divisao;
+    if (((floorf(n1)) == n1) && ((floorf(n2)) == n2)) {
+        // Caso  os dois sejam inteiros
+        if ((int)n2 == 0) {
+            divisao = @"0";
+        }else{
+            divisao = [NSString stringWithFormat:@"%d",((int)n1) / ((int)n2)];
+        }
+        
+    }else if(((floorf(n1)) != n1) && ((floorf(n2)) == n2)) {
+        // Caso n1 float e n2 Inteiro
+        
+        divisao = [NSString stringWithFormat:@"%f",(n1) / ((int)n2)];
+        
+    }else if(((floorf(n1)) == n1) && ((floorf(n2)) != n2)){
+        // Caso n1 inteiro e n2 Float
+        
+        divisao = [NSString stringWithFormat:@"%f",((int)n1) / (n2)];
+    }else{
+        // Caso os dois sejam float
+        divisao = [NSString stringWithFormat:@"%f",n1 / n2];
+    }
+    
+    return divisao;
 }
 
 

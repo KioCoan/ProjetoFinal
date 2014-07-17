@@ -10,8 +10,8 @@
 
 @interface Relacional : NSObject
 
--(BOOL)calcularComOperadorNome:(NSString*)operacao eNumero1:(NSString*)numero1 eNumero2:(NSString*)numero2;
 
+-(NSString*)calcularComOperadorNome:(int)operacao eNumero1:(float)n1 eNumero2:(float)n2;
 
 
 

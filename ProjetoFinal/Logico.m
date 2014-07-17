@@ -10,9 +10,9 @@
 
 @implementation Logico
 
--(BOOL)calcularComOperadorNome:(NSString*)operacao eExpressao1:(NSString*)expressao1 eExpressao2:(NSString*)expressao2{
+-(NSString*)calcularELogicoExpressao1:(NSString*)expressao1 eExpressao2:(NSString*)expressao2{
     
-    int oper = [operacao intValue];
+    
     BOOL exp1,exp2;
     
     if ([expressao1 isEqualToString:@"Verdadeiro"]) {
@@ -27,25 +27,37 @@
         exp2 = NO;
     }
     
+    if (exp1 && exp2) {
+        return @"Verdadeiro";
+    }else{
+        return @"Falso";
+    }
+}
+
+
+-(NSString*)calcularOULogicoExpressao1:(NSString*)expressao1 eExpressao2:(NSString*)expressao2{
     
     
+    BOOL exp1,exp2;
     
-    
-    
-    switch (oper) {
-        case 1: // &&
-            return exp1 && exp2;
-            break;
-        case 2: // ||
-            return exp1 || exp2;
-            break;
-            
-        default:
-            return false;
-            break;
+    if ([expressao1 isEqualToString:@"Verdadeiro"]) {
+        exp1 = YES;
+    }else{
+        exp1 = NO;
     }
     
+    if ([expressao2 isEqualToString:@"Verdadeiro"]) {
+        exp2 = YES;
+    }else{
+        exp2 = NO;
+    }
     
+    if (exp1 || exp2) {
+        return @"Verdadeiro";
+    }else{
+        return @"Falso";
+    }
 }
+
 
 @end

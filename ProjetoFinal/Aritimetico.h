@@ -10,6 +10,8 @@
 
 @interface Aritimetico : NSObject
 
--(int)calcularComOperadorNome:(NSString*)operacao eNumero1:(NSString*)numero1 eNumero2:(NSString*)numero2;
-
+-(NSString*)soma:(float)n1 n2:(float)n2;
+-(NSString*)subtrai:(float)n1 n2:(float)n2;
+-(NSString*)multiplica:(float)n1 n2:(float)n2;
+-(NSString*)divide:(float)n1 n2:(float)n2;
 @end
