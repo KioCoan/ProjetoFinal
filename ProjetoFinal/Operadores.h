@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AnimaOperadores.h"
 #import "Assunto.h"
+#import "ExeOperadores1.h"
 
 
 @interface Operadores : Assunto

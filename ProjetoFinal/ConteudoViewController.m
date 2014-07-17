@@ -58,11 +58,7 @@
     [[self view] addSubview:viewAnimacao];
     
     
-    Calculador *interpretador = [[Calculador alloc] init];
     
-    BOOL retorno = [interpretador oDado:@"e" eDoTipo:@"inteiro"];
-    
-    NSLog(@"%d",retorno);
 }
 
 -(void)viewDidAppear:(BOOL)animated{

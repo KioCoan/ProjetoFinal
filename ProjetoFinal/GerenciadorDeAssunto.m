@@ -8,6 +8,7 @@
 
 #import "GerenciadorDeAssunto.h"
 #import "Variavel.h"
+#import "Operadores.h"
 //static GerenciadorDeAssunto* gerenciador;
 
 @implementation GerenciadorDeAssunto
@@ -70,6 +71,7 @@
             
         default:
             [self setAssunto:nil];
+            [self setAssunto:[[Operadores alloc]init]];
             break;
     }
     
@@ -87,20 +89,5 @@
     return [nomesDosAssuntos objectAtIndex:pos];
 }
 
-
-//+(id)gerenciador{
-//    @synchronized(self){
-//        if (gerenciador == nil) {
-//            gerenciador = [[self alloc]init];
-//        }
-//    }
-//    return gerenciador;
-//}
-//
-//+(void)mudarAssunto:(Assunto *)assunto{
-//    @synchronized(self){
-//        gerenciador.assunto = assunto;
-//    }
-//}
 
 @end

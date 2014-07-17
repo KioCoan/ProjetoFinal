@@ -171,7 +171,7 @@ static const int ESPACAMENTO_BOTOES = 50;
 
 
 -(void)mostrarAssunto:(id)sender{
-    NSLog(@"Clicou %@", [sender currentTitle]);
+    
     
     [self performSegueWithIdentifier:@"conteudoController" sender:nil];
 

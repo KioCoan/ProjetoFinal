@@ -26,27 +26,27 @@
     
 }
 
--(BOOL)oDado:(NSString*)dado eDoTipo:(NSString*)tipo{
-    
-    if ([tipo isEqualToString:@"inteiro"]) {
-        @try {
-            int i = [dado intValue];
-            NSLog(@"%d", i);
-        }
-        @catch (NSException *exception) {
-            return NO;
-        }
-        
-    }else if ([tipo isEqualToString:@"inteiro"]){
-        
-    }else if ([tipo isEqualToString:@"inteiro"]){
-        
-    }
-    
-    
-    
-    return YES;
-}
+//-(BOOL)oDado:(NSString*)dado eDoTipo:(NSString*)tipo{
+//    
+//    if ([tipo isEqualToString:@"inteiro"]) {
+//        @try {
+//            int i = [dado intValue];
+//            
+//        }
+//        @catch (NSException *exception) {
+//            return NO;
+//        }
+//        
+//    }else if ([tipo isEqualToString:@"inteiro"]){
+//        
+//    }else if ([tipo isEqualToString:@"inteiro"]){
+//        
+//    }
+//    
+//    
+//    
+//    return YES;
+//}
 
 
 

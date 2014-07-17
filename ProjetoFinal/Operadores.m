@@ -17,30 +17,18 @@
     
     if (self) {
         [self setAnimacao:[[AnimaOperadores alloc] init]];
-        [self montaTeoria];
+        [self montaTeoria:@"ConceitosVariaveis"];
         [self setNome:@"Operadores"];
     }
     return self;
 }
 
-
--(void)montaTeoria{
-    
-    NSString* path = [[NSBundle mainBundle] pathForResource:@"ConceitosOperadores"
-                                                     ofType:@"txt"];
-    
-    NSString* content = [NSString stringWithContentsOfFile:path
-                                                  encoding:NSUTF8StringEncoding
-                                                     error:NULL];
-    
-    
-    [self setTeoriaFormatada:[NSMutableArray arrayWithArray:[content componentsSeparatedByString:@"#"]]];
-    
-    
-    
+-(void)preparaExercicios{ // Aloca os objetos herdeiros, não instancia a cena dos exercícios
+    // Instanciar vetor de exercicios e alocar exrcicios existentes
+    self.exercicios = [[NSMutableArray alloc] init];
+    [self.exercicios addObject:[[ExeOperadores1 alloc] init]];
     
     
 }
-
 
 @end
