@@ -21,7 +21,7 @@
         oper = 2;
     }else if ([operacao isEqualToString:@"Menor"]){
         oper = 3;
-    }else if ([operacao isEqualToString:@"MenoOuIgualr"]){
+    }else if ([operacao isEqualToString:@"MenoOuIgual"]){
         oper = 4;
     }else if ([operacao isEqualToString:@"Igual"]){
         oper = 5;
