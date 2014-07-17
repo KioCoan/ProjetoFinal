@@ -8,10 +8,10 @@
 
 // ##### Classe Especializada utilizada pelo exercício 1 de variáveis ######
 
-#import "LabelConteudoCaixa.h"
+#import "SpriteLabelNode.h"
 
 
-@implementation LabelConteudoCaixa
+@implementation SpriteLabelNode
 
 - (id)initWithType:(NSString *)tipo texto:(NSString *)texto{
     

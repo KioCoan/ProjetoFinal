@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "SpriteCaixaNode.h"
-#import "LabelConteudoCaixa.h"
+#import "SpriteLabelNode.h"
 #import "Exercicio.h"
 
 
@@ -18,7 +18,7 @@
 {
     NSMutableArray *caixas;
     NSMutableArray *conteudos;
-    LabelConteudoCaixa *conteudoAtivo;
+    SpriteLabelNode *conteudoAtivo;
     NSArray *sprite;
     SKAction *executaSprite;
     NSArray *tipo;

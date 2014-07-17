@@ -11,7 +11,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface LabelConteudoCaixa : SKLabelNode
+@interface SpriteLabelNode : SKLabelNode
 
 @property NSString *tipo;
 @property CGPoint posicaoInicial;

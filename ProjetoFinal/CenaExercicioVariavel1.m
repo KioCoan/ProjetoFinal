@@ -75,10 +75,10 @@
     conteudos = [NSMutableArray array];
     
     
-    [conteudos addObject:[[LabelConteudoCaixa alloc] initWithType:@"inteiro" texto:@"23"]];
-    [conteudos addObject:[[LabelConteudoCaixa alloc] initWithType:@"real" texto:@"3.5"]];
-    [conteudos addObject:[[LabelConteudoCaixa alloc] initWithType:@"string" texto:@"\"João\""]];
-    [conteudos addObject:[[LabelConteudoCaixa alloc] initWithType:@"logico" texto:@"falso"]];
+    [conteudos addObject:[[SpriteLabelNode alloc] initWithType:@"inteiro" texto:@"23"]];
+    [conteudos addObject:[[SpriteLabelNode alloc] initWithType:@"real" texto:@"3.5"]];
+    [conteudos addObject:[[SpriteLabelNode alloc] initWithType:@"string" texto:@"\"João\""]];
+    [conteudos addObject:[[SpriteLabelNode alloc] initWithType:@"logico" texto:@"falso"]];
     
 
     
@@ -191,7 +191,7 @@
     }
     
     CGPoint location = [touch locationInNode:self];
-    conteudoAtivo = (LabelConteudoCaixa *) [self nodeAtPoint:location];
+    conteudoAtivo = (SpriteLabelNode *) [self nodeAtPoint:location];
     
     
 }
