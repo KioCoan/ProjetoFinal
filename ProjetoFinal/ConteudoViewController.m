@@ -45,7 +45,6 @@
     
     //CRIO UMA SKVIEW PARA INSERIR A SKSCENE
     SKView *viewAnimacao = [[SKView alloc] initWithFrame:CGRectMake(0, 65, self.view.frame.size.width, 600)];
-    [viewAnimacao setBackgroundColor:[UIColor grayColor]];
     
     
     //INSTANCIO A SKSCENE DO ASSUNTO ATUAL
