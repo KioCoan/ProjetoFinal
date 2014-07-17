@@ -22,7 +22,7 @@
 
 
 -(void)instanciaCena{
-    //cenaExercicio = [[CenaExercicioVariavel1 alloc] init];
+    cenaExercicio = [[CenaExercicioOperadores1 alloc] init];
     
     
 }
