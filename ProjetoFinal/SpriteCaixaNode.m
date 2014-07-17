@@ -222,5 +222,9 @@
     return lblTipo.text;
 }
 
+-(NSString *)retornaNome{
+    return lblNome.text;
+}
+
 
 @end

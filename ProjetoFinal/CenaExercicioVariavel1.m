@@ -16,7 +16,7 @@
     NSArray *sprite;
     SKAction *executaSprite;
     NSArray *tipo;
-   
+    SKLabelNode *codigo;
 }
 
 
@@ -28,6 +28,12 @@
         //self.physicsWorld.contactDelegate = self;
         
         tipo = [NSArray arrayWithObjects:@"inteiro",@"real",@"string",@"logico", nil];
+        
+        codigo = [[SKLabelNode alloc]initWithFontNamed:@"HeadLine"];
+        codigo.position = CGPointMake(self.frame.size.width * 150, self.frame.size.height * 100);
+        //codigo.text = @"teste";
+        
+        [self addChild:codigo];
         
         [self criaEnunciado];
         [self criarCaixas];
@@ -246,6 +252,7 @@
                     
                     //Ação a ser feita caso a resposta esteja correta
                     [c abrirCaixa];
+                    [self traduzParaPortugol:c];
                     [conteudoAtivo removeFromParent];
                     NSLog(@"Ta ceeeeerto!");
                     conteudoAtivo = nil;
@@ -267,6 +274,22 @@
     }
     
     
+}
+
+-(void)traduzParaPortugol: (SpriteCaixaNode *)c{
+    
+    
+    
+    NSString *nomeVariavel = [c retornaNome];
+    
+    NSString *valor = [conteudoAtivo text];
+    
+    
+    
+    NSArray *strings = [[NSArray alloc]initWithObjects:nomeVariavel,@"<-",valor ,nil];
+    
+    NSString *portugol = [strings componentsJoinedByString:@" "];
+    codigo.text = portugol;
 }
 /*
 
