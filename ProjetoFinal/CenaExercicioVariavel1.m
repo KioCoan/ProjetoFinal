@@ -9,16 +9,6 @@
 #import "CenaExercicioVariavel1.h"
 
 @implementation CenaExercicioVariavel1
-{
-    NSMutableArray *caixas;
-    NSMutableArray *conteudos;
-    LabelConteudoCaixa *conteudoAtivo;
-    NSArray *sprite;
-    SKAction *executaSprite;
-    NSArray *tipo;
-    SKLabelNode *codigo;
-}
-
 
 -(id)init{
     self = [super init];
@@ -30,7 +20,8 @@
         tipo = [NSArray arrayWithObjects:@"inteiro",@"real",@"string",@"logico", nil];
         
         codigo = [[SKLabelNode alloc]initWithFontNamed:@"HeadLine"];
-        codigo.position = CGPointMake(self.frame.size.width * 150, self.frame.size.height * 100);
+        codigo.position = CGPointMake(50, self.frame.size.height * 100);
+        [codigo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
         //codigo.text = @"teste";
         
         [self addChild:codigo];
@@ -275,12 +266,12 @@
     
     
     NSString *nomeVariavel = [c retornaNome];
-    
+    NSString *tipoVariavel = [c retornaTipo];
     NSString *valor = [conteudoAtivo text];
     
     
     
-    NSArray *strings = [[NSArray alloc]initWithObjects:nomeVariavel,@"<-",valor ,nil];
+    NSArray *strings = [[NSArray alloc]initWithObjects:tipoVariavel ,nomeVariavel,@"<-",valor ,nil];
     
     NSString *portugol = [strings componentsJoinedByString:@" "];
     codigo.text = portugol;

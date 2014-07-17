@@ -15,6 +15,16 @@
 
 
 @interface CenaExercicioVariavel1 : SKScene <SKPhysicsContactDelegate>
+{
+    NSMutableArray *caixas;
+    NSMutableArray *conteudos;
+    LabelConteudoCaixa *conteudoAtivo;
+    NSArray *sprite;
+    SKAction *executaSprite;
+    NSArray *tipo;
+    SKLabelNode *codigo;
+}
+
 
 @property BOOL movendoCaixa;
 
