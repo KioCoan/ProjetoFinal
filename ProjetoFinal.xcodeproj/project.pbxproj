@@ -50,6 +50,13 @@
 		BDB4810B196CB7FC00D5901A /* Operadores.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB4810A196CB7FC00D5901A /* Operadores.m */; };
 		BDB48111196CB89400D5901A /* AnimaOperadores.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB48110196CB89400D5901A /* AnimaOperadores.m */; };
 		BDB893D719677B3A009C105C /* AnimaVariavel.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB893D619677B3A009C105C /* AnimaVariavel.m */; };
+		BDBE7693197A39E0004EA926 /* OperadorNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBE768C197A39E0004EA926 /* OperadorNode.m */; };
+		BDBE7694197A39E0004EA926 /* OperadorResultadoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBE768E197A39E0004EA926 /* OperadorResultadoNode.m */; };
+		BDBE7695197A39E0004EA926 /* OperadorValoresNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBE7690197A39E0004EA926 /* OperadorValoresNode.m */; };
+		BDBE7696197A39E0004EA926 /* SpriteOperadorNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBE7692197A39E0004EA926 /* SpriteOperadorNode.m */; };
+		BDBE769D197A3B69004EA926 /* parte-operador.png in Resources */ = {isa = PBXBuildFile; fileRef = BDBE769A197A3B69004EA926 /* parte-operador.png */; };
+		BDBE769E197A3B69004EA926 /* parte-resultado.png in Resources */ = {isa = PBXBuildFile; fileRef = BDBE769B197A3B69004EA926 /* parte-resultado.png */; };
+		BDBE769F197A3B69004EA926 /* parte-valores.png in Resources */ = {isa = PBXBuildFile; fileRef = BDBE769C197A3B69004EA926 /* parte-valores.png */; };
 		BDC7579E196787E700DB8380 /* abrir-caixa1.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC75791196787E700DB8380 /* abrir-caixa1.png */; };
 		BDC7579F196787E700DB8380 /* abrir-caixa2.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC75792196787E700DB8380 /* abrir-caixa2.png */; };
 		BDC757A0196787E700DB8380 /* abrir-caixa3.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC75793196787E700DB8380 /* abrir-caixa3.png */; };
@@ -150,6 +157,17 @@
 		BDB48110196CB89400D5901A /* AnimaOperadores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimaOperadores.m; sourceTree = "<group>"; };
 		BDB893D519677B3A009C105C /* AnimaVariavel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimaVariavel.h; sourceTree = "<group>"; };
 		BDB893D619677B3A009C105C /* AnimaVariavel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimaVariavel.m; sourceTree = "<group>"; };
+		BDBE768B197A39E0004EA926 /* OperadorNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperadorNode.h; sourceTree = "<group>"; };
+		BDBE768C197A39E0004EA926 /* OperadorNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperadorNode.m; sourceTree = "<group>"; };
+		BDBE768D197A39E0004EA926 /* OperadorResultadoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperadorResultadoNode.h; sourceTree = "<group>"; };
+		BDBE768E197A39E0004EA926 /* OperadorResultadoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperadorResultadoNode.m; sourceTree = "<group>"; };
+		BDBE768F197A39E0004EA926 /* OperadorValoresNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperadorValoresNode.h; sourceTree = "<group>"; };
+		BDBE7690197A39E0004EA926 /* OperadorValoresNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperadorValoresNode.m; sourceTree = "<group>"; };
+		BDBE7691197A39E0004EA926 /* SpriteOperadorNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteOperadorNode.h; sourceTree = "<group>"; };
+		BDBE7692197A39E0004EA926 /* SpriteOperadorNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteOperadorNode.m; sourceTree = "<group>"; };
+		BDBE769A197A3B69004EA926 /* parte-operador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parte-operador.png"; path = "Imagens/Sprites/operadores/parte-operador.png"; sourceTree = "<group>"; };
+		BDBE769B197A3B69004EA926 /* parte-resultado.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parte-resultado.png"; path = "Imagens/Sprites/operadores/parte-resultado.png"; sourceTree = "<group>"; };
+		BDBE769C197A3B69004EA926 /* parte-valores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parte-valores.png"; path = "Imagens/Sprites/operadores/parte-valores.png"; sourceTree = "<group>"; };
 		BDC75791196787E700DB8380 /* abrir-caixa1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "abrir-caixa1.png"; path = "Imagens/Sprites/variavel.atlas/abrir-caixa1.png"; sourceTree = "<group>"; };
 		BDC75792196787E700DB8380 /* abrir-caixa2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "abrir-caixa2.png"; path = "Imagens/Sprites/variavel.atlas/abrir-caixa2.png"; sourceTree = "<group>"; };
 		BDC75793196787E700DB8380 /* abrir-caixa3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "abrir-caixa3.png"; path = "Imagens/Sprites/variavel.atlas/abrir-caixa3.png"; sourceTree = "<group>"; };
@@ -283,10 +301,10 @@
 		846B738F197824AD009C2EB7 /* Objetos */ = {
 			isa = PBXGroup;
 			children = (
-				BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */,
-				BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */,
 				8418F8781970817000781F82 /* SpriteLabelNode.h */,
 				8418F8791970817000781F82 /* SpriteLabelNode.m */,
+				BDBE7698197A3A00004EA926 /* Variavel */,
+				BDBE7697197A39EF004EA926 /* Operadores */,
 			);
 			name = Objetos;
 			sourceTree = "<group>";
@@ -405,6 +423,40 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		BDBE7697197A39EF004EA926 /* Operadores */ = {
+			isa = PBXGroup;
+			children = (
+				BDBE768B197A39E0004EA926 /* OperadorNode.h */,
+				BDBE768C197A39E0004EA926 /* OperadorNode.m */,
+				BDBE768D197A39E0004EA926 /* OperadorResultadoNode.h */,
+				BDBE768E197A39E0004EA926 /* OperadorResultadoNode.m */,
+				BDBE768F197A39E0004EA926 /* OperadorValoresNode.h */,
+				BDBE7690197A39E0004EA926 /* OperadorValoresNode.m */,
+				BDBE7691197A39E0004EA926 /* SpriteOperadorNode.h */,
+				BDBE7692197A39E0004EA926 /* SpriteOperadorNode.m */,
+			);
+			name = Operadores;
+			sourceTree = "<group>";
+		};
+		BDBE7698197A3A00004EA926 /* Variavel */ = {
+			isa = PBXGroup;
+			children = (
+				BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */,
+				BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */,
+			);
+			name = Variavel;
+			sourceTree = "<group>";
+		};
+		BDBE7699197A3B57004EA926 /* Operadores */ = {
+			isa = PBXGroup;
+			children = (
+				BDBE769A197A3B69004EA926 /* parte-operador.png */,
+				BDBE769B197A3B69004EA926 /* parte-resultado.png */,
+				BDBE769C197A3B69004EA926 /* parte-valores.png */,
+			);
+			name = Operadores;
+			sourceTree = "<group>";
+		};
 		BDC75790196787CF00DB8380 /* Variavel */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,6 +480,7 @@
 		E501FA69192FCD1600B56B5C /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BDBE7699197A3B57004EA926 /* Operadores */,
 				BDC75790196787CF00DB8380 /* Variavel */,
 				BD630CAA1948E3F400AF13E7 /* item-variavel.png */,
 				846B738D19782427009C2EB7 /* fundo-cinza.png */,
@@ -513,6 +566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDC7579F196787E700DB8380 /* abrir-caixa2.png in Resources */,
+				BDBE769D197A3B69004EA926 /* parte-operador.png in Resources */,
 				BDC757A8196787E700DB8380 /* abrir-caixa11.png in Resources */,
 				120E8F8F192FC0A200CDEF95 /* Images.xcassets in Resources */,
 				BDC757A0196787E700DB8380 /* abrir-caixa3.png in Resources */,
@@ -523,6 +577,7 @@
 				BDC757A9196787E700DB8380 /* abrir-caixa12.png in Resources */,
 				BDC7579E196787E700DB8380 /* abrir-caixa1.png in Resources */,
 				BDC757A7196787E700DB8380 /* abrir-caixa10.png in Resources */,
+				BDBE769E197A3B69004EA926 /* parte-resultado.png in Resources */,
 				A55F2B4419648C0600111BEB /* ConceitosVariaveis.txt in Resources */,
 				846B738E19782427009C2EB7 /* fundo-cinza.png in Resources */,
 				BDC757AA196787E700DB8380 /* abrir-caixa13.png in Resources */,
@@ -531,6 +586,7 @@
 				BDC757A2196787E700DB8380 /* abrir-caixa5.png in Resources */,
 				120E8F8A192FC0A200CDEF95 /* Main.storyboard in Resources */,
 				BD630CAB1948E3F400AF13E7 /* item-variavel.png in Resources */,
+				BDBE769F197A3B69004EA926 /* parte-valores.png in Resources */,
 				BDC757A6196787E700DB8380 /* abrir-caixa9.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,8 +614,10 @@
 				91A986111962324500EA1074 /* Assunto.m in Sources */,
 				A505740F1978243A00F68932 /* Geral.m in Sources */,
 				120E8F8D192FC0A200CDEF95 /* ViewController.m in Sources */,
+				BDBE7696197A39E0004EA926 /* SpriteOperadorNode.m in Sources */,
 				8418F87C1970817000781F82 /* SpriteLabelNode.m in Sources */,
 				A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */,
+				BDBE7693197A39E0004EA926 /* OperadorNode.m in Sources */,
 				120E8F87192FC0A200CDEF95 /* AppDelegate.m in Sources */,
 				BDB48111196CB89400D5901A /* AnimaOperadores.m in Sources */,
 				91A98619196232F800EA1074 /* Exercicio.m in Sources */,
@@ -572,10 +630,12 @@
 				BDB893D719677B3A009C105C /* AnimaVariavel.m in Sources */,
 				A505740C197811E700F68932 /* ExeOperadores1.m in Sources */,
 				A597F0F51960A7A6006429C7 /* SubViewConteudoFilho.m in Sources */,
+				BDBE7694197A39E0004EA926 /* OperadorResultadoNode.m in Sources */,
 				A529DF1C1965DB7500A3D9FB /* Aritimetico.m in Sources */,
 				A559E4111970524100BDFDB8 /* Validador.m in Sources */,
 				A50B33401972BF2E00BDD473 /* ListaDeExerciciosViewController.m in Sources */,
 				A500C2B519743C1D00D6BE83 /* ExeVariavel1.m in Sources */,
+				BDBE7695197A39E0004EA926 /* OperadorValoresNode.m in Sources */,
 				A55F2B411964879A00111BEB /* Variavel.m in Sources */,
 				A529DF1B1965DB7500A3D9FB /* Relacional.m in Sources */,
 			);

@@ -10,4 +10,19 @@
 
 @implementation AnimaOperadores
 
+-(id)initWithSize:(CGSize)size {
+    if (self = [super initWithSize:size]) {
+        /* Setup your scene here */
+        
+        SpriteOperadorNode *spriteOperador = [[SpriteOperadorNode alloc] init];
+        [spriteOperador setPosition:CGPointMake(400, 400)];
+        [self addChild:spriteOperador];
+        
+        
+        [self setBackgroundColor:[UIColor whiteColor]];
+    }
+    return self;
+}
+
+
 @end

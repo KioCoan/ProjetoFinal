@@ -7,7 +7,10 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "SpriteOperadorNode.h"
 
 @interface AnimaOperadores : SKScene
+
+
 
 @end
