@@ -13,7 +13,18 @@
 @implementation CenaExercicioOperadores1{
     NSMutableArray *expressoes;
     NSArray *operadores;
-    NSMutableArray *expressao;
+    NSMutableArray *opcoes;
+    Calculador *calculador;
+    CGPoint posicaoInicial;
+    CGPoint posicaoMutavel;
+    SpriteLabelNode *valor1;
+    SpriteLabelNode *valor2;
+    SpriteLabelNode *resultado;
+    SpriteLabelNode *operador;
+    SKSpriteNode *espaco;
+    SpriteLabelNode *atribuicao;
+    SpriteLabelNode *conteudoAtivo;
+    
     
 }
 
@@ -27,13 +38,32 @@
     if (self) {
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        
+        //criando vetor de operadores
         operadores = [NSArray arrayWithObjects:@">", @"<",@"==",@"!=",@">=",@"<=",@"+",@"-",@"*",@"/",nil];
-        [self expressoesAleatorias];
+        
+        //setando principais configuracoes de posicionamento
+        posicaoInicial = CGPointMake(self.frame.size.width * 60, self.frame.size.height * 700);
+        posicaoMutavel = posicaoInicial;
+        
+        
+        
+        //allocando calculador
+        calculador = [[Calculador alloc]init];
+        
+        opcoes = [NSMutableArray array];
+        expressoes = [NSMutableArray array];
+        
+        for (int i = 0; i < 6; i++) {
+            [self geraDadosAleatorio];
+            [self criaExpressoes];
+        }
+        
+        
         
         //[self criarExpressoes];
+        [self posicionamento:opcoes];
         
-        
+        [self adicionaNaTela];
         
     }
     return self;
@@ -42,112 +72,149 @@
 }
 
 
+- (void)posicionamento:(NSMutableArray *)vetor{
+    
+    posicaoMutavel.x = posicaoInicial.x + 10;
+    //posicaoMutavel.x = self.frame.size.width * 700;
+    for (SpriteLabelNode *aux in vetor) {
+        [aux setPosition:posicaoMutavel];
+        posicaoMutavel.x += (aux.fontSize * 3);
+    }
+    
+    
+    
+    
+}
 
-- (void)expressoesAleatorias{
+- (void)geraDadosAleatorio{
     
-    
-    expressao = [NSMutableArray array];
     int n = 0;
-    
     //sorteia operacao
     
     n = arc4random() % operadores.count;
-    [expressao addObject:[[SpriteLabelNode alloc] initWithType:@"operador" texto:[operadores objectAtIndex:n]]];
-    //[expressao addObject:[operadores objectAtIndex:n]];
+    operador = [[SpriteLabelNode alloc]initWithType:@"operador" texto:[operadores objectAtIndex:n]];
     
     
     //sorteia valor
     
-    for (int i = 0; i < 2; i++) {
-        
-        n = arc4random() % 10 + 1;
-        
-        NSString *valor = [NSString stringWithFormat:@"%d",n];
-        
-        [expressao addObject:[[SpriteLabelNode alloc] initWithType:@"inteiro" texto:valor]];
-        //[expressao addObject:valor];
-        
-    }
+    n = arc4random() % 10 + 1;
+    valor1 = [[SpriteLabelNode alloc]initWithType:@"valor" texto:[NSString stringWithFormat:@"%d",n]];
     
-    for (int i = 0; i < expressao.count; i++) {
-        NSLog(@"%@ ",[[expressao objectAtIndex:i] text]);
-    }
+    n = arc4random() % 10 + 1;
     
-    
-    //chamar compilador e pegar o resultado
+    valor2 = [[SpriteLabelNode alloc]initWithType:@"valor" texto:[NSString stringWithFormat:@"%d",n]];
     
     
     
+    //alocando espaco vazio
     
+    espaco = [SKSpriteNode spriteNodeWithImageNamed:@"fundo-cinza.png"];
     
+    //chamando o calculador para retornar o resultado da operacao
+    
+    NSString *aux = [calculador.geral calculaOperador:operador.text numero1:valor1.text numero2:valor2.text];
+    //NSArray *strings = [[NSArray alloc]initWithObjects:@"=",aux ,nil];
+    //resultado = [[SpriteLabelNode alloc]initWithType:@"resultado" texto:[strings componentsJoinedByString:@" "]];
+ resultado = [[SpriteLabelNode alloc]initWithType:@"resultado" texto:aux];
+    atribuicao = [[SpriteLabelNode alloc]initWithType:@"atribuicao" texto:@"="];
 }
 
 
-- (void)criarExpressoes{
+- (void)criaExpressoes{
     
     
     //Criando vetor
-    expressoes = [NSMutableArray array];
-    
-    //preparando posiciao inicial e tamanhos dos objetos
     
     
-    CGPoint posicaoInicial = CGPointMake(self.frame.size.width * 100, self.frame.size.height * 700);
-    CGPoint posicaoVariavel = posicaoInicial;
-    
-    int font = self.frame.size.height * 40;
-    
-    // criando os nos
-    
-    SpriteLabelNode *n1 = [[SpriteLabelNode alloc]initWithType:@"inteiro" texto:@"2"];
-    SpriteLabelNode *n2 = [[SpriteLabelNode alloc]initWithType:@"inteiro" texto:@"3"];
-    SpriteLabelNode *n3 = [[SpriteLabelNode alloc]initWithType:@"inteiro" texto:@"= 5"];
-    SKSpriteNode *espaco = [SKSpriteNode spriteNodeWithImageNamed:@"fundo-cinza.png"];
+    //preparando tamanho das fontes
     
     
     
-    //setando tamanho dos objetos
-    
-    n1.fontSize = font;
-    n2.fontSize = font;
-    n3.fontSize = font;
+    //atribuindo tamanhos os objetos
+   int font = self.frame.size.height * 40;
+    valor1.fontSize = font;
+    valor2.fontSize = font;
+    resultado.fontSize = font;
+    operador.fontSize = font;
+    atribuicao.fontSize = font;
     espaco.size = CGSizeMake(self.frame.size.width * 100, self.frame.size.height * 70);
     
+    
+    
+    
     //setando posicao dos objetos
+    float margem = 15;
     
-    n1.position = posicaoVariavel;
-    posicaoVariavel.x += n1.fontSize * 3;
+    valor1.position = posicaoMutavel;
+    posicaoMutavel.x += valor1.fontSize * 3;
+    posicaoMutavel.y += margem;
     
-    espaco.position = posicaoVariavel;
-    posicaoVariavel.x += espaco.size.width * 1.0;
+    espaco.position = posicaoMutavel;
+    posicaoMutavel.x += espaco.size.width * 1.0;
+    posicaoMutavel.y -= margem;
     
-    n2.position = posicaoVariavel;
-    posicaoVariavel.x += n2.fontSize * 2;
     
-    n3.position = posicaoVariavel;
+    valor2.position = posicaoMutavel;
+    posicaoMutavel.x += valor2.fontSize * 2;
+    
+    atribuicao.position = posicaoMutavel;
+    
+    
+    
+    if ([resultado.text isEqualToString:@"Verdadeiro"]) {
+        posicaoMutavel.x += atribuicao.fontSize * 4;
+    }else if ([resultado.text isEqualToString:@"falso"]){
+        posicaoMutavel.x += atribuicao.fontSize * 3;
+    }else{
+        posicaoMutavel.x += atribuicao.fontSize * 2;
+    }
+    
+    resultado.position = posicaoMutavel;
+    
+    posicaoMutavel.x = posicaoInicial.x;
+    posicaoMutavel.y -= espaco.size.height * 1.5;
     
     //criando NSDictionary
     
-    NSDictionary *dict = @{@"valor1": n1,@"espaco":espaco,@"valor2":n2,@"valor3":n3};
+    
+    NSDictionary *dict = @{@"valor1": valor1,
+                           @"valor2":valor2,
+                           @"espaco":espaco,
+                           @"atribuicao":atribuicao,
+                           @"resultado":resultado
+                           };
+
     
     [expressoes addObject:dict];
+    [opcoes addObject:operador];
+
+}
+
+- (void)adicionaNaTela{
     
     
+    for (int i = 0; i < expressoes.count; i++) {
+        [self addChild:[[expressoes objectAtIndex:i] valueForKey:@"valor1"]];
+        [self addChild:[[expressoes objectAtIndex:i] valueForKey:@"valor2"]];
+        [self addChild:[[expressoes objectAtIndex:i] valueForKey:@"espaco"]];
+        [self addChild:[[expressoes objectAtIndex:i] valueForKey:@"atribuicao"]];
+        [self addChild:[[expressoes objectAtIndex:i] valueForKey:@"resultado"]];
+    }
     
-    
-    
-    [self addChild:[[expressoes objectAtIndex:0] valueForKey:@"valor1"]];
-    [self addChild:[[expressoes objectAtIndex:0] valueForKey:@"espaco"]];
-    [self addChild:[[expressoes objectAtIndex:0] valueForKey:@"valor2"]];
-    [self addChild:[[expressoes objectAtIndex:0] valueForKey:@"valor3"]];
-    
-    
-//    [self addChild:n1];
-//    [self addChild:espaco];
-//    [self addChild:n2];
-//    [self addChild:n3];
+    for (int i = 0; i < opcoes.count; i++) {
+        [self addChild:[opcoes objectAtIndex:i]];
+    }
     
 }
 
-
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    
+    UITouch *touch = [touches anyObject];
+    
+    
+    CGPoint location = [touch locationInNode:self];
+    conteudoAtivo = (SpriteLabelNode *) [self nodeAtPoint:location];
+    
+}
 @end
