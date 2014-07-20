@@ -39,7 +39,6 @@
 - (void)criaEnunciado{
     
     SKLabelNode *enunciado1 = [[SKLabelNode alloc]initWithFontNamed:@"HeadLine"];
-    
     SKLabelNode *enunciado2 = [[SKLabelNode alloc]initWithFontNamed:@"HeadLine"];
 
     

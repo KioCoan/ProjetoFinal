@@ -8,6 +8,8 @@
 
 #import "SpriteCaixaNode.h"
 
+static const int NUM_TEXTURAS = 13;
+
 @implementation SpriteCaixaNode
 
 -(id)init{
@@ -177,46 +179,31 @@
 
 -(void)inicializaAnimacaoAbrirCaixa{
     //CRIO TEXTURAS PARA TODAS OS SPRITES DA VARIAVEL
-    SKTexture *caixa1 = [SKTexture textureWithImageNamed:@"abrir-caixa1.png"];
-    SKTexture *caixa2 = [SKTexture textureWithImageNamed:@"abrir-caixa2.png"];
-    SKTexture *caixa3 = [SKTexture textureWithImageNamed:@"abrir-caixa3.png"];
-    SKTexture *caixa4 = [SKTexture textureWithImageNamed:@"abrir-caixa4.png"];
-    SKTexture *caixa5 = [SKTexture textureWithImageNamed:@"abrir-caixa5.png"];
-    SKTexture *caixa6 = [SKTexture textureWithImageNamed:@"abrir-caixa6.png"];
-    SKTexture *caixa7 = [SKTexture textureWithImageNamed:@"abrir-caixa7.png"];
-    SKTexture *caixa8 = [SKTexture textureWithImageNamed:@"abrir-caixa8.png"];
-    SKTexture *caixa9 = [SKTexture textureWithImageNamed:@"abrir-caixa9.png"];
-    SKTexture *caixa10 = [SKTexture textureWithImageNamed:@"abrir-caixa10.png"];
-    SKTexture *caixa11 = [SKTexture textureWithImageNamed:@"abrir-caixa11.png"];
-    SKTexture *caixa12 = [SKTexture textureWithImageNamed:@"abrir-caixa12.png"];
-    SKTexture *caixa13 = [SKTexture textureWithImageNamed:@"abrir-caixa13.png"];
+    NSMutableArray *vetorTexturas = [[NSMutableArray alloc] init];
     
-    NSArray *array = [NSArray arrayWithObjects:caixa1, caixa2, caixa3, caixa4, caixa5, caixa6, caixa7, caixa8, caixa9, caixa10, caixa11, caixa12, caixa13, nil];
+    for(int i=1; i<=NUM_TEXTURAS; i++){
+        SKTexture *textura = [SKTexture textureWithImageNamed:[NSString stringWithFormat:@"abrir-caixa%d.png", i]];
+        
+        [vetorTexturas addObject:textura];
+    }
+
     
     //INSTANCIO A SKACTION COM O ARRAY DE TEXTURAS CRIADO
-    animacaoAbrir = [SKAction animateWithTextures:array timePerFrame:0.05];
+    animacaoAbrir = [SKAction animateWithTextures:vetorTexturas timePerFrame:0.05];
 }
 
 -(void)inicializaAnimacaoFecharCaixa{
     //CRIO TEXTURAS PARA TODAS OS SPRITES DA VARIAVEL EM ORDEM INVERSA (CAIXA FECHANDO)
-    SKTexture *caixa1 = [SKTexture textureWithImageNamed:@"abrir-caixa13.png"];
-    SKTexture *caixa2 = [SKTexture textureWithImageNamed:@"abrir-caixa12.png"];
-    SKTexture *caixa3 = [SKTexture textureWithImageNamed:@"abrir-caixa11.png"];
-    SKTexture *caixa4 = [SKTexture textureWithImageNamed:@"abrir-caixa10.png"];
-    SKTexture *caixa5 = [SKTexture textureWithImageNamed:@"abrir-caixa9.png"];
-    SKTexture *caixa6 = [SKTexture textureWithImageNamed:@"abrir-caixa8.png"];
-    SKTexture *caixa7 = [SKTexture textureWithImageNamed:@"abrir-caixa7.png"];
-    SKTexture *caixa8 = [SKTexture textureWithImageNamed:@"abrir-caixa6.png"];
-    SKTexture *caixa9 = [SKTexture textureWithImageNamed:@"abrir-caixa5.png"];
-    SKTexture *caixa10 = [SKTexture textureWithImageNamed:@"abrir-caixa4.png"];
-    SKTexture *caixa11 = [SKTexture textureWithImageNamed:@"abrir-caixa3.png"];
-    SKTexture *caixa12 = [SKTexture textureWithImageNamed:@"abrir-caixa2.png"];
-    SKTexture *caixa13 = [SKTexture textureWithImageNamed:@"abrir-caixa1.png"];
+    NSMutableArray *vetorTexturas = [[NSMutableArray alloc] init];
     
-    NSArray *array = [NSArray arrayWithObjects:caixa1, caixa2, caixa3, caixa4, caixa5, caixa6, caixa7, caixa8, caixa9, caixa10, caixa11, caixa12, caixa13, nil];
+    for(int i=NUM_TEXTURAS; i>=1; i--){
+        SKTexture *textura = [SKTexture textureWithImageNamed:[NSString stringWithFormat:@"abrir-caixa%d.png", i]];
+        
+        [vetorTexturas addObject:textura];
+    }
     
     //INSTANCIO A SKACTION COM O ARRAY DE TEXTURAS CRIADO
-    animacaoFechar = [SKAction animateWithTextures:array timePerFrame:0.05];
+    animacaoFechar = [SKAction animateWithTextures:vetorTexturas timePerFrame:0.05];
 }
 
 -(NSString *)retornaTipo{
