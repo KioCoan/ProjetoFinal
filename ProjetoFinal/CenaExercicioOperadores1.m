@@ -24,6 +24,7 @@
     SKSpriteNode *espaco;
     SpriteLabelNode *atribuicao;
     SpriteLabelNode *conteudoAtivo;
+    BOOL move;
     
     
 }
@@ -61,6 +62,7 @@
         
         
         //[self criarExpressoes];
+        opcoes = [self embaralha:opcoes];
         [self posicionamento:opcoes];
         
         [self adicionaNaTela];
@@ -71,6 +73,50 @@
     
 }
 
+- (void)criaEnunciado{
+    
+    SKLabelNode *enunciado1 = [[SKLabelNode alloc]initWithFontNamed:@"HeadLine"];
+    SKLabelNode *enunciado2 = [[SKLabelNode alloc]initWithFontNamed:@"HeadLine"];
+    
+    
+    CGPoint posicao = CGPointMake(400, 850);
+    CGPoint posicao2 = posicao;
+    posicao2.y -= enunciado1.fontSize * 1.2 ;
+    
+    NSString *texto1 = @"Arraste cada operador para";
+    NSString *texto2 = @"dentro da caixa adequada";
+    
+    [enunciado1 setText:texto1];
+    [enunciado2 setText:texto2];
+    [enunciado1 setPosition:posicao];
+    [enunciado2 setPosition:posicao2];
+    
+    [self addChild:enunciado1];
+    [self addChild:enunciado2];
+    
+}
+
+- (NSMutableArray *)embaralha :(NSMutableArray *)antigo{
+    
+    int n;
+    NSMutableArray *vetorEmbaralhado = [NSMutableArray array];
+    
+    while (antigo.count > 0) {
+        n = arc4random() % antigo.count;
+        
+        [vetorEmbaralhado addObject:[antigo objectAtIndex:n]];
+        [antigo removeObjectAtIndex:n];
+    }
+    
+    
+    
+    
+    return vetorEmbaralhado;
+    
+    
+    
+}
+
 
 - (void)posicionamento:(NSMutableArray *)vetor{
     
@@ -78,6 +124,7 @@
     //posicaoMutavel.x = self.frame.size.width * 700;
     for (SpriteLabelNode *aux in vetor) {
         [aux setPosition:posicaoMutavel];
+        [aux setPosicaoInicial:posicaoMutavel];
         posicaoMutavel.x += (aux.fontSize * 3);
     }
     
@@ -93,30 +140,33 @@
     
     n = arc4random() % operadores.count;
     operador = [[SpriteLabelNode alloc]initWithType:@"operador" texto:[operadores objectAtIndex:n]];
-    
+    operador.name = @"operador";
     
     //sorteia valor
     
     n = arc4random() % 10 + 1;
     valor1 = [[SpriteLabelNode alloc]initWithType:@"valor" texto:[NSString stringWithFormat:@"%d",n]];
+    valor1.name = @"valor";
     
     n = arc4random() % 10 + 1;
     
     valor2 = [[SpriteLabelNode alloc]initWithType:@"valor" texto:[NSString stringWithFormat:@"%d",n]];
-    
+    valor2.name = @"valor";
     
     
     //alocando espaco vazio
     
     espaco = [SKSpriteNode spriteNodeWithImageNamed:@"fundo-cinza.png"];
-    
+    espaco.name = @"espaco";
     //chamando o calculador para retornar o resultado da operacao
     
     NSString *aux = [calculador.geral calculaOperador:operador.text numero1:valor1.text numero2:valor2.text];
     //NSArray *strings = [[NSArray alloc]initWithObjects:@"=",aux ,nil];
     //resultado = [[SpriteLabelNode alloc]initWithType:@"resultado" texto:[strings componentsJoinedByString:@" "]];
- resultado = [[SpriteLabelNode alloc]initWithType:@"resultado" texto:aux];
+    resultado = [[SpriteLabelNode alloc]initWithType:@"resultado" texto:aux];
+    resultado.name = @"resultado";
     atribuicao = [[SpriteLabelNode alloc]initWithType:@"atribuicao" texto:@"="];
+    atribuicao.name = @"atribuicao";
 }
 
 
@@ -139,7 +189,8 @@
     atribuicao.fontSize = font;
     espaco.size = CGSizeMake(self.frame.size.width * 100, self.frame.size.height * 70);
     
-    
+    //trocando cor operador
+    operador.fontColor = [UIColor greenColor];
     
     
     //setando posicao dos objetos
@@ -209,12 +260,80 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    
+    //criando toque e posicao
     UITouch *touch = [touches anyObject];
-    
-    
     CGPoint location = [touch locationInNode:self];
     conteudoAtivo = (SpriteLabelNode *) [self nodeAtPoint:location];
+    if ([conteudoAtivo.name isEqualToString:@"operador"]) {
+        move = YES;
+    }
+    
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    //se move estiver YES entao pode mover o NODE
+    
+    if (move) {
+        
+        //identificando toque e posicao
+        UITouch *touch = [touches anyObject];
+        CGPoint location = [touch locationInNode:self];
+        
+        //setando posicao no NODE
+            [conteudoAtivo setPosition:location];
+            
+       
+    }
+    
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    
+    if (conteudoAtivo) {
+        
+        for (NSDictionary *dict in expressoes) { //Ao soltar o node de resposta em algum lugar varre o vetor de caixas para descobrir sobre quem está
+            
+            espaco = [dict valueForKey:@"espaco"];
+            valor1 = [dict valueForKey:@"valor1"];
+            valor2 = [dict valueForKey:@"valor2"];
+            resultado = [dict valueForKey:@"resultado"];
+            
+            
+            float xInicio = espaco.frame.origin.x;
+            float xFim = xInicio + espaco.frame.size.width;
+            float xMeio = (xInicio + xFim)/2;
+            float yInicio = espaco.frame.origin.y;
+            float yFim = yInicio + espaco.frame.size.height;
+            float yMeio = (yInicio + yFim)/2;
+            
+            if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
+                
+                
+                if ([resultado.text isEqualToString:[calculador.geral calculaOperador:conteudoAtivo.text numero1:valor1.text numero2:valor2.text]]) { //se a resposta do calculador for a mesma da expressao
+                    [conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa
+                    
+                    
+                }else{
+                    SKAction *animacaoVoltar = [SKAction moveTo:conteudoAtivo.posicaoInicial duration:0.5];
+                    [conteudoAtivo runAction:animacaoVoltar completion:^{
+                        [conteudoAtivo removeAllActions];
+                    }];
+                }
+            
+        
+            }
+
+    
+        }
+    }
+    
+    
+    
+    
+    move = NO;
+    conteudoAtivo = nil;
     
 }
 @end
