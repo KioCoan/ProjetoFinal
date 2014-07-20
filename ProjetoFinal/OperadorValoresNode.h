@@ -12,8 +12,15 @@
 {
     SKLabelNode *lblValor1;
     SKLabelNode *lblValor2;
+    
+    SKAction *animacaoExpandir;
+    SKAction *animacaoDiminuir;
+    
+    BOOL estaVisivel;
 }
 
 -(id)initWithValor1:(NSString*)valor1 valor2:(NSString*)valor2;
-
+-(SKAction*)getAnimacaoExpandir;
+-(SKAction*)getAnimacaoDiminuir;
+-(void)iniciarAnimacao;
 @end

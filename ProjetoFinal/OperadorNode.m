@@ -14,9 +14,7 @@
     self = [super init];
     
     if(self){
-        [self setTexture:[SKTexture textureWithImageNamed:@"parte-operador.png"]];
-        [self setSize:CGSizeMake(139, 139)];
-        [self inicializarLabelOperador:operador];
+        [self inicializaClasse:operador];
     }
     
     return self;
@@ -27,15 +25,23 @@
     self = [super init];
     
     if(self){
-        [self setTexture:[SKTexture textureWithImageNamed:@"parte-operador.png"]];
+        [self inicializaClasse:@""];
     }
     
     return self;
 }
 
+//METODO QUE CHAMA TODOS OS METODOS QUE INICIALIZAM O NECESSÁRIO
+-(void)inicializaClasse:(NSString*)operador{
+    [self setTexture:[SKTexture textureWithImageNamed:@"parte-operador.png"]];
+    [self setName:@"operador"];
+    [self setSize:CGSizeMake(139, 139)];
+    [self inicializarLabelOperador:operador];
+}
 
 -(void)inicializarLabelOperador:(NSString*)operador{
     lblOperador = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+    [lblOperador setName:@"operador"];
     [lblOperador setText:operador];
     [lblOperador setFontSize:80];
     [lblOperador setFontColor:[SKColor whiteColor]];

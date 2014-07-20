@@ -11,9 +11,16 @@
 @interface OperadorResultadoNode : SKSpriteNode
 {
     SKLabelNode *lblResultado;
+    
+    SKAction *animacaoDescer;
+    SKAction *animacaoSubir;
+    
+    BOOL estaVisivel;
 }
 
 
 -(id)initWithResultado:(NSString*)resultado;
-
+-(SKAction*)getAnimacaoSubir;
+-(SKAction*)getAnimacaoDescer;
+-(void)iniciarAnimacao;
 @end

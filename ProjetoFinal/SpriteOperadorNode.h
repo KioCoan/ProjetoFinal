@@ -16,6 +16,8 @@
     OperadorNode *nodeOperador;
     OperadorValoresNode *nodeValores;
     OperadorResultadoNode *nodeResultado;
+    
+    BOOL partesVisiveis;
 }
 
 
