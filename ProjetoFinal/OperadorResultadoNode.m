@@ -102,7 +102,7 @@ static const int NUM_TEXTURAS = 10;
     if(estaVisivel){
         
         //CRIA UMA ANIMAÇÃO DE FADE QUE FARÁ A LABEL APARECER
-        SKAction *animacaoAparecer = [SKAction fadeAlphaTo:0 duration:0.1];
+        SKAction *animacaoAparecer = [SKAction fadeAlphaTo:0 duration:animacaoSubir.duration];
         
         //A LABEL EXECUTA A ANIMAÇÃO
         [lblResultado runAction:animacaoAparecer completion:^{
@@ -112,7 +112,7 @@ static const int NUM_TEXTURAS = 10;
     
     }else{
         //CRIA UMA ANIMAÇÃO DE FADE QUE FARÁ A LABEL SUMIR
-        SKAction *animacaoSumir = [SKAction fadeAlphaTo:1 duration:1];
+        SKAction *animacaoSumir = [SKAction fadeAlphaTo:1 duration:animacaoSubir.duration];
         
         //A LABEL EXECUTA A ANIMAÇÃO
         [lblResultado runAction:animacaoSumir completion:^{
