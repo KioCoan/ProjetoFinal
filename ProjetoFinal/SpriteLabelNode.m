@@ -24,11 +24,7 @@
         [self setName:@"conteudo"];
         [self setFontName:@"Chalkduster"];
         
-        
-        
-    }
-    
-    
+    }  
     
     return self;
     

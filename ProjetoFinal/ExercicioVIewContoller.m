@@ -40,16 +40,13 @@
     [[self navigationItem] setTitle:gerenciador.assunto.nome];
     
     //CRIO UMA SKVIEW PARA INSERIR A SKSCENE
-    SKView *viewExercicio = [[SKView alloc] initWithFrame:viewMolde.frame];
-    
-    [viewExercicio setBackgroundColor:[UIColor grayColor]];
+    SKView *viewExercicio = [[SKView alloc] initWithFrame:self.view.frame];
     
     
     //INSTANCIO A SKSCENE DO ASSUNTO ATUAL
     SKScene *cena = [gerenciador.assunto retornaExercicioSelecionado];
     
     //DEFININDO TAMANHO DA SKSCENE E ADICIONANDO-A NA SKVIEW
-    
     [cena setSize: viewExercicio.frame.size];
     
     [viewExercicio presentScene:cena];

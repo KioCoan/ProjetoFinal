@@ -15,12 +15,9 @@
     
     if (self) {
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
-        //self.physicsWorld.contactDelegate = self;
-        
-        tipo = [NSArray arrayWithObjects:@"inteiro",@"real",@"string",@"logico", nil];
         
         codigo = [[SKLabelNode alloc]initWithFontNamed:@"HeadLine"];
-        codigo.position = CGPointMake(50, self.frame.size.height * 100);
+        codigo.position = CGPointMake(50, 100);
         [codigo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
         //codigo.text = @"teste";
         
@@ -42,28 +39,19 @@
     SKLabelNode *enunciado2 = [[SKLabelNode alloc]initWithFontNamed:@"HeadLine"];
 
     
-    CGPoint posicao = CGPointMake(self.frame.size.width * 400, self.frame.size.height * 850);
-    
+    CGPoint posicao = CGPointMake(400, 850);
     CGPoint posicao2 = posicao;
-    
     posicao2.y -= enunciado1.fontSize * 1.2 ;
     
     NSString *texto1 = @"Arraste cada conteudo para";
-    
     NSString *texto2 = @"dentro da variável adequada";
     
     [enunciado1 setText:texto1];
-    
     [enunciado2 setText:texto2];
-    
     [enunciado1 setPosition:posicao];
-    
     [enunciado2 setPosition:posicao2];
     
-    
-    
     [self addChild:enunciado1];
-    
     [self addChild:enunciado2];
     
 }
@@ -71,8 +59,7 @@
 - (void)criarLabels{
     
     // criando vetor e labels
-    conteudos = [NSMutableArray array];
-    
+    NSMutableArray *conteudos = [NSMutableArray array];
     
     [conteudos addObject:[[SpriteLabelNode alloc] initWithType:@"inteiro" texto:@"23"]];
     [conteudos addObject:[[SpriteLabelNode alloc] initWithType:@"real" texto:@"3.5"]];
@@ -80,20 +67,16 @@
     [conteudos addObject:[[SpriteLabelNode alloc] initWithType:@"logico" texto:@"falso"]];
     
 
-    
-    
     //embaralhando labels
-    
     conteudos = [self embaralha:conteudos];
     
     // criando e inserindo posicoes
     
-    CGPoint posicaoOriginal = CGPointMake(self.frame.size.width * 650, self.frame.size.height * 650);
+    CGPoint posicaoOriginal = CGPointMake(650,  650);
     CGPoint posicao = posicaoOriginal;
-    int font = self.frame.size.height * 30;
+    int font =  30;
     
     for (int i = 0; i < conteudos.count; i++) {
-
         
         [[conteudos objectAtIndex:i] setFontSize:font];
         
@@ -110,7 +93,7 @@
     
 }
 
-- (NSMutableArray *)embaralha : (NSMutableArray *)antigo{
+- (NSMutableArray *)embaralha :(NSMutableArray *)antigo{
     
     int n;
     NSMutableArray *vetorEmbaralhado = [NSMutableArray array];
@@ -135,7 +118,7 @@
     
     // Criar as caixas
     caixas = [NSMutableArray array];
-    CGSize tamanho = CGSizeMake(self.frame.size.height * 200, self.frame.size.height * 213);
+    CGSize tamanho = CGSizeMake( 200,  213);
     //CGSize tamanho = CGSizeMake(200, 213.6);
     
     [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@" " nome:@"idade" tipo:@"inteiro" tamanho:tamanho]];
@@ -152,8 +135,7 @@
     
     //criando e inserindo posicoes
     
-    CGPoint primeiraPosicao = CGPointMake(self.frame.size.width * 200.0, self.frame.size.height * 550.0);
-    
+    CGPoint primeiraPosicao = CGPointMake( 200.0,  550.0);
     CGPoint posicao = primeiraPosicao;
     
     for (int i = 0; i < caixas.count; i++) {
@@ -184,23 +166,20 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 
     UITouch *touch = [touches anyObject];
-    
-    if([touch tapCount] > 1){// DA PAU SEM ISSO!
-        return;
+    CGPoint location = [touch locationInNode:self];
+    SKNode *node = [self nodeAtPoint:location];
+
+    if([node.name isEqualToString:@"conteudo"]){
+        conteudoAtivo = (SpriteLabelNode *) [self nodeAtPoint:location];
     }
     
-    CGPoint location = [touch locationInNode:self];
-    conteudoAtivo = (SpriteLabelNode *) [self nodeAtPoint:location];
+    
     
     
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    
-    //self.movendoCaixa = true;
-    
-   
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
     

@@ -9,24 +9,15 @@
 #import <SpriteKit/SpriteKit.h>
 #import "SpriteCaixaNode.h"
 #import "SpriteLabelNode.h"
-#import "Exercicio.h"
 
 
-
-
-@interface CenaExercicioVariavel1 : SKScene <SKPhysicsContactDelegate>
+@interface CenaExercicioVariavel1 : SKScene 
 {
     NSMutableArray *caixas;
-    NSMutableArray *conteudos;
     SpriteLabelNode *conteudoAtivo;
-    NSArray *sprite;
-    SKAction *executaSprite;
-    NSArray *tipo;
     SKLabelNode *codigo;
 }
 
-
-@property BOOL movendoCaixa;
 
 
 @end

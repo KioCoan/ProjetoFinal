@@ -10,10 +10,6 @@
 #import "GerenciadorDeAssunto.h"
 @interface ExercicioVIewContoller : UIViewController
 
-{
-    __weak IBOutlet UIView *viewMolde;
-    
-}
 
 
 @end

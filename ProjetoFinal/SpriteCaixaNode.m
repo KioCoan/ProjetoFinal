@@ -78,7 +78,8 @@ static const int NUM_TEXTURAS = 13;
     [lblTipo setFontColor:[SKColor grayColor]];
     [lblTipo setPosition:CGPointMake(self.frame.origin.x * 0.75, self.frame.origin.y * 0.65)];
     [lblTipo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
-
+    
+    //CRIA A SKLABELNODE QUE MOSTRA O ENDEREÇO DA VARIÁVEL
     [self criarLabelEndereco];
     
     //ADICIONA AS LABELS COMO FILHO DESTE NODE
@@ -108,6 +109,7 @@ static const int NUM_TEXTURAS = 13;
         @throw [NSException exceptionWithName:@"Número de endereço inválido" reason:@"número informado é menor que zero." userInfo:nil];
     }
     
+    //CONDIÇÕES PARA DEIXAR O ENDEREÇO SEMPRE COM 3 DIGITOS DEPOIS DO X
     if(numero < 10){
         [lblEndereco setText:[NSString stringWithFormat:@"0x00%d", numero]];
     
