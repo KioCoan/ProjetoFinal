@@ -7,7 +7,7 @@ Eles nos ajudam a verificar, dar valor a uma variável e executar operações co
 #Aritméticos
 
 	Usamos operadores aritméticos para realizar contas. Somando os valores de variáveis, dividindo, multiplicando, etc.
-	Portanto, os operadores são: +, -, *, /, %.
+	Portanto, os operadores são: +, -, *, /.
 
 	Se a variável "a" possui o valor 4 e a variável "b" possui o valor 2:
 
@@ -15,13 +15,7 @@ Eles nos ajudam a verificar, dar valor a uma variável e executar operações co
 	a - b = 2
 	a * b = 8
 	a / b = 2
-	a % b = 0
-    
-#Obs:
 
-    O módulo de um número x, na matemática, é o valor numérico de x desconsiderando o seu sinal (valor absoluto). Na matemática, expressamos o módulo da seguinte forma: |−2|=2.
-    Em linguagens de programação, o módulo de um número é o resto da divisão desse número por outro. No exemplo acima, o resto da divisão de 6 por 5 é igual a 1. Além disso, lemos a expressão “6%5” da seguinte forma: seis módulo cinco.
-    
 #Atribuição
 
     Até agora, utilizamos um dos principais operadores de atribuição, para passar valores a nossas variáveis, representado pelo símbulo =
