@@ -316,9 +316,11 @@
                     
                     
                 }else{
+                    conteudoAtivo.fontColor = [UIColor redColor];
                     SKAction *animacaoVoltar = [SKAction moveTo:conteudoAtivo.posicaoInicial duration:0.5];
                     [conteudoAtivo runAction:animacaoVoltar completion:^{
                         [conteudoAtivo removeAllActions];
+                        conteudoAtivo.fontColor = [UIColor greenColor];
                     }];
                 }
             
@@ -328,8 +330,6 @@
     
         }
     }
-    
-    
     
     
     move = NO;
