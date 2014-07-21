@@ -263,8 +263,10 @@
     //criando toque e posicao
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
-    conteudoAtivo = (SpriteLabelNode *) [self nodeAtPoint:location];
-    if ([conteudoAtivo.name isEqualToString:@"operador"]) {
+    SKNode* teste = [self nodeAtPoint:location];
+    
+    if ([teste.name isEqualToString:@"operador"]) {
+        conteudoAtivo = (SpriteLabelNode *) [self nodeAtPoint:location];
         move = YES;
     }
     
@@ -333,7 +335,6 @@
     
     
     move = NO;
-    conteudoAtivo = nil;
     
 }
 @end
