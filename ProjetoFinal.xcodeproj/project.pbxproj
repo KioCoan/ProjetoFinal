@@ -33,6 +33,7 @@
 		91A98619196232F800EA1074 /* Exercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98618196232F800EA1074 /* Exercicio.m */; };
 		91A9861B196233CD00EA1074 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A9861A196233CD00EA1074 /* SpriteKit.framework */; };
 		91A9861E1962392400EA1074 /* GerenciadorDeAssunto.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9861D1962392400EA1074 /* GerenciadorDeAssunto.m */; };
+		91C8EF6B197D871200CA01DE /* ConceitosOperadores.txt in Resources */ = {isa = PBXBuildFile; fileRef = 91C8EF6A197D871200CA01DE /* ConceitosOperadores.txt */; };
 		A500C2B519743C1D00D6BE83 /* ExeVariavel1.m in Sources */ = {isa = PBXBuildFile; fileRef = A500C2B419743C1D00D6BE83 /* ExeVariavel1.m */; };
 		A505740C197811E700F68932 /* ExeOperadores1.m in Sources */ = {isa = PBXBuildFile; fileRef = A505740B197811E700F68932 /* ExeOperadores1.m */; };
 		A505740F1978243A00F68932 /* Geral.m in Sources */ = {isa = PBXBuildFile; fileRef = A505740E1978243A00F68932 /* Geral.m */; };
@@ -147,6 +148,7 @@
 		91A9861A196233CD00EA1074 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		91A9861C1962392400EA1074 /* GerenciadorDeAssunto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GerenciadorDeAssunto.h; sourceTree = "<group>"; };
 		91A9861D1962392400EA1074 /* GerenciadorDeAssunto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GerenciadorDeAssunto.m; sourceTree = "<group>"; };
+		91C8EF6A197D871200CA01DE /* ConceitosOperadores.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConceitosOperadores.txt; sourceTree = "<group>"; };
 		A500C2B319743C1D00D6BE83 /* ExeVariavel1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExeVariavel1.h; path = Exercicios/ExeVariavel1.h; sourceTree = "<group>"; };
 		A500C2B419743C1D00D6BE83 /* ExeVariavel1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExeVariavel1.m; path = Exercicios/ExeVariavel1.m; sourceTree = "<group>"; };
 		A505740A197811E700F68932 /* ExeOperadores1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExeOperadores1.h; path = Exercicios/ExeOperadores1.h; sourceTree = "<group>"; };
@@ -476,6 +478,7 @@
 		A55F2B4219648BE000111BEB /* Conteudos */ = {
 			isa = PBXGroup;
 			children = (
+				91C8EF6A197D871200CA01DE /* ConceitosOperadores.txt */,
 				A55F2B4319648C0600111BEB /* ConceitosVariaveis.txt */,
 			);
 			name = Conteudos;
@@ -680,6 +683,7 @@
 				BDF8AE08197B258C00BA5B8A /* parte-valores8.png in Resources */,
 				BDC7579F196787E700DB8380 /* abrir-caixa2.png in Resources */,
 				BDF8AE07197B258C00BA5B8A /* parte-valores7.png in Resources */,
+				91C8EF6B197D871200CA01DE /* ConceitosOperadores.txt in Resources */,
 				BDBE769D197A3B69004EA926 /* parte-operador.png in Resources */,
 				BDC757A8196787E700DB8380 /* abrir-caixa11.png in Resources */,
 				BDF8ADF4197B255C00BA5B8A /* parte-resultado7.png in Resources */,
