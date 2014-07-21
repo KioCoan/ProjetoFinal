@@ -14,51 +14,24 @@
 -(NSString*)soma:(float)n1 n2:(float)n2{
     
     NSString *soma;
-    if (((floorf(n1)) == n1) && ((floorf(n2)) == n2)) {
-        // Caso  os dois sejam inteiros
-        
-        soma = [NSString stringWithFormat:@"%d",((int)n1) + ((int)n2)];
-        
-        
-        
-    }else if(((floorf(n1)) != n1) && ((floorf(n2)) == n2)) {
-        // Caso n1 float e n2 Inteiro
-        
-        soma = [NSString stringWithFormat:@"%f",(n1) + ((int)n2)];
-        
-    }else if(((floorf(n1)) == n1) && ((floorf(n2)) != n2)){
-        // Caso n1 inteiro e n2 Float
-        
-        soma = [NSString stringWithFormat:@"%f",((int)n1) + (n2)];
+    // Caso o resultado da soma seja um inteiro ele retorna uma string formatada como inteiro do contrario faz a formatação para float
+    if ((floorf(n1+n2)==(n1+n2))) {
+        soma =  [NSString stringWithFormat:@"%d",((int)n1) + ((int)n2)];
     }else{
-        // Caso os dois sejam float
-        soma = [NSString stringWithFormat:@"%f",n1 + n2];
+        soma = [NSString stringWithFormat:@"%.02f",n1 + n2];
     }
-    
+
     return soma;
 }
 
 -(NSString*)subtrai:(float)n1 n2:(float)n2{
     
     NSString *subtracao;
-    if (((floorf(n1)) == n1) && ((floorf(n2)) == n2)) {
-        // Caso  os dois sejam inteiros
-        
-        subtracao = [NSString stringWithFormat:@"%d",((int)n1) - ((int)n2)];
-        
-        
-    }else if(((floorf(n1)) != n1) && ((floorf(n2)) == n2)) {
-        // Caso n1 float e n2 Inteiro
-        
-        subtracao = [NSString stringWithFormat:@"%f",(n1) - ((int)n2)];
-        
-    }else if(((floorf(n1)) == n1) && ((floorf(n2)) != n2)){
-        // Caso n1 inteiro e n2 Float
-        
-        subtracao = [NSString stringWithFormat:@"%f",((int)n1) - (n2)];
+    // Caso o resultado da subtração seja um inteiro ele retorna uma string formatada como inteiro do contrario faz a formatação para float
+    if ((floorf(n1-n2)==(n1-n2))) {
+        subtracao =  [NSString stringWithFormat:@"%d",((int)n1) - ((int)n2)];
     }else{
-        // Caso os dois sejam float
-        subtracao = [NSString stringWithFormat:@"%f",n1 - n2];
+        subtracao = [NSString stringWithFormat:@"%.02f",n1 - n2];
     }
     
     return subtracao;
@@ -66,25 +39,18 @@
 
 -(NSString*)multiplica:(float)n1 n2:(float)n2{
     
+    //Caso algum número seja 0 ja retorna 0 como resposta
+    if ((n2 == 0)||(n1 == 0)) {
+        return [NSString stringWithFormat:@"0"];
+    }
+    
+    
     NSString *multiplicacao;
-    if (((floorf(n1)) == n1) && ((floorf(n2)) == n2)) {
-        // Caso  os dois sejam inteiros
-        
-        multiplicacao = [NSString stringWithFormat:@"%d",((int)n1) * ((int)n2)];
-        
-        
-    }else if(((floorf(n1)) != n1) && ((floorf(n2)) == n2)) {
-        // Caso n1 float e n2 Inteiro
-        
-        multiplicacao = [NSString stringWithFormat:@"%f",(n1) * ((int)n2)];
-        
-    }else if(((floorf(n1)) == n1) && ((floorf(n2)) != n2)){
-        // Caso n1 inteiro e n2 Float
-        
-        multiplicacao = [NSString stringWithFormat:@"%f",((int)n1) * (n2)];
+    // Caso o resultado da multiplicação seja um inteiro ele retorna uma string formatada como inteiro do contrario faz a formatação para float
+    if ((floorf(n1*n2)==(n1*n2))) {
+        multiplicacao =  [NSString stringWithFormat:@"%d",((int)n1) * ((int)n2)];
     }else{
-        // Caso os dois sejam float
-        multiplicacao = [NSString stringWithFormat:@"%f",n1 * n2];
+        multiplicacao = [NSString stringWithFormat:@"%.02f",n1 * n2];
     }
     
     return multiplicacao;
@@ -92,27 +58,18 @@
 
 -(NSString*)divide:(float)n1 n2:(float)n2{
     
+    //Caso algum número seja 0 ja retorna 0 como resposta
+    if ((n2 == 0)||(n1 == 0)) {
+        return [NSString stringWithFormat:@"0"];
+    }
+    
+    
     NSString *divisao;
-    if (((floorf(n1)) == n1) && ((floorf(n2)) == n2)) {
-        // Caso  os dois sejam inteiros
-        if ((int)n2 == 0) {
-            divisao = @"0";
-        }else{
-            divisao = [NSString stringWithFormat:@"%d",((int)n1) / ((int)n2)];
-        }
-        
-    }else if(((floorf(n1)) != n1) && ((floorf(n2)) == n2)) {
-        // Caso n1 float e n2 Inteiro
-        
-        divisao = [NSString stringWithFormat:@"%f",(n1) / ((int)n2)];
-        
-    }else if(((floorf(n1)) == n1) && ((floorf(n2)) != n2)){
-        // Caso n1 inteiro e n2 Float
-        
-        divisao = [NSString stringWithFormat:@"%f",((int)n1) / (n2)];
+    // Caso o resultado da divisão seja um inteiro ele retorna uma string formatada como inteiro do contrario faz a formatação para float
+    if ((floorf(n1/n2)==(n1/n2))) {
+        divisao =  [NSString stringWithFormat:@"%d",((int)n1) / ((int)n2)];
     }else{
-        // Caso os dois sejam float
-        divisao = [NSString stringWithFormat:@"%f",n1 / n2];
+        divisao = [NSString stringWithFormat:@"%.02f",n1 / n2];
     }
     
     return divisao;
