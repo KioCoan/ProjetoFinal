@@ -52,18 +52,18 @@ static const int NUM_TEXTURAS = 11;
     //CRIA A LABEL QUE FICA À ESQUERDA DO SPRITE
     lblValor1 = [SKLabelNode labelNodeWithFontNamed:@"Avenir Next Condensed Medium"];
     [lblValor1 setText:valor1];
-    [lblValor1 setFontSize:38];
+    [lblValor1 setFontSize:30];
     [lblValor1 setFontColor:[SKColor blackColor]];
-    [lblValor1 setPosition:CGPointMake(-30, 0)];
+    [lblValor1 setPosition:CGPointMake(-18, 0)];
     [lblValor1 setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
     [lblValor1 setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
     
     //CRIA A LABEL QUE FICA À DIREITA DO SPRITE
     lblValor2 = [SKLabelNode labelNodeWithFontNamed:@"Avenir Next Condensed Medium"];
     [lblValor2 setText:valor2];
-    [lblValor2 setFontSize:38];
+    [lblValor2 setFontSize:30];
     [lblValor2 setFontColor:[SKColor blackColor]];
-    [lblValor2 setPosition:CGPointMake(30, 0)];
+    [lblValor2 setPosition:CGPointMake(18, 0)];
     [lblValor2 setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
     [lblValor2 setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
     
@@ -103,22 +103,14 @@ static const int NUM_TEXTURAS = 11;
 }
 
 
--(SKAction*)getAnimacaoExpandir{
-    return animacaoExpandir;
-}
-
-
--(SKAction*)getAnimacaoDiminuir{
-    return animacaoDiminuir;
-}
 
 -(void)iniciarAnimacao{
     //VERIFICA SE O SPRITE ESTÁ VISIVEL NA TELA
     if(estaVisivel){
         
         //CRIA UMA ANIMAÇÃO DE MOVER QUE FARÁ A LABEL IR PARA A POSIÇÃO CORRETA
-        SKAction *moverParaDireita = [SKAction moveToX:lblValor1.position.x + 100 duration:animacaoExpandir.duration];
-        SKAction *moverParaEsquerda = [SKAction moveToX:lblValor2.position.x - 100 duration:animacaoExpandir.duration];
+        SKAction *moverParaDireita = [SKAction moveToX:lblValor1.position.x + 110 duration:animacaoExpandir.duration];
+        SKAction *moverParaEsquerda = [SKAction moveToX:lblValor2.position.x - 110 duration:animacaoExpandir.duration];
         
         //AS LABELS EXECUTAM SUA RESPECTIVA ANIMAÇÃO
         [lblValor1 runAction:moverParaDireita];
@@ -130,8 +122,8 @@ static const int NUM_TEXTURAS = 11;
         
     }else{
         //CRIA UMA ANIMAÇÃO DE MOVER QUE FARÁ A LABEL IR PARA A POSIÇÃO CORRETA
-        SKAction *moverParaDireita = [SKAction moveToX:lblValor1.position.x - 100 duration:animacaoExpandir.duration];
-        SKAction *moverParaEsquerda = [SKAction moveToX:lblValor2.position.x + 100 duration:animacaoExpandir.duration];
+        SKAction *moverParaDireita = [SKAction moveToX:lblValor1.position.x - 110 duration:animacaoExpandir.duration];
+        SKAction *moverParaEsquerda = [SKAction moveToX:lblValor2.position.x + 110 duration:animacaoExpandir.duration];
         
         //AS LABELS EXECUTAM SUA RESPECTIVA ANIMAÇÃO
         [lblValor1 runAction:moverParaDireita];
@@ -141,5 +133,24 @@ static const int NUM_TEXTURAS = 11;
             estaVisivel = YES;
         }];
     }
+}
+
+
+
+-(SKAction*)getAnimacaoExpandir{
+    return animacaoExpandir;
+}
+
+
+-(SKAction*)getAnimacaoDiminuir{
+    return animacaoDiminuir;
+}
+
+-(void)setLabelValor1:(NSString*)valor1{
+    [lblValor1 setText:valor1];
+}
+
+-(void)setLabelValor2:(NSString*)valor2{
+    [lblValor2 setText:valor2];
 }
 @end

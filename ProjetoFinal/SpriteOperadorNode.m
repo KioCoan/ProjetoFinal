@@ -14,21 +14,48 @@
     self = [super init];
     
     if(self){
-        nodeResultado = [[OperadorResultadoNode alloc] initWithResultado:@"verdadeiro"];
-        [self addChild:nodeResultado];
-        
-        nodeValores = [[OperadorValoresNode alloc] initWithValor1:@"350" valor2:@"350"];
-        [nodeResultado addChild:nodeValores];
-        
-        nodeOperador = [[OperadorNode alloc] initWithOperador:@"=="];
-        [nodeValores addChild:nodeOperador];
-        
-        [self setUserInteractionEnabled:YES];
-        partesVisiveis = NO;
+        [self inicializaClasse:@"" operador:@"" valor2:@"" resultado:@""];
     }
     
     return self;
 }
+
+
+-(id)initWithValor1:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 resultado:(NSString*)resultado{
+    if(self = [super init]){
+        [self inicializaClasse:valor1 operador:operador valor2:valor2 resultado:resultado];
+    }
+    
+    return self;
+}
+
+-(void)inicializaClasse:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 resultado:(NSString*)resultado{
+    //A PARTE QUE É EXIBIDO O RESULTADO É A PRIMEIRA A SER INSERIDA PRA QUE ELA FIQUE POR TRÁS DAS OUTRAS
+    nodeResultado = [[OperadorResultadoNode alloc] initWithResultado:resultado];
+    [self addChild:nodeResultado];
+    
+    //EM SEGUIDA É INSERIDO A PARTE QUE MOSTRA OS OPERADORES
+    nodeValores = [[OperadorValoresNode alloc] initWithValor1:valor1 valor2:valor2];
+    [nodeResultado addChild:nodeValores];
+    
+    //POR FIM É INSERIDO A PARTE QUE MOSTRA O OPERADOR
+    nodeOperador = [[OperadorNode alloc] initWithOperador:operador];
+    [nodeValores addChild:nodeOperador];
+    
+    [self setUserInteractionEnabled:YES];
+    partesVisiveis = NO;
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    if(clicouCirculo){
+        //É CHAMADA A ANIMAÇÃO DO OPERADOR PRA ELE SE EXPANDIR AO TAMANHO NORMAL
+        [nodeOperador iniciarAnimacaoExpandir];
+        [self iniciarAnimacoes];
+        clicouCirculo = NO;
+    }
+}
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     UITouch *touch = [touches anyObject];
@@ -36,51 +63,73 @@
     SKNode *node = [self nodeAtPoint:position];
     
     if([node.name isEqualToString:@"operador"]){
-        [self setUserInteractionEnabled:NO];
-        [self iniciarAnimacoes];
-        partesVisiveis = !partesVisiveis;
+        [nodeOperador iniciarAnimacaoDiminuir];
+        clicouCirculo = YES;
     }
 }
 
 
-//O METODO VERIFICA QUAIS ANIMAÇÕES SERÃO EXECUTADAS CONFORME O ESTADO ATUAL DOS SPRITES
-//CASO OS SPRITES ESTIVEREM VISIVEIS SERÁ ACIONADO AS ANIMAÇÕES QUE "ESCONDERAM" OS SPRITES E ASSIM POR DIANTE
+
 -(void)iniciarAnimacoes{
+    //O METODO VERIFICA QUAIS ANIMAÇÕES SERÃO EXECUTADAS CONFORME O ESTADO ATUAL DOS SPRITES
+    //CASO OS SPRITES ESTIVEREM VISIVEIS SERÁ ACIONADO AS ANIMAÇÕES QUE "ESCONDERAM" OS SPRITES E ASSIM POR DIANTE
     if(partesVisiveis){
-        //MANDA O NODE RESULTADO INICIAR A ANIMAÇÃO DA LABEL DELE
-        [nodeResultado iniciarAnimacao];
-        //EXECUTA A ANIMAÇÃO DO NODE RESULTADO QUE ESCONDE O NODE
-        [nodeResultado runAction:[nodeResultado getAnimacaoSubir] completion:^{
-            
-            //MANDA O NODE VALORES INICIAR A ANIMAÇÃO DAS LABELS DELE
-            [nodeValores iniciarAnimacao];
-            //EXECUTA A ANIMAÇÃO DO NODE VALORES QUE ESCONDE O NODE
-            [nodeValores runAction:[nodeValores getAnimacaoDiminuir] completion:^{
-                
-                [self setUserInteractionEnabled:YES];
-                [nodeResultado removeAllActions];
-                [nodeValores removeAllActions];
-            }];
-        }];
+        [self iniciarAnimacaoFechar];
     
     }else{
+        [self iniciarAnimacaoAbrir];
+    }
+    
+}
+
+
+-(void)iniciarAnimacaoAbrir{
+    [self setUserInteractionEnabled:NO];
+    
+    //MANDA O NODE VALORES INICIAR A ANIMAÇÃO DAS LABELS DELE
+    [nodeValores iniciarAnimacao];
+    //EXECUTA A ANIMAÇÃO DO NODE VALORES QUE EXIBE O NODE
+    [nodeValores runAction:[nodeValores getAnimacaoExpandir] completion:^{
+        
+        //MANDA O NODE RESULTADO INICIAR A ANIMAÇÃO DA LABEL DELE
+        [nodeResultado iniciarAnimacao];
+        //EXECUTA A ANIMAÇÃO DO NODE RESULTADO QUE EXIBE O NODE
+        [nodeResultado runAction:[nodeResultado getAnimacaoDescer] completion:^{
+            
+            partesVisiveis = !partesVisiveis;
+            [self setUserInteractionEnabled:YES];
+            [nodeResultado removeAllActions];
+            [nodeValores removeAllActions];
+        }];
+    }];
+
+}
+
+
+-(void)iniciarAnimacaoFechar{
+    [self setUserInteractionEnabled:NO];
+    
+    //MANDA O NODE RESULTADO INICIAR A ANIMAÇÃO DA LABEL DELE
+    [nodeResultado iniciarAnimacao];
+    //EXECUTA A ANIMAÇÃO DO NODE RESULTADO QUE ESCONDE O NODE
+    [nodeResultado runAction:[nodeResultado getAnimacaoSubir] completion:^{
+        
         //MANDA O NODE VALORES INICIAR A ANIMAÇÃO DAS LABELS DELE
         [nodeValores iniciarAnimacao];
         //EXECUTA A ANIMAÇÃO DO NODE VALORES QUE ESCONDE O NODE
-        [nodeValores runAction:[nodeValores getAnimacaoExpandir] completion:^{
+        [nodeValores runAction:[nodeValores getAnimacaoDiminuir] completion:^{
             
-            //MANDA O NODE RESULTADO INICIAR A ANIMAÇÃO DA LABEL DELE
-            [nodeResultado iniciarAnimacao];
-            //EXECUTA A ANIMAÇÃO DO NODE RESULTADO QUE ESCONDE O NODE
-            [nodeResultado runAction:[nodeResultado getAnimacaoDescer] completion:^{
-                
-                [self setUserInteractionEnabled:YES];
-                [nodeResultado removeAllActions];
-                [nodeValores removeAllActions];
-            }];
+            partesVisiveis = !partesVisiveis;
+            [self setUserInteractionEnabled:YES];
+            [nodeResultado removeAllActions];
+            [nodeValores removeAllActions];
         }];
-    }
-    
+    }];
+}
+
+
+-(BOOL)partesVisiveis{
+    return partesVisiveis;
 }
 
 @end

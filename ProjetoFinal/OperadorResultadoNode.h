@@ -20,6 +20,7 @@
 
 
 -(id)initWithResultado:(NSString*)resultado;
+-(void)setLabelResultado:(NSString*)resultado;
 -(SKAction*)getAnimacaoSubir;
 -(SKAction*)getAnimacaoDescer;
 -(void)iniciarAnimacao;

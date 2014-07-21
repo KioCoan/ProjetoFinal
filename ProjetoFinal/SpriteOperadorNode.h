@@ -18,7 +18,11 @@
     OperadorResultadoNode *nodeResultado;
     
     BOOL partesVisiveis;
+    BOOL clicouCirculo;
 }
 
-
+-(id)initWithValor1:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 resultado:(NSString*)resultado;
+-(void)iniciarAnimacaoAbrir;
+-(void)iniciarAnimacaoFechar;
+-(BOOL)partesVisiveis;
 @end

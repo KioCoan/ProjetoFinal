@@ -42,8 +42,8 @@
 -(void)inicializarLabelOperador:(NSString*)operador{
     lblOperador = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
     [lblOperador setName:@"operador"];
-    [lblOperador setText:operador];
     [lblOperador setFontSize:80];
+    [self setLabelOperador:operador];
     [lblOperador setFontColor:[SKColor whiteColor]];
     [lblOperador setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
     [lblOperador setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
@@ -51,4 +51,24 @@
     [self addChild:lblOperador];
 }
 
+
+-(void)setLabelOperador:(NSString*)operador{
+    if([operador isEqualToString:@"&&"]){
+        [lblOperador setFontSize:lblOperador.fontSize - 15];
+    }
+    
+    [lblOperador setText:operador];
+}
+
+
+-(void)iniciarAnimacaoDiminuir{
+    [lblOperador setFontSize:lblOperador.fontSize - 10];
+    [self setSize:CGSizeMake(self.size.width - 10, self.size.height - 10)];
+}
+
+
+-(void)iniciarAnimacaoExpandir{
+    [lblOperador setFontSize:lblOperador.fontSize + 10];
+    [self setSize:CGSizeMake(self.size.width + 10, self.size.height + 10)];
+}
 @end

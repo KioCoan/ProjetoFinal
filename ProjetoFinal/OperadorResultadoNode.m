@@ -88,14 +88,6 @@ static const int NUM_TEXTURAS = 10;
 }
 
 
--(SKAction*)getAnimacaoSubir{
-    return animacaoSubir;
-}
-
--(SKAction*)getAnimacaoDescer{
-    return animacaoDescer;
-}
-
 
 -(void)iniciarAnimacao{
     //VERIFICA SE O SPRITE ESTÁ VISIVEL NA TELA
@@ -120,6 +112,21 @@ static const int NUM_TEXTURAS = 10;
             estaVisivel = YES;
         }];
     }
+}
+
+
+
+-(SKAction*)getAnimacaoSubir{
+    return animacaoSubir;
+}
+
+-(SKAction*)getAnimacaoDescer{
+    return animacaoDescer;
+}
+
+
+-(void)setLabelResultado:(NSString*)resultado{
+    [lblResultado setText:resultado];
 }
 
 @end
