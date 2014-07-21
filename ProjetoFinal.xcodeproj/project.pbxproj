@@ -26,6 +26,9 @@
 		8418F88119708B0900781F82 /* ExercicioVIewContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F88019708B0900781F82 /* ExercicioVIewContoller.m */; };
 		846B738E19782427009C2EB7 /* fundo-cinza.png in Resources */ = {isa = PBXBuildFile; fileRef = 846B738D19782427009C2EB7 /* fundo-cinza.png */; };
 		846B73921978255B009C2EB7 /* CenaExercicioOperadores1.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B73911978255B009C2EB7 /* CenaExercicioOperadores1.m */; };
+		84B1B3E3197D881900089FCB /* CondicaoSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E2197D881900089FCB /* CondicaoSimples.m */; };
+		84B1B3E6197D8AE500089FCB /* ExeCondSimples1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E5197D8AE500089FCB /* ExeCondSimples1.m */; };
+		84B1B3E9197D8BEF00089FCB /* CenaExercicioCondSimples1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E8197D8BEF00089FCB /* CenaExercicioCondSimples1.m */; };
 		91A986111962324500EA1074 /* Assunto.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A986101962324500EA1074 /* Assunto.m */; };
 		91A98619196232F800EA1074 /* Exercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98618196232F800EA1074 /* Exercicio.m */; };
 		91A9861B196233CD00EA1074 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A9861A196233CD00EA1074 /* SpriteKit.framework */; };
@@ -131,6 +134,12 @@
 		846B738D19782427009C2EB7 /* fundo-cinza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fundo-cinza.png"; path = "Imagens/fundo-cinza.png"; sourceTree = "<group>"; };
 		846B73901978255B009C2EB7 /* CenaExercicioOperadores1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenaExercicioOperadores1.h; sourceTree = "<group>"; };
 		846B73911978255B009C2EB7 /* CenaExercicioOperadores1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenaExercicioOperadores1.m; sourceTree = "<group>"; };
+		84B1B3E1197D881900089FCB /* CondicaoSimples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CondicaoSimples.h; sourceTree = "<group>"; };
+		84B1B3E2197D881900089FCB /* CondicaoSimples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CondicaoSimples.m; sourceTree = "<group>"; };
+		84B1B3E4197D8AE500089FCB /* ExeCondSimples1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExeCondSimples1.h; path = Exercicios/ExeCondSimples1.h; sourceTree = "<group>"; };
+		84B1B3E5197D8AE500089FCB /* ExeCondSimples1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExeCondSimples1.m; path = Exercicios/ExeCondSimples1.m; sourceTree = "<group>"; };
+		84B1B3E7197D8BEF00089FCB /* CenaExercicioCondSimples1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CenaExercicioCondSimples1.h; path = Exercicios/CenaExercicioCondSimples1.h; sourceTree = "<group>"; };
+		84B1B3E8197D8BEF00089FCB /* CenaExercicioCondSimples1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CenaExercicioCondSimples1.m; path = Exercicios/CenaExercicioCondSimples1.m; sourceTree = "<group>"; };
 		91A9860F1962324500EA1074 /* Assunto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Assunto.h; path = Assuntos/Assunto.h; sourceTree = "<group>"; };
 		91A986101962324500EA1074 /* Assunto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Assunto.m; path = Assuntos/Assunto.m; sourceTree = "<group>"; };
 		91A98617196232F800EA1074 /* Exercicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exercicio.h; path = Exercicios/Exercicio.h; sourceTree = "<group>"; };
@@ -347,6 +356,33 @@
 			name = Objetos;
 			sourceTree = "<group>";
 		};
+		84B1B3DE197D6E4A00089FCB /* Condicionais */ = {
+			isa = PBXGroup;
+			children = (
+				84B1B3E0197D6E6D00089FCB /* CondComposta */,
+				84B1B3DF197D6E6000089FCB /* CondSimples */,
+			);
+			name = Condicionais;
+			sourceTree = "<group>";
+		};
+		84B1B3DF197D6E6000089FCB /* CondSimples */ = {
+			isa = PBXGroup;
+			children = (
+				84B1B3E4197D8AE500089FCB /* ExeCondSimples1.h */,
+				84B1B3E5197D8AE500089FCB /* ExeCondSimples1.m */,
+				84B1B3E7197D8BEF00089FCB /* CenaExercicioCondSimples1.h */,
+				84B1B3E8197D8BEF00089FCB /* CenaExercicioCondSimples1.m */,
+			);
+			name = CondSimples;
+			sourceTree = "<group>";
+		};
+		84B1B3E0197D6E6D00089FCB /* CondComposta */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CondComposta;
+			sourceTree = "<group>";
+		};
 		91A9860D196231F500EA1074 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +400,8 @@
 			children = (
 				91A9861C1962392400EA1074 /* GerenciadorDeAssunto.h */,
 				91A9861D1962392400EA1074 /* GerenciadorDeAssunto.m */,
+				84B1B3E1197D881900089FCB /* CondicaoSimples.h */,
+				84B1B3E2197D881900089FCB /* CondicaoSimples.m */,
 				91A9860F1962324500EA1074 /* Assunto.h */,
 				91A986101962324500EA1074 /* Assunto.m */,
 				A55F2B3F1964879A00111BEB /* Variavel.h */,
@@ -388,6 +426,7 @@
 		91A98616196232DF00EA1074 /* Exercicios */ = {
 			isa = PBXGroup;
 			children = (
+				84B1B3DE197D6E4A00089FCB /* Condicionais */,
 				A5057409197811B300F68932 /* Operadores */,
 				8418F87E1970895500781F82 /* Variaveis */,
 				91A98617196232F800EA1074 /* Exercicio.h */,
@@ -706,6 +745,7 @@
 				91A986111962324500EA1074 /* Assunto.m in Sources */,
 				A505740F1978243A00F68932 /* Geral.m in Sources */,
 				120E8F8D192FC0A200CDEF95 /* ViewController.m in Sources */,
+				84B1B3E9197D8BEF00089FCB /* CenaExercicioCondSimples1.m in Sources */,
 				BDBE7696197A39E0004EA926 /* SpriteOperadorNode.m in Sources */,
 				8418F87C1970817000781F82 /* SpriteLabelNode.m in Sources */,
 				A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */,
@@ -725,10 +765,12 @@
 				BDBE7694197A39E0004EA926 /* OperadorResultadoNode.m in Sources */,
 				A529DF1C1965DB7500A3D9FB /* Aritimetico.m in Sources */,
 				A559E4111970524100BDFDB8 /* Validador.m in Sources */,
+				84B1B3E3197D881900089FCB /* CondicaoSimples.m in Sources */,
 				A50B33401972BF2E00BDD473 /* ListaDeExerciciosViewController.m in Sources */,
 				A500C2B519743C1D00D6BE83 /* ExeVariavel1.m in Sources */,
 				BDBE7695197A39E0004EA926 /* OperadorValoresNode.m in Sources */,
 				A55F2B411964879A00111BEB /* Variavel.m in Sources */,
+				84B1B3E6197D8AE500089FCB /* ExeCondSimples1.m in Sources */,
 				A529DF1B1965DB7500A3D9FB /* Relacional.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

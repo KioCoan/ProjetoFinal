@@ -9,6 +9,7 @@
 #import "GerenciadorDeAssunto.h"
 #import "Variavel.h"
 #import "Operadores.h"
+#import "CondicaoSimples.h"
 //static GerenciadorDeAssunto* gerenciador;
 
 @implementation GerenciadorDeAssunto
@@ -69,9 +70,18 @@
             [self setAssunto:[[Variavel alloc]init]];
             break;
             
-        default:
+        case 1:
             [self setAssunto:nil];
             [self setAssunto:[[Operadores alloc]init]];
+            break;
+        case 2:
+            [self setAssunto:nil];
+            [self setAssunto:[[CondicaoSimples alloc]init]];
+            break;
+        
+        
+        default:
+            [self setAssunto:nil];
             break;
     }
     
