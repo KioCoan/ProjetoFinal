@@ -68,10 +68,13 @@
             [self setAssunto:nil];
             [self setAssunto:[[Variavel alloc]init]];
             break;
-            
-        default:
+           
+        case 1:
             [self setAssunto:nil];
             [self setAssunto:[[Operadores alloc]init]];
+            break;
+            
+        default:
             break;
     }
     

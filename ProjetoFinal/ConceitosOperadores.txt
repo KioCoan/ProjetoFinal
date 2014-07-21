@@ -1,0 +1,21 @@
+Para manipular as variáveis, utiliza-mos operadores.
+
+Estes podem ser aritméticos, de atribuição, relacionais ou lógicos.
+
+Eles nos ajudam a verificar, dar valor a uma variável e executar operações com as mesmas
+
+#Aritméticos
+
+	Usamos operadores aritméticos para realizar contas. Somando os valores de variáveis, dividindo, multiplicando, etc.
+
+	Portanto, os operadores são: +, -, *, /, %.
+
+	Se a variável "a" possui o valor 4 e a variável "b" possui o valor 2:
+
+	a + b = 6
+	a - b = 2
+	a * b = 8
+	a / b = 2
+	a % b = 0
+
+	Obs: O operador % (modulo) verifica o resto da divisão entre os valores.
