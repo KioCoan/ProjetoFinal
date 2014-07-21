@@ -292,6 +292,7 @@
 		120E8F7C192FC0A200CDEF95 /* ProjetoFinal */ = {
 			isa = PBXGroup;
 			children = (
+				A55F2B4219648BE000111BEB /* Conteudos */,
 				A529DF0A1965DB2200A3D9FB /* Calculador */,
 				91A9860D196231F500EA1074 /* Classes */,
 				E501FA69192FCD1600B56B5C /* Imagens */,
@@ -389,7 +390,6 @@
 			isa = PBXGroup;
 			children = (
 				846B738F197824AD009C2EB7 /* Objetos */,
-				A55F2B4219648BE000111BEB /* Conteudos */,
 				91A98616196232DF00EA1074 /* Exercicios */,
 				91A986121962328800EA1074 /* Animacoes */,
 				91A9860E1962320500EA1074 /* Assuntos */,
