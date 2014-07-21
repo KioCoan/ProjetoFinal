@@ -17,7 +17,7 @@
     
     if (self) {
         [self setAnimacao:[[AnimaOperadores alloc] init]];
-        [self montaTeoria:@"ConceitosVariaveis"];
+        [self montaTeoria:@"ConceitosOperadores"];
         [self setNome:@"Operadores"];
     }
     return self;
