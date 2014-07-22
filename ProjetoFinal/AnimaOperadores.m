@@ -59,7 +59,7 @@
     [atualizar setFontSize:20];
     [atualizar setName:@"atualizar"];
     [atualizar setFontColor:[SKColor blackColor]];
-    [atualizar setPosition:CGPointMake(60, 560)];
+    [atualizar setPosition:CGPointMake(384, 560)];
     
     [self addChild:atualizar];
 }
