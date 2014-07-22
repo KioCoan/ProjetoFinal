@@ -20,6 +20,8 @@
 }
 
 -(id)initWithValor1:(NSString*)valor1 valor2:(NSString*)valor2;
+-(void)setLabelValor1:(NSString*)valor1;
+-(void)setLabelValor2:(NSString*)valor2;
 -(SKAction*)getAnimacaoExpandir;
 -(SKAction*)getAnimacaoDiminuir;
 -(void)iniciarAnimacao;

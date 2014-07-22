@@ -15,42 +15,42 @@
     NSString *resultado;
     
     switch (operacao) {
-               case 1:
+               case 0:
                if (n1>n2) {
                    resultado = @"Verdadeiro";
                }else{
                    resultado = @"Falso";
                }
                break;
-           case 2: // Maior ou igual
+           case 1: // Maior ou igual
                if (n1>=n2) {
                    resultado = @"Verdadeiro";
                }else{
                    resultado = @"Falso";
                }
                break;
-           case 3: // Menor
+           case 2: // Menor
                if (n1<n2) {
                    resultado = @"Verdadeiro";
                }else{
                    resultado = @"Falso";
                }
                break;
-           case 4: // Menor ou igual
+           case 3: // Menor ou igual
                if (n1<=n2) {
                    resultado = @"Verdadeiro";
                }else{
                    resultado = @"Falso";
                }
                break;
-           case 5: // Igual
+           case 4: // Igual
                if (n1==n2) {
                    resultado = @"Verdadeiro";
                }else{
                    resultado = @"Falso";
                }
                break;
-           case 6: // Diferente
+           case 5: // Diferente
                if (n1!=n2) {
                    resultado = @"Verdadeiro";
                }else{

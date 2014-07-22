@@ -45,7 +45,7 @@ static const int ESPACAMENTO_BOTOES = 50;
     
     Calculador *c = [[Calculador alloc] init];
     
-    NSLog(@"%@",[[c geral]calculaOperador:@"<" numero1:@"2.1" numero2:@"2"]);
+    NSLog(@"%@",[[c geral]calculaOperador:@"||" numero1:@"Falso" numero2:@"Verdadeiro"]);
     
     //É DEFINIDO O TAMANHO E A POSIÇÃO DA SCROLLVIEW EM RELAÇÃO O TAMANHO DO NAVIGATION CONTROLLER
     CGRect frame = self.view.frame;

@@ -37,7 +37,7 @@ static const int NUM_TEXTURAS = 10;
 -(void)inicializaClasse:(NSString*)resultado{
     [self setTexture:[SKTexture textureWithImageNamed:[NSString stringWithFormat:@"parte-resultado%d.png", NUM_TEXTURAS]]];
     [self setName:@"resultado"];
-    [self setSize:CGSizeMake(265, 98)];
+    [self setSize:CGSizeMake(209, 77)];
     [self inicializaLabelResultado:resultado];
     [self inicializaAnimacaoDescer];
     [self inicializaAnimacaoSubir];
@@ -48,9 +48,9 @@ static const int NUM_TEXTURAS = 10;
 -(void)inicializaLabelResultado:(NSString*)resultado{
     lblResultado = [SKLabelNode labelNodeWithFontNamed:@"Avenir Next Condensed Medium"];
     [lblResultado setText:resultado];
-    [lblResultado setFontSize:50];
+    [lblResultado setFontSize:35];
     [lblResultado setFontColor:[SKColor whiteColor]];
-    [lblResultado setPosition:CGPointMake(0, -29.4)];
+    [lblResultado setPosition:CGPointMake(0, -25)];
     [lblResultado setAlpha:0];
     [lblResultado setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
     

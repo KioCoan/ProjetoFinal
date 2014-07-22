@@ -13,8 +13,10 @@
 #import "Relacional.h"
 
 @interface Geral : NSObject
-
+{
+    NSArray *operadores;
+}
 
 -(NSString*)calculaOperador:(NSString*)operacao numero1:(NSString*)numero1 numero2:(NSString*)numero2;
-
+-(NSString*)getOperador:(int)operador;
 @end

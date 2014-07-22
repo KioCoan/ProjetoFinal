@@ -13,35 +13,136 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
+        sprites = [[NSMutableArray alloc] init];
         
         //ADICIONA UM OPERADOR NO CANTO SUPERIOR ESQUERDO DA TELA
         CGPoint position = CGPointMake(190, 400);
-        [self criarOperador:@"350" operador:@"==" valor2:@"350" resultado:@"verdadeiro" posicao:position];
+        [self criarOperador:position];
         
         //ADICIONA UM OPERADOR NO CANTO INFERIOR ESQUERDO DA TELA
         position = CGPointMake(190, 150);
-        [self criarOperador:@"160" operador:@"+" valor2:@"200" resultado:@"360" posicao:position];
+        [self criarOperador:position];
         
         //ADICIONA UM OPERADOR NO CANTO SUPERIOR DIREITO DA TELA
         position = CGPointMake(580, 400);
-        [self criarOperador:@"verdadeiro" operador:@"&&" valor2:@"falso" resultado:@"falso" posicao:position];
+        [self criarOperador: position];
         
         //ADICIONA UM OPERADOR NO CANTO INFERIOR DIREITO DA TELA
         position = CGPointMake(580, 150);
-        [self criarOperador:@"100" operador:@"<" valor2:@"620" resultado:@"verdadeiro" posicao:position];
+        [self criarOperador:position];
         
+        //GERA VALORES ALEATORIOS PARA OS SPRITES
+        [self atualizarValores];
+        
+        //CRIA A LABEL QUE ATUALIZA OS VALORES DOS SPRITES
+        [self criarLabelAtualizar];
         
         [self setBackgroundColor:[UIColor whiteColor]];
     }
     return self;
 }
 
--(void)criarOperador:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 resultado:(NSString*)resultado posicao:(CGPoint)posicao{
+-(void)criarOperador:(CGPoint)posicao{
     
-    SpriteOperadorNode *spriteOperador = [[SpriteOperadorNode alloc] initWithValor1:valor1 operador:operador valor2:valor2 resultado:resultado];
+    SpriteOperadorNode *spriteOperador = [[SpriteOperadorNode alloc] init];
     [spriteOperador setPosition:posicao];
     
+    [sprites addObject:spriteOperador];
+    
     [self addChild:spriteOperador];
+}
+
+
+-(void)criarLabelAtualizar{
+    SKLabelNode *atualizar = [[SKLabelNode alloc] init];
+    [atualizar setText:@"Refresh"];
+    [atualizar setFontSize:20];
+    [atualizar setName:@"atualizar"];
+    [atualizar setFontColor:[SKColor blackColor]];
+    [atualizar setPosition:CGPointMake(60, 560)];
+    
+    [self addChild:atualizar];
+}
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    UITouch *touch = [touches anyObject];
+    CGPoint posicao = [touch locationInNode:self];
+    SKNode *node = [self nodeAtPoint:posicao];
+    
+    if([node.name isEqualToString:@"atualizar"]){
+        [self atualizarValores];
+    }
+}
+
+-(void)atualizarValores{
+    Geral *calculadora = [[Geral alloc] init];
+    NSString *valor1, *operador, *valor2, *resultado;
+    int aux;
+    
+    for(int i=0; i<sprites.count; i++){
+        aux = arc4random() % 200;
+        
+        //CASO O VALOR SEJA MENOR QUE 50, ELE É COSIDERADO COMO UM VALOR LÓGICO
+        if(aux < 50){
+            valor1 = [self valorLogicoAleatorio];
+            operador = [self operadorLogicoAleatorio];
+            valor2 = [self valorLogicoAleatorio];
+            resultado = [calculadora calculaOperador:operador numero1:valor1 numero2:valor2];
+            
+        }else{
+            valor1 = [self valorAleatorio];
+            operador = [calculadora getOperador:[self operadorAleatorio]];
+            valor2 = [self valorAleatorio];
+            resultado = [calculadora calculaOperador:operador numero1:valor1 numero2:valor2];
+        }
+        
+        //DEFINE OS NOVOS VALORES PARA O SPRITE DESSE INDEX
+        [[sprites objectAtIndex:i] setLabelValor1:valor1 operador:operador valor2:valor2 resultado:resultado];
+    }
+    
+}
+
+
+-(NSString*)valorAleatorio{
+    float num = arc4random() % 1000;
+    num *= 0.9;
+    
+    if ((floorf(num)==(num))) {
+        return  [NSString stringWithFormat:@"%.0f",num];
+    }else{
+        return [NSString stringWithFormat:@"%.02f", num];
+    }
+}
+
+
+-(int)operadorAleatorio{
+    return arc4random() % 10;
+}
+
+
+-(NSString*)operadorLogicoAleatorio{
+    int operador = arc4random() % 2;
+    
+    switch (operador) {
+        case 1:
+            return @"&&";
+            
+        default:
+            return @"||";
+    }
+}
+
+-(NSString*)valorLogicoAleatorio{
+    int num = arc4random() % 2;
+    
+    switch (num) {
+        case 1:
+            return @"Verdadeiro";
+            
+        default:
+            return @"Falso";
+    }
 }
 
 @end

@@ -128,6 +128,29 @@
 }
 
 
+-(void)setLabelValor1:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 resultado:(NSString*)resultado{
+    [self setLabelValor1:valor1];
+    [self setLabelOperador:operador];
+    [self setLabelValor2:valor2];
+    [self setLabelResultado:resultado];
+}
+
+-(void)setLabelOperador:(NSString*)operador{
+    [nodeOperador setLabelOperador:operador];
+}
+
+-(void)setLabelValor1:(NSString*)valor1{
+    [nodeValores setLabelValor1:valor1];
+}
+
+-(void)setLabelValor2:(NSString*)valor2{
+    [nodeValores setLabelValor2:valor2];
+}
+
+-(void)setLabelResultado:(NSString*)resultado{
+    [nodeResultado setLabelResultado:resultado];
+}
+
 -(BOOL)partesVisiveis{
     return partesVisiveis;
 }

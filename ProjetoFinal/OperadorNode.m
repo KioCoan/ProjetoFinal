@@ -35,14 +35,13 @@
 -(void)inicializaClasse:(NSString*)operador{
     [self setTexture:[SKTexture textureWithImageNamed:@"parte-operador.png"]];
     [self setName:@"operador"];
-    [self setSize:CGSizeMake(139, 139)];
+    [self setSize:CGSizeMake(116, 116)];
     [self inicializarLabelOperador:operador];
 }
 
 -(void)inicializarLabelOperador:(NSString*)operador{
     lblOperador = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
     [lblOperador setName:@"operador"];
-    [lblOperador setFontSize:80];
     [self setLabelOperador:operador];
     [lblOperador setFontColor:[SKColor whiteColor]];
     [lblOperador setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
@@ -53,8 +52,12 @@
 
 
 -(void)setLabelOperador:(NSString*)operador{
+    
     if([operador isEqualToString:@"&&"]){
-        [lblOperador setFontSize:lblOperador.fontSize - 15];
+        [lblOperador setFontSize: 55];
+        
+    }else{
+        [lblOperador setFontSize: 70];
     }
     
     [lblOperador setText:operador];

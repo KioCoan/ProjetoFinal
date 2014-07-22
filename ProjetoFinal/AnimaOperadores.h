@@ -7,10 +7,15 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#include <stdlib.h>
 #import "SpriteOperadorNode.h"
+#import "Geral.h"
+
 
 @interface AnimaOperadores : SKScene
-
+{
+    NSMutableArray *sprites;
+}
 
 
 @end
