@@ -106,7 +106,7 @@ static const int ESPACAMENTO_BOTOES = 50;
 
 //METODO QUE INSERE UM BOTÃO NA LINHA
 -(int)posicionarUmBotao:(UIView*)view :(int)posicaoXBotao :(int)posicaoYBotao :(int)contadorNomes{
-    UIImage *imgCaixa = [UIImage imageNamed:@"item-variavel.png"];
+    UIImage *imgCaixa = [UIImage imageNamed:@"item-operadores.png"];
     
     //INICIALIZA BOTAO
     UIButton *botao = [[UIButton alloc] initWithFrame:CGRectMake(posicaoXBotao, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
@@ -125,7 +125,7 @@ static const int ESPACAMENTO_BOTOES = 50;
     int posicaoBotao2 = posicaoXBotao + (BOTAO_WIDTH /2) + (ESPACAMENTO_BOTOES / 2);
 
     
-    UIImage *imgCaixa = [UIImage imageNamed:@"item-variavel.png"];
+    UIImage *imgCaixa = [UIImage imageNamed:@"item-operadores.png"];
     
     //INICIALIZA BOTAO
     UIButton *botao = [[UIButton alloc] initWithFrame:CGRectMake(posicaoBotao1, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
@@ -151,7 +151,7 @@ static const int ESPACAMENTO_BOTOES = 50;
 -(int)posicionarTresBotoes:(UIView*)view :(int)posicaoXBotao :(int)posicaoYBotao :(int)contadorNomes{
     int posicaoBotao1 = posicaoXBotao - BOTAO_WIDTH - ESPACAMENTO_BOTOES;
     int posicaoBotao2 = posicaoXBotao + BOTAO_WIDTH + ESPACAMENTO_BOTOES;
-    UIImage *imgCaixa = [UIImage imageNamed:@"item-variavel.png"];
+    UIImage *imgCaixa = [UIImage imageNamed:@"item-operadores.png"];
     
     //INICIALIZA BOTAO DA ESQUERDA
     UIButton *botao = [[UIButton alloc] initWithFrame:CGRectMake(posicaoBotao1, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
