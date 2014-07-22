@@ -33,5 +33,6 @@ Assunto* assunto;
 -(void)preparaExercicios;
 -(NSMutableArray*)retornaTitulosEDescricoesExercicios;
 -(SKScene*)retornaAnimacao;
+-(int)exercicioSelecionado;
 
 @end

@@ -37,4 +37,5 @@
 -(void)preparaExercicios;
 
 -(NSMutableArray*)retornaTitulosEDescricoesExercicios;
+-(int)getIndiceExercicio;
 @end

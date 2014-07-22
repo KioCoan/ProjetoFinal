@@ -9,7 +9,10 @@
 #import "ExercicioVIewContoller.h"
 
 @interface ExercicioVIewContoller ()
-
+{
+    
+    __weak IBOutlet UIActivityIndicatorView *activityIndicator;
+}
 @end
 
 @implementation ExercicioVIewContoller
@@ -39,8 +42,24 @@
     //DEFINO O TITULO DO NAVIGATION CONTROLLER DE ACORDO COM O NOME DO ASSUNTO
     [[self navigationItem] setTitle:gerenciador.retornaNomeAssunto];
     
+    //Start animação indicador de atividade
+    [activityIndicator startAnimating];
+
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    
+    GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     //CRIO UMA SKVIEW PARA INSERIR A SKSCENE
     SKView *viewExercicio = [[SKView alloc] initWithFrame:self.view.frame];
+    
+    
+    
+    //Instancio o Exercicio
+    [gerenciador instanciaCenaDoExercicio:[gerenciador exercicioSelecionado]];
     
     
     //INSTANCIO A SKSCENE DO ASSUNTO ATUAL
@@ -53,6 +72,12 @@
     
     [[self view] addSubview:viewExercicio];
     
+    [activityIndicator stopAnimating];
+    
+}
+
+- (void) threadStartAnimating {
+    [activityIndicator startAnimating];
 }
 
 - (void)didReceiveMemoryWarning

@@ -78,7 +78,7 @@
 
     
     // Instancia somente o exercício clicado pelo usuário para que na proxima view ele esteja pronto para ser exibido
-    [gerenciador instanciaCenaDoExercicio:selectedCell];
+    
 
 }
 

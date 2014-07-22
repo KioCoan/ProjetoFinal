@@ -127,4 +127,7 @@
 -(SKScene*)retornaAnimacao{
     return assunto.animacao;
 }
+-(int)exercicioSelecionado{
+    return [assunto getIndiceExercicio];
+}
 @end
