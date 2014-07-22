@@ -12,10 +12,10 @@
 @interface GerenciadorDeAssunto : NSObject
 {
     NSArray *nomesDosAssuntos;
-
+Assunto* assunto;
 }
 
-@property Assunto* assunto;
+//@property Assunto* assunto;
 //
 //+(id)gerenciador;
 //+(void)mudarAssunto:(Assunto*)assunto;
@@ -26,4 +26,12 @@
 -(void)mudarTemaEstudado:(NSString*)tema;
 -(NSMutableArray*)retornaTeoriaFormatada;
 -(NSString*)getNomedoAssunto:(int)pos;
+-(NSString*)retornaNomeAssunto;
+-(void)instanciaCenaDoExercicio:(int)index;
+-(void)selecionaExercicio:(NSInteger)index;
+-(SKScene*)retornaExercicioSelecionado;
+-(void)preparaExercicios;
+-(NSMutableArray*)retornaTitulosEDescricoesExercicios;
+-(SKScene*)retornaAnimacao;
+
 @end

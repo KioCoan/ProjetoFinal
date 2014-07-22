@@ -37,14 +37,14 @@
     GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     
     //DEFINO O TITULO DO NAVIGATION CONTROLLER DE ACORDO COM O NOME DO ASSUNTO
-    [[self navigationItem] setTitle:gerenciador.assunto.nome];
+    [[self navigationItem] setTitle:gerenciador.retornaNomeAssunto];
     
     //CRIO UMA SKVIEW PARA INSERIR A SKSCENE
     SKView *viewExercicio = [[SKView alloc] initWithFrame:self.view.frame];
     
     
     //INSTANCIO A SKSCENE DO ASSUNTO ATUAL
-    SKScene *cena = [gerenciador.assunto retornaExercicioSelecionado];
+    SKScene *cena = [gerenciador retornaExercicioSelecionado];
     
     //DEFININDO TAMANHO DA SKSCENE E ADICIONANDO-A NA SKVIEW
     [cena setSize: viewExercicio.frame.size];

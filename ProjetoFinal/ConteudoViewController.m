@@ -41,14 +41,14 @@
     GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     
     //DEFINO O TITULO DO NAVIGATION CONTROLLER DE ACORDO COM O NOME DO ASSUNTO
-    [[self navigationItem] setTitle:gerenciador.assunto.nome];
+    [[self navigationItem] setTitle:gerenciador.retornaNomeAssunto];
     
     //CRIO UMA SKVIEW PARA INSERIR A SKSCENE
     SKView *viewAnimacao = [[SKView alloc] initWithFrame:CGRectMake(0, 65, self.view.frame.size.width, 600)];
     
     
     //INSTANCIO A SKSCENE DO ASSUNTO ATUAL
-    SKScene *cena = gerenciador.assunto.animacao;
+    SKScene *cena = gerenciador.retornaAnimacao;
     
     //DEFININDO TAMANHO DA SKSCENE E ADICIONANDO-A NA SKVIEW
     [cena setSize: viewAnimacao.frame.size];
@@ -66,7 +66,7 @@
     [super viewDidAppear:animated];
     GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     
-    [[gerenciador assunto]preparaExercicios];// Chamada do método que aloca os exercícios
+    [gerenciador preparaExercicios];// Chamada do método que aloca os exercícios
     
     
 }

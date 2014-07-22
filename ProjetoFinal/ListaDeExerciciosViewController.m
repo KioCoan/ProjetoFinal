@@ -33,9 +33,9 @@
     [super viewWillAppear:animated];
     
     gerenciador = [GerenciadorDeAssunto sharedGerenciador];
-    titulosEDescricoes = [[gerenciador assunto]retornaTitulosEDescricoesExercicios];
+    titulosEDescricoes = [gerenciador retornaTitulosEDescricoesExercicios];
     
-    [[self navigationItem] setTitle:[NSString stringWithFormat:@"Exercícios %@", [[gerenciador assunto] nome]]];
+    [[self navigationItem] setTitle:[NSString stringWithFormat:@"Exercícios %@", [gerenciador retornaNomeAssunto]]];
     
 }
 
@@ -69,7 +69,7 @@
 
     [btnExercitar setHidden:NO];
     selectedCell = indexPath.row;
-    [[gerenciador assunto]selecionaExercicio:selectedCell];
+    [gerenciador selecionaExercicio:selectedCell];
     
 }
 
@@ -78,7 +78,7 @@
 
     
     // Instancia somente o exercício clicado pelo usuário para que na proxima view ele esteja pronto para ser exibido
-    [[[[gerenciador assunto] exercicios]objectAtIndex:selectedCell] instanciaCena];
+    [gerenciador instanciaCenaDoExercicio:selectedCell];
 
 }
 

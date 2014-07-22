@@ -41,6 +41,9 @@
 }
 
 
+-(int)getIndiceExercicio{
+    return indiceExercicio;
+}
 
 -(NSMutableArray*)retornaTitulosEDescricoesExercicios{ //retorna a descrição e os títulos dos exercícios
     

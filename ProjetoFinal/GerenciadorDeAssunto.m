@@ -66,22 +66,22 @@
     
     switch (index) {
         case 0:
-            [self setAssunto:nil];
-            [self setAssunto:[[Variavel alloc]init]];
+            assunto = nil;
+            assunto = [[Variavel alloc]init];
             break;
             
         case 1:
-            [self setAssunto:nil];
-            [self setAssunto:[[Operadores alloc]init]];
+            assunto = nil;
+            assunto = [[Operadores alloc]init];
             break;
         case 2:
-            [self setAssunto:nil];
-            [self setAssunto:[[CondicaoSimples alloc]init]];
+            assunto = nil;
+            assunto = [[CondicaoSimples alloc]init];
             break;
         
         
         default:
-            [self setAssunto:nil];
+            assunto = nil;
             break;
     }
     
@@ -91,7 +91,7 @@
     
 }
 -(NSMutableArray*)retornaTeoriaFormatada{
-    return [[self assunto]teoriaFormatada];
+    return [assunto teoriaFormatada];
 }
 
 
@@ -99,5 +99,32 @@
     return [nomesDosAssuntos objectAtIndex:pos];
 }
 
+-(NSString*)retornaNomeAssunto{
+    return[assunto nome];
+}
 
+-(void)selecionaExercicio:(NSInteger)index{
+    [assunto selecionaExercicio:index];
+}
+
+-(SKScene*)retornaExercicioSelecionado{
+    return [assunto retornaExercicioSelecionado];
+}
+
+-(void)preparaExercicios{
+    [assunto preparaExercicios];
+}
+
+-(NSMutableArray*)retornaTitulosEDescricoesExercicios{
+    
+    return [assunto retornaTitulosEDescricoesExercicios];
+}
+
+-(void)instanciaCenaDoExercicio:(int)index{
+    [[[assunto exercicios]objectAtIndex:index] instanciaCena];
+}
+
+-(SKScene*)retornaAnimacao{
+    return assunto.animacao;
+}
 @end
