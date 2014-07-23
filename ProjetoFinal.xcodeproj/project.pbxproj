@@ -42,7 +42,6 @@
 		A529DF1C1965DB7500A3D9FB /* Aritimetico.m in Sources */ = {isa = PBXBuildFile; fileRef = A529DF181965DB7500A3D9FB /* Aritimetico.m */; };
 		A529DF1D1965DB7500A3D9FB /* Logico.m in Sources */ = {isa = PBXBuildFile; fileRef = A529DF1A1965DB7500A3D9FB /* Logico.m */; };
 		A529DF201965DB8A00A3D9FB /* Calculador.m in Sources */ = {isa = PBXBuildFile; fileRef = A529DF1F1965DB8A00A3D9FB /* Calculador.m */; };
-		A559E4111970524100BDFDB8 /* Validador.m in Sources */ = {isa = PBXBuildFile; fileRef = A559E4101970524100BDFDB8 /* Validador.m */; };
 		A55F2B411964879A00111BEB /* Variavel.m in Sources */ = {isa = PBXBuildFile; fileRef = A55F2B401964879A00111BEB /* Variavel.m */; };
 		A55F2B4419648C0600111BEB /* ConceitosVariaveis.txt in Resources */ = {isa = PBXBuildFile; fileRef = A55F2B4319648C0600111BEB /* ConceitosVariaveis.txt */; };
 		A597F0F41960A7A6006429C7 /* SubViewConteudo.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0ED1960A7A6006429C7 /* SubViewConteudo.m */; };
@@ -168,8 +167,6 @@
 		A529DF1A1965DB7500A3D9FB /* Logico.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logico.m; sourceTree = "<group>"; };
 		A529DF1E1965DB8A00A3D9FB /* Calculador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculador.h; sourceTree = "<group>"; };
 		A529DF1F1965DB8A00A3D9FB /* Calculador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculador.m; sourceTree = "<group>"; };
-		A559E40F1970524100BDFDB8 /* Validador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Validador.h; sourceTree = "<group>"; };
-		A559E4101970524100BDFDB8 /* Validador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Validador.m; sourceTree = "<group>"; };
 		A55F2B3F1964879A00111BEB /* Variavel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variavel.h; sourceTree = "<group>"; };
 		A55F2B401964879A00111BEB /* Variavel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Variavel.m; sourceTree = "<group>"; };
 		A55F2B4319648C0600111BEB /* ConceitosVariaveis.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConceitosVariaveis.txt; sourceTree = "<group>"; };
@@ -489,8 +486,6 @@
 				A529DF181965DB7500A3D9FB /* Aritimetico.m */,
 				A529DF191965DB7500A3D9FB /* Logico.h */,
 				A529DF1A1965DB7500A3D9FB /* Logico.m */,
-				A559E40F1970524100BDFDB8 /* Validador.h */,
-				A559E4101970524100BDFDB8 /* Validador.m */,
 				A505740D1978243A00F68932 /* Geral.h */,
 				A505740E1978243A00F68932 /* Geral.m */,
 			);
@@ -796,7 +791,6 @@
 				A597F0F51960A7A6006429C7 /* SubViewConteudoFilho.m in Sources */,
 				BDBE7694197A39E0004EA926 /* OperadorResultadoNode.m in Sources */,
 				A529DF1C1965DB7500A3D9FB /* Aritimetico.m in Sources */,
-				A559E4111970524100BDFDB8 /* Validador.m in Sources */,
 				84B1B3E3197D881900089FCB /* CondicaoSimples.m in Sources */,
 				A50B33401972BF2E00BDD473 /* ListaDeExerciciosViewController.m in Sources */,
 				A500C2B519743C1D00D6BE83 /* ExeVariavel1.m in Sources */,

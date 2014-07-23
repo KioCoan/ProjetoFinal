@@ -39,26 +39,6 @@
 }
 
 -(NSString*)calculaOperador:(NSString*)operacao numero1:(NSString*)numero1 numero2:(NSString*)numero2{
-
-//    NSNumber *n1 ,*n2;
-//    
-//    if ((floorf(convertido1)) == convertido1) {
-//        // Caso Inteiro
-//        n1 = [NSNumber numberWithInt:convertido1];
-//        
-//    }else{
-//        // Caso float
-//        n1 = [NSNumber numberWithFloat:convertido1];
-//                                                      NÃO É NECESSÁRIO ESSE TRECHO
-//    }
-//    
-//    if ((floorf(convertido2)) == convertido2) {
-//        // Caso inteiro
-//        n2 = [NSNumber numberWithInt:convertido2];
-//    }else{
-//        // Caso Float
-//        n2 = [NSNumber numberWithFloat:convertido2];
-//    }
     
     for(int i=0; i<operadores.count; i++){
         if([operacao isEqualToString:[operadores objectAtIndex:i]]){
