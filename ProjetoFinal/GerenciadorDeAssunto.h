@@ -22,7 +22,7 @@
 -(void)mudarTemaEstudado:(NSString*)tema;
 -(NSMutableArray*)retornaTeoriaFormatada;
 -(NSString*)getNomedoAssunto:(int)pos;
--(NSString*)retornaNomeAssunto;
+-(NSString*)retornaNomeAssuntoAtual;
 -(void)instanciaCenaDoExercicio:(int)index;
 -(void)selecionaExercicio:(int)index;
 -(SKScene*)retornaExercicioSelecionado;

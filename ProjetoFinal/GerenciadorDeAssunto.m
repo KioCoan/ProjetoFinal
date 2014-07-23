@@ -99,7 +99,7 @@
     return [nomesDosAssuntos objectAtIndex:pos];
 }
 
--(NSString*)retornaNomeAssunto{
+-(NSString*)retornaNomeAssuntoAtual{
     return[assunto nome];
 }
 

@@ -35,7 +35,7 @@
     gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     titulosEDescricoes = [gerenciador retornaTitulosEDescricoesExercicios];
     
-    [[self navigationItem] setTitle:[NSString stringWithFormat:@"Exercícios %@", [gerenciador retornaNomeAssunto]]];
+    [[self navigationItem] setTitle:[NSString stringWithFormat:@"Exercícios %@", [gerenciador retornaNomeAssuntoAtual]]];
     
 }
 
