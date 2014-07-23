@@ -15,10 +15,6 @@
     self = [super init];
     
     if (self) {
-    
-        relacional = [[Relacional alloc] init];
-        aritimetico = [[Aritimetico alloc]init];
-        logico = [[Logico alloc] init];
         geral = [[Geral alloc] init];
         
     }

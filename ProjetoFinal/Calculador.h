@@ -7,9 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Relacional.h"
-#import "Aritimetico.h"
-#import "Logico.h"
 #import "Geral.h"
 @interface Calculador : NSObject
 {
