@@ -51,6 +51,8 @@
 		A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F31960A7A6006429C7 /* ConteudoViewController.m */; };
 		BD4B4BDB197075BD00D6E839 /* SpriteCaixaNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */; };
 		BD630CAB1948E3F400AF13E7 /* item-variavel.png in Resources */ = {isa = PBXBuildFile; fileRef = BD630CAA1948E3F400AF13E7 /* item-variavel.png */; };
+		BD66B651197F6F16000BB548 /* atualizar-dados.png in Resources */ = {isa = PBXBuildFile; fileRef = BD66B650197F6F16000BB548 /* atualizar-dados.png */; };
+		BD66B653197F9327000BB548 /* fundo-transparente.png in Resources */ = {isa = PBXBuildFile; fileRef = BD66B652197F9327000BB548 /* fundo-transparente.png */; };
 		BD8C66E9197E522500A4946C /* item-operadores.png in Resources */ = {isa = PBXBuildFile; fileRef = BD8C66E8197E522500A4946C /* item-operadores.png */; };
 		BDB4810B196CB7FC00D5901A /* Operadores.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB4810A196CB7FC00D5901A /* Operadores.m */; };
 		BDB48111196CB89400D5901A /* AnimaOperadores.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB48110196CB89400D5901A /* AnimaOperadores.m */; };
@@ -182,6 +184,8 @@
 		BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteCaixaNode.h; sourceTree = "<group>"; };
 		BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteCaixaNode.m; sourceTree = "<group>"; };
 		BD630CAA1948E3F400AF13E7 /* item-variavel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-variavel.png"; path = "Imagens/item-variavel.png"; sourceTree = "<group>"; };
+		BD66B650197F6F16000BB548 /* atualizar-dados.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "atualizar-dados.png"; path = "Imagens/atualizar-dados.png"; sourceTree = "<group>"; };
+		BD66B652197F9327000BB548 /* fundo-transparente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fundo-transparente.png"; path = "Imagens/fundo-transparente.png"; sourceTree = "<group>"; };
 		BD8C66E8197E522500A4946C /* item-operadores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-operadores.png"; path = "Imagens/item-operadores.png"; sourceTree = "<group>"; };
 		BDB48109196CB7FC00D5901A /* Operadores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operadores.h; sourceTree = "<group>"; };
 		BDB4810A196CB7FC00D5901A /* Operadores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operadores.m; sourceTree = "<group>"; };
@@ -618,6 +622,8 @@
 				BD630CAA1948E3F400AF13E7 /* item-variavel.png */,
 				BD8C66E8197E522500A4946C /* item-operadores.png */,
 				846B738D19782427009C2EB7 /* fundo-cinza.png */,
+				BD66B652197F9327000BB548 /* fundo-transparente.png */,
+				BD66B650197F6F16000BB548 /* atualizar-dados.png */,
 				E501FA6A192FCD3800B56B5C /* item-memoria.png */,
 			);
 			name = Imagens;
@@ -707,6 +713,7 @@
 				BDC757A8196787E700DB8380 /* abrir-caixa11.png in Resources */,
 				BD8C66E9197E522500A4946C /* item-operadores.png in Resources */,
 				BDF8ADF4197B255C00BA5B8A /* parte-resultado7.png in Resources */,
+				BD66B651197F6F16000BB548 /* atualizar-dados.png in Resources */,
 				BDF8AE0B197B258C00BA5B8A /* parte-valores11.png in Resources */,
 				120E8F8F192FC0A200CDEF95 /* Images.xcassets in Resources */,
 				BDC757A0196787E700DB8380 /* abrir-caixa3.png in Resources */,
@@ -729,6 +736,7 @@
 				A55F2B4419648C0600111BEB /* ConceitosVariaveis.txt in Resources */,
 				846B738E19782427009C2EB7 /* fundo-cinza.png in Resources */,
 				BDC757AA196787E700DB8380 /* abrir-caixa13.png in Resources */,
+				BD66B653197F9327000BB548 /* fundo-transparente.png in Resources */,
 				BDC757A3196787E700DB8380 /* abrir-caixa6.png in Resources */,
 				BDF8ADF2197B255C00BA5B8A /* parte-resultado5.png in Resources */,
 				BDF8ADF1197B255C00BA5B8A /* parte-resultado4.png in Resources */,

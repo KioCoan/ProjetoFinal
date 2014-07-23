@@ -20,7 +20,7 @@
         [self criarOperador:position];
         
         //ADICIONA UM OPERADOR NO CANTO INFERIOR ESQUERDO DA TELA
-        position = CGPointMake(190, 150);
+        position = CGPointMake(190, 100);
         [self criarOperador:position];
         
         //ADICIONA UM OPERADOR NO CANTO SUPERIOR DIREITO DA TELA
@@ -28,7 +28,7 @@
         [self criarOperador: position];
         
         //ADICIONA UM OPERADOR NO CANTO INFERIOR DIREITO DA TELA
-        position = CGPointMake(580, 150);
+        position = CGPointMake(580, 100);
         [self criarOperador:position];
         
         //GERA VALORES ALEATORIOS PARA OS SPRITES
@@ -54,12 +54,10 @@
 
 
 -(void)criarLabelAtualizar{
-    SKLabelNode *atualizar = [[SKLabelNode alloc] init];
-    [atualizar setText:@"Refresh"];
-    [atualizar setFontSize:20];
+    SKSpriteNode *atualizar = [[SKSpriteNode alloc] initWithImageNamed:@"atualizar-dados.png"];
     [atualizar setName:@"atualizar"];
-    [atualizar setFontColor:[SKColor blackColor]];
-    [atualizar setPosition:CGPointMake(384, 560)];
+    [atualizar setSize:CGSizeMake(80, 80)];
+    [atualizar setPosition:CGPointMake(384, 300)];
     
     [self addChild:atualizar];
 }
@@ -105,7 +103,7 @@
 
 
 -(NSString*)valorAleatorio{
-    float num = arc4random() % 1000;
+    float num = arc4random() % 1000 + 2;
     num *= 0.9;
     
     if ((floorf(num)==(num))) {
