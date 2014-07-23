@@ -12,12 +12,15 @@
 #import "Logico.h"
 #import "Geral.h"
 @interface Calculador : NSObject
+{
+    Relacional *relacional;
+    Aritimetico *aritimetico;
+    Logico *logico;
+    Geral *geral;
+}
+-(NSString*)calculaOperador:(NSString*)operacao numero1:(NSString*)numero1 numero2:(NSString*)numero2;
+-(NSString*)getOperador:(int)operador;
 
-
-@property Relacional *relacional;
-@property Aritimetico *aritimetico;
-@property Logico *logico;
-@property Geral *geral;
 //-(BOOL)oDado:(NSString*)dado eDoTipo:(NSString*)tipo;
 
 @end

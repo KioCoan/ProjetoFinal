@@ -16,38 +16,20 @@
     
     if (self) {
     
-        self.relacional = [[Relacional alloc] init];
-        self.aritimetico = [[Aritimetico alloc]init];
-        self.logico = [[Logico alloc] init];
-        self.geral = [[Geral alloc] init];
+        relacional = [[Relacional alloc] init];
+        aritimetico = [[Aritimetico alloc]init];
+        logico = [[Logico alloc] init];
+        geral = [[Geral alloc] init];
         
     }
     return self;
     
 }
-
-//-(BOOL)oDado:(NSString*)dado eDoTipo:(NSString*)tipo{
-//    
-//    if ([tipo isEqualToString:@"inteiro"]) {
-//        @try {
-//            int i = [dado intValue];
-//            
-//        }
-//        @catch (NSException *exception) {
-//            return NO;
-//        }
-//        
-//    }else if ([tipo isEqualToString:@"inteiro"]){
-//        
-//    }else if ([tipo isEqualToString:@"inteiro"]){
-//        
-//    }
-//    
-//    
-//    
-//    return YES;
-//}
-
-
+-(NSString*)calculaOperador:(NSString*)operacao numero1:(NSString*)numero1 numero2:(NSString*)numero2{
+    return [geral calculaOperador:operacao numero1:numero1 numero2:numero2];
+}
+-(NSString*)getOperador:(int)operador{
+    return [geral getOperador:operador];
+}
 
 @end

@@ -160,7 +160,7 @@
     espaco.name = @"espaco";
     //chamando o calculador para retornar o resultado da operacao
     
-    NSString *aux = [calculador.geral calculaOperador:operador.text numero1:valor1.text numero2:valor2.text];
+    NSString *aux = [calculador calculaOperador:operador.text numero1:valor1.text numero2:valor2.text];
     //NSArray *strings = [[NSArray alloc]initWithObjects:@"=",aux ,nil];
     //resultado = [[SpriteLabelNode alloc]initWithType:@"resultado" texto:[strings componentsJoinedByString:@" "]];
     resultado = [[SpriteLabelNode alloc]initWithType:@"resultado" texto:aux];
@@ -313,7 +313,7 @@
             if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
                 
                 
-                if ([resultado.text isEqualToString:[calculador.geral calculaOperador:conteudoAtivo.text numero1:valor1.text numero2:valor2.text]]) { //se a resposta do calculador for a mesma da expressao
+                if ([resultado.text isEqualToString:[calculador calculaOperador:conteudoAtivo.text numero1:valor1.text numero2:valor2.text]]) { //se a resposta do calculador for a mesma da expressao
                     [conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa
                     
                     
