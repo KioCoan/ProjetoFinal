@@ -34,7 +34,7 @@
     nodeResultado = [[OperadorResultadoNode alloc] initWithResultado:resultado];
     [self addChild:nodeResultado];
     
-    //EM SEGUIDA É INSERIDO A PARTE QUE MOSTRA OS OPERADORES
+    //EM SEGUIDA É INSERIDO A PARTE QUE MOSTRA OS VALORES
     nodeValores = [[OperadorValoresNode alloc] initWithValor1:valor1 valor2:valor2];
     [nodeResultado addChild:nodeValores];
     
