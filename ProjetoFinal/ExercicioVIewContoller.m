@@ -40,7 +40,7 @@
     GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     
     //DEFINO O TITULO DO NAVIGATION CONTROLLER DE ACORDO COM O NOME DO ASSUNTO
-    [[self navigationItem] setTitle:gerenciador.retornaNomeAssunto];
+    [[self navigationItem] setTitle:gerenciador.retornaNomeAssuntoAtual];
     
     //Start animação indicador de atividade
     [activityIndicator startAnimating];

@@ -41,7 +41,7 @@
     GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     
     //DEFINO O TITULO DO NAVIGATION CONTROLLER DE ACORDO COM O NOME DO ASSUNTO
-    [[self navigationItem] setTitle:gerenciador.retornaNomeAssunto];
+    [[self navigationItem] setTitle:gerenciador.retornaNomeAssuntoAtual];
     
     //CRIO UMA SKVIEW PARA INSERIR A SKSCENE
     SKView *viewAnimacao = [[SKView alloc] initWithFrame:CGRectMake(0, 65, self.view.frame.size.width, 600)];
