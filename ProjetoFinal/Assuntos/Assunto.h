@@ -30,7 +30,7 @@
 
 -(void)montaTeoria:(NSString*)nomeDoArquivo; // Usado somente em chamadas internas
 
--(void)selecionaExercicio:(NSInteger)index;
+-(void)selecionaExercicio:(int)index;
 
 -(SKScene*)retornaExercicioSelecionado;
 

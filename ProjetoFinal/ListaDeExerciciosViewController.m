@@ -68,7 +68,7 @@
     
 
     [btnExercitar setHidden:NO];
-    selectedCell = indexPath.row;
+    selectedCell = (int)indexPath.row;
     [gerenciador selecionaExercicio:selectedCell];
     
 }

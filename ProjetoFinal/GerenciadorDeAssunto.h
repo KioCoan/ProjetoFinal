@@ -28,7 +28,7 @@ Assunto* assunto;
 -(NSString*)getNomedoAssunto:(int)pos;
 -(NSString*)retornaNomeAssunto;
 -(void)instanciaCenaDoExercicio:(int)index;
--(void)selecionaExercicio:(NSInteger)index;
+-(void)selecionaExercicio:(int)index;
 -(SKScene*)retornaExercicioSelecionado;
 -(void)preparaExercicios;
 -(NSMutableArray*)retornaTitulosEDescricoesExercicios;

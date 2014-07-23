@@ -103,7 +103,7 @@
     return[assunto nome];
 }
 
--(void)selecionaExercicio:(NSInteger)index{
+-(void)selecionaExercicio:(int)index{
     [assunto selecionaExercicio:index];
 }
 

@@ -31,7 +31,7 @@
 
 
 
--(void)selecionaExercicio:(NSInteger)index{
+-(void)selecionaExercicio:(int)index{
     indiceExercicio = index;
 }
 
