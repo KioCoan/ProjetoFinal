@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "SpriteLabelNode.h"
 
 @interface CenaExercicioCondSimples1 : SKScene
 
