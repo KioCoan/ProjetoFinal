@@ -48,6 +48,10 @@
 		A597F0F51960A7A6006429C7 /* SubViewConteudoFilho.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0EF1960A7A6006429C7 /* SubViewConteudoFilho.m */; };
 		A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F11960A7A6006429C7 /* MenuViewController.m */; };
 		A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F31960A7A6006429C7 /* ConteudoViewController.m */; };
+		BD01DDFD19834E9D00AEAAA8 /* SpriteCondicaoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD01DDFC19834E9D00AEAAA8 /* SpriteCondicaoNode.m */; };
+		BD01DE00198352A100AEAAA8 /* ResultadoCondicaoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD01DDFF198352A100AEAAA8 /* ResultadoCondicaoNode.m */; };
+		BD01DE021983539F00AEAAA8 /* blocoDeCodigo.png in Resources */ = {isa = PBXBuildFile; fileRef = BD01DE011983539F00AEAAA8 /* blocoDeCodigo.png */; };
+		BD01DE051983566100AEAAA8 /* AnimaCondSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */; };
 		BD4B4BDB197075BD00D6E839 /* SpriteCaixaNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */; };
 		BD630CAB1948E3F400AF13E7 /* item-variavel.png in Resources */ = {isa = PBXBuildFile; fileRef = BD630CAA1948E3F400AF13E7 /* item-variavel.png */; };
 		BD66B651197F6F16000BB548 /* atualizar-dados.png in Resources */ = {isa = PBXBuildFile; fileRef = BD66B650197F6F16000BB548 /* atualizar-dados.png */; };
@@ -178,6 +182,13 @@
 		A597F0F11960A7A6006429C7 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		A597F0F21960A7A6006429C7 /* ConteudoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConteudoViewController.h; sourceTree = "<group>"; };
 		A597F0F31960A7A6006429C7 /* ConteudoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ConteudoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		BD01DDFB19834E9D00AEAAA8 /* SpriteCondicaoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteCondicaoNode.h; sourceTree = "<group>"; };
+		BD01DDFC19834E9D00AEAAA8 /* SpriteCondicaoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteCondicaoNode.m; sourceTree = "<group>"; };
+		BD01DDFE198352A100AEAAA8 /* ResultadoCondicaoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoCondicaoNode.h; sourceTree = "<group>"; };
+		BD01DDFF198352A100AEAAA8 /* ResultadoCondicaoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoCondicaoNode.m; sourceTree = "<group>"; };
+		BD01DE011983539F00AEAAA8 /* blocoDeCodigo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocoDeCodigo.png; path = Imagens/blocoDeCodigo.png; sourceTree = "<group>"; };
+		BD01DE031983566100AEAAA8 /* AnimaCondSimples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimaCondSimples.h; sourceTree = "<group>"; };
+		BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimaCondSimples.m; sourceTree = "<group>"; };
 		BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteCaixaNode.h; sourceTree = "<group>"; };
 		BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteCaixaNode.m; sourceTree = "<group>"; };
 		BD630CAA1948E3F400AF13E7 /* item-variavel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-variavel.png"; path = "Imagens/item-variavel.png"; sourceTree = "<group>"; };
@@ -358,6 +369,7 @@
 				8418F8791970817000781F82 /* SpriteLabelNode.m */,
 				BDBE7698197A3A00004EA926 /* Variavel */,
 				BDBE7697197A39EF004EA926 /* Operadores */,
+				BD01DDFA19834E7C00AEAAA8 /* Condição */,
 			);
 			name = Objetos;
 			sourceTree = "<group>";
@@ -443,6 +455,8 @@
 				BDB893D619677B3A009C105C /* AnimaVariavel.m */,
 				BDB4810F196CB89400D5901A /* AnimaOperadores.h */,
 				BDB48110196CB89400D5901A /* AnimaOperadores.m */,
+				BD01DE031983566100AEAAA8 /* AnimaCondSimples.h */,
+				BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */,
 			);
 			name = Animacoes;
 			sourceTree = "<group>";
@@ -518,6 +532,17 @@
 				A50B333F1972BF2E00BDD473 /* ListaDeExerciciosViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
+			isa = PBXGroup;
+			children = (
+				BD01DDFB19834E9D00AEAAA8 /* SpriteCondicaoNode.h */,
+				BD01DDFC19834E9D00AEAAA8 /* SpriteCondicaoNode.m */,
+				BD01DDFE198352A100AEAAA8 /* ResultadoCondicaoNode.h */,
+				BD01DDFF198352A100AEAAA8 /* ResultadoCondicaoNode.m */,
+			);
+			name = "Condição";
 			sourceTree = "<group>";
 		};
 		BDBE7697197A39EF004EA926 /* Operadores */ = {
@@ -617,6 +642,7 @@
 				BD630CAA1948E3F400AF13E7 /* item-variavel.png */,
 				BD8C66E8197E522500A4946C /* item-operadores.png */,
 				846B738D19782427009C2EB7 /* fundo-cinza.png */,
+				BD01DE011983539F00AEAAA8 /* blocoDeCodigo.png */,
 				BD66B652197F9327000BB548 /* fundo-transparente.png */,
 				BD66B650197F6F16000BB548 /* atualizar-dados.png */,
 				E501FA6A192FCD3800B56B5C /* item-memoria.png */,
@@ -738,6 +764,7 @@
 				BDC757A5196787E700DB8380 /* abrir-caixa8.png in Resources */,
 				BDC757A2196787E700DB8380 /* abrir-caixa5.png in Resources */,
 				BDF8ADF5197B255C00BA5B8A /* parte-resultado8.png in Resources */,
+				BD01DE021983539F00AEAAA8 /* blocoDeCodigo.png in Resources */,
 				120E8F8A192FC0A200CDEF95 /* Main.storyboard in Resources */,
 				BDF8AE02197B258C00BA5B8A /* parte-valores2.png in Resources */,
 				BD630CAB1948E3F400AF13E7 /* item-variavel.png in Resources */,
@@ -769,6 +796,7 @@
 				BD4B4BDB197075BD00D6E839 /* SpriteCaixaNode.m in Sources */,
 				A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */,
 				A529DF201965DB8A00A3D9FB /* Calculador.m in Sources */,
+				BD01DDFD19834E9D00AEAAA8 /* SpriteCondicaoNode.m in Sources */,
 				91A986111962324500EA1074 /* Assunto.m in Sources */,
 				A505740F1978243A00F68932 /* Geral.m in Sources */,
 				120E8F8D192FC0A200CDEF95 /* ViewController.m in Sources */,
@@ -782,9 +810,11 @@
 				91A98619196232F800EA1074 /* Exercicio.m in Sources */,
 				BDB4810B196CB7FC00D5901A /* Operadores.m in Sources */,
 				A597F0F41960A7A6006429C7 /* SubViewConteudo.m in Sources */,
+				BD01DE00198352A100AEAAA8 /* ResultadoCondicaoNode.m in Sources */,
 				91A9861E1962392400EA1074 /* GerenciadorDeAssunto.m in Sources */,
 				A529DF1D1965DB7500A3D9FB /* Logico.m in Sources */,
 				120E8F83192FC0A200CDEF95 /* main.m in Sources */,
+				BD01DE051983566100AEAAA8 /* AnimaCondSimples.m in Sources */,
 				846B73921978255B009C2EB7 /* CenaExercicioOperadores1.m in Sources */,
 				BDB893D719677B3A009C105C /* AnimaVariavel.m in Sources */,
 				A505740C197811E700F68932 /* ExeOperadores1.m in Sources */,

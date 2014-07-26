@@ -147,9 +147,7 @@
 }
 
 - (void)criaAlternativas{
-    
-    
-    float altura;
+
     
     SpriteLabelNode *alternativa1 = [[SpriteLabelNode alloc]initWithType:@"seila" texto:@"vou ao parque"];
     SpriteLabelNode *alternativa2 = [[SpriteLabelNode alloc]initWithType:@"seila" texto:@"vou para o cinema"];

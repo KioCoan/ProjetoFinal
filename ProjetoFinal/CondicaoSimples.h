@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Assunto.h"
 #import "ExeCondSimples1.h"
+#import "AnimaCondSimples.h"
 
 @interface CondicaoSimples : Assunto
 

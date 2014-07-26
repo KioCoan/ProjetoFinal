@@ -16,7 +16,7 @@
     self = [super init];
     
     if (self) {
-        //[self setAnimacao:[[AnimaVariavel alloc] init]];
+        [self setAnimacao:[[AnimaCondSimples alloc] init]];
         [self montaTeoria:@"ConceitosVariaveis"];
         [self setNome:@"Condição Simples"];
         
