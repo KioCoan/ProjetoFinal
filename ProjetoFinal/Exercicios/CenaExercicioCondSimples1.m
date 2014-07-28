@@ -148,52 +148,120 @@
     [self addChild:lblCodigo1];
     altura -= 40;
     
-    //codigo 4
-    SpriteLabelNode *lblCodigo4 = [[SpriteLabelNode alloc]initWithType:@"condicional2" texto:@"}senao se ( n < 6){"] ;
+    //linha 4
     
-    lblCodigo4.position = CGPointMake(self.frame.size.width * 187, altura);;
-    lblCodigo4.fontSize = font;
+    //editando texto
+    
+    lblCodigo1 = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+    lblCodigo1.text = @"}senao se (          ){";
+    lblCodigo1.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    
+    condicao = [[SpriteLabelNode alloc]initWithType:@"se" texto:@"n < 6"];
+    condicao.fontName = @"Helvetica";
+    condicao.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    
+    //editando posicionamento e font
+    
+    lblCodigo1.position = CGPointMake(self.frame.size.width * 50, altura);;
+    lblCodigo1.fontSize = font;
+    
+    condicao.position = CGPointMake(self.frame.size.width * 180, altura);
+    condicao.fontSize = font;
+    
+    //salvando e adicionando linha
+    
+    [self salvaExpressoes:condicao texto:lblCodigo1];
+    [self addChild:lblCodigo1];
+    [self addChild:condicao];
     altura -= 40;
-    [expressoes addObject:lblCodigo4];
-    [self addChild:lblCodigo4];
+
+    //linha 5
     
-    //codigo 5
-    SpriteLabelNode *lblCodigo5 = [[SpriteLabelNode alloc]initWithType:@"resposta2" texto:@"escreva (vou para o cinema);"] ;
     
-    lblCodigo5.position = CGPointMake(self.frame.size.width * 318, altura);;
-    lblCodigo5.fontSize = font;
+    lblCodigo1 = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+    lblCodigo1.text = @"escreva (vou para o cinema);";
+    lblCodigo1.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    
+    condicao = [[SpriteLabelNode alloc]init];
+    
+    //editando posicionamento e font
+    
+    lblCodigo1.position = CGPointMake(self.frame.size.width * 80, altura);;
+    lblCodigo1.fontSize = font;
+    
+    
+    //salvando e adicionando linha
+    
+    [self salvaExpressoes:condicao texto:lblCodigo1];
+    [self addChild:lblCodigo1];
     altura -= 40;
-    [expressoes addObject:lblCodigo5];
-    [self addChild:lblCodigo5];
-    
+
     
     //codigo 6
-    SpriteLabelNode *lblCodigo6 = [[SpriteLabelNode alloc]initWithType:@"condicional3" texto:@"}senao{"] ;
     
-    lblCodigo6.position = CGPointMake(self.frame.size.width * 105, altura);;
-    lblCodigo6.fontSize = font;
+    //editando texto
+    
+    lblCodigo1 = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+    lblCodigo1.text = @"}senao{";
+    lblCodigo1.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    
+    condicao = [[SpriteLabelNode alloc]init];
+    
+    
+    //editando posicionamento e font
+    
+    lblCodigo1.position = CGPointMake(self.frame.size.width * 50, altura);;
+    lblCodigo1.fontSize = font;
+    
+    
+    //salvando e adicionando linha
+    
+    [self salvaExpressoes:condicao texto:lblCodigo1];
+    [self addChild:lblCodigo1];
     altura -= 40;
-    [expressoes addObject:lblCodigo6];
-    [self addChild:lblCodigo6];
+    
 
  
     //codigo 7
-    SpriteLabelNode *lblCodigo7 = [[SpriteLabelNode alloc]initWithType:@"resposta3" texto:@"escreva(ficarei em casa);"] ;
     
-    lblCodigo7.position = CGPointMake(self.frame.size.width * 294, altura);;
-    lblCodigo7.fontSize = font;
+    lblCodigo1 = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+    lblCodigo1.text = @"escreva(ficarei em casa);";
+    lblCodigo1.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    
+    condicao = [[SpriteLabelNode alloc]init];
+    
+    //editando posicionamento e font
+    
+    lblCodigo1.position = CGPointMake(self.frame.size.width * 80, altura);;
+    lblCodigo1.fontSize = font;
+    
+    
+    //salvando e adicionando linha
+    
+    [self salvaExpressoes:condicao texto:lblCodigo1];
+    [self addChild:lblCodigo1];
     altura -= 40;
-    [expressoes addObject:lblCodigo7];
-    [self addChild:lblCodigo7];
 
     //codigo 8
-    SpriteLabelNode *lblCodigo8 = [[SpriteLabelNode alloc]initWithType:@"codigo" texto:@"}"] ;
     
-    lblCodigo8.position = CGPointMake(self.frame.size.width * 57, altura);;
-    lblCodigo8.fontSize = font;
+    lblCodigo1 = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+    lblCodigo1.text = @"}";
+    lblCodigo1.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    
+    condicao = [[SpriteLabelNode alloc]init];
+    
+    //editando posicionamento e font
+    
+    lblCodigo1.position = CGPointMake(self.frame.size.width * 50, altura);;
+    lblCodigo1.fontSize = font;
+    
+    
+    //salvando e adicionando linha
+    
+    [self salvaExpressoes:condicao texto:lblCodigo1];
+    [self addChild:lblCodigo1];
     altura -= 40;
-    [expressoes addObject:lblCodigo8];
-    [self addChild:lblCodigo8];
+
 
     
 }
