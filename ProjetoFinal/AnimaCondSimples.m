@@ -8,59 +8,29 @@
 
 #import "AnimaCondSimples.h"
 
+static const  uint32_t bolinhaCatergory = 0x1 << 0;
+static const  uint32_t condicaoCatergory = 0x1 << 1;
+
 @implementation AnimaCondSimples
 
 -(id)init{
     if(self = [super init]){
         SpriteCondicaoNode *teste = [[SpriteCondicaoNode alloc] initWithTipoDeCondicao:SE_SENAO];
+        [teste setSize:CGSizeMake(300, 100)];
         [teste setPosition:CGPointMake(500, 300)];
+        [teste setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:teste.size]];
+        [[teste physicsBody] setCategoryBitMask:condicaoCatergory];
+        [[teste physicsBody] setContactTestBitMask:bolinhaCatergory];
+        [[teste physicsBody] setDynamic:NO];
+        
+        [[self physicsWorld] setContactDelegate:self];
+        [[self physicsWorld] setGravity:CGVectorMake(0, -5)];
         [self addChild:teste];
         [self inicializarlabels];
-        [self criarPontosParaAnimacao];
         [self setBackgroundColor:[SKColor whiteColor]];
     }
     
     return self;
-}
-
--(void)criarPontosParaAnimacao{
-    pontos = [[NSMutableArray alloc] init];
-    CGPoint pontoInicial = CGPointMake(500, 400);
-    
-    for(int i=0; i<30; i++){
-        CGPoint novoPonto = pontoInicial;
-        
-        if(i < 10){
-            novoPonto = pontoInicial;
-            novoPonto.x -= 4;
-            novoPonto.y += 5;
-            
-            [pontos addObject:[NSValue valueWithCGPoint:novoPonto]];
-        
-        }else if(i >= 10 && i <15){
-            novoPonto = pontoInicial;
-            novoPonto.x -= 4;
-            novoPonto.y += 2;
-            
-            [pontos addObject:[NSValue valueWithCGPoint:novoPonto]];
-            
-        }else if(i >= 15 && i < 20){
-            novoPonto = pontoInicial;
-            novoPonto.x -= 4;
-            novoPonto.y -= 2;
-            
-            [pontos addObject:[NSValue valueWithCGPoint:novoPonto]];
-            
-        }else{
-            novoPonto = pontoInicial;
-            novoPonto.x -= 4;
-            novoPonto.y -= 5;
-            
-            [pontos addObject:[NSValue valueWithCGPoint:novoPonto]];
-        }
-        
-        pontoInicial = novoPonto;
-    }
 }
 
 -(void)inicializarlabels{
@@ -117,10 +87,24 @@
     }
 }
 
+-(void)didBeginContact:(SKPhysicsContact *)contact{
+    //if(!jaPingou){
+    //[[contact bodyB] applyImpulse:CGVectorMake(-7, -5)];
+        [[contact bodyB] applyImpulse:CGVectorMake(11, 15)];
+    //}
+    
+
+}
+
 -(void)testes{
     SKSpriteNode *teste = [[SKSpriteNode alloc] initWithImageNamed:@"atualizar-dados.png"];
-    [teste setSize:CGSizeMake(100, 100)];
     [teste setSize:CGSizeMake(60, 60)];
+    [teste setPhysicsBody:[SKPhysicsBody bodyWithCircleOfRadius:teste.size.width / 2]];
+    [teste setPosition:CGPointMake(410, 600)];
+    [[teste physicsBody] setRestitution:0.5];
+    [[teste physicsBody] setDynamic:YES];
+    
+
     [self addChild:teste];
 
     
@@ -136,9 +120,9 @@
     
     //CGPathRef circle = CGPathCreateWithEllipseInRect(CGRectMake(100,100,50,50), NULL);
 
-    SKAction *followTrack = [SKAction followPath:path asOffset:NO orientToPath:YES duration:5.0];
-    SKAction *forever = [SKAction repeatActionForever:followTrack];
-    [teste runAction:forever];
+//    SKAction *followTrack = [SKAction followPath:path asOffset:NO orientToPath:YES duration:5.0];
+//    SKAction *forever = [SKAction repeatActionForever:followTrack];
+//    [teste runAction:forever];
 }
 
 -(void)criarTextField:(CGRect)frame texto:(NSString*)texto{

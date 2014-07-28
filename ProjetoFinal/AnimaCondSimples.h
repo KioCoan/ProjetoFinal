@@ -10,13 +10,15 @@
 #import "SpriteCondicaoNode.h"
 #import "SpriteLabelNode.h"
 
-@interface AnimaCondSimples : SKScene <UITextFieldDelegate>
+@interface AnimaCondSimples : SKScene <UITextFieldDelegate, SKPhysicsContactDelegate>
 {
     SpriteLabelNode *nota1;
     SpriteLabelNode *nota2;
     SpriteLabelNode *media;
     
     NSMutableArray *pontos;
+    
+    BOOL jaPingou;
 }
 
 @end
