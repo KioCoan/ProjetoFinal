@@ -68,42 +68,85 @@
 
 - (void)criaExpressoes{
     
-    
+    SKLabelNode *lblCodigo1;
+    SpriteLabelNode *condicao;
     expressoes = [NSMutableArray array];
     float altura = self.frame.size.height * 770;
     
     
-    //codigo 1
-    int n = arc4random() % 10;
+    //linha 1
     
-    //SpriteLabelNode *lblCodigo1 = [[SpriteLabelNode alloc]initWithType:@"codigo" texto:@"n <- ?"] ;
-    SpriteLabelNode *lblCodigo1 = [[SpriteLabelNode alloc]initWithType:@"codigo" texto:[NSString stringWithFormat:@"n <- %d",n]];
+    //editando texto
+    n = arc4random() % 10;
+    lblCodigo1 = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+    lblCodigo1.text = [NSString stringWithFormat:@"n <- %d",n];
+    lblCodigo1.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     
-    lblCodigo1.position = CGPointMake(self.frame.size.width * 100, altura);;
+    condicao = [[SpriteLabelNode alloc]init];
+    
+    //editando tamanho e posicao
+    
+    lblCodigo1.position = CGPointMake(self.frame.size.width * 50, altura);;
     lblCodigo1.fontSize = font;
-    altura -= 40;
-    [expressoes addObject:lblCodigo1];
+    
+    //salvando e aadicionado linha
+    [self salvaExpressoes:condicao texto:lblCodigo1];
     [self addChild:lblCodigo1];
-    
-    //codigo 2
-    
-    SpriteLabelNode *lblCodigo2 = [[SpriteLabelNode alloc]initWithType:@"condicional1" texto:@"se( n < 3){"] ;
-    
-    lblCodigo2.position = CGPointMake(self.frame.size.width * 126, altura);;
-    lblCodigo2.fontSize = font;
+    condicao = nil;
     altura -= 40;
-    [expressoes addObject:lblCodigo2];
-    [self addChild:lblCodigo2];
     
-    //codigo 3
-    SpriteLabelNode *lblCodigo3 = [[SpriteLabelNode alloc]initWithType:@"resposta1" texto:@"escreva (vou ao parque);"] ;
     
-    lblCodigo3.position = CGPointMake(self.frame.size.width * 280, altura);;
-    lblCodigo3.fontSize = font;
+    //linha 2
+    
+    //editando texto
+    
+    lblCodigo1 = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+    lblCodigo1.text = @"se(          )";
+    lblCodigo1.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    
+    condicao = [[SpriteLabelNode alloc]initWithType:@"se" texto:@"n < 3"];
+    condicao.fontName = @"Helvetica";
+    condicao.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    
+    //editando posicao
+    
+    lblCodigo1.position = CGPointMake(self.frame.size.width * 50, altura);;
+    lblCodigo1.fontSize = font;
+    NSLog(@"tamanho tela %f",self.frame.size.width * 50);
+    
+    condicao.position = CGPointMake(self.frame.size.width * 90, altura);
+    condicao.posicaoInicial = condicao.position;
+    condicao.fontSize = font;
+    
+    //adicionando e salvando linha
+    [self salvaExpressoes:condicao texto:lblCodigo1];
+    [self addChild:lblCodigo1];
+    [self addChild:condicao];
+    
+    //preparando para proxima linha
+    lblCodigo1 = nil;
+    condicao = nil;
     altura -= 40;
-    [expressoes addObject:lblCodigo3];
-    [self addChild:lblCodigo3];
     
+    
+    //linha 3
+    
+    lblCodigo1 = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+    lblCodigo1.text = @"escreva (vou ao parque);";
+    lblCodigo1.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    
+    condicao = [[SpriteLabelNode alloc]init];
+    
+    //editando posicionamento e font
+    
+    lblCodigo1.position = CGPointMake(self.frame.size.width * 80, altura);;
+    lblCodigo1.fontSize = font;
+    
+    //salvando e adicionando linha
+    
+    [self salvaExpressoes:condicao texto:lblCodigo1];
+    [self addChild:lblCodigo1];
+    altura -= 40;
     
     //codigo 4
     SpriteLabelNode *lblCodigo4 = [[SpriteLabelNode alloc]initWithType:@"condicional2" texto:@"}senao se ( n < 6){"] ;
@@ -213,16 +256,26 @@
     
 }
 
+-(void)salvaExpressoes:(SpriteLabelNode*)condicao texto:(SKLabelNode *)texto{
+    
+    NSDictionary *linha = @{
+                           @"condicao":condicao,
+                           @"texto":texto
+                           };
+    
+    [expressoes addObject:linha];
+}
+
 - (NSMutableArray *)embaralha :(NSMutableArray *)antigo{
     
-    int n;
+    int n1;
     NSMutableArray *vetorEmbaralhado = [NSMutableArray array];
     
     while (antigo.count > 0) {
-        n = arc4random() % antigo.count;
+        n1 = arc4random() % antigo.count;
         
-        [vetorEmbaralhado addObject:[antigo objectAtIndex:n]];
-        [antigo removeObjectAtIndex:n];
+        [vetorEmbaralhado addObject:[antigo objectAtIndex:n1]];
+        [antigo removeObjectAtIndex:n1];
     }
     
     
