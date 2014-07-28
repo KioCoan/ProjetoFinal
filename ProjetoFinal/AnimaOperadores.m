@@ -54,12 +54,18 @@
 
 
 -(void)criarLabelAtualizar{
-    SKSpriteNode *atualizar = [[SKSpriteNode alloc] initWithImageNamed:@"atualizar-dados.png"];
+    atualizar = [[SKSpriteNode alloc] initWithImageNamed:@"atualizar-dados.png"];
     [atualizar setName:@"atualizar"];
     [atualizar setSize:CGSizeMake(80, 80)];
     [atualizar setPosition:CGPointMake(384, 300)];
     
     [self addChild:atualizar];
+    
+    SKSpriteNode *simbolo = [[SKSpriteNode alloc] initWithImageNamed:@"simbolo-atualizar.png"];
+    [simbolo setName:@"atualizar"];
+    [simbolo setSize:CGSizeMake(64, 50)];
+    
+    [atualizar addChild:simbolo];
 }
 
 
@@ -69,6 +75,11 @@
     SKNode *node = [self nodeAtPoint:posicao];
     
     if([node.name isEqualToString:@"atualizar"]){
+        //SPRITE QUE ATUALIZAR OS VALORES INICIA UMA ANIMAÇÃO DE ROTAÇÃO
+        SKAction *rotation = [SKAction rotateByAngle: -M_PI duration:0.2];
+        [[atualizar childNodeWithName:@"atualizar"] runAction:rotation];
+
+        
         [self atualizarValores];
     }
 }

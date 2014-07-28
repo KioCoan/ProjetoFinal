@@ -31,6 +31,16 @@
 }
 
 
+-(void)showTipo{
+    lblTipo = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica Bold"];
+    [lblTipo setText:self.tipo];
+    [lblTipo setFontColor:[SKColor colorWithRed:0.8 green:0.4 blue:0.2 alpha:1]];
+    [lblTipo setPosition:CGPointMake(self.position.x - 55, 0)];
+    [lblTipo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeRight];
+    [lblTipo setFontSize:self.fontSize];
+    [self addChild:lblTipo];
+
+}
 
 
 @end

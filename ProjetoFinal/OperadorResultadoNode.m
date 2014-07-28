@@ -59,17 +59,8 @@ static const int NUM_TEXTURAS = 10;
 
 
 -(void)inicializaAnimacaoSubir{
-    //CRIO TEXTURAS PARA TODAS OS SPRITES DA PARTE DE RESULTADO 
-    NSMutableArray *vetorTexturas = [[NSMutableArray alloc] init];
-    
-    for(int i=1; i<=NUM_TEXTURAS; i++){
-        //OS SPRITES ESTÃO NUMERADOS, PORTANTO O CONTADOR DO LAÇO É UTILIZADO PARA GERAR TODOS OS SPRITES
-        SKTexture *textura = [SKTexture textureWithImageNamed:[NSString stringWithFormat:@"parte-resultado%d.png", i]];
-        
-        [vetorTexturas addObject:textura];
-    }
-    
-    animacaoSubir = [SKAction animateWithTextures:vetorTexturas timePerFrame:0.04];
+    //CRIO UMA ANIMAÇAO REVERSA À DE DESCER   
+    animacaoSubir = [animacaoDescer reversedAction];
 }
 
 

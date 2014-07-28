@@ -73,21 +73,6 @@ static const int NUM_TEXTURAS = 11;
 }
 
 
--(void)inicializaAnimacaoDiminuir{
-    //CRIO TEXTURAS PARA TODAS OS SPRITES DA PARTE DE VALORES
-    NSMutableArray *vetorTexturas = [[NSMutableArray alloc] init];
-    
-    for(int i=1; i<=NUM_TEXTURAS; i++){
-        //OS SPRITES ESTÃO NUMERADOS, PORTANTO O CONTADOR DO LAÇO É UTILIZADO PARA GERAR TODOS OS SPRITES
-        SKTexture *textura = [SKTexture textureWithImageNamed:[NSString stringWithFormat:@"parte-valores%d.png", i]];
-        
-        [vetorTexturas addObject:textura];
-    }
-    
-    animacaoDiminuir = [SKAction animateWithTextures:vetorTexturas timePerFrame:0.04];
-}
-
-
 -(void)inicializaAnimacaoExpandir{
     //CRIO TEXTURAS PARA TODAS OS SPRITES DA PARTE DE VALORES EM ORDEM INVERSA (PARTE VALORES DIMINUINDO)
     NSMutableArray *vetorTexturas = [[NSMutableArray alloc] init];
@@ -100,6 +85,12 @@ static const int NUM_TEXTURAS = 11;
     }
     
     animacaoExpandir = [SKAction animateWithTextures:vetorTexturas timePerFrame:0.04];
+}
+
+
+-(void)inicializaAnimacaoDiminuir{
+    //CRIO UMA ANIMAÇAO REVERSA À DE EXPANDIR
+    animacaoDiminuir = [animacaoExpandir reversedAction];
 }
 
 

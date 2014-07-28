@@ -8,12 +8,15 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "SpriteCondicaoNode.h"
+#import "SpriteLabelNode.h"
 
-@interface AnimaCondSimples : SKScene
+@interface AnimaCondSimples : SKScene <UITextFieldDelegate>
 {
-    SKLabelNode *nota1;
-    SKLabelNode *nota2;
-    SKLabelNode *media;
+    SpriteLabelNode *nota1;
+    SpriteLabelNode *nota2;
+    SpriteLabelNode *media;
+    
+    NSMutableArray *pontos;
 }
 
 @end

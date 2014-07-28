@@ -52,6 +52,7 @@
 		BD01DE00198352A100AEAAA8 /* ResultadoCondicaoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD01DDFF198352A100AEAAA8 /* ResultadoCondicaoNode.m */; };
 		BD01DE021983539F00AEAAA8 /* blocoDeCodigo.png in Resources */ = {isa = PBXBuildFile; fileRef = BD01DE011983539F00AEAAA8 /* blocoDeCodigo.png */; };
 		BD01DE051983566100AEAAA8 /* AnimaCondSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */; };
+		BD42E0F41985E2090007181F /* simbolo-atualizar.png in Resources */ = {isa = PBXBuildFile; fileRef = BD42E0F31985E2090007181F /* simbolo-atualizar.png */; };
 		BD4B4BDB197075BD00D6E839 /* SpriteCaixaNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */; };
 		BD630CAB1948E3F400AF13E7 /* item-variavel.png in Resources */ = {isa = PBXBuildFile; fileRef = BD630CAA1948E3F400AF13E7 /* item-variavel.png */; };
 		BD66B651197F6F16000BB548 /* atualizar-dados.png in Resources */ = {isa = PBXBuildFile; fileRef = BD66B650197F6F16000BB548 /* atualizar-dados.png */; };
@@ -189,6 +190,7 @@
 		BD01DE011983539F00AEAAA8 /* blocoDeCodigo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocoDeCodigo.png; path = Imagens/blocoDeCodigo.png; sourceTree = "<group>"; };
 		BD01DE031983566100AEAAA8 /* AnimaCondSimples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimaCondSimples.h; sourceTree = "<group>"; };
 		BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimaCondSimples.m; sourceTree = "<group>"; };
+		BD42E0F31985E2090007181F /* simbolo-atualizar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "simbolo-atualizar.png"; path = "Imagens/simbolo-atualizar.png"; sourceTree = "<group>"; };
 		BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteCaixaNode.h; sourceTree = "<group>"; };
 		BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteCaixaNode.m; sourceTree = "<group>"; };
 		BD630CAA1948E3F400AF13E7 /* item-variavel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-variavel.png"; path = "Imagens/item-variavel.png"; sourceTree = "<group>"; };
@@ -645,6 +647,7 @@
 				BD01DE011983539F00AEAAA8 /* blocoDeCodigo.png */,
 				BD66B652197F9327000BB548 /* fundo-transparente.png */,
 				BD66B650197F6F16000BB548 /* atualizar-dados.png */,
+				BD42E0F31985E2090007181F /* simbolo-atualizar.png */,
 				E501FA6A192FCD3800B56B5C /* item-memoria.png */,
 			);
 			name = Imagens;
@@ -749,6 +752,7 @@
 				BDC7579E196787E700DB8380 /* abrir-caixa1.png in Resources */,
 				BDC757A7196787E700DB8380 /* abrir-caixa10.png in Resources */,
 				BDF8ADF3197B255C00BA5B8A /* parte-resultado6.png in Resources */,
+				BD42E0F41985E2090007181F /* simbolo-atualizar.png in Resources */,
 				BDBE769E197A3B69004EA926 /* parte-resultado1.png in Resources */,
 				BDF8AE0A197B258C00BA5B8A /* parte-valores10.png in Resources */,
 				BDF8AE03197B258C00BA5B8A /* parte-valores3.png in Resources */,

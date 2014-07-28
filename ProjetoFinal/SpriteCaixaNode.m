@@ -195,17 +195,8 @@ static const int NUM_TEXTURAS = 13;
 }
 
 -(void)inicializaAnimacaoFecharCaixa{
-    //CRIO TEXTURAS PARA TODAS OS SPRITES DA VARIAVEL EM ORDEM INVERSA (CAIXA FECHANDO)
-    NSMutableArray *vetorTexturas = [[NSMutableArray alloc] init];
-    
-    for(int i=NUM_TEXTURAS; i>=1; i--){
-        SKTexture *textura = [SKTexture textureWithImageNamed:[NSString stringWithFormat:@"abrir-caixa%d.png", i]];
-        
-        [vetorTexturas addObject:textura];
-    }
-    
-    //INSTANCIO A SKACTION COM O ARRAY DE TEXTURAS CRIADO
-    animacaoFechar = [SKAction animateWithTextures:vetorTexturas timePerFrame:0.05];
+    //CRIO UMA ANIMAÇÃO EM ORDEM INVERSA (CAIXA FECHANDO)
+    animacaoFechar = [animacaoAbrir reversedAction];
 }
 
 -(NSString *)retornaTipo{

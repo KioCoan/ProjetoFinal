@@ -12,10 +12,13 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface SpriteLabelNode : SKLabelNode
+{
+    SKLabelNode *lblTipo;
+}
 
 @property NSString *tipo;
 @property CGPoint posicaoInicial;
 
 - (id)initWithType:(NSString *)tipo texto:(NSString *)texto;
-
+-(void)showTipo;
 @end

@@ -15,6 +15,7 @@
 @interface AnimaOperadores : SKScene
 {
     NSMutableArray *sprites;
+    SKSpriteNode *atualizar;
 }
 
 
