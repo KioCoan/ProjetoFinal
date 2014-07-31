@@ -15,6 +15,12 @@
     NSMutableArray *alternativas;
     float font;
     int n;
+    SKSpriteNode *espaco;
+    SKSpriteNode *breakpoint;
+    SKAction *verificaCondicao;
+    BOOL jaApareceu;
+    CGPoint posicaoBreakPoint;
+    
 }
 
 - (id)init{
@@ -30,11 +36,90 @@
         [self criaEnunciado];
         [self criaExpressoes];
         [self criaAlternativas];
+        
+        //cria espaco
+        
+        espaco = [SKSpriteNode spriteNodeWithImageNamed:@"fundo-cinza.png"];
+        espaco.size = CGSizeMake(150, 100);
+        espaco.position = CGPointMake(600, 100);
+        [self preparaAnimacao];
+        
+        [self addChild:espaco];
+        
     }
     return self;
     
     
 }
+
+- (void)preparaAnimacao{
+    
+    breakpoint = [SKSpriteNode spriteNodeWithImageNamed:@"fundo-cinza.png"];
+    breakpoint.size = CGSizeMake(1000, 35);
+    //breakpoint.position = CGPointMake(500, 770);
+    //[self addChild:breakpoint];
+    
+}
+
+- (void)movimentaBreakPoint{
+    
+    
+    [breakpoint runAction:[SKAction moveToY:posicaoBreakPoint.y duration:2] completion:^{
+        
+    }];
+    
+    
+        //laco para percorrer o vetor
+        
+        NSDictionary *linha;
+        for (linha in expressoes) {
+            
+            //pega a condicao do vetor e usa sua posicao para descer o breakpoint
+            SpriteLabelNode *condicao = [linha objectForKey:@"condicao"];
+            posicaoBreakPoint = CGPointMake(500, condicao.position.y);
+            
+            
+            
+            //esse if verifica se  o brekapoint ja é filho da sena
+            if (!jaApareceu) {
+                
+                breakpoint.position = posicaoBreakPoint;
+                jaApareceu = YES;
+                [self addChild:breakpoint];
+                
+            }else{
+                
+                //bloco da animacao q desce breakpoint
+                
+                [breakpoint runAction:[SKAction moveToY:posicaoBreakPoint.y duration:2] completion:^{
+                    
+                    if (![condicao.name isEqualToString:@"nula"]) {
+                       
+                        //se a condicao for diferente de nula a cor da label e posicao sao alterados
+                        condicao.fontColor = [SKColor yellowColor];
+                        [condicao runAction:[SKAction moveTo:espaco.position duration:5]];
+                        
+                        
+                        
+                    }
+                    
+                    
+                    
+                    
+                }];
+                
+            }
+
+        
+        
+    
+        
+        }
+    
+}
+
+    
+
 
 - (void)criaEnunciado{
     
@@ -86,7 +171,9 @@
     
     //editando tamanho e posicao
     
-    lblCodigo1.position = CGPointMake(self.frame.size.width * 50, altura);;
+    lblCodigo1.position = CGPointMake(self.frame.size.width * 50, altura);
+    condicao.position = lblCodigo1.position;
+    condicao.name = @"nula";
     lblCodigo1.fontSize = font;
     
     //salvando e aadicionado linha
@@ -107,6 +194,7 @@
     condicao = [[SpriteLabelNode alloc]initWithType:@"se" texto:@"n < 3"];
     condicao.fontName = @"Helvetica";
     condicao.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    condicao.name = @"cond1";
     
     //editando posicao
     
@@ -141,6 +229,8 @@
     
     lblCodigo1.position = CGPointMake(self.frame.size.width * 80, altura);;
     lblCodigo1.fontSize = font;
+    condicao.position = lblCodigo1.position;
+    condicao.name = @"nula";
     
     //salvando e adicionando linha
     
@@ -159,6 +249,7 @@
     condicao = [[SpriteLabelNode alloc]initWithType:@"se" texto:@"n < 6"];
     condicao.fontName = @"Helvetica";
     condicao.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    condicao.name = @"cond2";
     
     //editando posicionamento e font
     
@@ -186,7 +277,9 @@
     
     //editando posicionamento e font
     
-    lblCodigo1.position = CGPointMake(self.frame.size.width * 80, altura);;
+    lblCodigo1.position = CGPointMake(self.frame.size.width * 80, altura);
+    condicao.position = lblCodigo1.position;
+    condicao.name = @"nulo";
     lblCodigo1.fontSize = font;
     
     
@@ -210,7 +303,9 @@
     
     //editando posicionamento e font
     
-    lblCodigo1.position = CGPointMake(self.frame.size.width * 50, altura);;
+    lblCodigo1.position = CGPointMake(self.frame.size.width * 50, altura);
+    condicao.position = lblCodigo1.position;
+    condicao.name = @"nulo";
     lblCodigo1.fontSize = font;
     
     
@@ -232,7 +327,9 @@
     
     //editando posicionamento e font
     
-    lblCodigo1.position = CGPointMake(self.frame.size.width * 80, altura);;
+    lblCodigo1.position = CGPointMake(self.frame.size.width * 80, altura);
+    condicao.position = lblCodigo1.position;
+    condicao.name = @"nulo";
     lblCodigo1.fontSize = font;
     
     
@@ -250,9 +347,12 @@
     
     condicao = [[SpriteLabelNode alloc]init];
     
+    
     //editando posicionamento e font
     
-    lblCodigo1.position = CGPointMake(self.frame.size.width * 50, altura);;
+    lblCodigo1.position = CGPointMake(self.frame.size.width * 50, altura);
+    condicao.position = lblCodigo1.position;
+    condicao.name = @"nulo";
     lblCodigo1.fontSize = font;
     
     
@@ -355,7 +455,11 @@
     
 }
 
-
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    [self movimentaBreakPoint];
+    
+}
 
 
 @end
