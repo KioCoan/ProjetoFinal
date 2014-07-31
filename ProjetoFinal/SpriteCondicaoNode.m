@@ -8,68 +8,81 @@
 
 #import "SpriteCondicaoNode.h"
 
-const int SE_SENAO = 1;
-const int SE_SENAOSE_SENAO = 2;
+static const int NUM_TEXTURAS = 14;
 
 @implementation SpriteCondicaoNode
 
--(id)initWithTipoDeCondicao:(int)tipo{
+-(id)init{
     self = [super init];
     
     if(self){
-        [self inicializarClasse:tipo];
+        [self inicializarClasse];
     }
     
     return self;
 }
 
 
--(void)inicializarClasse:(int)tipo{
-    blocosDeCodigo = [[NSMutableArray alloc] init];
+-(void)inicializarClasse{
+    [self setTexture:[SKTexture textureWithImageNamed:@"estrutura-condicionais1.png"]];
+    [self setSize:CGSizeMake(227, 590)];
     
-    switch (tipo) {
-        case SE_SENAO:
-            [self classeComSeSenao];
-            break;
-            
-        case SE_SENAOSE_SENAO:
-            [self classeComSeSenaoSeSenao];
-            break;
-            
-        default:
-            break;
+    [self inicializarFundosCondicoes];
+}
+
+-(void)inicializarFundosCondicoes{
+    int numCondicoes = 2;
+    CGPoint posicoes = CGPointMake(150, 170);
+    
+    for(int i=0; i<numCondicoes; i++){
+        SKSpriteNode *fundoCondicao = [[SKSpriteNode alloc] initWithImageNamed:@"modo-condicao.png"];
+        [fundoCondicao setSize:CGSizeMake(227, 159)];
+        [fundoCondicao setPosition:posicoes];
+        [self addChild:fundoCondicao];
+        
+        posicoes.y -= 210;
     }
-}
-
--(void)classeComSeSenao{
-    //A PARTE QUE É EXIBIDO O RESULTADO É A PRIMEIRA A SER INSERIDA PRA QUE ELA FIQUE POR TRÁS DAS OUTRAS
-    [self criarBlocoDeCodigo:@"resultado" :@"string" :@"\"Aprovado\"" :CGPointMake(-120, -100)];
-    [self criarBlocoDeCodigo:@"resultado" :@"string" :@"\"Reprovado\"" :CGPointMake(120, -100)];
-    
-    //EM SEGUIDA É INSERIDO A PARTE QUE MOSTRA OS VALORES
-    nodeValores = [[OperadorValoresNode alloc] initWithValor1:@"media" valor2:@"6"];
-    [nodeValores setPosition:CGPointMake(0, 10)];
-    [nodeValores runAction:[nodeValores getAnimacaoExpandir]];
-    [nodeValores iniciarAnimacao];
-    [self addChild:nodeValores];
-    
-    
-    //POR FIM É INSERIDO A PARTE QUE MOSTRA O OPERADOR
-    nodeOperador = [[OperadorNode alloc] initWithOperador:@">"];
-    [nodeValores addChild:nodeOperador];
-}
-
--(void)classeComSeSenaoSeSenao{
     
 }
 
-
--(void)criarBlocoDeCodigo:(NSString*)nome :(NSString*)tipo :(NSString*)conteudo :(CGPoint)posicao{
-    ResultadoCondicaoNode *resultado1 = [[ResultadoCondicaoNode alloc] initWithVariavel:nome tipo:tipo conteudo:conteudo];
-    [resultado1 setPosition:posicao];
-    
-    [blocosDeCodigo addObject:resultado1];
-    [self addChild:resultado1];
+-(void)criarCondicaoSe:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2{
+    operadorSe = [[SpriteOperadorNode alloc] initWithValor1:valor1 operador:operador valor2:valor2 resultado:@""];
+    [operadorSe ativarModoCondicao];
+    [operadorSe setPosition:CGPointMake(150, 183)];
+    [operadorSe iniciarAnimacaoAbrir];
+    [self addChild:operadorSe];
 }
+
+
+-(void)criarCondicaoSenaoSe:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2{
+    operadorSenaoSe = [[SpriteOperadorNode alloc] initWithValor1:valor1 operador:operador valor2:valor2 resultado:@""];
+    [operadorSenaoSe ativarModoCondicao];
+    [operadorSenaoSe setPosition:CGPointMake(150, -29)];
+    [operadorSenaoSe iniciarAnimacaoAbrir];
+
+    [self addChild:operadorSenaoSe];
+}
+
+
+-(void)iniciarAnimacao{
+    NSMutableArray *texturas = [[NSMutableArray alloc] init];
+    
+    for(int i=1; i<=NUM_TEXTURAS; i++){
+        [texturas addObject:[SKTexture textureWithImageNamed:[NSString stringWithFormat:@"estrutura-condicionais%d.png", i]]];
+    }
+    
+    SKAction *animacao = [SKAction animateWithTextures:texturas timePerFrame:0.06];
+    
+    
+    [self runAction:[SKAction waitForDuration:1] completion:^{
+        [self runAction:animacao completion:^{
+            [self removeAllActions];
+        }];
+    }];
+}
+
+
+
+
 
 @end

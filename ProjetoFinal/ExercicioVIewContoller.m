@@ -44,7 +44,7 @@
     
     //Start animação indicador de atividade
     [activityIndicator startAnimating];
-
+    
     
 }
 

@@ -12,6 +12,8 @@
 
 @interface AnimaCondSimples : SKScene <UITextFieldDelegate, SKPhysicsContactDelegate>
 {
+    SpriteCondicaoNode *condicaoNode;
+    
     SpriteLabelNode *nota1;
     SpriteLabelNode *nota2;
     SpriteLabelNode *media;

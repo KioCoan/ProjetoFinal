@@ -49,11 +49,25 @@
 		A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F11960A7A6006429C7 /* MenuViewController.m */; };
 		A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F31960A7A6006429C7 /* ConteudoViewController.m */; };
 		BD01DDFD19834E9D00AEAAA8 /* SpriteCondicaoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD01DDFC19834E9D00AEAAA8 /* SpriteCondicaoNode.m */; };
-		BD01DE00198352A100AEAAA8 /* ResultadoCondicaoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD01DDFF198352A100AEAAA8 /* ResultadoCondicaoNode.m */; };
-		BD01DE021983539F00AEAAA8 /* blocoDeCodigo.png in Resources */ = {isa = PBXBuildFile; fileRef = BD01DE011983539F00AEAAA8 /* blocoDeCodigo.png */; };
 		BD01DE051983566100AEAAA8 /* AnimaCondSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */; };
 		BD42E0F41985E2090007181F /* simbolo-atualizar.png in Resources */ = {isa = PBXBuildFile; fileRef = BD42E0F31985E2090007181F /* simbolo-atualizar.png */; };
 		BD4B4BDB197075BD00D6E839 /* SpriteCaixaNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */; };
+		BD510FE11989E8200052B6E5 /* lousa-teoria.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD510FE01989E8200052B6E5 /* lousa-teoria.jpg */; };
+		BD510FF3198A03740052B6E5 /* estrutura-condicionais1.png in Resources */ = {isa = PBXBuildFile; fileRef = BD510FE5198A03740052B6E5 /* estrutura-condicionais1.png */; };
+		BD510FF4198A03740052B6E5 /* estrutura-condicionais2.png in Resources */ = {isa = PBXBuildFile; fileRef = BD510FE6198A03740052B6E5 /* estrutura-condicionais2.png */; };
+		BD510FF5198A03740052B6E5 /* estrutura-condicionais3.png in Resources */ = {isa = PBXBuildFile; fileRef = BD510FE7198A03740052B6E5 /* estrutura-condicionais3.png */; };
+		BD510FF6198A03740052B6E5 /* estrutura-condicionais4.png in Resources */ = {isa = PBXBuildFile; fileRef = BD510FE8198A03740052B6E5 /* estrutura-condicionais4.png */; };
+		BD510FF7198A03740052B6E5 /* estrutura-condicionais5.png in Resources */ = {isa = PBXBuildFile; fileRef = BD510FE9198A03740052B6E5 /* estrutura-condicionais5.png */; };
+		BD510FF8198A03740052B6E5 /* estrutura-condicionais6.png in Resources */ = {isa = PBXBuildFile; fileRef = BD510FEA198A03740052B6E5 /* estrutura-condicionais6.png */; };
+		BD510FF9198A03740052B6E5 /* estrutura-condicionais7.png in Resources */ = {isa = PBXBuildFile; fileRef = BD510FEB198A03740052B6E5 /* estrutura-condicionais7.png */; };
+		BD510FFA198A03740052B6E5 /* estrutura-condicionais8.png in Resources */ = {isa = PBXBuildFile; fileRef = BD510FEC198A03740052B6E5 /* estrutura-condicionais8.png */; };
+		BD510FFB198A03740052B6E5 /* estrutura-condicionais9.png in Resources */ = {isa = PBXBuildFile; fileRef = BD510FED198A03740052B6E5 /* estrutura-condicionais9.png */; };
+		BD510FFC198A03740052B6E5 /* estrutura-condicionais10.png in Resources */ = {isa = PBXBuildFile; fileRef = BD510FEE198A03740052B6E5 /* estrutura-condicionais10.png */; };
+		BD510FFD198A03740052B6E5 /* estrutura-condicionais11.png in Resources */ = {isa = PBXBuildFile; fileRef = BD510FEF198A03740052B6E5 /* estrutura-condicionais11.png */; };
+		BD510FFE198A03740052B6E5 /* estrutura-condicionais12.png in Resources */ = {isa = PBXBuildFile; fileRef = BD510FF0198A03740052B6E5 /* estrutura-condicionais12.png */; };
+		BD510FFF198A03740052B6E5 /* estrutura-condicionais13.png in Resources */ = {isa = PBXBuildFile; fileRef = BD510FF1198A03740052B6E5 /* estrutura-condicionais13.png */; };
+		BD511000198A03740052B6E5 /* estrutura-condicionais14.png in Resources */ = {isa = PBXBuildFile; fileRef = BD510FF2198A03740052B6E5 /* estrutura-condicionais14.png */; };
+		BD511002198A142E0052B6E5 /* modo-condicao.png in Resources */ = {isa = PBXBuildFile; fileRef = BD511001198A142E0052B6E5 /* modo-condicao.png */; };
 		BD630CAB1948E3F400AF13E7 /* item-variavel.png in Resources */ = {isa = PBXBuildFile; fileRef = BD630CAA1948E3F400AF13E7 /* item-variavel.png */; };
 		BD66B651197F6F16000BB548 /* atualizar-dados.png in Resources */ = {isa = PBXBuildFile; fileRef = BD66B650197F6F16000BB548 /* atualizar-dados.png */; };
 		BD66B653197F9327000BB548 /* fundo-transparente.png in Resources */ = {isa = PBXBuildFile; fileRef = BD66B652197F9327000BB548 /* fundo-transparente.png */; };
@@ -185,14 +199,27 @@
 		A597F0F31960A7A6006429C7 /* ConteudoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ConteudoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		BD01DDFB19834E9D00AEAAA8 /* SpriteCondicaoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteCondicaoNode.h; sourceTree = "<group>"; };
 		BD01DDFC19834E9D00AEAAA8 /* SpriteCondicaoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteCondicaoNode.m; sourceTree = "<group>"; };
-		BD01DDFE198352A100AEAAA8 /* ResultadoCondicaoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoCondicaoNode.h; sourceTree = "<group>"; };
-		BD01DDFF198352A100AEAAA8 /* ResultadoCondicaoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoCondicaoNode.m; sourceTree = "<group>"; };
-		BD01DE011983539F00AEAAA8 /* blocoDeCodigo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocoDeCodigo.png; path = Imagens/blocoDeCodigo.png; sourceTree = "<group>"; };
 		BD01DE031983566100AEAAA8 /* AnimaCondSimples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimaCondSimples.h; sourceTree = "<group>"; };
 		BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimaCondSimples.m; sourceTree = "<group>"; };
 		BD42E0F31985E2090007181F /* simbolo-atualizar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "simbolo-atualizar.png"; path = "Imagens/simbolo-atualizar.png"; sourceTree = "<group>"; };
 		BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteCaixaNode.h; sourceTree = "<group>"; };
 		BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteCaixaNode.m; sourceTree = "<group>"; };
+		BD510FE01989E8200052B6E5 /* lousa-teoria.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "lousa-teoria.jpg"; path = "Imagens/lousa-teoria.jpg"; sourceTree = "<group>"; };
+		BD510FE5198A03740052B6E5 /* estrutura-condicionais1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "estrutura-condicionais1.png"; path = "Imagens/Sprites/Condicionais/estrutura-condicionais1.png"; sourceTree = "<group>"; };
+		BD510FE6198A03740052B6E5 /* estrutura-condicionais2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "estrutura-condicionais2.png"; path = "Imagens/Sprites/Condicionais/estrutura-condicionais2.png"; sourceTree = "<group>"; };
+		BD510FE7198A03740052B6E5 /* estrutura-condicionais3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "estrutura-condicionais3.png"; path = "Imagens/Sprites/Condicionais/estrutura-condicionais3.png"; sourceTree = "<group>"; };
+		BD510FE8198A03740052B6E5 /* estrutura-condicionais4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "estrutura-condicionais4.png"; path = "Imagens/Sprites/Condicionais/estrutura-condicionais4.png"; sourceTree = "<group>"; };
+		BD510FE9198A03740052B6E5 /* estrutura-condicionais5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "estrutura-condicionais5.png"; path = "Imagens/Sprites/Condicionais/estrutura-condicionais5.png"; sourceTree = "<group>"; };
+		BD510FEA198A03740052B6E5 /* estrutura-condicionais6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "estrutura-condicionais6.png"; path = "Imagens/Sprites/Condicionais/estrutura-condicionais6.png"; sourceTree = "<group>"; };
+		BD510FEB198A03740052B6E5 /* estrutura-condicionais7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "estrutura-condicionais7.png"; path = "Imagens/Sprites/Condicionais/estrutura-condicionais7.png"; sourceTree = "<group>"; };
+		BD510FEC198A03740052B6E5 /* estrutura-condicionais8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "estrutura-condicionais8.png"; path = "Imagens/Sprites/Condicionais/estrutura-condicionais8.png"; sourceTree = "<group>"; };
+		BD510FED198A03740052B6E5 /* estrutura-condicionais9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "estrutura-condicionais9.png"; path = "Imagens/Sprites/Condicionais/estrutura-condicionais9.png"; sourceTree = "<group>"; };
+		BD510FEE198A03740052B6E5 /* estrutura-condicionais10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "estrutura-condicionais10.png"; path = "Imagens/Sprites/Condicionais/estrutura-condicionais10.png"; sourceTree = "<group>"; };
+		BD510FEF198A03740052B6E5 /* estrutura-condicionais11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "estrutura-condicionais11.png"; path = "Imagens/Sprites/Condicionais/estrutura-condicionais11.png"; sourceTree = "<group>"; };
+		BD510FF0198A03740052B6E5 /* estrutura-condicionais12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "estrutura-condicionais12.png"; path = "Imagens/Sprites/Condicionais/estrutura-condicionais12.png"; sourceTree = "<group>"; };
+		BD510FF1198A03740052B6E5 /* estrutura-condicionais13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "estrutura-condicionais13.png"; path = "Imagens/Sprites/Condicionais/estrutura-condicionais13.png"; sourceTree = "<group>"; };
+		BD510FF2198A03740052B6E5 /* estrutura-condicionais14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "estrutura-condicionais14.png"; path = "Imagens/Sprites/Condicionais/estrutura-condicionais14.png"; sourceTree = "<group>"; };
+		BD511001198A142E0052B6E5 /* modo-condicao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "modo-condicao.png"; path = "Imagens/Sprites/Condicionais/modo-condicao.png"; sourceTree = "<group>"; };
 		BD630CAA1948E3F400AF13E7 /* item-variavel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-variavel.png"; path = "Imagens/item-variavel.png"; sourceTree = "<group>"; };
 		BD66B650197F6F16000BB548 /* atualizar-dados.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "atualizar-dados.png"; path = "Imagens/atualizar-dados.png"; sourceTree = "<group>"; };
 		BD66B652197F9327000BB548 /* fundo-transparente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fundo-transparente.png"; path = "Imagens/fundo-transparente.png"; sourceTree = "<group>"; };
@@ -541,10 +568,30 @@
 			children = (
 				BD01DDFB19834E9D00AEAAA8 /* SpriteCondicaoNode.h */,
 				BD01DDFC19834E9D00AEAAA8 /* SpriteCondicaoNode.m */,
-				BD01DDFE198352A100AEAAA8 /* ResultadoCondicaoNode.h */,
-				BD01DDFF198352A100AEAAA8 /* ResultadoCondicaoNode.m */,
 			);
 			name = "Condição";
+			sourceTree = "<group>";
+		};
+		BD510FE4198A035B0052B6E5 /* Condicionais */ = {
+			isa = PBXGroup;
+			children = (
+				BD511001198A142E0052B6E5 /* modo-condicao.png */,
+				BD510FE5198A03740052B6E5 /* estrutura-condicionais1.png */,
+				BD510FE6198A03740052B6E5 /* estrutura-condicionais2.png */,
+				BD510FE7198A03740052B6E5 /* estrutura-condicionais3.png */,
+				BD510FE8198A03740052B6E5 /* estrutura-condicionais4.png */,
+				BD510FE9198A03740052B6E5 /* estrutura-condicionais5.png */,
+				BD510FEA198A03740052B6E5 /* estrutura-condicionais6.png */,
+				BD510FEB198A03740052B6E5 /* estrutura-condicionais7.png */,
+				BD510FEC198A03740052B6E5 /* estrutura-condicionais8.png */,
+				BD510FED198A03740052B6E5 /* estrutura-condicionais9.png */,
+				BD510FEE198A03740052B6E5 /* estrutura-condicionais10.png */,
+				BD510FEF198A03740052B6E5 /* estrutura-condicionais11.png */,
+				BD510FF0198A03740052B6E5 /* estrutura-condicionais12.png */,
+				BD510FF1198A03740052B6E5 /* estrutura-condicionais13.png */,
+				BD510FF2198A03740052B6E5 /* estrutura-condicionais14.png */,
+			);
+			name = Condicionais;
 			sourceTree = "<group>";
 		};
 		BDBE7697197A39EF004EA926 /* Operadores */ = {
@@ -639,13 +686,14 @@
 		E501FA69192FCD1600B56B5C /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BD510FE4198A035B0052B6E5 /* Condicionais */,
 				BDBE7699197A3B57004EA926 /* Operadores */,
 				BDC75790196787CF00DB8380 /* Variavel */,
 				BD630CAA1948E3F400AF13E7 /* item-variavel.png */,
 				BD8C66E8197E522500A4946C /* item-operadores.png */,
 				846B738D19782427009C2EB7 /* fundo-cinza.png */,
-				BD01DE011983539F00AEAAA8 /* blocoDeCodigo.png */,
 				BD66B652197F9327000BB548 /* fundo-transparente.png */,
+				BD510FE01989E8200052B6E5 /* lousa-teoria.jpg */,
 				BD66B650197F6F16000BB548 /* atualizar-dados.png */,
 				BD42E0F31985E2090007181F /* simbolo-atualizar.png */,
 				E501FA6A192FCD3800B56B5C /* item-memoria.png */,
@@ -731,30 +779,40 @@
 			files = (
 				BDF8AE08197B258C00BA5B8A /* parte-valores8.png in Resources */,
 				BDC7579F196787E700DB8380 /* abrir-caixa2.png in Resources */,
+				BD510FF7198A03740052B6E5 /* estrutura-condicionais5.png in Resources */,
 				BDF8AE07197B258C00BA5B8A /* parte-valores7.png in Resources */,
 				91C8EF6B197D871200CA01DE /* ConceitosOperadores.txt in Resources */,
 				BDBE769D197A3B69004EA926 /* parte-operador.png in Resources */,
 				BDC757A8196787E700DB8380 /* abrir-caixa11.png in Resources */,
 				BD8C66E9197E522500A4946C /* item-operadores.png in Resources */,
+				BD510FF4198A03740052B6E5 /* estrutura-condicionais2.png in Resources */,
 				BDF8ADF4197B255C00BA5B8A /* parte-resultado7.png in Resources */,
+				BD510FFB198A03740052B6E5 /* estrutura-condicionais9.png in Resources */,
 				BD66B651197F6F16000BB548 /* atualizar-dados.png in Resources */,
 				BDF8AE0B197B258C00BA5B8A /* parte-valores11.png in Resources */,
 				120E8F8F192FC0A200CDEF95 /* Images.xcassets in Resources */,
 				BDC757A0196787E700DB8380 /* abrir-caixa3.png in Resources */,
+				BD511000198A03740052B6E5 /* estrutura-condicionais14.png in Resources */,
+				BD510FF6198A03740052B6E5 /* estrutura-condicionais4.png in Resources */,
 				BDF8ADF6197B255C00BA5B8A /* parte-resultado9.png in Resources */,
 				BDF8ADF0197B255C00BA5B8A /* parte-resultado3.png in Resources */,
 				BDC757A4196787E700DB8380 /* abrir-caixa7.png in Resources */,
+				BD510FE11989E8200052B6E5 /* lousa-teoria.jpg in Resources */,
 				E501FA6B192FCD3800B56B5C /* item-memoria.png in Resources */,
 				BDC757A1196787E700DB8380 /* abrir-caixa4.png in Resources */,
 				120E8F81192FC0A200CDEF95 /* InfoPlist.strings in Resources */,
+				BD510FF3198A03740052B6E5 /* estrutura-condicionais1.png in Resources */,
 				BDF8AE04197B258C00BA5B8A /* parte-valores4.png in Resources */,
+				BD510FFE198A03740052B6E5 /* estrutura-condicionais12.png in Resources */,
 				BDC757A9196787E700DB8380 /* abrir-caixa12.png in Resources */,
 				BDC7579E196787E700DB8380 /* abrir-caixa1.png in Resources */,
 				BDC757A7196787E700DB8380 /* abrir-caixa10.png in Resources */,
 				BDF8ADF3197B255C00BA5B8A /* parte-resultado6.png in Resources */,
 				BD42E0F41985E2090007181F /* simbolo-atualizar.png in Resources */,
 				BDBE769E197A3B69004EA926 /* parte-resultado1.png in Resources */,
+				BD511002198A142E0052B6E5 /* modo-condicao.png in Resources */,
 				BDF8AE0A197B258C00BA5B8A /* parte-valores10.png in Resources */,
+				BD510FF9198A03740052B6E5 /* estrutura-condicionais7.png in Resources */,
 				BDF8AE03197B258C00BA5B8A /* parte-valores3.png in Resources */,
 				BDF8ADEF197B255C00BA5B8A /* parte-resultado2.png in Resources */,
 				BDF8AE06197B258C00BA5B8A /* parte-valores6.png in Resources */,
@@ -767,8 +825,12 @@
 				BDF8ADF1197B255C00BA5B8A /* parte-resultado4.png in Resources */,
 				BDC757A5196787E700DB8380 /* abrir-caixa8.png in Resources */,
 				BDC757A2196787E700DB8380 /* abrir-caixa5.png in Resources */,
+				BD510FFC198A03740052B6E5 /* estrutura-condicionais10.png in Resources */,
+				BD510FF8198A03740052B6E5 /* estrutura-condicionais6.png in Resources */,
+				BD510FFA198A03740052B6E5 /* estrutura-condicionais8.png in Resources */,
+				BD510FFF198A03740052B6E5 /* estrutura-condicionais13.png in Resources */,
+				BD510FF5198A03740052B6E5 /* estrutura-condicionais3.png in Resources */,
 				BDF8ADF5197B255C00BA5B8A /* parte-resultado8.png in Resources */,
-				BD01DE021983539F00AEAAA8 /* blocoDeCodigo.png in Resources */,
 				120E8F8A192FC0A200CDEF95 /* Main.storyboard in Resources */,
 				BDF8AE02197B258C00BA5B8A /* parte-valores2.png in Resources */,
 				BD630CAB1948E3F400AF13E7 /* item-variavel.png in Resources */,
@@ -776,6 +838,7 @@
 				BDF8AE05197B258C00BA5B8A /* parte-valores5.png in Resources */,
 				BDF8AE0D197B417500BA5B8A /* parte-resultado10.png in Resources */,
 				BDC757A6196787E700DB8380 /* abrir-caixa9.png in Resources */,
+				BD510FFD198A03740052B6E5 /* estrutura-condicionais11.png in Resources */,
 				BDF8AE09197B258C00BA5B8A /* parte-valores9.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -814,7 +877,6 @@
 				91A98619196232F800EA1074 /* Exercicio.m in Sources */,
 				BDB4810B196CB7FC00D5901A /* Operadores.m in Sources */,
 				A597F0F41960A7A6006429C7 /* SubViewConteudo.m in Sources */,
-				BD01DE00198352A100AEAAA8 /* ResultadoCondicaoNode.m in Sources */,
 				91A9861E1962392400EA1074 /* GerenciadorDeAssunto.m in Sources */,
 				A529DF1D1965DB7500A3D9FB /* Logico.m in Sources */,
 				120E8F83192FC0A200CDEF95 /* main.m in Sources */,

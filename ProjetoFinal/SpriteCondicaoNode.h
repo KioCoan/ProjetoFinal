@@ -7,20 +7,17 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "OperadorNode.h"
-#import "OperadorValoresNode.h"
-#import "ResultadoCondicaoNode.h"
+#import "SpriteOperadorNode.h"
 
-extern int const SE_SENAO;
-extern int const SE_SENAOSE_SENAO;
 
 @interface SpriteCondicaoNode : SKSpriteNode
 {
-    OperadorNode *nodeOperador;
-    OperadorValoresNode *nodeValores;
-    NSMutableArray *blocosDeCodigo;
+    SpriteOperadorNode *operadorSe;
+    SpriteOperadorNode *operadorSenaoSe;
 }
 
+-(void)criarCondicaoSe:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2;
+-(void)criarCondicaoSenaoSe:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2;
+-(void)iniciarAnimacao;
 
--(id)initWithTipoDeCondicao:(int)tipo;
 @end

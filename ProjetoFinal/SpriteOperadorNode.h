@@ -27,6 +27,7 @@
 -(void)setLabelValor1:(NSString*)valor1;
 -(void)setLabelValor2:(NSString*)valor2;
 -(void)setLabelResultado:(NSString*)resultado;
+-(void)ativarModoCondicao;
 -(void)iniciarAnimacaoAbrir;
 -(void)iniciarAnimacaoFechar;
 -(BOOL)partesVisiveis;

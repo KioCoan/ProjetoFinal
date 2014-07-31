@@ -15,26 +15,45 @@ static const  uint32_t condicaoCatergory = 0x1 << 1;
 
 -(id)init{
     if(self = [super init]){
-        SpriteCondicaoNode *teste = [[SpriteCondicaoNode alloc] initWithTipoDeCondicao:SE_SENAO];
-        [teste setSize:CGSizeMake(300, 100)];
-        [teste setPosition:CGPointMake(500, 300)];
-        [teste setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:teste.size]];
-        [[teste physicsBody] setCategoryBitMask:condicaoCatergory];
-        [[teste physicsBody] setContactTestBitMask:bolinhaCatergory];
-        [[teste physicsBody] setDynamic:NO];
         
-        [[self physicsWorld] setContactDelegate:self];
-        [[self physicsWorld] setGravity:CGVectorMake(0, -5)];
-        [self addChild:teste];
-        [self inicializarlabels];
-        [self setBackgroundColor:[SKColor whiteColor]];
+        [self inicializarClasse];
     }
     
     return self;
 }
 
+
+-(void)inicializarClasse{
+    [[self physicsWorld] setContactDelegate:self];
+    [[self physicsWorld] setGravity:CGVectorMake(0, -5)];
+    
+    //INICIALIZA O SPRITE DA CONDIÇÃO E CRIA OS VALORES DAS CONDIÇÕES
+    [self inicializaCondicaoNode];
+    [condicaoNode criarCondicaoSe:@"200" operador:@">" valor2:@"100"];
+    [condicaoNode criarCondicaoSenaoSe:@"100" operador:@"<" valor2:@"200"];
+    
+    [self inicializarlabels];
+}
+
+
+-(void)inicializaCondicaoNode{
+    condicaoNode = [[SpriteCondicaoNode alloc] init];
+    [condicaoNode setPosition:CGPointMake(150, 300)];
+    [condicaoNode setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:condicaoNode.size]];
+    [[condicaoNode physicsBody] setCategoryBitMask:condicaoCatergory];
+    [[condicaoNode physicsBody] setContactTestBitMask:bolinhaCatergory];
+    [[condicaoNode physicsBody] setDynamic:NO];
+    [condicaoNode iniciarAnimacao];
+    [self addChild:condicaoNode];
+
+}
+
+-(void)inicializarOperadores{
+    
+}
+
 -(void)inicializarlabels{
-    CGPoint posicoes = CGPointMake(50, 540);
+    CGPoint posicoes = CGPointMake(500, 540);
     
     nota1 = [self criarLabelComTexto:@"nota1 <-" tipo:@"float" posicao:posicoes];
     [self addChild:nota1];
@@ -64,7 +83,7 @@ static const  uint32_t condicaoCatergory = 0x1 << 1;
 
 
 -(void)didMoveToView:(SKView *)view{
-    CGRect frame = CGRectMake(20, 75, 100, 30);
+    CGRect frame = CGRectMake(450, 75, 120, 30);
     frame.origin.x += frame.size.width + 20;
     int numLabels = 2;
     

@@ -155,4 +155,9 @@
     return partesVisiveis;
 }
 
+
+-(void)ativarModoCondicao{
+    nodeResultado = nil;
+}
+
 @end

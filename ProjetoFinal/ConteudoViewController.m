@@ -46,13 +46,14 @@
     //CRIO UMA SKVIEW PARA INSERIR A SKSCENE
     SKView *viewAnimacao = [[SKView alloc] initWithFrame:CGRectMake(0, 65, self.view.frame.size.width, 600)];
     
-    
     //INSTANCIO A SKSCENE DO ASSUNTO ATUAL
     SKScene *cena = gerenciador.retornaAnimacao;
     
     //DEFININDO TAMANHO DA SKSCENE E ADICIONANDO-A NA SKVIEW
     [cena setSize: viewAnimacao.frame.size];
     [viewAnimacao presentScene:cena];
+    
+    [cena setBackgroundColor:[UIColor whiteColor]];
     
     [[self view] addSubview:viewAnimacao];
     
