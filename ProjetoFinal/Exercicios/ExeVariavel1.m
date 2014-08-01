@@ -28,13 +28,7 @@
 
 -(void)instanciaCena{
     cenaExercicio = [[CenaExercicioVariavel1 alloc] init];
-    
-    
 }
--(SKScene*)retornaCena{
-    return cenaExercicio;
-}
-
 
 
 @end

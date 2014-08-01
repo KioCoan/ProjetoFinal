@@ -33,6 +33,7 @@
     [super viewWillAppear:animated];
     
     gerenciador = [GerenciadorDeAssunto sharedGerenciador];
+    [gerenciador preparaExercicios];
     titulosEDescricoes = [gerenciador retornaTitulosEDescricoesExercicios];
     
     [[self navigationItem] setTitle:[NSString stringWithFormat:@"Exercícios %@", [gerenciador retornaNomeAssuntoAtual]]];

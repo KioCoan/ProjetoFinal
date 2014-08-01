@@ -65,9 +65,9 @@
     
     //Após exibir a tela prepara a lista de exercícios (Aloca todos eles)para que sejam exibidos seus Titulos e descriçoes na póxima tela
     [super viewDidAppear:animated];
-    GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
+    //GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     
-    [gerenciador preparaExercicios];// Chamada do método que aloca os exercícios
+    //[gerenciador preparaExercicios];// Chamada do método que aloca os exercícios
     
     
 }

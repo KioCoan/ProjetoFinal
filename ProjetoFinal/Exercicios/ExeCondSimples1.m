@@ -23,11 +23,7 @@
 
 -(void)instanciaCena{
     cenaExercicio = [[CenaExercicioCondSimples1 alloc] init];
-    
-    
 }
--(SKScene*)retornaCena{
-    return cenaExercicio;
-}
+
 
 @end

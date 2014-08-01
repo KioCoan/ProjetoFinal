@@ -27,13 +27,11 @@
 }
 
 
--(void)preparaExercicios{ // Aloca os objetos herdeiros, não instancia a cena dos exercícios
-   
+-(void)preparaExercicios{
     
-    
+    // Aloca os objetos de exercicios
     self.exercicios = [[NSMutableArray alloc] init];
     [self.exercicios addObject:[[ExeVariavel1 alloc] init]];
-    
 }
 
 
