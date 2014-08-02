@@ -22,6 +22,8 @@
     BOOL jaApareceu;
     CGPoint posicaoBreakPoint;
     Geral *calculador;
+    BOOL animaBrekPoint;
+    BOOL animaCondicao;
     
 }
 
@@ -67,13 +69,18 @@
 
 -(void)testeAnima{
     
+    animaCondicao = YES;
+    animaBrekPoint = YES;
     
     [self runAction:[SKAction waitForDuration:1] completion:^{
+        
+        
+    
         
         //pega condicao do vetor de expressoes
         
         SpriteLabelNode *condicao = [[expressoes objectAtIndex:indice] objectForKey:@"condicao"];
-        
+        NSLog(@"%@",condicao.name);
         //configura posicao break point
         posicaoBreakPoint.y = condicao.position.y;
         breakpoint.position = posicaoBreakPoint;
@@ -90,10 +97,12 @@
             [breakpoint runAction:[SKAction moveToY:posicaoBreakPoint.y duration:3] completion:^{
                 
                 //verifica se a condicao é nula
+                
                     if (![condicao.name isEqualToString:@"nula"]) {
                         
                         //se a condicao for diferente de nula a cor da label e posicao sao alterados
                         condicao.fontColor = [SKColor yellowColor];
+                        
                         [condicao runAction:[SKAction moveTo:espaco.position duration:5] completion:^{
                            
                             //pega os caracteres da condicao e jogam no vetor *charArray
@@ -122,7 +131,10 @@
                                 condicao.fontColor = [SKColor redColor];
                             }
                             //label retonar ao local original
-                            [condicao runAction:[SKAction moveTo:condicao.posicaoInicial duration:3]];
+                            [condicao runAction:[SKAction moveTo:condicao.posicaoInicial duration:3] completion:^{
+                                
+                            }];
+                            //[condicao runAction:[SKAction moveTo:condicao.posicaoInicial duration:3]];
                             
                             
                         }];
@@ -138,8 +150,13 @@
             
         }
         
+        while ((animaBrekPoint == YES) && (animaCondicao == YES)) {
+            animaBrekPoint = [breakpoint hasActions];
+            animaCondicao = [condicao hasActions];
+            NSLog(@"nao terminou");
+        }
         
-        //incrementa o indice
+                //incrementa o indice
         
         indice++;
         
