@@ -54,10 +54,10 @@
 -(void)setLabelOperador:(NSString*)operador{
     
     if([operador isEqualToString:@"&&"]){
-        [lblOperador setFontSize: 55];
+        [lblOperador setFontSize: self.size.width * 0.3];
         
     }else{
-        [lblOperador setFontSize: 70];
+        [lblOperador setFontSize: self.size.width * 0.5];
     }
     
     [lblOperador setText:operador];
@@ -73,5 +73,9 @@
 -(void)iniciarAnimacaoExpandir{
     [lblOperador setFontSize:lblOperador.fontSize + 10];
     [self setSize:CGSizeMake(self.size.width + 10, self.size.height + 10)];
+}
+
+-(NSString*)getOperador{
+    return [lblOperador text];
 }
 @end

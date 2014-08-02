@@ -18,9 +18,8 @@
     SpriteLabelNode *nota2;
     SpriteLabelNode *media;
     
-    NSMutableArray *pontos;
-    
-    BOOL jaPingou;
+    NSString *condicaoCorreta;
+    int nPulos;
 }
 
 @end

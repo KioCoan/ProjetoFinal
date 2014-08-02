@@ -8,16 +8,24 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "SpriteOperadorNode.h"
+#import "Calculador.h"
 
 
-@interface SpriteCondicaoNode : SKSpriteNode
+@interface SpriteCondicaoNode : SKSpriteNode <SKPhysicsContactDelegate>
 {
-    SpriteOperadorNode *operadorSe;
-    SpriteOperadorNode *operadorSenaoSe;
+    SpriteOperadorNode *condicaoSe;
+    SpriteOperadorNode *condicaoSenaoSe;
+    NSString *condicaoCorreta;
+    SKSpriteNode *bolinha;
+
 }
 
 -(void)criarCondicaoSe:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2;
 -(void)criarCondicaoSenaoSe:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2;
+-(NSString*)getCondicaoCorreta;
 -(void)iniciarAnimacao;
+-(void)iniciarTeste;
+-(void)encerrarTeste;
+-(void)removerCorpoSe;
 
 @end

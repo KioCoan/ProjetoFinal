@@ -68,6 +68,9 @@
 		BD510FFF198A03740052B6E5 /* estrutura-condicionais13.png in Resources */ = {isa = PBXBuildFile; fileRef = BD510FF1198A03740052B6E5 /* estrutura-condicionais13.png */; };
 		BD511000198A03740052B6E5 /* estrutura-condicionais14.png in Resources */ = {isa = PBXBuildFile; fileRef = BD510FF2198A03740052B6E5 /* estrutura-condicionais14.png */; };
 		BD511002198A142E0052B6E5 /* modo-condicao.png in Resources */ = {isa = PBXBuildFile; fileRef = BD511001198A142E0052B6E5 /* modo-condicao.png */; };
+		BD5A552A198C972000D8722F /* se-verde.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5A5527198C972000D8722F /* se-verde.png */; };
+		BD5A552B198C972000D8722F /* senao-verde.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5A5528198C972000D8722F /* senao-verde.png */; };
+		BD5A552C198C972000D8722F /* senaoSe-verde.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5A5529198C972000D8722F /* senaoSe-verde.png */; };
 		BD630CAB1948E3F400AF13E7 /* item-variavel.png in Resources */ = {isa = PBXBuildFile; fileRef = BD630CAA1948E3F400AF13E7 /* item-variavel.png */; };
 		BD66B651197F6F16000BB548 /* atualizar-dados.png in Resources */ = {isa = PBXBuildFile; fileRef = BD66B650197F6F16000BB548 /* atualizar-dados.png */; };
 		BD66B653197F9327000BB548 /* fundo-transparente.png in Resources */ = {isa = PBXBuildFile; fileRef = BD66B652197F9327000BB548 /* fundo-transparente.png */; };
@@ -220,6 +223,9 @@
 		BD510FF1198A03740052B6E5 /* estrutura-condicionais13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "estrutura-condicionais13.png"; path = "Imagens/Sprites/Condicionais/estrutura-condicionais13.png"; sourceTree = "<group>"; };
 		BD510FF2198A03740052B6E5 /* estrutura-condicionais14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "estrutura-condicionais14.png"; path = "Imagens/Sprites/Condicionais/estrutura-condicionais14.png"; sourceTree = "<group>"; };
 		BD511001198A142E0052B6E5 /* modo-condicao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "modo-condicao.png"; path = "Imagens/Sprites/Condicionais/modo-condicao.png"; sourceTree = "<group>"; };
+		BD5A5527198C972000D8722F /* se-verde.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "se-verde.png"; path = "Imagens/Sprites/Condicionais/se-verde.png"; sourceTree = "<group>"; };
+		BD5A5528198C972000D8722F /* senao-verde.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "senao-verde.png"; path = "Imagens/Sprites/Condicionais/senao-verde.png"; sourceTree = "<group>"; };
+		BD5A5529198C972000D8722F /* senaoSe-verde.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "senaoSe-verde.png"; path = "Imagens/Sprites/Condicionais/senaoSe-verde.png"; sourceTree = "<group>"; };
 		BD630CAA1948E3F400AF13E7 /* item-variavel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-variavel.png"; path = "Imagens/item-variavel.png"; sourceTree = "<group>"; };
 		BD66B650197F6F16000BB548 /* atualizar-dados.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "atualizar-dados.png"; path = "Imagens/atualizar-dados.png"; sourceTree = "<group>"; };
 		BD66B652197F9327000BB548 /* fundo-transparente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fundo-transparente.png"; path = "Imagens/fundo-transparente.png"; sourceTree = "<group>"; };
@@ -575,6 +581,9 @@
 		BD510FE4198A035B0052B6E5 /* Condicionais */ = {
 			isa = PBXGroup;
 			children = (
+				BD5A5527198C972000D8722F /* se-verde.png */,
+				BD5A5528198C972000D8722F /* senao-verde.png */,
+				BD5A5529198C972000D8722F /* senaoSe-verde.png */,
 				BD511001198A142E0052B6E5 /* modo-condicao.png */,
 				BD510FE5198A03740052B6E5 /* estrutura-condicionais1.png */,
 				BD510FE6198A03740052B6E5 /* estrutura-condicionais2.png */,
@@ -794,6 +803,7 @@
 				BDC757A0196787E700DB8380 /* abrir-caixa3.png in Resources */,
 				BD511000198A03740052B6E5 /* estrutura-condicionais14.png in Resources */,
 				BD510FF6198A03740052B6E5 /* estrutura-condicionais4.png in Resources */,
+				BD5A552C198C972000D8722F /* senaoSe-verde.png in Resources */,
 				BDF8ADF6197B255C00BA5B8A /* parte-resultado9.png in Resources */,
 				BDF8ADF0197B255C00BA5B8A /* parte-resultado3.png in Resources */,
 				BDC757A4196787E700DB8380 /* abrir-caixa7.png in Resources */,
@@ -803,6 +813,7 @@
 				120E8F81192FC0A200CDEF95 /* InfoPlist.strings in Resources */,
 				BD510FF3198A03740052B6E5 /* estrutura-condicionais1.png in Resources */,
 				BDF8AE04197B258C00BA5B8A /* parte-valores4.png in Resources */,
+				BD5A552A198C972000D8722F /* se-verde.png in Resources */,
 				BD510FFE198A03740052B6E5 /* estrutura-condicionais12.png in Resources */,
 				BDC757A9196787E700DB8380 /* abrir-caixa12.png in Resources */,
 				BDC7579E196787E700DB8380 /* abrir-caixa1.png in Resources */,
@@ -815,6 +826,7 @@
 				BD510FF9198A03740052B6E5 /* estrutura-condicionais7.png in Resources */,
 				BDF8AE03197B258C00BA5B8A /* parte-valores3.png in Resources */,
 				BDF8ADEF197B255C00BA5B8A /* parte-resultado2.png in Resources */,
+				BD5A552B198C972000D8722F /* senao-verde.png in Resources */,
 				BDF8AE06197B258C00BA5B8A /* parte-valores6.png in Resources */,
 				A55F2B4419648C0600111BEB /* ConceitosVariaveis.txt in Resources */,
 				846B738E19782427009C2EB7 /* fundo-cinza.png in Resources */,

@@ -15,6 +15,7 @@
 
 -(id)initWithOperador:(NSString*)operador;
 -(void)setLabelOperador:(NSString*)operador;
+-(NSString*)getOperador;
 -(void)iniciarAnimacaoDiminuir;
 -(void)iniciarAnimacaoExpandir;
 @end

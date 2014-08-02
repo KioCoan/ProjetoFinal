@@ -146,4 +146,18 @@ static const int NUM_TEXTURAS = 11;
 -(void)setLabelValor2:(NSString*)valor2{
     [lblValor2 setText:valor2];
 }
+
+-(NSString*)getValor1{
+    return [lblValor1 text];
+}
+
+-(NSString*)getValor2{
+    return [lblValor2 text];
+}
+
+
+-(void)ativarModoCondicao{
+    [lblValor1 setPosition:CGPointMake(lblValor1.position.x + 20, lblValor1.position.y)];
+    [lblValor2 setPosition:CGPointMake(lblValor2.position.x - 20, lblValor2.position.y)];
+}
 @end

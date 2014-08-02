@@ -151,6 +151,19 @@
     [nodeResultado setLabelResultado:resultado];
 }
 
+
+-(NSString*)getValor1{
+    return [nodeValores getValor1];
+}
+
+-(NSString*)getOperador{
+    return [nodeOperador getOperador];
+}
+
+-(NSString*)getValor2{
+    return [nodeValores getValor2];
+}
+
 -(BOOL)partesVisiveis{
     return partesVisiveis;
 }
@@ -158,6 +171,9 @@
 
 -(void)ativarModoCondicao{
     nodeResultado = nil;
+    [nodeOperador setSize:CGSizeMake(89, 89)];
+    [nodeValores setSize:CGSizeMake(257, 64)];
+    [nodeValores ativarModoCondicao];
 }
 
 @end

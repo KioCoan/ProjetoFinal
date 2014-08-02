@@ -24,5 +24,8 @@
 -(void)setLabelValor2:(NSString*)valor2;
 -(SKAction*)getAnimacaoExpandir;
 -(SKAction*)getAnimacaoDiminuir;
+-(NSString*)getValor1;
+-(NSString*)getValor2;
 -(void)iniciarAnimacao;
+-(void)ativarModoCondicao;
 @end

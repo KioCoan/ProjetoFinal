@@ -8,6 +8,10 @@
 
 #import "SpriteCondicaoNode.h"
 
+static const  uint32_t bolinhaCatergory = 0x1 << 0;
+static const  uint32_t condicaoCatergory = 0x1 << 1;
+
+
 static const int NUM_TEXTURAS = 14;
 
 @implementation SpriteCondicaoNode
@@ -25,42 +29,52 @@ static const int NUM_TEXTURAS = 14;
 
 -(void)inicializarClasse{
     [self setTexture:[SKTexture textureWithImageNamed:@"estrutura-condicionais1.png"]];
-    [self setSize:CGSizeMake(227, 590)];
-    
+    [self setSize:CGSizeMake(190, 494)];
     [self inicializarFundosCondicoes];
 }
 
 -(void)inicializarFundosCondicoes{
     int numCondicoes = 2;
-    CGPoint posicoes = CGPointMake(150, 170);
+    CGPoint posicoes = CGPointMake(135, 160);
     
     for(int i=0; i<numCondicoes; i++){
         SKSpriteNode *fundoCondicao = [[SKSpriteNode alloc] initWithImageNamed:@"modo-condicao.png"];
-        [fundoCondicao setSize:CGSizeMake(227, 159)];
+        [fundoCondicao setSize:CGSizeMake(190, 133)];
         [fundoCondicao setPosition:posicoes];
         [self addChild:fundoCondicao];
         
-        posicoes.y -= 210;
+        posicoes.y -= 180;
     }
     
 }
 
+
 -(void)criarCondicaoSe:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2{
-    operadorSe = [[SpriteOperadorNode alloc] initWithValor1:valor1 operador:operador valor2:valor2 resultado:@""];
-    [operadorSe ativarModoCondicao];
-    [operadorSe setPosition:CGPointMake(150, 183)];
-    [operadorSe iniciarAnimacaoAbrir];
-    [self addChild:operadorSe];
+    condicaoSe = [self criarNovaCondicao:valor1 operador:operador valor2:valor2 :CGPointMake(135, 145)];
 }
 
 
 -(void)criarCondicaoSenaoSe:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2{
-    operadorSenaoSe = [[SpriteOperadorNode alloc] initWithValor1:valor1 operador:operador valor2:valor2 resultado:@""];
-    [operadorSenaoSe ativarModoCondicao];
-    [operadorSenaoSe setPosition:CGPointMake(150, -29)];
-    [operadorSenaoSe iniciarAnimacaoAbrir];
+    condicaoSenaoSe = [self criarNovaCondicao:valor1 operador:operador valor2:valor2 :CGPointMake(135, -34)];
+}
 
-    [self addChild:operadorSenaoSe];
+-(SpriteOperadorNode*)criarNovaCondicao:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 :(CGPoint)posicao{
+    SpriteOperadorNode *novo = [[SpriteOperadorNode alloc] initWithValor1:valor1 operador:operador valor2:valor2 resultado:@""];
+    [novo ativarModoCondicao];
+    [novo setPosition:posicao];
+    [novo iniciarAnimacaoAbrir];
+    
+    [self addChild:novo];
+    return novo;
+}
+
+-(SKPhysicsBody*)getCorpoCondicao{
+    SKPhysicsBody *corpo = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(200, 190)];
+    [corpo  setCategoryBitMask:condicaoCatergory];
+    [corpo setContactTestBitMask:bolinhaCatergory];
+    [corpo setDynamic:NO];
+    
+    return corpo;
 }
 
 
@@ -82,7 +96,70 @@ static const int NUM_TEXTURAS = 14;
 }
 
 
+-(void)resetarDefinicoes{
+    [condicaoSe setPhysicsBody:[self getCorpoCondicao]];
+    [condicaoSenaoSe setPhysicsBody:[self getCorpoCondicao]];
+    [self setTexture:[SKTexture textureWithImageNamed:[NSString stringWithFormat:@"estrutura-condicionais%d.png", NUM_TEXTURAS]]];
+}
+
+-(void)iniciarTeste{
+    [self resetarDefinicoes];
+    
+    bolinha = [[SKSpriteNode alloc] initWithImageNamed:@"atualizar-dados.png"];
+    [bolinha setSize:CGSizeMake(40, 40)];
+    [bolinha setPhysicsBody:[SKPhysicsBody bodyWithCircleOfRadius:bolinha.size.width / 2]];
+    
+    [bolinha setPosition:CGPointMake(50, 500)];
+    [[bolinha physicsBody] setDynamic:YES];
+    
+    [self addChild:bolinha];
+}
+
+-(void)encerrarTeste{
+    [bolinha runAction:[SKAction waitForDuration:0.91] completion:^{
+        [self setTexture:[SKTexture textureWithImageNamed:[NSString stringWithFormat:@"%@-verde.png", condicaoCorreta]]];
+        [bolinha removeFromParent];
+        bolinha = nil;
+    }];
+    
+}
+
+-(void)removerCorpoSe{
+    [condicaoSe setPhysicsBody:nil];
+}
 
 
+-(NSString*)getCondicaoCorreta{
+    if(!condicaoSe || !condicaoSenaoSe){
+        @throw [NSException exceptionWithName:@"Condição não criada" reason:@"Crie todas as condições." userInfo:nil];
+    }
+    
+    if([self validarCondicao:condicaoSe]){
+        condicaoCorreta = @"se";
+    
+    }else if([self validarCondicao:condicaoSenaoSe]){
+        condicaoCorreta = @"senaoSe";
+        
+    }else{
+        condicaoCorreta = @"senao";
+    }
+    
+    return condicaoCorreta;
+}
+
+-(BOOL)validarCondicao:(SpriteOperadorNode*)condicao{
+    Calculador *calculador = [[Calculador alloc] init];
+    NSString *valor1 = [condicao getValor1];
+    NSString *operador = [condicao getOperador];
+    NSString *valor2 = [condicao getValor2];
+    
+    NSString *resultado = [calculador calculaOperador:operador numero1:valor1 numero2:valor2];
+    
+    if([resultado isEqualToString:@"Verdadeiro"]){
+        return YES;
+    }
+    
+    return NO;
+}
 
 @end

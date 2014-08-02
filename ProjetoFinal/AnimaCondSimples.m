@@ -8,8 +8,6 @@
 
 #import "AnimaCondSimples.h"
 
-static const  uint32_t bolinhaCatergory = 0x1 << 0;
-static const  uint32_t condicaoCatergory = 0x1 << 1;
 
 @implementation AnimaCondSimples
 
@@ -26,23 +24,21 @@ static const  uint32_t condicaoCatergory = 0x1 << 1;
 -(void)inicializarClasse{
     [[self physicsWorld] setContactDelegate:self];
     [[self physicsWorld] setGravity:CGVectorMake(0, -5)];
+    nPulos = 0;
     
     //INICIALIZA O SPRITE DA CONDIÇÃO E CRIA OS VALORES DAS CONDIÇÕES
     [self inicializaCondicaoNode];
-    [condicaoNode criarCondicaoSe:@"200" operador:@">" valor2:@"100"];
-    [condicaoNode criarCondicaoSenaoSe:@"100" operador:@"<" valor2:@"200"];
-    
+    [condicaoNode criarCondicaoSe:@"300" operador:@">" valor2:@"100"];
+    [condicaoNode criarCondicaoSenaoSe:@"200" operador:@"<" valor2:@"200"];
+    condicaoCorreta = [condicaoNode getCondicaoCorreta];
     [self inicializarlabels];
 }
 
 
 -(void)inicializaCondicaoNode{
     condicaoNode = [[SpriteCondicaoNode alloc] init];
-    [condicaoNode setPosition:CGPointMake(150, 300)];
-    [condicaoNode setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:condicaoNode.size]];
-    [[condicaoNode physicsBody] setCategoryBitMask:condicaoCatergory];
-    [[condicaoNode physicsBody] setContactTestBitMask:bolinhaCatergory];
-    [[condicaoNode physicsBody] setDynamic:NO];
+    [condicaoNode setPosition:CGPointMake(150, 250)];
+
     [condicaoNode iniciarAnimacao];
     [self addChild:condicaoNode];
 
@@ -107,41 +103,38 @@ static const  uint32_t condicaoCatergory = 0x1 << 1;
 }
 
 -(void)didBeginContact:(SKPhysicsContact *)contact{
-    //if(!jaPingou){
-    //[[contact bodyB] applyImpulse:CGVectorMake(-7, -5)];
-        [[contact bodyB] applyImpulse:CGVectorMake(11, 15)];
-    //}
+    if([condicaoCorreta isEqualToString:@"se"]){
+        [self controlaImpulsoSe:contact];
+    
+    }else if([condicaoCorreta isEqualToString:@"senaoSe"]){
+        
+    
+    }else{
+        
+    }
     
 
 }
 
--(void)testes{
-    SKSpriteNode *teste = [[SKSpriteNode alloc] initWithImageNamed:@"atualizar-dados.png"];
-    [teste setSize:CGSizeMake(60, 60)];
-    [teste setPhysicsBody:[SKPhysicsBody bodyWithCircleOfRadius:teste.size.width / 2]];
-    [teste setPosition:CGPointMake(410, 600)];
-    [[teste physicsBody] setRestitution:0.5];
-    [[teste physicsBody] setDynamic:YES];
+-(void)controlaImpulsoSe:(SKPhysicsContact*)contact{
+    if(nPulos < 2){
+        [[contact bodyB] applyImpulse:CGVectorMake(5, 13)];
+        nPulos++;
     
-
-    [self addChild:teste];
-
-    
-    CGMutablePathRef path = CGPathCreateMutable();
-    if (pontos && pontos.count > 0) {
-        CGPoint p = [(NSValue *)[pontos objectAtIndex:0] CGPointValue];
-        CGPathMoveToPoint(path, nil, p.x, p.y);
-        for (int i = 1; i < pontos.count; i++) {
-            p = [(NSValue *)[pontos objectAtIndex:i] CGPointValue];
-            CGPathAddLineToPoint(path, nil, p.x, p.y);
-        }
+    }else{
+        [[contact bodyB] applyImpulse:CGVectorMake(-23, 15)];
+        [condicaoNode removerCorpoSe];
+        [condicaoNode encerrarTeste];
+        nPulos = 0;
     }
     
-    //CGPathRef circle = CGPathCreateWithEllipseInRect(CGRectMake(100,100,50,50), NULL);
+    
+}
 
-//    SKAction *followTrack = [SKAction followPath:path asOffset:NO orientToPath:YES duration:5.0];
-//    SKAction *forever = [SKAction repeatActionForever:followTrack];
-//    [teste runAction:forever];
+-(void)testes{
+    
+    [condicaoNode iniciarTeste];
+    
 }
 
 -(void)criarTextField:(CGRect)frame texto:(NSString*)texto{
