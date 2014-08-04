@@ -29,6 +29,9 @@
 		84B1B3E3197D881900089FCB /* CondicaoSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E2197D881900089FCB /* CondicaoSimples.m */; };
 		84B1B3E6197D8AE500089FCB /* ExeCondSimples1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E5197D8AE500089FCB /* ExeCondSimples1.m */; };
 		84B1B3E9197D8BEF00089FCB /* CenaExercicioCondSimples1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E8197D8BEF00089FCB /* CenaExercicioCondSimples1.m */; };
+		91A7A953198F56A3009A5EB1 /* abrirCaixa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91A7A951198F56A3009A5EB1 /* abrirCaixa.mp3 */; };
+		91A7A954198F56A3009A5EB1 /* fecharCaixa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91A7A952198F56A3009A5EB1 /* fecharCaixa.mp3 */; };
+		91A7A956198F56DC009A5EB1 /* ConceitosCondicionais.txt in Resources */ = {isa = PBXBuildFile; fileRef = 91A7A955198F56DC009A5EB1 /* ConceitosCondicionais.txt */; };
 		91A986111962324500EA1074 /* Assunto.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A986101962324500EA1074 /* Assunto.m */; };
 		91A98619196232F800EA1074 /* Exercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98618196232F800EA1074 /* Exercicio.m */; };
 		91A9861B196233CD00EA1074 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A9861A196233CD00EA1074 /* SpriteKit.framework */; };
@@ -165,6 +168,9 @@
 		84B1B3E5197D8AE500089FCB /* ExeCondSimples1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExeCondSimples1.m; path = Exercicios/ExeCondSimples1.m; sourceTree = "<group>"; };
 		84B1B3E7197D8BEF00089FCB /* CenaExercicioCondSimples1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CenaExercicioCondSimples1.h; path = Exercicios/CenaExercicioCondSimples1.h; sourceTree = "<group>"; };
 		84B1B3E8197D8BEF00089FCB /* CenaExercicioCondSimples1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CenaExercicioCondSimples1.m; path = Exercicios/CenaExercicioCondSimples1.m; sourceTree = "<group>"; };
+		91A7A951198F56A3009A5EB1 /* abrirCaixa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = abrirCaixa.mp3; sourceTree = "<group>"; };
+		91A7A952198F56A3009A5EB1 /* fecharCaixa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fecharCaixa.mp3; sourceTree = "<group>"; };
+		91A7A955198F56DC009A5EB1 /* ConceitosCondicionais.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConceitosCondicionais.txt; sourceTree = "<group>"; };
 		91A9860F1962324500EA1074 /* Assunto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Assunto.h; path = Assuntos/Assunto.h; sourceTree = "<group>"; };
 		91A986101962324500EA1074 /* Assunto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Assunto.m; path = Assuntos/Assunto.m; sourceTree = "<group>"; };
 		91A98617196232F800EA1074 /* Exercicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exercicio.h; path = Exercicios/Exercicio.h; sourceTree = "<group>"; };
@@ -344,6 +350,7 @@
 				A55F2B4219648BE000111BEB /* Conteudos */,
 				A529DF0A1965DB2200A3D9FB /* Calculador */,
 				91A9860D196231F500EA1074 /* Classes */,
+				91A7A950198F5682009A5EB1 /* Sons */,
 				E501FA69192FCD1600B56B5C /* Imagens */,
 				A597F0EB1960A78E006429C7 /* ViewControllers */,
 				120E8F85192FC0A200CDEF95 /* AppDelegate.h */,
@@ -455,6 +462,15 @@
 			name = Exe1;
 			sourceTree = "<group>";
 		};
+		91A7A950198F5682009A5EB1 /* Sons */ = {
+			isa = PBXGroup;
+			children = (
+				91A7A951198F56A3009A5EB1 /* abrirCaixa.mp3 */,
+				91A7A952198F56A3009A5EB1 /* fecharCaixa.mp3 */,
+			);
+			name = Sons;
+			sourceTree = "<group>";
+		};
 		91A9860D196231F500EA1074 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +560,7 @@
 		A55F2B4219648BE000111BEB /* Conteudos */ = {
 			isa = PBXGroup;
 			children = (
+				91A7A955198F56DC009A5EB1 /* ConceitosCondicionais.txt */,
 				91C8EF6A197D871200CA01DE /* ConceitosOperadores.txt */,
 				A55F2B4319648C0600111BEB /* ConceitosVariaveis.txt */,
 			);
@@ -796,6 +813,7 @@
 				BD8C66E9197E522500A4946C /* item-operadores.png in Resources */,
 				BD510FF4198A03740052B6E5 /* estrutura-condicionais2.png in Resources */,
 				BDF8ADF4197B255C00BA5B8A /* parte-resultado7.png in Resources */,
+				91A7A956198F56DC009A5EB1 /* ConceitosCondicionais.txt in Resources */,
 				BD510FFB198A03740052B6E5 /* estrutura-condicionais9.png in Resources */,
 				BD66B651197F6F16000BB548 /* atualizar-dados.png in Resources */,
 				BDF8AE0B197B258C00BA5B8A /* parte-valores11.png in Resources */,
@@ -817,6 +835,7 @@
 				BD510FFE198A03740052B6E5 /* estrutura-condicionais12.png in Resources */,
 				BDC757A9196787E700DB8380 /* abrir-caixa12.png in Resources */,
 				BDC7579E196787E700DB8380 /* abrir-caixa1.png in Resources */,
+				91A7A953198F56A3009A5EB1 /* abrirCaixa.mp3 in Resources */,
 				BDC757A7196787E700DB8380 /* abrir-caixa10.png in Resources */,
 				BDF8ADF3197B255C00BA5B8A /* parte-resultado6.png in Resources */,
 				BD42E0F41985E2090007181F /* simbolo-atualizar.png in Resources */,
@@ -826,6 +845,7 @@
 				BD510FF9198A03740052B6E5 /* estrutura-condicionais7.png in Resources */,
 				BDF8AE03197B258C00BA5B8A /* parte-valores3.png in Resources */,
 				BDF8ADEF197B255C00BA5B8A /* parte-resultado2.png in Resources */,
+				91A7A954198F56A3009A5EB1 /* fecharCaixa.mp3 in Resources */,
 				BD5A552B198C972000D8722F /* senao-verde.png in Resources */,
 				BDF8AE06197B258C00BA5B8A /* parte-valores6.png in Resources */,
 				A55F2B4419648C0600111BEB /* ConceitosVariaveis.txt in Resources */,
