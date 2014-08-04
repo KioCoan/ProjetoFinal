@@ -24,6 +24,58 @@
     Geral *calculador;
     BOOL animaBrekPoint;
     BOOL animaCondicao;
+    SpriteLabelNode *alternativaMarcada;
+    
+}
+
+-(void)corrigeExercicio{
+    //n = 7;
+    NSMutableArray *caracteres;
+    
+    for (NSDictionary *linha in expressoes) {
+        SpriteLabelNode *condicao = [linha objectForKey:@"condicao"];
+        
+        
+        //verifica se a condicao existe
+        NSLog(@"condicao == %@",condicao.name);
+        if (![condicao.name isEqualToString:@"nula"]) {
+            caracteres = [self converteCondicaoTexto:condicao.text];
+            
+            
+            //chamando interpretador para devolver o resultado da condicao
+            NSString *resultado = [calculador calculaOperador:[caracteres objectAtIndex:1] numero1:[caracteres objectAtIndex:0] numero2:[caracteres objectAtIndex:2]];
+            
+            
+            
+            if ([resultado isEqualToString:@"Verdadeiro"]) {
+                resultado = condicao.tipo;
+                
+                
+                for (SpriteLabelNode *alternativaCorreta in alternativas) {
+                    if ([resultado isEqualToString:alternativaCorreta.tipo]) {
+                        alternativaCorreta.fontColor = [SKColor greenColor];
+                        return;
+                    }
+                }
+                
+                
+
+                
+            }
+            
+        }
+        
+        
+        
+        
+    }
+    for (SpriteLabelNode *alternativaCorreta in alternativas) {
+        if ([alternativaCorreta.tipo isEqualToString:@"senao"]) {
+            alternativaCorreta.fontColor = [SKColor greenColor];
+            break;
+        }
+    }
+    
     
 }
 
@@ -35,21 +87,35 @@
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
         font = self.frame.size.height * 25;
+        calculador = [[Geral alloc]init];
         
         
         [self criaEnunciado];
         [self criaExpressoes];
         [self criaAlternativas];
         
-        //cria espaco
+        //cria espaco onde as condicoes serao movidas
         
         espaco = [SKSpriteNode spriteNodeWithImageNamed:@"fundo-cinza.png"];
         espaco.size = CGSizeMake(150, 100);
         espaco.position = CGPointMake(600, 100);
         posicaoBreakPoint.x = 500;
-        [self preparaAnimacao];
         
         [self addChild:espaco];
+        
+        //prepara botao para obter resposta
+        
+        SKLabelNode *botao = [[SKLabelNode alloc] initWithFontNamed:@"Chalkduster"];
+        botao.text = @"Botao Resposta";
+        botao.name = @"botaoResposta";
+        botao.fontSize = 30;
+        botao.position = CGPointMake(550, 500);
+        
+        [self addChild:botao];
+        
+        [self preparaAnimacao];
+        
+        
         
         
     }
@@ -64,6 +130,28 @@
     breakpoint.size = CGSizeMake(1000, 35);
     //breakpoint.position = CGPointMake(500, 770);
     //[self addChild:breakpoint];
+    
+}
+
+-(NSMutableArray *)converteCondicaoTexto :(NSString *)texto{
+    
+    NSMutableArray *charArray = [NSMutableArray arrayWithCapacity:texto.length];
+    for (int i=0; i<texto.length; ++i) {
+        NSString *charStr = [texto substringWithRange:NSMakeRange(i, 1)];
+        
+        
+        if ([charStr isEqualToString:@"n"]) {
+            [charArray addObject:[NSString stringWithFormat:@"%d",n]];
+        }else if (![charStr isEqualToString:@" "]){
+            [charArray addObject:charStr];
+        }
+        
+        
+        
+        
+    }
+
+    return charArray;
     
 }
 
@@ -248,10 +336,10 @@
     lblCodigo1.text = @"se(          )";
     lblCodigo1.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     
-    condicao = [[SpriteLabelNode alloc]initWithType:@"se" texto:@"n < 3"];
+    condicao = [[SpriteLabelNode alloc]initWithType:@"se1" texto:@"n < 3"];
     condicao.fontName = @"Helvetica";
     condicao.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
-    condicao.name = @"cond1";
+    condicao.name = @"condicao";
     
     //editando posicao
     
@@ -303,10 +391,10 @@
     lblCodigo1.text = @"}senao se (          ){";
     lblCodigo1.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     
-    condicao = [[SpriteLabelNode alloc]initWithType:@"se" texto:@"n < 6"];
+    condicao = [[SpriteLabelNode alloc]initWithType:@"se2" texto:@"n < 6"];
     condicao.fontName = @"Helvetica";
     condicao.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
-    condicao.name = @"cond2";
+    condicao.name = @"condicao";
     
     //editando posicionamento e font
     
@@ -337,7 +425,7 @@
     
     lblCodigo1.position = CGPointMake(self.frame.size.width * 80, altura);
     condicao.position = lblCodigo1.position;
-    condicao.name = @"nulo";
+    condicao.name = @"nula";
     lblCodigo1.fontSize = font;
     
     
@@ -363,7 +451,7 @@
     
     lblCodigo1.position = CGPointMake(self.frame.size.width * 50, altura);
     condicao.position = lblCodigo1.position;
-    condicao.name = @"nulo";
+    condicao.name = @"nula";
     lblCodigo1.fontSize = font;
     
     
@@ -387,7 +475,7 @@
     
     lblCodigo1.position = CGPointMake(self.frame.size.width * 80, altura);
     condicao.position = lblCodigo1.position;
-    condicao.name = @"nulo";
+    condicao.name = @"nula";
     lblCodigo1.fontSize = font;
     
     
@@ -410,7 +498,7 @@
     
     lblCodigo1.position = CGPointMake(self.frame.size.width * 50, altura);
     condicao.position = lblCodigo1.position;
-    condicao.name = @"nulo";
+    condicao.name = @"nula";
     lblCodigo1.fontSize = font;
     
     
@@ -434,6 +522,8 @@
     CGPoint posicaoMutavel = posiciaoInicial;
     
     NSMutableArray *textos = [NSMutableArray array];
+    NSMutableArray *tipos = [NSMutableArray array];
+    NSMutableArray *tiposETextos = [NSMutableArray array];
     
     //textos das alternativas
     [textos addObject:@"vou ao parque"];
@@ -441,25 +531,34 @@
     [textos addObject:@"ficarei em casa"];
     [textos addObject:@"todas alternativas"];
     
-    textos = [self embaralha:textos];
+    [tipos addObject:@"se1"];
+    [tipos addObject:@"se2"];
+    [tipos addObject:@"senao"];
+    [tipos addObject:@"errada"];
     
+    
+    for (int i =0; i < textos.count; i++) {
+        NSDictionary *dict = @{
+                                @"tipo":[tipos objectAtIndex:i],
+                                @"texto":[textos objectAtIndex:i]
+                                };
+        [tiposETextos addObject:dict];
+    }
+    
+    tiposETextos = [self embaralha:tiposETextos];
     
     
     
     //criando alternativas
     
-    SpriteLabelNode *alternativaA = [[SpriteLabelNode alloc]initWithType:@"seila" texto:[NSString stringWithFormat:@"a. %@",[textos objectAtIndex:0]]];
-    SpriteLabelNode *alternativaB = [[SpriteLabelNode alloc]initWithType:@"seila" texto:[NSString stringWithFormat:@"b. %@",[textos objectAtIndex:1]]];
-    SpriteLabelNode *alternativaC = [[SpriteLabelNode alloc]initWithType:@"seila" texto:[NSString stringWithFormat:@"c. %@",[textos objectAtIndex:2]]];
-    SpriteLabelNode *alternativaD = [[SpriteLabelNode alloc]initWithType:@"seila" texto:[NSString stringWithFormat:@"d. %@",[textos objectAtIndex:3]]];
+    SpriteLabelNode *alternativaA = [[SpriteLabelNode alloc]initWithType:[[tiposETextos objectAtIndex:0] objectForKey:@"tipo"] texto:[NSString stringWithFormat:@"a. %@",[[tiposETextos objectAtIndex:0] objectForKey:@"texto"] ]];
     
+    SpriteLabelNode *alternativaB = [[SpriteLabelNode alloc]initWithType:[[tiposETextos objectAtIndex:1] objectForKey:@"tipo"] texto:[NSString stringWithFormat:@"b. %@",[[tiposETextos objectAtIndex:1] objectForKey:@"texto"] ]];
     
+    SpriteLabelNode *alternativaC = [[SpriteLabelNode alloc]initWithType:[[tiposETextos objectAtIndex:2] objectForKey:@"tipo"] texto:[NSString stringWithFormat:@"c. %@",[[tiposETextos objectAtIndex:2] objectForKey:@"texto"] ]];
     
-    //colocando tamanho
-    alternativaA.fontSize = fontAlternativas;
-    alternativaB.fontSize = fontAlternativas;
-    alternativaC.fontSize = fontAlternativas;
-    alternativaD.fontSize = fontAlternativas;
+    SpriteLabelNode *alternativaD = [[SpriteLabelNode alloc]initWithType:[[tiposETextos objectAtIndex:3] objectForKey:@"tipo"] texto:[NSString stringWithFormat:@"d. %@",[[tiposETextos objectAtIndex:3] objectForKey:@"texto"] ]];
+    
     
     //inserindo no vetor
     
@@ -471,8 +570,10 @@
     
     
     for (SKLabelNode *aux in alternativas) {
+        aux.fontSize = fontAlternativas;
         aux.position = posicaoMutavel;
         aux.fontName = @"Arial";
+        aux.name = @"alternativa";
         aux.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
         posicaoMutavel.y -= 60;
         [self addChild:aux];
@@ -514,10 +615,30 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    indice = 0;
+    /*indice = 0;
     calculador = [[Geral alloc]init];
     [self testeAnima];
     //[self movimentaBreakPoint];
+    */
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    SKNode *teste = [self nodeAtPoint:location];
+    
+    
+    if ([teste.name isEqualToString:@"alternativa"]) {
+        
+        if (alternativaMarcada != nil) {
+            alternativaMarcada.fontColor = [SKColor whiteColor];
+        }
+        SpriteLabelNode *aux = (SpriteLabelNode *) [self nodeAtPoint:location];
+        alternativaMarcada = aux;
+        alternativaMarcada.fontColor = [SKColor yellowColor];
+    }else if ([teste.name isEqualToString:@"botaoResposta"] && alternativaMarcada != nil){
+        [self corrigeExercicio];
+    }
+
+
     
 }
 
