@@ -17,7 +17,7 @@
     
     if (self) {
         [self setAnimacao:[[AnimaCondSimples alloc] init]];
-        [self montaTeoria:@"ConceitosVariaveis"];
+        [self montaTeoria:@"ConceitosCondicionais"];
         [self setNome:@"Condição Simples"];
         
         
