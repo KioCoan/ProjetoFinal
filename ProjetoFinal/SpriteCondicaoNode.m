@@ -128,6 +128,10 @@ static const int NUM_TEXTURAS = 14;
     [condicaoSe setPhysicsBody:nil];
 }
 
+-(void)removerCorpoSenaoSe{
+    [condicaoSenaoSe setPhysicsBody:nil];
+}
+
 
 -(NSString*)getCondicaoCorreta{
     if(!condicaoSe || !condicaoSenaoSe){

@@ -28,8 +28,8 @@
     
     //INICIALIZA O SPRITE DA CONDIÇÃO E CRIA OS VALORES DAS CONDIÇÕES
     [self inicializaCondicaoNode];
-    [condicaoNode criarCondicaoSe:@"300" operador:@">" valor2:@"100"];
-    [condicaoNode criarCondicaoSenaoSe:@"200" operador:@"<" valor2:@"200"];
+    [condicaoNode criarCondicaoSe:@"200" operador:@">" valor2:@"100"];
+    [condicaoNode criarCondicaoSenaoSe:@"100" operador:@"<" valor2:@"200"];
     condicaoCorreta = [condicaoNode getCondicaoCorreta];
     [self inicializarlabels];
 }
@@ -107,7 +107,7 @@
         [self controlaImpulsoSe:contact];
     
     }else if([condicaoCorreta isEqualToString:@"senaoSe"]){
-        
+        [self controlaImpulsoSenaoSe:contact];
     
     }else{
         
@@ -118,17 +118,51 @@
 
 -(void)controlaImpulsoSe:(SKPhysicsContact*)contact{
     if(nPulos < 2){
-        [[contact bodyB] applyImpulse:CGVectorMake(5, 13)];
-        nPulos++;
+        [self impulsoBaseDireita:contact];
     
     }else{
-        [[contact bodyB] applyImpulse:CGVectorMake(-23, 15)];
+        [self impulsoBaseFim:contact];
         [condicaoNode removerCorpoSe];
-        [condicaoNode encerrarTeste];
-        nPulos = 0;
     }
     
+}
+
+-(void)controlaImpulsoSenaoSe:(SKPhysicsContact*)contact{
+    if(nPulos < 2){
+        [self impulsoBaseDireita:contact];
+        
+        
+    }else if(nPulos == 2){
+        [self impulsoBaseProximo:contact];
+        [condicaoNode removerCorpoSe];
+        
+    }else if(nPulos < 5){
+        [[contact bodyB] applyImpulse:CGVectorMake(7, 13)];
+        nPulos++;
+        //[self impulsoBaseDireita:contact];
     
+    }else{
+        [self impulsoBaseFim:contact];
+        [condicaoNode removerCorpoSenaoSe];
+    }
+    
+}
+
+
+-(void)impulsoBaseDireita:(SKPhysicsContact*)contact{
+    [[contact bodyB] applyImpulse:CGVectorMake(5, 13)];
+    nPulos++;
+}
+
+-(void)impulsoBaseFim:(SKPhysicsContact*)contact{
+    [[contact bodyB] applyImpulse:CGVectorMake(-23, 15)];
+    [condicaoNode encerrarTeste];
+    nPulos = 0;
+}
+
+-(void)impulsoBaseProximo:(SKPhysicsContact*)contact{
+    [[contact bodyB] applyImpulse:CGVectorMake(-14, 15)];
+    nPulos++;
 }
 
 -(void)testes{

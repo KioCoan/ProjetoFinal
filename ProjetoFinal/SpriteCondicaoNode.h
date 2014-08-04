@@ -27,5 +27,5 @@
 -(void)iniciarTeste;
 -(void)encerrarTeste;
 -(void)removerCorpoSe;
-
+-(void)removerCorpoSenaoSe;
 @end
