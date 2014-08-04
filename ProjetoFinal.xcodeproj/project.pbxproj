@@ -29,6 +29,8 @@
 		84B1B3E3197D881900089FCB /* CondicaoSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E2197D881900089FCB /* CondicaoSimples.m */; };
 		84B1B3E6197D8AE500089FCB /* ExeCondSimples1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E5197D8AE500089FCB /* ExeCondSimples1.m */; };
 		84B1B3E9197D8BEF00089FCB /* CenaExercicioCondSimples1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E8197D8BEF00089FCB /* CenaExercicioCondSimples1.m */; };
+		912A66B01990052000D7F783 /* refresh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 912A66AF1990052000D7F783 /* refresh.wav */; };
+		912A66B219901EB800D7F783 /* refresh2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 912A66B119901EB800D7F783 /* refresh2.mp3 */; };
 		91A7A953198F56A3009A5EB1 /* abrirCaixa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91A7A951198F56A3009A5EB1 /* abrirCaixa.mp3 */; };
 		91A7A954198F56A3009A5EB1 /* fecharCaixa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91A7A952198F56A3009A5EB1 /* fecharCaixa.mp3 */; };
 		91A7A956198F56DC009A5EB1 /* ConceitosCondicionais.txt in Resources */ = {isa = PBXBuildFile; fileRef = 91A7A955198F56DC009A5EB1 /* ConceitosCondicionais.txt */; };
@@ -171,6 +173,8 @@
 		84B1B3E5197D8AE500089FCB /* ExeCondSimples1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExeCondSimples1.m; path = Exercicios/ExeCondSimples1.m; sourceTree = "<group>"; };
 		84B1B3E7197D8BEF00089FCB /* CenaExercicioCondSimples1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CenaExercicioCondSimples1.h; path = Exercicios/CenaExercicioCondSimples1.h; sourceTree = "<group>"; };
 		84B1B3E8197D8BEF00089FCB /* CenaExercicioCondSimples1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CenaExercicioCondSimples1.m; path = Exercicios/CenaExercicioCondSimples1.m; sourceTree = "<group>"; };
+		912A66AF1990052000D7F783 /* refresh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = refresh.wav; sourceTree = "<group>"; };
+		912A66B119901EB800D7F783 /* refresh2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = refresh2.mp3; sourceTree = "<group>"; };
 		91A7A951198F56A3009A5EB1 /* abrirCaixa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = abrirCaixa.mp3; sourceTree = "<group>"; };
 		91A7A952198F56A3009A5EB1 /* fecharCaixa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fecharCaixa.mp3; sourceTree = "<group>"; };
 		91A7A955198F56DC009A5EB1 /* ConceitosCondicionais.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConceitosCondicionais.txt; sourceTree = "<group>"; };
@@ -471,6 +475,8 @@
 		91A7A950198F5682009A5EB1 /* Sons */ = {
 			isa = PBXGroup;
 			children = (
+				912A66B119901EB800D7F783 /* refresh2.mp3 */,
+				912A66AF1990052000D7F783 /* refresh.wav */,
 				91D5ED6C19900055008EC1B8 /* correto.aiff */,
 				91D5ED6D19900055008EC1B8 /* errado.wav */,
 				91A7A957198F5D0B009A5EB1 /* slider.mp3 */,
@@ -858,6 +864,8 @@
 				BDF8ADEF197B255C00BA5B8A /* parte-resultado2.png in Resources */,
 				91A7A954198F56A3009A5EB1 /* fecharCaixa.mp3 in Resources */,
 				BD5A552B198C972000D8722F /* senao-verde.png in Resources */,
+				912A66B01990052000D7F783 /* refresh.wav in Resources */,
+				912A66B219901EB800D7F783 /* refresh2.mp3 in Resources */,
 				BDF8AE06197B258C00BA5B8A /* parte-valores6.png in Resources */,
 				91A7A958198F5D0B009A5EB1 /* slider.mp3 in Resources */,
 				A55F2B4419648C0600111BEB /* ConceitosVariaveis.txt in Resources */,

@@ -79,7 +79,7 @@
         SKAction *rotation = [SKAction rotateByAngle: -M_PI duration:0.2];
         [[atualizar childNodeWithName:@"atualizar"] runAction:rotation];
 
-        
+        [self runAction:[SKAction playSoundFileNamed:@"refresh2.mp3" waitForCompletion:NO]];
         [self atualizarValores];
     }
 }
@@ -88,6 +88,8 @@
     Geral *calculadora = [[Geral alloc] init];
     NSString *valor1, *operador, *valor2, *resultado;
     int aux;
+    
+    
     
     for(int i=0; i<sprites.count; i++){
         aux = arc4random() % 200;
