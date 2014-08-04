@@ -26,7 +26,7 @@ SE (PossueChave == verdadeiro){
 	escreva("A porta continua trancada")
 }
 
-Dessa forma, se a nossa variável PossueChave, for falsa, a verificação no SE é feita, porém, como a condição não é satisfeita, o que está no ESPAÇO do SENAO, é executado.
+Dessa forma, se a nossa variável PossueChave, for falsa, a verificação no SE é feita, porém, como a condição não é satisfeita, o que está no escopo do SENAO, é executado.
 
 #MAIS CONDIÇÕES..
 

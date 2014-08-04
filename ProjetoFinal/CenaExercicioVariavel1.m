@@ -210,7 +210,7 @@
             if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
                 
                 if ([[conteudoAtivo tipo] isEqualToString: [c retornaTipo]]) { // Caso a resposta esteja correta (Nó de resposta no local correto)
-                    
+                    [self runAction:[SKAction playSoundFileNamed:@"correto.aiff" waitForCompletion:NO]];
                     [c setLabelConteudo:conteudoAtivo.text];
                     
                     //Ação a ser feita caso a resposta esteja correta
@@ -221,6 +221,7 @@
                     conteudoAtivo = nil;
                 
                 }else{
+                    [self runAction:[SKAction playSoundFileNamed:@"errado.wav" waitForCompletion:NO]];
                     conteudoAtivo.fontColor = [UIColor redColor];
                     SKAction *animacaoVoltar = [SKAction moveTo:conteudoAtivo.posicaoInicial duration:0.5];
                     [conteudoAtivo runAction:animacaoVoltar completion:^{
