@@ -159,6 +159,7 @@ static const int NUM_TEXTURAS = 13;
 -(void)fecharCaixa{
     //INICIA A SKACTION QUE FECHA A CAIXA
     [lblConteudo setHidden:YES];
+    [self runAction:[SKAction playSoundFileNamed:@"fecharCaixa.mp3" waitForCompletion:NO]];
     [self runAction:animacaoFechar completion:^{
         [self removeAllActions];
         caixaAberta = NO;
@@ -170,6 +171,7 @@ static const int NUM_TEXTURAS = 13;
 -(void)abrirCaixa{
     //INICIA A SKACTION QUE ABRE A CAIXA
     [lblConteudo setHidden:YES];
+    [self runAction:[SKAction playSoundFileNamed:@"abrirCaixa.mp3" waitForCompletion:NO]];
     [self runAction:animacaoAbrir completion:^{
         [self removeAllActions];
         caixaAberta = YES;
