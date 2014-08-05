@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetoFinal/Variavel.m"
-            timestampString = "428940250.145036"
+            timestampString = "428941521.459376"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "-retornaAnimacaoNumero:"
             landmarkType = "5">
          </BreakpointContent>

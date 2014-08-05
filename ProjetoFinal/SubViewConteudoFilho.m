@@ -44,7 +44,7 @@
     
     // PONTO CHAVE
 
-    [self.myDelegate trocaAnimacao:(int)self.index ];
+    [self.myDelegate trocaAnimacao:(int)self.index + 1];
     
     
     

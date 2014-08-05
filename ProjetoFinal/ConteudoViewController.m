@@ -43,21 +43,14 @@
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSString * segueName = segue.identifier;
+    
+    // Caso a Segue seja identificada como a do conteúdo de teoria, ele seta o myDelegate na view que será exibida
     if ([segueName isEqualToString: @"segueConteudoTeoria"]) {
-        
-        //AlertViewController * childViewController = (AlertViewController *) [segue destinationViewController];
         
         SubViewConteudo *subViewConteudo = (SubViewConteudo*)[segue destinationViewController];
         
-        NSLog(@"%@",segueName);
-        
         [subViewConteudo setMyDelegate:self];
-        
-        //AlertView * alertView = childViewController.view;
-        
-        
-        // do something with the AlertView's subviews here...
-    }
+       }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -104,12 +97,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+//Método acionado pela subViewConteúdoFilho este controller é um delegate da referida View
+
 -(void)trocaAnimacao:(int)index{
     
     
     GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     SKTransition *reveal = [SKTransition fadeWithDuration:1];
     SKScene* proximaAnimacao = [gerenciador retornaAnimacaoNumero:index];
+    [proximaAnimacao setSize: viewAnimacao.frame.size];
     proximaAnimacao.scaleMode = SKSceneScaleModeAspectFill;
     
     if (proximaAnimacao) {
