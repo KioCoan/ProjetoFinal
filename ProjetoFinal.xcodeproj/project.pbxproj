@@ -56,6 +56,8 @@
 		A597F0F51960A7A6006429C7 /* SubViewConteudoFilho.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0EF1960A7A6006429C7 /* SubViewConteudoFilho.m */; };
 		A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F11960A7A6006429C7 /* MenuViewController.m */; };
 		A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F31960A7A6006429C7 /* ConteudoViewController.m */; };
+		A5D04273198D2DC70064663B /* load.gif in Resources */ = {isa = PBXBuildFile; fileRef = A5D04272198D2DC70064663B /* load.gif */; };
+		A5D04277198D32F50064663B /* load-branco.gif in Resources */ = {isa = PBXBuildFile; fileRef = A5D04276198D32F50064663B /* load-branco.gif */; };
 		BD01DDFD19834E9D00AEAAA8 /* SpriteCondicaoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD01DDFC19834E9D00AEAAA8 /* SpriteCondicaoNode.m */; };
 		BD01DE051983566100AEAAA8 /* AnimaCondSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */; };
 		BD42E0F41985E2090007181F /* simbolo-atualizar.png in Resources */ = {isa = PBXBuildFile; fileRef = BD42E0F31985E2090007181F /* simbolo-atualizar.png */; };
@@ -216,6 +218,8 @@
 		A597F0F11960A7A6006429C7 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		A597F0F21960A7A6006429C7 /* ConteudoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConteudoViewController.h; sourceTree = "<group>"; };
 		A597F0F31960A7A6006429C7 /* ConteudoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ConteudoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A5D04272198D2DC70064663B /* load.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load.gif; sourceTree = "<group>"; };
+		A5D04276198D32F50064663B /* load-branco.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "load-branco.gif"; sourceTree = "<group>"; };
 		BD01DDFB19834E9D00AEAAA8 /* SpriteCondicaoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteCondicaoNode.h; sourceTree = "<group>"; };
 		BD01DDFC19834E9D00AEAAA8 /* SpriteCondicaoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteCondicaoNode.m; sourceTree = "<group>"; };
 		BD01DE031983566100AEAAA8 /* AnimaCondSimples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimaCondSimples.h; sourceTree = "<group>"; };
@@ -727,6 +731,8 @@
 		E501FA69192FCD1600B56B5C /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				A5D04276198D32F50064663B /* load-branco.gif */,
+				A5D04272198D2DC70064663B /* load.gif */,
 				BD510FE4198A035B0052B6E5 /* Condicionais */,
 				BDBE7699197A3B57004EA926 /* Operadores */,
 				BDC75790196787CF00DB8380 /* Variavel */,
@@ -836,6 +842,7 @@
 				BDF8AE0B197B258C00BA5B8A /* parte-valores11.png in Resources */,
 				120E8F8F192FC0A200CDEF95 /* Images.xcassets in Resources */,
 				BDC757A0196787E700DB8380 /* abrir-caixa3.png in Resources */,
+				A5D04273198D2DC70064663B /* load.gif in Resources */,
 				BD511000198A03740052B6E5 /* estrutura-condicionais14.png in Resources */,
 				BD510FF6198A03740052B6E5 /* estrutura-condicionais4.png in Resources */,
 				BD5A552C198C972000D8722F /* senaoSe-verde.png in Resources */,
@@ -847,6 +854,7 @@
 				BDC757A1196787E700DB8380 /* abrir-caixa4.png in Resources */,
 				120E8F81192FC0A200CDEF95 /* InfoPlist.strings in Resources */,
 				BD510FF3198A03740052B6E5 /* estrutura-condicionais1.png in Resources */,
+				A5D04277198D32F50064663B /* load-branco.gif in Resources */,
 				BDF8AE04197B258C00BA5B8A /* parte-valores4.png in Resources */,
 				BD5A552A198C972000D8722F /* se-verde.png in Resources */,
 				BD510FFE198A03740052B6E5 /* estrutura-condicionais12.png in Resources */,

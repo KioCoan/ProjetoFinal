@@ -12,6 +12,7 @@
 {
     
     __weak IBOutlet UIActivityIndicatorView *activityIndicator;
+    UIView *splashScreenView;
 }
 @end
 
@@ -42,8 +43,13 @@
     //DEFINO O TITULO DO NAVIGATION CONTROLLER DE ACORDO COM O NOME DO ASSUNTO
     [[self navigationItem] setTitle:gerenciador.retornaNomeAssuntoAtual];
     
-    //Start animação indicador de atividade
+    //Ajustes No indicador de atividade
+    splashScreenView = [[UIView alloc] initWithFrame:self.view.bounds];
+    splashScreenView.backgroundColor = [UIColor blackColor];
     [activityIndicator startAnimating];
+    [splashScreenView addSubview:activityIndicator];
+    activityIndicator.center = splashScreenView.center;
+    [self.view addSubview:splashScreenView];
     
     
 }
@@ -73,6 +79,7 @@
     [[self view] addSubview:viewExercicio];
     
     [activityIndicator stopAnimating];
+    [splashScreenView removeFromSuperview];
     
 }
 
