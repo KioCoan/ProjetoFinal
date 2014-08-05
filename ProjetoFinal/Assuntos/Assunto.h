@@ -27,7 +27,6 @@
 @property NSMutableArray *exercicios;
 @property NSMutableArray *teoriaFormatada;
 
-
 -(void)montaTeoria:(NSString*)nomeDoArquivo; // Usado somente em chamadas internas
 
 -(void)selecionaExercicio:(int)index;
@@ -38,4 +37,5 @@
 
 -(NSMutableArray*)retornaTitulosEDescricoesExercicios;
 -(int)getIndiceExercicio;
+-(SKScene*)retornaAnimacaoNumero:(int)index;
 @end

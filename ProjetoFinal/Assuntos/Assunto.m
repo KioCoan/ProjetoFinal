@@ -14,6 +14,7 @@
 @implementation Assunto
 
 
+
 -(void)montaTeoria:(NSString*)nomeDoArquivo{ // Método que formata a teoria vinda de um txt. Este método recebe como parametro o nome do arquivo de origem dos dados
     
     NSString* path = [[NSBundle mainBundle] pathForResource:nomeDoArquivo
@@ -65,6 +66,11 @@
 
 -(void)preparaExercicios{
     //Sobrescrever método nas classes filho
+}
+
+-(SKScene*)retornaAnimacaoNumero:(int)index{
+    //Sobrescrever método nas classes filho
+    return nil;
 }
 
 @end

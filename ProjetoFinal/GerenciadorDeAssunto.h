@@ -31,4 +31,6 @@
 -(SKScene*)retornaAnimacao;
 -(int)exercicioSelecionado;
 
+-(SKScene*)retornaAnimacaoNumero:(int)index;
+
 @end

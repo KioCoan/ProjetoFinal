@@ -34,6 +34,20 @@
     [self.exercicios addObject:[[ExeVariavel1 alloc] init]];
 }
 
+-(SKScene*)retornaAnimacaoNumero:(int)index{
+    
+    switch (index) {
+        case 1:
+            [self setAnimacao:nil];
+            [self setAnimacao:[[AnimaVariavel alloc] init]];
+            break;
+            
+        default:
+            [self setAnimacao:nil];
+            break;
+    }
+    return [self animacao];
+}
 
 
 @end
