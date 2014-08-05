@@ -59,7 +59,7 @@
 
     
     childViewController.index = index;
-    
+    childViewController.myDelegate = self.myDelegate;
     
     
     
@@ -70,6 +70,7 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     
     NSUInteger index = [(SubViewConteudoFilho *)viewController index];
+   
     
     if (index == 0) {
         return nil;

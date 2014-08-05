@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GerenciadorDeAssunto.h"
+#import "AlteraAnimacaoDelegate.h"
 @interface SubViewConteudo : UIViewController <UIPageViewControllerDataSource>
 
 
@@ -18,6 +19,7 @@
 }
 
 @property (strong, nonatomic) UIPageViewController *pageController;
+@property id <AlteraAnimacaoDelegate> myDelegate;
 
 
 @end

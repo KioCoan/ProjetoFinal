@@ -8,16 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "GerenciadorDeAssunto.h"
-
+#import "ConteudoViewController.h"
+#import "AlteraAnimacaoDelegate.h"
 @interface SubViewConteudoFilho : UIViewController
 {
     GerenciadorDeAssunto *gerenciadorDeAssuntos;
     NSMutableArray *teoria;
     __weak IBOutlet UITextView *txtConteudo;
+    ConteudoViewController *viewDeConteudo;
 }
 @property (assign, nonatomic) NSInteger index;
 //@property (strong, nonatomic) IBOutlet UILabel *screenNumber;
 //@property (weak, nonatomic) IBOutlet UILabel *screenNumber;
+
+@property id <AlteraAnimacaoDelegate> myDelegate;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblConteudo;
 

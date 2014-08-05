@@ -220,6 +220,7 @@
 		A597F0F31960A7A6006429C7 /* ConteudoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ConteudoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A5D04272198D2DC70064663B /* load.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load.gif; sourceTree = "<group>"; };
 		A5D04276198D32F50064663B /* load-branco.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "load-branco.gif"; sourceTree = "<group>"; };
+		A5D0427819910A370064663B /* AlteraAnimacaoDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AlteraAnimacaoDelegate.h; path = Assuntos/AlteraAnimacaoDelegate.h; sourceTree = "<group>"; };
 		BD01DDFB19834E9D00AEAAA8 /* SpriteCondicaoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteCondicaoNode.h; sourceTree = "<group>"; };
 		BD01DDFC19834E9D00AEAAA8 /* SpriteCondicaoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteCondicaoNode.m; sourceTree = "<group>"; };
 		BD01DE031983566100AEAAA8 /* AnimaCondSimples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimaCondSimples.h; sourceTree = "<group>"; };
@@ -514,6 +515,7 @@
 				A55F2B401964879A00111BEB /* Variavel.m */,
 				BDB48109196CB7FC00D5901A /* Operadores.h */,
 				BDB4810A196CB7FC00D5901A /* Operadores.m */,
+				A5D0427819910A370064663B /* AlteraAnimacaoDelegate.h */,
 			);
 			name = Assuntos;
 			sourceTree = "<group>";

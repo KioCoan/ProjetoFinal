@@ -30,8 +30,7 @@
     
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    
+    viewDeConteudo = [self.storyboard instantiateViewControllerWithIdentifier:@"conteudo"];
     
 }
 
@@ -41,6 +40,12 @@
     gerenciadorDeAssuntos = [GerenciadorDeAssunto sharedGerenciador];
     
     teoria = [gerenciadorDeAssuntos retornaTeoriaFormatada];
+    
+    
+    // PONTO CHAVE
+
+    [self.myDelegate trocaAnimacao:(int)self.index ];
+    
     
     
     txtConteudo.text = [teoria objectAtIndex:self.index];

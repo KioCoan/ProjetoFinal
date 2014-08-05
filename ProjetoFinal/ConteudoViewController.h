@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AlteraAnimacaoDelegate.h"
 
-@interface ConteudoViewController : UIViewController
+@interface ConteudoViewController : UIViewController <AlteraAnimacaoDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *myViewContainer;
 
 
 @end

@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "Assunto.h"
+#import "AlteraAnimacaoDelegate.h"
 
 @interface GerenciadorDeAssunto : NSObject
 {
     NSArray *nomesDosAssuntos;
     Assunto* assunto;
 }
-
 
 + (GerenciadorDeAssunto *)sharedGerenciador;
 + (id)allocWithZone:(struct _NSZone *)zone;

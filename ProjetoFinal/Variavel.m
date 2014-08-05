@@ -35,6 +35,8 @@
 }
 
 -(SKScene*)retornaAnimacaoNumero:(int)index{
+    NSLog(@"%d",index);
+    
     
     switch (index) {
         case 1:

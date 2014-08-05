@@ -8,10 +8,13 @@
 
 #import "ConteudoViewController.h"
 #import "SubViewConteudoFilho.h"
+#import "SubViewConteudo.h"
 #import "Variavel.h"
 
 @interface ConteudoViewController ()
-
+{
+    SKView *viewAnimacao;
+}
 @end
 
 @implementation ConteudoViewController
@@ -29,9 +32,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    
     // Do any additional setup after loading the view.
     //Variavel *v = [[Variavel alloc] init];
     
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString * segueName = segue.identifier;
+    if ([segueName isEqualToString: @"segueConteudoTeoria"]) {
+        
+        //AlertViewController * childViewController = (AlertViewController *) [segue destinationViewController];
+        
+        SubViewConteudo *subViewConteudo = (SubViewConteudo*)[segue destinationViewController];
+        
+        NSLog(@"%@",segueName);
+        
+        [subViewConteudo setMyDelegate:self];
+        
+        //AlertView * alertView = childViewController.view;
+        
+        
+        // do something with the AlertView's subviews here...
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -44,10 +70,10 @@
     [[self navigationItem] setTitle:gerenciador.retornaNomeAssuntoAtual];
     
     //CRIO UMA SKVIEW PARA INSERIR A SKSCENE
-    SKView *viewAnimacao = [[SKView alloc] initWithFrame:CGRectMake(0, 65, self.view.frame.size.width, 600)];
+    viewAnimacao = [[SKView alloc] initWithFrame:CGRectMake(0, 65, self.view.frame.size.width, 600)];
     
-    //INSTANCIO A SKSCENE DO ASSUNTO ATUAL
-    SKScene *cena = gerenciador.retornaAnimacao;
+    //INSTANCIO A SKSCENE INICIAL DO ASSUNTO ATUAL
+    SKScene *cena = [gerenciador retornaAnimacaoNumero:1];
     
     //DEFININDO TAMANHO DA SKSCENE E ADICIONANDO-A NA SKVIEW
     [cena setSize: viewAnimacao.frame.size];
@@ -76,6 +102,22 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)trocaAnimacao:(int)index{
+    
+    
+    GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
+    SKTransition *reveal = [SKTransition fadeWithDuration:1];
+    SKScene* proximaAnimacao = [gerenciador retornaAnimacaoNumero:index];
+    proximaAnimacao.scaleMode = SKSceneScaleModeAspectFill;
+    
+    if (proximaAnimacao) {
+        
+        [viewAnimacao presentScene:proximaAnimacao transition:reveal];
+    }
+    
+    
 }
 
 @end
