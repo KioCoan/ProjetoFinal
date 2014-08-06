@@ -26,6 +26,7 @@
     BOOL jaApareceu;
     BOOL habilitarDebugar;
     CGPoint posicaoBreakPoint;
+    
 }
 
 
@@ -454,49 +455,80 @@
     [breakpoint removeFromParent];
     jaApareceu = NO;
     condicaoCerta = nil;
+    habilitarDebugar = YES;
     
     
 }
 
-- (void)moveBreakPoint{
+
+- (NSString *)calculaOperacao:(NSString *)operacao{
+    
+    //pega os caracteres da condicao e jogam no vetor *charArray tirando todos os espacos
+    
+    NSMutableArray *caracteres = [self converteCondicaoTexto:operacao];
+    //caracteres do vetor *charArray sao passados para o calculador retornar o resultado da expressao
+    
+    return [calculador calculaOperador:[caracteres objectAtIndex:1] numero1:[caracteres objectAtIndex:0] numero2:[caracteres objectAtIndex:2]];
+    
+}
+
+- (void)debugar{
+    
+    
+    //cria variaveis necessarias
+    
+    BOOL habilitaMoveBreakPoint = NO; //habilitará a animacao do breakPoint
+    BOOL habilitaMoveCondicao = NO; //habilitará a animacao de mover a condicao
+    NSString *resultado;
+    
+
     
     if (indice >= expressoes.count) {
         
         //acabou a animacao sera preciso reseta-la
+        
         [self resetaBreakPoint];
         
         
     }else{
         
-        [self runAction:[SKAction waitForDuration:1] completion:^{
-            
-            
+        
             
             //pega condicao do vetor de expressoes
             
             SpriteLabelNode *condicao = [[expressoes objectAtIndex:indice] objectForKey:@"condicao"];
-            //NSLog(@"name %@  tipo %@",condicao.name,condicao.tipo);
-            
+            NSLog(@"name %@  tipo %@",condicao.name,condicao.tipo);
+        
+        
+            // verifica se ja apareceu a condicao verdadeira
             
             if (condicaoCerta != nil) {
                 
+                // entrada no IF caso o breakPoint nao puder se mover a esta linha, pois ja foi descoberta a condicao verdadeira
                 
                 if (([condicao.name isEqualToString:@"linha"] && ![condicao.tipo isEqualToString:condicaoCerta]) || [condicao.name isEqualToString:@"condicao"] || [condicao.name isEqualToString:@"senao"]) {
                     
+                    //acha a proxima linha que o breakPoint pode passar
                     
                     while (![condicao.name isEqualToString:@"nula"] && indice < expressoes.count) {
                         condicao = [[expressoes objectAtIndex:indice] objectForKey:@"condicao"];
+                        NSLog(@"name %@  tipo %@",condicao.name,condicao.tipo);
                         indice++;
                     }
                     
                 }
                 
+                // aqui a condicao verdadeira ainda nao foi achada
+                
+                // esse IF nao deixa o breakPoint se mover para a linha de uma condicional falsa
+                
             }else if ([condicao.name isEqualToString:@"linha"] && ![condicao.tipo isEqualToString:@"senao"]){
                 
-                
+                // acha a proxima linha que o breakPoint deve se mover
                 while (![condicao.name isEqualToString:@"nula"] && ![condicao.name isEqualToString:@"condicao"] && ![condicao.name isEqualToString:@"senao"] && indice < expressoes.count) {
                     indice++;
                     condicao = [[expressoes objectAtIndex:indice] objectForKey:@"condicao"];
+                    NSLog(@"name %@  tipo %@",condicao.name,condicao.tipo);
                 }
                 
                 
@@ -513,58 +545,68 @@
             if (!jaApareceu) {
                 [self addChild:breakpoint];
                 jaApareceu = YES;
+                habilitarDebugar = YES;
             }else{
                 
-                //acao de mover o breakpoint uma linha abaixo
+                //habilita a animacao do BreakPoint
+                habilitaMoveBreakPoint = YES;
                 
-                [breakpoint runAction:[SKAction moveToY:posicaoBreakPoint.y duration:1] completion:^{
                     
-                    //verifica se a condicao é nula
+                    //
                     
-                    if (![condicao.name isEqualToString:@"nula"]) {
+                    if ([condicao.name isEqualToString:@"condicao"]) {
                         
                         //se a condicao for diferente de nula a cor da label e posicao sao alterados
                         condicao.fontColor = [SKColor yellowColor];
                         
-                        [condicao runAction:[SKAction moveTo:espaco.position duration:2] completion:^{
-                            
-                            //pega os caracteres da condicao e jogam no vetor *charArray
-                            
-                            NSMutableArray *caracteres = [self converteCondicaoTexto:condicao.text];
-                            //caracteres do vetor *charArray sao passados para o calculador retornar o resultado da expressao
-                            
-                            NSString *resultado = [calculador calculaOperador:[caracteres objectAtIndex:1] numero1:[caracteres objectAtIndex:0] numero2:[caracteres objectAtIndex:2]];
-                            
-                            //dependendo do resultado altera novamente a cor da label
-                            
-                            if ([resultado isEqualToString:@"Verdadeiro"]) {
-                                condicao.fontColor = [SKColor greenColor];
-                                condicaoCerta = condicao.tipo;
-                            }else{
-                                condicao.fontColor = [SKColor redColor];
-                            }
-                            //label retonar ao local original
-                            [condicao runAction:[SKAction moveTo:condicao.posicaoInicial duration:3] completion:^{
-                                
-                            }];
-                            //[condicao runAction:[SKAction moveTo:condicao.posicaoInicial duration:3]];
-                            
-                            
-                        }];
+                        //habilita animacao de mover a Condicao
+                        habilitaMoveCondicao = YES;
+                        
+                        //faz o calculo da condicao recebendo um verdadeiro ou falso
+                        resultado = [self calculaOperacao:condicao.text];
                         
                         
                         
                     }
+                
+                //Animacao
+                
+                
+                //faz animacao BreakPoint se habilitado
+                
+                if (habilitaMoveBreakPoint) {
+                    [self runAction:[SKAction waitForDuration:1]];
+                    [breakpoint runAction:[SKAction moveToY:posicaoBreakPoint.y duration:1]];
+                    habilitarDebugar = YES;
+                }
+                
+                //faz animacao Condicao se habilitado
+                
+                if (habilitaMoveCondicao) {
+                    [self runAction:[SKAction waitForDuration:1]];
+                    [condicao runAction:[SKAction moveTo:espaco.position duration:2]];
                     
-                }];
-                
-                
-                
+                    
+                    
+                    [self runAction:[SKAction waitForDuration:4] completion:^{
+                        if ([resultado isEqualToString:@"Verdadeiro"]) {
+                            condicao.fontColor = [SKColor greenColor];
+                            condicaoCerta = condicao.tipo;
+                        }else{
+                            condicao.fontColor = [SKColor redColor];
+                        }
+                        [condicao runAction:[SKAction moveTo:condicao.posicaoInicial duration:3]];
+                        
+                    }];
+                    
+                    
+                }
+
+
                 
             }
-            habilitarDebugar = YES;
+
             indice++;
-        }];
         
     }
     
@@ -699,8 +741,8 @@
         [self corrigeExercicio];
     }else if ([teste.name isEqualToString:@"debugar"] && habilitarDebugar){
         habilitarDebugar = NO;
-        NSLog(@"DEBUGOU");
-        [self moveBreakPoint];
+        //NSLog(@"DEBUGOU");
+        [self debugar];
     }
 
     
