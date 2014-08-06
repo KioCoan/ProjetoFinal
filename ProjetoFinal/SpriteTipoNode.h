@@ -18,5 +18,5 @@
     OperadorResultadoNode *spriteResultado;
 }
 
--(id)initWithValores:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2;
+-(id)initWithValores:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 resultado:(NSString*)resultado;
 @end

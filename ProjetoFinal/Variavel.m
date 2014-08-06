@@ -7,9 +7,11 @@
 //
 
 #import "Variavel.h"
-
+#import "AnimaOperadores.h"
 @implementation Variavel
-
+{
+    int cenaAtual;
+}
 
 -(id)init{
     
@@ -20,7 +22,7 @@
         [self setAnimacao:[[AnimaVariavel alloc] init]];
         [self montaTeoria:@"ConceitosVariaveis"];
         [self setNome:@"Variável"];
-        
+        cenaAtual = 0;
         
     }
     return self;
@@ -36,13 +38,23 @@
 
 -(SKScene*)retornaAnimacaoNumero:(int)index{
     
+    if (cenaAtual == index) {
+        return nil;
+    }
+    
     
     switch (index) {
         case 1:
             [self setAnimacao:nil];
             [self setAnimacao:[[AnimaVariavel alloc] init]];
+            cenaAtual = index;
             break;
-            
+        case 3:
+            [self setAnimacao:nil];
+            [self setAnimacao:[[AnimaOperadores alloc] init]];
+            cenaAtual = index;
+            break;
+   
         default:
             [self setAnimacao:nil];
             break;

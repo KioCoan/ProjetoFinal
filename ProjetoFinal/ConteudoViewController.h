@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "AlteraAnimacaoDelegate.h"
-
+#import "GerenciadorDeAssunto.h"
 @interface ConteudoViewController : UIViewController <AlteraAnimacaoDelegate>
-
+{
+    GerenciadorDeAssunto *gerenciador;
+}
 @property (weak, nonatomic) IBOutlet UIView *myViewContainer;
 
 

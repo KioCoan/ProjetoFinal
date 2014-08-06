@@ -25,6 +25,13 @@
     return self;
     
 }
+-(id)init{
+    self = [super init];
+    if (self) {
+        self.primeiraChamada = YES;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     
@@ -44,7 +51,11 @@
     
     // PONTO CHAVE
 
-    [self.myDelegate trocaAnimacao:(int)self.index + 1];
+    if (!self.primeiraChamada) {
+        [self.myDelegate trocaAnimacao:(int)self.index + 1];
+        self.primeiraChamada = NO;
+    }
+    
     
     
     

@@ -7,20 +7,19 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-
+#import "SpriteTipoNode.h"
 
 @interface SpriteCondicaoNode : SKSpriteNode
 {
     SKSpriteNode *spriteExclamacao;
-    NSString *meuTipo;
-    
-    
+    NSString *tipoCondicao;
+    SpriteTipoNode *spriteTipo;
 }
 
 -(id)initWithType:(NSString*)tipo;
 -(void)mostraExclamacao:(BOOL)status;
 -(NSString*)getTipo;
--(void)criarValores:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2;
+-(void)criarValores:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2 resultado:(NSString*)resultado;
 
 
 

@@ -50,7 +50,7 @@ static const int NUM_TEXTURAS = 10;
     [self.lblResultado setText:resultado];
     [self.lblResultado setFontSize:35];
     [self.lblResultado setFontColor:[SKColor whiteColor]];
-//    [self.lblResultado setPosition:CGPointMake(0, -25)];
+    [self.lblResultado setPosition:CGPointMake(0, -10)];
     [self.lblResultado setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
     [self.lblResultado setAlpha:0];
     [self.lblResultado setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];

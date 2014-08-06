@@ -57,7 +57,7 @@
     [super viewWillAppear:animated];
     
     //INSTANCIO UM GERENCIADOR PARA BUSCAR AS INFORMAÇOES DO ASSUNTO
-    GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
+    gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     
     //DEFINO O TITULO DO NAVIGATION CONTROLLER DE ACORDO COM O NOME DO ASSUNTO
     [[self navigationItem] setTitle:gerenciador.retornaNomeAssuntoAtual];
@@ -67,6 +67,7 @@
     
     //INSTANCIO A SKSCENE INICIAL DO ASSUNTO ATUAL
     SKScene *cena = [gerenciador retornaAnimacaoNumero:1];
+    
     
     //DEFININDO TAMANHO DA SKSCENE E ADICIONANDO-A NA SKVIEW
     [cena setSize: viewAnimacao.frame.size];
@@ -84,9 +85,6 @@
     
     //Após exibir a tela prepara a lista de exercícios (Aloca todos eles)para que sejam exibidos seus Titulos e descriçoes na póxima tela
     [super viewDidAppear:animated];
-    //GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
-    
-    //[gerenciador preparaExercicios];// Chamada do método que aloca os exercícios
     
     
 }
@@ -102,7 +100,7 @@
 -(void)trocaAnimacao:(int)index{
     
     
-    GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
+   
     SKTransition *reveal = [SKTransition fadeWithDuration:1];
     SKScene* proximaAnimacao = [gerenciador retornaAnimacaoNumero:index];
     [proximaAnimacao setSize: viewAnimacao.frame.size];

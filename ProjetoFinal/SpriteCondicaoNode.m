@@ -13,7 +13,7 @@
 -(id)initWithType:(NSString*)tipo{
     self = [super init];
     if (self) {
-        meuTipo = tipo;
+        tipoCondicao = tipo;
         [self montaSprite:tipo];
     }
     return self;
@@ -54,11 +54,13 @@
     }
 }
 -(NSString*)getTipo{
-    return meuTipo;
+    return tipoCondicao;
 }
 
--(void)criarValores:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2{
-    
+-(void)criarValores:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2 resultado:(NSString*)resultado{
+    spriteTipo = [[SpriteTipoNode alloc] initWithValores:valor1 operador:operador valor2:valor2 resultado:resultado];
+    [spriteTipo setPosition:CGPointMake(150, -20)];
+    [self addChild:spriteTipo];
 }
 
 @end

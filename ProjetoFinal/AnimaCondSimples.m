@@ -22,12 +22,19 @@
 
 
 -(void)inicializarClasse{
-
+    [self inicializaCondicaoNode];
+    [self setBackgroundColor:[UIColor whiteColor]];
+    //DEFINE OS VALORES, OPERADOR E RESULTADO
+    [condicaoNode criarValores:@"200" eOperador:@">" eValor2:@"100" resultado:@"Hello World"];
 }
 
 
 -(void)inicializaCondicaoNode{
-
+    //CRIA UMA CONDIÇÃO DO TIPO "SE"
+    condicaoNode = [[SpriteCondicaoNode alloc] initWithType:@"se"];
+    [condicaoNode setPosition:CGPointMake(400, 400)];
+    
+    [self addChild:condicaoNode];
 
 }
 
