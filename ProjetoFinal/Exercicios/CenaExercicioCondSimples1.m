@@ -17,7 +17,6 @@
     SKSpriteNode *breakpoint;
     SKLabelNode *debugar;
     SpriteLabelNode *alternativaMarcada;
-    SKAction *verificaCondicao;
     NSString *condicaoCerta;
     Geral *calculador;
     float font;
@@ -25,6 +24,7 @@
     int indice;
     BOOL jaApareceu;
     BOOL habilitarDebugar;
+    BOOL jaRespondeu;
     CGPoint posicaoBreakPoint;
     
 }
@@ -725,8 +725,12 @@
     CGPoint location = [touch locationInNode:self];
     SKNode *teste = [self nodeAtPoint:location];
     
+    if ([touch tapCount] > 1) {
+        return;
+    }
     
-    if ([teste.name isEqualToString:@"alternativa"]) {
+    
+    if ([teste.name isEqualToString:@"alternativa"] && !jaRespondeu) {
         
         if (alternativaMarcada != nil) {
             alternativaMarcada.fontColor = [SKColor whiteColor];
@@ -734,9 +738,10 @@
         SpriteLabelNode *aux = (SpriteLabelNode *) [self nodeAtPoint:location];
         alternativaMarcada = aux;
         alternativaMarcada.fontColor = [SKColor yellowColor];
-    }else if ([teste.name isEqualToString:@"botaoResposta"] && alternativaMarcada != nil){
+    }else if ([teste.name isEqualToString:@"botaoResposta"] && alternativaMarcada != nil && !jaRespondeu){
         if (debugar == nil) {
             [self criaBotaoDebugar];
+            jaRespondeu = YES;
         }
         [self corrigeExercicio];
     }else if ([teste.name isEqualToString:@"debugar"] && habilitarDebugar){
