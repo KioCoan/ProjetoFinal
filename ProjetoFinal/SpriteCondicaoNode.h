@@ -1,31 +1,27 @@
 //
-//  SpriteCondicaoNode.h
+//  TipoCondicionalNode.h
 //  ProjetoFinal
 //
-//  Created by Felipe Costa Nascimento on 25/07/14.
+//  Created by Felipe Costa Nascimento on 05/08/14.
 //  Copyright (c) 2014 SENAC - iOS. All rights reserved.
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "SpriteOperadorNode.h"
-#import "Calculador.h"
 
 
-@interface SpriteCondicaoNode : SKSpriteNode <SKPhysicsContactDelegate>
+@interface SpriteCondicaoNode : SKSpriteNode
 {
-    SpriteOperadorNode *condicaoSe;
-    SpriteOperadorNode *condicaoSenaoSe;
-    NSString *condicaoCorreta;
-    SKSpriteNode *bolinha;
-
+    SKSpriteNode *spriteExclamacao;
+    NSString *meuTipo;
+    
+    
 }
 
--(void)criarCondicaoSe:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2;
--(void)criarCondicaoSenaoSe:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2;
--(NSString*)getCondicaoCorreta;
--(void)iniciarAnimacao;
--(void)iniciarTeste;
--(void)encerrarTeste;
--(void)removerCorpoSe;
--(void)removerCorpoSenaoSe;
+-(id)initWithType:(NSString*)tipo;
+-(void)mostraExclamacao:(BOOL)status;
+-(NSString*)getTipo;
+-(void)criarValores:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2;
+
+
+
 @end

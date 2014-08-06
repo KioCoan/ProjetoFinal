@@ -46,15 +46,16 @@ static const int NUM_TEXTURAS = 10;
 
 
 -(void)inicializaLabelResultado:(NSString*)resultado{
-    lblResultado = [SKLabelNode labelNodeWithFontNamed:@"Avenir Next Condensed Medium"];
-    [lblResultado setText:resultado];
-    [lblResultado setFontSize:35];
-    [lblResultado setFontColor:[SKColor whiteColor]];
-    [lblResultado setPosition:CGPointMake(0, -25)];
-    [lblResultado setAlpha:0];
-    [lblResultado setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
+    self.lblResultado = [SKLabelNode labelNodeWithFontNamed:@"Avenir Next Condensed Medium"];
+    [self.lblResultado setText:resultado];
+    [self.lblResultado setFontSize:35];
+    [self.lblResultado setFontColor:[SKColor whiteColor]];
+//    [self.lblResultado setPosition:CGPointMake(0, -25)];
+    [self.lblResultado setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
+    [self.lblResultado setAlpha:0];
+    [self.lblResultado setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
     
-    [self addChild:lblResultado];
+    [self addChild:self.lblResultado];
 }
 
 
@@ -88,8 +89,8 @@ static const int NUM_TEXTURAS = 10;
         SKAction *animacaoAparecer = [SKAction fadeAlphaTo:0 duration:animacaoSubir.duration];
         
         //A LABEL EXECUTA A ANIMAÇÃO
-        [lblResultado runAction:animacaoAparecer completion:^{
-            [lblResultado removeAllActions];
+        [self.lblResultado runAction:animacaoAparecer completion:^{
+            [self.lblResultado removeAllActions];
             estaVisivel = NO;
         }];
     
@@ -98,8 +99,8 @@ static const int NUM_TEXTURAS = 10;
         SKAction *animacaoSumir = [SKAction fadeAlphaTo:1 duration:animacaoSubir.duration];
         
         //A LABEL EXECUTA A ANIMAÇÃO
-        [lblResultado runAction:animacaoSumir completion:^{
-            [lblResultado removeAllActions];
+        [self.lblResultado runAction:animacaoSumir completion:^{
+            [self.lblResultado removeAllActions];
             estaVisivel = YES;
         }];
     }
@@ -117,7 +118,7 @@ static const int NUM_TEXTURAS = 10;
 
 
 -(void)setLabelResultado:(NSString*)resultado{
-    [lblResultado setText:resultado];
+    [self.lblResultado setText:resultado];
 }
 
 @end

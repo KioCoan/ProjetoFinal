@@ -22,25 +22,12 @@
 
 
 -(void)inicializarClasse{
-    [[self physicsWorld] setContactDelegate:self];
-    [[self physicsWorld] setGravity:CGVectorMake(0, -5)];
-    nPulos = 0;
-    
-    //INICIALIZA O SPRITE DA CONDIÇÃO E CRIA OS VALORES DAS CONDIÇÕES
-    [self inicializaCondicaoNode];
-    [condicaoNode criarCondicaoSe:@"200" operador:@">" valor2:@"100"];
-    [condicaoNode criarCondicaoSenaoSe:@"100" operador:@"<" valor2:@"200"];
-    condicaoCorreta = [condicaoNode getCondicaoCorreta];
-    [self inicializarlabels];
+
 }
 
 
 -(void)inicializaCondicaoNode{
-    condicaoNode = [[SpriteCondicaoNode alloc] init];
-    [condicaoNode setPosition:CGPointMake(150, 250)];
 
-    [condicaoNode iniciarAnimacao];
-    [self addChild:condicaoNode];
 
 }
 
@@ -98,78 +85,11 @@
     SKNode *node = [self nodeAtPoint:posicao];
     
     if([node.name isEqualToString:@"teste"]){
-        [self testes];
-    }
-}
-
--(void)didBeginContact:(SKPhysicsContact *)contact{
-    if([condicaoCorreta isEqualToString:@"se"]){
-        [self controlaImpulsoSe:contact];
-    
-    }else if([condicaoCorreta isEqualToString:@"senaoSe"]){
-        [self controlaImpulsoSenaoSe:contact];
-    
-    }else{
         
     }
-    
-
-}
-
--(void)controlaImpulsoSe:(SKPhysicsContact*)contact{
-    if(nPulos < 2){
-        [self impulsoBaseDireita:contact];
-    
-    }else{
-        [self impulsoBaseFim:contact];
-        [condicaoNode removerCorpoSe];
-    }
-    
-}
-
--(void)controlaImpulsoSenaoSe:(SKPhysicsContact*)contact{
-    if(nPulos < 2){
-        [self impulsoBaseDireita:contact];
-        
-        
-    }else if(nPulos == 2){
-        [self impulsoBaseProximo:contact];
-        [condicaoNode removerCorpoSe];
-        
-    }else if(nPulos < 5){
-        [[contact bodyB] applyImpulse:CGVectorMake(7, 13)];
-        nPulos++;
-        //[self impulsoBaseDireita:contact];
-    
-    }else{
-        [self impulsoBaseFim:contact];
-        [condicaoNode removerCorpoSenaoSe];
-    }
-    
 }
 
 
--(void)impulsoBaseDireita:(SKPhysicsContact*)contact{
-    [[contact bodyB] applyImpulse:CGVectorMake(5, 13)];
-    nPulos++;
-}
-
--(void)impulsoBaseFim:(SKPhysicsContact*)contact{
-    [[contact bodyB] applyImpulse:CGVectorMake(-23, 15)];
-    [condicaoNode encerrarTeste];
-    nPulos = 0;
-}
-
--(void)impulsoBaseProximo:(SKPhysicsContact*)contact{
-    [[contact bodyB] applyImpulse:CGVectorMake(-14, 15)];
-    nPulos++;
-}
-
--(void)testes{
-    
-    [condicaoNode iniciarTeste];
-    
-}
 
 -(void)criarTextField:(CGRect)frame texto:(NSString*)texto{
     UITextField *textField = [[UITextField alloc] initWithFrame:frame];
