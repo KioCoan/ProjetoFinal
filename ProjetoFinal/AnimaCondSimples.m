@@ -33,17 +33,23 @@
     NSString* v2 = [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:10]];
     NSString* operador = [gerador retornaOperadorRelacional];
     
-    [condicaoNode criarValores:v1 eOperador:operador eValor2:v2 resultado:@"Olá...."];
+    [condicaoNode criarValores:v1 eOperador:operador eValor2:v2 resultado:@"Verdade!!!"];
     [self inicializaSaidadeDados];
+    
+    // Teste remover depois
+    if ([condicaoNode retornaVeracidade]) {
+        [console exibeTexto:[condicaoNode retornaTextoASerExibido]];
+    }
+    
     
     
 }
 
 -(void)inicializaSaidadeDados{
-    SaidaDeDados *console = [[SaidaDeDados alloc] init];
+    console = [[SaidaDeDados alloc] init];
     [console setPosition:CGPointMake(580, 90)];
     [self addChild:console];
-    [console exibeTexto:@"Oiiiii"];
+    [console exibeTexto:@">"];
     
     [condicaoNode iniciarTeste];
 }

@@ -18,7 +18,7 @@
     SpriteLabelNode *nota1;
     SpriteLabelNode *nota2;
     SpriteLabelNode *media;
-    
+    SaidaDeDados *console;
     NSString *condicaoCorreta;
     int nPulos;
 }
