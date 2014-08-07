@@ -14,6 +14,7 @@
     SKSpriteNode *spriteExclamacao;
     NSString *tipoCondicao;
     SpriteTipoNode *spriteTipo;
+    SKAction *animacaoPiscar;
 }
 
 -(id)initWithType:(NSString*)tipo;

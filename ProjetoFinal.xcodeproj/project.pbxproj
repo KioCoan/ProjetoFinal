@@ -47,6 +47,7 @@
 		A505740C197811E700F68932 /* ExeOperadores1.m in Sources */ = {isa = PBXBuildFile; fileRef = A505740B197811E700F68932 /* ExeOperadores1.m */; };
 		A505740F1978243A00F68932 /* Geral.m in Sources */ = {isa = PBXBuildFile; fileRef = A505740E1978243A00F68932 /* Geral.m */; };
 		A50B33401972BF2E00BDD473 /* ListaDeExerciciosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50B333F1972BF2E00BDD473 /* ListaDeExerciciosViewController.m */; };
+		A521FEE91993B87F00D28627 /* Gerador.m in Sources */ = {isa = PBXBuildFile; fileRef = A521FEE81993B87F00D28627 /* Gerador.m */; };
 		A529DF1B1965DB7500A3D9FB /* Relacional.m in Sources */ = {isa = PBXBuildFile; fileRef = A529DF161965DB7500A3D9FB /* Relacional.m */; };
 		A529DF1C1965DB7500A3D9FB /* Aritimetico.m in Sources */ = {isa = PBXBuildFile; fileRef = A529DF181965DB7500A3D9FB /* Aritimetico.m */; };
 		A529DF1D1965DB7500A3D9FB /* Logico.m in Sources */ = {isa = PBXBuildFile; fileRef = A529DF1A1965DB7500A3D9FB /* Logico.m */; };
@@ -204,6 +205,8 @@
 		A505740E1978243A00F68932 /* Geral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Geral.m; sourceTree = "<group>"; };
 		A50B333E1972BF2E00BDD473 /* ListaDeExerciciosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaDeExerciciosViewController.h; sourceTree = "<group>"; };
 		A50B333F1972BF2E00BDD473 /* ListaDeExerciciosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaDeExerciciosViewController.m; sourceTree = "<group>"; };
+		A521FEE71993B87F00D28627 /* Gerador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gerador.h; sourceTree = "<group>"; };
+		A521FEE81993B87F00D28627 /* Gerador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gerador.m; sourceTree = "<group>"; };
 		A529DF151965DB7500A3D9FB /* Relacional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relacional.h; sourceTree = "<group>"; };
 		A529DF161965DB7500A3D9FB /* Relacional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relacional.m; sourceTree = "<group>"; };
 		A529DF171965DB7500A3D9FB /* Aritimetico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aritimetico.h; sourceTree = "<group>"; };
@@ -369,8 +372,8 @@
 		120E8F7C192FC0A200CDEF95 /* ProjetoFinal */ = {
 			isa = PBXGroup;
 			children = (
+				A521FEE51993B83400D28627 /* Tools */,
 				A55F2B4219648BE000111BEB /* Conteudos */,
-				A529DF0A1965DB2200A3D9FB /* Calculador */,
 				91A9860D196231F500EA1074 /* Classes */,
 				91A7A950198F5682009A5EB1 /* Sons */,
 				E501FA69192FCD1600B56B5C /* Imagens */,
@@ -433,7 +436,7 @@
 				8418F8791970817000781F82 /* SpriteLabelNode.m */,
 				BDBE7698197A3A00004EA926 /* Variavel */,
 				BDBE7697197A39EF004EA926 /* Operadores */,
-				BD01DDFA19834E7C00AEAAA8 /* Condição */,
+				BD01DDFA19834E7C00AEAAA8 /* Condição */,
 			);
 			name = Objetos;
 			sourceTree = "<group>";
@@ -560,17 +563,35 @@
 			name = Operadores;
 			sourceTree = "<group>";
 		};
+		A521FEE51993B83400D28627 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				A521FEE61993B84200D28627 /* Gerador */,
+				A529DF0A1965DB2200A3D9FB /* Calculador */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		A521FEE61993B84200D28627 /* Gerador */ = {
+			isa = PBXGroup;
+			children = (
+				A521FEE71993B87F00D28627 /* Gerador.h */,
+				A521FEE81993B87F00D28627 /* Gerador.m */,
+			);
+			name = Gerador;
+			sourceTree = "<group>";
+		};
 		A529DF0A1965DB2200A3D9FB /* Calculador */ = {
 			isa = PBXGroup;
 			children = (
 				A529DF1E1965DB8A00A3D9FB /* Calculador.h */,
 				A529DF1F1965DB8A00A3D9FB /* Calculador.m */,
-				A529DF0B1965DB3800A3D9FB /* Operações */,
+				A529DF0B1965DB3800A3D9FB /* Operações */,
 			);
 			name = Calculador;
 			sourceTree = "<group>";
 		};
-		A529DF0B1965DB3800A3D9FB /* Operações */ = {
+		A529DF0B1965DB3800A3D9FB /* Operações */ = {
 			isa = PBXGroup;
 			children = (
 				A529DF151965DB7500A3D9FB /* Relacional.h */,
@@ -614,7 +635,7 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
+		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
 			isa = PBXGroup;
 			children = (
 				BDE82C271991778700610D96 /* SpriteCondicaoNode.h */,
@@ -939,6 +960,7 @@
 				A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */,
 				A529DF201965DB8A00A3D9FB /* Calculador.m in Sources */,
 				91A986111962324500EA1074 /* Assunto.m in Sources */,
+				A521FEE91993B87F00D28627 /* Gerador.m in Sources */,
 				A505740F1978243A00F68932 /* Geral.m in Sources */,
 				120E8F8D192FC0A200CDEF95 /* ViewController.m in Sources */,
 				84B1B3E9197D8BEF00089FCB /* CenaExercicioCondSimples1.m in Sources */,

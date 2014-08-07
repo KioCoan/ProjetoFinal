@@ -25,7 +25,14 @@
     [self inicializaCondicaoNode];
     [self setBackgroundColor:[UIColor whiteColor]];
     //DEFINE OS VALORES, OPERADOR E RESULTADO
-    [condicaoNode criarValores:@"200" eOperador:@">" eValor2:@"100" resultado:@"Hello World"];
+    Gerador *gerador = [[Gerador alloc] init];
+    
+    
+    NSString* v1 = [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:10]];
+    NSString* v2 = [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:10]];
+    NSString* operador = [gerador retornaOperadorRelacional];
+    [condicaoNode criarValores:v1 eOperador:operador eValor2:v2 resultado:@"Hello World"];
+    
 }
 
 

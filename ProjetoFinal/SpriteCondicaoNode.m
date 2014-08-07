@@ -15,6 +15,8 @@
     if (self) {
         tipoCondicao = tipo;
         [self montaSprite:tipo];
+        
+        //[self verifica:YES];
     }
     return self;
 }
@@ -42,16 +44,34 @@
 
 -(void)criaSpriteExclamacao{
     spriteExclamacao = [SKSpriteNode spriteNodeWithImageNamed:@"sprite-exclamacao.png"];
-    [spriteExclamacao setPosition:CGPointMake(0, 15)];
+    
+    CGPoint posicao;
+    
+    if ([tipoCondicao isEqualToString:@"se"]) {
+        posicao = CGPointMake(-15, 45);
+    }else if ([tipoCondicao isEqualToString:@"senaoSe"]){
+        posicao = CGPointMake(-15, -35);
+    }else{
+        posicao = CGPointMake(-15, -20);
+    }
+
+    
+    
+    [spriteExclamacao setPosition:posicao];
     [spriteExclamacao setSize:CGSizeMake(11, 43)];
 }
 
 -(void)mostraExclamacao:(BOOL)status{
-    if (status) {
-        [self addChild:spriteExclamacao];
-    }else{
-        [spriteExclamacao removeFromParent];
+    
+    if (![tipoCondicao isEqualToString:@"senao"]) { // Só adiciona exclamação caso o tipo seja diferente de "senao"
+        if (status) {
+            [self addChild:spriteExclamacao];
+        }else{
+            [spriteExclamacao removeFromParent];
+        }
     }
+   
+
 }
 -(NSString*)getTipo{
     return tipoCondicao;
@@ -59,8 +79,67 @@
 
 -(void)criarValores:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2 resultado:(NSString*)resultado{
     spriteTipo = [[SpriteTipoNode alloc] initWithValores:valor1 operador:operador valor2:valor2 resultado:resultado];
-    [spriteTipo setPosition:CGPointMake(150, -20)];
-    [self addChild:spriteTipo];
+    CGPoint posicao;
+    
+    if ([tipoCondicao isEqualToString:@"se"]) {
+        posicao = CGPointMake(150, -20);
+        [self addChild:spriteTipo];
+    }else if ([tipoCondicao isEqualToString:@"senaoSe"]){
+        posicao = CGPointMake(150, -100);
+        [self addChild:spriteTipo];
+    }else{
+        posicao = CGPointMake(150, -20);
+    }
+    
+    [spriteTipo setPosition:posicao];
+    
+    
+    
 }
+
+-(void)pisca{
+    
+    //Roda a SKAction que pisca
+    
+    [self runAction:animacaoPiscar];
+}
+
+
+-(void)verifica:(BOOL)status{
+    
+    [self texturaDeVerificando:status];
+    [self mostraExclamacao:status];
+
+    
+    }
+
+
+-(void)texturaDeVerificando:(BOOL)status{
+    SKTexture *textura;
+    
+    if (status) {
+        if ([tipoCondicao isEqualToString:@"se"]) {
+            textura = [SKTexture textureWithImageNamed:@"se-verde.png"];
+        }else if ([tipoCondicao isEqualToString:@"senaoSe"]){
+            textura = [SKTexture textureWithImageNamed:@"senaoSe-verde.png"];
+        }else{
+            textura = [SKTexture textureWithImageNamed:@"senao-verde.png"];
+        }
+    }else{
+        if ([tipoCondicao isEqualToString:@"se"]) {
+            textura = [SKTexture textureWithImageNamed:@"se-normal.png"];
+        }else if ([tipoCondicao isEqualToString:@"senaoSe"]){
+            textura = [SKTexture textureWithImageNamed:@"senaoSe-normal.png"];
+        }else{
+            textura = [SKTexture textureWithImageNamed:@"senao-normal.png"];
+        }
+    }
+    
+    
+    
+    
+    [self setTexture:textura];
+}
+
 
 @end
