@@ -51,6 +51,7 @@
 		A521FEEB1993F6B200D28627 /* valor2-amarelo.png in Resources */ = {isa = PBXBuildFile; fileRef = A521FEEA1993F6B200D28627 /* valor2-amarelo.png */; };
 		A521FEED1993FE1E00D28627 /* saida-texto.png in Resources */ = {isa = PBXBuildFile; fileRef = A521FEEC1993FE1E00D28627 /* saida-texto.png */; };
 		A521FEF01993FE9900D28627 /* SaidaDeDados.m in Sources */ = {isa = PBXBuildFile; fileRef = A521FEEF1993FE9900D28627 /* SaidaDeDados.m */; };
+		A521FEF21994203000D28627 /* valores-verdadeiro.png in Resources */ = {isa = PBXBuildFile; fileRef = A521FEF11994203000D28627 /* valores-verdadeiro.png */; };
 		A529DF1B1965DB7500A3D9FB /* Relacional.m in Sources */ = {isa = PBXBuildFile; fileRef = A529DF161965DB7500A3D9FB /* Relacional.m */; };
 		A529DF1C1965DB7500A3D9FB /* Aritimetico.m in Sources */ = {isa = PBXBuildFile; fileRef = A529DF181965DB7500A3D9FB /* Aritimetico.m */; };
 		A529DF1D1965DB7500A3D9FB /* Logico.m in Sources */ = {isa = PBXBuildFile; fileRef = A529DF1A1965DB7500A3D9FB /* Logico.m */; };
@@ -215,6 +216,7 @@
 		A521FEEC1993FE1E00D28627 /* saida-texto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "saida-texto.png"; path = "Imagens/saida-texto.png"; sourceTree = "<group>"; };
 		A521FEEE1993FE9900D28627 /* SaidaDeDados.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaidaDeDados.h; sourceTree = "<group>"; };
 		A521FEEF1993FE9900D28627 /* SaidaDeDados.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaidaDeDados.m; sourceTree = "<group>"; };
+		A521FEF11994203000D28627 /* valores-verdadeiro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "valores-verdadeiro.png"; path = "Imagens/Sprites/Condicionais/valores-verdadeiro.png"; sourceTree = "<group>"; };
 		A529DF151965DB7500A3D9FB /* Relacional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relacional.h; sourceTree = "<group>"; };
 		A529DF161965DB7500A3D9FB /* Relacional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relacional.m; sourceTree = "<group>"; };
 		A529DF171965DB7500A3D9FB /* Aritimetico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aritimetico.h; sourceTree = "<group>"; };
@@ -660,6 +662,7 @@
 		BD510FE4198A035B0052B6E5 /* Condicionais */ = {
 			isa = PBXGroup;
 			children = (
+				A521FEF11994203000D28627 /* valores-verdadeiro.png */,
 				A521FEEA1993F6B200D28627 /* valor2-amarelo.png */,
 				E5DDB3611993F45200B0061A /* valor1-amarelo.png */,
 				BDE82C1F19916E1F00610D96 /* se-normal.png */,
@@ -901,6 +904,7 @@
 				BDC757A4196787E700DB8380 /* abrir-caixa7.png in Resources */,
 				BD510FE11989E8200052B6E5 /* lousa-teoria.jpg in Resources */,
 				E501FA6B192FCD3800B56B5C /* item-memoria.png in Resources */,
+				A521FEF21994203000D28627 /* valores-verdadeiro.png in Resources */,
 				BDC757A1196787E700DB8380 /* abrir-caixa4.png in Resources */,
 				120E8F81192FC0A200CDEF95 /* InfoPlist.strings in Resources */,
 				BD510FF3198A03740052B6E5 /* estrutura-condicionais1.png in Resources */,

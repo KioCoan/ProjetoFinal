@@ -68,6 +68,10 @@
     [spriteValores runAction:[SKAction repeatAction:piscaEsquerda count:4] completion:^{
         [spriteValores runAction:[SKAction repeatAction:piscaDireita count:4] completion:^{
             [spriteValores removeAllActions];
+
+            if(verdadeiro){
+                [spriteValores setTexture:[SKTexture textureWithImageNamed:@"valores-verdadeiro.png"]];
+            }
         }];
     }];
 }

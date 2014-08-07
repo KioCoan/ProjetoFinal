@@ -16,7 +16,7 @@
         tipoCondicao = tipo;
         [self montaSprite:tipo];
         
-        
+        [self texturaDeVerificando:YES];
     }
     return self;
 }
