@@ -39,7 +39,7 @@
 -(void)inicializaCondicaoNode{
     //CRIA UMA CONDIÇÃO DO TIPO "SE"
     condicaoNode = [[SpriteCondicaoNode alloc] initWithType:@"se"];
-    [condicaoNode setPosition:CGPointMake(400, 400)];
+    [condicaoNode setPosition:CGPointMake(250, 350)];
     
     [self addChild:condicaoNode];
 
@@ -79,18 +79,18 @@
 }
 
 
--(void)didMoveToView:(SKView *)view{
-    CGRect frame = CGRectMake(450, 75, 120, 30);
-    frame.origin.x += frame.size.width + 20;
-    int numLabels = 2;
-    
-    for(int i=0; i<numLabels; i++){
-        [self criarTextField:frame texto:@"5"];
-        
-        frame.origin.y -= 35;
-    }
-    
-}
+//-(void)didMoveToView:(SKView *)view{
+//    CGRect frame = CGRectMake(450, 75, 120, 30);
+//    frame.origin.x += frame.size.width + 20;
+//    int numLabels = 2;
+//    
+//    for(int i=0; i<numLabels; i++){
+//        [self criarTextField:frame texto:@"5"];
+//        
+//        frame.origin.y -= 35;
+//    }
+//    
+//}
 
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -105,26 +105,26 @@
 
 
 
--(void)criarTextField:(CGRect)frame texto:(NSString*)texto{
-    UITextField *textField = [[UITextField alloc] initWithFrame:frame];
-    textField.borderStyle = UITextBorderStyleRoundedRect;
-    textField.textColor = [UIColor blackColor];
-    textField.font = [UIFont systemFontOfSize:17.0];
-    textField.backgroundColor = [SKColor whiteColor];
-    textField.autocorrectionType = UITextAutocorrectionTypeYes;
-    textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    textField.delegate = self;
-    textField.text = texto;
-    
-    
-    [self.view addSubview:textField];
-}
+//-(void)criarTextField:(CGRect)frame texto:(NSString*)texto{
+//    UITextField *textField = [[UITextField alloc] initWithFrame:frame];
+//    textField.borderStyle = UITextBorderStyleRoundedRect;
+//    textField.textColor = [UIColor blackColor];
+//    textField.font = [UIFont systemFontOfSize:17.0];
+//    textField.backgroundColor = [SKColor whiteColor];
+//    textField.autocorrectionType = UITextAutocorrectionTypeYes;
+//    textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+//    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+//    textField.delegate = self;
+//    textField.text = texto;
+//    
+//    
+//    [self.view addSubview:textField];
+//}
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
-
-    return YES;
-}
+//-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+//    [textField resignFirstResponder];
+//
+//    return YES;
+//}
 
 @end

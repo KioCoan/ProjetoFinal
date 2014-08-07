@@ -7,13 +7,13 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "SpriteTipoNode.h"
+#import "SpriteOperadorCondicional.h"
 
 @interface SpriteCondicaoNode : SKSpriteNode
 {
     SKSpriteNode *spriteExclamacao;
     NSString *tipoCondicao;
-    SpriteTipoNode *spriteTipo;
+    SpriteOperadorCondicional *spriteTipo;
     SKAction *animacaoPiscar;
 }
 

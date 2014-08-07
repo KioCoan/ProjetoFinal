@@ -78,7 +78,7 @@
 }
 
 -(void)criarValores:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2 resultado:(NSString*)resultado{
-    spriteTipo = [[SpriteTipoNode alloc] initWithValores:valor1 operador:operador valor2:valor2 resultado:resultado];
+    spriteTipo = [[SpriteOperadorCondicional alloc] initWithValores:valor1 operador:operador valor2:valor2 resultado:resultado];
     CGPoint posicao;
     
     if ([tipoCondicao isEqualToString:@"se"]) {

@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 SENAC - iOS. All rights reserved.
 //
 
-#import "SpriteTipoNode.h"
+#import "SpriteOperadorCondicional.h"
 
-@implementation SpriteTipoNode
+@implementation SpriteOperadorCondicional
 
 
 -(id)initWithValores:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 resultado:(NSString*)resultado{
@@ -43,9 +43,9 @@
 //CRIA O SPRITE QUE EXIBE OS VALORES QUE SERAM VERIFICADOS NA CONDIÇÃO
 -(void)inicializaSpriteValores:(NSString*)valor1 valor2:(NSString*)valor2{
     spriteValores = [[OperadorValoresNode alloc] initWithValor1:valor1 valor2:valor2];
-    [spriteValores setTexture:[SKTexture textureWithImageNamed:@"valor1-amarelo.png"]];
+    [spriteValores setTexture:[SKTexture textureWithImageNamed:@"parte-valores1.png"]];
 //    [spriteValores runAction:[spriteValores getAnimacaoExpandir]];
-//    [spriteValores iniciarAnimacao];
+    [spriteValores iniciarAnimacao];
     [spriteResultado addChild:spriteValores];
 }
 

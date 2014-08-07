@@ -11,7 +11,7 @@
 #import "OperadorValoresNode.h"
 #import "OperadorResultadoNode.h"
 
-@interface SpriteTipoNode : SKSpriteNode
+@interface SpriteOperadorCondicional : SKSpriteNode
 {
     OperadorNode *spriteOperador;
     OperadorValoresNode *spriteValores;

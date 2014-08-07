@@ -57,6 +57,7 @@ static const int NUM_TEXTURAS = 11;
     [lblValor1 setPosition:CGPointMake(-10, 0)];
     [lblValor1 setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
     [lblValor1 setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
+    //[lblValor1 setZPosition:5];
     
     //CRIA A LABEL QUE FICA À DIREITA DO SPRITE
     lblValor2 = [SKLabelNode labelNodeWithFontNamed:@"Avenir Next Condensed Medium"];
@@ -66,7 +67,7 @@ static const int NUM_TEXTURAS = 11;
     [lblValor2 setPosition:CGPointMake(10, 0)];
     [lblValor2 setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
     [lblValor2 setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
-    
+    //[lblValor2 setZPosition:5];
     
     [self addChild:lblValor1];
     [self addChild:lblValor2];
