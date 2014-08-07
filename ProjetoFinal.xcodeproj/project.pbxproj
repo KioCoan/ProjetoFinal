@@ -49,6 +49,8 @@
 		A50B33401972BF2E00BDD473 /* ListaDeExerciciosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50B333F1972BF2E00BDD473 /* ListaDeExerciciosViewController.m */; };
 		A521FEE91993B87F00D28627 /* Gerador.m in Sources */ = {isa = PBXBuildFile; fileRef = A521FEE81993B87F00D28627 /* Gerador.m */; };
 		A521FEEB1993F6B200D28627 /* valor2-amarelo.png in Resources */ = {isa = PBXBuildFile; fileRef = A521FEEA1993F6B200D28627 /* valor2-amarelo.png */; };
+		A521FEED1993FE1E00D28627 /* saida-texto.png in Resources */ = {isa = PBXBuildFile; fileRef = A521FEEC1993FE1E00D28627 /* saida-texto.png */; };
+		A521FEF01993FE9900D28627 /* SaidaDeDados.m in Sources */ = {isa = PBXBuildFile; fileRef = A521FEEF1993FE9900D28627 /* SaidaDeDados.m */; };
 		A529DF1B1965DB7500A3D9FB /* Relacional.m in Sources */ = {isa = PBXBuildFile; fileRef = A529DF161965DB7500A3D9FB /* Relacional.m */; };
 		A529DF1C1965DB7500A3D9FB /* Aritimetico.m in Sources */ = {isa = PBXBuildFile; fileRef = A529DF181965DB7500A3D9FB /* Aritimetico.m */; };
 		A529DF1D1965DB7500A3D9FB /* Logico.m in Sources */ = {isa = PBXBuildFile; fileRef = A529DF1A1965DB7500A3D9FB /* Logico.m */; };
@@ -210,6 +212,9 @@
 		A521FEE71993B87F00D28627 /* Gerador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gerador.h; sourceTree = "<group>"; };
 		A521FEE81993B87F00D28627 /* Gerador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gerador.m; sourceTree = "<group>"; };
 		A521FEEA1993F6B200D28627 /* valor2-amarelo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "valor2-amarelo.png"; path = "Imagens/Sprites/Condicionais/valor2-amarelo.png"; sourceTree = "<group>"; };
+		A521FEEC1993FE1E00D28627 /* saida-texto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "saida-texto.png"; path = "Imagens/saida-texto.png"; sourceTree = "<group>"; };
+		A521FEEE1993FE9900D28627 /* SaidaDeDados.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaidaDeDados.h; sourceTree = "<group>"; };
+		A521FEEF1993FE9900D28627 /* SaidaDeDados.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaidaDeDados.m; sourceTree = "<group>"; };
 		A529DF151965DB7500A3D9FB /* Relacional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relacional.h; sourceTree = "<group>"; };
 		A529DF161965DB7500A3D9FB /* Relacional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relacional.m; sourceTree = "<group>"; };
 		A529DF171965DB7500A3D9FB /* Aritimetico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aritimetico.h; sourceTree = "<group>"; };
@@ -441,6 +446,8 @@
 				BDBE7698197A3A00004EA926 /* Variavel */,
 				BDBE7697197A39EF004EA926 /* Operadores */,
 				BD01DDFA19834E7C00AEAAA8 /* Condição */,
+				A521FEEE1993FE9900D28627 /* SaidaDeDados.h */,
+				A521FEEF1993FE9900D28627 /* SaidaDeDados.m */,
 			);
 			name = Objetos;
 			sourceTree = "<group>";
@@ -773,6 +780,7 @@
 		E501FA69192FCD1600B56B5C /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				A521FEEC1993FE1E00D28627 /* saida-texto.png */,
 				BD510FE4198A035B0052B6E5 /* Condicionais */,
 				BDBE7699197A3B57004EA926 /* Operadores */,
 				BDC75790196787CF00DB8380 /* Variavel */,
@@ -939,6 +947,7 @@
 				BD630CAB1948E3F400AF13E7 /* item-variavel.png in Resources */,
 				BDE82C2519916E1F00610D96 /* senaoSe-normal.png in Resources */,
 				BDBE769F197A3B69004EA926 /* parte-valores1.png in Resources */,
+				A521FEED1993FE1E00D28627 /* saida-texto.png in Resources */,
 				BDF8AE05197B258C00BA5B8A /* parte-valores5.png in Resources */,
 				BDF8AE0D197B417500BA5B8A /* parte-resultado10.png in Resources */,
 				BDC757A6196787E700DB8380 /* abrir-caixa9.png in Resources */,
@@ -972,6 +981,7 @@
 				A505740F1978243A00F68932 /* Geral.m in Sources */,
 				120E8F8D192FC0A200CDEF95 /* ViewController.m in Sources */,
 				84B1B3E9197D8BEF00089FCB /* CenaExercicioCondSimples1.m in Sources */,
+				A521FEF01993FE9900D28627 /* SaidaDeDados.m in Sources */,
 				BDBE7696197A39E0004EA926 /* SpriteOperadorNode.m in Sources */,
 				8418F87C1970817000781F82 /* SpriteLabelNode.m in Sources */,
 				A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */,

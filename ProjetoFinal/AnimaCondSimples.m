@@ -32,9 +32,17 @@
     NSString* v2 = [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:10]];
     NSString* operador = [gerador retornaOperadorRelacional];
     [condicaoNode criarValores:v1 eOperador:operador eValor2:v2 resultado:@"Hello World"];
+    [self inicializaSaidadeDados];
+    
     
 }
 
+-(void)inicializaSaidadeDados{
+    SaidaDeDados *console = [[SaidaDeDados alloc] init];
+    [console setPosition:CGPointMake(570, 100)];
+    [self addChild:console];
+    [console exibeTexto:@"Oiiiii"];
+}
 
 -(void)inicializaCondicaoNode{
     //CRIA UMA CONDIÇÃO DO TIPO "SE"

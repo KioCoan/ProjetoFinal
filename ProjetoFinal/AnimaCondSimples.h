@@ -10,6 +10,7 @@
 #import "SpriteCondicaoNode.h"
 #import "SpriteLabelNode.h"
 #import "Gerador.h"
+#import "SaidaDeDados.h"
 @interface AnimaCondSimples : SKScene <UITextFieldDelegate, SKPhysicsContactDelegate>
 {
     SpriteCondicaoNode *condicaoNode;
