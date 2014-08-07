@@ -43,8 +43,9 @@
 //CRIA O SPRITE QUE EXIBE OS VALORES QUE SERAM VERIFICADOS NA CONDIÇÃO
 -(void)inicializaSpriteValores:(NSString*)valor1 valor2:(NSString*)valor2{
     spriteValores = [[OperadorValoresNode alloc] initWithValor1:valor1 valor2:valor2];
-    [spriteValores runAction:[spriteValores getAnimacaoExpandir]];
-    [spriteValores iniciarAnimacao];
+    [spriteValores setTexture:[SKTexture textureWithImageNamed:@"valor1-amarelo.png"]];
+//    [spriteValores runAction:[spriteValores getAnimacaoExpandir]];
+//    [spriteValores iniciarAnimacao];
     [spriteResultado addChild:spriteValores];
 }
 

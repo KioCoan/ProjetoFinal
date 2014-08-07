@@ -132,6 +132,7 @@
 		BDF8AE0B197B258C00BA5B8A /* parte-valores11.png in Resources */ = {isa = PBXBuildFile; fileRef = BDF8AE01197B258C00BA5B8A /* parte-valores11.png */; };
 		BDF8AE0D197B417500BA5B8A /* parte-resultado10.png in Resources */ = {isa = PBXBuildFile; fileRef = BDF8AE0C197B417500BA5B8A /* parte-resultado10.png */; };
 		E501FA6B192FCD3800B56B5C /* item-memoria.png in Resources */ = {isa = PBXBuildFile; fileRef = E501FA6A192FCD3800B56B5C /* item-memoria.png */; };
+		E5DDB3621993F45200B0061A /* valor1-amarelo.png in Resources */ = {isa = PBXBuildFile; fileRef = E5DDB3611993F45200B0061A /* valor1-amarelo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -311,6 +312,7 @@
 		BDF8AE01197B258C00BA5B8A /* parte-valores11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parte-valores11.png"; path = "Imagens/Sprites/operadores/Parte Valores/parte-valores11.png"; sourceTree = "<group>"; };
 		BDF8AE0C197B417500BA5B8A /* parte-resultado10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parte-resultado10.png"; path = "Imagens/Sprites/operadores/Parte Resultado/parte-resultado10.png"; sourceTree = "<group>"; };
 		E501FA6A192FCD3800B56B5C /* item-memoria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-memoria.png"; path = "Imagens/item-memoria.png"; sourceTree = "<group>"; };
+		E5DDB3611993F45200B0061A /* valor1-amarelo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "valor1-amarelo.png"; path = "Imagens/Sprites/Condicionais/valor1-amarelo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -436,7 +438,7 @@
 				8418F8791970817000781F82 /* SpriteLabelNode.m */,
 				BDBE7698197A3A00004EA926 /* Variavel */,
 				BDBE7697197A39EF004EA926 /* Operadores */,
-				BD01DDFA19834E7C00AEAAA8 /* Condição */,
+				BD01DDFA19834E7C00AEAAA8 /* Condição */,
 			);
 			name = Objetos;
 			sourceTree = "<group>";
@@ -586,12 +588,12 @@
 			children = (
 				A529DF1E1965DB8A00A3D9FB /* Calculador.h */,
 				A529DF1F1965DB8A00A3D9FB /* Calculador.m */,
-				A529DF0B1965DB3800A3D9FB /* Operações */,
+				A529DF0B1965DB3800A3D9FB /* Operações */,
 			);
 			name = Calculador;
 			sourceTree = "<group>";
 		};
-		A529DF0B1965DB3800A3D9FB /* Operações */ = {
+		A529DF0B1965DB3800A3D9FB /* Operações */ = {
 			isa = PBXGroup;
 			children = (
 				A529DF151965DB7500A3D9FB /* Relacional.h */,
@@ -635,7 +637,7 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
+		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
 			isa = PBXGroup;
 			children = (
 				BDE82C271991778700610D96 /* SpriteCondicaoNode.h */,
@@ -649,6 +651,7 @@
 		BD510FE4198A035B0052B6E5 /* Condicionais */ = {
 			isa = PBXGroup;
 			children = (
+				E5DDB3611993F45200B0061A /* valor1-amarelo.png */,
 				BDE82C1F19916E1F00610D96 /* se-normal.png */,
 				BDE82C2019916E1F00610D96 /* senao-normal.png */,
 				BDE82C2119916E1F00610D96 /* senaoSe-normal.png */,
@@ -861,6 +864,7 @@
 				BDF8AE08197B258C00BA5B8A /* parte-valores8.png in Resources */,
 				BDC7579F196787E700DB8380 /* abrir-caixa2.png in Resources */,
 				BD510FF7198A03740052B6E5 /* estrutura-condicionais5.png in Resources */,
+				E5DDB3621993F45200B0061A /* valor1-amarelo.png in Resources */,
 				91D5ED6F19900055008EC1B8 /* errado.wav in Resources */,
 				BDF8AE07197B258C00BA5B8A /* parte-valores7.png in Resources */,
 				91D5ED6E19900055008EC1B8 /* correto.aiff in Resources */,
