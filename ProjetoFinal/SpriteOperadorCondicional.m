@@ -16,23 +16,23 @@
     
     if(self){
         [self inicializaSpriteResultado:resultado];
+        textoASerExibido = resultado;
         [self inicializaSpriteValores:valor1 valor2:valor2];
         [self inicializaSpriteOperador:operador];
-        
-        
+        [self verificaSeEVerdadeiro:valor1 eOperador:operador eValor2:valor2];
     }
-    
     return self;
 }
 
 //CRIAR O SPRITE ONDE EXIBE O BLOCO DE TEXTO CASO A CONDIÇAO SEJA VERDADEIRA
 -(void)inicializaSpriteResultado:(NSString*)resultado{
+    
     spriteResultado = [[OperadorResultadoNode alloc] initWithResultado:resultado];
     [spriteResultado setTexture:[SKTexture textureWithImageNamed:@"parte-resultado.png"]];
     [spriteResultado  setPosition:CGPointMake(0, -40)];
     [spriteResultado setSize:CGSizeMake(227, 159)];
     [spriteResultado iniciarAnimacao];
-    [spriteResultado setLabelResultado:resultado];
+    [spriteResultado setLabelResultado:[NSString stringWithFormat:@"escreva (\"%@\")",resultado]];
     [[spriteResultado lblResultado] setFontSize:20];
     [[spriteResultado lblResultado] setFontColor:[SKColor blackColor]];
 
@@ -58,4 +58,38 @@
 }
 
 
+-(void)iniciarAnimacao{
+    NSArray *texturas = [NSArray arrayWithObjects:[SKTexture textureWithImageNamed:@"valor1-amarelo.png"], spriteValores.texture, nil];
+    SKAction *piscaEsquerda = [SKAction animateWithTextures:texturas timePerFrame:0.3];
+    
+    texturas = [NSArray arrayWithObjects:[SKTexture textureWithImageNamed:@"valor2-amarelo.png"], spriteValores.texture, nil];
+    SKAction *piscaDireita = [SKAction animateWithTextures:texturas timePerFrame:0.3];
+    
+    [spriteValores runAction:[SKAction repeatAction:piscaEsquerda count:4] completion:^{
+        [spriteValores runAction:[SKAction repeatAction:piscaDireita count:4] completion:^{
+            [spriteValores removeAllActions];
+        }];
+    }];
+}
+
+-(void)verificaSeEVerdadeiro:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2{
+    Calculador *calculador = [[Calculador alloc] init];
+    
+    
+    NSString *resultado = [calculador calculaOperador:operador numero1:valor1 numero2:valor2];
+    
+    if ([resultado isEqualToString:@"Verdadeiro"]) {
+        verdadeiro = YES;
+    }else{
+        verdadeiro = NO;
+    }
+}
+
+-(BOOL)retornaVeracidade{
+    return verdadeiro;
+}
+
+-(NSString*)retornaTextoASerExibido{
+    return textoASerExibido;
+}
 @end

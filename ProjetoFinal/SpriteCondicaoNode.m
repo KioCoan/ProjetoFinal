@@ -16,7 +16,7 @@
         tipoCondicao = tipo;
         [self montaSprite:tipo];
         
-        //[self verifica:YES];
+        
     }
     return self;
 }
@@ -78,22 +78,23 @@
 }
 
 -(void)criarValores:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2 resultado:(NSString*)resultado{
-    spriteTipo = [[SpriteOperadorCondicional alloc] initWithValores:valor1 operador:operador valor2:valor2 resultado:resultado];
+    
+    spriteOperador = [[SpriteOperadorCondicional alloc] initWithValores:valor1 operador:operador valor2:valor2 resultado:resultado];
+    
+    
     CGPoint posicao;
     
     if ([tipoCondicao isEqualToString:@"se"]) {
         posicao = CGPointMake(150, -20);
-        [self addChild:spriteTipo];
+        [self addChild:spriteOperador];
     }else if ([tipoCondicao isEqualToString:@"senaoSe"]){
         posicao = CGPointMake(150, -100);
-        [self addChild:spriteTipo];
+        [self addChild:spriteOperador];
     }else{
         posicao = CGPointMake(150, -20);
     }
     
-    [spriteTipo setPosition:posicao];
-    
-    
+    [spriteOperador setPosition:posicao];
     
 }
 
@@ -109,9 +110,8 @@
     
     [self texturaDeVerificando:status];
     [self mostraExclamacao:status];
-
     
-    }
+}
 
 
 -(void)texturaDeVerificando:(BOOL)status{
@@ -136,10 +136,19 @@
     }
     
     
-    
-    
     [self setTexture:textura];
 }
 
+-(void)iniciarTeste{
+    [self mostraExclamacao:YES];
+    [spriteOperador iniciarAnimacao];
+}
+
+-(NSString*)retornaTextoASerExibido{
+    return [spriteOperador retornaTextoASerExibido];
+}
+-(BOOL)retornaVeracidade{
+    return [spriteOperador retornaVeracidade];
+}
 
 @end

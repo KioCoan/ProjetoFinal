@@ -14,11 +14,13 @@
     if (self = [super init]) {
         textoExibido = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
         [textoExibido setText:@">"];
+        [textoExibido setFontSize:18];
         [textoExibido setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
-        [textoExibido setPosition:CGPointMake(-50, 100)];
+        [textoExibido setPosition:CGPointMake(-150, 0)];
+        [textoExibido setFontColor:[UIColor blackColor]];
         SKTexture *textura = [SKTexture textureWithImageNamed:@"saida-texto.png"];
         [self setTexture:textura];
-        [self setSize:CGSizeMake(346, 278)];
+        [self setSize:CGSizeMake(346, 165)];
         [self addChild:textoExibido];
         
     }

@@ -24,6 +24,7 @@
 -(void)inicializarClasse{
     [self inicializaCondicaoNode];
     [self setBackgroundColor:[UIColor whiteColor]];
+    
     //DEFINE OS VALORES, OPERADOR E RESULTADO
     Gerador *gerador = [[Gerador alloc] init];
     
@@ -31,7 +32,8 @@
     NSString* v1 = [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:10]];
     NSString* v2 = [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:10]];
     NSString* operador = [gerador retornaOperadorRelacional];
-    [condicaoNode criarValores:v1 eOperador:operador eValor2:v2 resultado:@"Hello World"];
+    
+    [condicaoNode criarValores:v1 eOperador:operador eValor2:v2 resultado:@"Olá...."];
     [self inicializaSaidadeDados];
     
     
@@ -39,15 +41,17 @@
 
 -(void)inicializaSaidadeDados{
     SaidaDeDados *console = [[SaidaDeDados alloc] init];
-    [console setPosition:CGPointMake(570, 100)];
+    [console setPosition:CGPointMake(580, 90)];
     [self addChild:console];
     [console exibeTexto:@"Oiiiii"];
+    
+    [condicaoNode iniciarTeste];
 }
 
 -(void)inicializaCondicaoNode{
     //CRIA UMA CONDIÇÃO DO TIPO "SE"
     condicaoNode = [[SpriteCondicaoNode alloc] initWithType:@"se"];
-    [condicaoNode setPosition:CGPointMake(250, 350)];
+    [condicaoNode setPosition:CGPointMake(110, 450)];
     
     [self addChild:condicaoNode];
 
