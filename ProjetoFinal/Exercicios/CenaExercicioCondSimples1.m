@@ -182,7 +182,7 @@
     //linha 3
     
     lblCodigo1 = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-    lblCodigo1.text = @"escreva (vou ao parque);";
+    lblCodigo1.text = @"escreva (vou ao parque)";
     lblCodigo1.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     
     condicao = [[SpriteLabelNode alloc]init];
@@ -206,7 +206,7 @@
     //editando texto
     
     lblCodigo1 = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-    lblCodigo1.text = @"}senao se (          ){";
+    lblCodigo1.text = @"senao se (          )";
     lblCodigo1.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     
     condicao = [[SpriteLabelNode alloc]initWithType:@"se2" texto:@"n < 6"];
@@ -234,7 +234,7 @@
     
     
     lblCodigo1 = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-    lblCodigo1.text = @"escreva (vou para o cinema);";
+    lblCodigo1.text = @"escreva (vou para o cinema)";
     lblCodigo1.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     
     condicao = [[SpriteLabelNode alloc]init];
@@ -255,12 +255,12 @@
     altura -= 40;
     
     
-    //codigo 6
+    //linha 6
     
     //editando texto
     
     lblCodigo1 = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-    lblCodigo1.text = @"}senao{";
+    lblCodigo1.text = @"senao";
     lblCodigo1.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     
     condicao = [[SpriteLabelNode alloc]init];
@@ -282,10 +282,10 @@
     
     
     
-    //codigo 7
+    //linha 7
     
     lblCodigo1 = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-    lblCodigo1.text = @"escreva(ficarei em casa);";
+    lblCodigo1.text = @"escreva(ficarei em casa)";
     lblCodigo1.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     
     condicao = [[SpriteLabelNode alloc]init];
@@ -305,10 +305,10 @@
     [self addChild:lblCodigo1];
     altura -= 40;
     
-    //codigo 8
+    //linha 8
     
     lblCodigo1 = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-    lblCodigo1.text = @"}";
+    lblCodigo1.text = @"fimse";
     lblCodigo1.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     
     condicao = [[SpriteLabelNode alloc]init];
