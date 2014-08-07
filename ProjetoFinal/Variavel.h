@@ -9,6 +9,7 @@
 #import "Assunto.h"
 #import "AnimaVariavel.h"
 #import "ExeVariavel1.h"
+#import "ExeVariavel2.h"
 
 // #### Classe herdeira de Assunto trata de variáveis ######
 

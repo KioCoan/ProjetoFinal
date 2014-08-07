@@ -34,6 +34,7 @@
     // Aloca os objetos de exercicios
     self.exercicios = [[NSMutableArray alloc] init];
     [self.exercicios addObject:[[ExeVariavel1 alloc] init]];
+    [self.exercicios addObject:[[ExeVariavel2 alloc]init]];
 }
 
 -(SKScene*)retornaAnimacaoNumero:(int)index{

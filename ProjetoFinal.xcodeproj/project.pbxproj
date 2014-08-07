@@ -25,6 +25,8 @@
 		8418F87C1970817000781F82 /* SpriteLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F8791970817000781F82 /* SpriteLabelNode.m */; };
 		8418F87D1970817000781F82 /* CenaExercicioVariavel1.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F87B1970817000781F82 /* CenaExercicioVariavel1.m */; };
 		8418F88119708B0900781F82 /* ExercicioVIewContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F88019708B0900781F82 /* ExercicioVIewContoller.m */; };
+		8446A4CF1994021800C92785 /* ExeVariavel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446A4CE1994021800C92785 /* ExeVariavel2.m */; };
+		8446A4D51994027500C92785 /* CenaExercicioVariavel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446A4D41994027500C92785 /* CenaExercicioVariavel2.m */; };
 		846B738E19782427009C2EB7 /* fundo-cinza.png in Resources */ = {isa = PBXBuildFile; fileRef = 846B738D19782427009C2EB7 /* fundo-cinza.png */; };
 		846B73921978255B009C2EB7 /* CenaExercicioOperadores1.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B73911978255B009C2EB7 /* CenaExercicioOperadores1.m */; };
 		84B1B3E3197D881900089FCB /* CondicaoSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E2197D881900089FCB /* CondicaoSimples.m */; };
@@ -177,6 +179,10 @@
 		8418F87B1970817000781F82 /* CenaExercicioVariavel1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenaExercicioVariavel1.m; sourceTree = "<group>"; };
 		8418F87F19708B0900781F82 /* ExercicioVIewContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExercicioVIewContoller.h; sourceTree = "<group>"; };
 		8418F88019708B0900781F82 /* ExercicioVIewContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExercicioVIewContoller.m; sourceTree = "<group>"; };
+		8446A4CD1994021800C92785 /* ExeVariavel2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExeVariavel2.h; sourceTree = "<group>"; };
+		8446A4CE1994021800C92785 /* ExeVariavel2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExeVariavel2.m; sourceTree = "<group>"; };
+		8446A4D31994027500C92785 /* CenaExercicioVariavel2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CenaExercicioVariavel2.h; path = ../CenaExercicioVariavel2.h; sourceTree = "<group>"; };
+		8446A4D41994027500C92785 /* CenaExercicioVariavel2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CenaExercicioVariavel2.m; path = ../CenaExercicioVariavel2.m; sourceTree = "<group>"; };
 		846B738D19782427009C2EB7 /* fundo-cinza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fundo-cinza.png"; path = "Imagens/fundo-cinza.png"; sourceTree = "<group>"; };
 		846B73901978255B009C2EB7 /* CenaExercicioOperadores1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenaExercicioOperadores1.h; sourceTree = "<group>"; };
 		846B73911978255B009C2EB7 /* CenaExercicioOperadores1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenaExercicioOperadores1.m; sourceTree = "<group>"; };
@@ -432,12 +438,32 @@
 		8418F87E1970895500781F82 /* Variaveis */ = {
 			isa = PBXGroup;
 			children = (
+				8446A4D21994024100C92785 /* Exe2 */,
+				8446A4D01994021E00C92785 /* Exe1 */,
+			);
+			name = Variaveis;
+			sourceTree = "<group>";
+		};
+		8446A4D01994021E00C92785 /* Exe1 */ = {
+			isa = PBXGroup;
+			children = (
 				8418F87A1970817000781F82 /* CenaExercicioVariavel1.h */,
 				8418F87B1970817000781F82 /* CenaExercicioVariavel1.m */,
 				A500C2B319743C1D00D6BE83 /* ExeVariavel1.h */,
 				A500C2B419743C1D00D6BE83 /* ExeVariavel1.m */,
 			);
-			name = Variaveis;
+			name = Exe1;
+			sourceTree = "<group>";
+		};
+		8446A4D21994024100C92785 /* Exe2 */ = {
+			isa = PBXGroup;
+			children = (
+				8446A4CD1994021800C92785 /* ExeVariavel2.h */,
+				8446A4CE1994021800C92785 /* ExeVariavel2.m */,
+				8446A4D31994027500C92785 /* CenaExercicioVariavel2.h */,
+				8446A4D41994027500C92785 /* CenaExercicioVariavel2.m */,
+			);
+			name = Exe2;
 			sourceTree = "<group>";
 		};
 		846B738F197824AD009C2EB7 /* Objetos */ = {
@@ -976,6 +1002,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8418F88119708B0900781F82 /* ExercicioVIewContoller.m in Sources */,
+				8446A4D51994027500C92785 /* CenaExercicioVariavel2.m in Sources */,
 				8418F87D1970817000781F82 /* CenaExercicioVariavel1.m in Sources */,
 				BD4B4BDB197075BD00D6E839 /* SpriteCaixaNode.m in Sources */,
 				A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */,
@@ -1006,6 +1033,7 @@
 				A597F0F51960A7A6006429C7 /* SubViewConteudoFilho.m in Sources */,
 				BDBE7694197A39E0004EA926 /* OperadorResultadoNode.m in Sources */,
 				A529DF1C1965DB7500A3D9FB /* Aritimetico.m in Sources */,
+				8446A4CF1994021800C92785 /* ExeVariavel2.m in Sources */,
 				84B1B3E3197D881900089FCB /* CondicaoSimples.m in Sources */,
 				A50B33401972BF2E00BDD473 /* ListaDeExerciciosViewController.m in Sources */,
 				A500C2B519743C1D00D6BE83 /* ExeVariavel1.m in Sources */,
