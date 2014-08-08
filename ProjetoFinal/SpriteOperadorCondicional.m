@@ -44,7 +44,6 @@
 -(void)inicializaSpriteValores:(NSString*)valor1 valor2:(NSString*)valor2{
     spriteValores = [[OperadorValoresNode alloc] initWithValor1:valor1 valor2:valor2];
     [spriteValores setTexture:[SKTexture textureWithImageNamed:@"parte-valores1.png"]];
-//    [spriteValores runAction:[spriteValores getAnimacaoExpandir]];
     [spriteValores iniciarAnimacao];
     [spriteResultado addChild:spriteValores];
 }
@@ -59,22 +58,31 @@
 
 
 -(void)iniciarAnimacao{
+    //CRIA UM VETOR COM OS SPRITES DE VERIFICAÇÃO DOS VALORES DO LADO ESQUERDO, LOGO APÓS É CRIADA A ANIMAÇÃO DESTE VETOR
     NSArray *texturas = [NSArray arrayWithObjects:[SKTexture textureWithImageNamed:@"valor1-amarelo.png"], spriteValores.texture, nil];
     SKAction *piscaEsquerda = [SKAction animateWithTextures:texturas timePerFrame:0.3];
     
+    //CRIA UM VETOR COM OS SPRITES DE VERIFICAÇÃO DOS VALORES DO LADO DIREITO, LOGO APÓS É CRIADA A ANIMAÇÃO DESTE VETOR
     texturas = [NSArray arrayWithObjects:[SKTexture textureWithImageNamed:@"valor2-amarelo.png"], spriteValores.texture, nil];
     SKAction *piscaDireita = [SKAction animateWithTextures:texturas timePerFrame:0.3];
     
+    //O PRIMEIRO BLOCO INICIA A ANIMAÇÃO DO LADOR ESQUERDO POR 4 VEZES
     [spriteValores runAction:[SKAction repeatAction:piscaEsquerda count:4] completion:^{
+        //O SEGUNDO BLOCO INICIA A ANIMAÇÃO DO LADOR DIREITO POR 4 VEZES
         [spriteValores runAction:[SKAction repeatAction:piscaDireita count:4] completion:^{
             [spriteValores removeAllActions];
-
+            
+            //VERIFICA SE A CONDIÇÃO É VERDADEIRA PARA QUE SEJA COLOCADA A TEXTURA QUE INDICA QUE É VERDADEIRO
             if(verdadeiro){
                 [spriteValores setTexture:[SKTexture textureWithImageNamed:@"valores-verdadeiro.png"]];
             }
+            
+            //AVISA PARA O DELEGATE QUE A VERIFICAÇÃO FOI FINALIZADA
+            [[self myDelegate] verificacaoFinalizada];
         }];
     }];
 }
+
 
 -(void)verificaSeEVerdadeiro:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2{
     Calculador *calculador = [[Calculador alloc] init];
@@ -92,6 +100,7 @@
 -(BOOL)retornaVeracidade{
     return verdadeiro;
 }
+
 
 -(NSString*)retornaTextoASerExibido{
     return textoASerExibido;

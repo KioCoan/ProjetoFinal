@@ -22,8 +22,8 @@
 
 
 -(void)inicializarClasse{
+    [self setBackgroundColor:[SKColor whiteColor]];
     [self inicializaCondicaoNode];
-    [self setBackgroundColor:[UIColor whiteColor]];
     
     //DEFINE OS VALORES, OPERADOR E RESULTADO
     Gerador *gerador = [[Gerador alloc] init];
@@ -47,9 +47,9 @@
 
 -(void)inicializaSaidadeDados{
     console = [[SaidaDeDados alloc] init];
-    [console setPosition:CGPointMake(580, 90)];
+    [console setPosition:CGPointMake(594, 83)];
     [self addChild:console];
-    [console exibeTexto:@">"];
+    //[console exibeTexto:@">"];
     
     [condicaoNode iniciarTeste];
 }

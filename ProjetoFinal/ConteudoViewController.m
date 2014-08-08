@@ -63,7 +63,7 @@
     [[self navigationItem] setTitle:gerenciador.retornaNomeAssuntoAtual];
     
     //CRIO UMA SKVIEW PARA INSERIR A SKSCENE
-    viewAnimacao = [[SKView alloc] initWithFrame:CGRectMake(0, 65, self.view.frame.size.width, 600)];
+    viewAnimacao = [[SKView alloc] initWithFrame:CGRectMake(0, 65, self.view.frame.size.width, 609)];
     
     //INSTANCIO A SKSCENE INICIAL DO ASSUNTO ATUAL
     SKScene *cena = [gerenciador retornaAnimacaoNumero:1];

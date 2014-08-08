@@ -16,7 +16,7 @@
         tipoCondicao = tipo;
         [self montaSprite:tipo];
         
-        [self texturaDeVerificando:YES];
+        //[self texturaDeVerificando:YES];
     }
     return self;
 }
@@ -63,7 +63,8 @@
 
 -(void)mostraExclamacao:(BOOL)status{
     
-    if (![tipoCondicao isEqualToString:@"senao"]) { // Só adiciona exclamação caso o tipo seja diferente de "senao"
+    // Só adiciona exclamação caso o tipo seja diferente de "senao"
+    if (![tipoCondicao isEqualToString:@"senao"]) {
         if (status) {
             [self addChild:spriteExclamacao];
         }else{
@@ -81,6 +82,7 @@
     
     spriteOperador = [[SpriteOperadorCondicional alloc] initWithValores:valor1 operador:operador valor2:valor2 resultado:resultado];
     
+    spriteOperador.myDelegate = self;
     
     CGPoint posicao;
     
@@ -98,11 +100,8 @@
     
 }
 
--(void)pisca{
-    
-    //Roda a SKAction que pisca
-    
-    [self runAction:animacaoPiscar];
+-(void)verificacaoFinalizada{
+    [self mostraExclamacao:NO];
 }
 
 
@@ -117,27 +116,18 @@
 -(void)texturaDeVerificando:(BOOL)status{
     SKTexture *textura;
     
+    //VERIFICA
     if (status) {
-        if ([tipoCondicao isEqualToString:@"se"]) {
-            textura = [SKTexture textureWithImageNamed:@"se-verde.png"];
-        }else if ([tipoCondicao isEqualToString:@"senaoSe"]){
-            textura = [SKTexture textureWithImageNamed:@"senaoSe-verde.png"];
-        }else{
-            textura = [SKTexture textureWithImageNamed:@"senao-verde.png"];
-        }
+        textura = [SKTexture textureWithImageNamed:[NSString stringWithFormat:@"%@-verde.png", tipoCondicao]];
+        
     }else{
-        if ([tipoCondicao isEqualToString:@"se"]) {
-            textura = [SKTexture textureWithImageNamed:@"se-normal.png"];
-        }else if ([tipoCondicao isEqualToString:@"senaoSe"]){
-            textura = [SKTexture textureWithImageNamed:@"senaoSe-normal.png"];
-        }else{
-            textura = [SKTexture textureWithImageNamed:@"senao-normal.png"];
-        }
+        textura = [SKTexture textureWithImageNamed:[NSString stringWithFormat:@"%@-normal.png", tipoCondicao]];
     }
     
     
     [self setTexture:textura];
 }
+
 
 -(void)iniciarTeste{
     [self mostraExclamacao:YES];
@@ -147,6 +137,7 @@
 -(NSString*)retornaTextoASerExibido{
     return [spriteOperador retornaTextoASerExibido];
 }
+
 -(BOOL)retornaVeracidade{
     return [spriteOperador retornaVeracidade];
 }

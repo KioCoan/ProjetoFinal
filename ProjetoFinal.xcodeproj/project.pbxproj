@@ -471,11 +471,11 @@
 			children = (
 				8418F8781970817000781F82 /* SpriteLabelNode.h */,
 				8418F8791970817000781F82 /* SpriteLabelNode.m */,
+				A521FEEE1993FE9900D28627 /* SaidaDeDados.h */,
+				A521FEEF1993FE9900D28627 /* SaidaDeDados.m */,
 				BDBE7698197A3A00004EA926 /* Variavel */,
 				BDBE7697197A39EF004EA926 /* Operadores */,
 				BD01DDFA19834E7C00AEAAA8 /* Condição */,
-				A521FEEE1993FE9900D28627 /* SaidaDeDados.h */,
-				A521FEEF1993FE9900D28627 /* SaidaDeDados.m */,
 			);
 			name = Objetos;
 			sourceTree = "<group>";

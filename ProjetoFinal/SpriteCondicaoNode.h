@@ -10,12 +10,13 @@
 #import "SpriteOperadorCondicional.h"
 #import "Calculador.h"
 
-@interface SpriteCondicaoNode : SKSpriteNode
+
+
+@interface SpriteCondicaoNode : SKSpriteNode <SpriteOperadorCondicionalDelegate>
 {
     SKSpriteNode *spriteExclamacao;
     NSString *tipoCondicao;
     SpriteOperadorCondicional *spriteOperador;
-    SKAction *animacaoPiscar;
 }
 @property BOOL verdadeiro;
 

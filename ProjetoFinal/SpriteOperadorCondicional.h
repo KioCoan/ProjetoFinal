@@ -12,6 +12,13 @@
 #import "OperadorResultadoNode.h"
 #import "Calculador.h"
 
+//PROTOCOLO QUE AVISA PARA A CLASE SpriteCondicaoNode QUANDO A VERIFICAÇÃO DOS VALORES FOI FINALIZADA
+@protocol SpriteOperadorCondicionalDelegate <NSObject>
+
+-(void)verificacaoFinalizada;
+
+@end
+
 @interface SpriteOperadorCondicional : SKSpriteNode
 {
     OperadorNode *spriteOperador;
@@ -20,6 +27,8 @@
     BOOL verdadeiro;
     NSString* textoASerExibido;
 }
+
+@property id <SpriteOperadorCondicionalDelegate> myDelegate;
 
 -(id)initWithValores:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 resultado:(NSString*)resultado;
 -(void)iniciarAnimacao;
