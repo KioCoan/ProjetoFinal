@@ -134,4 +134,10 @@
     
     return [assunto retornaAnimacaoNumero:index];
 }
+-(void)setaDelegate:(id)myDelegate{
+    delegateDeConteudo = myDelegate;
+}
+-(id)retornaDelegate{
+    return delegateDeConteudo;
+}
 @end

@@ -19,7 +19,7 @@
 }
 
 @property (strong, nonatomic) UIPageViewController *pageController;
-@property id <AlteraAnimacaoDelegate> myDelegate;
+
 
 
 @end
