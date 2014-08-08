@@ -145,14 +145,18 @@ static const int NUM_TEXTURAS = 13;
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [self setUserInteractionEnabled:NO];
     
-    //VERIFICA O ESTADO DA CAIXA, SE ELA ESTÁ ABERTA OU FECHADA PARA ACIONAR A SKACTION CORRETA
-    if(caixaAberta){
-        [self fecharCaixa];
-        
-    }else{
-        [self abrirCaixa];
-    }
+    
+    
+        //VERIFICA O ESTADO DA CAIXA, SE ELA ESTÁ ABERTA OU FECHADA PARA ACIONAR A SKACTION CORRETA
+        if(caixaAberta){
+            [self fecharCaixa];
+            
+        }else{
+            [self abrirCaixa];
+        }
 
+    
+    
 }
 
 

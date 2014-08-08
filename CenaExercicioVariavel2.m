@@ -77,8 +77,9 @@
     
     
     botaoCaixa = [[SpriteCaixaNode alloc]initWithImageNamed:@"abrir-caixa1.png"];
-    botaoCaixa.size = CGSizeMake(100, 100);
+    //botaoCaixa = [[SpriteCaixaNode alloc]initWithConteudo:@" " nome:@" " tipo:@" " tamanho:CGSizeMake(100, 100)];
     botaoCaixa.position = CGPointMake(100, 100);
+    botaoCaixa.size = CGSizeMake(100, 100);
     botaoCaixa.name = @"botaoCaixa";
     [self addChild:botaoCaixa];
     
@@ -107,12 +108,25 @@
     
 }
 
+- (void)atualizaCaixa:(SpriteCaixaNode *)caixa Label:(SpriteLabelNode *)label{
+    
+    
+    if ([label.tipo isEqualToString:@"conteudo"]) {
+        [caixa setLabelConteudo:label.text];
+    }else if ([label.tipo isEqualToString:@"tipo"]){
+        [caixa setLabelTipo:label.text];
+    }else{
+        [caixa setLabelNome:label.text];
+    }
+    
+    [label removeFromParent];
+}
+
 - (void)criaVariavel{
     
-    SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]initWithImageNamed:@"abrir-caixa1.png"];
+    SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]initWithConteudo:@" " nome:@" " tipo:@" " tamanho:CGSizeMake(200, 200)];
     [caixa setPosition:botaoCaixa.position];
     caixa.name = @"caixa";
-    caixa.size = CGSizeMake(200, 200);
     [variaveis addObject:caixa];
     [self addChild:caixa];
     
@@ -202,13 +216,32 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    UITouch *touch = [touches anyObject];
-    soltei =[touch timestamp];
-    //NSLog(@"soltei %d segundos",soltei);
-    int conta = soltei - apertei;
+    if ([conteudoAtivo.name isEqualToString:@"label"] && variaveis.count > 0) {
+        
+        
+        for (SpriteCaixaNode * c in variaveis) { //Ao soltar o node de resposta em algum lugar varre o vetor de caixas para descobrir sobre quem está
+            float xInicio = c.frame.origin.x;
+            float xFim = xInicio + c.frame.size.width;
+            //float xMeio = (xInicio + xFim)/2; PARA O FUTURO
+            float yInicio = c.frame.origin.y;
+            float yFim = yInicio + c.frame.size.height;
+            //float yMeio = (yInicio + yFim)/2; PARA O FUTURO
+            
+            if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
+                NSLog(@"deu certo");
+                [self atualizaCaixa:c Label:(SpriteLabelNode *) conteudoAtivo];
+            }
+                
+                //[conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa
+        }
+            
+    }
+        
+        
+        
     
-    //NSLog(@"total %d",conta);
-    
+
+
     
     
     
