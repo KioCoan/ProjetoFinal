@@ -8,19 +8,17 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "SpriteCondicaoNode.h"
-#import "SpriteLabelNode.h"
 #import "Gerador.h"
 #import "SaidaDeDados.h"
-@interface AnimaCondSimples : SKScene <UITextFieldDelegate, SKPhysicsContactDelegate>
+
+@interface AnimaCondSimples : SKScene <SpriteCondicaoNodeDelegate>
 {
-    SpriteCondicaoNode *condicaoNode;
-    
-    SpriteLabelNode *nota1;
-    SpriteLabelNode *nota2;
-    SpriteLabelNode *media;
+    NSMutableArray *condicoesNode;
+    //SpriteCondicaoNode *condicaoNode;
+    SKSpriteNode *botaoIniciarTeste;
+    int contadorDeTeste;
     SaidaDeDados *console;
-    NSString *condicaoCorreta;
-    int nPulos;
+
 }
 
 @end

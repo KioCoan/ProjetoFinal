@@ -27,5 +27,5 @@
 -(NSString*)getValor1;
 -(NSString*)getValor2;
 -(void)iniciarAnimacao;
--(void)ativarModoCondicao;
+-(void)ajustarPosicionamentoLabels;
 @end

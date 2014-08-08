@@ -10,6 +10,11 @@
 #import "SpriteOperadorCondicional.h"
 #import "Calculador.h"
 
+//PROTOCOLO QUE AVISA PARA A CLASSE AnimaCondSimples QUANDO A VERIFICAÇÃO DOS VALORES FOI FINALIZADA
+@protocol SpriteCondicaoNodeDelegate <NSObject>
+-(void)testeFinalizado:(BOOL)verdadeiro;
+@end
+
 
 
 @interface SpriteCondicaoNode : SKSpriteNode <SpriteOperadorCondicionalDelegate>
@@ -18,10 +23,10 @@
     NSString *tipoCondicao;
     SpriteOperadorCondicional *spriteOperador;
 }
+@property id <SpriteCondicaoNodeDelegate> myDelegate;
 @property BOOL verdadeiro;
 
 -(id)initWithType:(NSString*)tipo;
--(void)mostraExclamacao:(BOOL)status;
 -(NSString*)getTipo;
 -(void)criarValores:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2 resultado:(NSString*)resultado;
 -(void)iniciarTeste;

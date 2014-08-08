@@ -16,7 +16,6 @@
         tipoCondicao = tipo;
         [self montaSprite:tipo];
         
-        //[self texturaDeVerificando:YES];
     }
     return self;
 }
@@ -81,7 +80,7 @@
 -(void)criarValores:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2 resultado:(NSString*)resultado{
     
     spriteOperador = [[SpriteOperadorCondicional alloc] initWithValores:valor1 operador:operador valor2:valor2 resultado:resultado];
-    
+    [spriteOperador ajustarTamanho:self.size.width];
     spriteOperador.myDelegate = self;
     
     CGPoint posicao;
@@ -98,10 +97,6 @@
     
     [spriteOperador setPosition:posicao];
     
-}
-
--(void)verificacaoFinalizada{
-    [self mostraExclamacao:NO];
 }
 
 
@@ -130,8 +125,21 @@
 
 
 -(void)iniciarTeste{
+    //ANTES DE INICIAR O TESTE É VERIFICADO SE A CONDIÇÃO É UM SENÃO, CASO SEJA A TEXTURA, E MODIFICADA E FIM DE MÉTODO
+    if([tipoCondicao isEqualToString:@"senao"]){
+        [self setTexture:[SKTexture textureWithImageNamed:@"senao-verde.png"]];
+        [[self myDelegate] testeFinalizado:YES];
+        return;
+    }
+    
+    
     [self mostraExclamacao:YES];
-    [spriteOperador iniciarAnimacao];
+    
+    //APÓS EXIBIR O NODE EXCLAMAÇÃO É INICIADA UMA ANIMAÇÃO DE ESPERA ANTES DE SER INICIADA A ANIMAÇÃO QUE TESTA A CONDIÇÃO
+    [spriteOperador runAction:[SKAction waitForDuration:0.5] completion:^{
+        [spriteOperador removeAllActions];
+        [spriteOperador iniciarAnimacao];
+    }];
 }
 
 -(NSString*)retornaTextoASerExibido{
@@ -140,6 +148,12 @@
 
 -(BOOL)retornaVeracidade{
     return [spriteOperador retornaVeracidade];
+}
+
+
+-(void)testeFinalizado{
+    [self mostraExclamacao:NO];
+    [[self myDelegate] testeFinalizado:self.verdadeiro];
 }
 
 @end

@@ -54,20 +54,22 @@ static const int NUM_TEXTURAS = 11;
     [lblValor1 setText:valor1];
     [lblValor1 setFontSize:23];
     [lblValor1 setFontColor:[SKColor blackColor]];
-    [lblValor1 setPosition:CGPointMake(-10, 0)];
+    //[lblValor1 setPosition:CGPointMake(-10, 0)];
     [lblValor1 setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
     [lblValor1 setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
     //[lblValor1 setZPosition:5];
+
     
     //CRIA A LABEL QUE FICA À DIREITA DO SPRITE
     lblValor2 = [SKLabelNode labelNodeWithFontNamed:@"Avenir Next Condensed Medium"];
     [lblValor2 setText:valor2];
     [lblValor2 setFontSize:23];
     [lblValor2 setFontColor:[SKColor blackColor]];
-    [lblValor2 setPosition:CGPointMake(10, 0)];
     [lblValor2 setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
     [lblValor2 setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
     //[lblValor2 setZPosition:5];
+    
+    [self ajustarPosicionamentoLabels];
     
     [self addChild:lblValor1];
     [self addChild:lblValor2];
@@ -97,7 +99,7 @@ static const int NUM_TEXTURAS = 11;
 
 
 -(void)iniciarAnimacao{
-    int distancia = 90;
+    int distancia = self.size.width * 0.3;
     
     //VERIFICA SE O SPRITE ESTÁ VISIVEL NA TELA
     if(estaVisivel){
@@ -129,7 +131,10 @@ static const int NUM_TEXTURAS = 11;
     }
 }
 
-
+-(void)ajustarPosicionamentoLabels{
+    [lblValor1 setPosition:CGPointMake(self.size.width * -0.02, 0)];
+    [lblValor2 setPosition:CGPointMake(self.size.width * 0.02, 0)];
+}
 
 -(SKAction*)getAnimacaoExpandir{
     return animacaoExpandir;
@@ -157,8 +162,4 @@ static const int NUM_TEXTURAS = 11;
 }
 
 
--(void)ativarModoCondicao{
-    [lblValor1 setPosition:CGPointMake(lblValor1.position.x + 20, lblValor1.position.y)];
-    [lblValor2 setPosition:CGPointMake(lblValor2.position.x - 20, lblValor2.position.y)];
-}
 @end

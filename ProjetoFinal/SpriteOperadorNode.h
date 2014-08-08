@@ -30,7 +30,6 @@
 -(NSString*)getValor1;
 -(NSString*)getOperador;
 -(NSString*)getValor2;
--(void)ativarModoCondicao;
 -(void)iniciarAnimacaoAbrir;
 -(void)iniciarAnimacaoFechar;
 -(BOOL)partesVisiveis;

@@ -171,11 +171,4 @@
 }
 
 
--(void)ativarModoCondicao{
-    nodeResultado = nil;
-    [nodeOperador setSize:CGSizeMake(89, 89)];
-    [nodeValores setSize:CGSizeMake(257, 64)];
-    [nodeValores ativarModoCondicao];
-}
-
 @end

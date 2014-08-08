@@ -23,26 +23,37 @@
 
 -(void)inicializarClasse{
     [self setBackgroundColor:[SKColor whiteColor]];
-    [self inicializaCondicaoNode];
+    contadorDeTeste = 0;
+    [self inicializarBotaoIniciarAnimacao];
     
-    //DEFINE OS VALORES, OPERADOR E RESULTADO
-    Gerador *gerador = [[Gerador alloc] init];
+    condicoesNode = [[NSMutableArray alloc] init];
     
+    [condicoesNode addObject:[self inicializaCondicaoNode:@"se" posicao:CGPointMake(130, 450)]];
+    //[condicoesNode addObject:[self inicializaCondicaoNode:@"senao" posicao:CGPointMake(130, 270)]];
     
-    NSString* v1 = [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:10]];
-    NSString* v2 = [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:10]];
-    NSString* operador = [gerador retornaOperadorRelacional];
+    [self inicializarParametros];
     
-    [condicaoNode criarValores:v1 eOperador:operador eValor2:v2 resultado:@"Verdade!!!"];
-    [self inicializaSaidadeDados];
-    
-    // Teste remover depois
-    if ([condicaoNode retornaVeracidade]) {
-        [console exibeTexto:[condicaoNode retornaTextoASerExibido]];
+}
+
+
+//PERCORRE O VETOR DE SpriteCondicaoNode DEFININDO OS VALORES ALEATÓRIOS
+-(void)inicializarParametros{
+    for(SpriteCondicaoNode* node in condicoesNode){
+        //DEFINE OS VALORES, OPERADOR E RESULTADO
+        Gerador *gerador = [[Gerador alloc] init];
+        
+        NSString* v1 = [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:10]];
+        NSString* v2 = [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:10]];
+        NSString* operador = [gerador retornaOperadorRelacional];
+        
+        [node criarValores:v1 eOperador:operador eValor2:v2 resultado:@"Verdade!!!"];
+        [self inicializaSaidadeDados];
+        
+        // Teste remover depois
+        if ([node retornaVeracidade]) {
+            [console exibeTexto:[node retornaTextoASerExibido]];
+        }
     }
-    
-    
-    
 }
 
 -(void)inicializaSaidadeDados{
@@ -51,36 +62,28 @@
     [self addChild:console];
     //[console exibeTexto:@">"];
     
-    [condicaoNode iniciarTeste];
 }
 
--(void)inicializaCondicaoNode{
-    //CRIA UMA CONDIÇÃO DO TIPO "SE"
-    condicaoNode = [[SpriteCondicaoNode alloc] initWithType:@"se"];
-    [condicaoNode setPosition:CGPointMake(110, 450)];
+-(SpriteCondicaoNode*)inicializaCondicaoNode:(NSString*)tipo posicao:(CGPoint)posicao{
     
+    SpriteCondicaoNode *condicaoNode = [[SpriteCondicaoNode alloc] initWithType:tipo];
+    [condicaoNode setPosition:posicao];
+    condicaoNode.myDelegate = self;
     [self addChild:condicaoNode];
+    
+    return condicaoNode;
 
 }
 
--(void)inicializarOperadores{
+-(void)inicializarBotaoIniciarAnimacao{
+    botaoIniciarTeste = [SKSpriteNode spriteNodeWithImageNamed:@"atualizar-dados.png"];
+    [botaoIniciarTeste setSize:CGSizeMake(40, 40)];
+    [botaoIniciarTeste setPosition:CGPointMake(100, 100)];
+    [botaoIniciarTeste setName:@"iniciarAnimacao"];
     
+    [self addChild:botaoIniciarTeste];
 }
 
--(void)inicializarlabels{
-    CGPoint posicoes = CGPointMake(500, 540);
-    
-    nota1 = [self criarLabelComTexto:@"nota1 <-" tipo:@"float" posicao:posicoes];
-    [self addChild:nota1];
-    
-    posicoes.y -= 35;
-    nota2 = [self criarLabelComTexto:@"nota2 <-" tipo:@"float" posicao:posicoes];
-    [self addChild:nota2];
-    
-    posicoes.y -= 35;
-    media = [self criarLabelComTexto:@"media <- (nota1 + nota2) / 2" tipo:@"float" posicao:posicoes];
-    [self addChild:media];
-}
 
 
 -(SpriteLabelNode*)criarLabelComTexto:(NSString*)texto tipo:(NSString*)tipo posicao:(CGPoint)posicao{
@@ -116,12 +119,23 @@
     CGPoint posicao = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:posicao];
     
-    if([node.name isEqualToString:@"teste"]){
-        
+    if([node.name isEqualToString:@"iniciarAnimacao"]){
+        [node removeFromParent];
+        [[condicoesNode objectAtIndex:contadorDeTeste] iniciarTeste];
     }
 }
 
 
+-(void)testeFinalizado:(BOOL)verdadeiro{
+    if(!verdadeiro && contadorDeTeste < condicoesNode.count - 1){
+        [[condicoesNode objectAtIndex:++contadorDeTeste] iniciarTeste];
+    
+    }else{
+        [self addChild:botaoIniciarTeste];
+        contadorDeTeste = 0;
+    }
+    
+}
 
 //-(void)criarTextField:(CGRect)frame texto:(NSString*)texto{
 //    UITextField *textField = [[UITextField alloc] initWithFrame:frame];

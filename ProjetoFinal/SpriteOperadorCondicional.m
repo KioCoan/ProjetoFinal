@@ -24,7 +24,7 @@
     return self;
 }
 
-//CRIAR O SPRITE ONDE EXIBE O BLOCO DE TEXTO CASO A CONDIÇAO SEJA VERDADEIRA
+//CRIAR O SPRITE ONDE EXIBE O BLOCO DE TEXTO 
 -(void)inicializaSpriteResultado:(NSString*)resultado{
     
     spriteResultado = [[OperadorResultadoNode alloc] initWithResultado:resultado];
@@ -58,13 +58,12 @@
 
 
 -(void)iniciarAnimacao{
-    //CRIA UM VETOR COM OS SPRITES DE VERIFICAÇÃO DOS VALORES DO LADO ESQUERDO, LOGO APÓS É CRIADA A ANIMAÇÃO DESTE VETOR
-    NSArray *texturas = [NSArray arrayWithObjects:[SKTexture textureWithImageNamed:@"valor1-amarelo.png"], spriteValores.texture, nil];
-    SKAction *piscaEsquerda = [SKAction animateWithTextures:texturas timePerFrame:0.3];
+    [spriteValores setTexture:[SKTexture textureWithImageNamed:@"parte-valores1"]];
+
+    SKAction *piscaEsquerda = [self criarAnimacaoPiscarComTextura:@"valor1-amarelo.png"];
+    SKAction *piscaDireita = [self criarAnimacaoPiscarComTextura:@"valor2-amarelo.png"];
     
-    //CRIA UM VETOR COM OS SPRITES DE VERIFICAÇÃO DOS VALORES DO LADO DIREITO, LOGO APÓS É CRIADA A ANIMAÇÃO DESTE VETOR
-    texturas = [NSArray arrayWithObjects:[SKTexture textureWithImageNamed:@"valor2-amarelo.png"], spriteValores.texture, nil];
-    SKAction *piscaDireita = [SKAction animateWithTextures:texturas timePerFrame:0.3];
+    
     
     //O PRIMEIRO BLOCO INICIA A ANIMAÇÃO DO LADOR ESQUERDO POR 4 VEZES
     [spriteValores runAction:[SKAction repeatAction:piscaEsquerda count:4] completion:^{
@@ -78,9 +77,19 @@
             }
             
             //AVISA PARA O DELEGATE QUE A VERIFICAÇÃO FOI FINALIZADA
-            [[self myDelegate] verificacaoFinalizada];
+            [[self myDelegate] testeFinalizado];
+            
         }];
     }];
+}
+
+
+
+-(SKAction*)criarAnimacaoPiscarComTextura:(NSString*)nomeTextura{
+    //CRIA UM VETOR COM OS SPRITES DE "VERIFICAÇÃO" DOS VALORES, LOGO APÓS É RETORNADA A ANIMAÇÃO DESTE VETOR
+    NSArray *texturas = [NSArray arrayWithObjects:[SKTexture textureWithImageNamed:nomeTextura], spriteValores.texture, nil];
+    
+    return [SKAction animateWithTextures:texturas timePerFrame:0.3];
 }
 
 
@@ -102,7 +111,27 @@
 }
 
 
+-(void)ajustarTamanho:(int)widthBase{
+    if(spriteValores){
+        [self definirNovoTamanho:spriteValores widthBase:widthBase novoWidth:2.2 novoHeight:0.5];
+        [self definirNovoTamanho:spriteOperador widthBase:widthBase novoWidth:0.8 novoHeight:0.8];
+        [self definirNovoTamanho:spriteResultado widthBase:widthBase novoWidth:1.6 novoHeight:1.1];
+        
+        [spriteValores ajustarPosicionamentoLabels];
+        [spriteValores iniciarAnimacao];
+    }
+    
+}
+
+
+-(void)definirNovoTamanho:(SKSpriteNode*)node widthBase:(int)widthBase novoWidth:(float)novoWidth novoHeight:(float)novoHeight{
+    
+    [node setSize:CGSizeMake(widthBase * novoWidth, widthBase * novoHeight)];
+}
+
+
 -(NSString*)retornaTextoASerExibido{
     return textoASerExibido;
 }
+
 @end
