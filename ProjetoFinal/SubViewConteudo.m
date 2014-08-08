@@ -40,10 +40,11 @@
     
     teoria = [gerenciadorDeAssuntos retornaTeoriaFormatada];
     
-    
-    
-    
-    
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    self.myDelegate = nil;
 }
 
 - (void)didReceiveMemoryWarning {

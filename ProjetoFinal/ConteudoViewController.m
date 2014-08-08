@@ -33,7 +33,8 @@
 {
     [super viewDidLoad];
     
-    
+    //INSTANCIO UM GERENCIADOR PARA BUSCAR AS INFORMAÇOES DO ASSUNTO
+    gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     
     // Do any additional setup after loading the view.
     //Variavel *v = [[Variavel alloc] init];
@@ -56,8 +57,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    //INSTANCIO UM GERENCIADOR PARA BUSCAR AS INFORMAÇOES DO ASSUNTO
-    gerenciador = [GerenciadorDeAssunto sharedGerenciador];
+    
     
     //DEFINO O TITULO DO NAVIGATION CONTROLLER DE ACORDO COM O NOME DO ASSUNTO
     [[self navigationItem] setTitle:gerenciador.retornaNomeAssuntoAtual];
