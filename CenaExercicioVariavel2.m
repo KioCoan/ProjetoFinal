@@ -187,6 +187,9 @@
         
     }else if ([conteudoAtivo.name isEqualToString:@"botaoNome"]){
         [self criarNome];
+    }else if ([conteudoAtivo.name isEqualToString:@"caixa"] && [touch tapCount] == 2){
+        SpriteCaixaNode *c = (SpriteCaixaNode*) conteudoAtivo;
+        [c executaSprite];
     }
     
     

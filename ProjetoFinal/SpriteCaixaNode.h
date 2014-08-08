@@ -32,5 +32,6 @@
 -(NSString *)retornaNome;
 -(void)abrirCaixa;
 -(void)fecharCaixa;
+-(void)executaSprite;
 
 @end

@@ -22,7 +22,7 @@ static const int NUM_TEXTURAS = 13;
         [self inicializaAnimacaoAbrirCaixa];
         [self inicializaAnimacaoFecharCaixa];
         
-        [self setUserInteractionEnabled:YES];
+        [self setUserInteractionEnabled:NO];
     }
     
     return self;
@@ -47,7 +47,7 @@ static const int NUM_TEXTURAS = 13;
         [self inicializaAnimacaoAbrirCaixa];
         [self inicializaAnimacaoFecharCaixa];
         
-        [self setUserInteractionEnabled:YES];
+        [self setUserInteractionEnabled:NO];
     }
     
     return self;
@@ -141,24 +141,21 @@ static const int NUM_TEXTURAS = 13;
     [lblTipo setText: text];
 }
 
-
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+-(void)executaSprite{
+    
     [self setUserInteractionEnabled:NO];
     
-    
-    
-        //VERIFICA O ESTADO DA CAIXA, SE ELA ESTÁ ABERTA OU FECHADA PARA ACIONAR A SKACTION CORRETA
-        if(caixaAberta){
-            [self fecharCaixa];
-            
-        }else{
-            [self abrirCaixa];
-        }
+    //VERIFICA O ESTADO DA CAIXA, SE ELA ESTÁ ABERTA OU FECHADA PARA ACIONAR A SKACTION CORRETA
+    if(caixaAberta){
+        [self fecharCaixa];
+        
+    }else{
+        [self abrirCaixa];
+    }
 
     
     
 }
-
 
 -(void)fecharCaixa{
     //INICIA A SKACTION QUE FECHA A CAIXA
