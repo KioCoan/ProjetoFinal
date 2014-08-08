@@ -38,33 +38,31 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     viewDeConteudo = [self.storyboard instantiateViewControllerWithIdentifier:@"conteudo"];
-    gerenciadorDeAssuntos = [GerenciadorDeAssunto sharedGerenciador];
-    //self.myDelegate = [gerenciadorDeAssuntos retornaDelegate];
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
-    
+    gerenciadorDeAssuntos = [GerenciadorDeAssunto sharedGerenciador];
     
     teoria = [gerenciadorDeAssuntos retornaTeoriaFormatada];
     
     
     // PONTO CHAVE
-    // O delegate é criado aqui porque tava ferrando com nossa vida se fosse global da classe
 
     if (!self.primeiraChamada) {
-        
-        id <AlteraAnimacaoDelegate> myDelegate = [gerenciadorDeAssuntos retornaDelegate];
-        [myDelegate trocaAnimacao:(int)self.index + 1];
+        [self.myDelegate trocaAnimacao:(int)self.index + 1];
         self.primeiraChamada = NO;
     }
+    
+    
+    
     
     txtConteudo.text = [teoria objectAtIndex:self.index];
     [txtConteudo setFont:[UIFont fontWithName:@"Helvetica" size:23.0]];
     [txtConteudo setTextColor:[UIColor whiteColor]];
-    NSLog(@"Sub view Filho");
+    
 }
 
 

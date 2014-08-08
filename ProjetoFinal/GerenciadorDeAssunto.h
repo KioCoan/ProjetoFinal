@@ -14,7 +14,6 @@
 {
     NSArray *nomesDosAssuntos;
     Assunto* assunto;
-    id <AlteraAnimacaoDelegate> delegateDeConteudo; // Necessário para paginação
 }
 
 + (GerenciadorDeAssunto *)sharedGerenciador;
@@ -33,6 +32,5 @@
 -(int)exercicioSelecionado;
 
 -(SKScene*)retornaAnimacaoNumero:(int)index;
--(void)setaDelegate:(id)myDelegate;
--(id)retornaDelegate;
+
 @end

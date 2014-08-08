@@ -33,20 +33,31 @@
 {
     [super viewDidLoad];
     
-    //INSTANCIO UM GERENCIADOR PARA BUSCAR AS INFORMAÇOES DO ASSUNTO
-    gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     
-    [gerenciador setaDelegate:self];
     
     // Do any additional setup after loading the view.
     //Variavel *v = [[Variavel alloc] init];
     
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString * segueName = segue.identifier;
+    
+    // Caso a Segue seja identificada como a do conteúdo de teoria, ele seta o myDelegate na view que será exibida
+    if ([segueName isEqualToString: @"segueConteudoTeoria"]) {
+        
+        SubViewConteudo *subViewConteudo = (SubViewConteudo*)[segue destinationViewController];
+        
+        [subViewConteudo setMyDelegate:self];
+       }
+}
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+    //INSTANCIO UM GERENCIADOR PARA BUSCAR AS INFORMAÇOES DO ASSUNTO
+    gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     
     //DEFINO O TITULO DO NAVIGATION CONTROLLER DE ACORDO COM O NOME DO ASSUNTO
     [[self navigationItem] setTitle:gerenciador.retornaNomeAssuntoAtual];
@@ -57,6 +68,7 @@
     //INSTANCIO A SKSCENE INICIAL DO ASSUNTO ATUAL
     SKScene *cena = [gerenciador retornaAnimacaoNumero:1];
     
+    
     //DEFININDO TAMANHO DA SKSCENE E ADICIONANDO-A NA SKVIEW
     [cena setSize: viewAnimacao.frame.size];
     [viewAnimacao presentScene:cena];
@@ -65,7 +77,7 @@
     
     [[self view] addSubview:viewAnimacao];
     
-    NSLog(@"Conteudo");
+    
     
 }
 
@@ -77,18 +89,10 @@
     
 }
 
--(void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
-    
-    self.view = nil;
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-    NSLog(@"Conteudo memoria");
-    
 }
 
 //Método acionado pela subViewConteúdoFilho este controller é um delegate da referida View

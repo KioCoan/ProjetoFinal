@@ -19,7 +19,10 @@
 }
 @property BOOL primeiraChamada;
 @property (assign, nonatomic) NSInteger index;
+//@property (strong, nonatomic) IBOutlet UILabel *screenNumber;
+//@property (weak, nonatomic) IBOutlet UILabel *screenNumber;
 
+@property id <AlteraAnimacaoDelegate> myDelegate;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblConteudo;
 
