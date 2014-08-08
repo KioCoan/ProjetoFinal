@@ -16,7 +16,8 @@
     SpriteLabelNode *botaoTipo;
     SpriteLabelNode *botaoNome;
     SKNode *conteudoAtivo;
-    
+    int apertei;
+    int soltei;
 }
 
 - (id)init{
@@ -30,9 +31,47 @@
         [self criaBotoes];
         
         
+        
+ 
     }
     return self;
 }
+
+
+-(void)didMoveToView:(SKView *)view{
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressGestureRecognizer:)];
+    //[longPress setMinimumPressDuration:1.5];
+    //[longPress setNumberOfTouchesRequired:2];
+    [longPress setNumberOfTouchesRequired:1];
+    [longPress setMinimumPressDuration:2];
+    [self.view addGestureRecognizer:longPress];
+    
+}
+
+- (void)longPressGestureRecognizer:(UILongPressGestureRecognizer *)recognizer{
+    
+//    if (recognizer.state == UIGestureRecognizerStateBegan) {
+//        NSLog(@"gesture comecou");
+//    }else if (recognizer.state == UIGestureRecognizerStateChanged){
+//        NSLog(@"gesture meio");
+//    }else if (recognizer.state == UIGestureRecognizerStateEnded){
+//        NSLog(@"gesture fim");
+//    }
+    
+    
+    
+    if (recognizer.state == UIGestureRecognizerStateBegan && [conteudoAtivo.name isEqualToString:@"caixa"]) {
+        NSLog(@"funcionou");
+    }else if (recognizer.state == UIGestureRecognizerStateBegan && [conteudoAtivo.name isEqualToString:@"label"]){
+        NSLog(@"funcionou novamnete");
+    }
+    
+    
+    
+}
+
+
 
 - (void)criaBotoes{
     
@@ -107,17 +146,19 @@
     nome.position = botaoNome.position;
     [self addChild:nome];
     
-    
 }
+
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     
     UITouch *touch = [touches anyObject];
+    apertei =[touch timestamp];
+//    NSLog(@"segurei %d segundos",apertei);
     CGPoint location =  [touch locationInNode:self];
     conteudoAtivo = [self nodeAtPoint:location];
-    NSLog(@"nome node %@",conteudoAtivo.name);
-    if ([conteudoAtivo.name isEqualToString:@"botaoCaixa"]) {
+    
+        if ([conteudoAtivo.name isEqualToString:@"botaoCaixa"]) {
         
         
         [self criaVariavel];
@@ -161,8 +202,12 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
+    UITouch *touch = [touches anyObject];
+    soltei =[touch timestamp];
+    //NSLog(@"soltei %d segundos",soltei);
+    int conta = soltei - apertei;
     
-    
+    //NSLog(@"total %d",conta);
     
     
     
