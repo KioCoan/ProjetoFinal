@@ -18,7 +18,7 @@
     [super viewDidLoad];
     
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    
+   
     self.pageController.dataSource = self;
     [[self.pageController view] setFrame:[[self view] bounds]];
     
@@ -67,6 +67,8 @@
     return childViewController;
     
 }
+
+
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     

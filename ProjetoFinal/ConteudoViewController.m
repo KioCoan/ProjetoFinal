@@ -19,12 +19,13 @@
 
 @implementation ConteudoViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithCoder:aDecoder];
     if (self) {
         
-        
+        primeiraChamada = YES;
     }
     return self;
 }
@@ -32,6 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     
     //INSTANCIO UM GERENCIADOR PARA BUSCAR AS INFORMAÇOES DO ASSUNTO
     gerenciador = [GerenciadorDeAssunto sharedGerenciador];
@@ -42,6 +44,7 @@
     //CRIO UMA SKVIEW PARA INSERIR A SKSCENE
     viewAnimacao = [[SKView alloc] initWithFrame:CGRectMake(0, 65, self.view.frame.size.width, 609)];
     
+    
     //INSTANCIO A SKSCENE INICIAL DO ASSUNTO ATUAL
     SKScene *cena = [gerenciador retornaAnimacaoNumero:1];
     
@@ -50,7 +53,7 @@
     [cena setSize: viewAnimacao.frame.size];
     [viewAnimacao presentScene:cena];
     
-    [cena setBackgroundColor:[UIColor whiteColor]];
+    //[cena setBackgroundColor:[UIColor whiteColor]];
     
     [[self view] addSubview:viewAnimacao];
     
@@ -81,7 +84,11 @@
 
 -(void)trocaAnimacao:(int)index{
     
-    
+    //CASO SEJA A PRIMEIRA  VEZ QUE ESTE MÉTODO É CHAMADO, ELE NÃO EXECUTA O RESTANTE DO CÓDIGO
+    if(primeiraChamada){
+        primeiraChamada = NO;
+        return;
+    }
    
     SKTransition *reveal = [SKTransition fadeWithDuration:1];
     SKScene* proximaAnimacao = [gerenciador retornaAnimacaoNumero:index];

@@ -16,9 +16,9 @@
     self = [super init];
     
     if (self) {
-        [self setAnimacao:[[AnimaOperadores alloc] init]];
         [self montaTeoria:@"ConceitosOperadores"];
         [self setNome:@"Operadores"];
+        self.cenaAtual = 0;
     }
     return self;
 }
@@ -32,6 +32,9 @@
 }
 
 -(SKScene*)retornaAnimacaoNumero:(int)index{
+    if (self.cenaAtual == index) {
+        return nil;
+    }
     
     switch (index) {
         case 1:
@@ -43,6 +46,8 @@
             [self setAnimacao:nil];
             break;
     }
+    
+    [self setCenaAtual:index];
     return [self animacao];
 }
 

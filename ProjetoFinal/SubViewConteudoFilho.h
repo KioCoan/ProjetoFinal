@@ -17,7 +17,6 @@
     __weak IBOutlet UITextView *txtConteudo;
     ConteudoViewController *viewDeConteudo;
 }
-@property BOOL primeiraChamada;
 @property (assign, nonatomic) NSInteger index;
 
 @property id <AlteraAnimacaoDelegate> myDelegate;

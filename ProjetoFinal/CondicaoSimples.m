@@ -16,10 +16,9 @@
     self = [super init];
     
     if (self) {
-        [self setAnimacao:[[AnimaCondSimples alloc] init]];
         [self montaTeoria:@"ConceitosCondicionais"];
         [self setNome:@"Condição Simples"];
-        
+        self.cenaAtual = 0;
         
     }
     return self;
@@ -37,16 +36,37 @@
 
 -(SKScene*)retornaAnimacaoNumero:(int)index{
     
+    if (self.cenaAtual == index) {
+        return nil;
+    }
+    
     switch (index) {
         case 1:
             [self setAnimacao:nil];
-            [self setAnimacao:[[AnimaCondSimples alloc] init]];
+            [self setAnimacao:[[AnimaCondSimples alloc] initWithCondicao:@"SE"]];
+            break;
+            
+        case 3:
+            [self setAnimacao:nil];
+            [self setAnimacao:[[AnimaCondSimples alloc] initWithCondicao:@"SE-SENAO"]];
+            break;
+            
+        case 4:
+            [self setAnimacao:nil];
+            [self setAnimacao:[[AnimaCondSimples alloc] initWithCondicao:@"SE-SENAOSE"]];
+            break;
+            
+        case 5:
+            [self setAnimacao:nil];
+            [self setAnimacao:[[AnimaCondSimples alloc] initWithCondicao:@"SE-SENAOSE-SENAO"]];
             break;
             
         default:
             [self setAnimacao:nil];
             break;
     }
+    
+    [self setCenaAtual:index];
     return [self animacao];
 }
 

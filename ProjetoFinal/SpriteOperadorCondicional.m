@@ -74,6 +74,7 @@
             //VERIFICA SE A CONDIÇÃO É VERDADEIRA PARA QUE SEJA COLOCADA A TEXTURA QUE INDICA QUE É VERDADEIRO
             if(verdadeiro){
                 [spriteValores setTexture:[SKTexture textureWithImageNamed:@"valores-verdadeiro.png"]];
+                [self runAction:[SKAction playSoundFileNamed:@"correto.aiff" waitForCompletion:NO]];
             }
             
             //AVISA PARA O DELEGATE QUE A VERIFICAÇÃO FOI FINALIZADA

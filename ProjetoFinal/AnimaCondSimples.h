@@ -21,4 +21,6 @@
 
 }
 
+
+-(id)initWithCondicao:(NSString*)condicao;
 @end

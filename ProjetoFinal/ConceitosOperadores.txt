@@ -8,14 +8,12 @@ Eles nos ajudam a verificar, dar valor a uma variável e executar operações co
 
 	Usamos operadores aritméticos para realizar contas. Somando os valores de variáveis, dividindo, multiplicando, etc.
 	Portanto, os operadores são: +, -, *, /.
-
 	Se a variável "a" possui o valor 4 e a variável "b" possui o valor 2:
 
 	a + b = 6
 	a - b = 2
 	a * b = 8
 	a / b = 2
-
 #Atribuição
 
     Até agora, utilizamos um dos principais operadores de atribuição, para passar valores a nossas variáveis, representado pelo símbulo =

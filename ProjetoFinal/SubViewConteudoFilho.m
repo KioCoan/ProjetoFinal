@@ -25,13 +25,7 @@
     return self;
     
 }
--(id)init{
-    self = [super init];
-    if (self) {
-        self.primeiraChamada = YES;
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad {
     
@@ -51,13 +45,8 @@
     
     // PONTO CHAVE
 
-    if (!self.primeiraChamada) {
-        [self.myDelegate trocaAnimacao:(int)self.index + 1];
-        self.primeiraChamada = NO;
-    }
-    
-    
-    
+    [self.myDelegate trocaAnimacao:(int)self.index + 1];
+
     
     txtConteudo.text = [teoria objectAtIndex:self.index];
     [txtConteudo setFont:[UIFont fontWithName:@"Helvetica" size:23.0]];

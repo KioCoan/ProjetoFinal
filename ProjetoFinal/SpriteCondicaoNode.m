@@ -24,13 +24,13 @@
     CGSize tamanho;
     
     if ([tipo isEqualToString:@"se"]) {
-        tamanho = CGSizeMake(135, 102);
+        tamanho = CGSizeMake(120, 91);
         [self criaSpriteExclamacao];
     }else if ([tipo isEqualToString:@"senaoSe"]){
-        tamanho = CGSizeMake(135, 259);
+        tamanho = CGSizeMake(120, 204);
         [self criaSpriteExclamacao];
     }else{
-        tamanho = CGSizeMake(227, 282);
+        tamanho = CGSizeMake(212, 243);
     }
     
     
@@ -44,17 +44,15 @@
     CGPoint posicao;
     
     if ([tipoCondicao isEqualToString:@"se"]) {
-        posicao = CGPointMake(-15, 45);
+        posicao = CGPointMake(-15, 39);
     }else if ([tipoCondicao isEqualToString:@"senaoSe"]){
-        posicao = CGPointMake(-15, -35);
-    }else{
-        posicao = CGPointMake(-15, -20);
+        posicao = CGPointMake(-15, -17);
     }
 
     
     
     [spriteExclamacao setPosition:posicao];
-    [spriteExclamacao setSize:CGSizeMake(11, 43)];
+    [spriteExclamacao setSize:CGSizeMake(17, 43)];
 }
 
 //ESTE METODO RETORNA UMA TEXTURA COM BASE DO TIPO DE CONDIÇAO DESTA CLASSE E TIPO DE TEXTURA (NORMAL OU VERDE)
@@ -89,10 +87,10 @@
     CGPoint posicao;
     
     if ([tipoCondicao isEqualToString:@"se"]) {
-        posicao = CGPointMake(150, -20);
+        posicao = CGPointMake(140, -20);
         [self addChild:spriteOperador];
     }else if ([tipoCondicao isEqualToString:@"senaoSe"]){
-        posicao = CGPointMake(150, -100);
+        posicao = CGPointMake(140, -75);
         [self addChild:spriteOperador];
     }else{
         [self criarLabelResultado:resultado];
@@ -122,13 +120,14 @@
     //ANTES DE INICIAR O TESTE É VERIFICADO SE A CONDIÇÃO É UM SENÃO, CASO SEJA A TEXTURA, E MODIFICADA E FIM DE MÉTODO
     if([tipoCondicao isEqualToString:@"senao"]){
         [self setTexture:[self getTexturaDoTipo:@"verde"]];
+        [self runAction:[SKAction playSoundFileNamed:@"correto.aiff" waitForCompletion:NO]];
         [[self myDelegate] testeFinalizado:YES];
         return;
     }
     
     
     [self mostraExclamacao:YES];
-    
+    [self runAction:[SKAction playSoundFileNamed:@"exclamacao.mp3" waitForCompletion:NO]];
     //APÓS EXIBIR O NODE EXCLAMAÇÃO É INICIADA UMA ANIMAÇÃO DE ESPERA ANTES DE SER INICIADA A ANIMAÇÃO QUE TESTA A CONDIÇÃO
     [spriteOperador runAction:[SKAction waitForDuration:0.5] completion:^{
         [spriteOperador removeAllActions];

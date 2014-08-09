@@ -32,19 +32,12 @@
 		84B1B3E3197D881900089FCB /* CondicaoSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E2197D881900089FCB /* CondicaoSimples.m */; };
 		84B1B3E6197D8AE500089FCB /* ExeCondSimples1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E5197D8AE500089FCB /* ExeCondSimples1.m */; };
 		84B1B3E9197D8BEF00089FCB /* CenaExercicioCondSimples1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E8197D8BEF00089FCB /* CenaExercicioCondSimples1.m */; };
-		912A66B01990052000D7F783 /* refresh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 912A66AF1990052000D7F783 /* refresh.wav */; };
-		912A66B219901EB800D7F783 /* refresh2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 912A66B119901EB800D7F783 /* refresh2.mp3 */; };
-		91A7A953198F56A3009A5EB1 /* abrirCaixa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91A7A951198F56A3009A5EB1 /* abrirCaixa.mp3 */; };
-		91A7A954198F56A3009A5EB1 /* fecharCaixa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91A7A952198F56A3009A5EB1 /* fecharCaixa.mp3 */; };
 		91A7A956198F56DC009A5EB1 /* ConceitosCondicionais.txt in Resources */ = {isa = PBXBuildFile; fileRef = 91A7A955198F56DC009A5EB1 /* ConceitosCondicionais.txt */; };
-		91A7A958198F5D0B009A5EB1 /* slider.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91A7A957198F5D0B009A5EB1 /* slider.mp3 */; };
 		91A986111962324500EA1074 /* Assunto.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A986101962324500EA1074 /* Assunto.m */; };
 		91A98619196232F800EA1074 /* Exercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98618196232F800EA1074 /* Exercicio.m */; };
 		91A9861B196233CD00EA1074 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A9861A196233CD00EA1074 /* SpriteKit.framework */; };
 		91A9861E1962392400EA1074 /* GerenciadorDeAssunto.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9861D1962392400EA1074 /* GerenciadorDeAssunto.m */; };
 		91C8EF6B197D871200CA01DE /* ConceitosOperadores.txt in Resources */ = {isa = PBXBuildFile; fileRef = 91C8EF6A197D871200CA01DE /* ConceitosOperadores.txt */; };
-		91D5ED6E19900055008EC1B8 /* correto.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 91D5ED6C19900055008EC1B8 /* correto.aiff */; };
-		91D5ED6F19900055008EC1B8 /* errado.wav in Resources */ = {isa = PBXBuildFile; fileRef = 91D5ED6D19900055008EC1B8 /* errado.wav */; };
 		A500C2B519743C1D00D6BE83 /* ExeVariavel1.m in Sources */ = {isa = PBXBuildFile; fileRef = A500C2B419743C1D00D6BE83 /* ExeVariavel1.m */; };
 		A505740C197811E700F68932 /* ExeOperadores1.m in Sources */ = {isa = PBXBuildFile; fileRef = A505740B197811E700F68932 /* ExeOperadores1.m */; };
 		A505740F1978243A00F68932 /* Geral.m in Sources */ = {isa = PBXBuildFile; fileRef = A505740E1978243A00F68932 /* Geral.m */; };
@@ -65,6 +58,14 @@
 		A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F11960A7A6006429C7 /* MenuViewController.m */; };
 		A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F31960A7A6006429C7 /* ConteudoViewController.m */; };
 		BD01DE051983566100AEAAA8 /* AnimaCondSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */; };
+		BD325A451995EB7D00D15DBF /* abrirCaixa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD325A3D1995EB7D00D15DBF /* abrirCaixa.mp3 */; };
+		BD325A461995EB7D00D15DBF /* correto.aiff in Resources */ = {isa = PBXBuildFile; fileRef = BD325A3E1995EB7D00D15DBF /* correto.aiff */; };
+		BD325A471995EB7D00D15DBF /* errado.wav in Resources */ = {isa = PBXBuildFile; fileRef = BD325A3F1995EB7D00D15DBF /* errado.wav */; };
+		BD325A481995EB7D00D15DBF /* fecharCaixa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD325A401995EB7D00D15DBF /* fecharCaixa.mp3 */; };
+		BD325A491995EB7D00D15DBF /* exclamacao.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD325A411995EB7D00D15DBF /* exclamacao.mp3 */; };
+		BD325A4A1995EB7D00D15DBF /* refresh.wav in Resources */ = {isa = PBXBuildFile; fileRef = BD325A421995EB7D00D15DBF /* refresh.wav */; };
+		BD325A4B1995EB7D00D15DBF /* refresh2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD325A431995EB7D00D15DBF /* refresh2.mp3 */; };
+		BD325A4C1995EB7D00D15DBF /* slider.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD325A441995EB7D00D15DBF /* slider.mp3 */; };
 		BD42E0F41985E2090007181F /* simbolo-atualizar.png in Resources */ = {isa = PBXBuildFile; fileRef = BD42E0F31985E2090007181F /* simbolo-atualizar.png */; };
 		BD4B4BDB197075BD00D6E839 /* SpriteCaixaNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */; };
 		BD510FE11989E8200052B6E5 /* lousa-teoria.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD510FE01989E8200052B6E5 /* lousa-teoria.jpg */; };
@@ -192,12 +193,7 @@
 		84B1B3E5197D8AE500089FCB /* ExeCondSimples1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExeCondSimples1.m; path = Exercicios/ExeCondSimples1.m; sourceTree = "<group>"; };
 		84B1B3E7197D8BEF00089FCB /* CenaExercicioCondSimples1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CenaExercicioCondSimples1.h; path = Exercicios/CenaExercicioCondSimples1.h; sourceTree = "<group>"; };
 		84B1B3E8197D8BEF00089FCB /* CenaExercicioCondSimples1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CenaExercicioCondSimples1.m; path = Exercicios/CenaExercicioCondSimples1.m; sourceTree = "<group>"; };
-		912A66AF1990052000D7F783 /* refresh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = refresh.wav; sourceTree = "<group>"; };
-		912A66B119901EB800D7F783 /* refresh2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = refresh2.mp3; sourceTree = "<group>"; };
-		91A7A951198F56A3009A5EB1 /* abrirCaixa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = abrirCaixa.mp3; sourceTree = "<group>"; };
-		91A7A952198F56A3009A5EB1 /* fecharCaixa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fecharCaixa.mp3; sourceTree = "<group>"; };
 		91A7A955198F56DC009A5EB1 /* ConceitosCondicionais.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConceitosCondicionais.txt; sourceTree = "<group>"; };
-		91A7A957198F5D0B009A5EB1 /* slider.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = slider.mp3; sourceTree = "<group>"; };
 		91A9860F1962324500EA1074 /* Assunto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Assunto.h; path = Assuntos/Assunto.h; sourceTree = "<group>"; };
 		91A986101962324500EA1074 /* Assunto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Assunto.m; path = Assuntos/Assunto.m; sourceTree = "<group>"; };
 		91A98617196232F800EA1074 /* Exercicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exercicio.h; path = Exercicios/Exercicio.h; sourceTree = "<group>"; };
@@ -206,8 +202,6 @@
 		91A9861C1962392400EA1074 /* GerenciadorDeAssunto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GerenciadorDeAssunto.h; sourceTree = "<group>"; };
 		91A9861D1962392400EA1074 /* GerenciadorDeAssunto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GerenciadorDeAssunto.m; sourceTree = "<group>"; };
 		91C8EF6A197D871200CA01DE /* ConceitosOperadores.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConceitosOperadores.txt; sourceTree = "<group>"; };
-		91D5ED6C19900055008EC1B8 /* correto.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = correto.aiff; sourceTree = "<group>"; };
-		91D5ED6D19900055008EC1B8 /* errado.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = errado.wav; sourceTree = "<group>"; };
 		A500C2B319743C1D00D6BE83 /* ExeVariavel1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExeVariavel1.h; path = Exercicios/ExeVariavel1.h; sourceTree = "<group>"; };
 		A500C2B419743C1D00D6BE83 /* ExeVariavel1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExeVariavel1.m; path = Exercicios/ExeVariavel1.m; sourceTree = "<group>"; };
 		A505740A197811E700F68932 /* ExeOperadores1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExeOperadores1.h; path = Exercicios/ExeOperadores1.h; sourceTree = "<group>"; };
@@ -245,6 +239,14 @@
 		A5D0427819910A370064663B /* AlteraAnimacaoDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AlteraAnimacaoDelegate.h; path = Assuntos/AlteraAnimacaoDelegate.h; sourceTree = "<group>"; };
 		BD01DE031983566100AEAAA8 /* AnimaCondSimples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimaCondSimples.h; sourceTree = "<group>"; };
 		BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimaCondSimples.m; sourceTree = "<group>"; };
+		BD325A3D1995EB7D00D15DBF /* abrirCaixa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = abrirCaixa.mp3; path = Sons/abrirCaixa.mp3; sourceTree = "<group>"; };
+		BD325A3E1995EB7D00D15DBF /* correto.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = correto.aiff; path = Sons/correto.aiff; sourceTree = "<group>"; };
+		BD325A3F1995EB7D00D15DBF /* errado.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = errado.wav; path = Sons/errado.wav; sourceTree = "<group>"; };
+		BD325A401995EB7D00D15DBF /* fecharCaixa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fecharCaixa.mp3; path = Sons/fecharCaixa.mp3; sourceTree = "<group>"; };
+		BD325A411995EB7D00D15DBF /* exclamacao.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = exclamacao.mp3; path = Sons/exclamacao.mp3; sourceTree = "<group>"; };
+		BD325A421995EB7D00D15DBF /* refresh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = refresh.wav; path = Sons/refresh.wav; sourceTree = "<group>"; };
+		BD325A431995EB7D00D15DBF /* refresh2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = refresh2.mp3; path = Sons/refresh2.mp3; sourceTree = "<group>"; };
+		BD325A441995EB7D00D15DBF /* slider.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = slider.mp3; path = Sons/slider.mp3; sourceTree = "<group>"; };
 		BD42E0F31985E2090007181F /* simbolo-atualizar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "simbolo-atualizar.png"; path = "Imagens/simbolo-atualizar.png"; sourceTree = "<group>"; };
 		BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteCaixaNode.h; sourceTree = "<group>"; };
 		BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteCaixaNode.m; sourceTree = "<group>"; };
@@ -529,13 +531,14 @@
 		91A7A950198F5682009A5EB1 /* Sons */ = {
 			isa = PBXGroup;
 			children = (
-				912A66B119901EB800D7F783 /* refresh2.mp3 */,
-				912A66AF1990052000D7F783 /* refresh.wav */,
-				91D5ED6C19900055008EC1B8 /* correto.aiff */,
-				91D5ED6D19900055008EC1B8 /* errado.wav */,
-				91A7A957198F5D0B009A5EB1 /* slider.mp3 */,
-				91A7A951198F56A3009A5EB1 /* abrirCaixa.mp3 */,
-				91A7A952198F56A3009A5EB1 /* fecharCaixa.mp3 */,
+				BD325A3D1995EB7D00D15DBF /* abrirCaixa.mp3 */,
+				BD325A3E1995EB7D00D15DBF /* correto.aiff */,
+				BD325A3F1995EB7D00D15DBF /* errado.wav */,
+				BD325A401995EB7D00D15DBF /* fecharCaixa.mp3 */,
+				BD325A411995EB7D00D15DBF /* exclamacao.mp3 */,
+				BD325A421995EB7D00D15DBF /* refresh.wav */,
+				BD325A431995EB7D00D15DBF /* refresh2.mp3 */,
+				BD325A441995EB7D00D15DBF /* slider.mp3 */,
 			);
 			name = Sons;
 			sourceTree = "<group>";
@@ -902,12 +905,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDF8AE08197B258C00BA5B8A /* parte-valores8.png in Resources */,
+				BD325A4A1995EB7D00D15DBF /* refresh.wav in Resources */,
 				BDC7579F196787E700DB8380 /* abrir-caixa2.png in Resources */,
 				BD510FF7198A03740052B6E5 /* estrutura-condicionais5.png in Resources */,
 				E5DDB3621993F45200B0061A /* valor1-amarelo.png in Resources */,
-				91D5ED6F19900055008EC1B8 /* errado.wav in Resources */,
 				BDF8AE07197B258C00BA5B8A /* parte-valores7.png in Resources */,
-				91D5ED6E19900055008EC1B8 /* correto.aiff in Resources */,
 				91C8EF6B197D871200CA01DE /* ConceitosOperadores.txt in Resources */,
 				BDBE769D197A3B69004EA926 /* parte-operador.png in Resources */,
 				BDC757A8196787E700DB8380 /* abrir-caixa11.png in Resources */,
@@ -916,10 +918,13 @@
 				BD510FF4198A03740052B6E5 /* estrutura-condicionais2.png in Resources */,
 				BDF8ADF4197B255C00BA5B8A /* parte-resultado7.png in Resources */,
 				91A7A956198F56DC009A5EB1 /* ConceitosCondicionais.txt in Resources */,
+				BD325A491995EB7D00D15DBF /* exclamacao.mp3 in Resources */,
 				BD510FFB198A03740052B6E5 /* estrutura-condicionais9.png in Resources */,
+				BD325A451995EB7D00D15DBF /* abrirCaixa.mp3 in Resources */,
 				BD66B651197F6F16000BB548 /* atualizar-dados.png in Resources */,
 				BDE82C2319916E1F00610D96 /* se-normal.png in Resources */,
 				BDF8AE0B197B258C00BA5B8A /* parte-valores11.png in Resources */,
+				BD325A481995EB7D00D15DBF /* fecharCaixa.mp3 in Resources */,
 				120E8F8F192FC0A200CDEF95 /* Images.xcassets in Resources */,
 				BDC757A0196787E700DB8380 /* abrir-caixa3.png in Resources */,
 				BD511000198A03740052B6E5 /* estrutura-condicionais14.png in Resources */,
@@ -929,17 +934,19 @@
 				BDF8ADF0197B255C00BA5B8A /* parte-resultado3.png in Resources */,
 				BDC757A4196787E700DB8380 /* abrir-caixa7.png in Resources */,
 				BD510FE11989E8200052B6E5 /* lousa-teoria.jpg in Resources */,
+				BD325A471995EB7D00D15DBF /* errado.wav in Resources */,
 				E501FA6B192FCD3800B56B5C /* item-memoria.png in Resources */,
 				A521FEF21994203000D28627 /* valores-verdadeiro.png in Resources */,
+				BD325A4B1995EB7D00D15DBF /* refresh2.mp3 in Resources */,
 				BDC757A1196787E700DB8380 /* abrir-caixa4.png in Resources */,
 				120E8F81192FC0A200CDEF95 /* InfoPlist.strings in Resources */,
+				BD325A4C1995EB7D00D15DBF /* slider.mp3 in Resources */,
 				BD510FF3198A03740052B6E5 /* estrutura-condicionais1.png in Resources */,
 				BDF8AE04197B258C00BA5B8A /* parte-valores4.png in Resources */,
 				BD5A552A198C972000D8722F /* se-verde.png in Resources */,
 				BD510FFE198A03740052B6E5 /* estrutura-condicionais12.png in Resources */,
 				BDC757A9196787E700DB8380 /* abrir-caixa12.png in Resources */,
 				BDC7579E196787E700DB8380 /* abrir-caixa1.png in Resources */,
-				91A7A953198F56A3009A5EB1 /* abrirCaixa.mp3 in Resources */,
 				BDC757A7196787E700DB8380 /* abrir-caixa10.png in Resources */,
 				BDF8ADF3197B255C00BA5B8A /* parte-resultado6.png in Resources */,
 				BD42E0F41985E2090007181F /* simbolo-atualizar.png in Resources */,
@@ -949,12 +956,8 @@
 				BD510FF9198A03740052B6E5 /* estrutura-condicionais7.png in Resources */,
 				BDF8AE03197B258C00BA5B8A /* parte-valores3.png in Resources */,
 				BDF8ADEF197B255C00BA5B8A /* parte-resultado2.png in Resources */,
-				91A7A954198F56A3009A5EB1 /* fecharCaixa.mp3 in Resources */,
 				BD5A552B198C972000D8722F /* senao-verde.png in Resources */,
-				912A66B01990052000D7F783 /* refresh.wav in Resources */,
-				912A66B219901EB800D7F783 /* refresh2.mp3 in Resources */,
 				BDF8AE06197B258C00BA5B8A /* parte-valores6.png in Resources */,
-				91A7A958198F5D0B009A5EB1 /* slider.mp3 in Resources */,
 				A55F2B4419648C0600111BEB /* ConceitosVariaveis.txt in Resources */,
 				846B738E19782427009C2EB7 /* fundo-cinza.png in Resources */,
 				BDC757AA196787E700DB8380 /* abrir-caixa13.png in Resources */,
@@ -967,6 +970,7 @@
 				BDC757A2196787E700DB8380 /* abrir-caixa5.png in Resources */,
 				BD510FFC198A03740052B6E5 /* estrutura-condicionais10.png in Resources */,
 				BD510FF8198A03740052B6E5 /* estrutura-condicionais6.png in Resources */,
+				BD325A461995EB7D00D15DBF /* correto.aiff in Resources */,
 				BD510FFA198A03740052B6E5 /* estrutura-condicionais8.png in Resources */,
 				BDE82C2419916E1F00610D96 /* senao-normal.png in Resources */,
 				BD510FFF198A03740052B6E5 /* estrutura-condicionais13.png in Resources */,

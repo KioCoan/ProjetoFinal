@@ -12,6 +12,7 @@
 @interface ConteudoViewController : UIViewController <AlteraAnimacaoDelegate>
 {
     GerenciadorDeAssunto *gerenciador;
+    BOOL primeiraChamada;
 }
 @property (weak, nonatomic) IBOutlet UIView *myViewContainer;
 
