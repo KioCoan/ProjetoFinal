@@ -24,11 +24,11 @@
     SpriteOperadorCondicional *spriteOperador;
 }
 @property id <SpriteCondicaoNodeDelegate> myDelegate;
-@property BOOL verdadeiro;
 
 -(id)initWithType:(NSString*)tipo;
 -(NSString*)getTipo;
 -(void)criarValores:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2 resultado:(NSString*)resultado;
+-(void)resetarTextura;
 -(void)iniciarTeste;
 -(NSString*)retornaTextoASerExibido;
 -(BOOL)retornaVeracidade;

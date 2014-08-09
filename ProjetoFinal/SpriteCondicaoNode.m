@@ -21,23 +21,20 @@
 }
 
 -(void)montaSprite:(NSString*)tipo{
-    
-    SKTexture *textura;
     CGSize tamanho;
     
     if ([tipo isEqualToString:@"se"]) {
-        textura =  [SKTexture textureWithImageNamed:@"se-normal.png"];
         tamanho = CGSizeMake(135, 102);
         [self criaSpriteExclamacao];
     }else if ([tipo isEqualToString:@"senaoSe"]){
-        textura =  [SKTexture textureWithImageNamed:@"senaoSe-normal.png"];
         tamanho = CGSizeMake(135, 259);
         [self criaSpriteExclamacao];
     }else{
-        textura =  [SKTexture textureWithImageNamed:@"senao-normal.png"];
         tamanho = CGSizeMake(227, 282);
     }
-    [self setTexture:textura];
+    
+    
+    [self setTexture:[self getTexturaDoTipo:@"normal"]];
     [self setSize:tamanho];
 }
 
@@ -59,6 +56,12 @@
     [spriteExclamacao setPosition:posicao];
     [spriteExclamacao setSize:CGSizeMake(11, 43)];
 }
+
+//ESTE METODO RETORNA UMA TEXTURA COM BASE DO TIPO DE CONDIÇAO DESTA CLASSE E TIPO DE TEXTURA (NORMAL OU VERDE)
+-(SKTexture*)getTexturaDoTipo:(NSString*)tipoTextura{
+    return [SKTexture textureWithImageNamed:[NSString stringWithFormat:@"%@-%@.png", tipoCondicao, tipoTextura]];
+}
+
 
 -(void)mostraExclamacao:(BOOL)status{
     
@@ -92,42 +95,33 @@
         posicao = CGPointMake(150, -100);
         [self addChild:spriteOperador];
     }else{
-        posicao = CGPointMake(150, -20);
+        [self criarLabelResultado:resultado];
     }
     
     [spriteOperador setPosition:posicao];
     
 }
 
-
--(void)verifica:(BOOL)status{
+-(void)criarLabelResultado:(NSString*)resultado{
+    SKLabelNode *lblResultado = [SKLabelNode labelNodeWithFontNamed:@"Avenir Next Condensed Medium"];
+    [lblResultado setText:[NSString stringWithFormat:@"escreva (\"%@\")",resultado]];
+    [lblResultado setFontSize:20];
+    [lblResultado setFontColor:[SKColor blackColor]];
+    [lblResultado setPosition:CGPointMake(0, -30)];
     
-    [self texturaDeVerificando:status];
-    [self mostraExclamacao:status];
-    
+    [self addChild:lblResultado];
 }
 
 
--(void)texturaDeVerificando:(BOOL)status{
-    SKTexture *textura;
-    
-    //VERIFICA
-    if (status) {
-        textura = [SKTexture textureWithImageNamed:[NSString stringWithFormat:@"%@-verde.png", tipoCondicao]];
-        
-    }else{
-        textura = [SKTexture textureWithImageNamed:[NSString stringWithFormat:@"%@-normal.png", tipoCondicao]];
-    }
-    
-    
-    [self setTexture:textura];
+-(void)resetarTextura{
+    [spriteOperador resetarTextura];
 }
 
 
 -(void)iniciarTeste{
     //ANTES DE INICIAR O TESTE É VERIFICADO SE A CONDIÇÃO É UM SENÃO, CASO SEJA A TEXTURA, E MODIFICADA E FIM DE MÉTODO
     if([tipoCondicao isEqualToString:@"senao"]){
-        [self setTexture:[SKTexture textureWithImageNamed:@"senao-verde.png"]];
+        [self setTexture:[self getTexturaDoTipo:@"verde"]];
         [[self myDelegate] testeFinalizado:YES];
         return;
     }
@@ -153,7 +147,7 @@
 
 -(void)testeFinalizado{
     [self mostraExclamacao:NO];
-    [[self myDelegate] testeFinalizado:self.verdadeiro];
+    [[self myDelegate] testeFinalizado:[spriteOperador retornaVeracidade]];
 }
 
 @end

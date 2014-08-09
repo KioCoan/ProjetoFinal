@@ -29,7 +29,7 @@
     condicoesNode = [[NSMutableArray alloc] init];
     
     [condicoesNode addObject:[self inicializaCondicaoNode:@"se" posicao:CGPointMake(130, 450)]];
-    //[condicoesNode addObject:[self inicializaCondicaoNode:@"senao" posicao:CGPointMake(130, 270)]];
+    //[condicoesNode addObject:[self inicializaCondicaoNode:@"senaoSe" posicao:CGPointMake(130, 320)]];
     
     [self inicializarParametros];
     
@@ -42,17 +42,15 @@
         //DEFINE OS VALORES, OPERADOR E RESULTADO
         Gerador *gerador = [[Gerador alloc] init];
         
-        NSString* v1 = [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:10]];
-        NSString* v2 = [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:10]];
+        NSString* valor1 = [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:10]];
+        NSString* valor2 = [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:10]];
         NSString* operador = [gerador retornaOperadorRelacional];
         
-        [node criarValores:v1 eOperador:operador eValor2:v2 resultado:@"Verdade!!!"];
+        [node criarValores:valor1 eOperador:operador eValor2:valor2 resultado:valor1];
         [self inicializaSaidadeDados];
         
         // Teste remover depois
-        if ([node retornaVeracidade]) {
-            [console exibeTexto:[node retornaTextoASerExibido]];
-        }
+        
     }
 }
 
@@ -100,20 +98,6 @@
 }
 
 
-//-(void)didMoveToView:(SKView *)view{
-//    CGRect frame = CGRectMake(450, 75, 120, 30);
-//    frame.origin.x += frame.size.width + 20;
-//    int numLabels = 2;
-//    
-//    for(int i=0; i<numLabels; i++){
-//        [self criarTextField:frame texto:@"5"];
-//        
-//        frame.origin.y -= 35;
-//    }
-//    
-//}
-
-
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     UITouch *touch = [touches anyObject];
     CGPoint posicao = [touch locationInNode:self];
@@ -121,42 +105,42 @@
     
     if([node.name isEqualToString:@"iniciarAnimacao"]){
         [node removeFromParent];
-        [[condicoesNode objectAtIndex:contadorDeTeste] iniciarTeste];
+        
+        [self iniciarAnimacaoCondicional];
     }
 }
 
 
+-(void)iniciarAnimacaoCondicional{
+    //O CONSOLE INICIA SEM TEXTO
+    [console exibeTexto:@""];
+    
+    //VARRE O VETOR DEFININDO AS TEXTURAS PADROES DE INÍCIO
+    for(SpriteCondicaoNode *c in condicoesNode){
+        [c resetarTextura];
+    }
+    
+    //INICIA O TESTE SEMPRE DO PRIMEIRO OBJETO DO VETOR
+    [[condicoesNode objectAtIndex:contadorDeTeste] iniciarTeste];
+}
+
+
 -(void)testeFinalizado:(BOOL)verdadeiro{
+   
+    
     if(!verdadeiro && contadorDeTeste < condicoesNode.count - 1){
         [[condicoesNode objectAtIndex:++contadorDeTeste] iniciarTeste];
     
     }else{
+        if ([[condicoesNode objectAtIndex:contadorDeTeste] retornaVeracidade]) {
+            [console exibeTexto:[[condicoesNode objectAtIndex:contadorDeTeste] retornaTextoASerExibido]];
+        }
+        
         [self addChild:botaoIniciarTeste];
         contadorDeTeste = 0;
     }
     
 }
 
-//-(void)criarTextField:(CGRect)frame texto:(NSString*)texto{
-//    UITextField *textField = [[UITextField alloc] initWithFrame:frame];
-//    textField.borderStyle = UITextBorderStyleRoundedRect;
-//    textField.textColor = [UIColor blackColor];
-//    textField.font = [UIFont systemFontOfSize:17.0];
-//    textField.backgroundColor = [SKColor whiteColor];
-//    textField.autocorrectionType = UITextAutocorrectionTypeYes;
-//    textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-//    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-//    textField.delegate = self;
-//    textField.text = texto;
-//    
-//    
-//    [self.view addSubview:textField];
-//}
-
-//-(BOOL)textFieldShouldReturn:(UITextField *)textField{
-//    [textField resignFirstResponder];
-//
-//    return YES;
-//}
 
 @end

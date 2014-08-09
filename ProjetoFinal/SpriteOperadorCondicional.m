@@ -84,6 +84,13 @@
 }
 
 
+-(void)resetarTextura{
+    if(spriteValores){
+        [spriteValores setTexture:[SKTexture textureWithImageNamed:@"parte-valores1.png"]];
+    }
+    
+}
+
 
 -(SKAction*)criarAnimacaoPiscarComTextura:(NSString*)nomeTextura{
     //CRIA UM VETOR COM OS SPRITES DE "VERIFICAÇÃO" DOS VALORES, LOGO APÓS É RETORNADA A ANIMAÇÃO DESTE VETOR

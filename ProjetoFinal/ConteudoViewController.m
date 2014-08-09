@@ -36,29 +36,6 @@
     //INSTANCIO UM GERENCIADOR PARA BUSCAR AS INFORMAÇOES DO ASSUNTO
     gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     
-    // Do any additional setup after loading the view.
-    //Variavel *v = [[Variavel alloc] init];
-    
-}
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    NSString * segueName = segue.identifier;
-    
-    // Caso a Segue seja identificada como a do conteúdo de teoria, ele seta o myDelegate na view que será exibida
-    if ([segueName isEqualToString: @"segueConteudoTeoria"]) {
-        
-        SubViewConteudo *subViewConteudo = (SubViewConteudo*)[segue destinationViewController];
-        
-        [subViewConteudo setMyDelegate:self];
-       }
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-    
-    
     //DEFINO O TITULO DO NAVIGATION CONTROLLER DE ACORDO COM O NOME DO ASSUNTO
     [[self navigationItem] setTitle:gerenciador.retornaNomeAssuntoAtual];
     
@@ -77,17 +54,22 @@
     
     [[self view] addSubview:viewAnimacao];
     
-    
-    
 }
 
--(void)viewDidAppear:(BOOL)animated{
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString * segueName = segue.identifier;
     
-    //Após exibir a tela prepara a lista de exercícios (Aloca todos eles)para que sejam exibidos seus Titulos e descriçoes na póxima tela
-    [super viewDidAppear:animated];
-    
-    
+    // Caso a Segue seja identificada como a do conteúdo de teoria, ele seta o myDelegate na view que será exibida
+    if ([segueName isEqualToString: @"segueConteudoTeoria"]) {
+        
+        SubViewConteudo *subViewConteudo = (SubViewConteudo*)[segue destinationViewController];
+        
+        [subViewConteudo setMyDelegate:self];
+       }
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {

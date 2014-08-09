@@ -152,10 +152,12 @@ static const int NUM_TEXTURAS = 13;
     }else{
         [self abrirCaixa];
     }
-
-    
     
 }
+
+//-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+//    [self executaSprite];
+//}
 
 -(void)fecharCaixa{
     //INICIA A SKACTION QUE FECHA A CAIXA

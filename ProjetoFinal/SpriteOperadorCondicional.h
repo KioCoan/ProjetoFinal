@@ -37,4 +37,5 @@
 -(BOOL)retornaVeracidade;
 -(NSString*)retornaTextoASerExibido;
 -(void)ajustarTamanho:(int)widthBase;
+-(void)resetarTextura;
 @end

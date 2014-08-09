@@ -43,6 +43,7 @@
     
     SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc] initWithConteudo:conteudo nome:nome tipo:tipo tamanho:tamanhoCaixa];
     [caixa setLabelEndereco:enderecoCaixa++];
+    [caixa setUserInteractionEnabled:YES];
     [caixa setPosition:posicao];
     
     [self addChild:caixa];
