@@ -33,7 +33,7 @@
         }
         
         [self inicializarClasseComCondicoes :condicoes];
-        [self inicializaSaidadeDados];
+        [self inicializarSaidadeDados];
     }
     
     return self;
@@ -44,13 +44,14 @@
     [self setBackgroundColor:[SKColor whiteColor]];
     contadorDeTeste = 0;
     [self inicializarBotaoIniciarAnimacao];
-    
+    [self inicializarBotaoAtualizar];
     [self inicializaCondicoes:condicoes];
     
     
     [self inicializarParametros];
     
 }
+
 
 
 -(void)inicializaCondicoes:(NSArray*)condicoes{
@@ -67,7 +68,7 @@
     for(int i=0; i<condicoes.count; i++){
         tipoCondicao = [condicoes objectAtIndex:i];
 
-        SpriteCondicaoNode *node = [self inicializaCondicaoNode:tipoCondicao];
+        SpriteCondicaoNode *node = [self criarCondicaoNode:tipoCondicao];
         
         if(i == 2){
             posicao.y -= node.size.height / 1.2;
@@ -102,7 +103,7 @@
     }
 }
 
--(void)inicializaSaidadeDados{
+-(void)inicializarSaidadeDados{
     console = [[SaidaDeDados alloc] init];
     [console setPosition:CGPointMake(594, 83)];
     [self addChild:console];
@@ -110,30 +111,37 @@
     
 }
 
--(SpriteCondicaoNode*)inicializaCondicaoNode:(NSString*)tipo{
-    
+-(SpriteCondicaoNode*)criarCondicaoNode:(NSString*)tipo{
     SpriteCondicaoNode *condicaoNode = [[SpriteCondicaoNode alloc] initWithType:tipo];
     condicaoNode.myDelegate = self;
-    
     [self addChild:condicaoNode];
-    
-    
-    
+ 
     return condicaoNode;
-
 }
 
+
+-(void)inicializarBotaoAtualizar{
+    SpriteAtualizarNode *botaoAtualizar = [[SpriteAtualizarNode alloc] init];
+    [botaoAtualizar setSize:botaoIniciarTeste.size];
+    [botaoAtualizar setPosition:CGPointMake(botaoIniciarTeste.position.x + 90, botaoIniciarTeste.position.y)];
+    [botaoAtualizar setMyDelegate:self];
+     
+    [self addChild:botaoAtualizar];
+}
+
+
+
 -(void)inicializarBotaoIniciarAnimacao{
-    botaoIniciarTeste = [SKSpriteNode spriteNodeWithImageNamed:@"atualizar-dados.png"];
-    [botaoIniciarTeste setSize:CGSizeMake(50, 50)];
-    [botaoIniciarTeste setPosition:CGPointMake(600, 400)];
+    botaoIniciarTeste = [SKSpriteNode spriteNodeWithImageNamed:@"bt-play.png"];
+    [botaoIniciarTeste setSize:CGSizeMake(70, 70)];
+    [botaoIniciarTeste setPosition:CGPointMake(580, 530)];
     [botaoIniciarTeste setName:@"iniciarAnimacao"];
     
     [self addChild:botaoIniciarTeste];
 }
 
 
-
+//TALVEZ SEJA USADO
 -(SpriteLabelNode*)criarLabelComTexto:(NSString*)texto tipo:(NSString*)tipo posicao:(CGPoint)posicao{
     SpriteLabelNode *novoLabel = [[SpriteLabelNode alloc] initWithType:tipo texto:texto];
     [novoLabel setFontName:@"Helvetica"];
@@ -160,6 +168,10 @@
     }
 }
 
+
+-(void)botaoAtualizarClicado{
+    
+}
 
 -(void)iniciarAnimacaoCondicional{
     //O CONSOLE INICIA SEM TEXTO

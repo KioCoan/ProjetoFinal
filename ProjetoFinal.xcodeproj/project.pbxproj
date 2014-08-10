@@ -87,6 +87,9 @@
 		BD5A552A198C972000D8722F /* se-verde.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5A5527198C972000D8722F /* se-verde.png */; };
 		BD5A552B198C972000D8722F /* senao-verde.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5A5528198C972000D8722F /* senao-verde.png */; };
 		BD5A552C198C972000D8722F /* senaoSe-verde.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5A5529198C972000D8722F /* senaoSe-verde.png */; };
+		BD5DE21119972138007849DB /* bt-play.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5DE21019972138007849DB /* bt-play.png */; };
+		BD5DE21419972335007849DB /* SpriteAtualizarNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5DE21319972335007849DB /* SpriteAtualizarNode.m */; };
+		BD5DE218199730E4007849DB /* img-controles.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5DE217199730E4007849DB /* img-controles.png */; };
 		BD630CAB1948E3F400AF13E7 /* item-variavel.png in Resources */ = {isa = PBXBuildFile; fileRef = BD630CAA1948E3F400AF13E7 /* item-variavel.png */; };
 		BD66B651197F6F16000BB548 /* atualizar-dados.png in Resources */ = {isa = PBXBuildFile; fileRef = BD66B650197F6F16000BB548 /* atualizar-dados.png */; };
 		BD66B653197F9327000BB548 /* fundo-transparente.png in Resources */ = {isa = PBXBuildFile; fileRef = BD66B652197F9327000BB548 /* fundo-transparente.png */; };
@@ -269,6 +272,10 @@
 		BD5A5527198C972000D8722F /* se-verde.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "se-verde.png"; path = "Imagens/Sprites/Condicionais/se-verde.png"; sourceTree = "<group>"; };
 		BD5A5528198C972000D8722F /* senao-verde.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "senao-verde.png"; path = "Imagens/Sprites/Condicionais/senao-verde.png"; sourceTree = "<group>"; };
 		BD5A5529198C972000D8722F /* senaoSe-verde.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "senaoSe-verde.png"; path = "Imagens/Sprites/Condicionais/senaoSe-verde.png"; sourceTree = "<group>"; };
+		BD5DE21019972138007849DB /* bt-play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bt-play.png"; path = "Imagens/bt-play.png"; sourceTree = "<group>"; };
+		BD5DE21219972335007849DB /* SpriteAtualizarNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteAtualizarNode.h; sourceTree = "<group>"; };
+		BD5DE21319972335007849DB /* SpriteAtualizarNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteAtualizarNode.m; sourceTree = "<group>"; };
+		BD5DE217199730E4007849DB /* img-controles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-controles.png"; sourceTree = "<group>"; };
 		BD630CAA1948E3F400AF13E7 /* item-variavel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-variavel.png"; path = "Imagens/item-variavel.png"; sourceTree = "<group>"; };
 		BD66B650197F6F16000BB548 /* atualizar-dados.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "atualizar-dados.png"; path = "Imagens/atualizar-dados.png"; sourceTree = "<group>"; };
 		BD66B652197F9327000BB548 /* fundo-transparente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fundo-transparente.png"; path = "Imagens/fundo-transparente.png"; sourceTree = "<group>"; };
@@ -475,6 +482,8 @@
 				8418F8791970817000781F82 /* SpriteLabelNode.m */,
 				A521FEEE1993FE9900D28627 /* SaidaDeDados.h */,
 				A521FEEF1993FE9900D28627 /* SaidaDeDados.m */,
+				BD5DE21219972335007849DB /* SpriteAtualizarNode.h */,
+				BD5DE21319972335007849DB /* SpriteAtualizarNode.m */,
 				BDBE7698197A3A00004EA926 /* Variavel */,
 				BDBE7697197A39EF004EA926 /* Operadores */,
 				BD01DDFA19834E7C00AEAAA8 /* Condição */,
@@ -812,6 +821,8 @@
 		E501FA69192FCD1600B56B5C /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BD5DE217199730E4007849DB /* img-controles.png */,
+				BD5DE21019972138007849DB /* bt-play.png */,
 				A521FEEC1993FE1E00D28627 /* saida-texto.png */,
 				BD510FE4198A035B0052B6E5 /* Condicionais */,
 				BDBE7699197A3B57004EA926 /* Operadores */,
@@ -919,6 +930,7 @@
 				BDF8ADF4197B255C00BA5B8A /* parte-resultado7.png in Resources */,
 				91A7A956198F56DC009A5EB1 /* ConceitosCondicionais.txt in Resources */,
 				BD325A491995EB7D00D15DBF /* exclamacao.mp3 in Resources */,
+				BD5DE21119972138007849DB /* bt-play.png in Resources */,
 				BD510FFB198A03740052B6E5 /* estrutura-condicionais9.png in Resources */,
 				BD325A451995EB7D00D15DBF /* abrirCaixa.mp3 in Resources */,
 				BD66B651197F6F16000BB548 /* atualizar-dados.png in Resources */,
@@ -971,6 +983,7 @@
 				BD510FFC198A03740052B6E5 /* estrutura-condicionais10.png in Resources */,
 				BD510FF8198A03740052B6E5 /* estrutura-condicionais6.png in Resources */,
 				BD325A461995EB7D00D15DBF /* correto.aiff in Resources */,
+				BD5DE218199730E4007849DB /* img-controles.png in Resources */,
 				BD510FFA198A03740052B6E5 /* estrutura-condicionais8.png in Resources */,
 				BDE82C2419916E1F00610D96 /* senao-normal.png in Resources */,
 				BD510FFF198A03740052B6E5 /* estrutura-condicionais13.png in Resources */,
@@ -1023,6 +1036,7 @@
 				BDBE7693197A39E0004EA926 /* OperadorNode.m in Sources */,
 				120E8F87192FC0A200CDEF95 /* AppDelegate.m in Sources */,
 				BDB48111196CB89400D5901A /* AnimaOperadores.m in Sources */,
+				BD5DE21419972335007849DB /* SpriteAtualizarNode.m in Sources */,
 				91A98619196232F800EA1074 /* Exercicio.m in Sources */,
 				BDB4810B196CB7FC00D5901A /* Operadores.m in Sources */,
 				A597F0F41960A7A6006429C7 /* SubViewConteudo.m in Sources */,

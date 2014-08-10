@@ -7,15 +7,14 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#include <stdlib.h>
+#import "SpriteAtualizarNode.h"
 #import "SpriteOperadorNode.h"
 #import "Geral.h"
 
 
-@interface AnimaOperadores : SKScene
+@interface AnimaOperadores : SKScene <SpriteAtualizarNodeDelegate>
 {
     NSMutableArray *sprites;
-    SKSpriteNode *atualizar;
 }
 
 

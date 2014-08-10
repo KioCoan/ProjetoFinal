@@ -7,11 +7,12 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "SpriteAtualizarNode.h"
 #import "SpriteCondicaoNode.h"
 #import "Gerador.h"
 #import "SaidaDeDados.h"
 
-@interface AnimaCondSimples : SKScene <SpriteCondicaoNodeDelegate>
+@interface AnimaCondSimples : SKScene <SpriteCondicaoNodeDelegate, SpriteAtualizarNodeDelegate>
 {
     NSMutableArray *condicoesNode;
     //SpriteCondicaoNode *condicaoNode;
