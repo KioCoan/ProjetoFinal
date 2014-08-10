@@ -38,13 +38,27 @@
     return self;
 }
 
+- (void)limpaTextField{
+    
+    [textField resignFirstResponder];
+    
+    textField.text = nil;
+    textField.hidden = YES;
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField*)testando{
     
     [testando resignFirstResponder];
-    SpriteLabelNode *label = (SpriteLabelNode *)conteudoAtivo;
-    label.text = textField.text;
-    textField.text = nil;
-    textField.hidden = YES;
+    if ([conteudoAtivo.name isEqualToString:@"label"]) {
+        
+        SpriteLabelNode *label = (SpriteLabelNode *)conteudoAtivo;
+        label.text = textField.text;
+        
+        [self limpaTextField];
+        
+        
+    }
+    
     
     return NO;
     
@@ -207,6 +221,8 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     //[self textFieldShouldReturn:textField];
+    
+    [self limpaTextField];
     
     UITouch *touch = [touches anyObject];
     apertei =[touch timestamp];
