@@ -18,6 +18,7 @@
     SKNode *conteudoAtivo;
     int apertei;
     int soltei;
+    UITextField *textField;
 }
 
 - (id)init{
@@ -37,6 +38,24 @@
     return self;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField*)testando{
+    
+    [testando resignFirstResponder];
+    SpriteLabelNode *label = (SpriteLabelNode *)conteudoAtivo;
+    label.text = textField.text;
+    textField.text = nil;
+    textField.hidden = YES;
+    
+    return NO;
+    
+}
+
+//-(IBAction)userDoneEnteringText:(id)sender
+//{
+//    UITextField *theField = (UITextField*)sender;
+//    // do whatever you want with this text field
+//}
+
 
 -(void)didMoveToView:(SKView *)view{
     
@@ -46,6 +65,28 @@
     [longPress setNumberOfTouchesRequired:1];
     [longPress setMinimumPressDuration:2];
     [self.view addGestureRecognizer:longPress];
+    
+    
+    
+    
+    textField = [[UITextField alloc] initWithFrame:CGRectMake(self.size.width * 0.6, self.size.height * 0.10, 250, 40)];
+    //UITextField *testando = [UITextField alloc]initWithFrame:CGREctM
+    //textField.center = self.view.center;
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.textColor = [UIColor blackColor];
+    textField.font = [UIFont systemFontOfSize:25.0];
+    textField.placeholder = @"Enter your name here";
+    textField.backgroundColor = [UIColor whiteColor];
+    textField.autocorrectionType = UITextAutocorrectionTypeNo;
+    textField.keyboardType = UIKeyboardTypeDefault;
+    textField.returnKeyType = UIReturnKeyDone;
+    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    
+    textField.clearsContextBeforeDrawing = YES;
+    textField.delegate = self;
+    textField.hidden = YES;
+    [self.view addSubview:textField];
+    
     
 }
 
@@ -64,7 +105,7 @@
     if (recognizer.state == UIGestureRecognizerStateBegan && [conteudoAtivo.name isEqualToString:@"caixa"]) {
         NSLog(@"funcionou");
     }else if (recognizer.state == UIGestureRecognizerStateBegan && [conteudoAtivo.name isEqualToString:@"label"]){
-        NSLog(@"funcionou novamnete");
+        [textField setHidden:NO];
     }
     
     
@@ -165,6 +206,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
+    //[self textFieldShouldReturn:textField];
     
     UITouch *touch = [touches anyObject];
     apertei =[touch timestamp];
@@ -211,9 +253,6 @@
     
     
     //SE A POSIÇÃO QUE FOI CLICADA É A MESMA DO SPRITE DA CAIXA, O SPRITE É MOVIDO
-    
-    
-    
     
 }
 

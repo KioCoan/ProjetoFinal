@@ -166,7 +166,7 @@ static const int NUM_TEXTURAS = 13;
     [self runAction:animacaoFechar completion:^{
         [self removeAllActions];
         caixaAberta = NO;
-        [self setUserInteractionEnabled:YES];
+        [self setUserInteractionEnabled:NO];
     }];
 }
 
@@ -179,7 +179,7 @@ static const int NUM_TEXTURAS = 13;
         [self removeAllActions];
         caixaAberta = YES;
         [lblConteudo setHidden:NO];
-        [self setUserInteractionEnabled:YES];
+        [self setUserInteractionEnabled:NO];
     }];
 }
 
