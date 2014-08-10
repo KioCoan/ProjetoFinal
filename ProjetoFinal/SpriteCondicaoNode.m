@@ -26,11 +26,13 @@
     if ([tipo isEqualToString:@"se"]) {
         tamanho = CGSizeMake(120, 91);
         [self criaSpriteExclamacao];
+        
     }else if ([tipo isEqualToString:@"senaoSe"]){
         tamanho = CGSizeMake(120, 204);
         [self criaSpriteExclamacao];
+        
     }else{
-        tamanho = CGSizeMake(212, 243);
+        tamanho = CGSizeMake(212, 142);
     }
     
     
@@ -50,10 +52,10 @@
     }
 
     
-    
     [spriteExclamacao setPosition:posicao];
     [spriteExclamacao setSize:CGSizeMake(17, 43)];
 }
+
 
 //ESTE METODO RETORNA UMA TEXTURA COM BASE DO TIPO DE CONDIÇAO DESTA CLASSE E TIPO DE TEXTURA (NORMAL OU VERDE)
 -(SKTexture*)getTexturaDoTipo:(NSString*)tipoTextura{
@@ -64,7 +66,7 @@
 -(void)mostraExclamacao:(BOOL)status{
     
     // Só adiciona exclamação caso o tipo seja diferente de "senao"
-    if (![tipoCondicao isEqualToString:@"senao"]) {
+    if (![self isSenao]) {
         if (status) {
             [self addChild:spriteExclamacao];
         }else{
@@ -78,47 +80,58 @@
     return tipoCondicao;
 }
 
+
 -(void)criarValores:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2 resultado:(NSString*)resultado{
-    
-    spriteOperador = [[SpriteOperadorCondicional alloc] initWithValores:valor1 operador:operador valor2:valor2 resultado:resultado];
-    [spriteOperador ajustarTamanho:self.size.width];
-    spriteOperador.myDelegate = self;
-    
+
     CGPoint posicao;
     
     if ([tipoCondicao isEqualToString:@"se"]) {
         posicao = CGPointMake(140, -20);
-        [self addChild:spriteOperador];
+        [self inicializarSpriteOperador:valor1 eOperador:operador eValor2:valor2 resultado:resultado posicao:posicao];
+        
     }else if ([tipoCondicao isEqualToString:@"senaoSe"]){
         posicao = CGPointMake(140, -75);
-        [self addChild:spriteOperador];
+        [self inicializarSpriteOperador:valor1 eOperador:operador eValor2:valor2 resultado:resultado posicao:posicao];
+        
     }else{
-        [self criarLabelResultado:resultado];
+        posicao = CGPointMake(0, -80);
+        [self inicializarSpriteOperadorResultado:resultado posicao:posicao];
+        
     }
-    
-    [spriteOperador setPosition:posicao];
     
 }
 
--(void)criarLabelResultado:(NSString*)resultado{
-    SKLabelNode *lblResultado = [SKLabelNode labelNodeWithFontNamed:@"Avenir Next Condensed Medium"];
-    [lblResultado setText:[NSString stringWithFormat:@"escreva (\"%@\")",resultado]];
-    [lblResultado setFontSize:20];
-    [lblResultado setFontColor:[SKColor blackColor]];
-    [lblResultado setPosition:CGPointMake(0, -30)];
+-(void)inicializarSpriteOperador:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2 resultado:(NSString*)resultado posicao:(CGPoint)posicao{
+    spriteOperador = [[SpriteOperadorCondicional alloc] initWithValores:valor1 operador:operador valor2:valor2 resultado:resultado];
+    [spriteOperador ajustarTamanho:self.size.width];
+    spriteOperador.myDelegate = self;
+    [spriteOperador setPosition:posicao];
     
-    [self addChild:lblResultado];
+    [self addChild:spriteOperador];
+}
+
+-(void)inicializarSpriteOperadorResultado:(NSString*)resultado posicao:(CGPoint)posicao{
+    spriteOperador = [[SpriteOperadorCondicional alloc] initWithResultado:resultado];
+    [spriteOperador ajustarTamanho:self.size.width];
+    [spriteOperador setPosition:posicao];
+    
+    [self addChild:spriteOperador];
 }
 
 
 -(void)resetarTextura{
+    if([self isSenao]){
+        [self setTexture:[self getTexturaDoTipo:@"normal"]];
+        return;
+    }
+    
     [spriteOperador resetarTextura];
 }
 
 
 -(void)iniciarTeste{
     //ANTES DE INICIAR O TESTE É VERIFICADO SE A CONDIÇÃO É UM SENÃO, CASO SEJA A TEXTURA, E MODIFICADA E FIM DE MÉTODO
-    if([tipoCondicao isEqualToString:@"senao"]){
+    if([self isSenao]){
         [self setTexture:[self getTexturaDoTipo:@"verde"]];
         [self runAction:[SKAction playSoundFileNamed:@"correto.aiff" waitForCompletion:NO]];
         [[self myDelegate] testeFinalizado:YES];
@@ -135,9 +148,26 @@
     }];
 }
 
+-(void)resetarValores:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2 resultado:(NSString*)resultado{
+    
+    [spriteOperador removeFromParent];
+    spriteOperador = NULL;
+    [self criarValores:valor1 eOperador:operador eValor2:valor2 resultado:resultado];
+}
+
+-(BOOL)isSenao{
+    if([tipoCondicao isEqualToString:@"senao"]){
+        return YES;
+    }
+    
+    return NO;
+}
+
+
 -(NSString*)retornaTextoASerExibido{
     return [spriteOperador retornaTextoASerExibido];
 }
+
 
 -(BOOL)retornaVeracidade{
     return [spriteOperador retornaVeracidade];

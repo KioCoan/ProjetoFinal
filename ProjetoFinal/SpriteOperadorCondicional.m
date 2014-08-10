@@ -10,6 +10,17 @@
 
 @implementation SpriteOperadorCondicional
 
+-(id)initWithResultado:(NSString*)resultado{
+    self = [super init];
+    
+    if(self){
+        [self inicializaSpriteResultado:resultado];
+        textoASerExibido = resultado;
+        verdadeiro = YES;
+    }
+    
+    return self;
+}
 
 -(id)initWithValores:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 resultado:(NSString*)resultado{
     self = [super init];
@@ -75,6 +86,9 @@
             if(verdadeiro){
                 [spriteValores setTexture:[SKTexture textureWithImageNamed:@"valores-verdadeiro.png"]];
                 [self runAction:[SKAction playSoundFileNamed:@"correto.aiff" waitForCompletion:NO]];
+            
+            }else{
+                [spriteValores setTexture:[SKTexture textureWithImageNamed:@"valores-errado.png"]];
             }
             
             //AVISA PARA O DELEGATE QUE A VERIFICAÇÃO FOI FINALIZADA
@@ -103,8 +117,6 @@
 
 -(void)verificaSeEVerdadeiro:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2{
     Calculador *calculador = [[Calculador alloc] init];
-    
-    
     NSString *resultado = [calculador calculaOperador:operador numero1:valor1 numero2:valor2];
     
     if ([resultado isEqualToString:@"Verdadeiro"]) {
@@ -120,13 +132,18 @@
 
 
 -(void)ajustarTamanho:(int)widthBase{
+    //VERIFICA SE É UMA CONDIÇÃO COMPLETA (CONTÉM VALOR1, VALOR2 E OPERADOR OU É APENAS A PARTE DO RESULTADO)
     if(spriteValores){
+        //ESTE METODO RECEBE O TAMANHO DO PAI DESTE NODE E AJUSTA OS TAMANHOS DOS NODES DESTA CLASSE
         [self definirNovoTamanho:spriteValores widthBase:widthBase novoWidth:2.2 novoHeight:0.5];
         [self definirNovoTamanho:spriteOperador widthBase:widthBase novoWidth:0.8 novoHeight:0.8];
         [self definirNovoTamanho:spriteResultado widthBase:widthBase novoWidth:1.6 novoHeight:1.1];
         
         [spriteValores ajustarPosicionamentoLabels];
         [spriteValores iniciarAnimacao];
+    
+    }else{
+        [self definirNovoTamanho:spriteResultado widthBase:widthBase novoWidth:1 novoHeight:0.7];
     }
     
 }

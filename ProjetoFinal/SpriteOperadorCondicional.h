@@ -32,6 +32,7 @@
 
 @property id myDelegate;
 
+-(id)initWithResultado:(NSString*)resultado;
 -(id)initWithValores:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 resultado:(NSString*)resultado;
 -(void)iniciarAnimacao;
 -(BOOL)retornaVeracidade;

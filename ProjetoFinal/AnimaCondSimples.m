@@ -62,7 +62,7 @@
     
     condicoesNode = [[NSMutableArray alloc] init];
     NSString *tipoCondicao;
-    CGPoint posicao = CGPointMake(180, 550);
+    CGPoint posicao = CGPointMake(180, 560);
     
     //O LAÇO PERCORRE INSERINDO UMA NOVA CONDIÇÃO NO VETOR CONFORME O TAMANHO DO VETOR PASSADO POR PARAMETRO
     for(int i=0; i<condicoes.count; i++){
@@ -71,10 +71,10 @@
         SpriteCondicaoNode *node = [self criarCondicaoNode:tipoCondicao];
         
         if(i == 2){
-            posicao.y -= node.size.height / 1.2;
+            posicao.y -= node.size.height / 0.95;
         
         }else{
-            posicao.y -= node.size.height / 1.6;
+            posicao.y -= node.size.height / 1.5;
         }
             
         
@@ -90,17 +90,31 @@
 //PERCORRE O VETOR DE SpriteCondicaoNode DEFININDO OS VALORES ALEATÓRIOS
 -(void)inicializarParametros{
     for(SpriteCondicaoNode* node in condicoesNode){
-        //DEFINE OS VALORES, OPERADOR E RESULTADO
-        Gerador *gerador = [[Gerador alloc] init];
+
         
-        NSString* valor1 = [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:20]];
-        NSString* valor2 = [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:20]];
-        NSString* operador = [gerador retornaOperadorRelacional];
+        NSString* valor1 = [self gerarValoresAleatorios];
+        NSString* valor2 = [self gerarValoresAleatorios];
+        NSString* operador = [self gerarOperadoresAleatorios];
         
         [node criarValores:valor1 eOperador:operador eValor2:valor2 resultado:valor1];
         
         
     }
+}
+
+-(NSString*)gerarValoresAleatorios{
+    //DEFINE OS VALORES, OPERADOR E RESULTADO
+    Gerador *gerador = [[Gerador alloc] init];
+    
+    return [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:20]];
+}
+
+-(NSString*)gerarOperadoresAleatorios{
+    //DEFINE OS VALORES, OPERADOR E RESULTADO
+    Gerador *gerador = [[Gerador alloc] init];
+    
+    return [gerador retornaOperadorRelacional];
+    
 }
 
 -(void)inicializarSaidadeDados{
@@ -169,9 +183,23 @@
 }
 
 
+//CONTINUAR DAQUI-----------------
 -(void)botaoAtualizarClicado{
+    NSString* valor1 = [self gerarValoresAleatorios];
+    NSString* valor2 = [self gerarValoresAleatorios];
+    NSString* operador = [self gerarOperadoresAleatorios];
     
+    for(SpriteCondicaoNode *c in condicoesNode){
+        [c resetarTextura];
+        [c resetarValores:valor1 eOperador:operador eValor2:valor2 resultado:valor1];
+        
+        valor1 = [self gerarValoresAleatorios];
+        valor2 = [self gerarValoresAleatorios];
+        operador = [self gerarOperadoresAleatorios];
+    }
+    //[self inicializarParametros];
 }
+
 
 -(void)iniciarAnimacaoCondicional{
     //O CONSOLE INICIA SEM TEXTO

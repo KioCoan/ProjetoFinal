@@ -32,5 +32,6 @@
 -(void)iniciarTeste;
 -(NSString*)retornaTextoASerExibido;
 -(BOOL)retornaVeracidade;
+-(void)resetarValores:(NSString*)valor1 eOperador:(NSString*)operador eValor2:(NSString*)valor2 resultado:(NSString*)resultado;
 
 @end

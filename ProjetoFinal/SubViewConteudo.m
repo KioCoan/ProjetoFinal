@@ -45,6 +45,11 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     self.myDelegate = nil;
+
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    
 }
 
 - (void)didReceiveMemoryWarning {
