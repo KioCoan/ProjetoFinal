@@ -27,7 +27,13 @@
 }
 
 
+-(void)completaExercicio{
+    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeVariavel2"];
+}
 
+-(BOOL)verificaFinalizado{
+    return [[NSUserDefaults standardUserDefaults]boolForKey:@"ExeVariavel2"];
+}
 
 
 @end

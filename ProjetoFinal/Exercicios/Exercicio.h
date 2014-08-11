@@ -20,7 +20,13 @@
 }
 @property NSString *tituloExercicio,*descricaoExercicio;
 @property UIImage* icone;
+@property BOOL completo;
 
 -(void)instanciaCena;
 -(SKScene*)retornaCena;
+
+
+-(void)completaExercicio;
+-(BOOL)verificaFinalizado;
+
 @end

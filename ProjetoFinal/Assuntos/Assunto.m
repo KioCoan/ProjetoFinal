@@ -56,8 +56,8 @@
         //Cria um Dicioario com o título e a descrição do exercício e depois adiciona no Vetor
         
         NSDictionary *dict = @{@"titulo": [[self.exercicios objectAtIndex:i] tituloExercicio],
-                               @"descricao":[[self.exercicios objectAtIndex:i] descricaoExercicio]
-                               
+                               @"descricao":[[self.exercicios objectAtIndex:i] descricaoExercicio],
+                               @"exercicio":[self.exercicios objectAtIndex:i]
                                };
         [titulosEDescricoes addObject:dict];
     }

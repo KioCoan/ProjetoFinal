@@ -18,6 +18,6 @@
     SKLabelNode *codigo;
 }
 
-
+@property int corretos;
 
 @end

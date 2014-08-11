@@ -25,4 +25,12 @@
     cenaExercicio = [[CenaExercicioOperadores1 alloc] init];
 }
 
+-(void)completaExercicio{
+    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeOperadores1"];
+}
+
+-(BOOL)verificaFinalizado{
+    return [[NSUserDefaults standardUserDefaults]boolForKey:@"ExeOperadores1"];
+}
+
 @end

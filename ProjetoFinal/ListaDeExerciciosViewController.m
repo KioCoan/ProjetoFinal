@@ -38,6 +38,8 @@
     
     [[self navigationItem] setTitle:[NSString stringWithFormat:@"Exercícios %@", [gerenciador retornaNomeAssuntoAtual]]];
     
+    [myTableView reloadData];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,6 +56,14 @@
     
     cell.textLabel.text = [[titulosEDescricoes objectAtIndex:indexPath.row]valueForKey:@"titulo"];
     cell.detailTextLabel.text = [[titulosEDescricoes objectAtIndex:indexPath.row]valueForKey:@"descricao"];
+    
+    BOOL completo = [[[titulosEDescricoes objectAtIndex:indexPath.row]objectForKey:@"exercicio"]verificaFinalizado];
+    
+    if(completo == YES){
+        UIImageView* imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"check.png"]];
+        [imageView setFrame:CGRectMake(cell.frame.size.width - 50, 20, 40, 40)];
+        [cell addSubview:imageView];
+    }
     
     return cell;
     

@@ -25,5 +25,12 @@
     cenaExercicio = [[CenaExercicioCondSimples1 alloc] init];
 }
 
+-(void)completaExercicio{
+    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeCondSimples1"];
+}
+
+-(BOOL)verificaFinalizado{
+    return [[NSUserDefaults standardUserDefaults]boolForKey:@"ExeCondSimples1"];
+}
 
 @end

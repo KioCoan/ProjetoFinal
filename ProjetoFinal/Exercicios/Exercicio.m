@@ -18,4 +18,12 @@
     return cenaExercicio;
 }
 
+-(void)completaExercicio{
+    
+}
+
+-(BOOL)verificaFinalizado{
+    return NO;
+}
+
 @end

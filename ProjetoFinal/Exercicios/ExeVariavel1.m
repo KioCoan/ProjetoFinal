@@ -30,5 +30,13 @@
     cenaExercicio = [[CenaExercicioVariavel1 alloc] init];
 }
 
+-(void)completaExercicio{
+    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeVariavel1"];
+}
+
+-(BOOL)verificaFinalizado{
+    return [[NSUserDefaults standardUserDefaults]boolForKey:@"ExeVariavel1"];
+}
+
 
 @end

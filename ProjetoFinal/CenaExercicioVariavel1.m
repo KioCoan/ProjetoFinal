@@ -10,6 +10,8 @@
 
 @implementation CenaExercicioVariavel1
 
+
+
 -(id)init{
     self = [super init];
     
@@ -26,7 +28,7 @@
         [self criaEnunciado];
         [self criarCaixas];
         [self criarLabels];
-        
+        _corretos = 0;
         
     }
     return self;
@@ -210,6 +212,7 @@
             if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
                 
                 if ([[conteudoAtivo tipo] isEqualToString: [c retornaTipo]]) { // Caso a resposta esteja correta (Nó de resposta no local correto)
+                    _corretos++;
                     [self runAction:[SKAction playSoundFileNamed:@"correto.aiff" waitForCompletion:NO]];
                     [c setLabelConteudo:conteudoAtivo.text];
                     
@@ -219,6 +222,7 @@
                     [conteudoAtivo removeFromParent];
                     
                     conteudoAtivo = nil;
+                    [self verificaConclusao];
                 
                 }else{
                     [self runAction:[SKAction playSoundFileNamed:@"errado.wav" waitForCompletion:NO]];
@@ -261,5 +265,11 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+}
+
+-(void)verificaConclusao{
+    if (_corretos == 4) {
+        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeVariavel1"];
+    }
 }
 @end

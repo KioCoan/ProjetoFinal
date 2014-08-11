@@ -32,6 +32,7 @@
 		84B1B3E3197D881900089FCB /* CondicaoSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E2197D881900089FCB /* CondicaoSimples.m */; };
 		84B1B3E6197D8AE500089FCB /* ExeCondSimples1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E5197D8AE500089FCB /* ExeCondSimples1.m */; };
 		84B1B3E9197D8BEF00089FCB /* CenaExercicioCondSimples1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E8197D8BEF00089FCB /* CenaExercicioCondSimples1.m */; };
+		91A239E219994681004CE354 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 91A239E119994681004CE354 /* check.png */; };
 		91A7A956198F56DC009A5EB1 /* ConceitosCondicionais.txt in Resources */ = {isa = PBXBuildFile; fileRef = 91A7A955198F56DC009A5EB1 /* ConceitosCondicionais.txt */; };
 		91A986111962324500EA1074 /* Assunto.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A986101962324500EA1074 /* Assunto.m */; };
 		91A98619196232F800EA1074 /* Exercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A98618196232F800EA1074 /* Exercicio.m */; };
@@ -184,6 +185,7 @@
 		84B1B3E5197D8AE500089FCB /* ExeCondSimples1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExeCondSimples1.m; path = Exercicios/ExeCondSimples1.m; sourceTree = "<group>"; };
 		84B1B3E7197D8BEF00089FCB /* CenaExercicioCondSimples1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CenaExercicioCondSimples1.h; path = Exercicios/CenaExercicioCondSimples1.h; sourceTree = "<group>"; };
 		84B1B3E8197D8BEF00089FCB /* CenaExercicioCondSimples1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CenaExercicioCondSimples1.m; path = Exercicios/CenaExercicioCondSimples1.m; sourceTree = "<group>"; };
+		91A239E119994681004CE354 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		91A7A955198F56DC009A5EB1 /* ConceitosCondicionais.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConceitosCondicionais.txt; sourceTree = "<group>"; };
 		91A9860F1962324500EA1074 /* Assunto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Assunto.h; path = Assuntos/Assunto.h; sourceTree = "<group>"; };
 		91A986101962324500EA1074 /* Assunto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Assunto.m; path = Assuntos/Assunto.m; sourceTree = "<group>"; };
@@ -785,6 +787,7 @@
 		E501FA69192FCD1600B56B5C /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				91A239E119994681004CE354 /* check.png */,
 				BD5DE217199730E4007849DB /* img-controles.png */,
 				BD5DE21019972138007849DB /* bt-play.png */,
 				A521FEEC1993FE1E00D28627 /* saida-texto.png */,
@@ -850,6 +853,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "SENAC - iOS";
 				TargetAttributes = {
+					120E8F72192FC0A200CDEF95 = {
+						DevelopmentTeam = 7T8E66KCM7;
+					};
 					120E8F93192FC0A200CDEF95 = {
 						TestTargetID = 120E8F72192FC0A200CDEF95;
 					};
@@ -935,6 +941,7 @@
 				BDF8ADF2197B255C00BA5B8A /* parte-resultado5.png in Resources */,
 				BDF8ADF1197B255C00BA5B8A /* parte-resultado4.png in Resources */,
 				BDA68F3D199819C400BD0527 /* valores-errado.png in Resources */,
+				91A239E219994681004CE354 /* check.png in Resources */,
 				BDC757A5196787E700DB8380 /* abrir-caixa8.png in Resources */,
 				BDC757A2196787E700DB8380 /* abrir-caixa5.png in Resources */,
 				BD325A461995EB7D00D15DBF /* correto.aiff in Resources */,
@@ -1138,11 +1145,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjetoFinal/ProjetoFinal-Prefix.pch";
 				INFOPLIST_FILE = "ProjetoFinal/ProjetoFinal-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1152,11 +1162,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjetoFinal/ProjetoFinal-Prefix.pch";
 				INFOPLIST_FILE = "ProjetoFinal/ProjetoFinal-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
