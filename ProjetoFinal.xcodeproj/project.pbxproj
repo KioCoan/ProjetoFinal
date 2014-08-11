@@ -106,6 +106,7 @@
 		BDC757A8196787E700DB8380 /* abrir-caixa11.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC7579B196787E700DB8380 /* abrir-caixa11.png */; };
 		BDC757A9196787E700DB8380 /* abrir-caixa12.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC7579C196787E700DB8380 /* abrir-caixa12.png */; };
 		BDC757AA196787E700DB8380 /* abrir-caixa13.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC7579D196787E700DB8380 /* abrir-caixa13.png */; };
+		BDD2C07E19995B78003D557E /* Animacao.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD2C07D19995B78003D557E /* Animacao.m */; };
 		BDE82C2319916E1F00610D96 /* se-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE82C1F19916E1F00610D96 /* se-normal.png */; };
 		BDE82C2419916E1F00610D96 /* senao-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE82C2019916E1F00610D96 /* senao-normal.png */; };
 		BDE82C2519916E1F00610D96 /* senaoSe-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE82C2119916E1F00610D96 /* senaoSe-normal.png */; };
@@ -288,6 +289,8 @@
 		BDC7579B196787E700DB8380 /* abrir-caixa11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "abrir-caixa11.png"; path = "Imagens/Sprites/variavel/abrir-caixa11.png"; sourceTree = "<group>"; };
 		BDC7579C196787E700DB8380 /* abrir-caixa12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "abrir-caixa12.png"; path = "Imagens/Sprites/variavel/abrir-caixa12.png"; sourceTree = "<group>"; };
 		BDC7579D196787E700DB8380 /* abrir-caixa13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "abrir-caixa13.png"; path = "Imagens/Sprites/variavel/abrir-caixa13.png"; sourceTree = "<group>"; };
+		BDD2C07C19995B78003D557E /* Animacao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animacao.h; sourceTree = "<group>"; };
+		BDD2C07D19995B78003D557E /* Animacao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animacao.m; sourceTree = "<group>"; };
 		BDE82C1F19916E1F00610D96 /* se-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "se-normal.png"; path = "Imagens/Sprites/Condicionais/se-normal.png"; sourceTree = "<group>"; };
 		BDE82C2019916E1F00610D96 /* senao-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "senao-normal.png"; path = "Imagens/Sprites/Condicionais/senao-normal.png"; sourceTree = "<group>"; };
 		BDE82C2119916E1F00610D96 /* senaoSe-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "senaoSe-normal.png"; path = "Imagens/Sprites/Condicionais/senaoSe-normal.png"; sourceTree = "<group>"; };
@@ -563,6 +566,8 @@
 		91A986121962328800EA1074 /* Animacoes */ = {
 			isa = PBXGroup;
 			children = (
+				BDD2C07C19995B78003D557E /* Animacao.h */,
+				BDD2C07D19995B78003D557E /* Animacao.m */,
 				BDB893D519677B3A009C105C /* AnimaVariavel.h */,
 				BDB893D619677B3A009C105C /* AnimaVariavel.m */,
 				BDB4810F196CB89400D5901A /* AnimaOperadores.h */,
@@ -991,6 +996,7 @@
 				A521FEF01993FE9900D28627 /* SaidaDeDados.m in Sources */,
 				BDBE7696197A39E0004EA926 /* SpriteOperadorNode.m in Sources */,
 				8418F87C1970817000781F82 /* SpriteLabelNode.m in Sources */,
+				BDD2C07E19995B78003D557E /* Animacao.m in Sources */,
 				A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */,
 				BDBE7693197A39E0004EA926 /* OperadorNode.m in Sources */,
 				120E8F87192FC0A200CDEF95 /* AppDelegate.m in Sources */,

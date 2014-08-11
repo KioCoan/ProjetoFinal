@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
+#import "Animacao.h"
 #import "Exercicio.h"
 
 // #### Classe genérica seus herdeiros serão os assuntos tratados individualmente ######
@@ -24,7 +25,7 @@
 @property int cenaAtual;
 @property NSString *nome, *teoria;
 @property int paginas;
-@property SKScene *animacao;
+@property Animacao *animacao;
 @property NSMutableArray *exercicios;
 @property NSMutableArray *teoriaFormatada;
 
@@ -38,5 +39,5 @@
 
 -(NSMutableArray*)retornaTitulosEDescricoesExercicios;
 -(int)getIndiceExercicio;
--(SKScene*)retornaAnimacaoNumero:(int)index;
+-(Animacao*)retornaAnimacaoNumero:(int)index;
 @end

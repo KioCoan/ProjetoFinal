@@ -14,6 +14,7 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         enderecoCaixa = 1;
+        spritesCaixa = [[NSMutableArray alloc] init];
         tamanhoCaixa = CGSizeMake(250, 267);
         
         //ADICIONA UMA CAIXA NO CANTO SUPERIOR ESQUERDO DA TELA
@@ -38,17 +39,36 @@
     return self;
 }
 
+
+
 //METODO QUE RECEBE OS PARAMETROS NECESSARIOS PARA CRIAR UMA CAIXA E DEFINE O ENDEREÇO AUTOMATICAMENTE
 -(void)criarNovaCaixaComConteudo:(NSString*)conteudo nome:(NSString*)nome tipo:(NSString*)tipo posicao:(CGPoint)posicao{
     
     SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc] initWithConteudo:conteudo nome:nome tipo:tipo tamanho:tamanhoCaixa];
     [caixa setLabelEndereco:enderecoCaixa++];
-    [caixa setUserInteractionEnabled:YES];
+    [caixa setMyDelegate:self];
     [caixa setPosition:posicao];
+    [spritesCaixa addObject:caixa];
     
     [self addChild:caixa];
 }
 
+
+-(void)limparDelegatesMalditos{
+    
+    for(SpriteCaixaNode *node in spritesCaixa){
+        [node setMyDelegate:nil];
+        [node removeFromParent];
+    }
+    [spritesCaixa removeAllObjects];
+}
+
+
+-(void)spriteCaixaClicado:(SKSpriteNode *)spriteCaixa{
+    SpriteCaixaNode *caixa = (SpriteCaixaNode*)spriteCaixa;
+    
+    [caixa executaSprite];
+}
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */

@@ -8,9 +8,13 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+@protocol SpriteCaixaNodeDelegate <NSObject>
+-(void)spriteCaixaClicado:(SKSpriteNode*)spriteCaixa;
+@end
+
+
 @interface SpriteCaixaNode : SKSpriteNode
 {
-    
     SKLabelNode *lblConteudo;
     SKLabelNode *lblNome;
     SKLabelNode *lblTipo;
@@ -21,6 +25,8 @@
     
     BOOL caixaAberta;
 }
+
+@property id <SpriteCaixaNodeDelegate> myDelegate;
 
 -(id)initWithConteudo:(NSString*)conteudo nome:(NSString*)nome tipo:(NSString*)tipo tamanho:(CGSize)tamanho;
 

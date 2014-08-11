@@ -44,6 +44,7 @@
 
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
+    //RESOLVE O PROBLEMA DE PROCESSAMENTO!
     [[self pageController] removeFromParentViewController];
     self.pageController = nil;
     self.myDelegate = nil;

@@ -22,7 +22,7 @@ static const int NUM_TEXTURAS = 13;
         [self inicializaAnimacaoAbrirCaixa];
         [self inicializaAnimacaoFecharCaixa];
         
-        [self setUserInteractionEnabled:NO];
+        [self setUserInteractionEnabled:YES];
     }
     
     return self;
@@ -47,7 +47,7 @@ static const int NUM_TEXTURAS = 13;
         [self inicializaAnimacaoAbrirCaixa];
         [self inicializaAnimacaoFecharCaixa];
         
-        [self setUserInteractionEnabled:NO];
+        [self setUserInteractionEnabled:YES];
     }
     
     return self;
@@ -155,9 +155,11 @@ static const int NUM_TEXTURAS = 13;
     
 }
 
-//-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-//    [self executaSprite];
-//}
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    [[self myDelegate] spriteCaixaClicado:self];
+}
+
+
 
 -(void)fecharCaixa{
     //INICIA A SKACTION QUE FECHA A CAIXA
@@ -166,7 +168,7 @@ static const int NUM_TEXTURAS = 13;
     [self runAction:animacaoFechar completion:^{
         [self removeAllActions];
         caixaAberta = NO;
-        [self setUserInteractionEnabled:NO];
+        [self setUserInteractionEnabled:YES];
     }];
 }
 
@@ -179,7 +181,7 @@ static const int NUM_TEXTURAS = 13;
         [self removeAllActions];
         caixaAberta = YES;
         [lblConteudo setHidden:NO];
-        [self setUserInteractionEnabled:NO];
+        [self setUserInteractionEnabled:YES];
     }];
 }
 

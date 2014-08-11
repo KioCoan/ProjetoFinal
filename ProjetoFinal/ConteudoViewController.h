@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Animacao.h"
 #import "AlteraAnimacaoDelegate.h"
 #import "GerenciadorDeAssunto.h"
+
 @interface ConteudoViewController : UIViewController <AlteraAnimacaoDelegate>
 {
     GerenciadorDeAssunto *gerenciador;
     BOOL primeiraChamada;
+    Animacao *cena;
 }
 @property (weak, nonatomic) IBOutlet UIView *myViewContainer;
 

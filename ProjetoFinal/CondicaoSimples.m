@@ -34,7 +34,7 @@
     
 }
 
--(SKScene*)retornaAnimacaoNumero:(int)index{
+-(Animacao*)retornaAnimacaoNumero:(int)index{
     
     if (self.cenaAtual == index) {
         return nil;

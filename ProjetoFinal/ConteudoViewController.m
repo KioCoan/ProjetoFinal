@@ -33,6 +33,8 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     self.myViewContainer = nil;
+    [cena limparDelegatesMalditos];
+    [cena removeFromParent];
 }
 
 - (void)viewDidLoad
@@ -51,7 +53,7 @@
     
     
     //INSTANCIO A SKSCENE INICIAL DO ASSUNTO ATUAL
-    SKScene *cena = [gerenciador retornaAnimacaoNumero:1];
+    cena = [gerenciador retornaAnimacaoNumero:1];
     
     
     //DEFININDO TAMANHO DA SKSCENE E ADICIONANDO-A NA SKVIEW

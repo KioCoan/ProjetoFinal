@@ -7,13 +7,14 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "Animacao.h"
 #import "SpriteAtualizarNode.h"
 #import "SpriteOperadorNode.h"
 #import "Calculador.h"
 #import "Gerador.h"
 
 
-@interface AnimaOperadores : SKScene <SpriteAtualizarNodeDelegate>
+@interface AnimaOperadores : Animacao <SpriteAtualizarNodeDelegate>
 {
     NSMutableArray *sprites;
     NSString *tipoOperadorAtual;

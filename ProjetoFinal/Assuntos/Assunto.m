@@ -68,7 +68,7 @@
     //Sobrescrever método nas classes filho
 }
 
--(SKScene*)retornaAnimacaoNumero:(int)index{
+-(Animacao*)retornaAnimacaoNumero:(int)index{
     //Sobrescrever método nas classes filho
     return nil;
 }

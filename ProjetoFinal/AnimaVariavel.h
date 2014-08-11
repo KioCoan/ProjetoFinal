@@ -8,13 +8,16 @@
 
 
 #import <SpriteKit/SpriteKit.h>
+#import "Animacao.h"
 #import "SpriteCaixaNode.h"
 
-@interface AnimaVariavel : SKScene
+@interface AnimaVariavel : Animacao <SpriteCaixaNodeDelegate>
 {
+    NSMutableArray *spritesCaixa;
     CGSize tamanhoCaixa;
     int enderecoCaixa;
 }
+
 
 
 @end
