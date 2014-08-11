@@ -68,7 +68,7 @@
     
     NSArray *operadores = [NSArray arrayWithObjects:@">",@">=",@"<",@"<=",@"==",@"!=", nil];
     
-    int i = [[self retornaValorInteiro:0 ate:(operadores.count)-1] intValue];
+    int i = [[self retornaValorInteiro:0 ate:(int)(operadores.count)-1] intValue];
 
     return [operadores objectAtIndex:i];
 }
@@ -78,7 +78,7 @@
     
     NSArray *operadores = [NSArray arrayWithObjects:@"+",@"-",@"*",@"/", nil];
     
-    int i = [[self retornaValorInteiro:0 ate:(operadores.count)-1] intValue];
+    int i = [[self retornaValorInteiro:0 ate:(int)(operadores.count)-1] intValue];
     
     return [operadores objectAtIndex:i];
 }
@@ -88,7 +88,7 @@
     
     NSArray *operadores = [NSArray arrayWithObjects:@"+=",@"-=",@"*=",@"/=", nil];
     
-    int i = [[self retornaValorInteiro:0 ate:(operadores.count)-1] intValue];
+    int i = [[self retornaValorInteiro:0 ate:(int)(operadores.count)-1] intValue];
     
     return [operadores objectAtIndex:i];
 }
@@ -97,7 +97,7 @@
 -(NSString*)retornaOperadorLogico{
     NSArray *operadores = [NSArray arrayWithObjects:@"&&",@"||", nil];
     
-    int i = [[self retornaValorInteiro:0 ate:(operadores.count)-1] intValue];
+    int i = [[self retornaValorInteiro:0 ate:(int)(operadores.count)-1] intValue];
     
     return [operadores objectAtIndex:i];
 }
