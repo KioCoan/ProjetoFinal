@@ -65,6 +65,9 @@
         opcoes = [self embaralha:opcoes];
         [self posicionamento:opcoes];
         
+        
+        //coloca na tela
+        [self criaEnunciado];
         [self adicionaNaTela];
         
     }
@@ -72,6 +75,8 @@
 
     
 }
+
+
 
 - (void)criaEnunciado{
     
@@ -125,7 +130,7 @@
     for (SpriteLabelNode *aux in vetor) {
         [aux setPosition:posicaoMutavel];
         [aux setPosicaoInicial:posicaoMutavel];
-        posicaoMutavel.x += (aux.fontSize * 3);
+        posicaoMutavel.x += (aux.fontSize * 2);
     }
     
     
@@ -185,7 +190,7 @@
     valor1.fontSize = font;
     valor2.fontSize = font;
     resultado.fontSize = font;
-    operador.fontSize = font;
+    operador.fontSize = 65;
     atribuicao.fontSize = font;
     espaco.size = CGSizeMake(self.frame.size.width * 100, self.frame.size.height * 70);
     
