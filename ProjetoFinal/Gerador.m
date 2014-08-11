@@ -10,29 +10,95 @@
 
 @implementation Gerador
 
--(int)retornaInteiro:(int)inicio ate:(int)fim{
+-(NSString*)retornaValorInteiro:(int)inicio ate:(int)fim{
     int aleatorio = arc4random() % (fim+1) + inicio;
     
-    NSString *aux = [NSString stringWithFormat:@"%d", aleatorio];
-    int retorno = [aux intValue];
-    
-    return retorno;
+   return [NSString stringWithFormat:@"%d", aleatorio];
+
 }
--(float)retornaFloat:(int)inicio ate:(int)fim{
+
+-(NSString*)retornaValorFloat:(int)inicio ate:(int)fim{
     int aleatorio = arc4random() % fim + inicio;
     int decimal = arc4random() % 100;
     
-    NSString *aux = [NSString stringWithFormat:@"%d.%d", aleatorio, decimal];
-    float retorno = [aux floatValue];
-    
-    return retorno;
+    return [NSString stringWithFormat:@"%d.%d", aleatorio, decimal];
 }
+
+-(NSString*)retornaValorLogico{
+    int num = arc4random() % 2;
+    
+    switch (num) {
+        case 1:
+            return @"Verdadeiro";
+            
+        default:
+            return @"Falso";
+    }
+}
+
+-(NSString*)retornaValorAleatorioParaOperador:(NSString*)operador{
+    if([operador isEqualToString:@"LÓGICO"]){
+        return [self retornaValorLogico];
+    
+    }else{
+        return [self retornaValorFloat:1 ate:1000];
+    }
+}
+
+-(NSString*)retornaOperadorDoTipo:(NSString*)tipoOperador{
+    if([tipoOperador isEqualToString:@"RELACIONAL"]){
+        return [self retornaOperadorRelacional];
+    
+    }else if([tipoOperador isEqualToString:@"ARITMÉTICO"]){
+        return [self retornaOperadorAritmetico];
+    
+    }else if([tipoOperador isEqualToString:@"ATRIBUIÇÃO"]){
+        return [self retornaOperadorAtribuicao];
+    
+    }else if([tipoOperador isEqualToString:@"LÓGICO"]){
+        return [self retornaOperadorLogico];
+    
+    }else{
+        @throw [NSException exceptionWithName:@"Operador Inválido." reason:@"Operador passado é inválido." userInfo:nil];
+    }
+}
+
+
 -(NSString*)retornaOperadorRelacional{
     
     NSArray *operadores = [NSArray arrayWithObjects:@">",@">=",@"<",@"<=",@"==",@"!=", nil];
     
-    int i = [self retornaInteiro:0 ate:((int)operadores.count)-1];
+    int i = [[self retornaValorInteiro:0 ate:(operadores.count)-1] intValue];
 
+    return [operadores objectAtIndex:i];
+}
+
+
+-(NSString*)retornaOperadorAritmetico{
+    
+    NSArray *operadores = [NSArray arrayWithObjects:@"+",@"-",@"*",@"/", nil];
+    
+    int i = [[self retornaValorInteiro:0 ate:(operadores.count)-1] intValue];
+    
+    return [operadores objectAtIndex:i];
+}
+
+
+-(NSString*)retornaOperadorAtribuicao{
+    
+    NSArray *operadores = [NSArray arrayWithObjects:@"+=",@"-=",@"*=",@"/=", nil];
+    
+    int i = [[self retornaValorInteiro:0 ate:(operadores.count)-1] intValue];
+    
+    return [operadores objectAtIndex:i];
+}
+
+
+-(NSString*)retornaOperadorLogico{
+    NSArray *operadores = [NSArray arrayWithObjects:@"&&",@"||", nil];
+    
+    int i = [[self retornaValorInteiro:0 ate:(operadores.count)-1] intValue];
+    
     return [operadores objectAtIndex:i];
 }
 

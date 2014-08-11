@@ -15,7 +15,7 @@
 @interface AnimaCondSimples : SKScene <SpriteCondicaoNodeDelegate, SpriteAtualizarNodeDelegate>
 {
     NSMutableArray *condicoesNode;
-    //SpriteCondicaoNode *condicaoNode;
+    SpriteAtualizarNode *botaoAtualizar;
     SKSpriteNode *botaoIniciarTeste;
     int contadorDeTeste;
     SaidaDeDados *console;

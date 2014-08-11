@@ -106,7 +106,7 @@
     //DEFINE OS VALORES, OPERADOR E RESULTADO
     Gerador *gerador = [[Gerador alloc] init];
     
-    return [NSString stringWithFormat:@"%d",[gerador retornaInteiro:0 ate:20]];
+    return [gerador retornaValorInteiro:0 ate:20];
 }
 
 -(NSString*)gerarOperadoresAleatorios{
@@ -135,7 +135,7 @@
 
 
 -(void)inicializarBotaoAtualizar{
-    SpriteAtualizarNode *botaoAtualizar = [[SpriteAtualizarNode alloc] init];
+    botaoAtualizar = [[SpriteAtualizarNode alloc] init];
     [botaoAtualizar setSize:botaoIniciarTeste.size];
     [botaoAtualizar setPosition:CGPointMake(botaoIniciarTeste.position.x + 90, botaoIniciarTeste.position.y)];
     [botaoAtualizar setMyDelegate:self];
@@ -177,7 +177,7 @@
     
     if([node.name isEqualToString:@"iniciarAnimacao"]){
         [node removeFromParent];
-        
+        [botaoAtualizar setUserInteractionEnabled:NO];
         [self iniciarAnimacaoCondicional];
     }
 }
@@ -234,6 +234,7 @@
         
         //CONTADOR QUE CONTROLA AS CONDIÇOES TESTADAS É ZERADO
         contadorDeTeste = 0;
+        [botaoAtualizar setUserInteractionEnabled:YES];
     }
     
 }

@@ -39,7 +39,22 @@
     switch (index) {
         case 1:
             [self setAnimacao:nil];
-            [self setAnimacao:[[AnimaOperadores alloc] init]];
+            [self setAnimacao:[[AnimaOperadores alloc] initWithOperador:@"ARITMÉTICO"]];
+            break;
+            
+        case 3:
+            [self setAnimacao:nil];
+            [self setAnimacao:[[AnimaOperadores alloc] initWithOperador:@"ATRIBUIÇÃO"]];
+            break;
+        
+        case 4:
+            [self setAnimacao:nil];
+            [self setAnimacao:[[AnimaOperadores alloc] initWithOperador:@"RELACIONAL"]];
+            break;
+            
+        case 5:
+            [self setAnimacao:nil];
+            [self setAnimacao:[[AnimaOperadores alloc] initWithOperador:@"LÓGICO"]];
             break;
             
         default:

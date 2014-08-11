@@ -29,9 +29,13 @@
                                                @"==",
                                                @"!=",
                                                @"+",
+                                               @"+=",
                                                @"-",
+                                               @"-=",
                                                @"*",
+                                               @"*=",
                                                @"/",
+                                               @"/=",
                                                @"&&",
                                                @"||", nil];
     }
@@ -47,7 +51,7 @@
     }
     
     
-    return @"Erro";
+    @throw [NSException exceptionWithName:@"Operador Inválido." reason:@"Operador passado é inválido." userInfo:nil];
  
 }
 
@@ -67,21 +71,25 @@
             return [calculadorRelacional calcularComOperadorNome:oper eNumero1:convertido1 eNumero2:convertido2];
             
         case 6: // Soma
+        case 7: // Mais igual
             return [calculadorAritimetico soma:convertido1 n2:convertido2];
             
-        case 7: // Subtração
+        case 8: // Subtração
+        case 9: // Menos igual
             return [calculadorAritimetico subtrai:convertido1 n2:convertido2];
             
-        case 8: // Multiplicação
+        case 10: // Multiplicação
+        case 11: // Vezes igual
             return [calculadorAritimetico multiplica:convertido1 n2:convertido2];
             
-        case 9: // Divisão
+        case 12: // Divisão
+        case 13: // Divido igual
             return [calculadorAritimetico divide:convertido1 n2:convertido2];
             
-        case 10: // E Lógico &&
+        case 14: // E Lógico &&
             return [calculadorLogico calcularELogicoExpressao1:numero1 eExpressao2:numero2];
             
-        case 11: // Ou lógico ||
+        case 15: // Ou lógico ||
             return [calculadorLogico calcularOULogicoExpressao1:numero1 eExpressao2:numero2];
             
         default: // NDA

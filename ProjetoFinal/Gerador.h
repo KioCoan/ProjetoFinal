@@ -10,8 +10,14 @@
 
 @interface Gerador : NSObject
 
--(int)retornaInteiro:(int)inicio ate:(int)fim;
--(float)retornaFloat:(int)inicio ate:(int)fim;
--(NSString*)retornaOperadorRelacional;
+-(NSString*)retornaValorAleatorioParaOperador:(NSString*)operador;
+-(NSString*)retornaValorInteiro:(int)inicio ate:(int)fim;
+-(NSString*)retornaValorFloat:(int)inicio ate:(int)fim;
+-(NSString*)retornaValorLogico;
 
+-(NSString*)retornaOperadorDoTipo:(NSString*)tipoOperador;
+-(NSString*)retornaOperadorRelacional;
+-(NSString*)retornaOperadorAritmetico;
+-(NSString*)retornaOperadorAtribuicao;
+-(NSString*)retornaOperadorLogico;
 @end

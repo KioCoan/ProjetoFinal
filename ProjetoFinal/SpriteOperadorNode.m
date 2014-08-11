@@ -74,11 +74,11 @@
     //O METODO VERIFICA QUAIS ANIMAÇÕES SERÃO EXECUTADAS CONFORME O ESTADO ATUAL DOS SPRITES
     //CASO OS SPRITES ESTIVEREM VISIVEIS SERÁ ACIONADO AS ANIMAÇÕES QUE "ESCONDERAM" OS SPRITES E ASSIM POR DIANTE
     if(partesVisiveis){
-        [self runAction:[SKAction playSoundFileNamed:@"slider.mp3" waitForCompletion:NO]];
+        [self runAction:[SKAction playSoundFileNamed:@"operadores.mp3" waitForCompletion:NO]];
         [self iniciarAnimacaoFechar];
     
     }else{
-        [self runAction:[SKAction playSoundFileNamed:@"slider.mp3" waitForCompletion:NO]];
+        [self runAction:[SKAction playSoundFileNamed:@"operadores.mp3" waitForCompletion:NO]];
         [self iniciarAnimacaoAbrir];
     }
     

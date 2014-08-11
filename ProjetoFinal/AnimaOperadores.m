@@ -10,9 +10,10 @@
 
 @implementation AnimaOperadores
 
--(id)initWithSize:(CGSize)size {
-    if (self = [super initWithSize:size]) {
+-(id)initWithOperador:(NSString*)tipoOperador{
+    if (self = [super init]) {
         /* Setup your scene here */
+        tipoOperadorAtual = tipoOperador;
         sprites = [[NSMutableArray alloc] init];
         
         //ADICIONA UM OPERADOR NO CANTO SUPERIOR ESQUERDO DA TELA
@@ -31,8 +32,11 @@
         position = CGPointMake(580, 100);
         [self criarOperador:position];
         
+        //CRIA A LABEL QUE EXIBE O TIPO DE OPERADOR ATUAL
+        [self inicializarLabelTipoOperador];
+        
         //GERA VALORES ALEATORIOS PARA OS SPRITES
-        [self atualizarValores];
+        [self atualizarValoresDoTipo:tipoOperador];
         
         //CRIA A LABEL QUE ATUALIZA OS VALORES DOS SPRITES
         [self criarLabelAtualizar];
@@ -40,7 +44,9 @@
         [self setBackgroundColor:[UIColor whiteColor]];
     }
     return self;
+
 }
+
 
 -(void)criarOperador:(CGPoint)posicao{
     SpriteOperadorNode *spriteOperador = [[SpriteOperadorNode alloc] init];
@@ -63,80 +69,37 @@
 
 
 -(void)botaoAtualizarClicado{
-    [self atualizarValores];
+    [self atualizarValoresDoTipo:tipoOperadorAtual];
 }
 
 
--(void)atualizarValores{
-    Geral *calculadora = [[Geral alloc] init];
+-(void)atualizarValoresDoTipo:(NSString*)tipoOperador{
+    Calculador *calculadora = [[Calculador alloc] init];
+    Gerador *geradorValores = [[Gerador alloc] init];
+    
     NSString *valor1, *operador, *valor2, *resultado;
-    int aux;
     
-    
-    
-    for(int i=0; i<sprites.count; i++){
-        aux = arc4random() % 200;
-        
-        //CASO O VALOR SEJA MENOR QUE 50, ELE É COSIDERADO COMO UM VALOR LÓGICO
-        if(aux < 50){
-            valor1 = [self valorLogicoAleatorio];
-            operador = [self operadorLogicoAleatorio];
-            valor2 = [self valorLogicoAleatorio];
-            resultado = [calculadora calculaOperador:operador numero1:valor1 numero2:valor2];
-            
-        }else{
-            valor1 = [self valorAleatorio];
-            operador = [calculadora getOperador:[self operadorAleatorio]];
-            valor2 = [self valorAleatorio];
-            resultado = [calculadora calculaOperador:operador numero1:valor1 numero2:valor2];
-        }
-        
+    for(SpriteOperadorNode *node in sprites){
+
+        valor1 = [geradorValores retornaValorAleatorioParaOperador:tipoOperador];
+        operador = [geradorValores retornaOperadorDoTipo:tipoOperador];
+        valor2 = [geradorValores retornaValorAleatorioParaOperador:tipoOperador];
+        resultado = [calculadora calculaOperador:operador numero1:valor1 numero2:valor2];
+
         //DEFINE OS NOVOS VALORES PARA O SPRITE DESSE INDEX
-        [[sprites objectAtIndex:i] setLabelValor1:valor1 operador:operador valor2:valor2 resultado:resultado];
-    }
-    
-}
-
-
--(NSString*)valorAleatorio{
-    float num = arc4random() % 1000 + 2;
-    num *= 0.9;
-    
-    if ((floorf(num)==(num))) {
-        return  [NSString stringWithFormat:@"%.0f",num];
-    }else{
-        return [NSString stringWithFormat:@"%.02f", num];
+        [node setLabelValor1:valor1 operador:operador valor2:valor2 resultado:resultado];
     }
 }
 
-
--(int)operadorAleatorio{
-    return arc4random() % 10;
-}
-
-
--(NSString*)operadorLogicoAleatorio{
-    int operador = arc4random() % 2;
+-(void)inicializarLabelTipoOperador{
+    lblTipoOperador = [[SKLabelNode alloc] initWithFontNamed:@"Lucida Grande"];
+    [lblTipoOperador setText:[NSString stringWithFormat:@"Operador %@", tipoOperadorAtual]];
+    [lblTipoOperador setFontSize:25];
+    [lblTipoOperador setFontColor:[SKColor blackColor]];
+    [lblTipoOperador setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    [lblTipoOperador setPosition:CGPointMake(10, 560)];
     
-    switch (operador) {
-        case 1:
-            return @"&&";
-            
-        default:
-            return @"||";
-    }
-}
-
--(NSString*)valorLogicoAleatorio{
-    int num = arc4random() % 2;
-    
-    switch (num) {
-        case 1:
-            return @"Verdadeiro";
-            
-        default:
-            return @"Falso";
-    }
+    [self addChild:lblTipoOperador];
 }
 
 @end
