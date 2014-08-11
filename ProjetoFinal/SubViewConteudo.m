@@ -44,6 +44,8 @@
 
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
+    [[self pageController] removeFromParentViewController];
+    self.pageController = nil;
     self.myDelegate = nil;
 
 }

@@ -15,7 +15,6 @@
 {
     NSMutableArray *teoria;
     GerenciadorDeAssunto *gerenciadorDeAssuntos;
-    
 }
 
 @property (strong, nonatomic) UIPageViewController *pageController;
