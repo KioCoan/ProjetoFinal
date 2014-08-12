@@ -6,15 +6,16 @@
 //  Copyright (c) 2014 SENAC - iOS. All rights reserved.
 //
 
-#import "CenaExercicioVariavel2.h"
+#import "LivreVariavel.h"
 
-@implementation CenaExercicioVariavel2
+@implementation LivreVariavel
 {
     NSMutableArray *variaveis;
     SKSpriteNode *botaoCaixa;
     SpriteLabelNode *botaoConteudo;
     SpriteLabelNode *botaoTipo;
     SpriteLabelNode *botaoNome;
+    SpriteLabelNode *btnExcluir;
     SKNode *conteudoAtivo;
     int apertei;
     int soltei;
@@ -44,6 +45,19 @@
     
     textField.text = nil;
     textField.hidden = YES;
+}
+
+- (void)excluirNode :(SKNode *) node{
+    
+    
+    
+    
+    
+    
+//    [variaveis removeObject:variavel];
+//    [variavel remo]
+    
+    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField*)testando{
@@ -182,6 +196,7 @@
     SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]initWithConteudo:@" " nome:@" " tipo:@" " tamanho:CGSizeMake(200, 200)];
     [caixa setPosition:botaoCaixa.position];
     caixa.name = @"caixa";
+    caixa.myDelegate = self;
     [variaveis addObject:caixa];
     [self addChild:caixa];
     
@@ -295,13 +310,13 @@
             
     }
         
-        
-        
     
+    
+    
+}
 
-
-    
-    
-    
+-(void)spriteCaixaClicado:(SKSpriteNode *)spriteCaixa{
+    SpriteCaixaNode *aux = (SpriteCaixaNode *)spriteCaixa;
+    [aux executaSprite];
 }
 @end

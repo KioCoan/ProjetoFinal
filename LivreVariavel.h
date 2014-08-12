@@ -10,6 +10,6 @@
 #import "SpriteCaixaNode.h"
 #import "SpriteLabelNode.h"
 
-@interface CenaExercicioVariavel2 : SKScene <UITextFieldDelegate>
+@interface LivreVariavel : SKScene <UITextFieldDelegate, SpriteCaixaNodeDelegate>
 
 @end
