@@ -30,6 +30,12 @@
 }
 
 -(void)inicializaClasse:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 resultado:(NSString*)resultado{
+    
+    //THREAD PARA CRIAR A ANIMAÇÃO COM SOM
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        somOperador = [SKAction playSoundFileNamed:@"operadores.mp3" waitForCompletion:NO];
+    });
+    
     //A PARTE QUE É EXIBIDO O RESULTADO É A PRIMEIRA A SER INSERIDA PRA QUE ELA FIQUE POR TRÁS DAS OUTRAS
     nodeResultado = [[OperadorResultadoNode alloc] initWithResultado:resultado];
     [self addChild:nodeResultado];
@@ -73,12 +79,13 @@
 -(void)iniciarAnimacoes{
     //O METODO VERIFICA QUAIS ANIMAÇÕES SERÃO EXECUTADAS CONFORME O ESTADO ATUAL DOS SPRITES
     //CASO OS SPRITES ESTIVEREM VISIVEIS SERÁ ACIONADO AS ANIMAÇÕES QUE "ESCONDERAM" OS SPRITES E ASSIM POR DIANTE
+    
+    [self runAction:somOperador];
+    
     if(partesVisiveis){
-        [self runAction:[SKAction playSoundFileNamed:@"operadores.mp3" waitForCompletion:NO]];
         [self iniciarAnimacaoFechar];
     
     }else{
-        [self runAction:[SKAction playSoundFileNamed:@"operadores.mp3" waitForCompletion:NO]];
         [self iniciarAnimacaoAbrir];
     }
     

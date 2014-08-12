@@ -25,6 +25,13 @@
         [self addChild:simboloAtualizar];
         
         [self setUserInteractionEnabled:YES];
+        
+        //THREAD PARA CRIAR A ANIMAÇÃO COM SOM
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+            somAtualizar = [SKAction playSoundFileNamed:@"refresh2.mp3" waitForCompletion:NO];
+        
+        });
+        
     }
     
     return self;
@@ -33,8 +40,15 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     //SPRITE QUE ATUALIZAR OS VALORES INICIA UMA ANIMAÇÃO DE ROTAÇÃO
     SKAction *rotation = [SKAction rotateByAngle: -M_PI duration:0.2];
-    [simboloAtualizar runAction:rotation];
-    [self runAction:[SKAction playSoundFileNamed:@"refresh2.mp3" waitForCompletion:NO]];
+    
+    [simboloAtualizar runAction:rotation completion:^{
+        [simboloAtualizar removeAllActions];
+    }];
+    
+    
+    [self runAction:somAtualizar completion:^{
+        [self removeAllActions];
+    }];
     
     //AVISA AO DELEGATE QUE O BOTÃO ATUALIZAR FOI CLICADO
     [self.myDelegate botaoAtualizarClicado];

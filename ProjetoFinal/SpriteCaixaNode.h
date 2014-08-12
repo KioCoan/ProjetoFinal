@@ -20,6 +20,8 @@
     SKLabelNode *lblTipo;
     SKLabelNode *lblEndereco;
     
+    SKAction *somCaixaAbrir;
+    SKAction *somCaixaFechar;
     SKAction *animacaoAbrir;
     SKAction *animacaoFechar;
     

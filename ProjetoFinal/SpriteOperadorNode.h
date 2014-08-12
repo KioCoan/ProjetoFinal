@@ -17,6 +17,8 @@
     OperadorValoresNode *nodeValores;
     OperadorResultadoNode *nodeResultado;
     
+    SKAction *somOperador;
+    
     BOOL partesVisiveis;
     BOOL clicouCirculo;
 }

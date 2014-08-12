@@ -18,9 +18,7 @@ static const int NUM_TEXTURAS = 13;
     if(self){
         [self setTexture:[SKTexture textureWithImageNamed:@"abrir-caixa1.png"]];
         [self setSize:CGSizeMake(307, 328)];
-        [self inicializaLabels];
-        [self inicializaAnimacaoAbrirCaixa];
-        [self inicializaAnimacaoFecharCaixa];
+        [self inicializarClasse];
         
         [self setUserInteractionEnabled:YES];
     }
@@ -35,22 +33,31 @@ static const int NUM_TEXTURAS = 13;
         [self setTexture:[SKTexture textureWithImageNamed:@"abrir-caixa1.png"]];
         [self setSize:tamanho];
         
-        [self inicializaLabels];
+        [self inicializarClasse];
+        
         [self setLabelConteudo:conteudo];
         [self setLabelNome:nome];
         [self setLabelTipo:tipo];
         
-        
         [lblNome setFontColor:[SKColor blackColor]];
         [lblTipo setFontColor:[SKColor blackColor]];
-        
-        [self inicializaAnimacaoAbrirCaixa];
-        [self inicializaAnimacaoFecharCaixa];
         
         [self setUserInteractionEnabled:YES];
     }
     
     return self;
+}
+
+-(void)inicializarClasse{
+    //THREAD PARA CRIAR A ANIMAÇÃO COM SOM
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        somCaixaAbrir = [SKAction playSoundFileNamed:@"abrirCaixa.mp3" waitForCompletion:NO];
+        somCaixaFechar = [SKAction playSoundFileNamed:@"fecharCaixa.mp3" waitForCompletion:NO];
+    });
+    
+    [self inicializaLabels];
+    [self inicializaAnimacaoAbrirCaixa];
+    [self inicializaAnimacaoFecharCaixa];
 }
 
 -(void)inicializaLabels{
@@ -164,7 +171,7 @@ static const int NUM_TEXTURAS = 13;
 -(void)fecharCaixa{
     //INICIA A SKACTION QUE FECHA A CAIXA
     [lblConteudo setHidden:YES];
-    [self runAction:[SKAction playSoundFileNamed:@"fecharCaixa.mp3" waitForCompletion:NO]];
+    [self runAction:somCaixaFechar];
     [self runAction:animacaoFechar completion:^{
         [self removeAllActions];
         caixaAberta = NO;
@@ -176,7 +183,7 @@ static const int NUM_TEXTURAS = 13;
 -(void)abrirCaixa{
     //INICIA A SKACTION QUE ABRE A CAIXA
     [lblConteudo setHidden:YES];
-    [self runAction:[SKAction playSoundFileNamed:@"abrirCaixa.mp3" waitForCompletion:NO]];
+    [self runAction:somCaixaAbrir];
     [self runAction:animacaoAbrir completion:^{
         [self removeAllActions];
         caixaAberta = YES;

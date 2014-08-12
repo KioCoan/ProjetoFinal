@@ -91,6 +91,7 @@
     }
 }
 
+
 -(void)inicializarLabelTipoOperador{
     lblTipoOperador = [[SKLabelNode alloc] initWithFontNamed:@"Lucida Grande"];
     [lblTipoOperador setText:[NSString stringWithFormat:@"Operador %@", tipoOperadorAtual]];

@@ -17,6 +17,7 @@
 @interface SpriteAtualizarNode : SKSpriteNode
 {
     SKSpriteNode *simboloAtualizar;
+    SKAction *somAtualizar;
 }
 @property id <SpriteAtualizarNodeDelegate> myDelegate;
 
