@@ -20,4 +20,10 @@
 -(NSString*)retornaOperadorAritmetico;
 -(NSString*)retornaOperadorAtribuicao;
 -(NSString*)retornaOperadorLogico;
+
+-(NSString*)retornaNomeVariavel:(NSString*)tipo;
+-(NSString*)retornaTipoVariavel;
+-(NSString*)retornaValorVarivel:(NSString*)tipo;
+
+
 @end
