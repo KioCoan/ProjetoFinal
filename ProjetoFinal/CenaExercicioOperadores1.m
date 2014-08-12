@@ -248,6 +248,9 @@
 
 - (void)adicionaNaTela{
     
+    //ADICIONA NOZ NA TELA
+    
+    //ADICIONA AS EXPRESSOES NA TELA
     
     for (int i = 0; i < expressoes.count; i++) {
         [self addChild:[[expressoes objectAtIndex:i] valueForKey:@"valor1"]];
@@ -256,6 +259,8 @@
         [self addChild:[[expressoes objectAtIndex:i] valueForKey:@"atribuicao"]];
         [self addChild:[[expressoes objectAtIndex:i] valueForKey:@"resultado"]];
     }
+    
+    //ADICIONA OS OPERADORES NA TELA
     
     for (int i = 0; i < opcoes.count; i++) {
         [self addChild:[opcoes objectAtIndex:i]];
@@ -298,6 +303,7 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
     
+    
     if (conteudoAtivo) {
         
         for (NSDictionary *dict in expressoes) { //Ao soltar o node de resposta em algum lugar varre o vetor de caixas para descobrir sobre quem está
@@ -308,6 +314,9 @@
             resultado = [dict valueForKey:@"resultado"];
             
             
+            
+            //COORDENADAS PARA A CAIXA
+            
             float xInicio = espaco.frame.origin.x;
             float xFim = xInicio + espaco.frame.size.width;
             float xMeio = (xInicio + xFim)/2;
@@ -315,23 +324,25 @@
             float yFim = yInicio + espaco.frame.size.height;
             float yMeio = (yInicio + yFim)/2;
             
+            
+            //verifica se o nó movido esta dentro de alguma caixa
+            
             if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
                 
                 
-                if ([resultado.text isEqualToString:[calculador calculaOperador:conteudoAtivo.text numero1:valor1.text numero2:valor2.text]]) { //se a resposta do calculador for a mesma da expressao
-                    [conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa
+                
+                    //primeiro verifica se ja existe algum o operador na caixa
+                
+                    //CHAMA O CALCULADOR E SE A EXPRESSAO ESTA CORRETA
                     
-                    
-                }else{
-                    conteudoAtivo.fontColor = [UIColor redColor];
-                    SKAction *animacaoVoltar = [SKAction moveTo:conteudoAtivo.posicaoInicial duration:0.5];
-                    [conteudoAtivo runAction:animacaoVoltar completion:^{
-                        [conteudoAtivo removeAllActions];
-                        conteudoAtivo.fontColor = [UIColor greenColor];
-                    }];
-                }
-            
-        
+                    if (![self operadorNasCordenadasX:xMeio Y:yMeio]  && [resultado.text isEqualToString:[calculador calculaOperador:conteudoAtivo.text numero1:valor1.text numero2:valor2.text]]) { //se a resposta do calculador for a mesma da expressao
+                        [conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa
+                        
+                        
+                    }else{
+                        [self animacaoOperadorErrado];                    }
+
+                
             }
 
     
@@ -340,6 +351,42 @@
     
     
     move = NO;
+    
+}
+
+
+
+- (void)animacaoOperadorErrado{
+    
+    
+    //DEIXA A LABEL VERMELHA E A COLOCA NA SUA COORDENADA DE INICIO
+    
+    
+    
+    conteudoAtivo.fontColor = [UIColor redColor];
+    SKAction *animacaoVoltar = [SKAction moveTo:conteudoAtivo.posicaoInicial duration:0.5];
+    [conteudoAtivo runAction:animacaoVoltar completion:^{
+        [conteudoAtivo removeAllActions];
+        conteudoAtivo.fontColor = [UIColor greenColor];
+    }];
+
+}
+
+
+
+-(BOOL)operadorNasCordenadasX : (float)x Y: (float)y{
+    
+    
+    //ESSE METODO É O QUE VERIFICA SE JA EXISTE UM OPERADOR NA DETERMINADA COORDENADA QUE SEMPRE SERA A COORDENADA CENTRAL DE UMA CAIXA
+    
+    
+    for (SpriteLabelNode *op in opcoes) {
+        if (op.position.x == x && op.position.y == y ) {
+            return YES;
+        }
+        
+    }
+    return NO;
     
 }
 @end
