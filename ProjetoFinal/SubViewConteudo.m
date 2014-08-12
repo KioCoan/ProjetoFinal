@@ -17,8 +17,13 @@
     
     [super viewDidLoad];
     
+    
+    
+}
+
+-(void)montaPaginador{
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-   
+    
     self.pageController.dataSource = self;
     [[self.pageController view] setFrame:[[self view] bounds]];
     
@@ -31,11 +36,12 @@
     [self addChildViewController:self.pageController];
     [[self view] addSubview:[self.pageController view]];
     [self.pageController didMoveToParentViewController:self];
-    
 }
-
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    [self montaPaginador];
+    
     gerenciadorDeAssuntos = [GerenciadorDeAssunto sharedGerenciador];
     
     teoria = [gerenciadorDeAssuntos retornaTeoriaFormatada];
