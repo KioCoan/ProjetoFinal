@@ -12,4 +12,6 @@
 
 @interface CenaExercicioOperadores1 : SKScene
 
+@property int corretos;
+
 @end

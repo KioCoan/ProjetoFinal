@@ -175,6 +175,7 @@
 
 -(void)iniciarAnimacaoIntroducao{
     [self esconderLabels:YES];
+    [self setUserInteractionEnabled:NO];
     SKEmitterNode *particula = [[SKEmitterNode alloc] init];
     
     SKAction *somEncostouChao = [SKAction playSoundFileNamed:@"caixaEncostaChao.mp3" waitForCompletion:NO];
@@ -188,9 +189,10 @@
             [self runAction:somEncostouChao];
             [self setTexture:[SKTexture textureWithImageNamed:@"abrir-caixa1.png"]];
             [self addChild:particula];
-            [self runAction:[SKAction waitForDuration:1.4] completion:^{
+            [self runAction:[SKAction waitForDuration:1.1] completion:^{
                 [particula removeFromParent];
                 [self removeAllActions];
+                [self setUserInteractionEnabled:YES];
             }];
         }];
         [self esconderLabels:NO];
@@ -213,7 +215,7 @@
 
 -(void)executaSprite{
     
-    [self setUserInteractionEnabled:NO];
+    
     
     //VERIFICA O ESTADO DA CAIXA, SE ELA ESTÁ ABERTA OU FECHADA PARA ACIONAR A SKACTION CORRETA
     if(caixaAberta){
@@ -226,6 +228,7 @@
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self setUserInteractionEnabled:NO];
     [[self myDelegate] spriteCaixaClicado:self];
 }
 

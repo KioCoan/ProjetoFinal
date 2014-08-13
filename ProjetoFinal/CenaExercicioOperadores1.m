@@ -69,7 +69,7 @@
         //coloca na tela
         [self criaEnunciado];
         [self adicionaNaTela];
-        
+        _corretos = 0;
     }
     return self;
 
@@ -337,7 +337,8 @@
                     
                     if (![self operadorNasCordenadasX:xMeio Y:yMeio]  && [resultado.text isEqualToString:[calculador calculaOperador:conteudoAtivo.text numero1:valor1.text numero2:valor2.text]]) { //se a resposta do calculador for a mesma da expressao
                         [conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa
-                        
+                        _corretos++;
+                        [self corrigirExercicio];
                         
                     }else{
                         [self animacaoOperadorErrado];                    }
@@ -388,5 +389,11 @@
     }
     return NO;
     
+}
+
+-(void)corrigirExercicio{
+    if(_corretos == 6){
+        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeOperadores1"];
+    }
 }
 @end
