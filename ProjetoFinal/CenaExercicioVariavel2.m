@@ -12,7 +12,9 @@
     SpriteCaixaNode *variavel;
     SKNode *conteudoAtivo;
     UITextField *textField;
-    
+    NSMutableArray *resposta;
+    SKLabelNode *enunciado;
+    SpriteLabelNode *labelCriada;
 }
 
 - (id)init{
@@ -23,12 +25,13 @@
         [self criaVariavel];
         [self criaBotoes];
         
-        
+        [self criaEnunciado];
         
         
     }
     return self;
 }
+
 
 -(void)didMoveToView:(SKView *)view{
     
@@ -71,7 +74,72 @@
     
     
     
+    resposta = [[NSMutableArray alloc]init];
+    Gerador *gerador = [[Gerador alloc]init];
     
+    for (int i = 0; i < 4; i++) {
+        [resposta addObject:[self retornaTextoIndice:i Gerador:gerador]];
+    }
+    
+    
+    
+    enunciado = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
+    enunciado.fontSize = 40;
+    enunciado.text = [resposta componentsJoinedByString:@" "];
+    enunciado.position = CGPointMake(50, 800);
+    [enunciado setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    
+    [self addChild:enunciado];
+    
+    
+    
+    
+}
+
+- (NSString *)retornaTextoIndice :(int)i Gerador:(Gerador *)gerador{
+    
+    
+    
+    switch (i) {
+        case 0:
+            return [gerador retornaTipoVariavel];
+            break;
+            
+        case 1:
+            return [gerador retornaNomeVariavel:[resposta objectAtIndex:i-i]];
+            break;
+            
+            
+        case 2:
+            return @"<-";
+            break;
+            
+        case 3:
+           
+            if ([[resposta objectAtIndex:i-i]isEqualToString:@"inteiro"]) {
+                
+                
+                return [gerador retornaValorInteiro:1 ate:100];
+            }else if ([[resposta objectAtIndex:i-i]isEqualToString:@"real"]){
+                
+                
+                return [gerador retornaValorFloat:1 ate:1000];
+                
+                
+            }else if ([[resposta objectAtIndex:i-i]isEqualToString:@"caractere"]){
+                
+                return [gerador retornaValorCaractere];
+                
+            }else{
+                return [gerador retornaValorLogico];
+            }
+            
+            break;
+        default:
+            
+            return nil;
+            break;
+    }
     
     
     
@@ -83,23 +151,23 @@
     float font = 40;
     
     
-   SpriteLabelNode *botaoConteudo = [[SpriteLabelNode alloc]initWithType:@"conteudo" texto:@"Cont"];
+   SpriteLabelNode *botaoConteudo = [[SpriteLabelNode alloc]initWithType:@"CONTEUDO" texto:@"Cont"];
     botaoConteudo.fontSize = font;
-    botaoConteudo.name = @"botaoConteudo";
+    botaoConteudo.name = @"botaoLabel";
     botaoConteudo.position = CGPointMake(200, 80);
     [self addChild:botaoConteudo];
     
     
-    SpriteLabelNode *botaoTipo = [[SpriteLabelNode alloc]initWithType:@"tipo" texto:@"Tipo"];
+    SpriteLabelNode *botaoTipo = [[SpriteLabelNode alloc]initWithType:@"TIPO" texto:@"Tipo"];
     botaoTipo.fontSize = font;
-    botaoTipo.name = @"botaoTipo";
+    botaoTipo.name = @"botaoLabel";
     botaoTipo.position = CGPointMake(font * 10, 80);
     [self addChild:botaoTipo];
     
     
-    SpriteLabelNode *botaoNome = [[SpriteLabelNode alloc]initWithType:@"nome" texto:@"Nome"];
+    SpriteLabelNode *botaoNome = [[SpriteLabelNode alloc]initWithType:@"NOME" texto:@"Nome"];
     botaoNome.fontSize = font;
-    botaoNome.name = @"botaoNome";
+    botaoNome.name = @"botaoLabel";
     botaoNome.position = CGPointMake(font * 15, 80);
     [self addChild:botaoNome];
     
@@ -117,38 +185,21 @@
     
     variavel.name = @"caixa";
     variavel.myDelegate = self;
+    [variavel iniciarAnimacaoIntroducao];
     [self addChild:variavel];
     
 }
 
-- (void)criaConteudo{
+- (void)criaLabelTipo : (NSString*)tipo{
     
-    SpriteLabelNode *conteudo = [[SpriteLabelNode alloc]initWithType:@"conteudo" texto:@"CONTEUDO"];
-    conteudo.fontSize = 60;
-    conteudo.name = @"label";
-    //conteudo.position = botaoConteudo.position;
-    [self addChild:conteudo];
+    labelCriada = [[SpriteLabelNode alloc]initWithType:tipo texto:tipo];
+    labelCriada.fontSize = 60;
+    labelCriada.name = @"label";
+    labelCriada.position = CGPointMake(400, 200);
+    [self addChild:labelCriada];
     
 }
 
-- (void)criarTipo{
-    
-    SpriteLabelNode *tipo = [[SpriteLabelNode alloc]initWithType:@"tipo" texto:@"TIPO"];
-    tipo.fontSize = 60;
-    tipo.name = @"label";
-    //tipo.position = botaoTipo.position;
-    [self addChild:tipo];
-}
-
-- (void)criarNome{
-    
-    SpriteLabelNode *nome = [[SpriteLabelNode alloc]initWithType:@"nome" texto:@"NOME"];
-    nome.fontSize = 60;
-    nome.name = @"label";
-    //nome.position = botaoNome.position;
-    [self addChild:nome];
-    
-}
 
 
 - (void)spriteCaixaClicado:(SKSpriteNode *)spriteCaixa{
@@ -216,29 +267,38 @@
     CGPoint location =  [touch locationInNode:self];
     conteudoAtivo = [self nodeAtPoint:location];
     
-    if ([conteudoAtivo.name isEqualToString:@"botaoConteudo"]) {
+    if ([conteudoAtivo.name isEqualToString:@"botaoLabel"] && labelCriada == nil) {
+        
+        SpriteLabelNode *aux = (SpriteLabelNode *)conteudoAtivo;
         
         
-        [self criaConteudo];
-        
-    }else if ([conteudoAtivo.name isEqualToString:@"botaoConteudo"]){
+        [self criaLabelTipo:aux.tipo];
         
         
         
-        
-    }else if ([conteudoAtivo.name isEqualToString:@"botaoTipo"]){
-        [self criarTipo];
-        
-    }else if ([conteudoAtivo.name isEqualToString:@"botaoNome"]){
-        [self criarNome];
-    }else if ([conteudoAtivo.name isEqualToString:@"caixa"] && [touch tapCount] == 2){
-        SpriteCaixaNode *c = (SpriteCaixaNode*) conteudoAtivo;
-        [c executaSprite];
     }
     
     
+}
+
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    
+    if ([conteudoAtivo.name isEqualToString:@"label"]) {
+        conteudoAtivo.position = location;
+    }else{
+        conteudoAtivo = nil;
+    }
+    
+    
+    //SE A POSIÇÃO QUE FOI CLICADA É A MESMA DO SPRITE DA CAIXA, O SPRITE É MOVIDO
     
 }
+
 
 
 

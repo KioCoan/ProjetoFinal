@@ -255,6 +255,7 @@
     NSString *valor = [conteudoAtivo text];
     
     
+    //CONCATENA STRING
     
     NSArray *strings = [[NSArray alloc]initWithObjects:tipoVariavel ,nomeVariavel,@"<-",valor ,nil];
     

@@ -9,6 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "SpriteCaixaNode.h"
 #import "SpriteLabelNode.h"
+#import "Gerador.h"
 
 
 @interface CenaExercicioVariavel2 : SKScene <UITextFieldDelegate,SpriteCaixaNodeDelegate>

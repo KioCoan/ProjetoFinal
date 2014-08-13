@@ -39,14 +39,14 @@
                                  @"carroParado",
                                  @"possuiChave",nil];
         valoresVariaveisCaracteres = [NSArray arrayWithObjects:@"Maria",
-                                      @"Pedro",
-                                      @"Joao",
-                                      @"Paulo",
-                                      @"Ana",
-                                      @"Caio",
-                                      @"Henrique",
-                                      @"Fernando",
-                                      @"Gustavo",nil];
+                                      @"\"Pedro\"",
+                                      @"\"Joao\"",
+                                      @"\"Paulo\"",
+                                      @"\"Ana\"",
+                                      @"\"Caio\"",
+                                      @"\"Henrique\"",
+                                      @"\"Fernando\"",
+                                      @"\"Gustavo\"",nil];
         valoresVariaveisLogicas = [NSArray arrayWithObjects:@"verdadeiro",@"falso",nil];
     }
     return self;
@@ -76,6 +76,13 @@
         default:
             return @"Falso";
     }
+}
+
+-(NSString *)retornaValorCaractere{
+    
+    return [self valoresCaracteres];
+    
+    
 }
 
 -(NSString*)retornaValorAleatorioParaOperador:(NSString*)operador{
@@ -241,6 +248,8 @@
     }
     return retorno;
 }
+
+
 
 -(NSString*)valoresCaracteres{
     int i = [[self retornaValorInteiro:0 ate:(int)(valoresVariaveisCaracteres.count)-1] intValue];
