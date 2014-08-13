@@ -248,6 +248,19 @@
     
 }
 
+- (void)atualizaCaixa:(SpriteCaixaNode *)caixa Label:(SpriteLabelNode *)label{
+    
+    
+    if ([label.tipo isEqualToString:@"CONTEUDO"]) {
+        [caixa setLabelConteudo:label.text];
+    }else if ([label.tipo isEqualToString:@"TIPO"]){
+        [caixa setLabelTipo:label.text];
+    }else{
+        [caixa setLabelNome:label.text];
+    }
+    labelCriada = nil;
+    [label removeFromParent];
+}
 
 - (void)limpaTextField{
     
@@ -298,6 +311,35 @@
     //SE A POSIÇÃO QUE FOI CLICADA É A MESMA DO SPRITE DA CAIXA, O SPRITE É MOVIDO
     
 }
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    if ([conteudoAtivo.name isEqualToString:@"label"]) {
+        
+        
+         //Ao soltar o node de resposta em algum lugar varre o vetor de caixas para descobrir sobre quem está
+            float xInicio = variavel.frame.origin.x;
+            float xFim = xInicio + variavel.frame.size.width;
+            //float xMeio = (xInicio + xFim)/2; PARA O FUTURO
+            float yInicio = variavel.frame.origin.y;
+            float yFim = yInicio + variavel.frame.size.height;
+            //float yMeio = (yInicio + yFim)/2; PARA O FUTURO
+            
+            if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
+                NSLog(@"deu certo");
+                [self atualizaCaixa:variavel Label:(SpriteLabelNode *) conteudoAtivo];
+            }
+            
+            //[conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa
+        }
+        
+    
+    
+    
+    
+    
+}
+
 
 
 
