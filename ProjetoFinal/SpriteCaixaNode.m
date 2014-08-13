@@ -177,13 +177,15 @@
     [self esconderLabels:YES];
     SKEmitterNode *particula = [[SKEmitterNode alloc] init];
     
+    SKAction *somEncostouChao = [SKAction playSoundFileNamed:@"caixaEncostaChao.mp3" waitForCompletion:NO];
     NSString *myParticlePath = [[NSBundle mainBundle] pathForResource:@"AnimaVariavel" ofType:@"sks"];
     particula = [NSKeyedUnarchiver unarchiveObjectWithFile:myParticlePath];
     particula.particlePosition = CGPointMake(-20, -120);
     
     
     [self runAction:animacaoIntroducao completion:^{
-        [self runAction:[SKAction moveToY:self.position.y - 20 duration:0.2] completion:^{
+        [self runAction:[SKAction moveToY:self.position.y - 30 duration:0.2] completion:^{
+            [self runAction:somEncostouChao];
             [self setTexture:[SKTexture textureWithImageNamed:@"abrir-caixa1.png"]];
             [self addChild:particula];
             [self runAction:[SKAction waitForDuration:1.4] completion:^{

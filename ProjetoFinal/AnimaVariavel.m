@@ -15,7 +15,7 @@
         /* Setup your scene here */
         enderecoCaixa = 1;
         spritesCaixa = [[NSMutableArray alloc] init];
-        tamanhoCaixa = CGSizeMake(250, 287);
+        tamanhoCaixa = CGSizeMake(250, 300);
         
         //ADICIONA UMA CAIXA NO CANTO SUPERIOR ESQUERDO DA TELA
         CGPoint position = CGPointMake(tamanhoCaixa.width / 1.2, tamanhoCaixa.height * 1.6);
