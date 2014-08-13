@@ -314,7 +314,6 @@
             resultado = [dict valueForKey:@"resultado"];
             
             
-            
             //COORDENADAS PARA A CAIXA
             
             float xInicio = espaco.frame.origin.x;
@@ -348,6 +347,8 @@
 
     
         }
+        
+        
     }
     
     

@@ -32,14 +32,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    
+    viewDeConteudo = [self.storyboard instantiateViewControllerWithIdentifier:@"conteudo"];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
     
-    viewDeConteudo = [self.storyboard instantiateViewControllerWithIdentifier:@"conteudo"];
+    
     
     gerenciadorDeAssuntos = [GerenciadorDeAssunto sharedGerenciador];
     

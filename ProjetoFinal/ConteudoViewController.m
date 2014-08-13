@@ -33,7 +33,7 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     //self.myViewContainer = nil;
-    [cena limparDelegatesMalditos];
+    //[cena limparDelegatesMalditos];
     [cena removeFromParent];
 }
 
