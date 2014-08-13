@@ -8,18 +8,14 @@
 
 #import "SpriteCaixaNode.h"
 
-static const int NUM_TEXTURAS = 13;
-
 @implementation SpriteCaixaNode
 
 -(id)init{
     self = [super init];
     
     if(self){
-        [self setTexture:[SKTexture textureWithImageNamed:@"abrir-caixa1.png"]];
         [self setSize:CGSizeMake(307, 328)];
         [self inicializarClasse];
-        
         [self setUserInteractionEnabled:YES];
     }
     
@@ -30,11 +26,9 @@ static const int NUM_TEXTURAS = 13;
     self = [super init];
     
     if(self){
-        [self setTexture:[SKTexture textureWithImageNamed:@"abrir-caixa1.png"]];
+        
         [self setSize:tamanho];
-        
         [self inicializarClasse];
-        
         [self setLabelConteudo:conteudo];
         [self setLabelNome:nome];
         [self setLabelTipo:tipo];
@@ -43,6 +37,7 @@ static const int NUM_TEXTURAS = 13;
         [lblTipo setFontColor:[SKColor blackColor]];
         
         [self setUserInteractionEnabled:YES];
+
     }
     
     return self;
@@ -55,9 +50,12 @@ static const int NUM_TEXTURAS = 13;
         somCaixaFechar = [SKAction playSoundFileNamed:@"fecharCaixa.mp3" waitForCompletion:NO];
     });
     
+    [self setTexture:[SKTexture textureWithImageNamed:@"abrir-caixa1.png"]];
+    [self inicializaAnimacaoIntroducao];
     [self inicializaLabels];
     [self inicializaAnimacaoAbrirCaixa];
     [self inicializaAnimacaoFecharCaixa];
+
 }
 
 -(void)inicializaLabels{
@@ -95,6 +93,41 @@ static const int NUM_TEXTURAS = 13;
     [self addChild:lblTipo];
 }
 
+
+-(void)inicializaAnimacaoAbrirCaixa{
+    //CRIO TEXTURAS PARA TODAS OS SPRITES DA VARIAVEL
+    int numTexturas = 13;
+    
+    NSMutableArray *vetorTexturas = [[NSMutableArray alloc] init];
+    
+    for(int i=1; i<=numTexturas; i++){
+        SKTexture *textura = [SKTexture textureWithImageNamed:[NSString stringWithFormat:@"abrir-caixa%d.png", i]];
+        
+        [vetorTexturas addObject:textura];
+    }
+    
+    
+    //INSTANCIO A SKACTION COM O ARRAY DE TEXTURAS CRIADO
+    animacaoAbrir = [SKAction animateWithTextures:vetorTexturas timePerFrame:0.05];
+}
+
+
+-(void)inicializaAnimacaoIntroducao{
+    //CRIO TEXTURAS PARA TODAS OS SPRITES DA VARIAVEL
+    int numTexturas = 9;
+    
+    NSMutableArray *vetorTexturas = [[NSMutableArray alloc] init];
+    
+    for(int i=1; i<=numTexturas; i++){
+        SKTexture *textura = [SKTexture textureWithImageNamed:[NSString stringWithFormat:@"sprite-introducao%d.png", i]];
+        
+        [vetorTexturas addObject:textura];
+    }
+    
+    
+    //INSTANCIO A SKACTION COM O ARRAY DE TEXTURAS CRIADO
+    animacaoIntroducao = [SKAction animateWithTextures:vetorTexturas timePerFrame:0.05];
+}
 
 -(void)criarLabelEndereco{
     //CRIA A SKLABELNODE QUE SIMBOLIZA O ENDEREÇO DE MEMÓRIA DA VARIÁVEL
@@ -138,6 +171,34 @@ static const int NUM_TEXTURAS = 13;
     }else{
         [lblConteudo setFontColor:[SKColor blackColor]];
     }
+}
+
+-(void)iniciarAnimacaoIntroducao{
+    [self esconderLabels:YES];
+    SKEmitterNode *particula = [[SKEmitterNode alloc] init];
+    
+    NSString *myParticlePath = [[NSBundle mainBundle] pathForResource:@"AnimaVariavel" ofType:@"sks"];
+    particula = [NSKeyedUnarchiver unarchiveObjectWithFile:myParticlePath];
+    particula.particlePosition = CGPointMake(-20, -120);
+    
+    
+    [self runAction:animacaoIntroducao completion:^{
+        [self runAction:[SKAction moveToY:self.position.y - 20 duration:0.2] completion:^{
+            [self setTexture:[SKTexture textureWithImageNamed:@"abrir-caixa1.png"]];
+            [self addChild:particula];
+            [self runAction:[SKAction waitForDuration:1.4] completion:^{
+                [particula removeFromParent];
+                [self removeAllActions];
+            }];
+        }];
+        [self esconderLabels:NO];
+    }];
+}
+
+-(void)esconderLabels:(BOOL)resultado{
+    [lblNome setHidden:resultado];
+    [lblTipo setHidden:resultado];
+    [lblEndereco setHidden:resultado];
 }
 
 -(void)setLabelNome:(NSString*)text{
@@ -192,21 +253,6 @@ static const int NUM_TEXTURAS = 13;
     }];
 }
 
-
--(void)inicializaAnimacaoAbrirCaixa{
-    //CRIO TEXTURAS PARA TODAS OS SPRITES DA VARIAVEL
-    NSMutableArray *vetorTexturas = [[NSMutableArray alloc] init];
-    
-    for(int i=1; i<=NUM_TEXTURAS; i++){
-        SKTexture *textura = [SKTexture textureWithImageNamed:[NSString stringWithFormat:@"abrir-caixa%d.png", i]];
-        
-        [vetorTexturas addObject:textura];
-    }
-
-    
-    //INSTANCIO A SKACTION COM O ARRAY DE TEXTURAS CRIADO
-    animacaoAbrir = [SKAction animateWithTextures:vetorTexturas timePerFrame:0.05];
-}
 
 -(void)inicializaAnimacaoFecharCaixa{
     //CRIO UMA ANIMAÇÃO EM ORDEM INVERSA (CAIXA FECHANDO)

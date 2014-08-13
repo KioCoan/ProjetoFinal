@@ -24,6 +24,7 @@
     SKAction *somCaixaFechar;
     SKAction *animacaoAbrir;
     SKAction *animacaoFechar;
+    SKAction *animacaoIntroducao;
     
     BOOL caixaAberta;
 }
@@ -41,5 +42,5 @@
 -(void)abrirCaixa;
 -(void)fecharCaixa;
 -(void)executaSprite;
-
+-(void)iniciarAnimacaoIntroducao;
 @end
