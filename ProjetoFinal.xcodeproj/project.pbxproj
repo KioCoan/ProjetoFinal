@@ -119,6 +119,8 @@
 		BDC757A8196787E700DB8380 /* abrir-caixa11.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC7579B196787E700DB8380 /* abrir-caixa11.png */; };
 		BDC757A9196787E700DB8380 /* abrir-caixa12.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC7579C196787E700DB8380 /* abrir-caixa12.png */; };
 		BDC757AA196787E700DB8380 /* abrir-caixa13.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC7579D196787E700DB8380 /* abrir-caixa13.png */; };
+		BDCCE533199D2F430063DF2B /* item-condicional.png in Resources */ = {isa = PBXBuildFile; fileRef = BDCCE532199D2F430063DF2B /* item-condicional.png */; };
+		BDCCE535199D322C0063DF2B /* item-futuro.png in Resources */ = {isa = PBXBuildFile; fileRef = BDCCE534199D322C0063DF2B /* item-futuro.png */; };
 		BDD2C07E19995B78003D557E /* Animacao.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD2C07D19995B78003D557E /* Animacao.m */; };
 		BDE82C2319916E1F00610D96 /* se-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE82C1F19916E1F00610D96 /* se-normal.png */; };
 		BDE82C2419916E1F00610D96 /* senao-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE82C2019916E1F00610D96 /* senao-normal.png */; };
@@ -316,6 +318,8 @@
 		BDC7579B196787E700DB8380 /* abrir-caixa11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "abrir-caixa11.png"; path = "Imagens/Sprites/variavel/abrir-caixa11.png"; sourceTree = "<group>"; };
 		BDC7579C196787E700DB8380 /* abrir-caixa12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "abrir-caixa12.png"; path = "Imagens/Sprites/variavel/abrir-caixa12.png"; sourceTree = "<group>"; };
 		BDC7579D196787E700DB8380 /* abrir-caixa13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "abrir-caixa13.png"; path = "Imagens/Sprites/variavel/abrir-caixa13.png"; sourceTree = "<group>"; };
+		BDCCE532199D2F430063DF2B /* item-condicional.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-condicional.png"; path = "Imagens/item-condicional.png"; sourceTree = "<group>"; };
+		BDCCE534199D322C0063DF2B /* item-futuro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-futuro.png"; path = "Imagens/item-futuro.png"; sourceTree = "<group>"; };
 		BDD2C07C19995B78003D557E /* Animacao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animacao.h; sourceTree = "<group>"; };
 		BDD2C07D19995B78003D557E /* Animacao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animacao.m; sourceTree = "<group>"; };
 		BDE82C1F19916E1F00610D96 /* se-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "se-normal.png"; path = "Imagens/Sprites/Condicionais/se-normal.png"; sourceTree = "<group>"; };
@@ -849,15 +853,17 @@
 		E501FA69192FCD1600B56B5C /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
-				91A239E119994681004CE354 /* check.png */,
-				BD5DE217199730E4007849DB /* img-controles.png */,
-				BD5DE21019972138007849DB /* bt-play.png */,
+				BDCCE534199D322C0063DF2B /* item-futuro.png */,
 				A521FEEC1993FE1E00D28627 /* saida-texto.png */,
 				BD510FE4198A035B0052B6E5 /* Condicionais */,
 				BDBE7699197A3B57004EA926 /* Operadores */,
 				BDC75790196787CF00DB8380 /* Variavel */,
 				BD630CAA1948E3F400AF13E7 /* item-variavel.png */,
 				BD8C66E8197E522500A4946C /* item-operadores.png */,
+				BDCCE532199D2F430063DF2B /* item-condicional.png */,
+				91A239E119994681004CE354 /* check.png */,
+				BD5DE217199730E4007849DB /* img-controles.png */,
+				BD5DE21019972138007849DB /* bt-play.png */,
 				846B738D19782427009C2EB7 /* fundo-cinza.png */,
 				BD66B652197F9327000BB548 /* fundo-transparente.png */,
 				BD510FE01989E8200052B6E5 /* lousa-teoria.jpg */,
@@ -959,6 +965,7 @@
 				BD8C66E9197E522500A4946C /* item-operadores.png in Resources */,
 				BDE82C2619916E1F00610D96 /* sprite-exclamacao.png in Resources */,
 				BDF8ADF4197B255C00BA5B8A /* parte-resultado7.png in Resources */,
+				BDCCE533199D2F430063DF2B /* item-condicional.png in Resources */,
 				91A7A956198F56DC009A5EB1 /* ConceitosCondicionais.txt in Resources */,
 				BD325A491995EB7D00D15DBF /* exclamacao.mp3 in Resources */,
 				BD5DE21119972138007849DB /* bt-play.png in Resources */,
@@ -973,6 +980,7 @@
 				BD5A552C198C972000D8722F /* senaoSe-verde.png in Resources */,
 				BDF8ADF6197B255C00BA5B8A /* parte-resultado9.png in Resources */,
 				BD1AC843199AB5EC00CB7C5C /* spark.png in Resources */,
+				BDCCE535199D322C0063DF2B /* item-futuro.png in Resources */,
 				BDF8ADF0197B255C00BA5B8A /* parte-resultado3.png in Resources */,
 				BDC757A4196787E700DB8380 /* abrir-caixa7.png in Resources */,
 				BD510FE11989E8200052B6E5 /* lousa-teoria.jpg in Resources */,

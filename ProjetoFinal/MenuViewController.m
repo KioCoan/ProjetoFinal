@@ -102,11 +102,11 @@ static const int ESPACAMENTO_BOTOES = 50;
 
 //METODO QUE INSERE UM BOTÃO NA LINHA
 -(int)posicionarUmBotao:(UIView*)view :(int)posicaoXBotao :(int)posicaoYBotao :(int)contadorNomes{
-    UIImage *imgCaixa = [UIImage imageNamed:@"item-memoria.png"];
+//    UIImage *imgCaixa = [UIImage imageNamed:[NSString stringWithFormat:@"item-%@.png", [gerenciadorDeAssuntos getNomedoAssunto:contadorNomes]]];
     
     //INICIALIZA BOTAO
     UIButton *botao = [[UIButton alloc] initWithFrame:CGRectMake(posicaoXBotao, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
-    [botao setImage:imgCaixa forState:UIControlStateNormal];
+    [botao setImage:[self retornaImagemBotao:contadorNomes] forState:UIControlStateNormal];
     [botao setTitle:[gerenciadorDeAssuntos getNomedoAssunto:contadorNomes] forState:UIControlStateNormal];
     [botao addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:botao];
@@ -121,18 +121,18 @@ static const int ESPACAMENTO_BOTOES = 50;
     int posicaoBotao2 = posicaoXBotao + (BOTAO_WIDTH /2) + (ESPACAMENTO_BOTOES / 2);
 
     
-    UIImage *imgCaixa = [UIImage imageNamed:@"item-operadores.png"];
+//    UIImage *imgCaixa = [UIImage imageNamed:[NSString stringWithFormat:@"item-%@.png", [gerenciadorDeAssuntos getNomedoAssunto:contadorNomes]]];
     
     //INICIALIZA BOTAO
     UIButton *botao = [[UIButton alloc] initWithFrame:CGRectMake(posicaoBotao1, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
-    [botao setImage:imgCaixa forState:UIControlStateNormal];
+    [botao setImage:[self retornaImagemBotao:contadorNomes] forState:UIControlStateNormal];
     [botao addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
     [botao setTitle:[gerenciadorDeAssuntos getNomedoAssunto:contadorNomes++] forState:UIControlStateNormal];
     
     
     //INICIALIZA SEGUNDO BOTÃO
     UIButton *botao2 = [[UIButton alloc] initWithFrame:CGRectMake(posicaoBotao2, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
-    [botao2 setImage:imgCaixa forState:UIControlStateNormal];
+    [botao2 setImage:[self retornaImagemBotao:contadorNomes] forState:UIControlStateNormal];
     [botao2 addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
     [botao2 setTitle:[gerenciadorDeAssuntos getNomedoAssunto:contadorNomes] forState:UIControlStateNormal];
     
@@ -147,11 +147,11 @@ static const int ESPACAMENTO_BOTOES = 50;
 -(int)posicionarTresBotoes:(UIView*)view :(int)posicaoXBotao :(int)posicaoYBotao :(int)contadorNomes{
     int posicaoBotao1 = posicaoXBotao - BOTAO_WIDTH - ESPACAMENTO_BOTOES;
     int posicaoBotao2 = posicaoXBotao + BOTAO_WIDTH + ESPACAMENTO_BOTOES;
-    UIImage *imgCaixa = [UIImage imageNamed:@"item-variavel.png"];
+//    UIImage *imgCaixa = [UIImage imageNamed:[NSString stringWithFormat:@"item-%@.png", [gerenciadorDeAssuntos getNomedoAssunto:contadorNomes]]];
     
     //INICIALIZA BOTAO DA ESQUERDA
     UIButton *botao = [[UIButton alloc] initWithFrame:CGRectMake(posicaoBotao1, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
-    [botao setImage:imgCaixa forState:UIControlStateNormal];
+    [botao setImage:[self retornaImagemBotao:contadorNomes] forState:UIControlStateNormal];
     [botao addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
     [botao setTitle:[gerenciadorDeAssuntos getNomedoAssunto:contadorNomes++] forState:UIControlStateNormal];
     
@@ -160,7 +160,7 @@ static const int ESPACAMENTO_BOTOES = 50;
     
     //INICIALIZA BOTÃO DA DIREITA
     UIButton *botao2 = [[UIButton alloc] initWithFrame:CGRectMake(posicaoBotao2, posicaoYBotao, BOTAO_WIDTH, BOTAO_HEIGHT)];
-    [botao2 setImage:imgCaixa forState:UIControlStateNormal];
+    [botao2 setImage:[self retornaImagemBotao:contadorNomes] forState:UIControlStateNormal];
     [botao2 addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
     [botao2 setTitle:[gerenciadorDeAssuntos getNomedoAssunto:contadorNomes] forState:UIControlStateNormal];
     
@@ -170,6 +170,10 @@ static const int ESPACAMENTO_BOTOES = 50;
     return 3;
 }
 
+
+-(UIImage*)retornaImagemBotao:(int)contadorNomes{
+    return [UIImage imageNamed:[NSString stringWithFormat:@"item-%@.png", [gerenciadorDeAssuntos getNomedoAssunto:contadorNomes]]];
+}
 
 -(void)mostrarAssunto:(id)sender{
     

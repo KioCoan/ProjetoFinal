@@ -20,16 +20,26 @@
     if(self){
         nomesDosAssuntos = [NSArray arrayWithObjects:@"variavel",
                             @"operadores",
-                            @"condicaoSimples",
-                            @"condicaoComposta",
-                            @"lacoFor",
-                            @"lacoWhile",
-                            @"lacoDoWhile",
-                            @"vetor",
-                            @"matriz",
-                            @"funcaoSimples",
-                            @"funcaoComParametro",
-                            @"funcaoComRetorno", nil];
+                            @"condicional",
+                            @"futuro",
+                            @"futuro",
+                            @"futuro",
+                            @"futuro",
+                            @"futuro",
+                            @"futuro",
+                            @"futuro",
+                            @"futuro",
+                            @"futuro",
+                            //@"condicaoComposta",
+                            //@"lacoFor",
+                            //@"lacoWhile",
+                            //@"lacoDoWhile",
+                            //@"vetor",         SERÃO UTILIZADOS EM ATUALIZAÇÕES FUTURAS
+                            //@"matriz",
+                            //@"funcaoSimples",
+                            //@"funcaoComParametro",
+                            //@"funcaoComRetorno",
+                            nil];
     }
     
     return self;
