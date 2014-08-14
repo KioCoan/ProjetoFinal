@@ -14,8 +14,9 @@
     UITextField *textField;
     NSMutableArray *resposta;
     SKLabelNode *enunciado;
+    SKLabelNode *controlePasso;
     SpriteLabelNode *labelCriada;
-    int level;
+    int passo;
 }
 
 - (id)init{
@@ -26,13 +27,14 @@
         [self criaVariavel];
         [self criaBotoes];
         
-        [self criaEnunciado];
-        level = 0;
+        [self reinicializaExercicio];
+        
         
         
     }
     return self;
 }
+
 
 
 -(void)didMoveToView:(SKView *)view{
@@ -41,7 +43,7 @@
     //[longPress setMinimumPressDuration:1.5];
     //[longPress setNumberOfTouchesRequired:2];
     [longPress setNumberOfTouchesRequired:1];
-    [longPress setMinimumPressDuration:2];
+    [longPress setMinimumPressDuration:1];
     [self.view addGestureRecognizer:longPress];
     
     
@@ -69,12 +71,29 @@
 }
 
 
-
+- (void)criandoPasso{
+    
+    controlePasso = [[SKLabelNode alloc]initWithFontNamed:@"Helvetica"];
+    NSLog(@"criando label %d",passo);
+    controlePasso.text = [NSString stringWithFormat:@"%d/3",passo];
+    
+    controlePasso.position = CGPointMake(700, 500);
+    
+    [self addChild:controlePasso];
+    
+    
+    
+}
 
 - (void)criaEnunciado{
     
     
     
+    
+    if (passo > 3) {
+        NSLog(@"acabou");
+        return;
+    }
     
     resposta = [[NSMutableArray alloc]init];
     Gerador *gerador = [[Gerador alloc]init];
@@ -90,10 +109,12 @@
     enunciado.text = [resposta componentsJoinedByString:@" "];
     enunciado.position = CGPointMake(50, 800);
     [enunciado setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    NSLog(@"vai incrementar %d" ,passo);
     
+    NSLog(@"ja incrementou %d",passo);
     [self addChild:enunciado];
     
-    level++;
+    
     
     
 }
@@ -117,7 +138,7 @@
             break;
             
         case 3:
-           
+            
             if ([[resposta objectAtIndex:i-i]isEqualToString:@"inteiro"]) {
                 
                 
@@ -153,25 +174,31 @@
     float font = 40;
     
     
-   SpriteLabelNode *botaoConteudo = [[SpriteLabelNode alloc]initWithType:@"CONTEUDO" texto:@"Cont"];
-    botaoConteudo.fontSize = font;
-    botaoConteudo.name = @"botaoLabel";
-    botaoConteudo.position = CGPointMake(200, 80);
-    [self addChild:botaoConteudo];
-    
     
     SpriteLabelNode *botaoTipo = [[SpriteLabelNode alloc]initWithType:@"TIPO" texto:@"Tipo"];
     botaoTipo.fontSize = font;
     botaoTipo.name = @"botaoLabel";
-    botaoTipo.position = CGPointMake(font * 10, 80);
+    botaoTipo.position = CGPointMake(100, 80);
+    [botaoTipo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
     [self addChild:botaoTipo];
     
     
     SpriteLabelNode *botaoNome = [[SpriteLabelNode alloc]initWithType:@"NOME" texto:@"Nome"];
     botaoNome.fontSize = font;
     botaoNome.name = @"botaoLabel";
-    botaoNome.position = CGPointMake(font * 15, 80);
+    botaoNome.position = CGPointMake(botaoTipo.position.x + 200, 80);
+    [botaoNome setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
     [self addChild:botaoNome];
+    
+    
+    
+    SpriteLabelNode *botaoConteudo = [[SpriteLabelNode alloc]initWithType:@"CONTEUDO" texto:@"Conteudo"];
+    botaoConteudo.fontSize = font;
+    botaoConteudo.name = @"botaoLabel";
+    botaoConteudo.position = CGPointMake(botaoNome.position.x + 300, 80);
+    [botaoNome setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    [self addChild:botaoConteudo];
+
     
     
 }
@@ -198,6 +225,7 @@
     labelCriada.name = @"label";
     labelCriada.position = CGPointMake(400, 200);
     [self addChild:labelCriada];
+    conteudoAtivo = labelCriada;
     
 }
 
@@ -223,13 +251,6 @@
 
 - (void)longPressGestureRecognizer:(UILongPressGestureRecognizer *)recognizer{
     
-    //    if (recognizer.state == UIGestureRecognizerStateBegan) {
-    //        NSLog(@"gesture comecou");
-    //    }else if (recognizer.state == UIGestureRecognizerStateChanged){
-    //        NSLog(@"gesture meio");
-    //    }else if (recognizer.state == UIGestureRecognizerStateEnded){
-    //        NSLog(@"gesture fim");
-    //    }
     
     
     
@@ -266,29 +287,46 @@
     textField.hidden = YES;
 }
 
-
+- (void)reinicializaExercicio{
+    passo++;
+    if (passo > 3) {
+        NSLog(@"acabou");
+        SKLabelNode *acabou = [[SKLabelNode alloc]init];
+        acabou.text = @"YOU WIN";
+        acabou.position = variavel.position;
+        acabou.fontSize = 90;
+        [variavel removeFromParent];
+        [self addChild:acabou];
+        return;
+    }
+    
+    [variavel removeFromParent];
+    [enunciado removeFromParent];
+    [controlePasso removeFromParent];
+    [self criaEnunciado];
+    [self criaVariavel];
+    [self criandoPasso];
+    
+    
+}
 
 - (void)corrigirExercicio{
     
+    //SEPARA AS STRINGS DO VETOR DE RESPOSTA
     
     NSString *tipo = [resposta objectAtIndex:0];
     NSString *nome = [resposta objectAtIndex:1];
     NSString *conteudo = [resposta objectAtIndex:3];
     
+    //VERIFICA SE OS TEXOTS DAS LABELS DA CAIXA SAO IGUAIS AS RESPOSTAS
     
     if ([[variavel retornaTipo] isEqualToString:tipo] && [[variavel retornaNome] isEqualToString:nome] && [[variavel retornaConteudo] isEqualToString:conteudo]) {
         
         
-        if (level > 3) {
-            NSLog(@"acabou");
-            return;
-        }
         
+        [self reinicializaExercicio];
         NSLog(@"inicia novamente");
-        [variavel removeFromParent];
-        [enunciado removeFromParent];
-        [self criaEnunciado];
-        [self criaVariavel];
+        
     }else{
         NSLog(@"errada");
     }
@@ -312,7 +350,7 @@
         
         
         [self criaLabelTipo:aux.tipo];
-        
+        [textField setHidden:NO];
         
         
     }
@@ -342,30 +380,35 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
+    
     if ([conteudoAtivo.name isEqualToString:@"label"]) {
         
         
-         //Ao soltar o node de resposta em algum lugar varre o vetor de caixas para descobrir sobre quem está
-            float xInicio = variavel.frame.origin.x;
-            float xFim = xInicio + variavel.frame.size.width;
-            //float xMeio = (xInicio + xFim)/2; PARA O FUTURO
-            float yInicio = variavel.frame.origin.y;
-            float yFim = yInicio + variavel.frame.size.height;
-            //float yMeio = (yInicio + yFim)/2; PARA O FUTURO
+        //Ao soltar o node de resposta em algum lugar varre o vetor de caixas para descobrir sobre quem está
+        float xInicio = variavel.frame.origin.x;
+        float xFim = xInicio + variavel.frame.size.width;
+        //float xMeio = (xInicio + xFim)/2; PARA O FUTURO
+        float yInicio = variavel.frame.origin.y;
+        float yFim = yInicio + variavel.frame.size.height;
+        //float yMeio = (yInicio + yFim)/2; PARA O FUTURO
+        
+        if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
+            //NSLog(@"deu certo");
+            [self atualizaCaixa:variavel Label:(SpriteLabelNode *) conteudoAtivo];
             
-            if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
-                //NSLog(@"deu certo");
-                [self atualizaCaixa:variavel Label:(SpriteLabelNode *) conteudoAtivo];
-                if (![[variavel retornaTipo] isEqualToString:@"Insira um tipo"] && ![[variavel retornaNome] isEqualToString:@"Insira um nome"] && ![[variavel retornaConteudo] isEqualToString:@"Insira o conteúdo"]) {
-                    NSLog(@"todas respondidas");
-                    [self corrigirExercicio];
-                }
-                
-                
+            
+            //VERIFICA SE TODOS OS TEXTOS DAS LABELS DA CAIXA FORAM ALTERADAS
+            
+            if (![[variavel retornaTipo] isEqualToString:@"Insira um tipo"] && ![[variavel retornaNome] isEqualToString:@"Insira um nome"] && ![[variavel retornaConteudo] isEqualToString:@"Insira o conteúdo"]) {
+                NSLog(@"todas respondidas");
+                [self corrigirExercicio];
             }
             
-            //[conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa
+            
         }
+        
+        //[conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa
+    }
     
 }
 
