@@ -42,32 +42,22 @@
     
     switch (index) {
         case 1:
-            [self setAnimacao:nil];
-            [self setAnimacao:[[AnimaCondSimples alloc] initWithCondicao:@"SE"]];
-            break;
+            return [[AnimaCondSimples alloc] initWithCondicao:@"SE"];
             
         case 3:
-            [self setAnimacao:nil];
-            [self setAnimacao:[[AnimaCondSimples alloc] initWithCondicao:@"SE-SENAO"]];
-            break;
+            return [[AnimaCondSimples alloc] initWithCondicao:@"SE-SENAO"];
             
         case 4:
-            [self setAnimacao:nil];
-            [self setAnimacao:[[AnimaCondSimples alloc] initWithCondicao:@"SE-SENAOSE"]];
-            break;
+            return [[AnimaCondSimples alloc] initWithCondicao:@"SE-SENAOSE"];
             
         case 5:
-            [self setAnimacao:nil];
-            [self setAnimacao:[[AnimaCondSimples alloc] initWithCondicao:@"SE-SENAOSE-SENAO"]];
-            break;
+            return [[AnimaCondSimples alloc] initWithCondicao:@"SE-SENAOSE-SENAO"];
             
         default:
-            [self setAnimacao:nil];
-            break;
+            return nil;
     }
     
     [self setCenaAtual:index];
-    return [self animacao];
 }
 
 

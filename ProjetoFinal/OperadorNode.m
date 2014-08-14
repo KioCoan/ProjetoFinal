@@ -33,6 +33,7 @@
 
 //METODO QUE CHAMA TODOS OS METODOS QUE INICIALIZAM O NECESSÁRIO
 -(void)inicializaClasse:(NSString*)operador{
+    [self setUserInteractionEnabled:YES];
     [self setTexture:[SKTexture textureWithImageNamed:@"parte-operador.png"]];
     [self setName:@"operador"];
     [self setSize:CGSizeMake(116, 116)];
@@ -61,6 +62,16 @@
     }
     
     [lblOperador setText:operador];
+}
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self iniciarAnimacaoDiminuir];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    [[self myDelegate] spriteOperadorClicado];
+    [self iniciarAnimacaoExpandir];
 }
 
 

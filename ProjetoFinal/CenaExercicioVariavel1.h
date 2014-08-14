@@ -11,7 +11,7 @@
 #import "SpriteLabelNode.h"
 
 
-@interface CenaExercicioVariavel1 : SKScene 
+@interface CenaExercicioVariavel1 : SKScene
 {
     NSMutableArray *caixas;
     SpriteLabelNode *conteudoAtivo;

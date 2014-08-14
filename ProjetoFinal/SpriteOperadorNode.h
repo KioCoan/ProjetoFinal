@@ -11,7 +11,7 @@
 #import "OperadorValoresNode.h"
 #import "OperadorResultadoNode.h"
 
-@interface SpriteOperadorNode : SKSpriteNode
+@interface SpriteOperadorNode : SKSpriteNode <OperadorNodeDelegate>
 {
     OperadorNode *nodeOperador;
     OperadorValoresNode *nodeValores;
@@ -20,7 +20,6 @@
     SKAction *somOperador;
     
     BOOL partesVisiveis;
-    BOOL clicouCirculo;
 }
 
 -(id)initWithValor1:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 resultado:(NSString*)resultado;

@@ -214,8 +214,7 @@
 }
 
 -(void)executaSprite{
-    
-    
+    [self setUserInteractionEnabled:NO];
     
     //VERIFICA O ESTADO DA CAIXA, SE ELA ESTÁ ABERTA OU FECHADA PARA ACIONAR A SKACTION CORRETA
     if(caixaAberta){
@@ -228,8 +227,7 @@
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self setUserInteractionEnabled:NO];
-    [[self myDelegate] spriteCaixaClicado:self];
+    [self executaSprite];
 }
 
 

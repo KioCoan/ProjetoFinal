@@ -12,6 +12,6 @@
 #import "Gerador.h"
 
 
-@interface CenaExercicioVariavel2 : SKScene <UITextFieldDelegate,SpriteCaixaNodeDelegate>
+@interface CenaExercicioVariavel2 : SKScene <UITextFieldDelegate>
 
 @end

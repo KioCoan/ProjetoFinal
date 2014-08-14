@@ -36,7 +36,11 @@
         [self inicializarLabelTipoOperador];
         
         //GERA VALORES ALEATORIOS PARA OS SPRITES
-        [self atualizarValoresDoTipo:tipoOperador];
+        //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+            
+            [self atualizarValoresDoTipo:tipoOperador];
+        //});
+    
         
         //CRIA A LABEL QUE ATUALIZA OS VALORES DOS SPRITES
         [self criarLabelAtualizar];
@@ -76,10 +80,11 @@
 -(void)atualizarValoresDoTipo:(NSString*)tipoOperador{
     Calculador *calculadora = [[Calculador alloc] init];
     Gerador *geradorValores = [[Gerador alloc] init];
-    NSString *valor = [geradorValores retornaTipoVariavel];
-    NSLog(@"%@",valor);
-    NSLog(@"%@,",[geradorValores retornaNomeVariavel:valor]);
-    NSLog(@"%@,",[geradorValores retornaValorVarivel:valor]);
+    //NSString *valor = [geradorValores retornaTipoVariavel];
+    
+    //NSLog(@"%@",valor);
+    //NSLog(@"%@,",[geradorValores retornaNomeVariavel:valor]);
+    //NSLog(@"%@,",[geradorValores retornaValorVarivel:valor]);
     
     
     NSString *valor1, *operador, *valor2, *resultado;

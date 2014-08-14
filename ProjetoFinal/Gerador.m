@@ -210,7 +210,7 @@
 
 -(NSString*)retornaTipoVariavel{
    
-    int i = [[self retornaValorInteiro:0 ate:tipos.count-1]intValue];
+    int i = [[self retornaValorInteiro:0 ate:(int)tipos.count-1]intValue];
     return [tipos objectAtIndex:i];
 }
 

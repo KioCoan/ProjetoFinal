@@ -54,7 +54,6 @@
     
     SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc] initWithConteudo:conteudo nome:nome tipo:tipo tamanho:tamanhoCaixa];
     [caixa setLabelEndereco:enderecoCaixa++];
-    [caixa setMyDelegate:self];
     [caixa setPosition:posicao];
     [spritesCaixa addObject:caixa];
     [caixa iniciarAnimacaoIntroducao];
@@ -64,22 +63,6 @@
     
 }
 
-
--(void)limparDelegatesMalditos{
-    
-    for(SpriteCaixaNode *node in spritesCaixa){
-        [node setMyDelegate:nil];
-        [node removeFromParent];
-    }
-    [spritesCaixa removeAllObjects];
-}
-
-
--(void)spriteCaixaClicado:(SKSpriteNode *)spriteCaixa{
-    SpriteCaixaNode *caixa = (SpriteCaixaNode*)spriteCaixa;
-    
-    [caixa executaSprite];
-}
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */

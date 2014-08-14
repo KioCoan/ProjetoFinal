@@ -186,7 +186,6 @@
     [variavel setPosition:CGPointMake(400  , 500)];
     
     variavel.name = @"caixa";
-    variavel.myDelegate = self;
     [variavel iniciarAnimacaoIntroducao];
     [self addChild:variavel];
     
@@ -202,12 +201,6 @@
     
 }
 
-
-
-- (void)spriteCaixaClicado:(SKSpriteNode *)spriteCaixa{
-    SpriteCaixaNode *caixa = (SpriteCaixaNode *)spriteCaixa;
-    [caixa executaSprite];
-}
 
 - (BOOL)textFieldShouldReturn:(UITextField*)testando{
     

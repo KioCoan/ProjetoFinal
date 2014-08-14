@@ -196,7 +196,6 @@
     SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]initWithConteudo:@" " nome:@" " tipo:@" " tamanho:CGSizeMake(200, 200)];
     [caixa setPosition:botaoCaixa.position];
     caixa.name = @"caixa";
-    caixa.myDelegate = self;
     [variaveis addObject:caixa];
     [self addChild:caixa];
     
@@ -315,8 +314,4 @@
     
 }
 
--(void)spriteCaixaClicado:(SKSpriteNode *)spriteCaixa{
-    SpriteCaixaNode *aux = (SpriteCaixaNode *)spriteCaixa;
-    [aux executaSprite];
-}
 @end

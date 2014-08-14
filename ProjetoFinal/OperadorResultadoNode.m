@@ -41,6 +41,8 @@ static const int NUM_TEXTURAS = 10;
     [self inicializaLabelResultado:resultado];
     [self inicializaAnimacaoDescer];
     [self inicializaAnimacaoSubir];
+    
+    
     estaVisivel = NO;
 }
 

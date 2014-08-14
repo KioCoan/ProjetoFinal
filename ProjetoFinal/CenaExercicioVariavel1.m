@@ -217,7 +217,7 @@
                     [c setLabelConteudo:conteudoAtivo.text];
                     
                     //Ação a ser feita caso a resposta esteja correta
-                    [c abrirCaixa];
+                    [c executaSprite];
                     [self traduzParaPortugol:c];
                     [conteudoAtivo removeFromParent];
                     
@@ -238,13 +238,10 @@
             }
             
         }
-        
-        
-        
     }
-    
-    
 }
+
+
 
 -(void)traduzParaPortugol: (SpriteCaixaNode *)c{
     

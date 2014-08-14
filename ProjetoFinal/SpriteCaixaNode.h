@@ -8,9 +8,10 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@protocol SpriteCaixaNodeDelegate <NSObject>
--(void)spriteCaixaClicado:(SKSpriteNode*)spriteCaixa;
-@end
+//PROTOCOLO QUE AVISA A SEU DELEGATE QUANDO A CAIXA FOR CLICADA
+//@protocol SpriteCaixaNodeDelegate <NSObject>
+//-(void)spriteCaixaClicado:(SKSpriteNode*)spriteCaixa;
+//@end
 
 
 @interface SpriteCaixaNode : SKSpriteNode
@@ -29,7 +30,7 @@
     BOOL caixaAberta;
 }
 
-@property id <SpriteCaixaNodeDelegate> myDelegate;
+//@property id <SpriteCaixaNodeDelegate> myDelegate;
 
 -(id)initWithConteudo:(NSString*)conteudo nome:(NSString*)nome tipo:(NSString*)tipo tamanho:(CGSize)tamanho;
 
@@ -37,11 +38,14 @@
 -(void)setLabelConteudo:(NSString*)text;
 -(void)setLabelNome:(NSString*)text;
 -(void)setLabelTipo:(NSString*)text;
+<<<<<<< HEAD
+=======
 -(NSString *)retornaTipo;
 -(NSString *)retornaNome;
 -(NSString *)retornaConteudo;
 -(void)abrirCaixa;
 -(void)fecharCaixa;
+>>>>>>> FETCH_HEAD
 -(void)executaSprite;
 -(void)iniciarAnimacaoIntroducao;
 -(void)alteraCorLabels:(NSString *)tipo;

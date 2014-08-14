@@ -18,14 +18,10 @@
 {
     int indiceExercicio;
     
-    
 }
-
 
 @property int cenaAtual;
 @property NSString *nome, *teoria;
-@property int paginas;
-@property Animacao *animacao;
 @property NSMutableArray *exercicios;
 @property NSMutableArray *teoriaFormatada;
 

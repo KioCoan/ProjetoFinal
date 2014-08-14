@@ -38,11 +38,13 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self setUserInteractionEnabled:NO];
     //SPRITE QUE ATUALIZAR OS VALORES INICIA UMA ANIMAÇÃO DE ROTAÇÃO
     SKAction *rotation = [SKAction rotateByAngle: -M_PI duration:0.2];
     
     [simboloAtualizar runAction:rotation completion:^{
         [simboloAtualizar removeAllActions];
+        [self setUserInteractionEnabled:YES];
     }];
     
     
@@ -52,7 +54,11 @@
     
     //AVISA AO DELEGATE QUE O BOTÃO ATUALIZAR FOI CLICADO
     [self.myDelegate botaoAtualizarClicado];
+    
 }
+
+
+
 
 -(void)setSimboAtualizarSize{
     [simboloAtualizar setSize:CGSizeMake(self.size.width / 1.2 , self.size.height / 1.6)];

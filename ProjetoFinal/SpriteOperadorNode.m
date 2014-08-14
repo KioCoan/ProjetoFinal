@@ -46,33 +46,33 @@
     
     //POR FIM É INSERIDO A PARTE QUE MOSTRA O OPERADOR
     nodeOperador = [[OperadorNode alloc] initWithOperador:operador];
+    [nodeOperador setMyDelegate:self];
     [nodeValores addChild:nodeOperador];
     
     [self setUserInteractionEnabled:YES];
     partesVisiveis = NO;
 }
 
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    if(clicouCirculo){
-        //É CHAMADA A ANIMAÇÃO DO OPERADOR PRA ELE SE EXPANDIR AO TAMANHO NORMAL
-        [nodeOperador iniciarAnimacaoExpandir];
-        [self iniciarAnimacoes];
-        clicouCirculo = NO;
-    }
-}
-
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    UITouch *touch = [touches anyObject];
-    CGPoint position = [touch locationInNode:self];
-    SKNode *node = [self nodeAtPoint:position];
-    
-    if([node.name isEqualToString:@"operador"]){
-        [nodeOperador iniciarAnimacaoDiminuir];
-        clicouCirculo = YES;
-    }
-}
+//-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+//    
+//    if(clicouCirculo){
+//        //É CHAMADA A ANIMAÇÃO DO OPERADOR PRA ELE SE EXPANDIR AO TAMANHO NORMAL
+//        [nodeOperador iniciarAnimacaoExpandir];
+//        [self iniciarAnimacoes];
+//        clicouCirculo = NO;
+//    }
+//}
+//
+//
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+//    UITouch *touch = [touches anyObject];
+//    CGPoint position = [touch locationInNode:self];
+//    SKNode *node = [self nodeAtPoint:position];
+//    
+//    if([node.name isEqualToString:@"operador"]){
+//        [nodeOperador iniciarAnimacaoDiminuir];
+//    }
+//}
 
 
 
@@ -81,6 +81,7 @@
     //CASO OS SPRITES ESTIVEREM VISIVEIS SERÁ ACIONADO AS ANIMAÇÕES QUE "ESCONDERAM" OS SPRITES E ASSIM POR DIANTE
     
     [self runAction:somOperador];
+    [nodeOperador setUserInteractionEnabled:NO];
     
     if(partesVisiveis){
         [self iniciarAnimacaoFechar];
@@ -89,6 +90,10 @@
         [self iniciarAnimacaoAbrir];
     }
     
+}
+
+-(void)spriteOperadorClicado{
+    [self iniciarAnimacoes];
 }
 
 
@@ -109,6 +114,7 @@
             [self setUserInteractionEnabled:YES];
             [nodeResultado removeAllActions];
             [nodeValores removeAllActions];
+            [nodeOperador setUserInteractionEnabled:YES];
         }];
     }];
 
@@ -132,6 +138,7 @@
             [self setUserInteractionEnabled:YES];
             [nodeResultado removeAllActions];
             [nodeValores removeAllActions];
+            [nodeOperador setUserInteractionEnabled:YES];
         }];
     }];
 }

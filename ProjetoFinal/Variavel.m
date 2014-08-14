@@ -41,23 +41,16 @@
     
     switch (index) {
         case 1:
-            [self setAnimacao:nil];
-            [self setAnimacao:[[AnimaVariavel alloc] init]];
+            return [[AnimaVariavel alloc] init];
 
-            break;
         case 3:
-            [self setAnimacao:nil];
-            [self setAnimacao:[[AnimaOperadores alloc] init]];
+            return [[AnimaOperadores alloc] init];
 
-            break;
-   
         default:
-            [self setAnimacao:nil];
-            break;
+            return nil;
     }
     
     [self setCenaAtual:index];
-    return [self animacao];
 }
 
 

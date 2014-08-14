@@ -11,7 +11,7 @@
 #import "Animacao.h"
 #import "SpriteCaixaNode.h"
 
-@interface AnimaVariavel : Animacao <SpriteCaixaNodeDelegate>
+@interface AnimaVariavel : Animacao //<SpriteCaixaNodeDelegate>
 {
     NSMutableArray *spritesCaixa;
     CGSize tamanhoCaixa;

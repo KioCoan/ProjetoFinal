@@ -38,32 +38,22 @@
     
     switch (index) {
         case 1:
-            [self setAnimacao:nil];
-            [self setAnimacao:[[AnimaOperadores alloc] initWithOperador:@"ARITMÉTICO"]];
-            break;
+            return [[AnimaOperadores alloc] initWithOperador:@"ARITMÉTICO"];
             
         case 3:
-            [self setAnimacao:nil];
-            [self setAnimacao:[[AnimaOperadores alloc] initWithOperador:@"ATRIBUIÇÃO"]];
-            break;
+            return [[AnimaOperadores alloc] initWithOperador:@"ATRIBUIÇÃO"];
         
         case 4:
-            [self setAnimacao:nil];
-            [self setAnimacao:[[AnimaOperadores alloc] initWithOperador:@"RELACIONAL"]];
-            break;
+            return [[AnimaOperadores alloc] initWithOperador:@"RELACIONAL"];
             
         case 5:
-            [self setAnimacao:nil];
-            [self setAnimacao:[[AnimaOperadores alloc] initWithOperador:@"LÓGICO"]];
-            break;
+            return [[AnimaOperadores alloc] initWithOperador:@"LÓGICO"];
             
         default:
-            [self setAnimacao:nil];
-            break;
+            return nil;
     }
     
     [self setCenaAtual:index];
-    return [self animacao];
 }
 
 
