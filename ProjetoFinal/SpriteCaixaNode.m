@@ -264,6 +264,22 @@
     animacaoFechar = [animacaoAbrir reversedAction];
 }
 
+-(void)alteraCorLabels:(NSString *)tipo{
+    
+    if ([tipo isEqualToString:@"tipo"] || [tipo isEqualToString:@"Tipo"] || [tipo isEqualToString:@"TIPO"]) {
+        [lblTipo setFontColor:[SKColor blackColor]];
+        
+    }else if ([tipo isEqualToString:@"nome"] || [tipo isEqualToString:@"Nome"] || [tipo isEqualToString:@"NOME"]){
+        
+        [lblNome setFontColor:[SKColor blackColor]];
+        
+    }else if ([tipo isEqualToString:@"conteudo"] || [tipo isEqualToString:@"Conteudo"] || [tipo isEqualToString:@"CONTEUDO"]){
+        [lblConteudo setFontColor:[SKColor blackColor]];
+    }
+    
+    
+}
+
 -(NSString *)retornaTipo{
     return lblTipo.text;
 }

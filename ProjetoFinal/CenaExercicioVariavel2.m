@@ -15,6 +15,7 @@
     NSMutableArray *resposta;
     SKLabelNode *enunciado;
     SpriteLabelNode *labelCriada;
+    int level;
 }
 
 - (id)init{
@@ -26,6 +27,7 @@
         [self criaBotoes];
         
         [self criaEnunciado];
+        level = 0;
         
         
     }
@@ -91,7 +93,7 @@
     
     [self addChild:enunciado];
     
-    
+    level++;
     
     
 }
@@ -253,11 +255,13 @@
     
     if ([label.tipo isEqualToString:@"CONTEUDO"]) {
         [caixa setLabelConteudo:label.text];
+        
     }else if ([label.tipo isEqualToString:@"TIPO"]){
         [caixa setLabelTipo:label.text];
     }else{
         [caixa setLabelNome:label.text];
     }
+    [caixa alteraCorLabels:label.tipo];
     labelCriada = nil;
     [label removeFromParent];
 }
@@ -270,6 +274,8 @@
     textField.hidden = YES;
 }
 
+
+
 - (void)corrigirExercicio{
     
     
@@ -279,7 +285,20 @@
     
     
     if ([[variavel retornaTipo] isEqualToString:tipo] && [[variavel retornaNome] isEqualToString:nome] && [[variavel retornaConteudo] isEqualToString:conteudo]) {
-        NSLog(@"exercicio certo");
+        
+        
+        if (level > 3) {
+            NSLog(@"acabou");
+            return;
+        }
+        
+        NSLog(@"inicia novamente");
+        [variavel removeFromParent];
+        [enunciado removeFromParent];
+        [self criaEnunciado];
+        [self criaVariavel];
+    }else{
+        NSLog(@"errada");
     }
     
     

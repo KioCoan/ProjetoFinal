@@ -44,4 +44,5 @@
 -(void)fecharCaixa;
 -(void)executaSprite;
 -(void)iniciarAnimacaoIntroducao;
+-(void)alteraCorLabels:(NSString *)tipo;
 @end
