@@ -15,27 +15,27 @@
         /* Setup your scene here */
         enderecoCaixa = 1;
         spritesCaixa = [[NSMutableArray alloc] init];
-        tamanhoCaixa = CGSizeMake(250, 300);
+        tamanhoCaixa = CGSizeMake(250, 267);
         
         //ADICIONA UMA CAIXA NO CANTO SUPERIOR ESQUERDO DA TELA
-        CGPoint position = CGPointMake(tamanhoCaixa.width / 1.2, tamanhoCaixa.height * 1.6);
+        CGPoint position = CGPointMake(210, 490);
         [self criarNovaCaixaComConteudo:@"\"Hello World\"" nome:@"mensagem" tipo:@"String" posicao:position];
       
         //ADICIONA UMA CAIXA NO CANTO INFERIOR ESQUERDO DA TELA
-        position = CGPointMake(tamanhoCaixa.width / 1.2, tamanhoCaixa.height / 1.7);
+        position = CGPointMake(210, 210);
         [self runAction:[SKAction waitForDuration:0.8] completion:^{
             [self criarNovaCaixaComConteudo:@"148" nome:@"pessoas" tipo:@"inteiro" posicao:position];
         }];
         
         
         //ADICIONA UMA CAIXA NO CANTO SUPERIOR DIREITO DA TELA
-        position = CGPointMake(tamanhoCaixa.width * 2.3, tamanhoCaixa.height * 1.6);
+        position = CGPointMake(575, 490);
         [self runAction:[SKAction waitForDuration:0.4] completion:^{
             [self criarNovaCaixaComConteudo:@"259.90" nome:@"preco" tipo:@"real" posicao:position];
         }];
         
         //ADICIONA UMA CAIXA NO CANTO INFERIOR DIREITO DA TELA
-        position = CGPointMake(tamanhoCaixa.width * 2.3, tamanhoCaixa.height / 1.7);
+        position = CGPointMake(575, 210);
         [self runAction:[SKAction waitForDuration:1.2] completion:^{
             [self criarNovaCaixaComConteudo:@"verdadeiro" nome:@"luzAcesa" tipo:@"logico" posicao:position];
         }];

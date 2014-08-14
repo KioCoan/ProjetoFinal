@@ -36,10 +36,10 @@
         [self inicializarLabelTipoOperador];
         
         //GERA VALORES ALEATORIOS PARA OS SPRITES
-        //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             
             [self atualizarValoresDoTipo:tipoOperador];
-        //});
+        });
     
         
         //CRIA A LABEL QUE ATUALIZA OS VALORES DOS SPRITES
