@@ -62,7 +62,7 @@
     //CRIA A SKLABELNODE QUE MOSTRA O CONTEÚDO DA VARIÁVEL
     lblConteudo = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
     [lblConteudo setText:@"Insira o conteúdo"];
-    [lblConteudo setFontSize:self.frame.size.width * 0.08];
+    [lblConteudo setFontSize:22];
     [lblConteudo setFontColor:[SKColor grayColor]];
     [lblConteudo setPosition:CGPointMake(self.frame.origin.x * -0.35, self.frame.origin.y * -0.43)];
     [lblConteudo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
@@ -70,16 +70,16 @@
     
     //CRIA A SKLABELNODE QUE MOSTRA O NOME DA VARIÁVEL
     lblNome = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
-    [lblNome setText:@"Insira um nome"];
-    [lblNome setFontSize:24];
+    [lblNome setText:@"Insira o nome"];
+    [lblNome setFontSize:22];
     [lblNome setFontColor:[SKColor grayColor]];
     [lblNome setPosition:CGPointMake(self.frame.origin.x * 0.75, self.frame.origin.y * 0.2)];
     [lblNome setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
     
     //CRIA A SKLABELNODE QUE MOSTRA O TIPO DA VARIÁVEL
     lblTipo = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
-    [lblTipo setText:@"Insira um tipo"];
-    [lblTipo setFontSize:24];
+    [lblTipo setText:@"Insira o tipo"];
+    [lblTipo setFontSize:22];
     [lblTipo setFontColor:[SKColor grayColor]];
     [lblTipo setPosition:CGPointMake(self.frame.origin.x * 0.75, self.frame.origin.y * 0.65)];
     [lblTipo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
@@ -181,11 +181,11 @@
     SKAction *somEncostouChao = [SKAction playSoundFileNamed:@"caixaEncostaChao.mp3" waitForCompletion:NO];
     NSString *myParticlePath = [[NSBundle mainBundle] pathForResource:@"AnimaVariavel" ofType:@"sks"];
     particula = [NSKeyedUnarchiver unarchiveObjectWithFile:myParticlePath];
-    particula.particlePosition = CGPointMake(-20, -120);
+    particula.particlePosition = CGPointMake(-30, -120);
     
     
     [self runAction:animacaoIntroducao completion:^{
-        [self runAction:[SKAction moveToY:self.position.y - 30 duration:0.2] completion:^{
+        [self runAction:[SKAction moveToY:self.position.y - 50 duration:0.2] completion:^{
             [self runAction:somEncostouChao];
             [self setTexture:[SKTexture textureWithImageNamed:@"abrir-caixa1.png"]];
             [self addChild:particula];
@@ -206,10 +206,12 @@
 }
 
 -(void)setLabelNome:(NSString*)text{
+    [lblNome setFontColor:[SKColor blackColor]];
     [lblNome setText: text];
 }
 
 -(void)setLabelTipo:(NSString*)text{
+    [lblTipo setFontColor:[SKColor blackColor]];
     [lblTipo setText: text];
 }
 
@@ -260,22 +262,6 @@
 -(void)inicializaAnimacaoFecharCaixa{
     //CRIO UMA ANIMAÇÃO EM ORDEM INVERSA (CAIXA FECHANDO)
     animacaoFechar = [animacaoAbrir reversedAction];
-}
-
--(void)alteraCorLabels:(NSString *)tipo{
-    
-    if ([tipo isEqualToString:@"tipo"] || [tipo isEqualToString:@"Tipo"] || [tipo isEqualToString:@"TIPO"]) {
-        [lblTipo setFontColor:[SKColor blackColor]];
-        
-    }else if ([tipo isEqualToString:@"nome"] || [tipo isEqualToString:@"Nome"] || [tipo isEqualToString:@"NOME"]){
-        
-        [lblNome setFontColor:[SKColor blackColor]];
-        
-    }else if ([tipo isEqualToString:@"conteudo"] || [tipo isEqualToString:@"Conteudo"] || [tipo isEqualToString:@"CONTEUDO"]){
-        [lblConteudo setFontColor:[SKColor blackColor]];
-    }
-    
-    
 }
 
 -(NSString *)retornaTipo{

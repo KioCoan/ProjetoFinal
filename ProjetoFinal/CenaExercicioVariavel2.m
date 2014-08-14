@@ -254,7 +254,6 @@
     }else{
         [caixa setLabelNome:label.text];
     }
-    [caixa alteraCorLabels];
     labelCriada = nil;
     [label removeFromParent];
 }
