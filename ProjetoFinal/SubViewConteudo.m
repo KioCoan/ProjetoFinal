@@ -18,7 +18,7 @@
     [super viewDidLoad];
     
     [self montaPaginador];
-    
+    [[self view] addSubview:[self.pageController view]];
 }
 
 -(void)montaPaginador{
@@ -34,30 +34,14 @@
     [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     [self addChildViewController:self.pageController];
-    [[self view] addSubview:[self.pageController view]];
     [self.pageController didMoveToParentViewController:self];
 }
 
--(void)recarregaPaginador{
-    self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    
-    self.pageController.dataSource = self;
-    [[self.pageController view] setFrame:[[self view] bounds]];
-    
-    SubViewConteudoFilho *initialViewController = [self viewControllerAtIndex:0];
-    
-    NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
-    
-    [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    
-    [self addChildViewController:self.pageController];
-    [self.pageController didMoveToParentViewController:self];
-}
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [self recarregaPaginador];
+    [self montaPaginador];
     
     gerenciadorDeAssuntos = [GerenciadorDeAssunto sharedGerenciador];
     

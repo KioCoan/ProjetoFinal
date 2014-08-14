@@ -44,7 +44,7 @@
             return [[AnimaVariavel alloc] initWithVariavellDoTipo:@"INTEIRO"];
             
         case 2:
-            return [[AnimaVariavel alloc] initWithVariavellDoTipo:@"FLOAT"];
+            return [[AnimaVariavel alloc] initWithVariavellDoTipo:@"REAL"];
 
         case 3:
             return [[AnimaVariavel alloc] initWithVariavellDoTipo:@"CARACTERE"];
