@@ -62,7 +62,7 @@
     //CRIA A SKLABELNODE QUE MOSTRA O CONTEÚDO DA VARIÁVEL
     lblConteudo = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
     [lblConteudo setText:@"Insira o conteúdo"];
-    [lblConteudo setFontSize:22];
+    [lblConteudo setFontSize:20];
     [lblConteudo setFontColor:[SKColor grayColor]];
     [lblConteudo setPosition:CGPointMake(self.frame.origin.x * -0.35, self.frame.origin.y * -0.43)];
     [lblConteudo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];

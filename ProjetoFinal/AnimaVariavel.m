@@ -10,49 +10,57 @@
 
 @implementation AnimaVariavel
 
--(id)initWithSize:(CGSize)size {
-    if (self = [super initWithSize:size]) {
-        /* Setup your scene here */
+-(id)initWithVariavellDoTipo:(NSString*)tipoVariavel{
+    if (self = [super init]) {
         enderecoCaixa = 1;
         spritesCaixa = [[NSMutableArray alloc] init];
         tamanhoCaixa = CGSizeMake(250, 267);
         
+        Gerador *gerador = [[Gerador alloc] init];
+        
         //ADICIONA UMA CAIXA NO CANTO SUPERIOR ESQUERDO DA TELA
         CGPoint position = CGPointMake(210, 490);
-        [self criarNovaCaixaComConteudo:@"\"Hello World\"" nome:@"mensagem" tipo:@"String" posicao:position];
-      
+        [self criarNovaCaixaComConteudo:gerador tipoVariavel:tipoVariavel posicao:position];
+        
         //ADICIONA UMA CAIXA NO CANTO INFERIOR ESQUERDO DA TELA
         position = CGPointMake(210, 210);
         [self runAction:[SKAction waitForDuration:0.8] completion:^{
-            [self criarNovaCaixaComConteudo:@"148" nome:@"pessoas" tipo:@"inteiro" posicao:position];
+            [self criarNovaCaixaComConteudo:gerador tipoVariavel:tipoVariavel posicao:position];
         }];
-        
         
         //ADICIONA UMA CAIXA NO CANTO SUPERIOR DIREITO DA TELA
         position = CGPointMake(575, 490);
         [self runAction:[SKAction waitForDuration:0.4] completion:^{
-            [self criarNovaCaixaComConteudo:@"259.90" nome:@"preco" tipo:@"real" posicao:position];
+            [self criarNovaCaixaComConteudo:gerador tipoVariavel:tipoVariavel posicao:position];
         }];
         
         //ADICIONA UMA CAIXA NO CANTO INFERIOR DIREITO DA TELA
         position = CGPointMake(575, 210);
         [self runAction:[SKAction waitForDuration:1.2] completion:^{
-            [self criarNovaCaixaComConteudo:@"verdadeiro" nome:@"luzAcesa" tipo:@"logico" posicao:position];
+            [self criarNovaCaixaComConteudo:gerador tipoVariavel:tipoVariavel posicao:position];
         }];
         
         
-
+        
+        
+        
         [self setBackgroundColor:[UIColor whiteColor]];
+
     }
+    
     return self;
 }
 
 
-
 //METODO QUE RECEBE OS PARAMETROS NECESSARIOS PARA CRIAR UMA CAIXA E DEFINE O ENDEREÇO AUTOMATICAMENTE
--(void)criarNovaCaixaComConteudo:(NSString*)conteudo nome:(NSString*)nome tipo:(NSString*)tipo posicao:(CGPoint)posicao{
+-(void)criarNovaCaixaComConteudo:(Gerador*)gerador tipoVariavel:(NSString*)tipoVariavel posicao:(CGPoint)posicao{
+    NSString *tipoVariavelLower = [tipoVariavel lowercaseString];
     
-    SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc] initWithConteudo:conteudo nome:nome tipo:tipo tamanho:tamanhoCaixa];
+    NSString *nome = [gerador retornaNomeVariavel:tipoVariavelLower];
+    NSString *conteudo = [gerador retornaValorVarivel:tipoVariavelLower];
+    
+    
+    SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc] initWithConteudo:conteudo nome:nome tipo:tipoVariavelLower tamanho:tamanhoCaixa];
     [caixa setLabelEndereco:enderecoCaixa++];
     [caixa setPosition:posicao];
     [spritesCaixa addObject:caixa];

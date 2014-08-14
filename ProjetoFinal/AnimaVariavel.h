@@ -8,6 +8,7 @@
 
 
 #import <SpriteKit/SpriteKit.h>
+#import "Gerador.h"
 #import "Animacao.h"
 #import "SpriteCaixaNode.h"
 
@@ -18,6 +19,6 @@
     int enderecoCaixa;
 }
 
-
+-(id)initWithVariavellDoTipo:(NSString*)tipoVariavel;
 
 @end

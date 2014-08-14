@@ -41,10 +41,16 @@
     
     switch (index) {
         case 1:
-            return [[AnimaVariavel alloc] init];
+            return [[AnimaVariavel alloc] initWithVariavellDoTipo:@"INTEIRO"];
+            
+        case 2:
+            return [[AnimaVariavel alloc] initWithVariavellDoTipo:@"FLOAT"];
 
         case 3:
-            return [[AnimaOperadores alloc] init];
+            return [[AnimaVariavel alloc] initWithVariavellDoTipo:@"CARACTERE"];
+            
+        case 4:
+            return [[AnimaVariavel alloc] initWithVariavellDoTipo:@"LOGICO"];
 
         default:
             return nil;
