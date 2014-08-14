@@ -270,6 +270,21 @@
     textField.hidden = YES;
 }
 
+- (void)corrigirExercicio{
+    
+    
+    NSString *tipo = [resposta objectAtIndex:0];
+    NSString *nome = [resposta objectAtIndex:1];
+    NSString *conteudo = [resposta objectAtIndex:3];
+    
+    
+    if ([[variavel retornaTipo] isEqualToString:tipo] && [[variavel retornaNome] isEqualToString:nome] && [[variavel retornaConteudo] isEqualToString:conteudo]) {
+        NSLog(@"exercicio certo");
+    }
+    
+    
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     //[self textFieldShouldReturn:textField];
@@ -293,6 +308,8 @@
     
     
 }
+
+
 
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -326,19 +343,22 @@
             //float yMeio = (yInicio + yFim)/2; PARA O FUTURO
             
             if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
-                NSLog(@"deu certo");
+                //NSLog(@"deu certo");
                 [self atualizaCaixa:variavel Label:(SpriteLabelNode *) conteudoAtivo];
+                if (![[variavel retornaTipo] isEqualToString:@"Insira um tipo"] && ![[variavel retornaNome] isEqualToString:@"Insira um nome"] && ![[variavel retornaConteudo] isEqualToString:@"Insira um conteúdo"]) {
+                    NSLog(@"todas respondidas");
+                    [self corrigirExercicio];
+                }
+                
+                
             }
             
             //[conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa
         }
-        
-    
-    
-    
-    
     
 }
+
+
 
 
 

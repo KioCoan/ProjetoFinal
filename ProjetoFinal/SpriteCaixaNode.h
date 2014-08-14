@@ -39,6 +39,7 @@
 -(void)setLabelTipo:(NSString*)text;
 -(NSString *)retornaTipo;
 -(NSString *)retornaNome;
+-(NSString *)retornaConteudo;
 -(void)abrirCaixa;
 -(void)fecharCaixa;
 -(void)executaSprite;

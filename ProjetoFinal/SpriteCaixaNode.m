@@ -272,5 +272,9 @@
     return lblNome.text;
 }
 
+-(NSString *)retornaConteudo{
+    return lblConteudo.text;
+}
+
 
 @end
