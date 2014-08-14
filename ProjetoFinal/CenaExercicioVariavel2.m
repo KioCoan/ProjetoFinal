@@ -357,7 +357,7 @@
             if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
                 //NSLog(@"deu certo");
                 [self atualizaCaixa:variavel Label:(SpriteLabelNode *) conteudoAtivo];
-                if (![[variavel retornaTipo] isEqualToString:@"Insira um tipo"] && ![[variavel retornaNome] isEqualToString:@"Insira um nome"] && ![[variavel retornaConteudo] isEqualToString:@"Insira um conteúdo"]) {
+                if (![[variavel retornaTipo] isEqualToString:@"Insira um tipo"] && ![[variavel retornaNome] isEqualToString:@"Insira um nome"] && ![[variavel retornaConteudo] isEqualToString:@"Insira o conteúdo"]) {
                     NSLog(@"todas respondidas");
                     [self corrigirExercicio];
                 }
