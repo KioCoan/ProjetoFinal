@@ -15,8 +15,8 @@
     self = [super init];
     // ao inicializar o exercício ele seta o título e a descrição do mesmo
     if (self) {
-        self.tituloExercicio = [NSString stringWithFormat:@"Teste"];
-        self.descricaoExercicio = [NSString stringWithFormat:@"Teste"];
+        self.tituloExercicio = [NSString stringWithFormat:@"Declarando Variáveis"];
+        self.descricaoExercicio = [NSString stringWithFormat:@"Declare a variavel conforme o trecho a seguir."];
     }
     return self;
 }

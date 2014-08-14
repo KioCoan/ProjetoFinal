@@ -13,8 +13,9 @@
     SKNode *conteudoAtivo;
     UITextField *textField;
     NSMutableArray *resposta;
-    SKLabelNode *enunciado;
+    SKLabelNode *trechoEmPortugol;
     SKLabelNode *controlePasso;
+    SKLabelNode *mensagemErro;
     SpriteLabelNode *labelCriada;
     int passo;
 }
@@ -26,9 +27,9 @@
         
         [self criaVariavel];
         [self criaBotoes];
+        [self criaEnunciado];
         
         [self reinicializaExercicio];
-        
         
         
     }
@@ -48,14 +49,13 @@
     
     
     
-    
-    textField = [[UITextField alloc] initWithFrame:CGRectMake(self.size.width * 0.6, self.size.height * 0.10, 250, 40)];
+    textField = [[UITextField alloc] initWithFrame:CGRectMake(self.size.width * 0.6, self.size.height * 0.30, 250, 40)];
     //UITextField *testando = [UITextField alloc]initWithFrame:CGREctM
     //textField.center = self.view.center;
     textField.borderStyle = UITextBorderStyleRoundedRect;
     textField.textColor = [UIColor blackColor];
     textField.font = [UIFont systemFontOfSize:25.0];
-    textField.placeholder = @"Enter your name here";
+    textField.placeholder = @"Insira o valor";
     textField.backgroundColor = [UIColor whiteColor];
     textField.autocorrectionType = UITextAutocorrectionTypeNo;
     textField.keyboardType = UIKeyboardTypeDefault;
@@ -70,6 +70,17 @@
     
 }
 
+-(void)criaMensagemErro{
+    
+    mensagemErro = [[SKLabelNode alloc]init];
+    mensagemErro.position = CGPointMake(70, 750);
+    [mensagemErro setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    mensagemErro.text = @"Existe algo errado na variável";
+    mensagemErro.fontColor = [SKColor redColor];
+    
+    [self addChild:mensagemErro];
+}
+
 
 - (void)criandoPasso{
     
@@ -81,11 +92,22 @@
     
     [self addChild:controlePasso];
     
+}
+
+- (void)criaEnunciado{
+    
+    SKLabelNode *enunciado = [[SKLabelNode alloc]init];
+    enunciado.text = @"Monte as variáveis conforme o trecho a seguir:";
+    enunciado.position = CGPointMake(50, 900);
+    [enunciado setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    
+    [self addChild:enunciado];
+    
     
     
 }
 
-- (void)criaEnunciado{
+- (void)criaTrechoEmPortugol{
     
     
     
@@ -104,15 +126,16 @@
     
     
     
-    enunciado = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
-    enunciado.fontSize = 40;
-    enunciado.text = [resposta componentsJoinedByString:@" "];
-    enunciado.position = CGPointMake(50, 800);
-    [enunciado setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    trechoEmPortugol = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
+    trechoEmPortugol.fontSize = 40;
+    trechoEmPortugol.text = [resposta componentsJoinedByString:@" "];
+    trechoEmPortugol.position = CGPointMake(50, 800);
+    trechoEmPortugol.fontColor = [SKColor yellowColor];
+    [trechoEmPortugol setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
     NSLog(@"vai incrementar %d" ,passo);
     
     NSLog(@"ja incrementou %d",passo);
-    [self addChild:enunciado];
+    [self addChild:trechoEmPortugol];
     
     
     
@@ -236,6 +259,27 @@
     if ([conteudoAtivo.name isEqualToString:@"label"]) {
         
         SpriteLabelNode *label = (SpriteLabelNode *)conteudoAtivo;
+        
+        if ([label.tipo isEqualToString:@"TIPO"]) {
+            
+            
+            if (![textField.text isEqualToString:@"caractere"] && ![textField.text isEqualToString:@"inteiro"] && ![textField.text isEqualToString:@"real"] && ![textField.text isEqualToString:@"logico"]) {
+                
+                
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERRO"
+                                                                message:@"TIPO DE VARIAVEL INEXISTENTE"
+                                                               delegate:self
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+                
+                
+                return YES;
+            }
+            
+            
+        }
+        
         label.text = textField.text;
         
         [self limpaTextField];
@@ -297,13 +341,14 @@
         acabou.fontSize = 90;
         [variavel removeFromParent];
         [self addChild:acabou];
+        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeVariavel2"];
         return;
     }
     
     [variavel removeFromParent];
-    [enunciado removeFromParent];
+    [trechoEmPortugol removeFromParent];
     [controlePasso removeFromParent];
-    [self criaEnunciado];
+    [self criaTrechoEmPortugol];
     [self criaVariavel];
     [self criandoPasso];
     
@@ -325,10 +370,14 @@
         
         
         [self reinicializaExercicio];
-        NSLog(@"inicia novamente");
+        [mensagemErro removeFromParent];
+        mensagemErro = nil;
+        
+        //NSLog(@"inicia novamente");
         
     }else{
-        NSLog(@"errada");
+        [self criaMensagemErro];
+        //NSLog(@"errada");
     }
     
     
