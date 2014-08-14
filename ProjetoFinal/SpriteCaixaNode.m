@@ -61,7 +61,7 @@
 -(void)inicializaLabels{
     //CRIA A SKLABELNODE QUE MOSTRA O CONTEÚDO DA VARIÁVEL
     lblConteudo = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
-    [lblConteudo setText:@"Insira um conteúdo"];
+    [lblConteudo setText:@"Insira o conteúdo"];
     [lblConteudo setFontSize:self.frame.size.width * 0.08];
     [lblConteudo setFontColor:[SKColor grayColor]];
     [lblConteudo setPosition:CGPointMake(self.frame.origin.x * -0.35, self.frame.origin.y * -0.43)];

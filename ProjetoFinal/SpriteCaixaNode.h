@@ -38,14 +38,13 @@
 -(void)setLabelConteudo:(NSString*)text;
 -(void)setLabelNome:(NSString*)text;
 -(void)setLabelTipo:(NSString*)text;
-<<<<<<< HEAD
-=======
+
 -(NSString *)retornaTipo;
 -(NSString *)retornaNome;
 -(NSString *)retornaConteudo;
 -(void)abrirCaixa;
 -(void)fecharCaixa;
->>>>>>> FETCH_HEAD
+
 -(void)executaSprite;
 -(void)iniciarAnimacaoIntroducao;
 -(void)alteraCorLabels:(NSString *)tipo;
