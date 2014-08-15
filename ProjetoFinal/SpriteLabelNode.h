@@ -18,6 +18,7 @@
 
 @property NSString *tipo;
 @property CGPoint posicaoInicial;
+@property BOOL dentro;
 
 - (id)initWithType:(NSString *)tipo texto:(NSString *)texto;
 -(void)showTipo;

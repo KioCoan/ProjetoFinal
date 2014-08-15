@@ -306,6 +306,8 @@
     
     if (conteudoAtivo) {
         
+        conteudoAtivo.dentro = NO;
+        
         for (NSDictionary *dict in expressoes) { //Ao soltar o node de resposta em algum lugar varre o vetor de caixas para descobrir sobre quem está
             
             espaco = [dict valueForKey:@"espaco"];
@@ -336,6 +338,7 @@
                     
                     if (![self operadorNasCordenadasX:xMeio Y:yMeio]  && [resultado.text isEqualToString:[calculador calculaOperador:conteudoAtivo.text numero1:valor1.text numero2:valor2.text]]) { //se a resposta do calculador for a mesma da expressao
                         [conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa
+                        conteudoAtivo.dentro = YES;
                         _corretos++;
                         [self corrigirExercicio];
                         
@@ -393,8 +396,21 @@
 }
 
 -(void)corrigirExercicio{
-    if(_corretos == 6){
-        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeOperadores1"];
+    
+    for (SpriteLabelNode *op in opcoes) {
+        
+        
+        if (!op.dentro) {
+            NSLog(@"esta faltando operador");
+            return;
+        }
+        
+        
     }
+    
+    
+    NSLog(@"exercicio concluido");
+    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeOperadores1"];
+    
 }
 @end
