@@ -199,7 +199,8 @@
     
     // Criar as caixas
     vetorCaixas = [NSMutableArray array];
-    CGSize tamanho = CGSizeMake( 290,  320);
+    //CGSize tamanho = CGSizeMake( 290,  320);
+    CGSize tamanho = CGSizeMake(250, 257);
     //CGSize tamanho = CGSizeMake(200, 213.6);
     
     for (int i = 0; i < 4; i++) {
@@ -237,6 +238,7 @@
         }
         
         // inserindo nó
+        [[vetorCaixas objectAtIndex:i] iniciarAnimacaoIntroducao];
         [self addChild:[vetorCaixas objectAtIndex:i]];
     }
     
@@ -346,6 +348,11 @@
 -(void)verificaConclusao{
     if (_corretos == 4) {
         [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeVariavel1"];
+        SKLabelNode *acabou = [[SKLabelNode alloc]init];
+        acabou.text = @"Parabéns";
+        acabou.position = CGPointMake(400, 500);
+        acabou.fontSize = 90;
+        [self addChild:acabou];
     }
 }
 @end

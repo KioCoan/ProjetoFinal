@@ -333,10 +333,13 @@
 
 - (void)reinicializaExercicio{
     passo++;
+    passo = 4;
+    [mensagemErro removeFromParent];
+    mensagemErro = nil;
     if (passo > 3) {
         NSLog(@"acabou");
         SKLabelNode *acabou = [[SKLabelNode alloc]init];
-        acabou.text = @"YOU WIN";
+        acabou.text = @"Parabéns";
         acabou.position = variavel.position;
         acabou.fontSize = 90;
         [variavel removeFromParent];
@@ -370,8 +373,7 @@
         
         
         [self reinicializaExercicio];
-        [mensagemErro removeFromParent];
-        mensagemErro = nil;
+        
         
         //NSLog(@"inicia novamente");
         
@@ -448,7 +450,7 @@
             
             //VERIFICA SE TODOS OS TEXTOS DAS LABELS DA CAIXA FORAM ALTERADAS
             
-            if (![[variavel retornaTipo] isEqualToString:@"Insira um tipo"] && ![[variavel retornaNome] isEqualToString:@"Insira um nome"] && ![[variavel retornaConteudo] isEqualToString:@"Insira o conteúdo"]) {
+            if (![[variavel retornaTipo] isEqualToString:@"Insira o tipo"] && ![[variavel retornaNome] isEqualToString:@"Insira o nome"] && ![[variavel retornaConteudo] isEqualToString:@"Insira o conteúdo"]) {
                 NSLog(@"todas respondidas");
                 [self corrigirExercicio];
             }
