@@ -38,7 +38,7 @@
                                  @"comSono",
                                  @"carroParado",
                                  @"possuiChave",nil];
-        valoresVariaveisCaracteres = [NSArray arrayWithObjects:@"Maria",
+        valoresVariaveisCaracteres = [NSArray arrayWithObjects:@"\"Maria\"",
                                       @"\"Pedro\"",
                                       @"\"Joao\"",
                                       @"\"Paulo\"",

@@ -80,11 +80,6 @@
 -(void)atualizarValoresDoTipo:(NSString*)tipoOperador{
     Calculador *calculadora = [[Calculador alloc] init];
     Gerador *geradorValores = [[Gerador alloc] init];
-    //NSString *valor = [geradorValores retornaTipoVariavel];
-    
-    //NSLog(@"%@",valor);
-    //NSLog(@"%@,",[geradorValores retornaNomeVariavel:valor]);
-    //NSLog(@"%@,",[geradorValores retornaValorVarivel:valor]);
     
     
     NSString *valor1, *operador, *valor2, *resultado;

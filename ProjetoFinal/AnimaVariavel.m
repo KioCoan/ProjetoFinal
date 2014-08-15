@@ -41,9 +41,6 @@
         }];
         
         
-        
-        
-        
         [self setBackgroundColor:[UIColor whiteColor]];
 
     }

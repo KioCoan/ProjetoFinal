@@ -33,9 +33,6 @@
         [self setLabelNome:nome];
         [self setLabelTipo:tipo];
         
-        [lblNome setFontColor:[SKColor blackColor]];
-        [lblTipo setFontColor:[SKColor blackColor]];
-        
         [self setUserInteractionEnabled:YES];
 
     }
