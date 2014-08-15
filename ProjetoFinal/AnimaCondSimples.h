@@ -15,7 +15,7 @@
 
 @interface AnimaCondSimples : Animacao <SpriteCondicaoNodeDelegate, SpriteAtualizarNodeDelegate>
 {
-    NSMutableArray *condicoesNode;
+    NSMutableArray *spritesCondicao;
     SpriteAtualizarNode *botaoAtualizar;
     SKSpriteNode *botaoIniciarTeste;
     int contadorDeTeste;

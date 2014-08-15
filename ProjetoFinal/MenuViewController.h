@@ -12,10 +12,8 @@
 @interface MenuViewController : UIViewController
 {
     NSArray *nBotoesNasLinhas;
-    NSArray *imagensDosBotoes;
     
     GerenciadorDeAssunto *gerenciadorDeAssuntos;
-    
 }
 
 

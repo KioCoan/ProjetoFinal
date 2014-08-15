@@ -28,9 +28,7 @@
 -(SKScene*)retornaExercicioSelecionado;
 -(void)preparaExercicios;
 -(NSMutableArray*)retornaTitulosEDescricoesExercicios;
-//-(SKScene*)retornaAnimacao;
 -(int)exercicioSelecionado;
-
 -(Animacao*)retornaAnimacaoNumero:(int)index;
 
 @end

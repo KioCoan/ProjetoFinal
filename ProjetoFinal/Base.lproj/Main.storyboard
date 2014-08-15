@@ -249,7 +249,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="controlador q tem a lista de exercicios" id="JZK-R4-l7x"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="K5d-UZ-TGY" id="cFC-Ul-2wt"/>
+                        <outlet property="indicadorDeAtividade" destination="K5d-UZ-TGY" id="fYh-i6-yEz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5sD-gj-Hhq" userLabel="First Responder" sceneMemberID="firstResponder"/>

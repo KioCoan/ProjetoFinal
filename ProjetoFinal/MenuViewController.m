@@ -50,7 +50,7 @@ static const int ESPACAMENTO_BOTOES = 50;
     
     //INICIALIZA A SCROLLVIEW
     UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:frame];
-    [scroll setBackgroundColor:[UIColor grayColor]];
+    [scroll setBackgroundColor:[UIColor lightGrayColor]];
     [scroll setUserInteractionEnabled:YES];
     [scroll setScrollEnabled:YES];
     [[self view] addSubview:scroll];
@@ -65,10 +65,10 @@ static const int ESPACAMENTO_BOTOES = 50;
         [scroll addSubview:view];
         
         //INICIALIZA OS NUMEROS EXIBIDOS NA TELA
-        UILabel *numero = [[UILabel alloc] initWithFrame:CGRectMake(10, 93, 10, 14)];
-        [numero setText:[NSString stringWithFormat:@"%d", (i + 1)]];
-        [numero setTextColor:[UIColor blackColor]];
-        [view addSubview:numero];
+//        UILabel *numero = [[UILabel alloc] initWithFrame:CGRectMake(10, 93, 10, 14)];
+//        [numero setText:[NSString stringWithFormat:@"%d", (i + 1)]];
+//        [numero setTextColor:[UIColor blackColor]];
+//        [view addSubview:numero];
         
         //POSIÇOES DO BOTAO
         int posicaoXBotao = (view.frame.size.width / 2) - (BOTAO_WIDTH / 2);

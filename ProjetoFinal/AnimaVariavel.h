@@ -14,11 +14,10 @@
 
 @interface AnimaVariavel : Animacao //<SpriteCaixaNodeDelegate>
 {
-    NSMutableArray *spritesCaixa;
     CGSize tamanhoCaixa;
     int enderecoCaixa;
 }
 
--(id)initWithVariavellDoTipo:(NSString*)tipoVariavel;
+-(id)initWithVariavelDoTipo:(NSString*)tipoVariavel;
 
 @end

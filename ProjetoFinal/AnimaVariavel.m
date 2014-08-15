@@ -10,10 +10,9 @@
 
 @implementation AnimaVariavel
 
--(id)initWithVariavellDoTipo:(NSString*)tipoVariavel{
+-(id)initWithVariavelDoTipo:(NSString*)tipoVariavel{
     if (self = [super init]) {
         enderecoCaixa = 1;
-        spritesCaixa = [[NSMutableArray alloc] init];
         tamanhoCaixa = CGSizeMake(250, 267);
         
         Gerador *gerador = [[Gerador alloc] init];
@@ -60,7 +59,6 @@
     SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc] initWithConteudo:conteudo nome:nome tipo:tipoVariavelLower tamanho:tamanhoCaixa];
     [caixa setLabelEndereco:enderecoCaixa++];
     [caixa setPosition:posicao];
-    [spritesCaixa addObject:caixa];
     [caixa iniciarAnimacaoIntroducao];
     
     [self addChild:caixa];

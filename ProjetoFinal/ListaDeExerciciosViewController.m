@@ -79,8 +79,7 @@
     
 
     [btnExercitar setHidden:NO];
-    selectedCell = (int)indexPath.row;
-    [gerenciador selecionaExercicio:selectedCell];
+    [gerenciador selecionaExercicio:(int)indexPath.row];
     
 }
 

@@ -15,7 +15,8 @@
 {
     GerenciadorDeAssunto *gerenciador;
     BOOL primeiraChamada;
-    Animacao *cena;
+    Animacao *cenaAtual;
+    SKView *viewAnimacao;
 }
 @property (weak, nonatomic) IBOutlet UIView *myViewContainer;
 

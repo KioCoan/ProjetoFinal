@@ -14,7 +14,7 @@
     if (self = [super init]) {
         /* Setup your scene here */
         tipoOperadorAtual = tipoOperador;
-        sprites = [[NSMutableArray alloc] init];
+        spritesOperador = [[NSMutableArray alloc] init];
         
         //ADICIONA UM OPERADOR NO CANTO SUPERIOR ESQUERDO DA TELA
         CGPoint position = CGPointMake(190, 400);
@@ -56,7 +56,7 @@
     SpriteOperadorNode *spriteOperador = [[SpriteOperadorNode alloc] init];
     [spriteOperador setPosition:posicao];
     
-    [sprites addObject:spriteOperador];
+    [spritesOperador addObject:spriteOperador];
     
     [self addChild:spriteOperador];
 }
@@ -84,7 +84,7 @@
     
     NSString *valor1, *operador, *valor2, *resultado;
     
-    for(SpriteOperadorNode *node in sprites){
+    for(SpriteOperadorNode *node in spritesOperador){
 
         valor1 = [geradorValores retornaValorAleatorioParaOperador:tipoOperador];
         operador = [geradorValores retornaOperadorDoTipo:tipoOperador];

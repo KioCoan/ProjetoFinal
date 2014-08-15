@@ -12,9 +12,7 @@
 #import "Variavel.h"
 
 @interface ConteudoViewController ()
-{
-    SKView *viewAnimacao;
-}
+
 @end
 
 @implementation ConteudoViewController
@@ -34,14 +32,17 @@
     [super viewDidDisappear:animated];
     //self.myViewContainer = nil;
     //[cena limparDelegatesMalditos];
-    [cena removeFromParent];
+    [cenaAtual removeFromParent];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    
+    [self inicializarPropriedades];
+}
+
+-(void)inicializarPropriedades{
     //INSTANCIO UM GERENCIADOR PARA BUSCAR AS INFORMAÇOES DO ASSUNTO
     gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     
@@ -53,18 +54,19 @@
     
     
     //INSTANCIO A SKSCENE INICIAL DO ASSUNTO ATUAL
-    cena = [gerenciador retornaAnimacaoNumero:1];
+    cenaAtual = [gerenciador retornaAnimacaoNumero:1];
     
     
     //DEFININDO TAMANHO DA SKSCENE E ADICIONANDO-A NA SKVIEW
-    [cena setSize: viewAnimacao.frame.size];
-    [viewAnimacao presentScene:cena];
+    [cenaAtual setSize: viewAnimacao.frame.size];
+    [viewAnimacao presentScene:cenaAtual];
     
     //[cena setBackgroundColor:[UIColor whiteColor]];
     
     [[self view] addSubview:viewAnimacao];
-    
 }
+
+
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

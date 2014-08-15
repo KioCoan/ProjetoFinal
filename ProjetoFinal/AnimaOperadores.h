@@ -16,7 +16,7 @@
 
 @interface AnimaOperadores : Animacao <SpriteAtualizarNodeDelegate>
 {
-    NSMutableArray *sprites;
+    NSMutableArray *spritesOperador;
     NSString *tipoOperadorAtual;
     SKLabelNode *lblTipoOperador;
 }

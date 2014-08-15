@@ -19,9 +19,9 @@
         tipos = [NSArray arrayWithObjects:@"real",@"inteiro",@"caractere",@"logico",nil];
         nomesVariaveisInteiros = [NSArray arrayWithObjects:@"idade",
                                   @"quantidade",
-                                  @"numeroCadeiras",
+                                  @"numeroMesas",
                                   @"numeroAlunos",
-                                  @"numeroPessoas",nil];
+                                  @"numeroTeclas",nil];
         nomesVariaveisReais = [NSArray arrayWithObjects:@"nota",
                                @"minhaDivida",
                                @"media",

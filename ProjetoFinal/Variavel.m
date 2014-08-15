@@ -41,16 +41,16 @@
     
     switch (index) {
         case 1:
-            return [[AnimaVariavel alloc] initWithVariavellDoTipo:@"INTEIRO"];
+            return [[AnimaVariavel alloc] initWithVariavelDoTipo:@"INTEIRO"];
             
         case 2:
-            return [[AnimaVariavel alloc] initWithVariavellDoTipo:@"REAL"];
+            return [[AnimaVariavel alloc] initWithVariavelDoTipo:@"REAL"];
 
         case 3:
-            return [[AnimaVariavel alloc] initWithVariavellDoTipo:@"CARACTERE"];
+            return [[AnimaVariavel alloc] initWithVariavelDoTipo:@"CARACTERE"];
             
         case 4:
-            return [[AnimaVariavel alloc] initWithVariavellDoTipo:@"LOGICO"];
+            return [[AnimaVariavel alloc] initWithVariavelDoTipo:@"LOGICO"];
 
         default:
             return nil;

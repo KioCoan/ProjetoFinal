@@ -11,8 +11,8 @@
 @interface ExercicioVIewContoller ()
 {
     
-    __weak IBOutlet UIActivityIndicatorView *activityIndicator;
-    UIView *splashScreenView;
+    __weak IBOutlet UIActivityIndicatorView *indicadorDeAtividade;
+    UIView *viewAtividade;
 }
 @end
 
@@ -37,6 +37,11 @@
     [super viewWillAppear:animated];
     
     
+    [self inicializarPropriedades];
+    
+}
+
+-(void)inicializarPropriedades{
     //INSTANCIO UM GERENCIADOR PARA BUSCAR AS INFORMAÇOES DO ASSUNTO
     GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     
@@ -44,14 +49,12 @@
     [[self navigationItem] setTitle:gerenciador.retornaNomeAssuntoAtual];
     
     //Ajustes No indicador de atividade
-    splashScreenView = [[UIView alloc] initWithFrame:self.view.bounds];
-    splashScreenView.backgroundColor = [UIColor blackColor];
-    [activityIndicator startAnimating];
-    [splashScreenView addSubview:activityIndicator];
-    activityIndicator.center = splashScreenView.center;
-    [self.view addSubview:splashScreenView];
-    
-    
+    viewAtividade = [[UIView alloc] initWithFrame:self.view.bounds];
+    viewAtividade.backgroundColor = [UIColor blackColor];
+    [indicadorDeAtividade startAnimating];
+    [viewAtividade addSubview:indicadorDeAtividade];
+    indicadorDeAtividade.center = viewAtividade.center;
+    [self.view addSubview:viewAtividade];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -78,13 +81,13 @@
     
     [[self view] addSubview:viewExercicio];
     
-    [activityIndicator stopAnimating];
-    [splashScreenView removeFromSuperview];
+    [indicadorDeAtividade stopAnimating];
+    [viewAtividade removeFromSuperview];
     
 }
 
 - (void) threadStartAnimating {
-    [activityIndicator startAnimating];
+    [indicadorDeAtividade startAnimating];
 }
 
 - (void)didReceiveMemoryWarning

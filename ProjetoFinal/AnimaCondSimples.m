@@ -45,7 +45,7 @@
     contadorDeTeste = 0;
     [self inicializarBotaoIniciarAnimacao];
     [self inicializarBotaoAtualizar];
-    [self inicializaCondicoes:condicoes];
+    [self inicializarCondicoes:condicoes];
     
     
     [self inicializarParametros];
@@ -54,13 +54,13 @@
 
 
 
--(void)inicializaCondicoes:(NSArray*)condicoes{
+-(void)inicializarCondicoes:(NSArray*)condicoes{
     //PRIMEIRAMENTE VERIFICA SE O ARRAY EXISTE
     if(!condicoes){
         return;
     }
     
-    condicoesNode = [[NSMutableArray alloc] init];
+    spritesCondicao = [[NSMutableArray alloc] init];
     NSString *tipoCondicao;
     CGPoint posicao = CGPointMake(180, 560);
     
@@ -79,7 +79,7 @@
             
         
         [node setPosition:posicao];
-        [condicoesNode addObject:node];
+        [spritesCondicao addObject:node];
         
         
         
@@ -89,7 +89,7 @@
 
 //PERCORRE O VETOR DE SpriteCondicaoNode DEFININDO OS VALORES ALEATÓRIOS
 -(void)inicializarParametros{
-    for(SpriteCondicaoNode* node in condicoesNode){
+    for(SpriteCondicaoNode* node in spritesCondicao){
 
         
         NSString* valor1 = [self gerarValoresAleatorios];
@@ -155,21 +155,6 @@
 }
 
 
-//TALVEZ SEJA USADO
--(SpriteLabelNode*)criarLabelComTexto:(NSString*)texto tipo:(NSString*)tipo posicao:(CGPoint)posicao{
-    SpriteLabelNode *novoLabel = [[SpriteLabelNode alloc] initWithType:tipo texto:texto];
-    [novoLabel setFontName:@"Helvetica"];
-    [novoLabel setPosition:posicao];
-    [novoLabel setFontSize:18];
-    [novoLabel showTipo];
-    [novoLabel setName:@"teste"];
-    [novoLabel setFontColor:[SKColor blackColor]];
-    [novoLabel setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
-    
-    return novoLabel;
-}
-
-
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     UITouch *touch = [touches anyObject];
     CGPoint posicao = [touch locationInNode:self];
@@ -183,13 +168,12 @@
 }
 
 
-//CONTINUAR DAQUI-----------------
 -(void)botaoAtualizarClicado{
     NSString* valor1 = [self gerarValoresAleatorios];
     NSString* valor2 = [self gerarValoresAleatorios];
     NSString* operador = [self gerarOperadoresAleatorios];
     
-    for(SpriteCondicaoNode *c in condicoesNode){
+    for(SpriteCondicaoNode *c in spritesCondicao){
         [c resetarTextura];
         [c resetarValores:valor1 eOperador:operador eValor2:valor2 resultado:valor1];
         
@@ -206,27 +190,27 @@
     [console exibeTexto:@""];
     
     //VARRE O VETOR DEFININDO AS TEXTURAS PADROES DE INÍCIO
-    for(SpriteCondicaoNode *c in condicoesNode){
+    for(SpriteCondicaoNode *c in spritesCondicao){
         [c resetarTextura];
     }
     
     //INICIA O TESTE SEMPRE DO PRIMEIRO OBJETO DO VETOR
-    [[condicoesNode objectAtIndex:contadorDeTeste] iniciarTeste];
+    [[spritesCondicao objectAtIndex:contadorDeTeste] iniciarTeste];
 }
 
 
 -(void)testeFinalizado:(BOOL)verdadeiro{
    
     //CASO O TESTE NÃO TENHA ENCONTRADO UMA CONDIÇAO VERDADEIRA E AINDA NÃO TENHA CHEGADO AO FIM DO VETOR
-    if(!verdadeiro && contadorDeTeste < condicoesNode.count - 1){
+    if(!verdadeiro && contadorDeTeste < spritesCondicao.count - 1){
         //É INICIADO O TESTE DO PRÓXIMO OBJETO NO VETOR DE CONDIÇÕES
-        [[condicoesNode objectAtIndex:++contadorDeTeste] iniciarTeste];
+        [[spritesCondicao objectAtIndex:++contadorDeTeste] iniciarTeste];
     
     }else{
         //CASO TENHA TERMINADO OS TESTES, SE O ULTIMO OBJETO TESTADO SEJA VERDADEIRO
-        if ([[condicoesNode objectAtIndex:contadorDeTeste] retornaVeracidade]) {
+        if ([[spritesCondicao objectAtIndex:contadorDeTeste] retornaVeracidade]) {
             //É INSERIDO NO CONSOLE O TEXTO DO BLOCO DE CÓDIGO DESTA CONDIÇÃO VERDADEIRA
-            [console exibeTexto:[[condicoesNode objectAtIndex:contadorDeTeste] retornaTextoASerExibido]];
+            [console exibeTexto:[[spritesCondicao objectAtIndex:contadorDeTeste] retornaTextoASerExibido]];
         }
         
         //BOTÃO DE INICIAR OS TESTE APARECE NA TELA

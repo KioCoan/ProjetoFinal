@@ -19,13 +19,10 @@
     SKScene *cenaExercicio; // Vai ser instanciado conforme o exercício
 }
 @property NSString *tituloExercicio,*descricaoExercicio;
-@property UIImage* icone;
 @property BOOL completo;
 
 -(void)instanciaCena;
 -(SKScene*)retornaCena;
-
-
 -(void)completaExercicio;
 -(BOOL)verificaFinalizado;
 
