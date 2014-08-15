@@ -90,7 +90,7 @@
         return [self retornaValorLogico];
     
     }else{
-        return [self retornaValorFloat:1 ate:1000];
+        return [self retornaValorFloat:1 ate:100];
     }
 }
 

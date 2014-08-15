@@ -155,7 +155,7 @@
     
 }
 
-- (void)configuraCaixa:(SpriteCaixaNode*)caixa indice:(int)indice{
+- (SpriteCaixaNode *)configuraCaixa:(CGSize)size indice:(int)indice{
     
     Gerador *gerador = [[Gerador alloc]init];
     
@@ -163,35 +163,37 @@
             
             //CAIXA DO TIPO INTEIRO
         case 0:
-            [caixa setLabelTipo:@"inteiro"];
-            [caixa setLabelNome:[gerador retornaNomeVariavel:[caixa retornaTipo]]];
+            return [[SpriteCaixaNode alloc]initWithConteudo:@" " nome:[gerador retornaNomeVariavel:@"inteiro"] tipo:@"inteiro" tamanho:size];
+            
             
             break;
             
         case 1:
-            [caixa setLabelTipo:@"real"];
-            [caixa setLabelNome:[gerador retornaNomeVariavel:[caixa retornaTipo]]];
+            
+            return [[SpriteCaixaNode alloc]initWithConteudo:@" " nome:[gerador retornaNomeVariavel:@"real"] tipo:@"real" tamanho:size];
+            
+            
             
             break;
             
         case 2:
-            [caixa setLabelTipo:@"caractere"];
-            [caixa setLabelNome:[gerador retornaNomeVariavel:[caixa retornaTipo]]];
+            
+            
+            return [[SpriteCaixaNode alloc]initWithConteudo:@" " nome:[gerador retornaNomeVariavel:@"caractere"] tipo:@"caractere" tamanho:size];
+            
+            
             
             break;
             
         case 3:
-            [caixa setLabelTipo:@"logico"];
-            [caixa setLabelNome:[gerador retornaNomeVariavel:[caixa retornaTipo]]];
+            return [[SpriteCaixaNode alloc]initWithConteudo:@" " nome:[gerador retornaNomeVariavel:@"logico"] tipo:@"logico" tamanho:size];
             
             break;
             
         default:
+            return nil;
             break;
     }
-    
-    [caixa setLabelEndereco:indice+1];
-    
     
 }
 
@@ -204,9 +206,9 @@
     //CGSize tamanho = CGSizeMake(200, 213.6);
     
     for (int i = 0; i < 4; i++) {
-        SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]init];
-        [self configuraCaixa:caixa indice:i];
-        caixa.size = tamanho;
+        SpriteCaixaNode *caixa = [self configuraCaixa:tamanho indice:i];
+        //caixa.size = tamanho;
+        [caixa setLabelEndereco:i+1];
         [vetorCaixas addObject:caixa];
     }
     
