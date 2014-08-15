@@ -63,10 +63,14 @@
     // criando vetor e labels
     NSMutableArray *conteudos = [NSMutableArray array];
     
-    [conteudos addObject:[[SpriteLabelNode alloc] initWithType:@"inteiro" texto:@"23"]];
-    [conteudos addObject:[[SpriteLabelNode alloc] initWithType:@"real" texto:@"3.5"]];
-    [conteudos addObject:[[SpriteLabelNode alloc] initWithType:@"string" texto:@"\"João\""]];
-    [conteudos addObject:[[SpriteLabelNode alloc] initWithType:@"logico" texto:@"falso"]];
+    for (int i = 0; i < 4; i++) {
+        SpriteLabelNode *conteudo = [[SpriteLabelNode alloc]init];
+        conteudo.name = @"conteudo";
+        [self configuraLabel:conteudo indice:i];
+        [conteudos addObject:conteudo];
+    }
+    
+    
     
 
     //embaralhando labels
@@ -95,7 +99,42 @@
     
 }
 
+- (void)configuraLabel:(SpriteLabelNode *)label indice :(int)indice{
+    
+    
+    Gerador *gerador = [[Gerador alloc]init];
+    
+    
+    
+    switch (indice) {
+        case 0:
+            label.tipo = @"inteiro";
+            label.text = [gerador retornaValorInteiro:1 ate:50];
+            break;
+        case 1:
+            label.tipo = @"real";
+            label.text = [gerador retornaValorFloat:1 ate:200];
+            break;
+        case 2:
+            label.tipo = @"caractere";
+            label.text = [gerador retornaValorCaractere];
+            break;
+        case 3:
+            label.tipo = @"logico";
+            label.text = [gerador retornaValorLogico];
+            break;
+            
+            
+        default:
+            break;
+    }
+    
+    
+}
+
 - (NSMutableArray *)embaralha :(NSMutableArray *)antigo{
+    
+    //EMBARALHA OS ITENS DE UM VETOR
     
     int n;
     NSMutableArray *vetorEmbaralhado = [NSMutableArray array];
@@ -116,50 +155,89 @@
     
 }
 
+- (void)configuraCaixa:(SpriteCaixaNode*)caixa indice:(int)indice{
+    
+    Gerador *gerador = [[Gerador alloc]init];
+    
+    switch (indice) {
+            
+            //CAIXA DO TIPO INTEIRO
+        case 0:
+            [caixa setLabelTipo:@"inteiro"];
+            [caixa setLabelNome:[gerador retornaNomeVariavel:[caixa retornaTipo]]];
+            
+            break;
+            
+        case 1:
+            [caixa setLabelTipo:@"real"];
+            [caixa setLabelNome:[gerador retornaNomeVariavel:[caixa retornaTipo]]];
+            
+            break;
+            
+        case 2:
+            [caixa setLabelTipo:@"caractere"];
+            [caixa setLabelNome:[gerador retornaNomeVariavel:[caixa retornaTipo]]];
+            
+            break;
+            
+        case 3:
+            [caixa setLabelTipo:@"logico"];
+            [caixa setLabelNome:[gerador retornaNomeVariavel:[caixa retornaTipo]]];
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+    [caixa setLabelEndereco:indice+1];
+    
+    
+}
+
 - (void)criarCaixas{
     
     // Criar as caixas
-    caixas = [NSMutableArray array];
-    CGSize tamanho = CGSizeMake( 200,  213);
+    vetorCaixas = [NSMutableArray array];
+    CGSize tamanho = CGSizeMake( 290,  320);
     //CGSize tamanho = CGSizeMake(200, 213.6);
     
-    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@" " nome:@"idade" tipo:@"inteiro" tamanho:tamanho]];
-    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@" " nome:@"nota" tipo:@"real" tamanho:tamanho]];
-    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@" " nome:@"nome" tipo:@"string" tamanho:tamanho]];
-    [caixas addObject:[[SpriteCaixaNode alloc] initWithConteudo:@" " nome:@"aprovado" tipo:@"logico" tamanho:tamanho]];
-    
-    for(int i=0; i<caixas.count; i++){
-        [[caixas objectAtIndex:i] setLabelEndereco:i+1];
+    for (int i = 0; i < 4; i++) {
+        SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]init];
+        [self configuraCaixa:caixa indice:i];
+        caixa.size = tamanho;
+        [vetorCaixas addObject:caixa];
     }
     
+    
     //embaralha ordem das caixas
-    caixas = [self embaralha:caixas];
+    vetorCaixas = [self embaralha:vetorCaixas];
     
     //criando e inserindo posicoes
     
-    CGPoint primeiraPosicao = CGPointMake( 200.0,  550.0);
+    CGPoint primeiraPosicao = CGPointMake( 200.0,  630.0);
     CGPoint posicao = primeiraPosicao;
     
-    for (int i = 0; i < caixas.count; i++) {
+    for (int i = 0; i < vetorCaixas.count; i++) {
         
         // caixas do lado direito
         if (i == 2) {
             
             posicao = primeiraPosicao;
-            posicao.x += tamanho.width * 1.2;
-            [[caixas objectAtIndex:i] setPosition:posicao];
+            posicao.x += tamanho.width * 1.0;
+            [[vetorCaixas objectAtIndex:i] setPosition:posicao];
             posicao.y -= tamanho.height * 1.15;
             
             
             
         }else{
-            [[caixas objectAtIndex:i] setPosition:posicao];
+            [[vetorCaixas objectAtIndex:i] setPosition:posicao];
             posicao.y -= tamanho.height * 1.15;
             
         }
         
         // inserindo nó
-        [self addChild:[caixas objectAtIndex:i]];
+        [self addChild:[vetorCaixas objectAtIndex:i]];
     }
     
 }
@@ -201,7 +279,7 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     if (conteudoAtivo) {
        
-        for (SpriteCaixaNode * c in caixas) { //Ao soltar o node de resposta em algum lugar varre o vetor de caixas para descobrir sobre quem está
+        for (SpriteCaixaNode * c in vetorCaixas) { //Ao soltar o node de resposta em algum lugar varre o vetor de caixas para descobrir sobre quem está
             float xInicio = c.frame.origin.x;
             float xFim = xInicio + c.frame.size.width;
             //float xMeio = (xInicio + xFim)/2; PARA O FUTURO

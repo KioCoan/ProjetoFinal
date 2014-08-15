@@ -9,11 +9,12 @@
 #import <SpriteKit/SpriteKit.h>
 #import "SpriteCaixaNode.h"
 #import "SpriteLabelNode.h"
+#import "Gerador.h"
 
 
 @interface CenaExercicioVariavel1 : SKScene
 {
-    NSMutableArray *caixas;
+    NSMutableArray *vetorCaixas;
     SpriteLabelNode *conteudoAtivo;
     SKLabelNode *codigo;
 }

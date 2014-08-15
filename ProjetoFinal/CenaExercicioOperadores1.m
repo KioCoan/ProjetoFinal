@@ -25,8 +25,6 @@
     SpriteLabelNode *atribuicao;
     SpriteLabelNode *conteudoAtivo;
     BOOL move;
-    
-    
 }
 
 
