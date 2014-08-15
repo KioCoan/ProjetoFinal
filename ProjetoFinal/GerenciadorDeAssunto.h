@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Assunto.h"
 #import "AlteraAnimacaoDelegate.h"
+#import "CenaExercicio.h"
 
 @interface GerenciadorDeAssunto : NSObject
 {
@@ -25,7 +26,7 @@
 -(NSString*)retornaNomeAssuntoAtual;
 -(void)instanciaCenaDoExercicio:(int)index;
 -(void)selecionaExercicio:(int)index;
--(SKScene*)retornaExercicioSelecionado;
+-(CenaExercicio*)retornaExercicioSelecionado;
 -(void)preparaExercicios;
 -(NSMutableArray*)retornaTitulosEDescricoesExercicios;
 -(int)exercicioSelecionado;

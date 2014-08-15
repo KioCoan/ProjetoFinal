@@ -9,6 +9,7 @@
 
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
+#import "CenaExercicio.h"
 
 
 // Classe genérica para criação de exercícios 
@@ -16,13 +17,13 @@
 @interface Exercicio : NSObject
 
 {
-    SKScene *cenaExercicio; // Vai ser instanciado conforme o exercício
+    CenaExercicio *cenaExercicio; // Vai ser instanciado conforme o exercício
 }
 @property NSString *tituloExercicio,*descricaoExercicio;
 @property BOOL completo;
 
 -(void)instanciaCena;
--(SKScene*)retornaCena;
+-(CenaExercicio*)retornaCena;
 -(void)completaExercicio;
 -(BOOL)verificaFinalizado;
 

@@ -9,8 +9,9 @@
 #import <SpriteKit/SpriteKit.h>
 #import "SpriteLabelNode.h"
 #import "Geral.h"
+#import "CenaExercicio.h"
 
-@interface CenaExercicioCondSimples1 : SKScene
+@interface CenaExercicioCondSimples1 : CenaExercicio
 
 
 

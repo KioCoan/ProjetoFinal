@@ -10,9 +10,10 @@
 #import "SpriteCaixaNode.h"
 #import "SpriteLabelNode.h"
 #import "Gerador.h"
+#import "CenaExercicio.h"
 
 
-@interface CenaExercicioVariavel1 : SKScene
+@interface CenaExercicioVariavel1 : CenaExercicio
 {
     NSMutableArray *vetorCaixas;
     SpriteLabelNode *conteudoAtivo;

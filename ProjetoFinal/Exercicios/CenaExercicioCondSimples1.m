@@ -639,6 +639,7 @@
 
 -(void)corrigeExercicio{
     //n = 7;
+    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeVariavel1"];
     NSMutableArray *caracteres;
     
     for (NSDictionary *linha in expressoes) {
@@ -664,6 +665,8 @@
                     if ([resultado isEqualToString:alternativaCorreta.tipo]) {
                         
                         alternativaCorreta.fontColor = [SKColor greenColor];
+                        
+                        
                         if (alternativaCorreta != alternativaMarcada) {
                             alternativaMarcada.fontColor = [SKColor redColor];
                         }

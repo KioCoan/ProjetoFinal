@@ -8,6 +8,7 @@
 
 #import "Exercicio.h"
 #import "CenaExercicioOperadores1.h"
+#import "CenaExercicio.h"
 
 @interface ExeOperadores1 : Exercicio
 

@@ -117,7 +117,7 @@
     [assunto selecionaExercicio:index];
 }
 
--(SKScene*)retornaExercicioSelecionado{
+-(CenaExercicio*)retornaExercicioSelecionado{
     return [assunto retornaExercicioSelecionado];
 }
 

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "GerenciadorDeAssunto.h"
-@interface ExercicioVIewContoller : UIViewController
+#import "CenaExercicio.h"
+@interface ExercicioVIewContoller : UIViewController <CenaExercicioDelegate>
 
 
 

@@ -36,7 +36,7 @@
     indiceExercicio = index;
 }
 
--(SKScene*)retornaExercicioSelecionado{
+-(CenaExercicio*)retornaExercicioSelecionado{
     
     return [[self.exercicios objectAtIndex:indiceExercicio] retornaCena];
 }

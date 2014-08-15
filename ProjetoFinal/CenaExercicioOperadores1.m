@@ -399,7 +399,7 @@
         
         
         if (!op.dentro) {
-            NSLog(@"esta faltando operador");
+            //NSLog(@"esta faltando operador");
             return;
         }
         
@@ -407,8 +407,9 @@
     }
     
     
-    NSLog(@"exercicio concluido");
+    //NSLog(@"exercicio concluido");
     [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeOperadores1"];
+    [self.myDelegate exercicioFinalizado];
     
 }
 @end

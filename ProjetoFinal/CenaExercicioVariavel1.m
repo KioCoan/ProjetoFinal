@@ -349,12 +349,18 @@
 
 -(void)verificaConclusao{
     if (_corretos == 4) {
+        
+        //EXERCICIO CONCLUIDO
+        
         [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeVariavel1"];
         SKLabelNode *acabou = [[SKLabelNode alloc]init];
         acabou.text = @"Parabéns";
         acabou.position = CGPointMake(400, 500);
         acabou.fontSize = 90;
         [self addChild:acabou];
+        
+        [self.myDelegate exercicioFinalizado];
+        
     }
 }
 @end

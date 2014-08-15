@@ -14,7 +14,7 @@
 -(void)instanciaCena{
     //Sobrescrever o método nas classes filho
 }
--(SKScene*)retornaCena{
+-(CenaExercicio*)retornaCena{
     return cenaExercicio;
 }
 

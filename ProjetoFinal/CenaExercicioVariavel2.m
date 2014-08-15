@@ -333,7 +333,7 @@
 
 - (void)reinicializaExercicio{
     passo++;
-    passo = 4;
+
     [mensagemErro removeFromParent];
     mensagemErro = nil;
     if (passo > 3) {
@@ -345,6 +345,7 @@
         [variavel removeFromParent];
         [self addChild:acabou];
         [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeVariavel2"];
+        [self.myDelegate exercicioFinalizado];
         return;
     }
     

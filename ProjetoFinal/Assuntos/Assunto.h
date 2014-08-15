@@ -10,6 +10,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "Animacao.h"
 #import "Exercicio.h"
+#import "CenaExercicio.h"
 
 // #### Classe genérica seus herdeiros serão os assuntos tratados individualmente ######
 
@@ -29,7 +30,7 @@
 
 -(void)selecionaExercicio:(int)index;
 
--(SKScene*)retornaExercicioSelecionado;
+-(CenaExercicio*)retornaExercicioSelecionado;
 
 -(void)preparaExercicios;
 

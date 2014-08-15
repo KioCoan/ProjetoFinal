@@ -13,6 +13,8 @@
     
     __weak IBOutlet UIActivityIndicatorView *indicadorDeAtividade;
     UIView *viewAtividade;
+    CenaExercicio *cena;
+    SKView *viewExercicio;
 }
 @end
 
@@ -63,7 +65,7 @@
     
     GerenciadorDeAssunto *gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     //CRIO UMA SKVIEW PARA INSERIR A SKSCENE
-    SKView *viewExercicio = [[SKView alloc] initWithFrame:self.view.frame];
+    viewExercicio = [[SKView alloc] initWithFrame:self.view.frame];
     
     
     
@@ -72,7 +74,8 @@
     
     
     //INSTANCIO A SKSCENE DO ASSUNTO ATUAL
-    SKScene *cena = [gerenciador retornaExercicioSelecionado];
+    cena = [gerenciador retornaExercicioSelecionado];
+    [cena setMyDelegate:self];
     
     //DEFININDO TAMANHO DA SKSCENE E ADICIONANDO-A NA SKVIEW
     [cena setSize: viewExercicio.frame.size];
@@ -90,6 +93,13 @@
     [indicadorDeAtividade startAnimating];
 }
 
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    
+    cena.myDelegate = nil;
+    cena = nil;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -97,9 +107,17 @@
 }
 
 
--(void)viewDidDisappear:(BOOL)animated{
+-(void)exercicioFinalizado{
+
+    cena.myDelegate = nil;
+    cena = nil;
+
+    //[[self navigationController] popToRootViewControllerAnimated:YES]; VOLTA PARA A PRIMEIRA TELA
+    [self.navigationController popViewControllerAnimated:YES];
     
     
 }
+
+
 
 @end
