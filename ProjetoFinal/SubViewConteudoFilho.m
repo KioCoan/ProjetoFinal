@@ -58,7 +58,11 @@
 }
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    self.myDelegate = nil;
+    
+    if ([self.myDelegate apagaDelegates]) {
+        self.myDelegate = nil;
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

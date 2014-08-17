@@ -88,7 +88,7 @@
                     <navigationItem key="navigationItem" id="tin-9L-uIK">
                         <barButtonItem key="rightBarButtonItem" title="Exercitar" style="done" id="8fF-UR-4z5">
                             <connections>
-                                <segue destination="cRh-hY-Bbp" kind="push" id="fGO-m5-VjR"/>
+                                <segue destination="cRh-hY-Bbp" kind="push" identifier="exibeListaExercicios" id="fGO-m5-VjR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

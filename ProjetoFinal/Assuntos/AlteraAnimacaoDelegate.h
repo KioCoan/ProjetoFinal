@@ -11,4 +11,5 @@
 @protocol AlteraAnimacaoDelegate <NSObject>
 
 -(void)trocaAnimacao:(int)index;
+-(bool)apagaDelegates;
 @end

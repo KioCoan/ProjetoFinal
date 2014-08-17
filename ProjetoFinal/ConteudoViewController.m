@@ -71,7 +71,12 @@
     [[self view] addSubview:viewAnimacao];
 }
 
-
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    mantemDelegates = NO;
+}
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -83,7 +88,11 @@
         SubViewConteudo *subViewConteudo = (SubViewConteudo*)[segue destinationViewController];
         
         [subViewConteudo setMyDelegate:self];
-       }
+    }else if ([segueName isEqualToString:@"exibeListaExercicios"]){
+        mantemDelegates = YES;
+    }
+    
+    
 }
 
 
@@ -95,11 +104,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-//Método acionado pela subViewConteúdoFilho este controller é um delegate da referida View
+
 
 -(void)setPaginaAtual:(int)index{
     [numeroPaginas setText:[NSString stringWithFormat:@"%d de %d páginas", index, totalPaginas]];
 }
+
+//Métodos acionado pela subViewConteúdoFilho este controller é um delegate da referida View
 
 -(void)trocaAnimacao:(int)index{
     
@@ -122,6 +133,10 @@
     }
     
     
+}
+
+-(bool)apagaDelegates{
+    return !mantemDelegates;
 }
 
 @end

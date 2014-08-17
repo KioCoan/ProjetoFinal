@@ -19,6 +19,7 @@
     SKView *viewAnimacao;
     int totalPaginas;
     __weak IBOutlet UILabel *numeroPaginas;
+    bool mantemDelegates;
 }
 @property (weak, nonatomic) IBOutlet UIView *myViewContainer;
 

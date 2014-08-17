@@ -56,7 +56,9 @@
     //RESOLVE O PROBLEMA DE PROCESSAMENTO!
     [[self pageController] removeFromParentViewController];
     self.pageController = nil;
-    self.myDelegate = nil;
+    if ([self.myDelegate apagaDelegates]) {
+        self.myDelegate = nil;
+    }
 
 }
 
