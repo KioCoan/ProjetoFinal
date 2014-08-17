@@ -17,7 +17,7 @@
     SKLabelNode *controlePasso;
     SKLabelNode *mensagemErro;
     SpriteLabelNode *labelCriada;
-    int passo;
+    int etapa;
 }
 
 - (id)init{
@@ -31,14 +31,15 @@
         
         [self reinicializaExercicio];
         
-        
     }
     return self;
 }
 
-
-
 -(void)didMoveToView:(SKView *)view{
+    
+    //CRIA O GESTURE E A TEXT FIELD
+    
+    //GESTURE
     
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressGestureRecognizer:)];
     //[longPress setMinimumPressDuration:1.5];
@@ -47,7 +48,7 @@
     [longPress setMinimumPressDuration:1];
     [self.view addGestureRecognizer:longPress];
     
-    
+    //TEXT FIELD
     
     textField = [[UITextField alloc] initWithFrame:CGRectMake(self.size.width * 0.6, self.size.height * 0.30, 250, 40)];
     //UITextField *testando = [UITextField alloc]initWithFrame:CGREctM
@@ -72,6 +73,8 @@
 
 -(void)criaMensagemErro{
     
+    //CRIA MENSAGEM DE ERRO E SOM DE ERRO
+    
     mensagemErro = [[SKLabelNode alloc]init];
     mensagemErro.position = CGPointMake(70, 750);
     [mensagemErro setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
@@ -79,14 +82,36 @@
     mensagemErro.fontColor = [SKColor redColor];
     
     [self addChild:mensagemErro];
+    [self runAction:[SKAction playSoundFileNamed:@"errado.wav" waitForCompletion:NO]];
+}
+
+- (void)criarBotaoFinalizar{
+    
+    //CRIA BOTAO PARA VOLTAR A LISTA DE EXERCICIOS
+    
+    
+    SKLabelNode *finalizar = [[SKLabelNode alloc]init];
+    finalizar.text = @"Finalizar";
+    finalizar.position = CGPointMake(400, 200);
+    finalizar.fontSize = 70;
+    [finalizar setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    finalizar.name = @"botaoFinalizar";
+    
+    [self addChild:finalizar];
+    
+    
+    
 }
 
 
-- (void)criandoPasso{
+- (void)criandoLabelEtapa{
+    
+    //ESSE METODO CRIA A LABEL QUE MOSTRA EM QUAL PASSO DO EXERCICO ELE SE ENCONTRA
+    
     
     controlePasso = [[SKLabelNode alloc]initWithFontNamed:@"Helvetica"];
-    NSLog(@"criando label %d",passo);
-    controlePasso.text = [NSString stringWithFormat:@"%d/3",passo];
+    NSLog(@"criando label %d",etapa);
+    controlePasso.text = [NSString stringWithFormat:@"%d/3",etapa];
     
     controlePasso.position = CGPointMake(700, 500);
     
@@ -95,6 +120,8 @@
 }
 
 - (void)criaEnunciado{
+    
+    //CRIA ENUNCIADO DO EXERCICIO
     
     SKLabelNode *enunciado = [[SKLabelNode alloc]init];
     enunciado.text = @"Monte as variáveis conforme o trecho a seguir:";
@@ -112,7 +139,7 @@
     
     
     
-    if (passo > 3) {
+    if (etapa > 3) {
         NSLog(@"acabou");
         return;
     }
@@ -132,13 +159,82 @@
     trechoEmPortugol.position = CGPointMake(50, 800);
     trechoEmPortugol.fontColor = [SKColor yellowColor];
     [trechoEmPortugol setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
-    NSLog(@"vai incrementar %d" ,passo);
+    NSLog(@"vai incrementar %d" ,etapa);
     
-    NSLog(@"ja incrementou %d",passo);
+    NSLog(@"ja incrementou %d",etapa);
     [self addChild:trechoEmPortugol];
     
     
     
+    
+}
+
+- (void)criaBotoes{
+    
+    //CRIA BOTOES PARA CRIAR AS LABELS QUE SERAO INSERIDAS NA CAIXA
+    
+    float font = 40;
+    
+    //BOTAO TIPO
+    
+    SpriteLabelNode *botaoTipo = [[SpriteLabelNode alloc]initWithType:@"TIPO" texto:@"Tipo"];
+    botaoTipo.fontSize = font;
+    botaoTipo.name = @"botaoLabel";
+    botaoTipo.position = CGPointMake(100, 80);
+    [botaoTipo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    [self addChild:botaoTipo];
+    
+    
+    //BOTAO NOME
+    
+    
+    SpriteLabelNode *botaoNome = [[SpriteLabelNode alloc]initWithType:@"NOME" texto:@"Nome"];
+    botaoNome.fontSize = font;
+    botaoNome.name = @"botaoLabel";
+    botaoNome.position = CGPointMake(botaoTipo.position.x + 200, 80);
+    [botaoNome setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    [self addChild:botaoNome];
+    
+    //BOTAO CONTEUDO
+    
+    SpriteLabelNode *botaoConteudo = [[SpriteLabelNode alloc]initWithType:@"CONTEUDO" texto:@"Conteudo"];
+    botaoConteudo.fontSize = font;
+    botaoConteudo.name = @"botaoLabel";
+    botaoConteudo.position = CGPointMake(botaoNome.position.x + 300, 80);
+    [botaoNome setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    [self addChild:botaoConteudo];
+    
+    
+    
+}
+
+
+- (void)criaVariavel{
+    
+    //CRIA VARIAVEL (CAIXA)
+    
+    variavel = [[SpriteCaixaNode alloc]init];
+    [variavel setPosition:CGPointMake(400  , 500)];
+    
+    variavel.name = @"caixa";
+    [variavel iniciarAnimacaoIntroducao];
+    [self addChild:variavel];
+    
+}
+
+- (void)criaLabelTipo : (NSString*)tipo{
+    
+    
+    //CRIA LABELS  QUE SERAO INSERIDAS NA VARIAVEL
+    
+    
+    labelCriada = [[SpriteLabelNode alloc]initWithType:tipo texto:tipo];
+    labelCriada.fontSize = 60;
+    labelCriada.name = @"label";
+    labelCriada.position = CGPointMake(400, 200);
+    labelCriada.posicaoInicial = labelCriada.position;
+    [self addChild:labelCriada];
+    conteudoAtivo = labelCriada;
     
 }
 
@@ -191,71 +287,77 @@
     
 }
 
-- (void)criaBotoes{
-    
-    
-    float font = 40;
-    
-    
-    
-    SpriteLabelNode *botaoTipo = [[SpriteLabelNode alloc]initWithType:@"TIPO" texto:@"Tipo"];
-    botaoTipo.fontSize = font;
-    botaoTipo.name = @"botaoLabel";
-    botaoTipo.position = CGPointMake(100, 80);
-    [botaoTipo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
-    [self addChild:botaoTipo];
-    
-    
-    SpriteLabelNode *botaoNome = [[SpriteLabelNode alloc]initWithType:@"NOME" texto:@"Nome"];
-    botaoNome.fontSize = font;
-    botaoNome.name = @"botaoLabel";
-    botaoNome.position = CGPointMake(botaoTipo.position.x + 200, 80);
-    [botaoNome setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
-    [self addChild:botaoNome];
-    
-    
-    
-    SpriteLabelNode *botaoConteudo = [[SpriteLabelNode alloc]initWithType:@"CONTEUDO" texto:@"Conteudo"];
-    botaoConteudo.fontSize = font;
-    botaoConteudo.name = @"botaoLabel";
-    botaoConteudo.position = CGPointMake(botaoNome.position.x + 300, 80);
-    [botaoNome setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
-    [self addChild:botaoConteudo];
 
+- (void)longPressGestureRecognizer:(UILongPressGestureRecognizer *)recognizer{
+    
+    //RECONHECE O GESTURE DE LONGPRESS
+    
+    
+    if (recognizer.state == UIGestureRecognizerStateBegan && [conteudoAtivo.name isEqualToString:@"label"]){
+        
+        //HABILITA A TEXTFIELD
+        [textField setHidden:NO];
+    }
+    
     
     
 }
 
-
-
-
-
-- (void)criaVariavel{
+- (void)atualizaCaixa:(SpriteCaixaNode *)caixa Label:(SpriteLabelNode *)label{
     
-    variavel = [[SpriteCaixaNode alloc]init];
-    [variavel setPosition:CGPointMake(400  , 500)];
+    //INSERE O TEXTO DAS LABELS NA CAIXA
     
-    variavel.name = @"caixa";
-    [variavel iniciarAnimacaoIntroducao];
-    [self addChild:variavel];
+    
+    if ([label.tipo isEqualToString:@"CONTEUDO"]) {
+        [caixa setLabelConteudo:label.text];
+        labelCriada = nil;
+        [label removeFromParent];
+        
+    }else if ([label.tipo isEqualToString:@"TIPO"] && [self tipoCorreto:label.text]){
+        [caixa setLabelTipo:label.text];
+        labelCriada = nil;
+        [label removeFromParent];
+    }else if ([label.tipo isEqualToString:@"NOME"]){
+        [caixa setLabelNome:label.text];
+        labelCriada = nil;
+        [label removeFromParent];
+        
+    }else{
+        [labelCriada runAction:[SKAction moveTo:labelCriada.posicaoInicial duration:1]] ;
+    }
+    
+    
     
 }
 
-- (void)criaLabelTipo : (NSString*)tipo{
+- (BOOL)tipoCorreto : (NSString *)texto{
     
-    labelCriada = [[SpriteLabelNode alloc]initWithType:tipo texto:tipo];
-    labelCriada.fontSize = 60;
-    labelCriada.name = @"label";
-    labelCriada.position = CGPointMake(400, 200);
-    [self addChild:labelCriada];
-    conteudoAtivo = labelCriada;
+    //VERIFICA SE O TIPO DA LABEL FOR TIPO ENTAO VERIFICA SE O USUARIO DIGITOU UM DOS QUATROS TIPOS DE VARIAVEIS
     
+    if (![texto isEqualToString:@"caractere"] && ![texto isEqualToString:@"inteiro"] && ![texto isEqualToString:@"real"] && ![texto isEqualToString:@"logico"]) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERRO"
+                                                        message:@"TIPO DE VARIAVEL INEXISTENTE"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [self runAction:[SKAction playSoundFileNamed:@"errado.wav" waitForCompletion:NO]];
+        [alert show];
+        
+        
+        return NO;
+    }
+    
+    return YES;
 }
-
 
 - (BOOL)textFieldShouldReturn:(UITextField*)testando{
     
+    //METODO DE RETORNO DA TEXTFIELD
+    
     [testando resignFirstResponder];
+    
+    //VERIFICA SE O CONTEUDO ATIVO SE CHAMA LABEL
     if ([conteudoAtivo.name isEqualToString:@"label"]) {
         
         SpriteLabelNode *label = (SpriteLabelNode *)conteudoAtivo;
@@ -263,15 +365,10 @@
         if ([label.tipo isEqualToString:@"TIPO"]) {
             
             
-            if (![textField.text isEqualToString:@"caractere"] && ![textField.text isEqualToString:@"inteiro"] && ![textField.text isEqualToString:@"real"] && ![textField.text isEqualToString:@"logico"]) {
+            
+            if (![self tipoCorreto:textField.text]) {
                 
-                
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERRO"
-                                                                message:@"TIPO DE VARIAVEL INEXISTENTE"
-                                                               delegate:self
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-                [alert show];
+                //SENAO FOR ELE GERA UM ALERTA
                 
                 
                 return YES;
@@ -279,6 +376,7 @@
             
             
         }
+        //CASO ESTIVER CERTO ELE INSERE O TEXTO NA LABEL
         
         label.text = textField.text;
         
@@ -293,37 +391,9 @@
 }
 
 
-- (void)longPressGestureRecognizer:(UILongPressGestureRecognizer *)recognizer{
-    
-    
-    
-    
-    if (recognizer.state == UIGestureRecognizerStateBegan && [conteudoAtivo.name isEqualToString:@"caixa"]) {
-        NSLog(@"funcionou");
-    }else if (recognizer.state == UIGestureRecognizerStateBegan && [conteudoAtivo.name isEqualToString:@"label"]){
-        [textField setHidden:NO];
-    }
-    
-    
-    
-}
-
-- (void)atualizaCaixa:(SpriteCaixaNode *)caixa Label:(SpriteLabelNode *)label{
-    
-    
-    if ([label.tipo isEqualToString:@"CONTEUDO"]) {
-        [caixa setLabelConteudo:label.text];
-        
-    }else if ([label.tipo isEqualToString:@"TIPO"]){
-        [caixa setLabelTipo:label.text];
-    }else{
-        [caixa setLabelNome:label.text];
-    }
-    labelCriada = nil;
-    [label removeFromParent];
-}
-
 - (void)limpaTextField{
+    
+    //LIMPA A TEXTFIELD
     
     [textField resignFirstResponder];
     
@@ -332,29 +402,46 @@
 }
 
 - (void)reinicializaExercicio{
-    passo++;
-
+    //ESSE METODO INICIA E REINICIALIZA O EXERCICIO
+    
+    etapa++; //INCREMENTA O PASSO (ETAPA)
+    
+    //REMOVE A IMAGEM DA CENA
+    
     [mensagemErro removeFromParent];
     mensagemErro = nil;
-    if (passo > 3) {
-        NSLog(@"acabou");
-        SKLabelNode *acabou = [[SKLabelNode alloc]init];
-        acabou.text = @"Parabéns";
-        acabou.position = variavel.position;
-        acabou.fontSize = 90;
+    
+    
+    
+    if (etapa > 3) {
+        
+        //ACABOU O EXERCICIO
+        
+        //CRIA LABEL PARABENS
+        
+        SKLabelNode *parabens = [[SKLabelNode alloc]init];
+        parabens.text = @"Parabéns";
+        parabens.position = variavel.position;
+        parabens.fontSize = 90;
         [variavel removeFromParent];
-        [self addChild:acabou];
+        [self addChild:parabens];
+        
+        //PASSA YES PARA O USERDEFAULTS
+        
         [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeVariavel2"];
-        [self.myDelegate exercicioFinalizado];
+        [self criarBotaoFinalizar];
+        
         return;
     }
+    
+    //RETIRA NODES VELHOS E CRIA NOVOS
     
     [variavel removeFromParent];
     [trechoEmPortugol removeFromParent];
     [controlePasso removeFromParent];
     [self criaTrechoEmPortugol];
     [self criaVariavel];
-    [self criandoPasso];
+    [self criandoLabelEtapa];
     
     
 }
@@ -372,7 +459,7 @@
     if ([[variavel retornaTipo] isEqualToString:tipo] && [[variavel retornaNome] isEqualToString:nome] && [[variavel retornaConteudo] isEqualToString:conteudo]) {
         
         
-        
+        [self runAction:[SKAction playSoundFileNamed:@"correto.aiff" waitForCompletion:NO]];
         [self reinicializaExercicio];
         
         
@@ -405,13 +492,14 @@
         [textField setHidden:NO];
         
         
+    }else if ([conteudoAtivo.name isEqualToString:@"botaoFinalizar"]){
+        
+        //VOLTA A LISTA DE EXERCICIOS
+        [self.myDelegate exercicioFinalizado];
     }
     
     
 }
-
-
-
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     
