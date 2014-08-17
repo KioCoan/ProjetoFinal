@@ -17,6 +17,8 @@
     BOOL primeiraChamada;
     Animacao *cenaAtual;
     SKView *viewAnimacao;
+    int totalPaginas;
+    __weak IBOutlet UILabel *numeroPaginas;
 }
 @property (weak, nonatomic) IBOutlet UIView *myViewContainer;
 

@@ -31,6 +31,7 @@
     
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
     
+    
     [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     [self addChildViewController:self.pageController];
@@ -47,6 +48,7 @@
     
     teoria = [gerenciadorDeAssuntos retornaTeoriaFormatada];
     
+    //NSLog(@"%d", teoria.count);
 }
 
 -(void)viewDidDisappear:(BOOL)animated{

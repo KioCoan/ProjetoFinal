@@ -57,9 +57,8 @@
     cell.textLabel.text = [[titulosEDescricoes objectAtIndex:indexPath.row]valueForKey:@"titulo"];
     cell.detailTextLabel.text = [[titulosEDescricoes objectAtIndex:indexPath.row]valueForKey:@"descricao"];
     
-    BOOL completo = [[[titulosEDescricoes objectAtIndex:indexPath.row]objectForKey:@"exercicio"]verificaFinalizado];
-    
-    if(completo == YES){
+    //VERIFICA SE A O EXERCÍCIO DA LINHA SELECIONADA FOI COMPLETADO PARA INSERIR OU NÃO A IMAGEM
+    if([self verificarExercicioCompleto:indexPath.row]){
         UIImageView* imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"check.png"]];
         [imageView setFrame:CGRectMake(cell.frame.size.width - 50, 20, 40, 40)];
         [cell addSubview:imageView];
@@ -79,6 +78,15 @@
     
 
     [btnExercitar setHidden:NO];
+    
+    //VERIFICA SE A O EXERCÍCIO DA LINHA SELECIONADA FOI COMPLETADO PARA DEFINIR O TEXTO CORRETO
+    if([self verificarExercicioCompleto:indexPath.row]){
+        [btnExercitar setTitle:@"Refazer" forState:UIControlStateNormal];
+    
+    }else{
+        [btnExercitar setTitle:@"Iniciar" forState:UIControlStateNormal];
+    }
+    
     [gerenciador selecionaExercicio:(int)indexPath.row];
     
 }
@@ -90,6 +98,10 @@
     // Instancia somente o exercício clicado pelo usuário para que na proxima view ele esteja pronto para ser exibido
     
 
+}
+
+-(BOOL)verificarExercicioCompleto:(int)index{
+    return [[[titulosEDescricoes objectAtIndex:index]objectForKey:@"exercicio"]verificaFinalizado];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

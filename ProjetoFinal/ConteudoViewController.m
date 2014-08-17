@@ -46,11 +46,16 @@
     //INSTANCIO UM GERENCIADOR PARA BUSCAR AS INFORMAÇOES DO ASSUNTO
     gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     
+    //PEGO O NÚMERO DE PÁGINAS COM BASE NO TAMANHO DO VETOR DE TEORIA
+    totalPaginas = [[gerenciador retornaTeoriaFormatada] count];
+    //DEFINO POR PADRÃO A PRIMEIRA PÁGINA COMO ZERO
+    [self setPaginaAtual:1];
+    
     //DEFINO O TITULO DO NAVIGATION CONTROLLER DE ACORDO COM O NOME DO ASSUNTO
     [[self navigationItem] setTitle:gerenciador.retornaNomeAssuntoAtual];
     
     //CRIO UMA SKVIEW PARA INSERIR A SKSCENE
-    viewAnimacao = [[SKView alloc] initWithFrame:CGRectMake(0, 65, self.view.frame.size.width, 609)];
+    viewAnimacao = [[SKView alloc] initWithFrame:CGRectMake(0, 65, self.view.frame.size.width, 605)];
     
     
     //INSTANCIO A SKSCENE INICIAL DO ASSUNTO ATUAL
@@ -81,6 +86,10 @@
        }
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    
+}
+
 
 
 - (void)didReceiveMemoryWarning
@@ -91,7 +100,13 @@
 
 //Método acionado pela subViewConteúdoFilho este controller é um delegate da referida View
 
+-(void)setPaginaAtual:(int)index{
+    [numeroPaginas setText:[NSString stringWithFormat:@"%d de %d páginas", index, totalPaginas]];
+}
+
 -(void)trocaAnimacao:(int)index{
+    
+    [self setPaginaAtual:index];
     
     //CASO SEJA A PRIMEIRA  VEZ QUE ESTE MÉTODO É CHAMADO, ELE NÃO EXECUTA O RESTANTE DO CÓDIGO
     if(primeiraChamada){

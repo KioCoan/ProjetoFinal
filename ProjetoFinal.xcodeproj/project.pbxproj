@@ -128,6 +128,11 @@
 		BDE82C2519916E1F00610D96 /* senaoSe-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE82C2119916E1F00610D96 /* senaoSe-normal.png */; };
 		BDE82C2619916E1F00610D96 /* sprite-exclamacao.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE82C2219916E1F00610D96 /* sprite-exclamacao.png */; };
 		BDE82C291991778700610D96 /* SpriteCondicaoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE82C281991778700610D96 /* SpriteCondicaoNode.m */; };
+		BDEE0468199FE5E000EAC8ED /* imagem-teoria.png in Resources */ = {isa = PBXBuildFile; fileRef = BDEE0467199FE5E000EAC8ED /* imagem-teoria.png */; };
+		BDEE046A199FEC7E00EAC8ED /* icone-teoria.png in Resources */ = {isa = PBXBuildFile; fileRef = BDEE0469199FEC7E00EAC8ED /* icone-teoria.png */; };
+		BDEE046C19A00BF000EAC8ED /* icone-exercicio.png in Resources */ = {isa = PBXBuildFile; fileRef = BDEE046B19A00BF000EAC8ED /* icone-exercicio.png */; };
+		BDEE046E19A0162000EAC8ED /* icone-iniciar.png in Resources */ = {isa = PBXBuildFile; fileRef = BDEE046D19A0162000EAC8ED /* icone-iniciar.png */; };
+		BDEE047019A0224D00EAC8ED /* fundo-descricao.png in Resources */ = {isa = PBXBuildFile; fileRef = BDEE046F19A0224D00EAC8ED /* fundo-descricao.png */; };
 		BDF8ADEF197B255C00BA5B8A /* parte-resultado2.png in Resources */ = {isa = PBXBuildFile; fileRef = BDF8ADE7197B255C00BA5B8A /* parte-resultado2.png */; };
 		BDF8ADF0197B255C00BA5B8A /* parte-resultado3.png in Resources */ = {isa = PBXBuildFile; fileRef = BDF8ADE8197B255C00BA5B8A /* parte-resultado3.png */; };
 		BDF8ADF1197B255C00BA5B8A /* parte-resultado4.png in Resources */ = {isa = PBXBuildFile; fileRef = BDF8ADE9197B255C00BA5B8A /* parte-resultado4.png */; };
@@ -331,6 +336,11 @@
 		BDE82C2219916E1F00610D96 /* sprite-exclamacao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-exclamacao.png"; path = "Imagens/Sprites/Condicionais/sprite-exclamacao.png"; sourceTree = "<group>"; };
 		BDE82C271991778700610D96 /* SpriteCondicaoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteCondicaoNode.h; sourceTree = "<group>"; };
 		BDE82C281991778700610D96 /* SpriteCondicaoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteCondicaoNode.m; sourceTree = "<group>"; };
+		BDEE0467199FE5E000EAC8ED /* imagem-teoria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imagem-teoria.png"; path = "Imagens/imagem-teoria.png"; sourceTree = "<group>"; };
+		BDEE0469199FEC7E00EAC8ED /* icone-teoria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icone-teoria.png"; path = "Imagens/icone-teoria.png"; sourceTree = "<group>"; };
+		BDEE046B19A00BF000EAC8ED /* icone-exercicio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icone-exercicio.png"; path = "Imagens/icone-exercicio.png"; sourceTree = "<group>"; };
+		BDEE046D19A0162000EAC8ED /* icone-iniciar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icone-iniciar.png"; path = "Imagens/icone-iniciar.png"; sourceTree = "<group>"; };
+		BDEE046F19A0224D00EAC8ED /* fundo-descricao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fundo-descricao.png"; path = "Imagens/fundo-descricao.png"; sourceTree = "<group>"; };
 		BDF8ADE7197B255C00BA5B8A /* parte-resultado2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parte-resultado2.png"; path = "Imagens/Sprites/operadores/Parte Resultado/parte-resultado2.png"; sourceTree = "<group>"; };
 		BDF8ADE8197B255C00BA5B8A /* parte-resultado3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parte-resultado3.png"; path = "Imagens/Sprites/operadores/Parte Resultado/parte-resultado3.png"; sourceTree = "<group>"; };
 		BDF8ADE9197B255C00BA5B8A /* parte-resultado4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parte-resultado4.png"; path = "Imagens/Sprites/operadores/Parte Resultado/parte-resultado4.png"; sourceTree = "<group>"; };
@@ -858,6 +868,11 @@
 		E501FA69192FCD1600B56B5C /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BDEE046F19A0224D00EAC8ED /* fundo-descricao.png */,
+				BDEE046D19A0162000EAC8ED /* icone-iniciar.png */,
+				BDEE046B19A00BF000EAC8ED /* icone-exercicio.png */,
+				BDEE0469199FEC7E00EAC8ED /* icone-teoria.png */,
+				BDEE0467199FE5E000EAC8ED /* imagem-teoria.png */,
 				BDCCE534199D322C0063DF2B /* item-futuro.png */,
 				A521FEEC1993FE1E00D28627 /* saida-texto.png */,
 				BD510FE4198A035B0052B6E5 /* Condicionais */,
@@ -990,6 +1005,9 @@
 				BDC757A4196787E700DB8380 /* abrir-caixa7.png in Resources */,
 				BD510FE11989E8200052B6E5 /* lousa-teoria.jpg in Resources */,
 				BD325A471995EB7D00D15DBF /* errado.wav in Resources */,
+				BDEE046A199FEC7E00EAC8ED /* icone-teoria.png in Resources */,
+				BDEE046C19A00BF000EAC8ED /* icone-exercicio.png in Resources */,
+				BDEE046E19A0162000EAC8ED /* icone-iniciar.png in Resources */,
 				BDC40740199B1E18006CD7AE /* sprite-introducao3.png in Resources */,
 				E501FA6B192FCD3800B56B5C /* item-memoria.png in Resources */,
 				BDC40747199B29FD006CD7AE /* sprite-introducao9.png in Resources */,
@@ -999,6 +1017,7 @@
 				BD325A4C1995EB7D00D15DBF /* slider.mp3 in Resources */,
 				BDF8AE04197B258C00BA5B8A /* parte-valores4.png in Resources */,
 				BD5A552A198C972000D8722F /* se-verde.png in Resources */,
+				BDEE0468199FE5E000EAC8ED /* imagem-teoria.png in Resources */,
 				BDC757A9196787E700DB8380 /* abrir-caixa12.png in Resources */,
 				BDC7579E196787E700DB8380 /* abrir-caixa1.png in Resources */,
 				BDC757A7196787E700DB8380 /* abrir-caixa10.png in Resources */,
@@ -1036,6 +1055,7 @@
 				BDF8ADF5197B255C00BA5B8A /* parte-resultado8.png in Resources */,
 				120E8F8A192FC0A200CDEF95 /* Main.storyboard in Resources */,
 				BD4E5F2A19987BB60082632B /* operadores.mp3 in Resources */,
+				BDEE047019A0224D00EAC8ED /* fundo-descricao.png in Resources */,
 				BDF8AE02197B258C00BA5B8A /* parte-valores2.png in Resources */,
 				BD630CAB1948E3F400AF13E7 /* item-variavel.png in Resources */,
 				BDE82C2519916E1F00610D96 /* senaoSe-normal.png in Resources */,
