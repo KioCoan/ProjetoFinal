@@ -60,15 +60,10 @@ static const int ESPACAMENTO_BOTOES = 50;
     
     for(int i=0; i<nBotoesNasLinhas.count; i++){
         //INICIALIZA VIEW DE FUNDO
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(scroll.frame.origin.x, posicaoYView, scroll.frame.size.width, 200)];
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(scroll.frame.origin.x, posicaoYView, scroll.frame.size.width, 250)];
         [view setBackgroundColor:[UIColor whiteColor]];
         [scroll addSubview:view];
         
-        //INICIALIZA OS NUMEROS EXIBIDOS NA TELA
-//        UILabel *numero = [[UILabel alloc] initWithFrame:CGRectMake(10, 93, 10, 14)];
-//        [numero setText:[NSString stringWithFormat:@"%d", (i + 1)]];
-//        [numero setTextColor:[UIColor blackColor]];
-//        [view addSubview:numero];
         
         //POSIÇOES DO BOTAO
         int posicaoXBotao = (view.frame.size.width / 2) - (BOTAO_WIDTH / 2);
@@ -110,6 +105,8 @@ static const int ESPACAMENTO_BOTOES = 50;
     [botao addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:botao];
     
+    [self inserirLabelTituloAssunto:view titulo:botao.currentTitle];
+    
     return 1;
 }
 
@@ -135,6 +132,8 @@ static const int ESPACAMENTO_BOTOES = 50;
     
     [view addSubview:botao];
     [view addSubview:botao2];
+    
+    [self inserirLabelTituloAssunto:view titulo:botao.currentTitle];
     
     return 2;
 }
@@ -163,12 +162,31 @@ static const int ESPACAMENTO_BOTOES = 50;
     [view addSubview:botao];
     [view addSubview:botao2];
     
+    [self inserirLabelTituloAssunto:view titulo:botao.currentTitle];
+    
     return 3;
 }
 
 
 -(UIImage*)retornaImagemBotao:(int)contadorNomes{
     return [UIImage imageNamed:[NSString stringWithFormat:@"item-%@.png", [gerenciadorDeAssuntos getNomedoAssunto:contadorNomes]]];
+}
+
+
+-(void)inserirLabelTituloAssunto:(UIView*)view titulo:(NSString*)titulo{
+    CGRect frame;
+    frame.size.width = 100;
+    frame.size.height = 15;
+    frame.origin.x = ((view.frame.size.width / 2) - (frame.size.width / 2));
+    frame.origin.y = view.frame.size.height - 50;
+    
+    //INICIALIZA OS NUMEROS EXIBIDOS NA TELA
+    UILabel *texto = [[UILabel alloc] initWithFrame:frame];
+    [texto setText:titulo];
+    [texto setTextAlignment:NSTextAlignmentCenter];
+    [texto setTextColor:[UIColor grayColor]];
+    [texto setFont:[UIFont fontWithName:@"Avenir Next Condensed" size:17]];
+    [view addSubview:texto];
 }
 
 -(void)mostrarAssunto:(id)sender{
@@ -189,15 +207,6 @@ static const int ESPACAMENTO_BOTOES = 50;
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

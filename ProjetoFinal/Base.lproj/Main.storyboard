@@ -19,7 +19,7 @@
             </objects>
             <point key="canvasLocation" x="-1231" y="-125"/>
         </scene>
-        <!--Menu View Controller - Algorítmos-->
+        <!--Menu View Controller - Assuntos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="menu" id="BYZ-38-t0r" customClass="MenuViewController" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Algorítmos" id="606-HT-dcC"/>
+                    <navigationItem key="navigationItem" title="Assuntos" id="606-HT-dcC"/>
                     <connections>
                         <segue destination="wLQ-Hg-AQ8" kind="push" identifier="conteudoController" id="GP0-AC-7Ja"/>
                     </connections>
@@ -77,7 +77,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 de .. páginas" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9D-pI-883">
-                                <rect key="frame" x="652" y="689" width="96" height="25"/>
+                                <rect key="frame" x="639" y="689" width="109" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="18"/>
                                 <nil key="highlightedColor"/>

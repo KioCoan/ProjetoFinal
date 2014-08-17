@@ -178,7 +178,7 @@
     SKAction *somEncostouChao = [SKAction playSoundFileNamed:@"caixaEncostaChao.mp3" waitForCompletion:NO];
     NSString *myParticlePath = [[NSBundle mainBundle] pathForResource:@"AnimaVariavel" ofType:@"sks"];
     particula = [NSKeyedUnarchiver unarchiveObjectWithFile:myParticlePath];
-    particula.particlePosition = CGPointMake(-30, -120);
+    particula.particlePosition = CGPointMake(-30, self.size.height * -0.4);
     
     
     [self runAction:animacaoIntroducao completion:^{
