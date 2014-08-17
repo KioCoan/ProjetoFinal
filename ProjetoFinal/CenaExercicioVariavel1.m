@@ -8,7 +8,9 @@
 
 #import "CenaExercicioVariavel1.h"
 
-@implementation CenaExercicioVariavel1
+@implementation CenaExercicioVariavel1{
+    
+}
 
 
 
@@ -18,24 +20,30 @@
     if (self) {
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
+        
+        //CONFIGURANDO CODIGO EM PORTUGOL QUE APARECE QUANDO O USUARIO ACERTA
         codigo = [[SKLabelNode alloc]initWithFontNamed:@"HeadLine"];
         codigo.position = CGPointMake(50, 100);
         [codigo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
-        //codigo.text = @"teste";
-        
         [self addChild:codigo];
+        
+        
+        //CHAMANDO METODOS QUE CRIAM E ADICIONAM NODES
         
         [self criaEnunciado];
         [self criarCaixas];
-        [self criarLabels];
+        [self criaLabelsConteudo];
+        
         _corretos = 0;
         
     }
     return self;
 }
 
-
 - (void)criaEnunciado{
+    
+    //CRIA ENUNCIADO DO EXERCICIO
+    
     
     SKLabelNode *enunciado1 = [[SKLabelNode alloc]initWithFontNamed:@"HeadLine"];
     SKLabelNode *enunciado2 = [[SKLabelNode alloc]initWithFontNamed:@"HeadLine"];
@@ -58,11 +66,32 @@
     
 }
 
-- (void)criarLabels{
+- (void)criarBotaoFinalizar{
     
-    // criando vetor e labels
+    //CRIA BOTAO PARA VOLTAR A LISTA DE EXERCICIOS
+    
+    
+    SKLabelNode *finalizar = [[SKLabelNode alloc]init];
+    finalizar.text = @"Finalizar";
+    finalizar.position = CGPointMake(500, 80);
+    finalizar.fontSize = 70;
+    [finalizar setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    finalizar.name = @"botaoFinalizar";
+    
+    [self addChild:finalizar];
+    
+    
+    
+}
+
+- (void)criaLabelsConteudo{
+    
+    //CRIA LABELS DE CONTEUDO QUE SERAO ARRASTADAS PELO USUARIO
+    
     NSMutableArray *conteudos = [NSMutableArray array];
     
+    
+    //AS LABELS SAO CRIADAS CONFIGURADAS ATRAVES DE UM METODO E SAO ARMAZENADAS NO VETOR CONTEUDOS
     for (int i = 0; i < 4; i++) {
         SpriteLabelNode *conteudo = [[SpriteLabelNode alloc]init];
         conteudo.name = @"conteudo";
@@ -73,10 +102,10 @@
     
     
 
-    //embaralhando labels
+    //EMBARALHANDO LABELS DO VETOR
     conteudos = [self embaralha:conteudos];
     
-    // criando e inserindo posicoes
+    //INSERINDO POSICOES E TAMANHO EM CADA LABEL
     
     CGPoint posicaoOriginal = CGPointMake(650,  650);
     CGPoint posicao = posicaoOriginal;
@@ -99,8 +128,59 @@
     
 }
 
+- (void)criarCaixas{
+    
+    //METODO QUE CRIAR AS CAIXAS
+    
+    vetorCaixas = [NSMutableArray array];
+    CGSize tamanho = CGSizeMake(250, 257);
+    
+    //RECEBE AS CAIXAS DO METODO RETORNA CAIXA E ADICIONA NO VETORCAIXAS
+    for (int i = 0; i < 4; i++) {
+        SpriteCaixaNode *caixa = [self retornaCaixaPreConfigurada:tamanho indice:i];
+        [caixa setLabelEndereco:i+1];
+        [vetorCaixas addObject:caixa];
+    }
+    
+    
+    //EMBARALHA A ORDEM DAS CAIXAS DO VETOR
+    vetorCaixas = [self embaralha:vetorCaixas];
+    
+    //INSERINDO POSICIONAMENTO
+    
+    CGPoint primeiraPosicao = CGPointMake( 200.0,  630.0);
+    CGPoint posicao = primeiraPosicao;
+    
+    for (int i = 0; i < vetorCaixas.count; i++) {
+        
+        // caixas do lado direito
+        if (i == 2) {
+            
+            posicao = primeiraPosicao;
+            posicao.x += tamanho.width * 1.0;
+            [[vetorCaixas objectAtIndex:i] setPosition:posicao];
+            posicao.y -= tamanho.height * 1.15;
+            
+            
+            
+        }else{
+            [[vetorCaixas objectAtIndex:i] setPosition:posicao];
+            posicao.y -= tamanho.height * 1.15;
+            
+        }
+        
+        // inserindo nó
+        [[vetorCaixas objectAtIndex:i] iniciarAnimacaoIntroducao];
+        [self addChild:[vetorCaixas objectAtIndex:i]];
+    }
+    
+}
+
 - (void)configuraLabel:(SpriteLabelNode *)label indice :(int)indice{
     
+    //CONFIGURA AS LABELS CONTEUDOS UTILIZANDO O GERADOR QUE RETORNARA SEU TEXTO CONFORME O INDICE PASSADO COMO REFERENCIA
+    
+    //ESSE METODO É CHAMADO NO METODO "CRIA LABELS CONTEUDO"
     
     Gerador *gerador = [[Gerador alloc]init];
     
@@ -132,30 +212,11 @@
     
 }
 
-- (NSMutableArray *)embaralha :(NSMutableArray *)antigo{
+- (SpriteCaixaNode *)retornaCaixaPreConfigurada:(CGSize)size indice:(int)indice{
     
-    //EMBARALHA OS ITENS DE UM VETOR
-    
-    int n;
-    NSMutableArray *vetorEmbaralhado = [NSMutableArray array];
-    
-    while (antigo.count > 0) {
-        n = arc4random() % antigo.count;
-        
-        [vetorEmbaralhado addObject:[antigo objectAtIndex:n]];
-        [antigo removeObjectAtIndex:n];
-    }
-    
-    
-    
-    
-    return vetorEmbaralhado;
-    
-    
-    
-}
-
-- (SpriteCaixaNode *)configuraCaixa:(CGSize)size indice:(int)indice{
+    //CRIA E RETORNA A CAIXA COM UM NOME E TIPO DEFINIDO
+    //ESSE METODO É CHAMADO PELO METODO "CRIAR CAIXA"
+    //UTILIZA O GERADOR
     
     Gerador *gerador = [[Gerador alloc]init];
     
@@ -197,55 +258,72 @@
     
 }
 
-- (void)criarCaixas{
+- (NSMutableArray *)embaralha :(NSMutableArray *)antigo{
     
-    // Criar as caixas
-    vetorCaixas = [NSMutableArray array];
-    //CGSize tamanho = CGSizeMake( 290,  320);
-    CGSize tamanho = CGSizeMake(250, 257);
-    //CGSize tamanho = CGSizeMake(200, 213.6);
+    //EMBARALHA OS ITENS DE UM VETOR
     
-    for (int i = 0; i < 4; i++) {
-        SpriteCaixaNode *caixa = [self configuraCaixa:tamanho indice:i];
-        //caixa.size = tamanho;
-        [caixa setLabelEndereco:i+1];
-        [vetorCaixas addObject:caixa];
+    int n;
+    NSMutableArray *vetorEmbaralhado = [NSMutableArray array];
+    
+    while (antigo.count > 0) {
+        n = arc4random() % antigo.count;
+        
+        [vetorEmbaralhado addObject:[antigo objectAtIndex:n]];
+        [antigo removeObjectAtIndex:n];
     }
     
     
-    //embaralha ordem das caixas
-    vetorCaixas = [self embaralha:vetorCaixas];
     
-    //criando e inserindo posicoes
     
-    CGPoint primeiraPosicao = CGPointMake( 200.0,  630.0);
-    CGPoint posicao = primeiraPosicao;
+    return vetorEmbaralhado;
     
-    for (int i = 0; i < vetorCaixas.count; i++) {
-        
-        // caixas do lado direito
-        if (i == 2) {
-            
-            posicao = primeiraPosicao;
-            posicao.x += tamanho.width * 1.0;
-            [[vetorCaixas objectAtIndex:i] setPosition:posicao];
-            posicao.y -= tamanho.height * 1.15;
-            
-            
-            
-        }else{
-            [[vetorCaixas objectAtIndex:i] setPosition:posicao];
-            posicao.y -= tamanho.height * 1.15;
-            
-        }
-        
-        // inserindo nó
-        [[vetorCaixas objectAtIndex:i] iniciarAnimacaoIntroducao];
-        [self addChild:[vetorCaixas objectAtIndex:i]];
-    }
+    
     
 }
 
+-(void)traduzParaPortugol: (SpriteCaixaNode *)c{
+    
+    //ESSE METODO ESCREVE O CODIGO EM PORTUGOL CADA VEZ QUE O USUARIO INSERE O CONTEUDO NA VARIAVEL CERTA
+    
+    //PEGA OS TEXTOS CONFORME A CAIXA E O CONTEUDO ATIVO QUE É O CONTEUDO INSERIDO
+    NSString *nomeVariavel = [c retornaNome];
+    NSString *tipoVariavel = [c retornaTipo];
+    NSString *valor = [conteudoAtivo text];
+    
+    
+    //CONCATENA STRING
+    
+    NSArray *strings = [[NSArray alloc]initWithObjects:tipoVariavel ,nomeVariavel,@"<-",valor ,nil];
+    
+    NSString *portugol = [strings componentsJoinedByString:@" "];
+    //ADICIONA NA LABEL CODIGO
+    codigo.text = portugol;
+}
+
+-(void)verificaConclusao{
+    
+    //VERIFICA SE O EXERCICIO JA ACABOU
+    
+    if (_corretos == 4) {
+        
+        //EXERCICIO CONCLUIDO
+        //PASSA YES PARA O USERDEFAULTS
+        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeVariavel1"];
+        
+        //CRIA LABEL PARABENS
+        SKLabelNode *parabens = [[SKLabelNode alloc]init];
+        parabens.text = @"Parabéns";
+        parabens.position = CGPointMake(400, 500);
+        parabens.fontSize = 90;
+        [self addChild:parabens];
+        
+        //CRIA BOTAO FINALIZAR
+        [self criarBotaoFinalizar];
+        
+        
+        
+    }
+}
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 
@@ -253,8 +331,19 @@
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
 
+    
+    
+    
+    //VERIFICA CONTEUDO CLICADO
+    
+    
     if([node.name isEqualToString:@"conteudo"]){
+        
+        
         conteudoAtivo = (SpriteLabelNode *) [self nodeAtPoint:location];
+    }else if ([node.name isEqualToString:@"botaoFinalizar"]){
+        //VOLTA PARA A TELA ANTERIOR
+        [self.myDelegate exercicioFinalizado];
     }
     
     
@@ -325,42 +414,4 @@
 
 
 
--(void)traduzParaPortugol: (SpriteCaixaNode *)c{
-    
-    
-    
-    NSString *nomeVariavel = [c retornaNome];
-    NSString *tipoVariavel = [c retornaTipo];
-    NSString *valor = [conteudoAtivo text];
-    
-    
-    //CONCATENA STRING
-    
-    NSArray *strings = [[NSArray alloc]initWithObjects:tipoVariavel ,nomeVariavel,@"<-",valor ,nil];
-    
-    NSString *portugol = [strings componentsJoinedByString:@" "];
-    codigo.text = portugol;
-}
-
-
--(void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
-}
-
--(void)verificaConclusao{
-    if (_corretos == 4) {
-        
-        //EXERCICIO CONCLUIDO
-        
-        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeVariavel1"];
-        SKLabelNode *acabou = [[SKLabelNode alloc]init];
-        acabou.text = @"Parabéns";
-        acabou.position = CGPointMake(400, 500);
-        acabou.fontSize = 90;
-        [self addChild:acabou];
-        
-        [self.myDelegate exercicioFinalizado];
-        
-    }
-}
 @end
