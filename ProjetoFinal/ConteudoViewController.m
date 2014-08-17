@@ -95,9 +95,6 @@
     
 }
 
-
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -123,7 +120,7 @@
     }
    
     SKTransition *reveal = [SKTransition fadeWithDuration:1];
-    SKScene* proximaAnimacao = [gerenciador retornaAnimacaoNumero:index];
+    Animacao *proximaAnimacao = [gerenciador retornaAnimacaoNumero:index];
     [proximaAnimacao setSize: viewAnimacao.frame.size];
     proximaAnimacao.scaleMode = SKSceneScaleModeAspectFill;
     

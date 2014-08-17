@@ -18,9 +18,9 @@
     self = [super init];
     
     if(self){
-        nomesDosAssuntos = [NSArray arrayWithObjects:@"variáveis",
-                            @"operadores",
-                            @"condicionais",
+        nomesDosAssuntos = [NSArray arrayWithObjects:@"Variáveis",
+                            @"Operadores",
+                            @"Condicionais",
                             @"em breve",
                             @"em breve",
                             @"em breve",

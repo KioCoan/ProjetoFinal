@@ -282,9 +282,9 @@
     </scenes>
     <resources>
         <image name="fundo-descricao.png" width="529" height="193"/>
-        <image name="icone-exercicio.png" width="208" height="208"/>
+        <image name="icone-exercicio.png" width="100" height="100"/>
         <image name="icone-iniciar.png" width="300" height="304"/>
-        <image name="icone-teoria.png" width="208" height="208"/>
+        <image name="icone-teoria.png" width="100" height="100"/>
         <image name="imagem-teoria.png" width="768" height="350"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

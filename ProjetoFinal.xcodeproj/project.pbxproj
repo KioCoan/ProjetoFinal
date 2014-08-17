@@ -81,10 +81,11 @@
 		BD5DE21119972138007849DB /* bt-play.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5DE21019972138007849DB /* bt-play.png */; };
 		BD5DE21419972335007849DB /* SpriteAtualizarNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5DE21319972335007849DB /* SpriteAtualizarNode.m */; };
 		BD5DE218199730E4007849DB /* img-controles.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5DE217199730E4007849DB /* img-controles.png */; };
-		BD630CAB1948E3F400AF13E7 /* item-variáveis.png in Resources */ = {isa = PBXBuildFile; fileRef = BD630CAA1948E3F400AF13E7 /* item-variáveis.png */; };
 		BD66B651197F6F16000BB548 /* atualizar-dados.png in Resources */ = {isa = PBXBuildFile; fileRef = BD66B650197F6F16000BB548 /* atualizar-dados.png */; };
 		BD66B653197F9327000BB548 /* fundo-transparente.png in Resources */ = {isa = PBXBuildFile; fileRef = BD66B652197F9327000BB548 /* fundo-transparente.png */; };
-		BD8C66E9197E522500A4946C /* item-operadores.png in Resources */ = {isa = PBXBuildFile; fileRef = BD8C66E8197E522500A4946C /* item-operadores.png */; };
+		BD9DF26E19A171A2003938C9 /* item-Condicionais.png in Resources */ = {isa = PBXBuildFile; fileRef = BD9DF26B19A171A2003938C9 /* item-Condicionais.png */; };
+		BD9DF26F19A171A2003938C9 /* item-Operadores.png in Resources */ = {isa = PBXBuildFile; fileRef = BD9DF26C19A171A2003938C9 /* item-Operadores.png */; };
+		BD9DF27019A171A2003938C9 /* item-Variáveis.png in Resources */ = {isa = PBXBuildFile; fileRef = BD9DF26D19A171A2003938C9 /* item-Variáveis.png */; };
 		BDA68F3D199819C400BD0527 /* valores-errado.png in Resources */ = {isa = PBXBuildFile; fileRef = BDA68F3C199819C400BD0527 /* valores-errado.png */; };
 		BDB4810B196CB7FC00D5901A /* Operadores.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB4810A196CB7FC00D5901A /* Operadores.m */; };
 		BDB48111196CB89400D5901A /* AnimaOperadores.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB48110196CB89400D5901A /* AnimaOperadores.m */; };
@@ -119,7 +120,6 @@
 		BDC757A8196787E700DB8380 /* abrir-caixa11.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC7579B196787E700DB8380 /* abrir-caixa11.png */; };
 		BDC757A9196787E700DB8380 /* abrir-caixa12.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC7579C196787E700DB8380 /* abrir-caixa12.png */; };
 		BDC757AA196787E700DB8380 /* abrir-caixa13.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC7579D196787E700DB8380 /* abrir-caixa13.png */; };
-		BDCCE533199D2F430063DF2B /* item-condicionais.png in Resources */ = {isa = PBXBuildFile; fileRef = BDCCE532199D2F430063DF2B /* item-condicionais.png */; };
 		BDCCE535199D322C0063DF2B /* item-em breve.png in Resources */ = {isa = PBXBuildFile; fileRef = BDCCE534199D322C0063DF2B /* item-em breve.png */; };
 		BDD2C07E19995B78003D557E /* Animacao.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD2C07D19995B78003D557E /* Animacao.m */; };
 		BDE82C2319916E1F00610D96 /* se-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = BDE82C1F19916E1F00610D96 /* se-normal.png */; };
@@ -280,10 +280,11 @@
 		BD5DE21219972335007849DB /* SpriteAtualizarNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteAtualizarNode.h; sourceTree = "<group>"; };
 		BD5DE21319972335007849DB /* SpriteAtualizarNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteAtualizarNode.m; sourceTree = "<group>"; };
 		BD5DE217199730E4007849DB /* img-controles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-controles.png"; sourceTree = "<group>"; };
-		BD630CAA1948E3F400AF13E7 /* item-variáveis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-variáveis.png"; path = "Imagens/item-variáveis.png"; sourceTree = "<group>"; };
 		BD66B650197F6F16000BB548 /* atualizar-dados.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "atualizar-dados.png"; path = "Imagens/atualizar-dados.png"; sourceTree = "<group>"; };
 		BD66B652197F9327000BB548 /* fundo-transparente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fundo-transparente.png"; path = "Imagens/fundo-transparente.png"; sourceTree = "<group>"; };
-		BD8C66E8197E522500A4946C /* item-operadores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-operadores.png"; path = "Imagens/item-operadores.png"; sourceTree = "<group>"; };
+		BD9DF26B19A171A2003938C9 /* item-Condicionais.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-Condicionais.png"; path = "Imagens/item-Condicionais.png"; sourceTree = "<group>"; };
+		BD9DF26C19A171A2003938C9 /* item-Operadores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-Operadores.png"; path = "Imagens/item-Operadores.png"; sourceTree = "<group>"; };
+		BD9DF26D19A171A2003938C9 /* item-Variáveis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-Variáveis.png"; path = "Imagens/item-Variáveis.png"; sourceTree = "<group>"; };
 		BDA68F3C199819C400BD0527 /* valores-errado.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "valores-errado.png"; path = "Imagens/Sprites/Condicionais/valores-errado.png"; sourceTree = "<group>"; };
 		BDB48109196CB7FC00D5901A /* Operadores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operadores.h; sourceTree = "<group>"; };
 		BDB4810A196CB7FC00D5901A /* Operadores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operadores.m; sourceTree = "<group>"; };
@@ -325,7 +326,6 @@
 		BDC7579B196787E700DB8380 /* abrir-caixa11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "abrir-caixa11.png"; path = "Imagens/Sprites/variavel/abrir-caixa11.png"; sourceTree = "<group>"; };
 		BDC7579C196787E700DB8380 /* abrir-caixa12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "abrir-caixa12.png"; path = "Imagens/Sprites/variavel/abrir-caixa12.png"; sourceTree = "<group>"; };
 		BDC7579D196787E700DB8380 /* abrir-caixa13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "abrir-caixa13.png"; path = "Imagens/Sprites/variavel/abrir-caixa13.png"; sourceTree = "<group>"; };
-		BDCCE532199D2F430063DF2B /* item-condicionais.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-condicionais.png"; path = "Imagens/item-condicionais.png"; sourceTree = "<group>"; };
 		BDCCE534199D322C0063DF2B /* item-em breve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-em breve.png"; path = "Imagens/item-em breve.png"; sourceTree = "<group>"; };
 		BDD2C07C19995B78003D557E /* Animacao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animacao.h; sourceTree = "<group>"; };
 		BDD2C07D19995B78003D557E /* Animacao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animacao.m; sourceTree = "<group>"; };
@@ -868,6 +868,9 @@
 		E501FA69192FCD1600B56B5C /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BD9DF26B19A171A2003938C9 /* item-Condicionais.png */,
+				BD9DF26C19A171A2003938C9 /* item-Operadores.png */,
+				BD9DF26D19A171A2003938C9 /* item-Variáveis.png */,
 				BDEE047119A06C9900EAC8ED /* check.png */,
 				BDEE046F19A0224D00EAC8ED /* fundo-descricao.png */,
 				BDEE046D19A0162000EAC8ED /* icone-iniciar.png */,
@@ -879,9 +882,6 @@
 				BD510FE4198A035B0052B6E5 /* Condicionais */,
 				BDBE7699197A3B57004EA926 /* Operadores */,
 				BDC75790196787CF00DB8380 /* Variavel */,
-				BD630CAA1948E3F400AF13E7 /* item-variáveis.png */,
-				BD8C66E8197E522500A4946C /* item-operadores.png */,
-				BDCCE532199D2F430063DF2B /* item-condicionais.png */,
 				BD5DE217199730E4007849DB /* img-controles.png */,
 				BD5DE21019972138007849DB /* bt-play.png */,
 				846B738D19782427009C2EB7 /* fundo-cinza.png */,
@@ -982,10 +982,8 @@
 				BDBE769D197A3B69004EA926 /* parte-operador.png in Resources */,
 				BDC757A8196787E700DB8380 /* abrir-caixa11.png in Resources */,
 				BD4E5F2619987A020082632B /* refresh.mp3 in Resources */,
-				BD8C66E9197E522500A4946C /* item-operadores.png in Resources */,
 				BDE82C2619916E1F00610D96 /* sprite-exclamacao.png in Resources */,
 				BDF8ADF4197B255C00BA5B8A /* parte-resultado7.png in Resources */,
-				BDCCE533199D2F430063DF2B /* item-condicionais.png in Resources */,
 				91A7A956198F56DC009A5EB1 /* ConceitosCondicionais.txt in Resources */,
 				BD325A491995EB7D00D15DBF /* exclamacao.mp3 in Resources */,
 				BD5DE21119972138007849DB /* bt-play.png in Resources */,
@@ -1016,6 +1014,7 @@
 				BDC757A1196787E700DB8380 /* abrir-caixa4.png in Resources */,
 				120E8F81192FC0A200CDEF95 /* InfoPlist.strings in Resources */,
 				BD325A4C1995EB7D00D15DBF /* slider.mp3 in Resources */,
+				BD9DF27019A171A2003938C9 /* item-Variáveis.png in Resources */,
 				BDF8AE04197B258C00BA5B8A /* parte-valores4.png in Resources */,
 				BD5A552A198C972000D8722F /* se-verde.png in Resources */,
 				BDEE0468199FE5E000EAC8ED /* imagem-teoria.png in Resources */,
@@ -1053,17 +1052,18 @@
 				BDC40743199B1E18006CD7AE /* sprite-introducao6.png in Resources */,
 				BDC40749199B2F70006CD7AE /* caixaEncostaChao.mp3 in Resources */,
 				BDF8ADF5197B255C00BA5B8A /* parte-resultado8.png in Resources */,
+				BD9DF26F19A171A2003938C9 /* item-Operadores.png in Resources */,
 				120E8F8A192FC0A200CDEF95 /* Main.storyboard in Resources */,
 				BD4E5F2A19987BB60082632B /* operadores.mp3 in Resources */,
 				BDEE047019A0224D00EAC8ED /* fundo-descricao.png in Resources */,
 				BDF8AE02197B258C00BA5B8A /* parte-valores2.png in Resources */,
-				BD630CAB1948E3F400AF13E7 /* item-variáveis.png in Resources */,
 				BDE82C2519916E1F00610D96 /* senaoSe-normal.png in Resources */,
 				BDC40745199B1E18006CD7AE /* sprite-introducao8.png in Resources */,
 				BDBE769F197A3B69004EA926 /* parte-valores1.png in Resources */,
 				A521FEED1993FE1E00D28627 /* saida-texto.png in Resources */,
 				BDF8AE05197B258C00BA5B8A /* parte-valores5.png in Resources */,
 				BDF8AE0D197B417500BA5B8A /* parte-resultado10.png in Resources */,
+				BD9DF26E19A171A2003938C9 /* item-Condicionais.png in Resources */,
 				BDC757A6196787E700DB8380 /* abrir-caixa9.png in Resources */,
 				BDF8AE09197B258C00BA5B8A /* parte-valores9.png in Resources */,
 			);
