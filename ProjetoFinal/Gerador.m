@@ -22,6 +22,7 @@
                                   @"numeroMesas",
                                   @"numeroAlunos",
                                   @"numeroTeclas",nil];
+        
         nomesVariaveisReais = [NSArray arrayWithObjects:@"nota",
                                @"minhaDivida",
                                @"media",
@@ -89,6 +90,9 @@
     if([operador isEqualToString:@"LÓGICO"]){
         return [self retornaValorLogico];
     
+    }else if([operador isEqualToString:@"RELACIONAL"]){
+        return [self retornaValorInteiro:1 ate:500];
+        
     }else{
         return [self retornaValorFloat:1 ate:100];
     }

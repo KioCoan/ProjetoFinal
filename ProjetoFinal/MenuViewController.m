@@ -174,19 +174,34 @@ static const int ESPACAMENTO_BOTOES = 50;
 
 
 -(void)inserirLabelTituloAssunto:(UIView*)view titulo:(NSString*)titulo{
+//    CGRect frame;
+//    frame.size.width = 100;
+//    frame.size.height = 15;
+//    frame.origin.x = ((view.frame.size.width / 2) - (frame.size.width / 2));
+//    frame.origin.y = view.frame.size.height - 50;
+    
+    //INICIALIZA OS NUMEROS EXIBIDOS NA TELA
+//    UILabel *texto = [[UILabel alloc] initWithFrame:frame];
+//    [texto setText:titulo];
+//    [texto setTextAlignment:NSTextAlignmentCenter];
+//    [texto setTextColor:[UIColor grayColor]];
+//    [texto setFont:[UIFont fontWithName:@"Avenir Next Condensed" size:17]];
+//    [view addSubview:texto];
+    
+    
     CGRect frame;
     frame.size.width = 100;
     frame.size.height = 15;
-    frame.origin.x = ((view.frame.size.width / 2) - (frame.size.width / 2));
-    frame.origin.y = view.frame.size.height - 50;
+    frame.origin.x = 10;
+    frame.origin.y = ((view.frame.size.height / 2) - (frame.size.height / 2));
     
     //INICIALIZA OS NUMEROS EXIBIDOS NA TELA
-    UILabel *texto = [[UILabel alloc] initWithFrame:frame];
-    [texto setText:titulo];
-    [texto setTextAlignment:NSTextAlignmentCenter];
-    [texto setTextColor:[UIColor grayColor]];
-    [texto setFont:[UIFont fontWithName:@"Avenir Next Condensed" size:17]];
-    [view addSubview:texto];
+    UILabel *texto2 = [[UILabel alloc] initWithFrame:frame];
+    [texto2 setText:titulo];
+    [texto2 setTextAlignment:NSTextAlignmentLeft];
+    [texto2 setTextColor:[UIColor grayColor]];
+    [texto2 setFont:[UIFont fontWithName:@"Avenir Next Condensed" size:17]];
+    [view addSubview:texto2];
 }
 
 -(void)mostrarAssunto:(id)sender{

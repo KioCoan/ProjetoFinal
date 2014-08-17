@@ -60,7 +60,7 @@
     //VERIFICA SE A O EXERCÍCIO DA LINHA SELECIONADA FOI COMPLETADO PARA INSERIR OU NÃO A IMAGEM
     if([self verificarExercicioCompleto:indexPath.row]){
         UIImageView* imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"check.png"]];
-        [imageView setFrame:CGRectMake(cell.frame.size.width - 50, 20, 40, 40)];
+        [imageView setFrame:CGRectMake(cell.frame.size.width - 50, 15, 35, 35)];
         [cell addSubview:imageView];
     }
     
