@@ -18,9 +18,10 @@
     NSString *valor1;
     NSString *valor2;
     NSString *resultado;
+    SKNode *nodeClicado;
     SpriteLabelNode *operador;
-    SpriteLabelNode *atribuicao;
-    SpriteLabelNode *conteudoAtivo;
+    SKSpriteNode *espacoClicado;
+    //SpriteLabelNode *conteudoAtivo;
     BOOL move;
 }
 
@@ -62,6 +63,20 @@
     
 }
 
+-(void)didMoveToView:(SKView *)view{
+    
+    //CRIA O GESTURE E A TEXT FIELD
+    
+    //GESTURE
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressGestureRecognizer:)];
+    //[longPress setMinimumPressDuration:1.5];
+    //[longPress setNumberOfTouchesRequired:2];
+    [longPress setNumberOfTouchesRequired:1];
+    [longPress setMinimumPressDuration:1];
+    [self.view addGestureRecognizer:longPress];
+    
+}
 
 
 - (void)criaEnunciado{
@@ -86,6 +101,73 @@
     [self addChild:enunciado2];
     
 }
+
+- (void)criaSpriteOperador{
+    
+    CGPoint posicaoInicial = CGPointMake(200, 650);
+    CGPoint posicaoMutavel = posicaoInicial;
+    
+    
+    for (int i = 0; i < 6; i++) {
+        
+        
+        [self geraDadosAleatorio];
+        
+        
+        SpriteOperadorNode *spriteOperador = [[SpriteOperadorNode alloc]init];
+        [spriteOperador setLabelValor1:valor1];
+        [spriteOperador setLabelValor2:valor2];
+        [spriteOperador setLabelResultado:resultado];
+        spriteOperador.name = @"sprite";
+        
+        
+        SKSpriteNode *espaco = [[SKSpriteNode alloc]initWithImageNamed:@"fundo-transparente.png"];
+        espaco.position = posicaoMutavel;
+        [espaco setPosition:CGPointMake(posicaoMutavel.x, posicaoMutavel.y + 60)];
+        espaco.size = CGSizeMake(105, 105);
+        espaco.name = @"espaco";
+        
+        spriteOperador.position = posicaoMutavel;
+        
+        
+        
+        
+        
+        [self addChild:spriteOperador];
+        [spriteOperador iniciarAnimacaoAbrir];
+        [self addChild:espaco];
+        
+        NSDictionary *expressao = @{
+                                    @"espaco":espaco,
+                                    @"spriteOperador":spriteOperador
+                                    };
+        
+        [expressoes addObject:expressao];
+        
+        if (((i+1) % 2) != 0) {
+            posicaoMutavel.x = 550;
+        }else{
+            posicaoMutavel.x = posicaoInicial.x;
+            posicaoMutavel.y -= 200;
+        }
+        
+        
+    }
+    
+    
+    
+}
+
+- (SpriteLabelNode *)criaLabel:(NSString *)texto name:(NSString*)name{
+    
+    SpriteLabelNode *aux = [[SpriteLabelNode alloc]initWithType:nil texto:texto];
+    aux.name = name;
+    aux.fontSize = 65;
+    
+    return aux;
+    
+}
+
 
 - (NSMutableArray *)embaralha :(NSMutableArray *)antigo{
     
@@ -159,152 +241,54 @@
     resultado = aux;
     }
 
-- (void)criaSpriteOperador{
-   
-    CGPoint posicaoInicial = CGPointMake(200, 650);
-    CGPoint posicaoMutavel = posicaoInicial;
-    
-    
-    for (int i = 0; i < 6; i++) {
-        
-        
-        [self geraDadosAleatorio];
-        
-        
-        SpriteOperadorNode *spriteOperador = [[SpriteOperadorNode alloc]init];
-        [spriteOperador setLabelValor1:valor1];
-        [spriteOperador setLabelValor2:valor2];
-        [spriteOperador setLabelResultado:resultado];
-        spriteOperador.name = @"sprite";
-        
-        
-        
-        spriteOperador.position = posicaoMutavel;
-        
-        
-        
-        [expressoes addObject:spriteOperador];
-        
-        [self addChild:spriteOperador];
-        
-        
-        
-        
-        
-        if (((i+1) % 2) != 0) {
-            posicaoMutavel.x = 550;
-        }else{
-            posicaoMutavel.x = posicaoInicial.x;
-            posicaoMutavel.y -= 200;
-        }
-        
-        
-    }
-    
-    
-    
-}
 
-
-
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+- (void)longPressGestureRecognizer:(UILongPressGestureRecognizer *)recognizer{
     
-    //criando toque e posicao
-    UITouch *touch = [touches anyObject];
-    CGPoint location = [touch locationInNode:self];
-    SKNode* teste = [self nodeAtPoint:location];
+    //RECONHECE O GESTURE DE LONGPRESS
     
-    if ([teste.name isEqualToString:@"labelOperador"]) {
-        conteudoAtivo = (SpriteLabelNode *) [self nodeAtPoint:location];
-        move = YES;
-    }
     
-}
-
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    //se move estiver YES entao pode mover o NODE
-    
-    if (move) {
+    if (recognizer.state == UIGestureRecognizerStateBegan && [nodeClicado.name isEqualToString:@"espaco"]){
         
-        //identificando toque e posicao
-        UITouch *touch = [touches anyObject];
-        CGPoint location = [touch locationInNode:self];
+        //HABILITA A TEXTFIELD
         
-        //setando posicao no NODE
-            [conteudoAtivo setPosition:location];
+        for (NSDictionary *expresssao in expressoes) {
             
-       
-    }
-    
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    
-    
-    if ([conteudoAtivo.name isEqualToString:@"labelOperador"] && conteudoAtivo) {
-        
-        conteudoAtivo.dentro = NO;
-        
-        for (SpriteOperadorNode *spriteOperador in expressoes) { //Ao soltar o node de resposta em algum lugar varre o vetor de caixas para descobrir sobre quem está
-            
-            
-            valor1 = [spriteOperador getValor1];
-            valor2 = [spriteOperador getValor2];
-            resultado = [spriteOperador getResultado];
-            
-            
-            //COORDENADAS PARA A CAIXA
-            OperadorNode *teste = [spriteOperador retornaOperadorNode];
-            float xInicio = teste.frame.origin.x;
-            float width = teste.size.width;
-            float xFim = xInicio + teste.frame.size.width;
-            float xMeio = (xInicio + xFim)/2;
-            float yInicio = teste.frame.origin.y;
-            float yFim = yInicio + teste.frame.size.height;
-            float heith = teste.size.height;
-            float yMeio = (yInicio + yFim)/2;
-            
-            
-            //verifica se o nó movido esta dentro das coordenadas da caixa
-            
-            if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
+            SKSpriteNode *espaco = [expresssao objectForKey:@"espaco"];
+            SpriteOperadorNode *spriteOperador = [expresssao objectForKey:@"spriteOperador"];
+            if ([espaco isEqual:nodeClicado] && ![[spriteOperador getOperador] isEqualToString:@""]) {
                 
+                operador = [self criaLabel:[spriteOperador getOperador] name:@"labelOperador"];
                 
+                [operador setPosicaoInicial:CGPointMake(400, 50)];
+                operador.position = operador.posicaoInicial;
+                [spriteOperador setLabelOperador:@""];
+                [self addChild:operador];
                 
-                    //primeiro verifica se ja existe algum o operador na caixa
-                
-                    //CHAMA O CALCULADOR E SE A EXPRESSAO ESTA CORRETA
-                    
-                    if (![self operadorNasCordenadasX:xMeio Y:yMeio]  && [resultado isEqualToString:[calculador calculaOperador:conteudoAtivo.text numero1:valor1 numero2:valor2]]) { //se a resposta do calculador for a mesma da expressao
-                        [conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa
-                        NSLog(@"funcionou");
-                        conteudoAtivo.dentro = YES;
-                        _corretos++;
-                        [self corrigirExercicio];
-                        
-                    }else{
-                        [self animacaoOperadorErrado];                    }
-
+                for (SpriteLabelNode *operadorVetor in opcoes) {
+                    if ([operador.text isEqualToString:operadorVetor.text] && operadorVetor.dentro) {
+                        operadorVetor.dentro = NO;
+                    }
+                }
                 
             }
-
-    
+            
+            
+            
+            
         }
+        
+        
+        
         
         
     }
     
     
-    move = NO;
     
 }
 
 
-
-- (void)animacaoOperadorErrado{
+- (void)animacaoOperadorErrado:(SpriteLabelNode *)conteudoAtivo{
     
     
     //DEIXA A LABEL VERMELHA E A COLOCA NA SUA COORDENADA DE INICIO
@@ -317,7 +301,7 @@
         [conteudoAtivo removeAllActions];
         conteudoAtivo.fontColor = [UIColor greenColor];
     }];
-
+    
 }
 
 
@@ -346,6 +330,7 @@
         if (!op.dentro) {
             //NSLog(@"esta faltando operador");
             return;
+            NSLog(@"nao dentro operador texto %@",op.text);
         }
         
         
@@ -357,4 +342,116 @@
     [self.myDelegate exercicioFinalizado];
     
 }
+
+
+
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    //criando toque e posicao
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    nodeClicado = [self nodeAtPoint:location];
+    
+    if ([nodeClicado.name isEqualToString:@"labelOperador"]) {
+        
+        move = YES;
+        
+    }
+    
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    //se move estiver YES entao pode mover o NODE
+    
+    if (move) {
+        
+        //identificando toque e posicao
+        UITouch *touch = [touches anyObject];
+        CGPoint location = [touch locationInNode:self];
+        
+        //setando posicao no NODE
+        if ([nodeClicado.name isEqualToString:@"labelOperador"]) {
+            [nodeClicado setPosition:location];
+        }
+        
+            
+       
+    }
+    
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    
+    
+    if ([nodeClicado.name isEqualToString:@"labelOperador"] && nodeClicado) {
+        
+        SpriteLabelNode *conteudoAtivo = (SpriteLabelNode *)nodeClicado;
+        
+        conteudoAtivo.dentro = NO;
+        
+        for (NSDictionary *expressao in expressoes) { //Ao soltar o node de resposta em algum lugar varre o vetor de caixas para descobrir sobre quem está
+            
+            SKSpriteNode *espaco = [expressao objectForKey:@"espaco"];
+            
+            
+            
+            //COORDENADAS PARA A CAIXA
+            
+            float xInicio = espaco.frame.origin.x;
+            float xFim = xInicio + espaco.frame.size.width;
+            //float xMeio = (xInicio + xFim)/2;
+            float yInicio = espaco.frame.origin.y;
+            float yFim = yInicio + espaco.frame.size.height;
+            //float yMeio = (yInicio + yFim)/2;
+            
+            
+            //verifica se o nó movido esta dentro das coordenadas da caixa
+            
+            if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
+                
+                
+                SpriteOperadorNode *spriteOperador = [expressao objectForKey:@"spriteOperador"];
+                
+                valor1 = [spriteOperador getValor1];
+                valor2 = [spriteOperador getValor2];
+                resultado = [spriteOperador getResultado];
+                
+                
+                    //primeiro verifica se ja existe algum o operador na caixa
+                
+                    //CHAMA O CALCULADOR E SE A EXPRESSAO ESTA CORRETA
+                NSString *operadorSprite = [spriteOperador getOperador];
+                    if ([operadorSprite isEqualToString:@""]  && [resultado isEqualToString:[calculador calculaOperador:conteudoAtivo.text numero1:valor1 numero2:valor2]]) { //se a resposta do calculador for a mesma da expressao
+                        
+                        [spriteOperador setLabelOperador:conteudoAtivo.text];
+                        [conteudoAtivo removeFromParent];
+                        
+                        
+                        conteudoAtivo.dentro = YES;
+                        _corretos++;
+                        [self corrigirExercicio];
+                        
+                    }else{
+                        [self animacaoOperadorErrado:conteudoAtivo];                    }
+
+                
+            }
+
+    
+        }
+        
+        
+    }
+    
+    
+    move = NO;
+    
+}
+
+
+
 @end
