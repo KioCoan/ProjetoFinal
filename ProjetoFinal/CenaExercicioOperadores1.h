@@ -10,6 +10,8 @@
 #import "SpriteLabelNode.h"
 #import "Calculador.h"
 #import "CenaExercicio.h"
+#import "SpriteOperadorNode.h"
+#import "OperadorNode.h"
 @interface CenaExercicioOperadores1 : CenaExercicio
 
 @property int corretos;

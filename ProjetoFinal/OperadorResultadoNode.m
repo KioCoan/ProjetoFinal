@@ -123,4 +123,8 @@ static const int NUM_TEXTURAS = 10;
     [self.lblResultado setText:resultado];
 }
 
+-(NSString *)getLabelResultado{
+    return [self.lblResultado text];
+}
+
 @end

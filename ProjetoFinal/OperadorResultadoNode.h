@@ -24,4 +24,5 @@
 -(SKAction*)getAnimacaoSubir;
 -(SKAction*)getAnimacaoDescer;
 -(void)iniciarAnimacao;
+-(NSString *)getLabelResultado;
 @end

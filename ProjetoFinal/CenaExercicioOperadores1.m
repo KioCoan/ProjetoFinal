@@ -15,13 +15,10 @@
     NSArray *operadores;
     NSMutableArray *opcoes;
     Calculador *calculador;
-    CGPoint posicaoInicial;
-    CGPoint posicaoMutavel;
-    SpriteLabelNode *valor1;
-    SpriteLabelNode *valor2;
-    SpriteLabelNode *resultado;
+    NSString *valor1;
+    NSString *valor2;
+    NSString *resultado;
     SpriteLabelNode *operador;
-    SKSpriteNode *espaco;
     SpriteLabelNode *atribuicao;
     SpriteLabelNode *conteudoAtivo;
     BOOL move;
@@ -40,11 +37,6 @@
         //criando vetor de operadores
         operadores = [NSArray arrayWithObjects:@">", @"<",@"==",@"!=",@">=",@"<=",@"+",@"-",@"*",@"/",nil];
         
-        //setando principais configuracoes de posicionamento
-        posicaoInicial = CGPointMake(self.frame.size.width * 60, self.frame.size.height * 700);
-        posicaoMutavel = posicaoInicial;
-        
-        
         
         //allocando calculador
         calculador = [[Calculador alloc]init];
@@ -52,21 +44,17 @@
         opcoes = [NSMutableArray array];
         expressoes = [NSMutableArray array];
         
-        for (int i = 0; i < 6; i++) {
+        
             [self geraDadosAleatorio];
-            [self criaExpressoes];
-        }
+            [self criaSpriteOperador];
         
-        
-        
-        //[self criarExpressoes];
         opcoes = [self embaralha:opcoes];
         [self posicionamento:opcoes];
         
         
         //coloca na tela
         [self criaEnunciado];
-        [self adicionaNaTela];
+        //[self adicionaNaTela];
         _corretos = 0;
     }
     return self;
@@ -123,12 +111,17 @@
 
 - (void)posicionamento:(NSMutableArray *)vetor{
     
+    CGPoint posicaoInicial = CGPointMake(50, 100);
+    CGPoint posicaoMutavel = posicaoInicial;
+    
     posicaoMutavel.x = posicaoInicial.x + 10;
-    //posicaoMutavel.x = self.frame.size.width * 700;
-    for (SpriteLabelNode *aux in vetor) {
-        [aux setPosition:posicaoMutavel];
-        [aux setPosicaoInicial:posicaoMutavel];
-        posicaoMutavel.x += (aux.fontSize * 2);
+    posicaoMutavel.x = self.frame.size.width * 80;
+    
+    for (SpriteLabelNode *labelOperador in vetor) {
+        [labelOperador setPosition:posicaoMutavel];
+        [labelOperador setPosicaoInicial:posicaoMutavel];
+        posicaoMutavel.x += (labelOperador.fontSize * 2);
+        [self addChild:labelOperador];
     }
     
     
@@ -143,128 +136,77 @@
     
     n = arc4random() % operadores.count;
     operador = [[SpriteLabelNode alloc]initWithType:@"operador" texto:[operadores objectAtIndex:n]];
-    operador.name = @"operador";
+    operador.name = @"labelOperador";
+    operador.fontSize = 65;
+    [opcoes addObject:operador];
     
     //sorteia valor
     
     n = arc4random() % 10 + 1;
-    valor1 = [[SpriteLabelNode alloc]initWithType:@"valor" texto:[NSString stringWithFormat:@"%d",n]];
-    valor1.name = @"valor";
+    valor1 = [NSString stringWithFormat:@"%d",n];
     
     n = arc4random() % 10 + 1;
     
-    valor2 = [[SpriteLabelNode alloc]initWithType:@"valor" texto:[NSString stringWithFormat:@"%d",n]];
-    valor2.name = @"valor";
+    valor2 = [NSString stringWithFormat:@"%d",n];
     
     
-    //alocando espaco vazio
+       //chamando o calculador para retornar o resultado da operacao
     
-    espaco = [SKSpriteNode spriteNodeWithImageNamed:@"fundo-cinza.png"];
-    espaco.name = @"espaco";
-    //chamando o calculador para retornar o resultado da operacao
+    NSString *aux = [calculador calculaOperador:operador.text numero1:valor1 numero2:valor2];
     
-    NSString *aux = [calculador calculaOperador:operador.text numero1:valor1.text numero2:valor2.text];
     //NSArray *strings = [[NSArray alloc]initWithObjects:@"=",aux ,nil];
     //resultado = [[SpriteLabelNode alloc]initWithType:@"resultado" texto:[strings componentsJoinedByString:@" "]];
-    resultado = [[SpriteLabelNode alloc]initWithType:@"resultado" texto:aux];
-    resultado.name = @"resultado";
-    atribuicao = [[SpriteLabelNode alloc]initWithType:@"atribuicao" texto:@"="];
-    atribuicao.name = @"atribuicao";
+    resultado = aux;
+    }
+
+- (void)criaSpriteOperador{
+   
+    CGPoint posicaoInicial = CGPointMake(200, 650);
+    CGPoint posicaoMutavel = posicaoInicial;
+    
+    
+    for (int i = 0; i < 6; i++) {
+        
+        
+        [self geraDadosAleatorio];
+        
+        
+        SpriteOperadorNode *spriteOperador = [[SpriteOperadorNode alloc]init];
+        [spriteOperador setLabelValor1:valor1];
+        [spriteOperador setLabelValor2:valor2];
+        [spriteOperador setLabelResultado:resultado];
+        spriteOperador.name = @"sprite";
+        
+        
+        
+        spriteOperador.position = posicaoMutavel;
+        
+        
+        
+        [expressoes addObject:spriteOperador];
+        
+        [self addChild:spriteOperador];
+        
+        
+        
+        
+        
+        if (((i+1) % 2) != 0) {
+            posicaoMutavel.x = 550;
+        }else{
+            posicaoMutavel.x = posicaoInicial.x;
+            posicaoMutavel.y -= 200;
+        }
+        
+        
+    }
+    
+    
+    
 }
 
 
-- (void)criaExpressoes{
-    
-    
-    //Criando vetor
-    
-    
-    //preparando tamanho das fontes
-    
-    
-    
-    //atribuindo tamanhos os objetos
-   int font = self.frame.size.height * 40;
-    valor1.fontSize = font;
-    valor2.fontSize = font;
-    resultado.fontSize = font;
-    operador.fontSize = 65;
-    atribuicao.fontSize = font;
-    espaco.size = CGSizeMake(self.frame.size.width * 100, self.frame.size.height * 70);
-    
-    //trocando cor operador
-    operador.fontColor = [UIColor greenColor];
-    
-    
-    //setando posicao dos objetos
-    float margem = 15;
-    
-    valor1.position = posicaoMutavel;
-    posicaoMutavel.x += valor1.fontSize * 3;
-    posicaoMutavel.y += margem;
-    
-    espaco.position = posicaoMutavel;
-    posicaoMutavel.x += espaco.size.width * 1.0;
-    posicaoMutavel.y -= margem;
-    
-    
-    valor2.position = posicaoMutavel;
-    posicaoMutavel.x += valor2.fontSize * 2;
-    
-    atribuicao.position = posicaoMutavel;
-    
-    
-    
-    if ([resultado.text isEqualToString:@"Verdadeiro"]) {
-        posicaoMutavel.x += atribuicao.fontSize * 4;
-    }else if ([resultado.text isEqualToString:@"falso"]){
-        posicaoMutavel.x += atribuicao.fontSize * 3;
-    }else{
-        posicaoMutavel.x += atribuicao.fontSize * 2;
-    }
-    
-    resultado.position = posicaoMutavel;
-    
-    posicaoMutavel.x = posicaoInicial.x;
-    posicaoMutavel.y -= espaco.size.height * 1.5;
-    
-    //criando NSDictionary
-    
-    
-    NSDictionary *dict = @{@"valor1": valor1,
-                           @"valor2":valor2,
-                           @"espaco":espaco,
-                           @"atribuicao":atribuicao,
-                           @"resultado":resultado
-                           };
 
-    
-    [expressoes addObject:dict];
-    [opcoes addObject:operador];
-
-}
-
-- (void)adicionaNaTela{
-    
-    //ADICIONA NOZ NA TELA
-    
-    //ADICIONA AS EXPRESSOES NA TELA
-    
-    for (int i = 0; i < expressoes.count; i++) {
-        [self addChild:[[expressoes objectAtIndex:i] valueForKey:@"valor1"]];
-        [self addChild:[[expressoes objectAtIndex:i] valueForKey:@"valor2"]];
-        [self addChild:[[expressoes objectAtIndex:i] valueForKey:@"espaco"]];
-        [self addChild:[[expressoes objectAtIndex:i] valueForKey:@"atribuicao"]];
-        [self addChild:[[expressoes objectAtIndex:i] valueForKey:@"resultado"]];
-    }
-    
-    //ADICIONA OS OPERADORES NA TELA
-    
-    for (int i = 0; i < opcoes.count; i++) {
-        [self addChild:[opcoes objectAtIndex:i]];
-    }
-    
-}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
@@ -273,7 +215,7 @@
     CGPoint location = [touch locationInNode:self];
     SKNode* teste = [self nodeAtPoint:location];
     
-    if ([teste.name isEqualToString:@"operador"]) {
+    if ([teste.name isEqualToString:@"labelOperador"]) {
         conteudoAtivo = (SpriteLabelNode *) [self nodeAtPoint:location];
         move = YES;
     }
@@ -302,29 +244,31 @@
     
     
     
-    if (conteudoAtivo) {
+    if ([conteudoAtivo.name isEqualToString:@"labelOperador"] && conteudoAtivo) {
         
         conteudoAtivo.dentro = NO;
         
-        for (NSDictionary *dict in expressoes) { //Ao soltar o node de resposta em algum lugar varre o vetor de caixas para descobrir sobre quem está
+        for (SpriteOperadorNode *spriteOperador in expressoes) { //Ao soltar o node de resposta em algum lugar varre o vetor de caixas para descobrir sobre quem está
             
-            espaco = [dict valueForKey:@"espaco"];
-            valor1 = [dict valueForKey:@"valor1"];
-            valor2 = [dict valueForKey:@"valor2"];
-            resultado = [dict valueForKey:@"resultado"];
+            
+            valor1 = [spriteOperador getValor1];
+            valor2 = [spriteOperador getValor2];
+            resultado = [spriteOperador getResultado];
             
             
             //COORDENADAS PARA A CAIXA
-            
-            float xInicio = espaco.frame.origin.x;
-            float xFim = xInicio + espaco.frame.size.width;
+            OperadorNode *teste = [spriteOperador retornaOperadorNode];
+            float xInicio = teste.frame.origin.x;
+            float width = teste.size.width;
+            float xFim = xInicio + teste.frame.size.width;
             float xMeio = (xInicio + xFim)/2;
-            float yInicio = espaco.frame.origin.y;
-            float yFim = yInicio + espaco.frame.size.height;
+            float yInicio = teste.frame.origin.y;
+            float yFim = yInicio + teste.frame.size.height;
+            float heith = teste.size.height;
             float yMeio = (yInicio + yFim)/2;
             
             
-            //verifica se o nó movido esta dentro de alguma caixa
+            //verifica se o nó movido esta dentro das coordenadas da caixa
             
             if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
                 
@@ -334,8 +278,9 @@
                 
                     //CHAMA O CALCULADOR E SE A EXPRESSAO ESTA CORRETA
                     
-                    if (![self operadorNasCordenadasX:xMeio Y:yMeio]  && [resultado.text isEqualToString:[calculador calculaOperador:conteudoAtivo.text numero1:valor1.text numero2:valor2.text]]) { //se a resposta do calculador for a mesma da expressao
+                    if (![self operadorNasCordenadasX:xMeio Y:yMeio]  && [resultado isEqualToString:[calculador calculaOperador:conteudoAtivo.text numero1:valor1 numero2:valor2]]) { //se a resposta do calculador for a mesma da expressao
                         [conteudoAtivo setPosition:CGPointMake(xMeio, yMeio)]; //Coloca o node no centro da caixa
+                        NSLog(@"funcionou");
                         conteudoAtivo.dentro = YES;
                         _corretos++;
                         [self corrigirExercicio];

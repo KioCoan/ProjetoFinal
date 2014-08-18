@@ -180,8 +180,16 @@
     return [nodeValores getValor2];
 }
 
+-(NSString *)getResultado{
+    return [nodeResultado getLabelResultado];
+}
+
 -(BOOL)partesVisiveis{
     return partesVisiveis;
+}
+
+-(OperadorNode*)retornaOperadorNode{
+    return nodeOperador;
 }
 
 

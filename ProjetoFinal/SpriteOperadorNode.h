@@ -31,6 +31,8 @@
 -(NSString*)getValor1;
 -(NSString*)getOperador;
 -(NSString*)getValor2;
+-(NSString *)getResultado;
+-(OperadorNode*)retornaOperadorNode;
 -(void)iniciarAnimacaoAbrir;
 -(void)iniciarAnimacaoFechar;
 -(BOOL)partesVisiveis;
