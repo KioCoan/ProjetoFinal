@@ -28,7 +28,7 @@
         [self criaVariavel];
         [self criaBotoes];
         [self criaEnunciado];
-        
+        self.backgroundColor = [SKColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
         [self reinicializaExercicio];
         
     }

@@ -18,7 +18,7 @@
     self = [super init];
     
     if (self) {
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        self.backgroundColor = [SKColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
         
         
         //CONFIGURANDO CODIGO EM PORTUGOL QUE APARECE QUANDO O USUARIO ACERTA
