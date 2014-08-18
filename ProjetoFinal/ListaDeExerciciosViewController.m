@@ -58,7 +58,7 @@
     cell.detailTextLabel.text = [[titulosEDescricoes objectAtIndex:indexPath.row]valueForKey:@"descricao"];
     
     //VERIFICA SE A O EXERCÍCIO DA LINHA SELECIONADA FOI COMPLETADO PARA INSERIR OU NÃO A IMAGEM
-    if([self verificarExercicioCompleto:indexPath.row]){
+    if([self verificarExercicioCompleto:(int)indexPath.row]){
         UIImageView* imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"check.png"]];
         [imageView setFrame:CGRectMake(cell.frame.size.width - 50, 15, 35, 35)];
         [cell addSubview:imageView];
@@ -80,7 +80,7 @@
     [btnExercitar setHidden:NO];
     
     //VERIFICA SE A O EXERCÍCIO DA LINHA SELECIONADA FOI COMPLETADO PARA DEFINIR O TEXTO CORRETO
-    if([self verificarExercicioCompleto:indexPath.row]){
+    if([self verificarExercicioCompleto:(int)indexPath.row]){
         [btnExercitar setTitle:@"Refazer" forState:UIControlStateNormal];
     
     }else{

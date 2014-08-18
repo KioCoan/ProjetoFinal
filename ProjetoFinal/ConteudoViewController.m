@@ -47,7 +47,7 @@
     gerenciador = [GerenciadorDeAssunto sharedGerenciador];
     
     //PEGO O NÚMERO DE PÁGINAS COM BASE NO TAMANHO DO VETOR DE TEORIA
-    totalPaginas = [[gerenciador retornaTeoriaFormatada] count];
+    totalPaginas = (int)[[gerenciador retornaTeoriaFormatada] count];
     //DEFINO POR PADRÃO A PRIMEIRA PÁGINA COMO ZERO
     [self setPaginaAtual:1];
     

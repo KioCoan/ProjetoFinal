@@ -33,6 +33,7 @@
     // Do any additional setup after loading the view from its nib.
     
     viewDeConteudo = [self.storyboard instantiateViewControllerWithIdentifier:@"conteudo"];
+    self.view.backgroundColor = [UIColor darkGrayColor];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
