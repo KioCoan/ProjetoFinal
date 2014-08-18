@@ -40,16 +40,16 @@
     
     
     switch (index) {
-        case 1:
+        case 4:
             return [[AnimaVariavel alloc] initWithVariavelDoTipo:@"INTEIRO"];
             
-        case 2:
+        case 1:
             return [[AnimaVariavel alloc] initWithVariavelDoTipo:@"REAL"];
 
-        case 3:
+        case 5:
             return [[AnimaVariavel alloc] initWithVariavelDoTipo:@"CARACTERE"];
             
-        case 4:
+        case 6:
             return [[AnimaVariavel alloc] initWithVariavelDoTipo:@"LOGICO"];
 
         default:
