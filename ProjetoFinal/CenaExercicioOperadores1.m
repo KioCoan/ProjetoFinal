@@ -12,7 +12,6 @@
 
 @implementation CenaExercicioOperadores1{
     NSMutableArray *expressoes;
-    NSArray *operadores;
     NSMutableArray *opcoes;
     Calculador *calculador;
     NSString *valor1;
@@ -21,8 +20,7 @@
     SKNode *nodeClicado;
     SpriteLabelNode *operador;
     SKSpriteNode *espacoClicado;
-    //SpriteLabelNode *conteudoAtivo;
-    BOOL move;
+    int quantidadeOperadores;
 }
 
 
@@ -35,8 +33,7 @@
     if (self) {
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        //criando vetor de operadores
-        operadores = [NSArray arrayWithObjects:@">", @"<",@"==",@"!=",@">=",@"<=",@"+",@"-",@"*",@"/",nil];
+        
         
         
         //allocando calculador
@@ -45,6 +42,7 @@
         opcoes = [NSMutableArray array];
         expressoes = [NSMutableArray array];
         
+        quantidadeOperadores = 6;
         
             [self geraDadosAleatorio];
             [self criaSpriteOperador];
@@ -108,7 +106,7 @@
     CGPoint posicaoMutavel = posicaoInicial;
     
     
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < quantidadeOperadores; i++) {
         
         
         [self geraDadosAleatorio];
@@ -118,6 +116,8 @@
         [spriteOperador setLabelValor1:valor1];
         [spriteOperador setLabelValor2:valor2];
         [spriteOperador setLabelResultado:resultado];
+//        NSString *temp = operador.text;
+//        [spriteOperador setLabelOperador:temp];
         spriteOperador.name = @"sprite";
         
         
@@ -213,6 +213,10 @@
 
 - (void)geraDadosAleatorio{
     
+    //criando vetor de operadores
+   NSArray *operadores = [NSArray arrayWithObjects:@">", @"<",@"==",@"!=",@">=",@"<=",@"+",@"-",@"*",@"/",nil];
+    
+    
     int n = 0;
     //sorteia operacao
     
@@ -222,7 +226,7 @@
     operador.fontSize = 65;
     [opcoes addObject:operador];
     
-    //sorteia valor
+    //SORTEIA VALORES
     
     n = arc4random() % 10 + 1;
     valor1 = [NSString stringWithFormat:@"%d",n];
@@ -234,11 +238,11 @@
     
        //chamando o calculador para retornar o resultado da operacao
     
-    NSString *aux = [calculador calculaOperador:operador.text numero1:valor1 numero2:valor2];
+    resultado = [calculador calculaOperador:operador.text numero1:valor1 numero2:valor2];
     
     //NSArray *strings = [[NSArray alloc]initWithObjects:@"=",aux ,nil];
     //resultado = [[SpriteLabelNode alloc]initWithType:@"resultado" texto:[strings componentsJoinedByString:@" "]];
-    resultado = aux;
+    
     }
 
 
@@ -263,12 +267,10 @@
                 operador.position = operador.posicaoInicial;
                 [spriteOperador setLabelOperador:@""];
                 [self addChild:operador];
+                quantidadeOperadores++;
+                NSLog(@"quantidade %d",quantidadeOperadores);
                 
-                for (SpriteLabelNode *operadorVetor in opcoes) {
-                    if ([operador.text isEqualToString:operadorVetor.text] && operadorVetor.dentro) {
-                        operadorVetor.dentro = NO;
-                    }
-                }
+
                 
             }
             
@@ -299,47 +301,56 @@
     SKAction *animacaoVoltar = [SKAction moveTo:conteudoAtivo.posicaoInicial duration:0.5];
     [conteudoAtivo runAction:animacaoVoltar completion:^{
         [conteudoAtivo removeAllActions];
-        conteudoAtivo.fontColor = [UIColor greenColor];
+        //conteudoAtivo.fontColor = [UIColor greenColor];
     }];
     
 }
 
 
 
--(BOOL)operadorNasCordenadasX : (float)x Y: (float)y{
+-(void)corrigirExercicio:(SpriteOperadorNode*)spriteOperador conteudoAtivo:(SpriteLabelNode *)conteudoAtivo{
     
     
-    //ESSE METODO É O QUE VERIFICA SE JA EXISTE UM OPERADOR NA DETERMINADA COORDENADA QUE SEMPRE SERA A COORDENADA CENTRAL DE UMA CAIXA
+    //PEGA OS VALORES DO SPRITENODE
+    
+    valor1 = [spriteOperador getValor1];
+    valor2 = [spriteOperador getValor2];
+    resultado = [spriteOperador getResultado];
     
     
-    for (SpriteLabelNode *op in opcoes) {
-        if (op.position.x == x && op.position.y == y ) {
-            return YES;
-        }
+    
+    
+    //CHAMA O CALCULADOR E SE A EXPRESSAO ESTA CORRETA
+    
+    //PASSA O OPERADOR PARA O PONTEIRO OPERADORDOSPRITE
+    NSString *operadorDoSprite = [spriteOperador getOperador];
+    
+    //VERIFICA SE JA EXISTE UM OPERADOR NESSE SPRITE NODE (SE TIVER ELE NAO DEIXA POR OUTRO)
+    //CHAMA O CALCULADOR E VERIFICA SE A RESPOSTA ESTA CERTA
+    
+    if ([operadorDoSprite isEqualToString:@""]  && [resultado isEqualToString:[calculador calculaOperador:conteudoAtivo.text numero1:valor1 numero2:valor2]]) { //se a resposta do calculador for a mesma da expressao
         
+        [spriteOperador setLabelOperador:conteudoAtivo.text];
+        
+        [conteudoAtivo removeFromParent];
+        conteudoAtivo.dentro = YES;
+        quantidadeOperadores--;
+        NSLog(@"quantidade %d",quantidadeOperadores);
+        _corretos++;
+        
+    }else{
+        [self animacaoOperadorErrado:conteudoAtivo];
     }
-    return NO;
-    
-}
 
--(void)corrigirExercicio{
+    //VERIFICA SE O EXERCICIO JA ACABOU
     
-    for (SpriteLabelNode *op in opcoes) {
-        
-        
-        if (!op.dentro) {
-            //NSLog(@"esta faltando operador");
-            return;
-            NSLog(@"nao dentro operador texto %@",op.text);
-        }
-        
-        
+    if (quantidadeOperadores <= 0) {
+        NSLog(@"exercicio concluido");
+        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeOperadores1"];
+        //[self.myDelegate exercicioFinalizado];
     }
-    
-    
-    //NSLog(@"exercicio concluido");
-    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeOperadores1"];
-    [self.myDelegate exercicioFinalizado];
+    NSLog(@"ainda tem");
+
     
 }
 
@@ -356,7 +367,7 @@
     
     if ([nodeClicado.name isEqualToString:@"labelOperador"]) {
         
-        move = YES;
+        //move = YES;
         
     }
     
@@ -366,7 +377,7 @@
     
     //se move estiver YES entao pode mover o NODE
     
-    if (move) {
+    //if (move) {
         
         //identificando toque e posicao
         UITouch *touch = [touches anyObject];
@@ -379,7 +390,7 @@
         
             
        
-    }
+   // }
     
 }
 
@@ -409,35 +420,15 @@
             //float yMeio = (yInicio + yFim)/2;
             
             
-            //verifica se o nó movido esta dentro das coordenadas da caixa
+            //VERIFICA SE O NODE MOVIDO ESTA DENTRO DA CAIXA
             
             if ((conteudoAtivo.position.x > xInicio && conteudoAtivo.position.x < xFim)&&(conteudoAtivo.position.y >yInicio && conteudoAtivo.position.y < yFim)) { // Verifica se o nó "resposta" está sobre alguma caixa
                 
+               
+                // CHAMA O MÉTODO CORRIGIR PASSANDO O SPRITEOPERADORNODE E O CONTEUDO ATIVO COMO PARAMETRO
                 
-                SpriteOperadorNode *spriteOperador = [expressao objectForKey:@"spriteOperador"];
+                [self corrigirExercicio:[expressao objectForKey:@"spriteOperador"] conteudoAtivo:conteudoAtivo];
                 
-                valor1 = [spriteOperador getValor1];
-                valor2 = [spriteOperador getValor2];
-                resultado = [spriteOperador getResultado];
-                
-                
-                    //primeiro verifica se ja existe algum o operador na caixa
-                
-                    //CHAMA O CALCULADOR E SE A EXPRESSAO ESTA CORRETA
-                NSString *operadorSprite = [spriteOperador getOperador];
-                    if ([operadorSprite isEqualToString:@""]  && [resultado isEqualToString:[calculador calculaOperador:conteudoAtivo.text numero1:valor1 numero2:valor2]]) { //se a resposta do calculador for a mesma da expressao
-                        
-                        [spriteOperador setLabelOperador:conteudoAtivo.text];
-                        [conteudoAtivo removeFromParent];
-                        
-                        
-                        conteudoAtivo.dentro = YES;
-                        _corretos++;
-                        [self corrigirExercicio];
-                        
-                    }else{
-                        [self animacaoOperadorErrado:conteudoAtivo];                    }
-
                 
             }
 
@@ -448,7 +439,7 @@
     }
     
     
-    move = NO;
+   // move = NO;
     
 }
 
