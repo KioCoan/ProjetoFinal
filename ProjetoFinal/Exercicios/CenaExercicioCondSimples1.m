@@ -113,6 +113,27 @@
     
 }
 
+- (void)criarBotaoFinalizar{
+    
+    //CRIA BOTAO PARA VOLTAR A LISTA DE EXERCICIOS
+    
+    
+    SKLabelNode *finalizar = [[SKLabelNode alloc]init];
+    finalizar.text = @"Finalizar";
+    finalizar.position = CGPointMake(450, 250);
+    finalizar.fontSize = 70;
+    [finalizar setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    finalizar.name = @"botaoFinalizar";
+    
+    [self addChild:finalizar];
+    
+    
+    
+}
+
+
+
+
 - (void)criaExpressoes{
     
     SKLabelNode *lblCodigo1;
@@ -726,14 +747,14 @@
     
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
-    SKNode *teste = [self nodeAtPoint:location];
+    SKNode *nodeClicado = [self nodeAtPoint:location];
     
     if ([touch tapCount] > 1) {
         return;
     }
     
     
-    if ([teste.name isEqualToString:@"alternativa"] && !jaRespondeu) {
+    if ([nodeClicado.name isEqualToString:@"alternativa"] && !jaRespondeu) {
         
         if (alternativaMarcada != nil) {
             alternativaMarcada.fontColor = [SKColor whiteColor];
@@ -741,16 +762,21 @@
         SpriteLabelNode *aux = (SpriteLabelNode *) [self nodeAtPoint:location];
         alternativaMarcada = aux;
         alternativaMarcada.fontColor = [SKColor yellowColor];
-    }else if ([teste.name isEqualToString:@"botaoResposta"] && alternativaMarcada != nil && !jaRespondeu){
+        
+    }else if ([nodeClicado.name isEqualToString:@"botaoResposta"] && alternativaMarcada != nil && !jaRespondeu){
         if (debugar == nil) {
             [self criaBotaoDebugar];
             jaRespondeu = YES;
+            [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeCondSimples1"];
+            [self criarBotaoFinalizar];
         }
         [self corrigeExercicio];
-    }else if ([teste.name isEqualToString:@"debugar"] && habilitarDebugar){
+    }else if ([nodeClicado.name isEqualToString:@"debugar"] && habilitarDebugar){
         habilitarDebugar = NO;
         //NSLog(@"DEBUGOU");
         [self debugar];
+    }else if ([nodeClicado.name isEqualToString:@"botaoFinalizar"]){
+        [self.myDelegate exercicioFinalizado];
     }
 
     

@@ -12,11 +12,7 @@
 
 @implementation CenaExercicioOperadores1{
     NSMutableArray *expressoes;
-    NSMutableArray *opcoes;
     Calculador *calculador;
-    NSString *valor1;
-    NSString *valor2;
-    NSString *resultado;
     SKNode *nodeClicado;
     SpriteLabelNode *operador;
     SKSpriteNode *espacoClicado;
@@ -39,22 +35,16 @@
         //allocando calculador
         calculador = [[Calculador alloc]init];
         
-        opcoes = [NSMutableArray array];
+        
         expressoes = [NSMutableArray array];
         
         quantidadeOperadores = 6;
         
-            [self geraDadosAleatorio];
-            [self criaSpriteOperador];
+        [self configuraNodes];
         
-        opcoes = [self embaralha:opcoes];
-        [self posicionamento:opcoes];
-        
-        
-        //coloca na tela
+    
+
         [self criaEnunciado];
-        //[self adicionaNaTela];
-        _corretos = 0;
     }
     return self;
 
@@ -100,63 +90,66 @@
     
 }
 
-- (void)criaSpriteOperador{
+- (void)criarBotaoFinalizar{
     
-    CGPoint posicaoInicial = CGPointMake(200, 650);
-    CGPoint posicaoMutavel = posicaoInicial;
+    //CRIA BOTAO PARA VOLTAR A LISTA DE EXERCICIOS
     
     
-    for (int i = 0; i < quantidadeOperadores; i++) {
-        
-        
-        [self geraDadosAleatorio];
-        
-        
-        SpriteOperadorNode *spriteOperador = [[SpriteOperadorNode alloc]init];
-        [spriteOperador setLabelValor1:valor1];
-        [spriteOperador setLabelValor2:valor2];
-        [spriteOperador setLabelResultado:resultado];
-//        NSString *temp = operador.text;
-//        [spriteOperador setLabelOperador:temp];
-        spriteOperador.name = @"sprite";
-        
-        
-        SKSpriteNode *espaco = [[SKSpriteNode alloc]initWithImageNamed:@"fundo-transparente.png"];
-        espaco.position = posicaoMutavel;
-        [espaco setPosition:CGPointMake(posicaoMutavel.x, posicaoMutavel.y + 60)];
-        espaco.size = CGSizeMake(105, 105);
-        espaco.name = @"espaco";
-        
-        spriteOperador.position = posicaoMutavel;
-        
-        
-        
-        
-        
-        [self addChild:spriteOperador];
-        [spriteOperador iniciarAnimacaoAbrir];
-        [self addChild:espaco];
-        
-        NSDictionary *expressao = @{
-                                    @"espaco":espaco,
-                                    @"spriteOperador":spriteOperador
-                                    };
-        
-        [expressoes addObject:expressao];
-        
-        if (((i+1) % 2) != 0) {
-            posicaoMutavel.x = 550;
-        }else{
-            posicaoMutavel.x = posicaoInicial.x;
-            posicaoMutavel.y -= 200;
-        }
-        
-        
-    }
+    SKLabelNode *finalizar = [[SKLabelNode alloc]init];
+    finalizar.text = @"Finalizar";
+    finalizar.position = CGPointMake(400, 80);
+    finalizar.fontSize = 70;
+    [finalizar setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+    finalizar.name = @"botaoFinalizar";
+    
+    [self addChild:finalizar];
     
     
     
 }
+
+
+- (SpriteOperadorNode *)criaSpritecomConteudo:(NSString *)operador1{
+    
+    
+    int n;
+    
+    
+    //SORTEIA VALORES
+    
+    n = arc4random() % 10 + 1;
+    NSString *valor1 = [NSString stringWithFormat:@"%d",n];
+    
+    n = arc4random() % 10 + 1;
+    
+    NSString *valor2 = [NSString stringWithFormat:@"%d",n];
+    
+    
+    //chamando o calculador para retornar o resultado da operacao
+    
+    NSString *resultado = [calculador calculaOperador:operador1 numero1:valor1 numero2:valor2];
+    
+    
+    SpriteOperadorNode *sprite = [[SpriteOperadorNode alloc]init];
+    [sprite setLabelValor1:valor1];
+    [sprite setLabelValor2:valor2];
+    [sprite setLabelResultado:resultado];
+    //        NSString *temp = operador.text;
+    //        [spriteOperador setLabelOperador:temp];
+    sprite.name = @"sprite";
+
+    
+    return sprite;
+    
+    
+    
+    
+    //COMENTARIO DE CONCATENACAO DE STRING (TALVEZ NECESSARIO PARA CONSULTA)
+    //NSArray *strings = [[NSArray alloc]initWithObjects:@"=",aux ,nil];
+    //resultado = [[SpriteLabelNode alloc]initWithType:@"resultado" texto:[strings componentsJoinedByString:@" "]];
+    
+}
+
 
 - (SpriteLabelNode *)criaLabel:(NSString *)texto name:(NSString*)name{
     
@@ -168,8 +161,71 @@
     
 }
 
+- (void)configuraNodes{
+    
+    NSArray *operadores = [NSArray arrayWithObjects:@">", @"<",@"==",@"!=",@">=",@"<=",@"+",@"-",@"*",@"/",nil];
+    
+    NSMutableArray *opcoes = [NSMutableArray array];
+    
+    
+    
+    
+    CGPoint posicaoInicial = CGPointMake(200, 650);
+    CGPoint posicaoMutavel = posicaoInicial;
+    
+    
+    
+    for (int i = 0; i < quantidadeOperadores; i++) {
+        
+        int  n = arc4random() % operadores.count;
+        
+        SpriteLabelNode *operadorLabel = [self criaLabel:[operadores objectAtIndex:n] name:@"labelOperador"];
+        [opcoes addObject:operadorLabel];
+        
+        
+        SpriteOperadorNode *spriteOperador = [self criaSpritecomConteudo:operadorLabel.text];
+        
+        SKSpriteNode *espaco = [[SKSpriteNode alloc]initWithImageNamed:@"fundo-transparente.png"];
+        espaco.position = posicaoMutavel;
+        [espaco setPosition:CGPointMake(posicaoMutavel.x, posicaoMutavel.y + 60)];
+        espaco.size = CGSizeMake(105, 105);
+        espaco.name = @"espaco";
+        
+        spriteOperador.position = posicaoMutavel;
+        
+        NSDictionary *expressao = @{
+                                    @"espaco":espaco,
+                                    @"spriteOperador":spriteOperador
+                                    };
+        
+        [expressoes addObject:expressao];
+        
+        [self addChild:spriteOperador];
+        [spriteOperador iniciarAnimacaoAbrir];
+        [self addChild:espaco];
+        
+        if (((i+1) % 2) != 0) {
+            posicaoMutavel.x = 550;
+        }else{
+            posicaoMutavel.x = posicaoInicial.x;
+            posicaoMutavel.y -= 200;
+        }
+        
+        
+    }
+    
+    opcoes = [self embaralhaEposicionaLabels:opcoes];
+    
+    
+    
+}
 
-- (NSMutableArray *)embaralha :(NSMutableArray *)antigo{
+
+- (NSMutableArray *)embaralhaEposicionaLabels :(NSMutableArray *)antigo{
+    
+    CGPoint posicaoInicial = CGPointMake(50, 100);
+    CGPoint posicaoMutavel = posicaoInicial;
+    
     
     int n;
     NSMutableArray *vetorEmbaralhado = [NSMutableArray array];
@@ -177,8 +233,16 @@
     while (antigo.count > 0) {
         n = arc4random() % antigo.count;
         
-        [vetorEmbaralhado addObject:[antigo objectAtIndex:n]];
+        SpriteLabelNode *labelOperador = [antigo objectAtIndex:n];
+        [labelOperador setPosition:posicaoMutavel];
+        [labelOperador setPosicaoInicial:posicaoMutavel];
+        
+        
+        [vetorEmbaralhado addObject:labelOperador];
         [antigo removeObjectAtIndex:n];
+        [self addChild:labelOperador];
+        posicaoMutavel.x += (labelOperador.fontSize * 2);
+        
     }
     
     
@@ -202,7 +266,7 @@
     for (SpriteLabelNode *labelOperador in vetor) {
         [labelOperador setPosition:posicaoMutavel];
         [labelOperador setPosicaoInicial:posicaoMutavel];
-        posicaoMutavel.x += (labelOperador.fontSize * 2);
+        
         [self addChild:labelOperador];
     }
     
@@ -211,39 +275,6 @@
     
 }
 
-- (void)geraDadosAleatorio{
-    
-    //criando vetor de operadores
-   NSArray *operadores = [NSArray arrayWithObjects:@">", @"<",@"==",@"!=",@">=",@"<=",@"+",@"-",@"*",@"/",nil];
-    
-    
-    int n = 0;
-    //sorteia operacao
-    
-    n = arc4random() % operadores.count;
-    operador = [[SpriteLabelNode alloc]initWithType:@"operador" texto:[operadores objectAtIndex:n]];
-    operador.name = @"labelOperador";
-    operador.fontSize = 65;
-    [opcoes addObject:operador];
-    
-    //SORTEIA VALORES
-    
-    n = arc4random() % 10 + 1;
-    valor1 = [NSString stringWithFormat:@"%d",n];
-    
-    n = arc4random() % 10 + 1;
-    
-    valor2 = [NSString stringWithFormat:@"%d",n];
-    
-    
-       //chamando o calculador para retornar o resultado da operacao
-    
-    resultado = [calculador calculaOperador:operador.text numero1:valor1 numero2:valor2];
-    
-    //NSArray *strings = [[NSArray alloc]initWithObjects:@"=",aux ,nil];
-    //resultado = [[SpriteLabelNode alloc]initWithType:@"resultado" texto:[strings componentsJoinedByString:@" "]];
-    
-    }
 
 
 - (void)longPressGestureRecognizer:(UILongPressGestureRecognizer *)recognizer{
@@ -313,9 +344,9 @@
     
     //PEGA OS VALORES DO SPRITENODE
     
-    valor1 = [spriteOperador getValor1];
-    valor2 = [spriteOperador getValor2];
-    resultado = [spriteOperador getResultado];
+    NSString *valor1 = [spriteOperador getValor1];
+    NSString *valor2 = [spriteOperador getValor2];
+    NSString *resultado = [spriteOperador getResultado];
     
     
     
@@ -331,15 +362,16 @@
     if ([operadorDoSprite isEqualToString:@""]  && [resultado isEqualToString:[calculador calculaOperador:conteudoAtivo.text numero1:valor1 numero2:valor2]]) { //se a resposta do calculador for a mesma da expressao
         
         [spriteOperador setLabelOperador:conteudoAtivo.text];
-        
+        [self runAction:[SKAction playSoundFileNamed:@"correto.aiff" waitForCompletion:NO]];
         [conteudoAtivo removeFromParent];
         conteudoAtivo.dentro = YES;
         quantidadeOperadores--;
         NSLog(@"quantidade %d",quantidadeOperadores);
-        _corretos++;
         
     }else{
+        //OPERADOR NO LUGAR ERRADO
         [self animacaoOperadorErrado:conteudoAtivo];
+        [self runAction:[SKAction playSoundFileNamed:@"errado.wav" waitForCompletion:NO]];
     }
 
     //VERIFICA SE O EXERCICIO JA ACABOU
@@ -347,9 +379,8 @@
     if (quantidadeOperadores <= 0) {
         NSLog(@"exercicio concluido");
         [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"ExeOperadores1"];
-        //[self.myDelegate exercicioFinalizado];
+        [self criarBotaoFinalizar];
     }
-    NSLog(@"ainda tem");
 
     
 }
@@ -365,9 +396,9 @@
     CGPoint location = [touch locationInNode:self];
     nodeClicado = [self nodeAtPoint:location];
     
-    if ([nodeClicado.name isEqualToString:@"labelOperador"]) {
+    if ([nodeClicado.name isEqualToString:@"botaoFinalizar"]) {
         
-        //move = YES;
+        [self.myDelegate exercicioFinalizado];
         
     }
     

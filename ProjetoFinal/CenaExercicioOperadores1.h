@@ -14,6 +14,4 @@
 #import "OperadorNode.h"
 @interface CenaExercicioOperadores1 : CenaExercicio
 
-@property int corretos;
-
 @end
