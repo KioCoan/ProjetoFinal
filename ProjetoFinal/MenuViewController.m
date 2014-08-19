@@ -103,6 +103,10 @@ static const int ESPACAMENTO_BOTOES = 50;
     [botao setImage:[self retornaImagemBotao:contadorNomes] forState:UIControlStateNormal];
     [botao setTitle:[gerenciadorDeAssuntos getNomedoAssunto:contadorNomes] forState:UIControlStateNormal];
     [botao addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
+    if(contadorNomes > 3 ){
+        botao.enabled = NO;
+    }
+    
     [view addSubview:botao];
     
     [self inserirLabelTituloAssunto:view titulo:botao.currentTitle];
@@ -133,6 +137,12 @@ static const int ESPACAMENTO_BOTOES = 50;
     [view addSubview:botao];
     [view addSubview:botao2];
     
+    if(contadorNomes > 3 ){
+        botao.enabled = NO;
+        botao2.enabled = NO;
+    }
+    botao2.enabled = NO;
+    
     [self inserirLabelTituloAssunto:view titulo:botao.currentTitle];
     
     return 2;
@@ -161,6 +171,12 @@ static const int ESPACAMENTO_BOTOES = 50;
     
     [view addSubview:botao];
     [view addSubview:botao2];
+    
+    if(contadorNomes > 3 ){
+        botao.enabled = NO;
+        botao2.enabled = NO;
+    }
+    
     
     [self inserirLabelTituloAssunto:view titulo:botao.currentTitle];
     
