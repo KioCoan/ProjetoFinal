@@ -27,7 +27,7 @@
     self = [super init];
     
     if (self) {
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        self.backgroundColor = [SKColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
         
         
         
@@ -52,6 +52,7 @@
 }
 
 -(void)didMoveToView:(SKView *)view{
+    
     
     //CRIA O GESTURE E A TEXT FIELD
     
@@ -200,6 +201,7 @@
         
         [expressoes addObject:expressao];
         
+        operadorLabel.fontName = @"Helvetica";
         [self addChild:spriteOperador];
         [spriteOperador iniciarAnimacaoAbrir];
         [self addChild:espaco];
@@ -322,17 +324,13 @@
 
 
 - (void)animacaoOperadorErrado:(SpriteLabelNode *)conteudoAtivo{
-    
-    
     //DEIXA A LABEL VERMELHA E A COLOCA NA SUA COORDENADA DE INICIO
-    
-    
     
     conteudoAtivo.fontColor = [UIColor redColor];
     SKAction *animacaoVoltar = [SKAction moveTo:conteudoAtivo.posicaoInicial duration:0.5];
     [conteudoAtivo runAction:animacaoVoltar completion:^{
         [conteudoAtivo removeAllActions];
-        //conteudoAtivo.fontColor = [UIColor greenColor];
+        conteudoAtivo.fontColor = [UIColor whiteColor];
     }];
     
 }
@@ -347,9 +345,6 @@
     NSString *valor1 = [spriteOperador getValor1];
     NSString *valor2 = [spriteOperador getValor2];
     NSString *resultado = [spriteOperador getResultado];
-    
-    
-    
     
     //CHAMA O CALCULADOR E SE A EXPRESSAO ESTA CORRETA
     
