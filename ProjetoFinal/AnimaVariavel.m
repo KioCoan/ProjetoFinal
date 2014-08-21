@@ -15,6 +15,11 @@
         enderecoCaixa = 1;
         tamanhoCaixa = CGSizeMake(250, 267);
         
+//        SKSpriteNode *fundo = [[SKSpriteNode alloc] initWithImageNamed:@"fundo-animaVariavel.png"];
+//        [fundo setSize:CGSizeMake(661, 470)];
+//        [fundo setPosition:CGPointMake(360, 270)];        FUNDO DA ANIMAÇÃO
+//        [self addChild:fundo];
+        
         Gerador *gerador = [[Gerador alloc] init];
         
         //ADICIONA UMA CAIXA NO CANTO SUPERIOR ESQUERDO DA TELA
