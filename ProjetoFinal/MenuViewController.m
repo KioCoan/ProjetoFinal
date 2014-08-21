@@ -103,13 +103,14 @@ static const int ESPACAMENTO_BOTOES = 50;
     [botao setImage:[self retornaImagemBotao:contadorNomes] forState:UIControlStateNormal];
     [botao setTitle:[gerenciadorDeAssuntos getNomedoAssunto:contadorNomes] forState:UIControlStateNormal];
     [botao addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
+    [self inserirLabelTituloAssunto:view posicaoBase:posicaoXBotao titulo:botao.currentTitle];
+    
     if(contadorNomes > 3 ){
         botao.enabled = NO;
     }
     
     [view addSubview:botao];
     
-    [self inserirLabelTituloAssunto:view titulo:botao.currentTitle];
     
     return 1;
 }
@@ -126,6 +127,7 @@ static const int ESPACAMENTO_BOTOES = 50;
     [botao setImage:[self retornaImagemBotao:contadorNomes] forState:UIControlStateNormal];
     [botao addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
     [botao setTitle:[gerenciadorDeAssuntos getNomedoAssunto:contadorNomes++] forState:UIControlStateNormal];
+    [self inserirLabelTituloAssunto:view posicaoBase:posicaoBotao1 titulo:botao.currentTitle];
     
     
     //INICIALIZA SEGUNDO BOTÃO
@@ -133,6 +135,7 @@ static const int ESPACAMENTO_BOTOES = 50;
     [botao2 setImage:[self retornaImagemBotao:contadorNomes] forState:UIControlStateNormal];
     [botao2 addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
     [botao2 setTitle:[gerenciadorDeAssuntos getNomedoAssunto:contadorNomes] forState:UIControlStateNormal];
+    [self inserirLabelTituloAssunto:view posicaoBase:posicaoBotao2 titulo:botao2.currentTitle];
     
     [view addSubview:botao];
     [view addSubview:botao2];
@@ -143,7 +146,6 @@ static const int ESPACAMENTO_BOTOES = 50;
     }
     botao2.enabled = NO;
     
-    [self inserirLabelTituloAssunto:view titulo:botao.currentTitle];
     
     return 2;
 }
@@ -159,6 +161,7 @@ static const int ESPACAMENTO_BOTOES = 50;
     [botao setImage:[self retornaImagemBotao:contadorNomes] forState:UIControlStateNormal];
     [botao addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
     [botao setTitle:[gerenciadorDeAssuntos getNomedoAssunto:contadorNomes++] forState:UIControlStateNormal];
+    [self inserirLabelTituloAssunto:view posicaoBase:posicaoBotao1 titulo:botao.currentTitle];
     
     //INICIALIZA BOTÃO DO MEIO
     [self posicionarUmBotao:view :posicaoXBotao :posicaoYBotao :contadorNomes++];
@@ -168,6 +171,7 @@ static const int ESPACAMENTO_BOTOES = 50;
     [botao2 setImage:[self retornaImagemBotao:contadorNomes] forState:UIControlStateNormal];
     [botao2 addTarget:self action:@selector(mostrarAssunto:) forControlEvents:UIControlEventTouchUpInside];
     [botao2 setTitle:[gerenciadorDeAssuntos getNomedoAssunto:contadorNomes] forState:UIControlStateNormal];
+    [self inserirLabelTituloAssunto:view posicaoBase:posicaoBotao2 titulo:botao2.currentTitle];
     
     [view addSubview:botao];
     [view addSubview:botao2];
@@ -178,7 +182,7 @@ static const int ESPACAMENTO_BOTOES = 50;
     }
     
     
-    [self inserirLabelTituloAssunto:view titulo:botao.currentTitle];
+    
     
     return 3;
 }
@@ -189,7 +193,7 @@ static const int ESPACAMENTO_BOTOES = 50;
 }
 
 
--(void)inserirLabelTituloAssunto:(UIView*)view titulo:(NSString*)titulo{
+-(void)inserirLabelTituloAssunto:(UIView*)view posicaoBase:(int)posicaoX titulo:(NSString*)titulo{
 //    CGRect frame;
 //    frame.size.width = 100;
 //    frame.size.height = 15;
@@ -208,13 +212,13 @@ static const int ESPACAMENTO_BOTOES = 50;
     CGRect frame;
     frame.size.width = 100;
     frame.size.height = 15;
-    frame.origin.x = 10;
-    frame.origin.y = ((view.frame.size.height / 2) - (frame.size.height / 2));
+    frame.origin.x = posicaoX + (BOTAO_WIDTH / 2) - (frame.size.width / 2);
+    frame.origin.y = view.frame.size.height - 60;
     
     //INICIALIZA OS NUMEROS EXIBIDOS NA TELA
     UILabel *texto2 = [[UILabel alloc] initWithFrame:frame];
     [texto2 setText:titulo];
-    [texto2 setTextAlignment:NSTextAlignmentLeft];
+    [texto2 setTextAlignment:NSTextAlignmentCenter];
     [texto2 setTextColor:[UIColor grayColor]];
     [texto2 setFont:[UIFont fontWithName:@"Avenir Next Condensed" size:17]];
     [view addSubview:texto2];
