@@ -10,6 +10,7 @@
 #import "GerenciadorDeAssunto.h"
 #import "ConteudoViewController.h"
 #import "AlteraAnimacaoDelegate.h"
+
 @interface SubViewConteudoFilho : UIViewController
 {
     GerenciadorDeAssunto *gerenciadorDeAssuntos;
