@@ -9,9 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface FilhoViewController : UIViewController
+{
+    
+    __weak IBOutlet UIButton *btnOk;
+}
+
 
 @property (assign, nonatomic) NSInteger index;
 @property UIImage *imagemAtual;
 @property (weak, nonatomic) IBOutlet UIImageView *exibirImagem;
+@property BOOL ultimaTela;
+- (IBAction)finalizarTutorial:(id)sender;
 
 @end

@@ -26,6 +26,12 @@
     [super viewWillAppear:animated];
     
     [[self exibirImagem] setImage:self.imagemAtual];
+    
+    if(self.ultimaTela){
+        [btnOk setHidden:NO];
+    }else{
+        [btnOk setHidden:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +41,7 @@
 }
 
 
+- (IBAction)finalizarTutorial:(id)sender {
+    self.view.window.rootViewController = [self.view.window.rootViewController.storyboard   instantiateViewControllerWithIdentifier:@"navigationController"];
+}
 @end

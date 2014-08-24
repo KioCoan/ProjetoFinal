@@ -25,7 +25,8 @@
                                         [UIImage imageNamed:@"img-tutorial2.png"],
                                         [UIImage imageNamed:@"img-tutorial3.png"],
                                         [UIImage imageNamed:@"img-tutorial4.png"],
-                                        [UIImage imageNamed:@"img-tutorial5.png"], nil];
+                                        [UIImage imageNamed:@"img-tutorial5.png"],
+                                        [UIImage imageNamed:@"img-tutorial6.png"], nil];
     
     [self montaPaginador];
 }
@@ -56,6 +57,12 @@
     
     childViewController.index = index;
     childViewController.imagemAtual = [imagens objectAtIndex:index];
+    
+    if (index == [imagens count] -1) {
+        childViewController.ultimaTela = YES;
+    }else{
+        childViewController.ultimaTela = NO;
+    }
     
     return childViewController;
 }
@@ -119,6 +126,7 @@
 
 
 - (IBAction)pularTutorial:(id)sender {
+    
     self.view.window.rootViewController = [self.view.window.rootViewController.storyboard   instantiateViewControllerWithIdentifier:@"navigationController"];
 }
 @end
