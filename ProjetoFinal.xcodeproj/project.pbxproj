@@ -59,6 +59,7 @@
 		A597F0F51960A7A6006429C7 /* SubViewConteudoFilho.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0EF1960A7A6006429C7 /* SubViewConteudoFilho.m */; };
 		A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F11960A7A6006429C7 /* MenuViewController.m */; };
 		A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F31960A7A6006429C7 /* ConteudoViewController.m */; };
+		A5BE095F19C223AF00F7110E /* MenuPrincipalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BE095E19C223AF00F7110E /* MenuPrincipalViewController.m */; };
 		BD01DE051983566100AEAAA8 /* AnimaCondSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */; };
 		BD1AC842199AB5EC00CB7C5C /* AnimaVariavel.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD1AC840199AB5EC00CB7C5C /* AnimaVariavel.sks */; };
 		BD1AC843199AB5EC00CB7C5C /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1AC841199AB5EC00CB7C5C /* spark.png */; };
@@ -264,6 +265,8 @@
 		A597F0F11960A7A6006429C7 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		A597F0F21960A7A6006429C7 /* ConteudoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConteudoViewController.h; sourceTree = "<group>"; };
 		A597F0F31960A7A6006429C7 /* ConteudoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ConteudoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A5BE095D19C223AF00F7110E /* MenuPrincipalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuPrincipalViewController.h; sourceTree = "<group>"; };
+		A5BE095E19C223AF00F7110E /* MenuPrincipalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuPrincipalViewController.m; sourceTree = "<group>"; };
 		A5D0427819910A370064663B /* AlteraAnimacaoDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AlteraAnimacaoDelegate.h; path = Assuntos/AlteraAnimacaoDelegate.h; sourceTree = "<group>"; };
 		BD01DE031983566100AEAAA8 /* AnimaCondSimples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimaCondSimples.h; sourceTree = "<group>"; };
 		BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimaCondSimples.m; sourceTree = "<group>"; };
@@ -738,6 +741,8 @@
 				A597F0F31960A7A6006429C7 /* ConteudoViewController.m */,
 				A50B333E1972BF2E00BDD473 /* ListaDeExerciciosViewController.h */,
 				A50B333F1972BF2E00BDD473 /* ListaDeExerciciosViewController.m */,
+				A5BE095D19C223AF00F7110E /* MenuPrincipalViewController.h */,
+				A5BE095E19C223AF00F7110E /* MenuPrincipalViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -993,7 +998,7 @@
 				ORGANIZATIONNAME = "SENAC - iOS";
 				TargetAttributes = {
 					120E8F72192FC0A200CDEF95 = {
-						DevelopmentTeam = RB36YDUG62;
+						DevelopmentTeam = AAXRVGUSKH;
 					};
 					120E8F93192FC0A200CDEF95 = {
 						TestTargetID = 120E8F72192FC0A200CDEF95;
@@ -1157,6 +1162,7 @@
 				84B1B3E9197D8BEF00089FCB /* CenaExercicioCondSimples1.m in Sources */,
 				A521FEF01993FE9900D28627 /* SaidaDeDados.m in Sources */,
 				BDBE7696197A39E0004EA926 /* SpriteOperadorNode.m in Sources */,
+				A5BE095F19C223AF00F7110E /* MenuPrincipalViewController.m in Sources */,
 				8418F87C1970817000781F82 /* SpriteLabelNode.m in Sources */,
 				BDD2C07E19995B78003D557E /* Animacao.m in Sources */,
 				A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */,

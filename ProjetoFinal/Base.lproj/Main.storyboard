@@ -120,6 +120,24 @@
             </objects>
             <point key="canvasLocation" x="-332" y="-125"/>
         </scene>
+        <!--Menu Principal View Controller-->
+        <scene sceneID="q1e-Dv-nd3">
+            <objects>
+                <viewController id="uT6-X1-YJ1" customClass="MenuPrincipalViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Obi-eX-fwb"/>
+                        <viewControllerLayoutGuide type="bottom" id="mxp-i0-H71"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rUx-oB-wx2">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LW7-7o-K3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-337" y="1016"/>
+        </scene>
         <!--Conteudo View Controller-->
         <scene sceneID="5gT-Sf-nHQ">
             <objects>
