@@ -229,8 +229,8 @@
 		846B738D19782427009C2EB7 /* fundo-cinza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fundo-cinza.png"; path = "Imagens/fundo-cinza.png"; sourceTree = "<group>"; };
 		846B73901978255B009C2EB7 /* CenaExercicioOperadores1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenaExercicioOperadores1.h; sourceTree = "<group>"; };
 		846B73911978255B009C2EB7 /* CenaExercicioOperadores1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenaExercicioOperadores1.m; sourceTree = "<group>"; };
-		849970E4199EA38600996580 /* CenaExercicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenaExercicio.h; sourceTree = "<group>"; };
-		849970E5199EA38700996580 /* CenaExercicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenaExercicio.m; sourceTree = "<group>"; };
+		849970E4199EA38600996580 /* CenaExercicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CenaExercicio.h; path = ../CenaExercicio.h; sourceTree = "<group>"; };
+		849970E5199EA38700996580 /* CenaExercicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CenaExercicio.m; path = ../CenaExercicio.m; sourceTree = "<group>"; };
 		84B1B3E1197D881900089FCB /* CondicaoSimples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CondicaoSimples.h; sourceTree = "<group>"; };
 		84B1B3E2197D881900089FCB /* CondicaoSimples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CondicaoSimples.m; sourceTree = "<group>"; };
 		84B1B3E4197D8AE500089FCB /* ExeCondSimples1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExeCondSimples1.h; path = Exercicios/ExeCondSimples1.h; sourceTree = "<group>"; };
@@ -432,8 +432,6 @@
 		120E8F6A192FC0A200CDEF95 = {
 			isa = PBXGroup;
 			children = (
-				849970E4199EA38600996580 /* CenaExercicio.h */,
-				849970E5199EA38700996580 /* CenaExercicio.m */,
 				120E8F7C192FC0A200CDEF95 /* ProjetoFinal */,
 				120E8F9B192FC0A200CDEF95 /* ProjetoFinalTests */,
 				120E8F75192FC0A200CDEF95 /* Frameworks */,
@@ -555,9 +553,74 @@
 				BD5DE21319972335007849DB /* SpriteAtualizarNode.m */,
 				BDBE7698197A3A00004EA926 /* Variavel */,
 				BDBE7697197A39EF004EA926 /* Operadores */,
-				BD01DDFA19834E7C00AEAAA8 /* Condição */,
+				BD01DDFA19834E7C00AEAAA8 /* Condição */,
 			);
 			name = Objetos;
+			sourceTree = "<group>";
+		};
+		8487523219C3747500A93120 /* Desafio */ = {
+			isa = PBXGroup;
+			children = (
+				1551BFE219C36C3000CBDB86 /* ListaDesafioViewController.h */,
+				1551BFE319C36C3000CBDB86 /* ListaDesafioViewController.m */,
+				1551BFE519C36C3C00CBDB86 /* DesafioViewController.h */,
+				1551BFE619C36C3C00CBDB86 /* DesafioViewController.m */,
+			);
+			name = Desafio;
+			sourceTree = "<group>";
+		};
+		8487523319C3749500A93120 /* Conteudo */ = {
+			isa = PBXGroup;
+			children = (
+				8487523719C3755D00A93120 /* Exercicio */,
+				A597F0EE1960A7A6006429C7 /* SubViewConteudoFilho.h */,
+				A597F0EC1960A7A6006429C7 /* SubViewConteudo.h */,
+				A597F0F01960A7A6006429C7 /* MenuViewController.h */,
+				A597F0F11960A7A6006429C7 /* MenuViewController.m */,
+				A597F0EF1960A7A6006429C7 /* SubViewConteudoFilho.m */,
+				A597F0F21960A7A6006429C7 /* ConteudoViewController.h */,
+				A597F0F31960A7A6006429C7 /* ConteudoViewController.m */,
+				A597F0ED1960A7A6006429C7 /* SubViewConteudo.m */,
+			);
+			name = Conteudo;
+			sourceTree = "<group>";
+		};
+		8487523419C374DE00A93120 /* Enciclopedia */ = {
+			isa = PBXGroup;
+			children = (
+				1551BFDF19C36BFC00CBDB86 /* EnciclopediaViewController.h */,
+				1551BFE019C36BFC00CBDB86 /* EnciclopediaViewController.m */,
+				1551BFEB19C36F4B00CBDB86 /* ListaEnciclopediaViewController.h */,
+				1551BFEC19C36F4B00CBDB86 /* ListaEnciclopediaViewController.m */,
+			);
+			name = Enciclopedia;
+			sourceTree = "<group>";
+		};
+		8487523619C3751F00A93120 /* Livre */ = {
+			isa = PBXGroup;
+			children = (
+				1551BFE819C36C8600CBDB86 /* LivreViewController.h */,
+				1551BFE919C36C8600CBDB86 /* LivreViewController.m */,
+			);
+			name = Livre;
+			sourceTree = "<group>";
+		};
+		8487523719C3755D00A93120 /* Exercicio */ = {
+			isa = PBXGroup;
+			children = (
+				8418F87F19708B0900781F82 /* ExercicioVIewContoller.h */,
+				8418F88019708B0900781F82 /* ExercicioVIewContoller.m */,
+				A50B333E1972BF2E00BDD473 /* ListaDeExerciciosViewController.h */,
+				A50B333F1972BF2E00BDD473 /* ListaDeExerciciosViewController.m */,
+			);
+			name = Exercicio;
+			sourceTree = "<group>";
+		};
+		8487523819C3784000A93120 /* Desafio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Desafio;
 			sourceTree = "<group>";
 		};
 		84B1B3DE197D6E4A00089FCB /* Condicionais */ = {
@@ -626,6 +689,7 @@
 		91A9860D196231F500EA1074 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8487523819C3784000A93120 /* Desafio */,
 				846B738F197824AD009C2EB7 /* Objetos */,
 				91A98616196232DF00EA1074 /* Exercicios */,
 				91A986121962328800EA1074 /* Animacoes */,
@@ -675,6 +739,8 @@
 				8418F87E1970895500781F82 /* Variaveis */,
 				91A98617196232F800EA1074 /* Exercicio.h */,
 				91A98618196232F800EA1074 /* Exercicio.m */,
+				849970E4199EA38600996580 /* CenaExercicio.h */,
+				849970E5199EA38700996580 /* CenaExercicio.m */,
 			);
 			name = Exercicios;
 			sourceTree = "<group>";
@@ -710,12 +776,12 @@
 			children = (
 				A529DF1E1965DB8A00A3D9FB /* Calculador.h */,
 				A529DF1F1965DB8A00A3D9FB /* Calculador.m */,
-				A529DF0B1965DB3800A3D9FB /* Operações */,
+				A529DF0B1965DB3800A3D9FB /* Operações */,
 			);
 			name = Calculador;
 			sourceTree = "<group>";
 		};
-		A529DF0B1965DB3800A3D9FB /* Operações */ = {
+		A529DF0B1965DB3800A3D9FB /* Operações */ = {
 			isa = PBXGroup;
 			children = (
 				A529DF151965DB7500A3D9FB /* Relacional.h */,
@@ -743,36 +809,18 @@
 		A597F0EB1960A78E006429C7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				BDD22EF319A6F2390043AA02 /* Introducao */,
-				8418F87F19708B0900781F82 /* ExercicioVIewContoller.h */,
-				8418F88019708B0900781F82 /* ExercicioVIewContoller.m */,
-				A597F0EC1960A7A6006429C7 /* SubViewConteudo.h */,
-				A597F0ED1960A7A6006429C7 /* SubViewConteudo.m */,
-				A597F0EE1960A7A6006429C7 /* SubViewConteudoFilho.h */,
-				A597F0EF1960A7A6006429C7 /* SubViewConteudoFilho.m */,
-				A597F0F01960A7A6006429C7 /* MenuViewController.h */,
-				A597F0F11960A7A6006429C7 /* MenuViewController.m */,
-				A597F0F21960A7A6006429C7 /* ConteudoViewController.h */,
-				A597F0F31960A7A6006429C7 /* ConteudoViewController.m */,
-				A50B333E1972BF2E00BDD473 /* ListaDeExerciciosViewController.h */,
-				A50B333F1972BF2E00BDD473 /* ListaDeExerciciosViewController.m */,
 				A5BE095D19C223AF00F7110E /* MenuPrincipalViewController.h */,
 				A5BE095E19C223AF00F7110E /* MenuPrincipalViewController.m */,
-				1551BFDF19C36BFC00CBDB86 /* EnciclopediaViewController.h */,
-				1551BFE019C36BFC00CBDB86 /* EnciclopediaViewController.m */,
-				1551BFE219C36C3000CBDB86 /* ListaDesafioViewController.h */,
-				1551BFE319C36C3000CBDB86 /* ListaDesafioViewController.m */,
-				1551BFE519C36C3C00CBDB86 /* DesafioViewController.h */,
-				1551BFE619C36C3C00CBDB86 /* DesafioViewController.m */,
-				1551BFE819C36C8600CBDB86 /* LivreViewController.h */,
-				1551BFE919C36C8600CBDB86 /* LivreViewController.m */,
-				1551BFEB19C36F4B00CBDB86 /* ListaEnciclopediaViewController.h */,
-				1551BFEC19C36F4B00CBDB86 /* ListaEnciclopediaViewController.m */,
+				BDD22EF319A6F2390043AA02 /* Introducao */,
+				8487523219C3747500A93120 /* Desafio */,
+				8487523319C3749500A93120 /* Conteudo */,
+				8487523419C374DE00A93120 /* Enciclopedia */,
+				8487523619C3751F00A93120 /* Livre */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
+		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
 			isa = PBXGroup;
 			children = (
 				BDE82C271991778700610D96 /* SpriteCondicaoNode.h */,
@@ -783,7 +831,7 @@
 			name = "Condição";
 			sourceTree = "<group>";
 		};
-		BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */ = {
+		BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */ = {
 			isa = PBXGroup;
 			children = (
 				BD1AC840199AB5EC00CB7C5C /* AnimaVariavel.sks */,
@@ -829,7 +877,7 @@
 		BDBE7698197A3A00004EA926 /* Variavel */ = {
 			isa = PBXGroup;
 			children = (
-				BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */,
+				BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */,
 				BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */,
 				BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */,
 			);

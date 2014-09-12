@@ -8,7 +8,13 @@
 
 #import "LivreViewController.h"
 
-@interface LivreViewController ()
+@interface LivreViewController (){
+    
+    SKScene *cena;
+    SKView *viewExercicio;
+    
+    
+}
 
 @end
 
