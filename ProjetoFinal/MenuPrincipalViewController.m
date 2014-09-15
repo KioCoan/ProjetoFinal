@@ -7,6 +7,7 @@
 //
 
 #import "MenuPrincipalViewController.h"
+#import "Expressao.h"
 
 @interface MenuPrincipalViewController ()
 
@@ -33,6 +34,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)btnTeste:(id)sender {
+    Expressao *exp = [[Expressao alloc] initWithNivel:2 andOperator:@"logico"];
+    
+    NSLog(@"%@ %@ %@ = %@",[exp saidaParte1],[exp operador], [exp saidaParte2], [exp resultado]);
 }
 
 /*

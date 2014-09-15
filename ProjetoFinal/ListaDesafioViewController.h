@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListaDesafioViewController : UIViewController
+@interface ListaDesafioViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

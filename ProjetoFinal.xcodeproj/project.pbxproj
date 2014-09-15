@@ -65,6 +65,8 @@
 		A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F11960A7A6006429C7 /* MenuViewController.m */; };
 		A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F31960A7A6006429C7 /* ConteudoViewController.m */; };
 		A5BE095F19C223AF00F7110E /* MenuPrincipalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BE095E19C223AF00F7110E /* MenuPrincipalViewController.m */; };
+		A5BE096919C5E87100F7110E /* ParteDaExpressao.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BE096819C5E87100F7110E /* ParteDaExpressao.m */; };
+		A5F38EFA19C5F6B700D337A4 /* Expressao.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F38EF919C5F6B700D337A4 /* Expressao.m */; };
 		BD01DE051983566100AEAAA8 /* AnimaCondSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */; };
 		BD1AC842199AB5EC00CB7C5C /* AnimaVariavel.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD1AC840199AB5EC00CB7C5C /* AnimaVariavel.sks */; };
 		BD1AC843199AB5EC00CB7C5C /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1AC841199AB5EC00CB7C5C /* spark.png */; };
@@ -282,7 +284,11 @@
 		A597F0F31960A7A6006429C7 /* ConteudoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ConteudoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A5BE095D19C223AF00F7110E /* MenuPrincipalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuPrincipalViewController.h; sourceTree = "<group>"; };
 		A5BE095E19C223AF00F7110E /* MenuPrincipalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuPrincipalViewController.m; sourceTree = "<group>"; };
+		A5BE096719C5E87100F7110E /* ParteDaExpressao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParteDaExpressao.h; path = Tools/Desafios/ParteDaExpressao.h; sourceTree = "<group>"; };
+		A5BE096819C5E87100F7110E /* ParteDaExpressao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParteDaExpressao.m; path = Tools/Desafios/ParteDaExpressao.m; sourceTree = "<group>"; };
 		A5D0427819910A370064663B /* AlteraAnimacaoDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AlteraAnimacaoDelegate.h; path = Assuntos/AlteraAnimacaoDelegate.h; sourceTree = "<group>"; };
+		A5F38EF819C5F6B700D337A4 /* Expressao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Expressao.h; path = Tools/Desafios/Expressao.h; sourceTree = "<group>"; };
+		A5F38EF919C5F6B700D337A4 /* Expressao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Expressao.m; path = Tools/Desafios/Expressao.m; sourceTree = "<group>"; };
 		BD01DE031983566100AEAAA8 /* AnimaCondSimples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimaCondSimples.h; sourceTree = "<group>"; };
 		BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimaCondSimples.m; sourceTree = "<group>"; };
 		BD1AC840199AB5EC00CB7C5C /* AnimaVariavel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = AnimaVariavel.sks; path = "Partículas/AnimaVariavel.sks"; sourceTree = "<group>"; };
@@ -756,6 +762,7 @@
 		A521FEE51993B83400D28627 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				A5BE096019C5E7D100F7110E /* Desafios */,
 				A521FEE61993B84200D28627 /* Gerador */,
 				A529DF0A1965DB2200A3D9FB /* Calculador */,
 			);
@@ -818,6 +825,17 @@
 				8487523619C3751F00A93120 /* Livre */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A5BE096019C5E7D100F7110E /* Desafios */ = {
+			isa = PBXGroup;
+			children = (
+				A5BE096719C5E87100F7110E /* ParteDaExpressao.h */,
+				A5BE096819C5E87100F7110E /* ParteDaExpressao.m */,
+				A5F38EF819C5F6B700D337A4 /* Expressao.h */,
+				A5F38EF919C5F6B700D337A4 /* Expressao.m */,
+			);
+			name = Desafios;
 			sourceTree = "<group>";
 		};
 		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
@@ -1228,8 +1246,10 @@
 				A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */,
 				1551BFEA19C36C8600CBDB86 /* LivreViewController.m in Sources */,
 				A529DF201965DB8A00A3D9FB /* Calculador.m in Sources */,
+				A5BE096919C5E87100F7110E /* ParteDaExpressao.m in Sources */,
 				91A986111962324500EA1074 /* Assunto.m in Sources */,
 				A521FEE91993B87F00D28627 /* Gerador.m in Sources */,
+				A5F38EFA19C5F6B700D337A4 /* Expressao.m in Sources */,
 				849970E6199EA38700996580 /* CenaExercicio.m in Sources */,
 				A505740F1978243A00F68932 /* Geral.m in Sources */,
 				120E8F8D192FC0A200CDEF95 /* ViewController.m in Sources */,
