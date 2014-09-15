@@ -9,10 +9,9 @@
 #import "LivreViewController.h"
 
 @interface LivreViewController (){
-    
-    SKScene *cena;
-    SKView *viewExercicio;
-    
+
+    SKView *viewLivre;
+    UIView *novaView;
     
 }
 
@@ -32,7 +31,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+	
+    novaView = [[UIView alloc]initWithFrame:self.view.bounds];
+    
+    //[self.view addSubview:novaView];
+    
+    viewLivre = [[SKView alloc]initWithFrame:self.view.frame];
+    [self.view addSubview:viewLivre];
+    
+    
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    
+    CenaLivre *cena = [[CenaLivre alloc]init];
+    
+    [cena setSize: viewLivre.frame.size];
+    //[cena setSize: viewExercicio.frame.size];
+    
+    [viewLivre presentScene:cena];
+    
 }
 
 - (void)didReceiveMemoryWarning

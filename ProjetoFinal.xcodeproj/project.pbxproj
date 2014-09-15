@@ -35,6 +35,7 @@
 		8446A4D51994027500C92785 /* LivreVariavel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446A4D41994027500C92785 /* LivreVariavel.m */; };
 		846B738E19782427009C2EB7 /* fundo-cinza.png in Resources */ = {isa = PBXBuildFile; fileRef = 846B738D19782427009C2EB7 /* fundo-cinza.png */; };
 		846B73921978255B009C2EB7 /* CenaExercicioOperadores1.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B73911978255B009C2EB7 /* CenaExercicioOperadores1.m */; };
+		8487523E19C379E100A93120 /* CenaLivre.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487523D19C379E100A93120 /* CenaLivre.m */; };
 		849970E6199EA38700996580 /* CenaExercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 849970E5199EA38700996580 /* CenaExercicio.m */; };
 		84B1B3E3197D881900089FCB /* CondicaoSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E2197D881900089FCB /* CondicaoSimples.m */; };
 		84B1B3E6197D8AE500089FCB /* ExeCondSimples1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E5197D8AE500089FCB /* ExeCondSimples1.m */; };
@@ -232,6 +233,8 @@
 		846B738D19782427009C2EB7 /* fundo-cinza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fundo-cinza.png"; path = "Imagens/fundo-cinza.png"; sourceTree = "<group>"; };
 		846B73901978255B009C2EB7 /* CenaExercicioOperadores1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenaExercicioOperadores1.h; sourceTree = "<group>"; };
 		846B73911978255B009C2EB7 /* CenaExercicioOperadores1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenaExercicioOperadores1.m; sourceTree = "<group>"; };
+		8487523C19C379E100A93120 /* CenaLivre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenaLivre.h; sourceTree = "<group>"; };
+		8487523D19C379E100A93120 /* CenaLivre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenaLivre.m; sourceTree = "<group>"; };
 		849970E4199EA38600996580 /* CenaExercicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CenaExercicio.h; path = ../CenaExercicio.h; sourceTree = "<group>"; };
 		849970E5199EA38700996580 /* CenaExercicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CenaExercicio.m; path = ../CenaExercicio.m; sourceTree = "<group>"; };
 		84B1B3E1197D881900089FCB /* CondicaoSimples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CondicaoSimples.h; sourceTree = "<group>"; };
@@ -587,9 +590,9 @@
 				A597F0F01960A7A6006429C7 /* MenuViewController.h */,
 				A597F0F11960A7A6006429C7 /* MenuViewController.m */,
 				A597F0EF1960A7A6006429C7 /* SubViewConteudoFilho.m */,
+				A597F0ED1960A7A6006429C7 /* SubViewConteudo.m */,
 				A597F0F21960A7A6006429C7 /* ConteudoViewController.h */,
 				A597F0F31960A7A6006429C7 /* ConteudoViewController.m */,
-				A597F0ED1960A7A6006429C7 /* SubViewConteudo.m */,
 			);
 			name = Conteudo;
 			sourceTree = "<group>";
@@ -610,6 +613,8 @@
 			children = (
 				1551BFE819C36C8600CBDB86 /* LivreViewController.h */,
 				1551BFE919C36C8600CBDB86 /* LivreViewController.m */,
+				8487523C19C379E100A93120 /* CenaLivre.h */,
+				8487523D19C379E100A93120 /* CenaLivre.m */,
 			);
 			name = Livre;
 			sourceTree = "<group>";
@@ -1251,6 +1256,7 @@
 				A505740F1978243A00F68932 /* Geral.m in Sources */,
 				120E8F8D192FC0A200CDEF95 /* ViewController.m in Sources */,
 				84B1B3E9197D8BEF00089FCB /* CenaExercicioCondSimples1.m in Sources */,
+				8487523E19C379E100A93120 /* CenaLivre.m in Sources */,
 				A521FEF01993FE9900D28627 /* SaidaDeDados.m in Sources */,
 				BDBE7696197A39E0004EA926 /* SpriteOperadorNode.m in Sources */,
 				A5BE095F19C223AF00F7110E /* MenuPrincipalViewController.m in Sources */,
