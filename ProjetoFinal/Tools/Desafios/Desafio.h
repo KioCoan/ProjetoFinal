@@ -11,12 +11,19 @@
 @interface Desafio : NSObject
 
 {
-    int nTasks, nivel;
-    NSMutableArray *listaDesafios;
+    int nTasks, nivel, tarefaAtual;
+    NSMutableArray *listaTarefas;
     NSString *tipo;
 }
+@property NSString *titulo, *descricao;
+
 
 -(id)initWithLevel:(int)nivel andType:(NSString*)tipo andTasks:(int)tasks;
 -(int)nTarefas;
-
+-(NSString*)parte1;
+-(NSString*)operador;
+-(NSString*)parte2;
+-(NSString*)resultado;
+-(BOOL)incrementaTarefa;
+-(BOOL)decrementaTarefa;
 @end

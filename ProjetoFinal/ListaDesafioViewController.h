@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ListaDesafioViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+- (IBAction)acaoBtn1:(id)sender;
 
 @end

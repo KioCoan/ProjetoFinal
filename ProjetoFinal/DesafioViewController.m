@@ -27,6 +27,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    self.desafioAtual = [[Desafio alloc] initWithLevel:2 andType:@"logico" andTasks:10];
+    self.lblParte1.text = [self.desafioAtual parte1];
+    self.lblOperador.text = [self.desafioAtual operador];
+    self.lblParte2.text = [self.desafioAtual parte2];
+    self.lblResultado.text = [self.desafioAtual resultado];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +41,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)acaoBotao1:(id)sender {
+    [self alteraValores];
+}
+
+- (IBAction)acaoBotao2:(id)sender {
+}
+
+-(void)alteraValores{
+    
+    if ([self.desafioAtual incrementaTarefa]) {
+        self.lblParte1.text = [self.desafioAtual parte1];
+        self.lblOperador.text = [self.desafioAtual operador];
+        self.lblParte2.text = [self.desafioAtual parte2];
+        self.lblResultado.text = [self.desafioAtual resultado];
+    }else{
+        NSLog(@"Fim");
+    }
+    
+    
+
+}
 @end
