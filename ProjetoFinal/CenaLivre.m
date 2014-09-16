@@ -8,6 +8,7 @@
 
 #import "CenaLivre.h"
 #import "SpriteCaixaNode.h"
+#import "SpriteOperadorNode.h"
 #import "MenuNode.h"
 
 @implementation CenaLivre{
@@ -81,7 +82,7 @@
     
     if ([conteudoAtivo.name isEqualToString:@"iconeMenu"]) {
         
-        [menu abrirFechar];
+        
         [self criaObjeto];
     }
     
@@ -97,11 +98,19 @@
         caixa.position = conteudoAtivo.position;
         [menu addChild:caixa];
         [caixa iniciarAnimacaoIntroducao];
-        [caixa setMenu:menu];
+        [caixa setDono:menu];
+        [conteudoAtivo removeFromParent];
+    }else if ([icone.tipo isEqualToString:@"operador"]){
+        
+        SpriteOperadorNode *operador = [[SpriteOperadorNode alloc]init];
+        operador.position = conteudoAtivo.position;
+        [menu addChild:operador];
+        
+        [operador setDono:menu];
         [conteudoAtivo removeFromParent];
     }
     
-    
+    [menu abrirFechar];
     
 }
 @end

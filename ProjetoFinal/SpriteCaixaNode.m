@@ -236,12 +236,10 @@
     
     //SE A POSIÇÃO QUE FOI CLICADA É A MESMA DO SPRITE DA CAIXA, O SPRITE É MOVIDO
     
-    
-        
-        CGPoint location = [touch locationInNode:self.menu];
+    if (self.dono != nil) {
+        CGPoint location = [touch locationInNode:self.dono];
         [self setPosition:location];
-        
-    
+    }
 
     
 }

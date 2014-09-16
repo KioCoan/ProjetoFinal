@@ -192,5 +192,19 @@
     return nodeOperador;
 }
 
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    UITouch *touch = [touches anyObject];
+    
+    if (self.dono != nil) {
+        CGPoint location = [touch locationInNode:self.dono];
+        [self setPosition:location];
+    }
+    
+    
+    
+    
+}
+
 
 @end
