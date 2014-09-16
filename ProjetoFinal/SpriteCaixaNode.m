@@ -229,6 +229,23 @@
     [self executaSprite];
 }
 
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    UITouch *touch = [touches anyObject];
+    
+    
+    //SE A POSIÇÃO QUE FOI CLICADA É A MESMA DO SPRITE DA CAIXA, O SPRITE É MOVIDO
+    
+    
+        
+        CGPoint location = [touch locationInNode:self.menu];
+        [self setPosition:location];
+        
+    
+
+    
+}
+
 
 
 -(void)fecharCaixa{

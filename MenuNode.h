@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "IconeMenu.h"
 
 @interface MenuNode : SKSpriteNode
 
@@ -14,5 +15,5 @@
 
 - (void)abrirFechar;
 - (id)initWithPosicaoAbrir : (CGPoint)abrir PosicaoFechar:(CGPoint)fechar;
-
+- (void)criaIconePosicao:(CGPoint)posicao;
 @end

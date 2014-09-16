@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "MenuNode.h"
 
 //PROTOCOLO QUE AVISA A SEU DELEGATE QUANDO A CAIXA FOR CLICADA
 //@protocol SpriteCaixaNodeDelegate <NSObject>
@@ -29,7 +30,7 @@
     
     BOOL caixaAberta;
 }
-
+@property MenuNode *menu;
 //@property id <SpriteCaixaNodeDelegate> myDelegate;
 
 -(id)initWithConteudo:(NSString*)conteudo nome:(NSString*)nome tipo:(NSString*)tipo tamanho:(CGSize)tamanho;

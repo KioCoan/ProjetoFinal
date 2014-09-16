@@ -14,8 +14,6 @@
     
     MenuNode *menu;
     SKNode *conteudoAtivo;
-    SKAction *abrirMenu;
-    SKAction *fecharMenu;
 }
 
 
@@ -39,6 +37,12 @@
         [self addChild:botaoMenu];
         
         
+//        SKSpriteNode *caixa = [[SKSpriteNode alloc]initWithImageNamed:@"abrir-caixa1.png"];
+//        
+//        caixa.size = CGSizeMake(100, 100);
+//        caixa.position = CGPointMake(400, 300);
+//        caixa.name = @"iconeMenu";
+//        [self addChild:caixa];
         
     }
     return self;
@@ -55,9 +59,49 @@
     if ([conteudoAtivo.name isEqualToString:@"botaoMenu"]) {
         [menu abrirFechar];
     }
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    UITouch *touch = [touches anyObject];
+    
+    
+    //SE A POSIÇÃO QUE FOI CLICADA É A MESMA DO SPRITE DA CAIXA, O SPRITE É MOVIDO
+    
+    if ([conteudoAtivo.name isEqualToString:@"iconeMenu"]) {
+        
+        CGPoint location = [touch locationInNode:menu];
+        [conteudoAtivo setPosition:location];
+        
+    }
+    
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    if ([conteudoAtivo.name isEqualToString:@"iconeMenu"]) {
+        
+        [menu abrirFechar];
+        [self criaObjeto];
+    }
     
     
 }
 
-
+-(void)criaObjeto{
+    
+    IconeMenu *icone = (IconeMenu *)conteudoAtivo;
+    
+    if ([icone.tipo isEqualToString:@"variavel"]) {
+        SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]init];
+        caixa.position = conteudoAtivo.position;
+        [menu addChild:caixa];
+        [caixa iniciarAnimacaoIntroducao];
+        [caixa setMenu:menu];
+        [conteudoAtivo removeFromParent];
+    }
+    
+    
+    
+}
 @end
