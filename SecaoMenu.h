@@ -1,5 +1,5 @@
 //
-//  IconeMenu.h
+//  SecaoMenu.h
 //  ProjetoFinal
 //
 //  Created by Henrique Pereira de Lima on 16/09/14.
@@ -8,10 +8,11 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface IconeMenu : SKSpriteNode
+@interface SecaoMenu : SKSpriteNode
 
-@property NSString *tipo;
-@property CGPoint posicaoAnterior;
+@property NSString *titulo;
+@property NSMutableArray *icones;
+
 
 
 @end

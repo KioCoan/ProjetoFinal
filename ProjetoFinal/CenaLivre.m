@@ -91,7 +91,7 @@
 
 -(void)criaObjeto{
     
-    IconeMenu *icone = (IconeMenu *)conteudoAtivo;
+    IconeSecao *icone = (IconeSecao *)conteudoAtivo;
     
     if ([icone.tipo isEqualToString:@"variavel"]) {
         SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]init];

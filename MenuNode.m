@@ -10,7 +10,7 @@
 
 
 @implementation MenuNode{
-    
+    NSArray *secoes;
     BOOL aberto;
     SKAction *abrirMenu;
     SKAction *fecharMenu;
@@ -32,7 +32,7 @@
     aberto = NO;
     
     
-    
+    //INCLUINDO ICONES NO MENU
     
     
     CGPoint posicaoNode = CGPointMake(self.frame.size.width / 4, self.frame.origin.y + 130);
@@ -41,7 +41,7 @@
     
     for (int i = 1; i < 6; i++) {
         
-       IconeMenu *icone = [self criaIconeIndice:i];
+       IconeSecao *icone = [self criaIconeIndice:i];
         
         icone.size = CGSizeMake(100, 100);
         icone.position = posicaoNode;
@@ -57,29 +57,29 @@
     return self;
 }
 
-- (IconeMenu *)criaIconeIndice:(int)indice{
+- (IconeSecao *)criaIconeIndice:(int)indice{
     
-    IconeMenu *icone;
+    IconeSecao *icone;
     
     switch (indice) {
         case 1:
-            icone = [[IconeMenu alloc]initWithImageNamed:@"abrir-caixa1.png"];
+            icone = [[IconeSecao alloc]initWithImageNamed:@"abrir-caixa1.png"];
             icone.tipo = @"variavel";
             break;
         case 2:
-            icone = [[IconeMenu alloc]initWithImageNamed:@"parte-operador.png"];
+            icone = [[IconeSecao alloc]initWithImageNamed:@"parte-operador.png"];
             icone.tipo = @"operador";
             break;
         case 3:
-            icone = [[IconeMenu alloc]initWithImageNamed:@"se-verde.png"];
+            icone = [[IconeSecao alloc]initWithImageNamed:@"se-verde.png"];
             icone.tipo = @"se";
             break;
         case 4:
-            icone = [[IconeMenu alloc]initWithImageNamed:@"valores-errado.png"];
+            icone = [[IconeSecao alloc]initWithImageNamed:@"valores-errado.png"];
             icone.tipo = @"senao";
             break;
         case 5:
-            icone = [[IconeMenu alloc]initWithImageNamed:@"valores-verdadeiro.png"];
+            icone = [[IconeSecao alloc]initWithImageNamed:@"valores-verdadeiro.png"];
             icone.tipo = @"senaoSE";
             break;
         

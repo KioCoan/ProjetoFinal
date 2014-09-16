@@ -38,7 +38,9 @@
 		8487523E19C379E100A93120 /* CenaLivre.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487523D19C379E100A93120 /* CenaLivre.m */; };
 		8492087D19C765C200D64AE8 /* MenuNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8492087C19C765C200D64AE8 /* MenuNode.m */; };
 		8492087F19C7756400D64AE8 /* menuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8492087E19C7756400D64AE8 /* menuIcon.png */; };
-		84960B7A19C8B40000BC7808 /* IconeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 84960B7919C8B40000BC7808 /* IconeMenu.m */; };
+		84960B7A19C8B40000BC7808 /* IconeSecao.m in Sources */ = {isa = PBXBuildFile; fileRef = 84960B7919C8B40000BC7808 /* IconeSecao.m */; };
+		84960B7D19C8D7F500BC7808 /* SecaoMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 84960B7C19C8D7F500BC7808 /* SecaoMenu.m */; };
+		84960B8019C8D9B900BC7808 /* SecaoMenuVariavel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84960B7F19C8D9B900BC7808 /* SecaoMenuVariavel.m */; };
 		849970E6199EA38700996580 /* CenaExercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 849970E5199EA38700996580 /* CenaExercicio.m */; };
 		84B1B3E3197D881900089FCB /* CondicaoSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E2197D881900089FCB /* CondicaoSimples.m */; };
 		84B1B3E6197D8AE500089FCB /* ExeCondSimples1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E5197D8AE500089FCB /* ExeCondSimples1.m */; };
@@ -241,8 +243,12 @@
 		8492087B19C765C200D64AE8 /* MenuNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuNode.h; sourceTree = "<group>"; };
 		8492087C19C765C200D64AE8 /* MenuNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuNode.m; sourceTree = "<group>"; };
 		8492087E19C7756400D64AE8 /* menuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menuIcon.png; path = Imagens/menuIcon.png; sourceTree = "<group>"; };
-		84960B7819C8B40000BC7808 /* IconeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconeMenu.h; sourceTree = "<group>"; };
-		84960B7919C8B40000BC7808 /* IconeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconeMenu.m; sourceTree = "<group>"; };
+		84960B7819C8B40000BC7808 /* IconeSecao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconeSecao.h; sourceTree = "<group>"; };
+		84960B7919C8B40000BC7808 /* IconeSecao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconeSecao.m; sourceTree = "<group>"; };
+		84960B7B19C8D7F500BC7808 /* SecaoMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecaoMenu.h; sourceTree = "<group>"; };
+		84960B7C19C8D7F500BC7808 /* SecaoMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecaoMenu.m; sourceTree = "<group>"; };
+		84960B7E19C8D9B900BC7808 /* SecaoMenuVariavel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecaoMenuVariavel.h; sourceTree = "<group>"; };
+		84960B7F19C8D9B900BC7808 /* SecaoMenuVariavel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecaoMenuVariavel.m; sourceTree = "<group>"; };
 		849970E4199EA38600996580 /* CenaExercicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CenaExercicio.h; path = ../CenaExercicio.h; sourceTree = "<group>"; };
 		849970E5199EA38700996580 /* CenaExercicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CenaExercicio.m; path = ../CenaExercicio.m; sourceTree = "<group>"; };
 		84B1B3E1197D881900089FCB /* CondicaoSimples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CondicaoSimples.h; sourceTree = "<group>"; };
@@ -454,8 +460,12 @@
 			children = (
 				8492087B19C765C200D64AE8 /* MenuNode.h */,
 				8492087C19C765C200D64AE8 /* MenuNode.m */,
-				84960B7819C8B40000BC7808 /* IconeMenu.h */,
-				84960B7919C8B40000BC7808 /* IconeMenu.m */,
+				84960B7B19C8D7F500BC7808 /* SecaoMenu.h */,
+				84960B7C19C8D7F500BC7808 /* SecaoMenu.m */,
+				84960B7E19C8D9B900BC7808 /* SecaoMenuVariavel.h */,
+				84960B7F19C8D9B900BC7808 /* SecaoMenuVariavel.m */,
+				84960B7819C8B40000BC7808 /* IconeSecao.h */,
+				84960B7919C8B40000BC7808 /* IconeSecao.m */,
 				120E8F7C192FC0A200CDEF95 /* ProjetoFinal */,
 				120E8F9B192FC0A200CDEF95 /* ProjetoFinalTests */,
 				120E8F75192FC0A200CDEF95 /* Frameworks */,
@@ -1276,11 +1286,12 @@
 				A5BE095F19C223AF00F7110E /* MenuPrincipalViewController.m in Sources */,
 				8418F87C1970817000781F82 /* SpriteLabelNode.m in Sources */,
 				BDD2C07E19995B78003D557E /* Animacao.m in Sources */,
-				84960B7A19C8B40000BC7808 /* IconeMenu.m in Sources */,
+				84960B7A19C8B40000BC7808 /* IconeSecao.m in Sources */,
 				A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */,
 				BDBE7693197A39E0004EA926 /* OperadorNode.m in Sources */,
 				8423FA3F199AC1BF00C447FF /* CenaExercicioVariavel2.m in Sources */,
 				1551BFE419C36C3000CBDB86 /* ListaDesafioViewController.m in Sources */,
+				84960B7D19C8D7F500BC7808 /* SecaoMenu.m in Sources */,
 				120E8F87192FC0A200CDEF95 /* AppDelegate.m in Sources */,
 				BDB48111196CB89400D5901A /* AnimaOperadores.m in Sources */,
 				BD5DE21419972335007849DB /* SpriteAtualizarNode.m in Sources */,
@@ -1289,6 +1300,7 @@
 				BDB4810B196CB7FC00D5901A /* Operadores.m in Sources */,
 				1551BFE719C36C3C00CBDB86 /* DesafioViewController.m in Sources */,
 				A597F0F41960A7A6006429C7 /* SubViewConteudo.m in Sources */,
+				84960B8019C8D9B900BC7808 /* SecaoMenuVariavel.m in Sources */,
 				91A9861E1962392400EA1074 /* GerenciadorDeAssunto.m in Sources */,
 				BDE82C291991778700610D96 /* SpriteCondicaoNode.m in Sources */,
 				A529DF1D1965DB7500A3D9FB /* Logico.m in Sources */,
