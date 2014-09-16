@@ -8,11 +8,14 @@
 
 #import "CenaLivre.h"
 #import "SpriteCaixaNode.h"
+#import "MenuNode.h"
 
 @implementation CenaLivre{
     
-    UIScrollView *scrollView;
-    
+    MenuNode *menu;
+    SKNode *conteudoAtivo;
+    SKAction *abrirMenu;
+    SKAction *fecharMenu;
 }
 
 
@@ -22,26 +25,38 @@
     
     if (self) {
         
-        self.backgroundColor = [SKColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
+        self.backgroundColor = [SKColor lightGrayColor];
+        menu = [[MenuNode alloc]initWithPosicaoAbrir:CGPointMake(105, 500) PosicaoFechar:CGPointMake(-100, 500)];
         
-        scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(200, 400, 500, 150)];
-        scrollView.backgroundColor = [UIColor whiteColor];
         
-        [self.view addSubview:scrollView];
+        [self addChild:menu];
         
-        SpriteCaixaNode *teste = [[SpriteCaixaNode alloc]initWithConteudo:@"teste" nome:@"seila" tipo:@"opa" tamanho:CGSizeMake(200 , 200)];
+        SKSpriteNode *botaoMenu = [[SKSpriteNode alloc]initWithImageNamed:@"menuIcon.png"];
         
-        UIImage *imagem = [UIImage imageNamed:@"abrir-caixa1.png"];
+        botaoMenu.size = CGSizeMake(80, 80);
+        botaoMenu.position = CGPointMake(50, 915);
+        botaoMenu.name = @"botaoMenu";
+        [self addChild:botaoMenu];
         
-        UIImageView *image = [[UIImageView alloc]initWithImage:imagem];
         
-        [scrollView addSubview:image];
-        teste.position = CGPointMake(200, 70);
-        
-        [self addChild:teste];
         
     }
     return self;
+}
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint location =  [touch locationInNode:self];
+    conteudoAtivo = [self nodeAtPoint:location];
+    
+    if ([conteudoAtivo.name isEqualToString:@"botaoMenu"]) {
+        [menu abrirFechar];
+    }
+    
+    
 }
 
 

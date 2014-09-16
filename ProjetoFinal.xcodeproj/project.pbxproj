@@ -36,6 +36,8 @@
 		846B738E19782427009C2EB7 /* fundo-cinza.png in Resources */ = {isa = PBXBuildFile; fileRef = 846B738D19782427009C2EB7 /* fundo-cinza.png */; };
 		846B73921978255B009C2EB7 /* CenaExercicioOperadores1.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B73911978255B009C2EB7 /* CenaExercicioOperadores1.m */; };
 		8487523E19C379E100A93120 /* CenaLivre.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487523D19C379E100A93120 /* CenaLivre.m */; };
+		8492087D19C765C200D64AE8 /* MenuNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8492087C19C765C200D64AE8 /* MenuNode.m */; };
+		8492087F19C7756400D64AE8 /* menuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8492087E19C7756400D64AE8 /* menuIcon.png */; };
 		849970E6199EA38700996580 /* CenaExercicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 849970E5199EA38700996580 /* CenaExercicio.m */; };
 		84B1B3E3197D881900089FCB /* CondicaoSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E2197D881900089FCB /* CondicaoSimples.m */; };
 		84B1B3E6197D8AE500089FCB /* ExeCondSimples1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E5197D8AE500089FCB /* ExeCondSimples1.m */; };
@@ -235,6 +237,9 @@
 		846B73911978255B009C2EB7 /* CenaExercicioOperadores1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenaExercicioOperadores1.m; sourceTree = "<group>"; };
 		8487523C19C379E100A93120 /* CenaLivre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenaLivre.h; sourceTree = "<group>"; };
 		8487523D19C379E100A93120 /* CenaLivre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenaLivre.m; sourceTree = "<group>"; };
+		8492087B19C765C200D64AE8 /* MenuNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuNode.h; sourceTree = "<group>"; };
+		8492087C19C765C200D64AE8 /* MenuNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuNode.m; sourceTree = "<group>"; };
+		8492087E19C7756400D64AE8 /* menuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menuIcon.png; path = Imagens/menuIcon.png; sourceTree = "<group>"; };
 		849970E4199EA38600996580 /* CenaExercicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CenaExercicio.h; path = ../CenaExercicio.h; sourceTree = "<group>"; };
 		849970E5199EA38700996580 /* CenaExercicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CenaExercicio.m; path = ../CenaExercicio.m; sourceTree = "<group>"; };
 		84B1B3E1197D881900089FCB /* CondicaoSimples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CondicaoSimples.h; sourceTree = "<group>"; };
@@ -444,6 +449,8 @@
 		120E8F6A192FC0A200CDEF95 = {
 			isa = PBXGroup;
 			children = (
+				8492087B19C765C200D64AE8 /* MenuNode.h */,
+				8492087C19C765C200D64AE8 /* MenuNode.m */,
 				120E8F7C192FC0A200CDEF95 /* ProjetoFinal */,
 				120E8F9B192FC0A200CDEF95 /* ProjetoFinalTests */,
 				120E8F75192FC0A200CDEF95 /* Frameworks */,
@@ -1017,6 +1024,7 @@
 		E501FA69192FCD1600B56B5C /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				8492087E19C7756400D64AE8 /* menuIcon.png */,
 				BDD22F0619A6F4A70043AA02 /* Tutorial */,
 				BD9DF26B19A171A2003938C9 /* item-Condicionais.png */,
 				BD9DF26C19A171A2003938C9 /* item-Operadores.png */,
@@ -1195,6 +1203,7 @@
 				BDF8ADF2197B255C00BA5B8A /* parte-resultado5.png in Resources */,
 				BDF8ADF1197B255C00BA5B8A /* parte-resultado4.png in Resources */,
 				BDA68F3D199819C400BD0527 /* valores-errado.png in Resources */,
+				8492087F19C7756400D64AE8 /* menuIcon.png in Resources */,
 				BDC757A5196787E700DB8380 /* abrir-caixa8.png in Resources */,
 				BDD22F1019A6F4A70043AA02 /* img-tutorial7.png in Resources */,
 				BDC757A2196787E700DB8380 /* abrir-caixa5.png in Resources */,
@@ -1293,6 +1302,7 @@
 				A500C2B519743C1D00D6BE83 /* ExeVariavel1.m in Sources */,
 				BDD22EF619A6F29C0043AA02 /* TutorialViewController.m in Sources */,
 				BDBE7695197A39E0004EA926 /* OperadorValoresNode.m in Sources */,
+				8492087D19C765C200D64AE8 /* MenuNode.m in Sources */,
 				A55F2B411964879A00111BEB /* Variavel.m in Sources */,
 				84B1B3E6197D8AE500089FCB /* ExeCondSimples1.m in Sources */,
 				A529DF1B1965DB7500A3D9FB /* Relacional.m in Sources */,
