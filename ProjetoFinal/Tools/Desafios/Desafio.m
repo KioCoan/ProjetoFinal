@@ -15,19 +15,24 @@
     self = [super init];
     if (self) {
         listaTarefas = [[NSMutableArray alloc] init];
-        nivel = level;
-        tipo = type;
-        nTasks = tasks;
-        [self montaDesafio];
-        tarefaAtual = 0;
+        
+        [self montaDesafioNivel:level tipo:type nTarefas:tasks];
     }
     return self;
 }
 
--(void)montaDesafio{
-    for (int i = 0; i<nTasks; i++) {
-        [listaTarefas addObject:[[Expressao alloc] initWithNivel:nivel andOperator:tipo]];
+-(id)init{
+    self = [super init];
+    if (self) {
+        listaTarefas = [[NSMutableArray alloc] init];
     }
+    return self;
+}
+-(void)montaDesafioNivel:(int)level tipo:(NSString*)type nTarefas:(int)nTarefas{
+    nivel = level;
+    tipo = type;
+    nTasks = nTarefas;
+    tarefaAtual = 0;
 }
 
 -(int)nTarefas{
@@ -60,6 +65,14 @@
         return NO;
     }else{
         return YES;
+    }
+}
+-(NSMutableArray*)retornaTarefas{
+    return listaTarefas;
+}
+-(void)instanciaTarefas{
+    for (int i = 0; i<nTasks; i++) {
+        [listaTarefas addObject:[[Expressao alloc] initWithNivel:nivel andOperator:tipo]];
     }
 }
 

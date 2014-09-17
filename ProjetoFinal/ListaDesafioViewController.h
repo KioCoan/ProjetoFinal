@@ -7,8 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "GerenciadorDesafios.h"
 @interface ListaDesafioViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-- (IBAction)acaoBtn1:(id)sender;
+
+{
+    GerenciadorDesafios* gerenciadorDesafios;
+    NSMutableArray* titulosDescricoes;
+    __weak IBOutlet UITextView *txtDescricao;
+    __weak IBOutlet UIButton *btnDesafio;
+}
+
+@property (weak, nonatomic) IBOutlet UIButton *acaoBtnDesafio;
+
+
 
 @end

@@ -33,6 +33,7 @@
     self.lblOperador.text = [self.desafioAtual operador];
     self.lblParte2.text = [self.desafioAtual parte2];
     self.lblResultado.text = [self.desafioAtual resultado];
+    
 }
 
 - (void)didReceiveMemoryWarning

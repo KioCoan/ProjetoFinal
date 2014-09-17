@@ -21,6 +21,7 @@
 		120E8F98192FC0A200CDEF95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120E8F7A192FC0A200CDEF95 /* UIKit.framework */; };
 		120E8FA0192FC0A200CDEF95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 120E8F9E192FC0A200CDEF95 /* InfoPlist.strings */; };
 		120E8FA2192FC0A200CDEF95 /* ProjetoFinalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 120E8FA1192FC0A200CDEF95 /* ProjetoFinalTests.m */; };
+		12428D4519C9FC240012B2B6 /* GerenciadorDesafios.m in Sources */ = {isa = PBXBuildFile; fileRef = 12428D4419C9FC240012B2B6 /* GerenciadorDesafios.m */; };
 		125398C11992AB3B006D4DAC /* SpriteOperadorCondicional.m in Sources */ = {isa = PBXBuildFile; fileRef = 125398C01992AB3B006D4DAC /* SpriteOperadorCondicional.m */; };
 		1551BFE119C36BFC00CBDB86 /* EnciclopediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1551BFE019C36BFC00CBDB86 /* EnciclopediaViewController.m */; };
 		1551BFE419C36C3000CBDB86 /* ListaDesafioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1551BFE319C36C3000CBDB86 /* ListaDesafioViewController.m */; };
@@ -215,6 +216,8 @@
 		120E8F9D192FC0A200CDEF95 /* ProjetoFinalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProjetoFinalTests-Info.plist"; sourceTree = "<group>"; };
 		120E8F9F192FC0A200CDEF95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		120E8FA1192FC0A200CDEF95 /* ProjetoFinalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjetoFinalTests.m; sourceTree = "<group>"; };
+		12428D4319C9FC240012B2B6 /* GerenciadorDesafios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GerenciadorDesafios.h; sourceTree = "<group>"; };
+		12428D4419C9FC240012B2B6 /* GerenciadorDesafios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GerenciadorDesafios.m; sourceTree = "<group>"; };
 		125398BF1992AB3B006D4DAC /* SpriteOperadorCondicional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteOperadorCondicional.h; sourceTree = "<group>"; };
 		125398C01992AB3B006D4DAC /* SpriteOperadorCondicional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteOperadorCondicional.m; sourceTree = "<group>"; };
 		1551BFDF19C36BFC00CBDB86 /* EnciclopediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnciclopediaViewController.h; sourceTree = "<group>"; };
@@ -607,7 +610,7 @@
 				BD5DE21319972335007849DB /* SpriteAtualizarNode.m */,
 				BDBE7698197A3A00004EA926 /* Variavel */,
 				BDBE7697197A39EF004EA926 /* Operadores */,
-				BD01DDFA19834E7C00AEAAA8 /* Condição */,
+				BD01DDFA19834E7C00AEAAA8 /* Condição */,
 			);
 			name = Objetos;
 			sourceTree = "<group>";
@@ -681,6 +684,8 @@
 				A5F38EF919C5F6B700D337A4 /* Expressao.m */,
 				A5F38EFB19C711C900D337A4 /* Desafio.h */,
 				A5F38EFC19C711C900D337A4 /* Desafio.m */,
+				12428D4319C9FC240012B2B6 /* GerenciadorDesafios.h */,
+				12428D4419C9FC240012B2B6 /* GerenciadorDesafios.m */,
 			);
 			name = Desafio;
 			sourceTree = "<group>";
@@ -838,12 +843,12 @@
 			children = (
 				A529DF1E1965DB8A00A3D9FB /* Calculador.h */,
 				A529DF1F1965DB8A00A3D9FB /* Calculador.m */,
-				A529DF0B1965DB3800A3D9FB /* Operações */,
+				A529DF0B1965DB3800A3D9FB /* Operações */,
 			);
 			name = Calculador;
 			sourceTree = "<group>";
 		};
-		A529DF0B1965DB3800A3D9FB /* Operações */ = {
+		A529DF0B1965DB3800A3D9FB /* Operações */ = {
 			isa = PBXGroup;
 			children = (
 				A529DF151965DB7500A3D9FB /* Relacional.h */,
@@ -882,7 +887,7 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
+		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
 			isa = PBXGroup;
 			children = (
 				BDE82C271991778700610D96 /* SpriteCondicaoNode.h */,
@@ -893,7 +898,7 @@
 			name = "Condição";
 			sourceTree = "<group>";
 		};
-		BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */ = {
+		BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */ = {
 			isa = PBXGroup;
 			children = (
 				BD1AC840199AB5EC00CB7C5C /* AnimaVariavel.sks */,
@@ -939,7 +944,7 @@
 		BDBE7698197A3A00004EA926 /* Variavel */ = {
 			isa = PBXGroup;
 			children = (
-				BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */,
+				BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */,
 				BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */,
 				BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */,
 			);
@@ -1291,6 +1296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8418F88119708B0900781F82 /* ExercicioVIewContoller.m in Sources */,
+				12428D4519C9FC240012B2B6 /* GerenciadorDesafios.m in Sources */,
 				8446A4D51994027500C92785 /* LivreVariavel.m in Sources */,
 				8418F87D1970817000781F82 /* CenaExercicioVariavel1.m in Sources */,
 				BD4B4BDB197075BD00D6E839 /* SpriteCaixaNode.m in Sources */,

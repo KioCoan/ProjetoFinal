@@ -160,7 +160,7 @@
         <!--Desafio View Controller-->
         <scene sceneID="JHO-e0-Eh2">
             <objects>
-                <viewController id="cL3-ra-kgk" customClass="DesafioViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="desafio" id="cL3-ra-kgk" customClass="DesafioViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YDP-TM-gem"/>
                         <viewControllerLayoutGuide type="bottom" id="jFg-za-oRK"/>
@@ -234,7 +234,7 @@
         <!--Lista Desafio View Controller - Desafios-->
         <scene sceneID="86r-1f-ydU">
             <objects>
-                <viewController id="Laj-yx-eaG" customClass="ListaDesafioViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="listaDesafio" id="Laj-yx-eaG" customClass="ListaDesafioViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y4x-d8-8wZ"/>
                         <viewControllerLayoutGuide type="bottom" id="tuM-gg-evj"/>
@@ -267,8 +267,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="cRh-hY-Bbp" id="Nr5-ge-HiL"/>
-                                    <outlet property="delegate" destination="cRh-hY-Bbp" id="vPv-Ok-AyZ"/>
+                                    <outlet property="dataSource" destination="Laj-yx-eaG" id="xiW-Dt-V75"/>
+                                    <outlet property="delegate" destination="Laj-yx-eaG" id="O2H-2y-A2Z"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8U-cK-P8X">
@@ -280,8 +280,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="acaoBtn1:" destination="Laj-yx-eaG" eventType="touchUpInside" id="Rm9-H8-7GM"/>
-                                    <segue destination="cL3-ra-kgk" kind="push" id="VH2-QK-MTj"/>
+                                    <segue destination="cL3-ra-kgk" kind="push" id="gY3-HG-1DO"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icone-exercicio.png" translatesAutoresizingMaskIntoConstraints="NO" id="UZ9-iQ-tPY">
@@ -309,6 +308,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Desafios" id="iHi-iQ-lw0"/>
+                    <connections>
+                        <outlet property="acaoBtnDesafio" destination="I8U-cK-P8X" id="UgJ-98-coj"/>
+                        <outlet property="btnDesafio" destination="I8U-cK-P8X" id="lke-GF-XFd"/>
+                        <outlet property="txtDescricao" destination="WjA-N2-cyD" id="MZm-T0-I11"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOL-iF-5NB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -26,7 +26,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	gerenciadorDesafios = [GerenciadorDesafios sharedGerenciador];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    titulosDescricoes = [gerenciadorDesafios retornaTitulosEDescricoesDesafios];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,43 +48,42 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-//    cell.textLabel.text = [[titulosEDescricoes objectAtIndex:indexPath.row]valueForKey:@"titulo"];
-//    cell.detailTextLabel.text = [[titulosEDescricoes objectAtIndex:indexPath.row]valueForKey:@"descricao"];
-//    
-//    //VERIFICA SE A O EXERCÍCIO DA LINHA SELECIONADA FOI COMPLETADO PARA INSERIR OU NÃO A IMAGEM
+    cell.textLabel.text = [[titulosDescricoes objectAtIndex:indexPath.row]valueForKey:@"titulo"];
+    cell.detailTextLabel.text = [[titulosDescricoes objectAtIndex:indexPath.row]valueForKey:@"descricao"];
+    
+    //VERIFICA SE A O EXERCÍCIO DA LINHA SELECIONADA FOI COMPLETADO PARA INSERIR OU NÃO A IMAGEM
 //    if([self verificarExercicioCompleto:(int)indexPath.row]){
 //        UIImageView* imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"check.png"]];
 //        [imageView setFrame:CGRectMake(cell.frame.size.width - 50, 15, 35, 35)];
 //        [cell addSubview:imageView];
 //    }
-//    
+    
     return cell;
     
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5 ;//[titulosEDescricoes count];
+    return [titulosDescricoes count];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//    txtDescricao.text = [[titulosEDescricoes objectAtIndex:indexPath.row]valueForKey:@"descricao"];
-//    
-//    
-//    [btnExercitar setHidden:NO];
-//    
-//    //VERIFICA SE A O EXERCÍCIO DA LINHA SELECIONADA FOI COMPLETADO PARA DEFINIR O TEXTO CORRETO
+    txtDescricao.text = [[titulosDescricoes objectAtIndex:indexPath.row]valueForKey:@"descricao"];
+    
+    
+    [btnDesafio setHidden:NO];
+    
+    //VERIFICA SE A O EXERCÍCIO DA LINHA SELECIONADA FOI COMPLETADO PARA DEFINIR O TEXTO CORRETO
 //    if([self verificarExercicioCompleto:(int)indexPath.row]){
 //        [btnExercitar setTitle:@"Refazer" forState:UIControlStateNormal];
 //        
 //    }else{
 //        [btnExercitar setTitle:@"Iniciar" forState:UIControlStateNormal];
 //    }
-//    
-//    [gerenciador selecionaExercicio:(int)indexPath.row];
+    
+    [gerenciadorDesafios selecionaDesafio:(int)indexPath.row];
     
 }
 
-- (IBAction)acaoBtn1:(id)sender {
-}
+
 @end

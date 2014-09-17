@@ -15,7 +15,7 @@
     NSMutableArray *listaTarefas;
     NSString *tipo;
 }
-@property NSString *titulo, *descricao;
+@property NSString *tituloDesafio, *descricaoDesafio;
 
 
 -(id)initWithLevel:(int)nivel andType:(NSString*)tipo andTasks:(int)tasks;
@@ -26,4 +26,7 @@
 -(NSString*)resultado;
 -(BOOL)incrementaTarefa;
 -(BOOL)decrementaTarefa;
+-(NSMutableArray*)retornaTarefas;
+-(void)instanciaTarefas;
+-(void)montaDesafioNivel:(int)level tipo:(NSString*)type nTarefas:(int)nTarefas;
 @end
