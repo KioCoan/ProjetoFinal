@@ -11,7 +11,7 @@
 @interface Desafio : NSObject
 
 {
-    int nTasks, nivel, tarefaAtual;
+    int nTasks, nivel, tarefaAtual, nAcertos, nErros;
     NSMutableArray *listaTarefas;
     NSString *tipo;
 }
