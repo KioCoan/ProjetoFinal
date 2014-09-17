@@ -47,8 +47,8 @@
     
     // CONFIGURANDO MENU
     
-    abrirMenu = [SKAction moveToX:abrir.x duration:0.5];
-    fecharMenu = [SKAction moveToX:fechar.x duration:0.5];
+    abrirMenu = [SKAction moveToX:abrir.x duration:0.2];
+    fecharMenu = [SKAction moveToX:fechar.x duration:0.2];
     
     self.position = fechar;
     
