@@ -19,22 +19,21 @@
         
         NSArray *tiposVariaveis = [NSArray arrayWithObjects:@"inteiro", @"real",@"caractere",@"logico",nil];
         
+        
+        //DESCOMENTAR QUANDO A IMAGEM JA ESTIVER NO PROJETO, E INSERIR O NOME
+        //self.texture = [SKTexture textureWithImageNamed:<#(NSString *)#>];
+        
         self.icones = [NSMutableArray array];
         
         for (int i = 0; i < tiposVariaveis.count; i++) {
             
-            IconeSecao *novo = [[IconeSecao alloc]init];
-            [novo setSize:CGSizeMake(120, 120)];
-            [novo setName:@"iconeSecao"];
-            [novo setTipo: [tiposVariaveis objectAtIndex:i]];
-            [novo setSecao:self.titulo];
             
-            [self.icones addObject:novo];
-            
+            [self.icones addObject:[self criarIconeSecao:self.titulo tipo:[tiposVariaveis objectAtIndex:i] posicao:CGPointMake(0, 0)]];
+        
         }
     }
     
-    return nil;
+    return self;
 }
 
 

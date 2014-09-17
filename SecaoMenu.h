@@ -7,12 +7,13 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "IconeSecao.h"
 
 @interface SecaoMenu : SKSpriteNode
 
 @property NSString *titulo;
 @property NSMutableArray *icones;
 
-
+- (IconeSecao *)criarIconeSecao :(NSString *)titulo tipo:(NSString *)tipo posicao:(CGPoint)posicao;
 
 @end

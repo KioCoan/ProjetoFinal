@@ -10,5 +10,16 @@
 
 @implementation SecaoMenu
 
+- (IconeSecao *)criarIconeSecao :(NSString *)titulo tipo:(NSString *)tipo posicao:(CGPoint)posicao{
+    
+    IconeSecao *icone = [[IconeSecao alloc]init];
+    
+    [icone setSecao:titulo];
+    [icone setTipo:tipo];
+    [icone setPosition:posicao];
+    [icone setPosicaoAnterior:posicao];
+    
+    return icone;
+}
 
 @end

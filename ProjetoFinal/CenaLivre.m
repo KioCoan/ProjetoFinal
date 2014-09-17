@@ -50,6 +50,38 @@
 }
 
 
+
+
+-(void)criaObjeto{
+    
+    IconeSecao *icone = (IconeSecao *)conteudoAtivo;
+    
+    if ([icone.tipo isEqualToString:@"variavel"]) {
+        SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]init];
+        caixa.position = conteudoAtivo.position;
+        [menu addChild:caixa];
+        [caixa iniciarAnimacaoIntroducao];
+        [caixa setDono:menu];
+        [conteudoAtivo removeFromParent];
+    }else if ([icone.tipo isEqualToString:@"operador"]){
+        
+        SpriteOperadorNode *operador = [[SpriteOperadorNode alloc]init];
+        operador.position = conteudoAtivo.position;
+        [menu addChild:operador];
+        
+        [operador setDono:menu];
+        [conteudoAtivo removeFromParent];
+    }
+    
+    [menu abrirFechar];
+    [self.myDelegate esconderNavigationController: [menu getAberto]];
+    
+}
+
+
+
+
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     
@@ -59,6 +91,7 @@
     
     if ([conteudoAtivo.name isEqualToString:@"botaoMenu"]) {
         [menu abrirFechar];
+        [self.myDelegate esconderNavigationController: [menu getAberto]];
     }
 }
 
@@ -86,31 +119,6 @@
         [self criaObjeto];
     }
     
-    
 }
 
--(void)criaObjeto{
-    
-    IconeSecao *icone = (IconeSecao *)conteudoAtivo;
-    
-    if ([icone.tipo isEqualToString:@"variavel"]) {
-        SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]init];
-        caixa.position = conteudoAtivo.position;
-        [menu addChild:caixa];
-        [caixa iniciarAnimacaoIntroducao];
-        [caixa setDono:menu];
-        [conteudoAtivo removeFromParent];
-    }else if ([icone.tipo isEqualToString:@"operador"]){
-        
-        SpriteOperadorNode *operador = [[SpriteOperadorNode alloc]init];
-        operador.position = conteudoAtivo.position;
-        [menu addChild:operador];
-        
-        [operador setDono:menu];
-        [conteudoAtivo removeFromParent];
-    }
-    
-    [menu abrirFechar];
-    
-}
 @end

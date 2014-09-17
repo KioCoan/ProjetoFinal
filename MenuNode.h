@@ -8,6 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "IconeSecao.h"
+#import "SecaoMenu.h"
+#import "SecaoMenuVariavel.h"
 
 @interface MenuNode : SKSpriteNode
     
@@ -18,5 +20,6 @@
 
 - (void)abrirFechar;
 - (id)initWithPosicaoAbrir : (CGPoint)abrir PosicaoFechar:(CGPoint)fechar;
-- (void)criaIconePosicao:(CGPoint)posicao;
+- (BOOL)getAberto;
+//- (void)criaIconePosicao:(CGPoint)posicao;
 @end

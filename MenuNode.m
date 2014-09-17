@@ -10,17 +10,42 @@
 
 
 @implementation MenuNode{
-    NSArray *secoes;
+    NSMutableArray *secoes;
     BOOL aberto;
     SKAction *abrirMenu;
     SKAction *fecharMenu;
+    int nSecoes;
 }
+
+- (BOOL)getAberto{
+    return aberto;
+}
+
+- (SecaoMenu *)criaSecaoIndice:(int)indice{
+    
+    
+    switch (indice) {
+        
+        //VARIAVEL
+        case 0:
+            return [[SecaoMenuVariavel alloc]init];
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+    
+    return nil;
+}
+
 
 - (id)initWithPosicaoAbrir : (CGPoint)abrir PosicaoFechar:(CGPoint)fechar{
     
    self = [super init];
     
-    //ConfigurandoMenu
+    // CONFIGURANDO MENU
     
     abrirMenu = [SKAction moveToX:abrir.x duration:0.5];
     fecharMenu = [SKAction moveToX:fechar.x duration:0.5];
@@ -32,25 +57,48 @@
     aberto = NO;
     
     
-    //INCLUINDO ICONES NO MENU
+    // CRIANDO SECOES
+    
+    secoes = [NSMutableArray array];
+    
+    nSecoes = 1;
     
     
-    CGPoint posicaoNode = CGPointMake(self.frame.size.width / 4, self.frame.origin.y + 130);
-    
-    //adicionar objetos ao menu
-    
-    for (int i = 1; i < 6; i++) {
+    for (int i = 0; i < nSecoes; i++) {
         
-       IconeSecao *icone = [self criaIconeIndice:i];
+        [secoes addObject:[self criaSecaoIndice:i]];
         
-        icone.size = CGSizeMake(100, 100);
-        icone.position = posicaoNode;
-        icone.posicaoAnterior = posicaoNode;
-        posicaoNode.y -= icone.size.height + 30;
-        
-        
-        [self addChild:icone];
     }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    CGPoint posicaoNode = CGPointMake(self.frame.size.width / 4, self.frame.origin.y + 130);
+//    
+//    //adicionar objetos ao menu
+//    
+//    for (int i = 1; i < 6; i++) {
+//        
+//       IconeSecao *icone = [self criaIconeIndice:i];
+//        
+//        icone.size = CGSizeMake(100, 100);
+//        icone.position = posicaoNode;
+//        icone.posicaoAnterior = posicaoNode;
+//        posicaoNode.y -= icone.size.height + 30;
+//        
+//        
+//        [self addChild:icone];
+//    }
     
     
     
@@ -93,13 +141,6 @@
     return icone;
 }
 
-- (void)criaIconePosicao:(CGPoint)posicao{
-    
-    
-    
-    
-    
-}
 
 - (void)abrirFechar{
     

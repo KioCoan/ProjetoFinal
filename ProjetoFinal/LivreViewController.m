@@ -51,10 +51,20 @@
     
     [cena setSize: viewLivre.frame.size];
     //[cena setSize: viewExercicio.frame.size];
-    
+    [cena setMyDelegate:self];
     [viewLivre presentScene:cena];
     
 }
+
+
+- (void) esconderNavigationController:(BOOL)esconder{
+    
+    
+    [self.navigationController setNavigationBarHidden:esconder animated:YES];
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {

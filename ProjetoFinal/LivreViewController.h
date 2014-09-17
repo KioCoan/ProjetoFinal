@@ -11,6 +11,11 @@
 #import "CenaLivre.h"
 
 
-@interface LivreViewController : UIViewController
+
+
+@interface LivreViewController : UIViewController <CenaLivreDelegate>
+
+
+
 
 @end

@@ -9,6 +9,18 @@
 #import <SpriteKit/SpriteKit.h>
 #import <UIKit/UIKit.h>
 
+
+
+@protocol CenaLivreDelegate <NSObject>
+
+- (void)esconderNavigationController:(BOOL)esconder;
+
+@end
+
+
 @interface CenaLivre : SKScene
+
+@property id<CenaLivreDelegate> myDelegate;
+
 
 @end
