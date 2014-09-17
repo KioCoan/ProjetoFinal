@@ -53,7 +53,7 @@
     self.position = fechar;
     
     [self setTexture:[SKTexture textureWithImageNamed:@"fundo-descricao.png"]];
-    self.size = CGSizeMake(200, 700);
+    self.size = CGSizeMake(200, 1010);
     aberto = NO;
     
     

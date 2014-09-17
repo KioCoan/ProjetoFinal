@@ -25,17 +25,22 @@
     if (self) {
         
         self.backgroundColor = [SKColor lightGrayColor];
-        menu = [[MenuNode alloc]initWithPosicaoAbrir:CGPointMake(105, 500) PosicaoFechar:CGPointMake(-100, 500)];
+        
+        SKSpriteNode *botaoMenu = [[SKSpriteNode alloc]initWithImageNamed:@"modo livre-09.png"];
+        botaoMenu.position = CGPointMake(100, 100);
+        botaoMenu.name = @"botaoMenu";
+        [self addChild:botaoMenu];
+        
+        
+        menu = [[MenuNode alloc]initWithPosicaoAbrir:CGPointMake(105, 500) PosicaoFechar:CGPointMake(-100, 550)];
         
         
         [self addChild:menu];
         
-        SKSpriteNode *botaoMenu = [[SKSpriteNode alloc]initWithImageNamed:@"menuIcon.png"];
         
-        botaoMenu.size = CGSizeMake(80, 80);
-        botaoMenu.position = CGPointMake(50, 915);
-        botaoMenu.name = @"botaoMenu";
-        [self addChild:botaoMenu];
+        
+        
+        
         
         
 //        SKSpriteNode *caixa = [[SKSpriteNode alloc]initWithImageNamed:@"abrir-caixa1.png"];
