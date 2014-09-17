@@ -19,7 +19,7 @@
 
 
 - (void)abrirFechar;
-- (id)initWithPosicaoAbrir : (CGPoint)abrir PosicaoFechar:(CGPoint)fechar;
+- (id)initWithPosicaoAbrir : (CGPoint)abrir PosicaoFechar:(CGPoint)fechar tamanho:(CGSize)tamanho;
 - (BOOL)getAberto;
 //- (void)criaIconePosicao:(CGPoint)posicao;
 @end

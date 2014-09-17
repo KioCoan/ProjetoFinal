@@ -41,7 +41,7 @@
 }
 
 
-- (id)initWithPosicaoAbrir : (CGPoint)abrir PosicaoFechar:(CGPoint)fechar{
+- (id)initWithPosicaoAbrir : (CGPoint)abrir PosicaoFechar:(CGPoint)fechar tamanho:(CGSize)tamanho{
     
    self = [super init];
     
@@ -52,8 +52,9 @@
     
     self.position = fechar;
     
-    [self setTexture:[SKTexture textureWithImageNamed:@"fundo-descricao.png"]];
-    self.size = CGSizeMake(200, 1010);
+    [self setTexture:[SKTexture textureWithImageNamed:@"livre-menu.png"]];
+    self.size = CGSizeMake(self.texture.size.width, 1025);
+    self.name = @"menu";
     aberto = NO;
     
     

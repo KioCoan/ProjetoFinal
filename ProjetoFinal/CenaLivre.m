@@ -15,6 +15,7 @@
     
     MenuNode *menu;
     SKNode *conteudoAtivo;
+    SKSpriteNode *botaoMenu;
 }
 
 
@@ -25,37 +26,31 @@
     if (self) {
         
         self.backgroundColor = [SKColor lightGrayColor];
-        
-        SKSpriteNode *botaoMenu = [[SKSpriteNode alloc]initWithImageNamed:@"modo livre-09.png"];
+        self.name = @"fundo";
+        botaoMenu = [[SKSpriteNode alloc]initWithImageNamed:@"modo livre-09.png"];
         botaoMenu.position = CGPointMake(100, 100);
         botaoMenu.name = @"botaoMenu";
         [self addChild:botaoMenu];
         
-        
-        menu = [[MenuNode alloc]initWithPosicaoAbrir:CGPointMake(105, 500) PosicaoFechar:CGPointMake(-100, 550)];
-        
-        
+        //ALOCANDO MENU
+        menu = [[MenuNode alloc]initWithPosicaoAbrir:CGPointMake(245, 510) PosicaoFechar:CGPointMake(-245, 510) tamanho:CGSizeMake(500, 1030)];
         [self addChild:menu];
-        
-        
-        
-        
-        
-        
-        
-//        SKSpriteNode *caixa = [[SKSpriteNode alloc]initWithImageNamed:@"abrir-caixa1.png"];
-//        
-//        caixa.size = CGSizeMake(100, 100);
-//        caixa.position = CGPointMake(400, 300);
-//        caixa.name = @"iconeMenu";
-//        [self addChild:caixa];
-        
     }
     return self;
 }
 
 
-
+- (void)rodaeMuda{
+    
+    
+    SKAction *rodaBotao = [SKAction rotateByAngle:-M_PI duration:0.5];
+    
+    [botaoMenu runAction:rodaBotao completion:^{
+        botaoMenu.texture = [SKTexture textureWithImageNamed:@"modo livre-10.png"];
+    }];
+    
+    
+}
 
 -(void)criaObjeto{
     
@@ -85,8 +80,6 @@
 
 
 
-
-
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     
@@ -94,7 +87,12 @@
     CGPoint location =  [touch locationInNode:self];
     conteudoAtivo = [self nodeAtPoint:location];
     
+    [self rodaeMuda];
+    
     if ([conteudoAtivo.name isEqualToString:@"botaoMenu"]) {
+        [menu abrirFechar];
+        [self.myDelegate esconderNavigationController: [menu getAberto]];
+    }else if ([menu getAberto] && [conteudoAtivo.name isEqualToString:@"fundo"]){
         [menu abrirFechar];
         [self.myDelegate esconderNavigationController: [menu getAberto]];
     }
