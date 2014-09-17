@@ -97,4 +97,10 @@
     return titulosEDescricoes;
 }
 
+-(Desafio*)retornaTarefasParaDesafio{
+    return [meusDesafios objectAtIndex:desafioAtual];
+    
+}
+
+
 @end

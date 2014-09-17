@@ -86,4 +86,7 @@
 }
 
 
+- (IBAction)acaoBtnDesafio:(id)sender {
+    [gerenciadorDesafios instanciaTarefas];
+}
 @end

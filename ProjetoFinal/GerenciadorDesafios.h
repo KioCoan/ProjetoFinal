@@ -22,4 +22,5 @@
 -(NSMutableArray*)retornaDesafioSelacionado;
 -(void)instanciaTarefas;
 -(NSMutableArray*)retornaTitulosEDescricoesDesafios;
+-(Desafio*)retornaTarefasParaDesafio;
 @end

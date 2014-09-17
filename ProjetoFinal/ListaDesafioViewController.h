@@ -17,7 +17,8 @@
     __weak IBOutlet UIButton *btnDesafio;
 }
 
-@property (weak, nonatomic) IBOutlet UIButton *acaoBtnDesafio;
+- (IBAction)acaoBtnDesafio:(id)sender;
+
 
 
 

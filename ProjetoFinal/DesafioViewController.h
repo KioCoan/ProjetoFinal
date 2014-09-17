@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Desafio.h"
+#import "GerenciadorDesafios.h"
 @interface DesafioViewController : UIViewController
 
 {
     int nivel;
     NSString *tipo;
+    GerenciadorDesafios *gerenciadorDesafios;
     
 }
 @property Desafio *desafioAtual;

@@ -271,7 +271,7 @@
                                     <outlet property="delegate" destination="Laj-yx-eaG" id="O2H-2y-A2Z"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8U-cK-P8X">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8U-cK-P8X">
                                 <rect key="frame" x="557" y="801" width="191" height="193"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="35"/>
@@ -280,6 +280,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="acaoBtnDesafio:" destination="Laj-yx-eaG" eventType="touchUpInside" id="nTl-I8-rhj"/>
                                     <segue destination="cL3-ra-kgk" kind="push" id="gY3-HG-1DO"/>
                                 </connections>
                             </button>
@@ -309,7 +310,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Desafios" id="iHi-iQ-lw0"/>
                     <connections>
-                        <outlet property="acaoBtnDesafio" destination="I8U-cK-P8X" id="UgJ-98-coj"/>
                         <outlet property="btnDesafio" destination="I8U-cK-P8X" id="lke-GF-XFd"/>
                         <outlet property="txtDescricao" destination="WjA-N2-cyD" id="MZm-T0-I11"/>
                     </connections>
