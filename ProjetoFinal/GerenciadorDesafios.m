@@ -37,11 +37,12 @@
 -(void)criaDesafios{
     
     
-    [meusDesafios addObject:[self retornaDesafioNivel:1 tipo:@"logico" nTarefas:10]]; // DESAFIO 1 - ALTERAR TITULO E DESCRIÇÃO NO MÉTODO DE RETORNO
-    [meusDesafios addObject:[self retornaDesafioNivel:1 tipo:@"relacional" nTarefas:10]]; // DESAFIO 2 - ALTERAR TITULO E DESCRIÇÃO NO MÉTODO DE RETORNO
-    [meusDesafios addObject:[self retornaDesafioNivel:2 tipo:@"logico" nTarefas:15]]; // DESAFIO 3 - ALTERAR TITULO E DESCRIÇÃO NO MÉTODO DE RETORNO
-    
-    
+    [meusDesafios addObject:[self retornaDesafioNivel:1 tipo:@"logico" nTarefas:10]]; // DESAFIO 1 - LÓGICO FÁCIL
+    [meusDesafios addObject:[self retornaDesafioNivel:1 tipo:@"relacional" nTarefas:10]]; // DESAFIO 2 - RELACIONAL FÁCIL
+    [meusDesafios addObject:[self retornaDesafioNivel:2 tipo:@"logico" nTarefas:15]]; // DESAFIO 3 - LOGICO MÉDIO
+    [meusDesafios addObject:[self retornaDesafioNivel:2 tipo:@"relacionais" nTarefas:15]]; // DESAFIO 4 - RELACIONAL MÉDIO
+    [meusDesafios addObject:[self retornaDesafioNivel:3 tipo:@"logico" nTarefas:10]]; // DESAFIO 5 - LOGICO DIFÍCIL
+    [meusDesafios addObject:[self retornaDesafioNivel:2 tipo:@"relacionais" nTarefas:10]]; // DESAFIO 6 - RELACIONAL DIFÍCIL
 }
 
 
@@ -59,9 +60,24 @@
             break;
         case 3:
             [d setTituloDesafio:@"Desafio 3"];
+            [d setDescricaoDesafio:@"Resolva 15 exercícios de operadores logicos"];
+            break;
+        case 4:
+            [d setTituloDesafio:@"Desafio 4"];
             [d setDescricaoDesafio:@"Resolva 15 exercícios de operadores relacionais"];
             break;
+        case 5:
+            [d setTituloDesafio:@"Desafio 5"];
+            [d setDescricaoDesafio:@"Resolva 10 exercícios de operadores logicos - DIFÍCIL"];
+            break;
+        case 6:
+            [d setTituloDesafio:@"Desafio 6"];
+            [d setDescricaoDesafio:@"Resolva 10 exercícios de operadores relacionais - DIFÍCIL"];
+            break;
+        
         default:
+            [d setTituloDesafio:@"Atribua um título"];
+            [d setDescricaoDesafio:@"Atribua uma descrição"];
             break;
     }
     
@@ -70,8 +86,10 @@
 
 -(void)selecionaDesafio:(int)desafio{
     desafioAtual = desafio;
+    NSLog(@"%d", desafioAtual);
 }
 -(NSMutableArray*)retornaDesafioSelacionado{
+    
     return [[meusDesafios objectAtIndex:desafioAtual] retornaTarefas];
 }
 

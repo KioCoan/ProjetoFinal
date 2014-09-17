@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "Desafio.h"
 #import "GerenciadorDesafios.h"
+#import "Gerador.h"
 @interface DesafioViewController : UIViewController
 
 {
     int nivel;
     NSString *tipo;
     GerenciadorDesafios *gerenciadorDesafios;
-    
+    Gerador *gerador;
 }
 @property Desafio *desafioAtual;
 

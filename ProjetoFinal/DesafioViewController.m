@@ -29,7 +29,7 @@
 	// Do any additional setup after loading the view.
     
     gerenciadorDesafios = [GerenciadorDesafios sharedGerenciador];
-    
+    gerador = [[Gerador alloc]init];
     
 }
 
@@ -38,14 +38,25 @@
     [super viewDidAppear:animated];
     self.desafioAtual = [gerenciadorDesafios retornaTarefasParaDesafio];
     self.lblParte1.text = [self.desafioAtual parte1];
-    self.lblOperador.text = [self.desafioAtual operador];
+    self.lblOperador.text = @"?";
     self.lblParte2.text = [self.desafioAtual parte2];
     self.lblResultado.text = [self.desafioAtual resultado];
-    
+    [self ajustaBotoes];
     
     
 }
 
+-(void)ajustaBotoes{
+    int aleatorio = arc4random() % 2;
+    if (aleatorio == 1) {
+        [self.btn1 setTitle:[self.desafioAtual operador] forState:UIControlStateNormal];
+        [self.btn2 setTitle:[gerador retornaOperadorInverso:[self.desafioAtual operador]] forState:UIControlStateNormal];
+    }else{
+        [self.btn2 setTitle:[self.desafioAtual operador] forState:UIControlStateNormal];
+        [self.btn1 setTitle:[gerador retornaOperadorInverso:[self.desafioAtual operador]] forState:UIControlStateNormal];
+    }
+    
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -55,7 +66,12 @@
 
 - (IBAction)acaoBotao1:(id)sender {
     [self alteraValores];
+    [self ajustaBotoes];
 }
+
+
+
+
 
 - (IBAction)acaoBotao2:(id)sender {
 }
@@ -64,9 +80,13 @@
     
     if ([self.desafioAtual incrementaTarefa]) {
         self.lblParte1.text = [self.desafioAtual parte1];
-        self.lblOperador.text = [self.desafioAtual operador];
+        self.lblOperador.text = @"?";
         self.lblParte2.text = [self.desafioAtual parte2];
         self.lblResultado.text = [self.desafioAtual resultado];
+        
+        if ([self.desafioAtual respostaDupla]) {
+            NSLog(@"Dupla");
+        }
     }else{
         NSLog(@"Fim");
     }

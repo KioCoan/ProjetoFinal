@@ -26,5 +26,7 @@
 -(NSString*)retornaTipoVariavel;
 -(NSString*)retornaValorVarivel:(NSString*)tipo;
 
+-(NSString*)retornaOperadorInverso:(NSString*)op;
+
 
 @end

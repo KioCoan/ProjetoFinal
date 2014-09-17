@@ -266,4 +266,32 @@
     return [valoresVariaveisLogicas objectAtIndex:i];
 }
 // ------------------------------ FIM MÉTODOS VALOR -----------------------------------
+
+
+
+-(NSString*)retornaOperadorInverso:(NSString*)op{
+    NSString *retorno;
+    if ([op isEqualToString:@">"]) {
+        retorno = @"<=";
+    }else if ([op isEqualToString:@"<="]){
+        retorno = @">";
+    }else if ([op isEqualToString:@"<"]){
+        retorno = @">=";
+    }else if ([op isEqualToString:@">="]){
+        retorno = @"<";
+    }else if ([op isEqualToString:@"=="]){
+        retorno = @"!=";
+    }else if ([op isEqualToString:@"!="]){
+        retorno = @"==";
+    }else if ([op isEqualToString:@"&&"]){
+        retorno = @"||";
+    }else if ([op isEqualToString:@"||"]){
+        retorno = @"&&";
+    }
+    
+    return retorno;
+    
+    
+}
+
 @end

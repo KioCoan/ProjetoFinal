@@ -18,6 +18,7 @@
 @property NSString *tituloDesafio, *descricaoDesafio;
 
 
+
 -(id)initWithLevel:(int)nivel andType:(NSString*)tipo andTasks:(int)tasks;
 -(int)nTarefas;
 -(NSString*)parte1;
@@ -29,4 +30,5 @@
 -(NSMutableArray*)retornaTarefas;
 -(void)instanciaTarefas;
 -(void)montaDesafioNivel:(int)level tipo:(NSString*)type nTarefas:(int)nTarefas;
+-(BOOL)respostaDupla;
 @end

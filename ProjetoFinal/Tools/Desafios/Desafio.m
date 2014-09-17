@@ -75,5 +75,8 @@
         [listaTarefas addObject:[[Expressao alloc] initWithNivel:nivel andOperator:tipo]];
     }
 }
-
+-(BOOL)respostaDupla{
+    
+    return [[listaTarefas objectAtIndex:tarefaAtual]respostaDupla];
+}
 @end

@@ -72,6 +72,16 @@
     Calculador *calculador = [[Calculador alloc] init];
     
     self.resultado = [calculador calculaOperador:self.operador numero1:parte1.resultado numero2:parte2.resultado];
+    
+    
+    NSString *temp = [calculador calculaOperador:[gerador retornaOperadorInverso:self.operador] numero1:parte1.resultado numero2:parte2.resultado];
+    
+    if ([self.resultado isEqualToString:temp]) {
+        self.respostaDupla = YES;
+    }else{
+        self.respostaDupla = NO;
+    }
+    
 }
 
 @end

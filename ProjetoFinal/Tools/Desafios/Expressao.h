@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "ParteDaExpressao.h"
+
 @interface Expressao : NSObject
 {
     
     ParteDaExpressao *parte1, *parte2;
     int nivelExpressao;
 }
-
+@property BOOL respostaDupla;
 @property NSString *operador, *resultado;
 
 -(id)initWithNivel:(int)nivel andOperator:(NSString*)operador;
