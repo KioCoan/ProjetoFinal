@@ -28,6 +28,7 @@
 		12719D4819CB5DB9006B1374 /* ColabReg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 12719D4619CB5B16006B1374 /* ColabReg.otf */; };
 		12719D4919CB5DBF006B1374 /* ColabThi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 12719D4719CB5B16006B1374 /* ColabThi.otf */; };
 		12719D4C19CB5FB5006B1374 /* BotaoDesafiosNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 12719D4B19CB5FB5006B1374 /* BotaoDesafiosNode.m */; };
+		12719D4F19CB6CCD006B1374 /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12719D4E19CB6CCD006B1374 /* TempViewController.m */; };
 		1551BFE119C36BFC00CBDB86 /* EnciclopediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1551BFE019C36BFC00CBDB86 /* EnciclopediaViewController.m */; };
 		1551BFE419C36C3000CBDB86 /* ListaDesafioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1551BFE319C36C3000CBDB86 /* ListaDesafioViewController.m */; };
 		1551BFE719C36C3C00CBDB86 /* DesafioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1551BFE619C36C3C00CBDB86 /* DesafioViewController.m */; };
@@ -240,6 +241,8 @@
 		12719D4719CB5B16006B1374 /* ColabThi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColabThi.otf; sourceTree = "<group>"; };
 		12719D4A19CB5FB5006B1374 /* BotaoDesafiosNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BotaoDesafiosNode.h; sourceTree = "<group>"; };
 		12719D4B19CB5FB5006B1374 /* BotaoDesafiosNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BotaoDesafiosNode.m; sourceTree = "<group>"; };
+		12719D4D19CB6CCD006B1374 /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempViewController.h; sourceTree = "<group>"; };
+		12719D4E19CB6CCD006B1374 /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempViewController.m; sourceTree = "<group>"; };
 		1551BFDF19C36BFC00CBDB86 /* EnciclopediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnciclopediaViewController.h; sourceTree = "<group>"; };
 		1551BFE019C36BFC00CBDB86 /* EnciclopediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnciclopediaViewController.m; sourceTree = "<group>"; };
 		1551BFE219C36C3000CBDB86 /* ListaDesafioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaDesafioViewController.h; sourceTree = "<group>"; };
@@ -965,6 +968,8 @@
 				8487523319C3749500A93120 /* Conteudo */,
 				8487523419C374DE00A93120 /* Enciclopedia */,
 				8487523619C3751F00A93120 /* Livre */,
+				12719D4D19CB6CCD006B1374 /* TempViewController.h */,
+				12719D4E19CB6CCD006B1374 /* TempViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1424,6 +1429,7 @@
 				1551BFE719C36C3C00CBDB86 /* DesafioViewController.m in Sources */,
 				12719D4319CB5683006B1374 /* DesafiosOperadoresScene.m in Sources */,
 				A597F0F41960A7A6006429C7 /* SubViewConteudo.m in Sources */,
+				12719D4F19CB6CCD006B1374 /* TempViewController.m in Sources */,
 				84960B8019C8D9B900BC7808 /* SecaoMenuVariavel.m in Sources */,
 				91A9861E1962392400EA1074 /* GerenciadorDeAssunto.m in Sources */,
 				BDE82C291991778700610D96 /* SpriteCondicaoNode.m in Sources */,
