@@ -26,4 +26,5 @@ extern NSString* const FONT_REGULAR;
 -(void)instanciaTarefas;
 -(NSMutableArray*)retornaTitulosEDescricoesDesafios;
 -(Desafio*)retornaTarefasParaDesafio;
+-(BOOL)corrige:(NSString*)opcao;
 @end

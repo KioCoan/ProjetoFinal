@@ -80,4 +80,22 @@
     
     return [[listaTarefas objectAtIndex:tarefaAtual]respostaDupla];
 }
+-(BOOL)corrige:(NSString*)opcao{
+    if ([self respostaDupla] || [[self operador]isEqualToString:opcao]) {
+        nAcertos++;
+        NSLog(@"Acertou %d", nAcertos);
+        
+        return YES;
+    }else{
+        nErros++;
+        NSLog(@"Errou %d", nErros);
+        
+        return NO;
+    }
+}
+
+-(void)finalizaDesafio{
+    // salvar como desafio concluido, nAcertos e nErros no NSDefalts
+}
+
 @end

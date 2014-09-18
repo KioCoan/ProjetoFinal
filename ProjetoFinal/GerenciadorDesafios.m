@@ -122,6 +122,9 @@ NSString* const FONT_REGULAR = @"Colaborate-Regular";
     return [meusDesafios objectAtIndex:desafioAtual];
     
 }
+-(BOOL)corrige:(NSString*)opcao{
+    return [[meusDesafios objectAtIndex:desafioAtual]corrige:opcao];
+}
 
 
 @end

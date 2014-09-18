@@ -31,4 +31,6 @@
 -(void)instanciaTarefas;
 -(void)montaDesafioNivel:(int)level tipo:(NSString*)type nTarefas:(int)nTarefas;
 -(BOOL)respostaDupla;
+-(BOOL)corrige:(NSString*)opcao;
+
 @end

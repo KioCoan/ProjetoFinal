@@ -36,7 +36,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [gerenciadorDesafios selecionaDesafio:5];
+    [gerenciadorDesafios selecionaDesafio:1];
     [gerenciadorDesafios instanciaTarefas];
     self.desafioAtual = [gerenciadorDesafios retornaTarefasParaDesafio];
     self.lblParte1.text = [self.desafioAtual parte1];
@@ -67,15 +67,24 @@
 }
 
 - (IBAction)acaoBotao1:(id)sender {
+//    [self alteraValores];
+//    [self ajustaBotoes];
+    [self corrige:[[self.btn1 titleLabel]text]];
+    
+}
+
+-(void)corrige:(NSString*)opcao{
+    
+    
+    NSLog(@"%d",[gerenciadorDesafios corrige:opcao]);
     [self alteraValores];
     [self ajustaBotoes];
 }
 
 
 
-
-
 - (IBAction)acaoBotao2:(id)sender {
+[self corrige:[[self.btn2 titleLabel]text]];
 }
 
 -(void)alteraValores{
