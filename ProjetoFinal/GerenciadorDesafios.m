@@ -8,6 +8,9 @@
 
 #import "GerenciadorDesafios.h"
 
+NSString* const FONT_THIN = @"Colaborate-Thin";
+NSString* const FONT_REGULAR = @"Colaborate-Regular";
+
 @implementation GerenciadorDesafios
 
 

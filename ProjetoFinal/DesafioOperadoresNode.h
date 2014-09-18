@@ -8,6 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "GerenciadorDesafios.h"
+#import "BotaoDesafiosNode.h"
 #import "Gerador.h"
 #import "Desafio.h"
 
@@ -15,8 +16,11 @@
 @interface DesafioOperadoresNode : SKNode
 
 {
-    SKLabelNode *parte1, *operador, *parte2, *resultado;
-    SKNode *fundo, *btn1, *btn2;
+    SKLabelNode *lblParte1, *lblOperador, *lblParte2, *lblResultado;
+    BotaoDesafiosNode *btn1, *btn2;
+    SKNode *fundo;
+    
+    
     GerenciadorDesafios *gerenciadorDesafios;
     Desafio *desafioAtual;
     Gerador *gerador;

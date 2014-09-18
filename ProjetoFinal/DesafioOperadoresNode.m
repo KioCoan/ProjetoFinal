@@ -15,11 +15,12 @@
     if (self) {
         gerenciadorDesafios = [GerenciadorDesafios sharedGerenciador];
         gerador = [[Gerador alloc]init];
-        parte1 = [[SKLabelNode alloc] initWithFontNamed:@"Colaborate-Thin"];
-        parte2 = [[SKLabelNode alloc] initWithFontNamed:@"Colaborate-Thin"];
-        operador = [[SKLabelNode alloc] initWithFontNamed:@"Colaborate-Thin"];
-        btn1 = [[SKLabelNode alloc] initWithFontNamed:@"Colaborate-Thin"];
-        btn2 = [[SKLabelNode alloc] initWithFontNamed:@"Colaborate-Thin"];
+        lblParte1 = [[SKLabelNode alloc] initWithFontNamed:FONT_THIN];
+        lblParte2 = [[SKLabelNode alloc] initWithFontNamed:FONT_THIN];
+        lblOperador = [[SKLabelNode alloc] initWithFontNamed:FONT_THIN];
+        btn1 = [[BotaoDesafiosNode alloc] init];
+        btn2 = [[BotaoDesafiosNode alloc] init];
+        desafioAtual = [gerenciadorDesafios retornaTarefasParaDesafio];
     }
     
     return self;
@@ -28,7 +29,18 @@
 
 
 -(void)alteraValores{
-    
+    if ([desafioAtual incrementaTarefa]) {
+        lblParte1.text = [desafioAtual parte1];
+        lblOperador.text = @"?";
+        lblParte2.text = [desafioAtual parte2];
+        lblResultado.text = [desafioAtual resultado];
+        
+        //        if ([self.desafioAtual respostaDupla]) {
+        //            NSLog(@"Dupla");
+        //        }
+    }else{
+        NSLog(@"Fim");
+    }
 }
 
 

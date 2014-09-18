@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "Desafio.h"
+extern NSString* const FONT_THIN;
+extern NSString* const FONT_REGULAR;
+
 @interface GerenciadorDesafios : NSObject
 
 {

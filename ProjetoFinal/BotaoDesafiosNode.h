@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#include "GerenciadorDesafios.h"
 
 @interface BotaoDesafiosNode : SKSpriteNode
 

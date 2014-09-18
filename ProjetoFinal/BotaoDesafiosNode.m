@@ -15,7 +15,7 @@
     
     self = [super initWithImageNamed:name];
     if (self) {
-        valor = [[SKLabelNode alloc] initWithFontNamed:@"Colaborate-Thin"];
+        valor = [[SKLabelNode alloc] initWithFontNamed:FONT_THIN];
         [valor setPosition:CGPointMake(self.size.width/2, self.size.height/2)];
         [valor setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
         [valor setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];

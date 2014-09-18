@@ -10,7 +10,9 @@
 #import "Variavel.h"
 #import "Operadores.h"
 #import "CondicaoSimples.h"
-//static GerenciadorDeAssunto* gerenciador;
+
+NSString* const FONT_THIN = @"Colaborate-Thin";
+NSString* const FONT_REGULAR = @"Colaborate-Regular";
 
 @implementation GerenciadorDeAssunto
 
