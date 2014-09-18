@@ -23,6 +23,11 @@
 		120E8FA2192FC0A200CDEF95 /* ProjetoFinalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 120E8FA1192FC0A200CDEF95 /* ProjetoFinalTests.m */; };
 		12428D4519C9FC240012B2B6 /* GerenciadorDesafios.m in Sources */ = {isa = PBXBuildFile; fileRef = 12428D4419C9FC240012B2B6 /* GerenciadorDesafios.m */; };
 		125398C11992AB3B006D4DAC /* SpriteOperadorCondicional.m in Sources */ = {isa = PBXBuildFile; fileRef = 125398C01992AB3B006D4DAC /* SpriteOperadorCondicional.m */; };
+		12719D3F19CB563A006B1374 /* DesafioOperadoresNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 12719D3E19CB563A006B1374 /* DesafioOperadoresNode.m */; };
+		12719D4319CB5683006B1374 /* DesafiosOperadoresScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 12719D4219CB5683006B1374 /* DesafiosOperadoresScene.m */; };
+		12719D4819CB5DB9006B1374 /* ColabReg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 12719D4619CB5B16006B1374 /* ColabReg.otf */; };
+		12719D4919CB5DBF006B1374 /* ColabThi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 12719D4719CB5B16006B1374 /* ColabThi.otf */; };
+		12719D4C19CB5FB5006B1374 /* BotaoDesafiosNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 12719D4B19CB5FB5006B1374 /* BotaoDesafiosNode.m */; };
 		1551BFE119C36BFC00CBDB86 /* EnciclopediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1551BFE019C36BFC00CBDB86 /* EnciclopediaViewController.m */; };
 		1551BFE419C36C3000CBDB86 /* ListaDesafioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1551BFE319C36C3000CBDB86 /* ListaDesafioViewController.m */; };
 		1551BFE719C36C3C00CBDB86 /* DesafioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1551BFE619C36C3C00CBDB86 /* DesafioViewController.m */; };
@@ -227,6 +232,14 @@
 		12428D4419C9FC240012B2B6 /* GerenciadorDesafios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GerenciadorDesafios.m; sourceTree = "<group>"; };
 		125398BF1992AB3B006D4DAC /* SpriteOperadorCondicional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteOperadorCondicional.h; sourceTree = "<group>"; };
 		125398C01992AB3B006D4DAC /* SpriteOperadorCondicional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteOperadorCondicional.m; sourceTree = "<group>"; };
+		12719D3D19CB563A006B1374 /* DesafioOperadoresNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesafioOperadoresNode.h; sourceTree = "<group>"; };
+		12719D3E19CB563A006B1374 /* DesafioOperadoresNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesafioOperadoresNode.m; sourceTree = "<group>"; };
+		12719D4119CB5683006B1374 /* DesafiosOperadoresScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesafiosOperadoresScene.h; sourceTree = "<group>"; };
+		12719D4219CB5683006B1374 /* DesafiosOperadoresScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesafiosOperadoresScene.m; sourceTree = "<group>"; };
+		12719D4619CB5B16006B1374 /* ColabReg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColabReg.otf; sourceTree = "<group>"; };
+		12719D4719CB5B16006B1374 /* ColabThi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColabThi.otf; sourceTree = "<group>"; };
+		12719D4A19CB5FB5006B1374 /* BotaoDesafiosNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BotaoDesafiosNode.h; sourceTree = "<group>"; };
+		12719D4B19CB5FB5006B1374 /* BotaoDesafiosNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BotaoDesafiosNode.m; sourceTree = "<group>"; };
 		1551BFDF19C36BFC00CBDB86 /* EnciclopediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnciclopediaViewController.h; sourceTree = "<group>"; };
 		1551BFE019C36BFC00CBDB86 /* EnciclopediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnciclopediaViewController.m; sourceTree = "<group>"; };
 		1551BFE219C36C3000CBDB86 /* ListaDesafioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaDesafioViewController.h; sourceTree = "<group>"; };
@@ -542,6 +555,8 @@
 		120E8F7D192FC0A200CDEF95 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				12719D4619CB5B16006B1374 /* ColabReg.otf */,
+				12719D4719CB5B16006B1374 /* ColabThi.otf */,
 				120E8F7E192FC0A200CDEF95 /* ProjetoFinal-Info.plist */,
 				120E8F7F192FC0A200CDEF95 /* InfoPlist.strings */,
 				120E8F82192FC0A200CDEF95 /* main.m */,
@@ -566,6 +581,49 @@
 				120E8F9E192FC0A200CDEF95 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		12719D3C19CB558A006B1374 /* Animacoes */ = {
+			isa = PBXGroup;
+			children = (
+				12719D3D19CB563A006B1374 /* DesafioOperadoresNode.h */,
+				12719D3E19CB563A006B1374 /* DesafioOperadoresNode.m */,
+				12719D4A19CB5FB5006B1374 /* BotaoDesafiosNode.h */,
+				12719D4B19CB5FB5006B1374 /* BotaoDesafiosNode.m */,
+			);
+			name = Animacoes;
+			sourceTree = "<group>";
+		};
+		12719D4019CB5656006B1374 /* Cenas */ = {
+			isa = PBXGroup;
+			children = (
+				12719D4119CB5683006B1374 /* DesafiosOperadoresScene.h */,
+				12719D4219CB5683006B1374 /* DesafiosOperadoresScene.m */,
+			);
+			name = Cenas;
+			sourceTree = "<group>";
+		};
+		12719D4419CB569E006B1374 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				12719D4519CB5734006B1374 /* Operadores */,
+				A5F38EFB19C711C900D337A4 /* Desafio.h */,
+				A5F38EFC19C711C900D337A4 /* Desafio.m */,
+				12428D4319C9FC240012B2B6 /* GerenciadorDesafios.h */,
+				12428D4419C9FC240012B2B6 /* GerenciadorDesafios.m */,
+			);
+			name = Engine;
+			sourceTree = "<group>";
+		};
+		12719D4519CB5734006B1374 /* Operadores */ = {
+			isa = PBXGroup;
+			children = (
+				A5BE096719C5E87100F7110E /* ParteDaExpressao.h */,
+				A5BE096819C5E87100F7110E /* ParteDaExpressao.m */,
+				A5F38EF819C5F6B700D337A4 /* Expressao.h */,
+				A5F38EF919C5F6B700D337A4 /* Expressao.m */,
+			);
+			name = Operadores;
 			sourceTree = "<group>";
 		};
 		8418F87E1970895500781F82 /* Variaveis */ = {
@@ -639,7 +697,7 @@
 				BD5DE21319972335007849DB /* SpriteAtualizarNode.m */,
 				BDBE7698197A3A00004EA926 /* Variavel */,
 				BDBE7697197A39EF004EA926 /* Operadores */,
-				BD01DDFA19834E7C00AEAAA8 /* Condição */,
+				BD01DDFA19834E7C00AEAAA8 /* Condição */,
 			);
 			name = Objetos;
 			sourceTree = "<group>";
@@ -707,14 +765,9 @@
 		8487523819C3784000A93120 /* Desafio */ = {
 			isa = PBXGroup;
 			children = (
-				A5BE096719C5E87100F7110E /* ParteDaExpressao.h */,
-				A5BE096819C5E87100F7110E /* ParteDaExpressao.m */,
-				A5F38EF819C5F6B700D337A4 /* Expressao.h */,
-				A5F38EF919C5F6B700D337A4 /* Expressao.m */,
-				A5F38EFB19C711C900D337A4 /* Desafio.h */,
-				A5F38EFC19C711C900D337A4 /* Desafio.m */,
-				12428D4319C9FC240012B2B6 /* GerenciadorDesafios.h */,
-				12428D4419C9FC240012B2B6 /* GerenciadorDesafios.m */,
+				12719D3C19CB558A006B1374 /* Animacoes */,
+				12719D4019CB5656006B1374 /* Cenas */,
+				12719D4419CB569E006B1374 /* Engine */,
 			);
 			name = Desafio;
 			sourceTree = "<group>";
@@ -872,12 +925,12 @@
 			children = (
 				A529DF1E1965DB8A00A3D9FB /* Calculador.h */,
 				A529DF1F1965DB8A00A3D9FB /* Calculador.m */,
-				A529DF0B1965DB3800A3D9FB /* Operações */,
+				A529DF0B1965DB3800A3D9FB /* Operações */,
 			);
 			name = Calculador;
 			sourceTree = "<group>";
 		};
-		A529DF0B1965DB3800A3D9FB /* Operações */ = {
+		A529DF0B1965DB3800A3D9FB /* Operações */ = {
 			isa = PBXGroup;
 			children = (
 				A529DF151965DB7500A3D9FB /* Relacional.h */,
@@ -916,7 +969,7 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
+		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
 			isa = PBXGroup;
 			children = (
 				BDE82C271991778700610D96 /* SpriteCondicaoNode.h */,
@@ -927,7 +980,7 @@
 			name = "Condição";
 			sourceTree = "<group>";
 		};
-		BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */ = {
+		BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */ = {
 			isa = PBXGroup;
 			children = (
 				BD1AC840199AB5EC00CB7C5C /* AnimaVariavel.sks */,
@@ -973,7 +1026,7 @@
 		BDBE7698197A3A00004EA926 /* Variavel */ = {
 			isa = PBXGroup;
 			children = (
-				BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */,
+				BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */,
 				BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */,
 				BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */,
 			);
@@ -1313,6 +1366,8 @@
 				BD9DF26E19A171A2003938C9 /* item-Condicionais.png in Resources */,
 				BDC757A6196787E700DB8380 /* abrir-caixa9.png in Resources */,
 				BDF8AE09197B258C00BA5B8A /* parte-valores9.png in Resources */,
+				12719D4919CB5DBF006B1374 /* ColabThi.otf in Resources */,
+				12719D4819CB5DB9006B1374 /* ColabReg.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1331,6 +1386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12719D3F19CB563A006B1374 /* DesafioOperadoresNode.m in Sources */,
 				8418F88119708B0900781F82 /* ExercicioVIewContoller.m in Sources */,
 				12428D4519C9FC240012B2B6 /* GerenciadorDesafios.m in Sources */,
 				8446A4D51994027500C92785 /* LivreVariavel.m in Sources */,
@@ -1366,6 +1422,7 @@
 				1551BFE119C36BFC00CBDB86 /* EnciclopediaViewController.m in Sources */,
 				BDB4810B196CB7FC00D5901A /* Operadores.m in Sources */,
 				1551BFE719C36C3C00CBDB86 /* DesafioViewController.m in Sources */,
+				12719D4319CB5683006B1374 /* DesafiosOperadoresScene.m in Sources */,
 				A597F0F41960A7A6006429C7 /* SubViewConteudo.m in Sources */,
 				84960B8019C8D9B900BC7808 /* SecaoMenuVariavel.m in Sources */,
 				91A9861E1962392400EA1074 /* GerenciadorDeAssunto.m in Sources */,
@@ -1391,6 +1448,7 @@
 				A55F2B411964879A00111BEB /* Variavel.m in Sources */,
 				84B1B3E6197D8AE500089FCB /* ExeCondSimples1.m in Sources */,
 				A529DF1B1965DB7500A3D9FB /* Relacional.m in Sources */,
+				12719D4C19CB5FB5006B1374 /* BotaoDesafiosNode.m in Sources */,
 				125398C11992AB3B006D4DAC /* SpriteOperadorCondicional.m in Sources */,
 				1551BFED19C36F4B00CBDB86 /* ListaEnciclopediaViewController.m in Sources */,
 			);

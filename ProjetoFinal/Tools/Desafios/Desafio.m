@@ -54,6 +54,7 @@
 -(BOOL)incrementaTarefa{
     tarefaAtual++;
     if (tarefaAtual >= nTasks) {
+        tarefaAtual--;
         return NO;
     }else{
         return YES;

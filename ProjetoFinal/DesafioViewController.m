@@ -84,9 +84,9 @@
         self.lblParte2.text = [self.desafioAtual parte2];
         self.lblResultado.text = [self.desafioAtual resultado];
         
-        if ([self.desafioAtual respostaDupla]) {
-            NSLog(@"Dupla");
-        }
+//        if ([self.desafioAtual respostaDupla]) {
+//            NSLog(@"Dupla");
+//        }
     }else{
         NSLog(@"Fim");
     }
