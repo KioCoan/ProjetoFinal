@@ -28,7 +28,7 @@
 
 
 
--(void)alteraValores{
+-(void)alterarValores{
     if ([desafioAtual incrementaTarefa]) {
         lblParte1.text = [desafioAtual parte1];
         lblOperador.text = @"?";
@@ -40,9 +40,22 @@
         //        }
     }else{
         NSLog(@"Fim");
+        
     }
 }
 
+
+-(void)ajustarBotoes{
+    int aleatorio = arc4random() % 2;
+    if (aleatorio == 1) {
+        [btn1 setValor:[desafioAtual operador]];
+        [btn2 setValor:[gerador retornaOperadorInverso:[desafioAtual operador]]];
+    }else{
+        [btn2 setValor:[desafioAtual operador]];
+        [btn1 setValor:[gerador retornaOperadorInverso:[desafioAtual operador]]];
+    }
+    
+}
 
 
 
