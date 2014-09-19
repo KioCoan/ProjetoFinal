@@ -11,8 +11,8 @@
 #import "AlteraAnimacaoDelegate.h"
 #import "CenaExercicio.h"
 
-extern NSString* const FONT_THIN;
-extern NSString* const FONT_REGULAR;
+//extern NSString* const FONT_THIN;
+//extern NSString* const FONT_REGULAR;
 
 @interface GerenciadorDeAssunto : NSObject
 {

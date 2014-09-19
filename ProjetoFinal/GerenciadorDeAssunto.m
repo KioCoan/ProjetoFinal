@@ -11,8 +11,8 @@
 #import "Operadores.h"
 #import "CondicaoSimples.h"
 
-NSString* const FONT_THIN = @"Colaborate-Thin";
-NSString* const FONT_REGULAR = @"Colaborate-Regular";
+//NSString* const FONT_THIN = @"Colaborate-Thin";
+//NSString* const FONT_REGULAR = @"Colaborate-Regular";
 
 @implementation GerenciadorDeAssunto
 
