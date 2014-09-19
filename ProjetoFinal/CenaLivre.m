@@ -58,23 +58,25 @@
     
 }
 
--(void)criaObjeto{
+-(void)criaObjetoPosicao:(CGPoint)posicao{
     
     IconeSecao *icone = (IconeSecao *)conteudoAtivo;
     
-    conteudoAtivo = nil;
+    [icone runAction:[SKAction moveTo:icone.posicaoAnterior duration:0.3]];
     
-    if ([icone.tipo isEqualToString:@"variavel"]) {
+    
+    if ([icone.secao isEqualToString:@"variavel"]) {
+        
         SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]init];
         
-        [caixa setDono:menu];
-        [caixa setPosition:icone.position];
-        [icone removeFromParent];
-        [menu addChild:caixa];
+        [caixa setDono:self];
+        [caixa setPosition:posicao];
+        //caixa.size = CGSizeMake(200, 200);
+        caixa.zPosition = -1;
+        [self addChild:caixa];
     }
     
-    [menu abrirFechar];
-    [self.myDelegate esconderNavigationController: [menu getAberto]];
+    
     
 }
 
@@ -85,6 +87,7 @@
     CGPoint location =  [touch locationInNode:self];
     conteudoAtivo = [self nodeAtPoint:location];
     NSLog(@"NOme %@",conteudoAtivo.name);
+    
     
     //[self rodaeMuda];
     
@@ -118,21 +121,33 @@
     
     
     
-    
-    
     if ([conteudoAtivo.name isEqualToString:@"iconeMenu"]) {
+        
+        UITouch *touch = [touches anyObject];
+        CGPoint location = [touch locationInNode:self];
         
         float xInicio = menu.frame.origin.x;
         float xFim = xInicio + menu.frame.size.width;
         float yInicio = menu.frame.origin.y;
         float yFim = yInicio + menu.frame.size.height;
+        
 
-        if ((conteudoAtivo.position.x >= xInicio && conteudoAtivo.position.x <= xFim)&&(conteudoAtivo.position.y >=yInicio && conteudoAtivo.position.y <= yFim)) {
+        if ((location.x >= xInicio && location.x <= xFim) && (location.y >= yInicio && location.y <= yFim)) {
             
-            [self criaObjeto];
-        }else{
+            
             IconeSecao *icone = (IconeSecao *)conteudoAtivo;
             [icone runAction:[SKAction moveTo:icone.posicaoAnterior duration:0.3]];
+            
+            
+            
+        }else{
+            
+            [self criaObjetoPosicao:location];
+            
+            [menu abrirFechar];
+            [self.myDelegate esconderNavigationController: [menu getAberto]];
+            
+            
         }
         
         

@@ -30,7 +30,7 @@
     
     BOOL caixaAberta;
 }
-@property MenuNode *dono;
+@property SKScene *dono;
 //@property id <SpriteCaixaNodeDelegate> myDelegate;
 
 -(id)initWithConteudo:(NSString*)conteudo nome:(NSString*)nome tipo:(NSString*)tipo tamanho:(CGSize)tamanho;
