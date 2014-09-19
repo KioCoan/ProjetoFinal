@@ -17,9 +17,46 @@
     [icone setSecao:titulo];
     [icone setTipo:tipo];
     [icone setPosition:posicao];
-    [icone setPosicaoAnterior:posicao];
+    [icone setName:@"iconeMenu"];
     
     return icone;
+}
+
+- (IconeSecao *)criarIconeSecao :(NSString *)titulo tipo:(NSString *)tipo imagem:(NSString *)imagem{
+    
+    
+    IconeSecao *icone = [[IconeSecao alloc]init];
+    
+    [icone setSecao:titulo];
+    [icone setTipo:tipo];
+    [icone setName:@"iconeMenu"];
+    [icone setTexture:[SKTexture textureWithImageNamed:imagem]];
+    
+    return icone;
+    
+}
+
+- (id)init{
+    
+    self = [super init];
+    
+    
+    if  (self){
+        
+        [self setUserInteractionEnabled:YES];
+        
+        
+    }
+    return self;
+    
+    
+}
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    [self.myDelegate fuiClicado:self.titulo];
+
 }
 
 @end

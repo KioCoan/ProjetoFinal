@@ -9,11 +9,29 @@
 #import <SpriteKit/SpriteKit.h>
 #import "IconeSecao.h"
 
+
+@protocol SecaoMenuDelegate <NSObject>
+
+- (void)fuiClicado:(NSString*)tipo;
+
+@end
+
 @interface SecaoMenu : SKSpriteNode
+
+@property id<SecaoMenuDelegate> myDelegate;
 
 @property NSString *titulo;
 @property NSMutableArray *icones;
 
 - (IconeSecao *)criarIconeSecao :(NSString *)titulo tipo:(NSString *)tipo posicao:(CGPoint)posicao;
+- (IconeSecao *)criarIconeSecao :(NSString *)titulo tipo:(NSString *)tipo imagem:(NSString *)imagem;
+
+- (id)init;
+    
+    
+
+
+
+
 
 @end

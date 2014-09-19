@@ -33,8 +33,14 @@
         [self addChild:botaoMenu];
         
         //ALOCANDO MENU
-        menu = [[MenuNode alloc]initWithPosicaoAbrir:CGPointMake(245, 510) PosicaoFechar:CGPointMake(-245, 510) tamanho:CGSizeMake(500, 1030)];
+        menu = [[MenuNode alloc]initWithImageNamed:@"livre-menu.png"];
+        
+        //menu = [[MenuNode alloc]initWithPosicaoAbrir:CGPointMake(245, 510) PosicaoFechar:CGPointMake(-245, 510) tamanho:CGSizeMake(490, 1025)];
+        
+        [menu testando:CGPointMake(245, 510) PosicaoFechar:CGPointMake(-245, 510) tamanho:CGSizeMake(490, 1025)];
         [self addChild:menu];
+        
+        
     }
     return self;
 }
@@ -56,21 +62,15 @@
     
     IconeSecao *icone = (IconeSecao *)conteudoAtivo;
     
+    conteudoAtivo = nil;
+    
     if ([icone.tipo isEqualToString:@"variavel"]) {
         SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]init];
-        caixa.position = conteudoAtivo.position;
-        [menu addChild:caixa];
-        [caixa iniciarAnimacaoIntroducao];
+        
         [caixa setDono:menu];
-        [conteudoAtivo removeFromParent];
-    }else if ([icone.tipo isEqualToString:@"operador"]){
-        
-        SpriteOperadorNode *operador = [[SpriteOperadorNode alloc]init];
-        operador.position = conteudoAtivo.position;
-        [menu addChild:operador];
-        
-        [operador setDono:menu];
-        [conteudoAtivo removeFromParent];
+        [caixa setPosition:icone.position];
+        [icone removeFromParent];
+        [menu addChild:caixa];
     }
     
     [menu abrirFechar];
@@ -78,16 +78,15 @@
     
 }
 
-
-
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     
     UITouch *touch = [touches anyObject];
     CGPoint location =  [touch locationInNode:self];
     conteudoAtivo = [self nodeAtPoint:location];
+    NSLog(@"NOme %@",conteudoAtivo.name);
     
-    [self rodaeMuda];
+    //[self rodaeMuda];
     
     if ([conteudoAtivo.name isEqualToString:@"botaoMenu"]) {
         [menu abrirFechar];
@@ -116,11 +115,30 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
+    
+    
+    
+    
+    
     if ([conteudoAtivo.name isEqualToString:@"iconeMenu"]) {
         
+        float xInicio = menu.frame.origin.x;
+        float xFim = xInicio + menu.frame.size.width;
+        float yInicio = menu.frame.origin.y;
+        float yFim = yInicio + menu.frame.size.height;
+
+        if ((conteudoAtivo.position.x >= xInicio && conteudoAtivo.position.x <= xFim)&&(conteudoAtivo.position.y >=yInicio && conteudoAtivo.position.y <= yFim)) {
+            
+            [self criaObjeto];
+        }else{
+            IconeSecao *icone = (IconeSecao *)conteudoAtivo;
+            [icone runAction:[SKAction moveTo:icone.posicaoAnterior duration:0.3]];
+        }
         
-        [self criaObjeto];
+        
+        
     }
+    conteudoAtivo = nil;
     
 }
 

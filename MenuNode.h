@@ -11,15 +11,14 @@
 #import "SecaoMenu.h"
 #import "SecaoMenuVariavel.h"
 
-@interface MenuNode : SKSpriteNode
-    
-    
 
 
 
+@interface MenuNode : SKSpriteNode <SecaoMenuDelegate>
 
 - (void)abrirFechar;
 - (id)initWithPosicaoAbrir : (CGPoint)abrir PosicaoFechar:(CGPoint)fechar tamanho:(CGSize)tamanho;
 - (BOOL)getAberto;
+- (void)testando : (CGPoint)abrir PosicaoFechar:(CGPoint)fechar tamanho:(CGSize)tamanho;
 //- (void)criaIconePosicao:(CGPoint)posicao;
 @end

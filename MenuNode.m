@@ -21,6 +21,86 @@
     return aberto;
 }
 
+//METODO DO PROTOCOLO SecaoMenuDELEGATE
+- (void)fuiClicado:(NSString *)titulo{
+    
+    CGPoint posicaoInicial;
+    CGPoint posicaoMutavel;
+    posicaoInicial = CGPointMake(-50, 350);
+    posicaoMutavel = posicaoInicial;
+    
+    
+    for (SecaoMenu *secao in secoes){
+        
+        NSLog(@"titulo %@ -- tituloParametro %@",secao.titulo,titulo);
+        
+        if ([secao.titulo isEqualToString:titulo]) {
+            
+            
+            for (int i = 0;i < secao.icones.count;i++) {
+                
+                IconeSecao *icone = [secao.icones objectAtIndex:i];
+                
+                [icone setSize:CGSizeMake(120, 120)];
+                
+                [icone setPosition:posicaoMutavel];
+                [icone setPosicaoAnterior:posicaoMutavel];
+                
+                [self addChild:icone];
+                
+                if ((i % 2) == 0) {
+                    posicaoMutavel.x += icone.size.width - 10;
+                }else{
+                    posicaoMutavel.x = posicaoInicial.x;
+                    posicaoMutavel.y -= icone.size.height - 10;
+                }
+                
+                
+                
+            }
+
+            
+            
+            return;
+        }
+        
+        
+    }
+    
+}
+
+- (void)configuraIconesVetor:(NSMutableArray *)array{
+    
+    CGPoint posicaoInicial;
+    
+    switch (array.count) {
+        case 1:
+        case 2:
+            
+            posicaoInicial = CGPointMake(-100, 350);
+            
+            for (IconeSecao *icone in array) {
+                
+                [icone setSize:CGSizeMake(400, 400)];
+                
+                [icone setPosition:posicaoInicial];
+                [icone setPosicaoAnterior:posicaoInicial];
+                
+                
+                [self addChild:icone];
+                
+                posicaoInicial.y -= icone.size.height;
+                
+            }
+            
+            
+            break;
+            
+        }
+    
+}
+
+// CRIA SECOES DO MENU CONFORME O INDICE
 - (SecaoMenu *)criaSecaoIndice:(int)indice{
     
     
@@ -40,6 +120,48 @@
     return nil;
 }
 
+- (void)testando : (CGPoint)abrir PosicaoFechar:(CGPoint)fechar tamanho:(CGSize)tamanho{
+    
+    abrirMenu = [SKAction moveToX:abrir.x duration:0.2];
+    fecharMenu = [SKAction moveToX:fechar.x duration:0.2];
+    
+    self.position = fechar;
+    
+    [self setTexture:[SKTexture textureWithImageNamed:@"livre-menu.png"]];
+    self.size = tamanho;
+    self.name = @"menu";
+    
+    aberto = NO;
+    
+    
+    // CRIANDO SECOES
+    
+    secoes = [NSMutableArray array];
+    
+    nSecoes = 1;
+    
+    CGPoint posicaoInicial = CGPointMake(-220, 450);
+    
+    for (int i = 0; i < nSecoes; i++) {
+        
+        
+        SecaoMenu *novaSecao = [self criaSecaoIndice:i];
+        [novaSecao setMyDelegate:self];
+        [novaSecao runAction:[SKAction rotateToAngle: -M_PI / 2 duration:0]];
+        
+        [novaSecao setPosition:posicaoInicial];
+        
+        [self addChild:novaSecao];
+        
+        [secoes addObject: novaSecao];
+        
+        posicaoInicial.y -= novaSecao.size.width;
+    }
+
+    
+    
+}
+
 
 - (id)initWithPosicaoAbrir : (CGPoint)abrir PosicaoFechar:(CGPoint)fechar tamanho:(CGSize)tamanho{
     
@@ -53,8 +175,9 @@
     self.position = fechar;
     
     [self setTexture:[SKTexture textureWithImageNamed:@"livre-menu.png"]];
-    self.size = CGSizeMake(self.texture.size.width, 1025);
+    self.size = tamanho;
     self.name = @"menu";
+    
     aberto = NO;
     
     
@@ -64,44 +187,24 @@
     
     nSecoes = 1;
     
+    CGPoint posicaoInicial = CGPointMake(-220, 450);
     
     for (int i = 0; i < nSecoes; i++) {
         
-        [secoes addObject:[self criaSecaoIndice:i]];
         
+        SecaoMenu *novaSecao = [self criaSecaoIndice:i];
+        [novaSecao setMyDelegate:self];
+        [novaSecao runAction:[SKAction rotateToAngle: -M_PI / 2 duration:0]];
+        
+        [novaSecao setPosition:posicaoInicial];
+        
+        [self addChild:novaSecao];
+        
+        [secoes addObject: novaSecao];
+        
+        posicaoInicial.y -= novaSecao.size.width;
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-//    CGPoint posicaoNode = CGPointMake(self.frame.size.width / 4, self.frame.origin.y + 130);
-//    
-//    //adicionar objetos ao menu
-//    
-//    for (int i = 1; i < 6; i++) {
-//        
-//       IconeSecao *icone = [self criaIconeIndice:i];
-//        
-//        icone.size = CGSizeMake(100, 100);
-//        icone.position = posicaoNode;
-//        icone.posicaoAnterior = posicaoNode;
-//        posicaoNode.y -= icone.size.height + 30;
-//        
-//        
-//        [self addChild:icone];
-//    }
-    
-    
     
     return self;
 }
