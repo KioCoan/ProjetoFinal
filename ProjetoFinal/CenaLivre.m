@@ -58,6 +58,18 @@
     
 }
 
+-(void)criarVariavelTipo:(NSString *)tipo posicao:(CGPoint)posicao{
+    
+    SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]init];
+    
+    [caixa setDono:self];
+    [caixa setPosition:posicao];
+    //caixa.size = CGSizeMake(200, 200);
+    caixa.zPosition = -1;
+    [self addChild:caixa];
+    
+}
+
 -(void)criaObjetoPosicao:(CGPoint)posicao{
     
     IconeSecao *icone = (IconeSecao *)conteudoAtivo;
@@ -67,13 +79,7 @@
     
     if ([icone.secao isEqualToString:@"variavel"]) {
         
-        SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]init];
-        
-        [caixa setDono:self];
-        [caixa setPosition:posicao];
-        //caixa.size = CGSizeMake(200, 200);
-        caixa.zPosition = -1;
-        [self addChild:caixa];
+        [self criarVariavelTipo:icone.tipo posicao:posicao];
     }
     
     
