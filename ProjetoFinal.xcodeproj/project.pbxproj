@@ -262,10 +262,10 @@
 		8418F88019708B0900781F82 /* ExercicioVIewContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExercicioVIewContoller.m; sourceTree = "<group>"; };
 		8423FA3D199AC1BF00C447FF /* CenaExercicioVariavel2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenaExercicioVariavel2.h; sourceTree = "<group>"; };
 		8423FA3E199AC1BF00C447FF /* CenaExercicioVariavel2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenaExercicioVariavel2.m; sourceTree = "<group>"; };
-		8431DA5E19CA12C50076EBBA /* modo livre-09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modo livre-09.png"; sourceTree = "<group>"; };
-		8431DA5F19CA12C50076EBBA /* modo livre-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modo livre-10.png"; sourceTree = "<group>"; };
-		8431DA6019CA12C50076EBBA /* modo livre-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modo livre-11.png"; sourceTree = "<group>"; };
-		8431DA6119CA12C50076EBBA /* modo livre-12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modo livre-12.png"; sourceTree = "<group>"; };
+		8431DA5E19CA12C50076EBBA /* modo livre-09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "modo livre-09.png"; path = "../modo livre-09.png"; sourceTree = "<group>"; };
+		8431DA5F19CA12C50076EBBA /* modo livre-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "modo livre-10.png"; path = "../modo livre-10.png"; sourceTree = "<group>"; };
+		8431DA6019CA12C50076EBBA /* modo livre-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "modo livre-11.png"; path = "../modo livre-11.png"; sourceTree = "<group>"; };
+		8431DA6119CA12C50076EBBA /* modo livre-12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "modo livre-12.png"; path = "../modo livre-12.png"; sourceTree = "<group>"; };
 		8431DA6719CA28FD0076EBBA /* livre-array.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "livre-array.png"; sourceTree = "<group>"; };
 		8431DA6819CA28FD0076EBBA /* livre-condicional.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "livre-condicional.png"; sourceTree = "<group>"; };
 		8431DA6919CA28FD0076EBBA /* livre-funcao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "livre-funcao.png"; sourceTree = "<group>"; };
@@ -648,11 +648,8 @@
 		8431DA5D19CA12C50076EBBA /* Modo Livre */ = {
 			isa = PBXGroup;
 			children = (
+				84E81EA819D0A7AB0022F557 /* botaoMenu */,
 				8431DA6619CA28FD0076EBBA /* Menu */,
-				8431DA5E19CA12C50076EBBA /* modo livre-09.png */,
-				8431DA5F19CA12C50076EBBA /* modo livre-10.png */,
-				8431DA6019CA12C50076EBBA /* modo livre-11.png */,
-				8431DA6119CA12C50076EBBA /* modo livre-12.png */,
 			);
 			name = "Modo Livre";
 			path = "Imagens/Modo Livre";
@@ -707,7 +704,7 @@
 				BD5DE21319972335007849DB /* SpriteAtualizarNode.m */,
 				BDBE7698197A3A00004EA926 /* Variavel */,
 				BDBE7697197A39EF004EA926 /* Operadores */,
-				BD01DDFA19834E7C00AEAAA8 /* Condição */,
+				BD01DDFA19834E7C00AEAAA8 /* Condição */,
 			);
 			name = Objetos;
 			sourceTree = "<group>";
@@ -826,6 +823,18 @@
 			name = Exe1;
 			sourceTree = "<group>";
 		};
+		84E81EA819D0A7AB0022F557 /* botaoMenu */ = {
+			isa = PBXGroup;
+			children = (
+				8431DA5E19CA12C50076EBBA /* modo livre-09.png */,
+				8431DA5F19CA12C50076EBBA /* modo livre-10.png */,
+				8431DA6019CA12C50076EBBA /* modo livre-11.png */,
+				8431DA6119CA12C50076EBBA /* modo livre-12.png */,
+			);
+			name = botaoMenu;
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		91A7A950198F5682009A5EB1 /* Sons */ = {
 			isa = PBXGroup;
 			children = (
@@ -933,12 +942,12 @@
 			children = (
 				A529DF1E1965DB8A00A3D9FB /* Calculador.h */,
 				A529DF1F1965DB8A00A3D9FB /* Calculador.m */,
-				A529DF0B1965DB3800A3D9FB /* Operações */,
+				A529DF0B1965DB3800A3D9FB /* Operações */,
 			);
 			name = Calculador;
 			sourceTree = "<group>";
 		};
-		A529DF0B1965DB3800A3D9FB /* Operações */ = {
+		A529DF0B1965DB3800A3D9FB /* Operações */ = {
 			isa = PBXGroup;
 			children = (
 				A529DF151965DB7500A3D9FB /* Relacional.h */,
@@ -979,7 +988,7 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
+		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
 			isa = PBXGroup;
 			children = (
 				BDE82C271991778700610D96 /* SpriteCondicaoNode.h */,
@@ -990,7 +999,7 @@
 			name = "Condição";
 			sourceTree = "<group>";
 		};
-		BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */ = {
+		BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */ = {
 			isa = PBXGroup;
 			children = (
 				BD1AC840199AB5EC00CB7C5C /* AnimaVariavel.sks */,
@@ -1036,7 +1045,7 @@
 		BDBE7698197A3A00004EA926 /* Variavel */ = {
 			isa = PBXGroup;
 			children = (
-				BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */,
+				BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */,
 				BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */,
 				BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */,
 			);
@@ -1232,7 +1241,7 @@
 				ORGANIZATIONNAME = "SENAC - iOS";
 				TargetAttributes = {
 					120E8F72192FC0A200CDEF95 = {
-						DevelopmentTeam = AAXRVGUSKH;
+						DevelopmentTeam = 4G4476R5CJ;
 					};
 					120E8F93192FC0A200CDEF95 = {
 						TestTargetID = 120E8F72192FC0A200CDEF95;

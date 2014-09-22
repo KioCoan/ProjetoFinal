@@ -16,17 +16,28 @@
 
 @end
 
-@interface SecaoMenu : SKSpriteNode
+
+
+
+@interface SecaoMenu : SKSpriteNode{
+    NSMutableArray *icones;
+}
+
 
 @property id<SecaoMenuDelegate> myDelegate;
 
-@property NSString *titulo;
-@property NSMutableArray *icones;
+@property NSString *titulo; 
+
+
 
 - (IconeSecao *)criarIconeSecao :(NSString *)titulo tipo:(NSString *)tipo posicao:(CGPoint)posicao;
 - (IconeSecao *)criarIconeSecao :(NSString *)titulo tipo:(NSString *)tipo imagem:(NSString *)imagem;
-
+- (IconeSecao *)retornaIconeIndice:(int)indice;
+- (int)retornaNumeroIcones;
+- (void)removeTodosIcones;
 - (id)init;
+- (void)criarTodosIcones;
+
     
     
 

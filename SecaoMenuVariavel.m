@@ -17,8 +17,6 @@
     
     if (self) {
         
-        NSArray *tiposVariaveis = [NSArray arrayWithObjects:@"inteiro", @"real",@"caractere",@"logico",nil];
-        
         
         //DESCOMENTAR QUANDO A IMAGEM JA ESTIVER NO PROJETO, E INSERIR O NOME
         self.texture = [SKTexture textureWithImageNamed:@"livre-variavel.png"];
@@ -26,18 +24,28 @@
         self.name = @"secao";
         self.titulo = @"variavel";
         
-        self.icones = [NSMutableArray array];
+        icones = [NSMutableArray array];
         
-        for (int i = 0; i < tiposVariaveis.count; i++) {
-            
-            
-            [self.icones addObject:[self criarIconeSecao:self.titulo tipo:[tiposVariaveis objectAtIndex:i] imagem:@"abrir-caixa1.png"]];
+        [self criarTodosIcones];
         
-        }
     }
     
     return self;
 }
+
+- (void)criarTodosIcones{
+    
+    NSArray *tiposVariaveis = [NSArray arrayWithObjects:@"inteiro", @"real",@"caractere",@"logico",nil];
+    
+    for (int i = 0; i < tiposVariaveis.count; i++) {
+        
+        
+        [icones addObject:[self criarIconeSecao:self.titulo tipo:[tiposVariaveis objectAtIndex:i] imagem:@"abrir-caixa1.png"]];
+        
+    }
+
+}
+
 
 
 

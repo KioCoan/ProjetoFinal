@@ -33,11 +33,10 @@
         [self addChild:botaoMenu];
         
         //ALOCANDO MENU
-        menu = [[MenuNode alloc]initWithImageNamed:@"livre-menu.png"];
         
-        //menu = [[MenuNode alloc]initWithPosicaoAbrir:CGPointMake(245, 510) PosicaoFechar:CGPointMake(-245, 510) tamanho:CGSizeMake(490, 1025)];
         
-        [menu testando:CGPointMake(245, 510) PosicaoFechar:CGPointMake(-245, 510) tamanho:CGSizeMake(490, 1025)];
+        menu = [[MenuNode alloc]initWithPosicaoAbrir:CGPointMake(245, 510) PosicaoFechar:CGPointMake(-245, 510) tamanho:CGSizeMake(490, 1025)];
+        
         [self addChild:menu];
         
         
@@ -70,16 +69,30 @@
     
 }
 
+-(void)criarOperadorNaPosicao:(CGPoint)posicao{
+    
+    SpriteOperadorNode *operador = [[SpriteOperadorNode alloc]init];
+    
+    [operador setDono:self];
+    [operador setPosition:posicao];
+    //caixa.size = CGSizeMake(200, 200);
+    operador.zPosition = -1;
+    [self addChild:operador];
+    
+}
+
 -(void)criaObjetoPosicao:(CGPoint)posicao{
     
     IconeSecao *icone = (IconeSecao *)conteudoAtivo;
     
-    [icone runAction:[SKAction moveTo:icone.posicaoAnterior duration:0.3]];
+    [icone runAction:[SKAction moveTo:icone.posicaoAnterior duration:0]];
     
     
     if ([icone.secao isEqualToString:@"variavel"]) {
         
         [self criarVariavelTipo:icone.tipo posicao:posicao];
+    }else if ([icone.secao isEqualToString:@"operador"]){
+        [self criarOperadorNaPosicao:posicao];
     }
     
     

@@ -23,7 +23,7 @@
     BOOL partesVisiveis;
 }
 
-@property MenuNode *dono;
+@property SKScene *dono;
 
 -(id)initWithValor1:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 resultado:(NSString*)resultado;
 -(void)setLabelValor1:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 resultado:(NSString*)resultado;

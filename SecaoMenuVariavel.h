@@ -12,8 +12,4 @@
 @interface SecaoMenuVariavel : SecaoMenu
 
 
-
-
-
-
 @end

@@ -8,7 +8,32 @@
 
 #import "SecaoMenu.h"
 
-@implementation SecaoMenu
+@implementation SecaoMenu{
+    
+}
+
+- (void)criarTodosIcones{
+    
+}
+
+- (IconeSecao *)retornaIconeIndice:(int)indice{
+    
+    return [icones objectAtIndex:indice];
+    
+}
+
+- (int)retornaNumeroIcones{
+    return  icones.count;
+}
+
+
+- (void)removeTodosIcones{
+    
+    for (IconeSecao *icone in icones) {
+        [icone removeFromParent];
+    }
+    
+}
 
 - (IconeSecao *)criarIconeSecao :(NSString *)titulo tipo:(NSString *)tipo posicao:(CGPoint)posicao{
     

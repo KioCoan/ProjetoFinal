@@ -10,6 +10,7 @@
 #import "IconeSecao.h"
 #import "SecaoMenu.h"
 #import "SecaoMenuVariavel.h"
+#import "SecaoMenuOperador.h"
 
 
 
@@ -19,6 +20,5 @@
 - (void)abrirFechar;
 - (id)initWithPosicaoAbrir : (CGPoint)abrir PosicaoFechar:(CGPoint)fechar tamanho:(CGSize)tamanho;
 - (BOOL)getAberto;
-- (void)testando : (CGPoint)abrir PosicaoFechar:(CGPoint)fechar tamanho:(CGSize)tamanho;
-//- (void)criaIconePosicao:(CGPoint)posicao;
+
 @end
