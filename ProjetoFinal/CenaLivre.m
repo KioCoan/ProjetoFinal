@@ -32,6 +32,7 @@
         botaoMenu.name = @"botaoMenu";
         [self addChild:botaoMenu];
         
+        
         //ALOCANDO MENU
         
         
@@ -40,10 +41,11 @@
         [self addChild:menu];
         
         
+        
+        
     }
     return self;
 }
-
 
 - (void)rodaeMuda{
     
@@ -53,6 +55,18 @@
     [botaoMenu runAction:rodaBotao completion:^{
         botaoMenu.texture = [SKTexture textureWithImageNamed:@"modo livre-10.png"];
     }];
+    
+    
+}
+
+- (SKAction *)retornaCrescerDiminuir:(BOOL)aumenta{
+    
+    
+    if (aumenta) {
+     return [SKAction scaleTo:1.1 duration:0.1];
+    }
+    
+    return [SKAction scaleTo:1 duration:0.1];
     
     
 }
@@ -113,9 +127,14 @@
     if ([conteudoAtivo.name isEqualToString:@"botaoMenu"]) {
         [menu abrirFechar];
         [self.myDelegate esconderNavigationController: [menu getAberto]];
+        
+        
+        
     }else if ([menu getAberto] && [conteudoAtivo.name isEqualToString:@"fundo"]){
         [menu abrirFechar];
         [self.myDelegate esconderNavigationController: [menu getAberto]];
+    }else if ([conteudoAtivo.name isEqualToString:@"iconeMenu"]){
+        [conteudoAtivo runAction:[self retornaCrescerDiminuir:YES]];
     }
 }
 
@@ -130,6 +149,7 @@
         
         CGPoint location = [touch locationInNode:menu];
         [conteudoAtivo setPosition:location];
+        
         
     }
     
@@ -156,7 +176,7 @@
             
             IconeSecao *icone = (IconeSecao *)conteudoAtivo;
             [icone runAction:[SKAction moveTo:icone.posicaoAnterior duration:0.3]];
-            
+            [icone runAction:[self retornaCrescerDiminuir:NO]];
             
             
         }else{
