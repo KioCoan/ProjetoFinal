@@ -36,13 +36,11 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    self.desafioAtual = [gerenciadorDesafios retornaTarefasParaDesafio];
-    self.lblParte1.text = [self.desafioAtual parte1];
-    self.lblOperador.text = @"?";
-    self.lblParte2.text = [self.desafioAtual parte2];
-    self.lblResultado.text = [self.desafioAtual resultado];
-    [self ajustaBotoes];
     
+    viewDesafioAtual = [[SKView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:viewDesafioAtual];
+    [viewDesafioAtual presentScene:[gerenciadorDesafios retornaCenaAtual]];
+    [[viewDesafioAtual scene]setSize:viewDesafioAtual.frame.size];
     
 }
 

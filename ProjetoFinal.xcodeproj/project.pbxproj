@@ -23,7 +23,6 @@
 		120E8FA2192FC0A200CDEF95 /* ProjetoFinalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 120E8FA1192FC0A200CDEF95 /* ProjetoFinalTests.m */; };
 		12428D4519C9FC240012B2B6 /* GerenciadorDesafios.m in Sources */ = {isa = PBXBuildFile; fileRef = 12428D4419C9FC240012B2B6 /* GerenciadorDesafios.m */; };
 		125398C11992AB3B006D4DAC /* SpriteOperadorCondicional.m in Sources */ = {isa = PBXBuildFile; fileRef = 125398C01992AB3B006D4DAC /* SpriteOperadorCondicional.m */; };
-		12719D3F19CB563A006B1374 /* DesafioOperadoresNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 12719D3E19CB563A006B1374 /* DesafioOperadoresNode.m */; };
 		12719D4319CB5683006B1374 /* DesafiosOperadoresScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 12719D4219CB5683006B1374 /* DesafiosOperadoresScene.m */; };
 		12719D4819CB5DB9006B1374 /* ColabReg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 12719D4619CB5B16006B1374 /* ColabReg.otf */; };
 		12719D4919CB5DBF006B1374 /* ColabThi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 12719D4719CB5B16006B1374 /* ColabThi.otf */; };
@@ -234,8 +233,6 @@
 		12428D4419C9FC240012B2B6 /* GerenciadorDesafios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GerenciadorDesafios.m; sourceTree = "<group>"; };
 		125398BF1992AB3B006D4DAC /* SpriteOperadorCondicional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteOperadorCondicional.h; sourceTree = "<group>"; };
 		125398C01992AB3B006D4DAC /* SpriteOperadorCondicional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteOperadorCondicional.m; sourceTree = "<group>"; };
-		12719D3D19CB563A006B1374 /* DesafioOperadoresNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesafioOperadoresNode.h; sourceTree = "<group>"; };
-		12719D3E19CB563A006B1374 /* DesafioOperadoresNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesafioOperadoresNode.m; sourceTree = "<group>"; };
 		12719D4119CB5683006B1374 /* DesafiosOperadoresScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesafiosOperadoresScene.h; sourceTree = "<group>"; };
 		12719D4219CB5683006B1374 /* DesafiosOperadoresScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesafiosOperadoresScene.m; sourceTree = "<group>"; };
 		12719D4619CB5B16006B1374 /* ColabReg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColabReg.otf; sourceTree = "<group>"; };
@@ -596,8 +593,6 @@
 		12719D3C19CB558A006B1374 /* Animacoes */ = {
 			isa = PBXGroup;
 			children = (
-				12719D3D19CB563A006B1374 /* DesafioOperadoresNode.h */,
-				12719D3E19CB563A006B1374 /* DesafioOperadoresNode.m */,
 				12719D4A19CB5FB5006B1374 /* BotaoDesafiosNode.h */,
 				12719D4B19CB5FB5006B1374 /* BotaoDesafiosNode.m */,
 			);
@@ -1405,7 +1400,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12719D3F19CB563A006B1374 /* DesafioOperadoresNode.m in Sources */,
 				8418F88119708B0900781F82 /* ExercicioVIewContoller.m in Sources */,
 				12428D4519C9FC240012B2B6 /* GerenciadorDesafios.m in Sources */,
 				8446A4D51994027500C92785 /* LivreVariavel.m in Sources */,

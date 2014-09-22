@@ -11,12 +11,13 @@
 @implementation BotaoDesafiosNode
 
 
--(instancetype)initWithImageNamed:(NSString *)name{
+
+-(id)init{
     
-    self = [super initWithImageNamed:name];
+    self = [super initWithImageNamed:@"check.png"];
     if (self) {
         valor = [[SKLabelNode alloc] initWithFontNamed:FONT_THIN];
-        [valor setPosition:CGPointMake(self.size.width/2, self.size.height/2)];
+        valor.fontSize = self.size.width / valor.frame.size.width + 20;
         [valor setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
         [valor setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
         [self addChild:valor];
@@ -25,6 +26,14 @@
 }
 
 -(void)setValor:(NSString *)texto{
-    [valor setText:texto];  
+    [valor setText:texto];
+    valor.fontSize = self.size.width / valor.frame.size.width + 20;
 }
+
+-(NSString*)getValor{
+    return valor.text;
+}
+
+
+
 @end

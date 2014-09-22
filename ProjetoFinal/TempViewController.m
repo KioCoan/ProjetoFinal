@@ -78,7 +78,7 @@
     
     NSLog(@"%d",[gerenciadorDesafios corrige:opcao]);
     [self alteraValores];
-    [self ajustaBotoes];
+    
 }
 
 
@@ -94,7 +94,7 @@
         self.lblOperador.text = @"?";
         self.lblParte2.text = [self.desafioAtual parte2];
         self.lblResultado.text = [self.desafioAtual resultado];
-        
+        [self ajustaBotoes];
         //        if ([self.desafioAtual respostaDupla]) {
         //            NSLog(@"Dupla");
         //        }

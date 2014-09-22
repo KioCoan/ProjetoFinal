@@ -17,6 +17,7 @@
     NSString *tipo;
     GerenciadorDesafios *gerenciadorDesafios;
     Gerador *gerador;
+    SKView *viewDesafioAtual;
 }
 @property Desafio *desafioAtual;
 

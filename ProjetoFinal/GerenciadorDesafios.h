@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Desafio.h"
+#import "DesafiosOperadoresScene.h"
 extern NSString* const FONT_THIN;
 extern NSString* const FONT_REGULAR;
 
@@ -17,6 +18,7 @@ extern NSString* const FONT_REGULAR;
     NSMutableArray *meusDesafios;
     int desafioAtual;
 }
+@property SKScene *cenaAtual;
 
 + (GerenciadorDesafios*)sharedGerenciador;
 + (id)allocWithZone:(struct _NSZone *)zone;
@@ -27,4 +29,5 @@ extern NSString* const FONT_REGULAR;
 -(NSMutableArray*)retornaTitulosEDescricoesDesafios;
 -(Desafio*)retornaTarefasParaDesafio;
 -(BOOL)corrige:(NSString*)opcao;
+-(SKScene*)retornaCenaAtual;
 @end

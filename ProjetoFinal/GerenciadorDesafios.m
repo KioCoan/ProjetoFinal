@@ -87,6 +87,26 @@ NSString* const FONT_REGULAR = @"Colaborate-Regular";
     return d;
 }
 
+-(SKScene*)retornaCenaAtual{
+    
+    switch (desafioAtual) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+            self.cenaAtual = [[DesafiosOperadoresScene alloc] init];
+            break;
+        default:
+            break;
+    }
+    return self.cenaAtual;
+}
+
+
+
 -(void)selecionaDesafio:(int)desafio{
     desafioAtual = desafio;
     NSLog(@"%d", desafioAtual);

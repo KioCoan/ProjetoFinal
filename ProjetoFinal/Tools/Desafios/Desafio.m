@@ -32,7 +32,7 @@
     nivel = level;
     tipo = type;
     nTasks = nTarefas;
-    tarefaAtual = 0;
+    tarefaAtual = -1;
 }
 
 -(int)nTarefas{
