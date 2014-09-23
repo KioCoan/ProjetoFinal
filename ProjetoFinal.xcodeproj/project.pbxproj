@@ -277,17 +277,17 @@
 		846B738D19782427009C2EB7 /* fundo-cinza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fundo-cinza.png"; path = "Imagens/fundo-cinza.png"; sourceTree = "<group>"; };
 		846B73901978255B009C2EB7 /* CenaExercicioOperadores1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenaExercicioOperadores1.h; sourceTree = "<group>"; };
 		846B73911978255B009C2EB7 /* CenaExercicioOperadores1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenaExercicioOperadores1.m; sourceTree = "<group>"; };
-		8487523C19C379E100A93120 /* CenaLivre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CenaLivre.h; path = ProjetoFinal/CenaLivre.h; sourceTree = "<group>"; };
-		8487523D19C379E100A93120 /* CenaLivre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CenaLivre.m; path = ProjetoFinal/CenaLivre.m; sourceTree = "<group>"; };
-		8492087B19C765C200D64AE8 /* MenuNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuNode.h; sourceTree = "<group>"; };
-		8492087C19C765C200D64AE8 /* MenuNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuNode.m; sourceTree = "<group>"; };
+		8487523C19C379E100A93120 /* CenaLivre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenaLivre.h; sourceTree = "<group>"; };
+		8487523D19C379E100A93120 /* CenaLivre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenaLivre.m; sourceTree = "<group>"; };
+		8492087B19C765C200D64AE8 /* MenuNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuNode.h; path = ../MenuNode.h; sourceTree = "<group>"; };
+		8492087C19C765C200D64AE8 /* MenuNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuNode.m; path = ../MenuNode.m; sourceTree = "<group>"; };
 		8492087E19C7756400D64AE8 /* menuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menuIcon.png; path = Imagens/menuIcon.png; sourceTree = "<group>"; };
-		84960B7819C8B40000BC7808 /* IconeSecao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconeSecao.h; sourceTree = "<group>"; };
-		84960B7919C8B40000BC7808 /* IconeSecao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconeSecao.m; sourceTree = "<group>"; };
-		84960B7B19C8D7F500BC7808 /* SecaoMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecaoMenu.h; sourceTree = "<group>"; };
-		84960B7C19C8D7F500BC7808 /* SecaoMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecaoMenu.m; sourceTree = "<group>"; };
-		84960B7E19C8D9B900BC7808 /* SecaoMenuVariavel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecaoMenuVariavel.h; sourceTree = "<group>"; };
-		84960B7F19C8D9B900BC7808 /* SecaoMenuVariavel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecaoMenuVariavel.m; sourceTree = "<group>"; };
+		84960B7819C8B40000BC7808 /* IconeSecao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IconeSecao.h; path = ../IconeSecao.h; sourceTree = "<group>"; };
+		84960B7919C8B40000BC7808 /* IconeSecao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IconeSecao.m; path = ../IconeSecao.m; sourceTree = "<group>"; };
+		84960B7B19C8D7F500BC7808 /* SecaoMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecaoMenu.h; path = ../SecaoMenu.h; sourceTree = "<group>"; };
+		84960B7C19C8D7F500BC7808 /* SecaoMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecaoMenu.m; path = ../SecaoMenu.m; sourceTree = "<group>"; };
+		84960B7E19C8D9B900BC7808 /* SecaoMenuVariavel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecaoMenuVariavel.h; path = ../SecaoMenuVariavel.h; sourceTree = "<group>"; };
+		84960B7F19C8D9B900BC7808 /* SecaoMenuVariavel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecaoMenuVariavel.m; path = ../SecaoMenuVariavel.m; sourceTree = "<group>"; };
 		849970E4199EA38600996580 /* CenaExercicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CenaExercicio.h; path = ../CenaExercicio.h; sourceTree = "<group>"; };
 		849970E5199EA38700996580 /* CenaExercicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CenaExercicio.m; path = ../CenaExercicio.m; sourceTree = "<group>"; };
 		84B1B3E1197D881900089FCB /* CondicaoSimples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CondicaoSimples.h; sourceTree = "<group>"; };
@@ -296,8 +296,8 @@
 		84B1B3E5197D8AE500089FCB /* ExeCondSimples1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExeCondSimples1.m; path = Exercicios/ExeCondSimples1.m; sourceTree = "<group>"; };
 		84B1B3E7197D8BEF00089FCB /* CenaExercicioCondSimples1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CenaExercicioCondSimples1.h; path = Exercicios/CenaExercicioCondSimples1.h; sourceTree = "<group>"; };
 		84B1B3E8197D8BEF00089FCB /* CenaExercicioCondSimples1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CenaExercicioCondSimples1.m; path = Exercicios/CenaExercicioCondSimples1.m; sourceTree = "<group>"; };
-		84BCF53219CB703B003D9F71 /* SecaoMenuOperador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecaoMenuOperador.h; sourceTree = "<group>"; };
-		84BCF53319CB703B003D9F71 /* SecaoMenuOperador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecaoMenuOperador.m; sourceTree = "<group>"; };
+		84BCF53219CB703B003D9F71 /* SecaoMenuOperador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecaoMenuOperador.h; path = ../SecaoMenuOperador.h; sourceTree = "<group>"; };
+		84BCF53319CB703B003D9F71 /* SecaoMenuOperador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecaoMenuOperador.m; path = ../SecaoMenuOperador.m; sourceTree = "<group>"; };
 		91A7A955198F56DC009A5EB1 /* ConceitosCondicionais.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConceitosCondicionais.txt; sourceTree = "<group>"; };
 		91A9860F1962324500EA1074 /* Assunto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Assunto.h; path = Assuntos/Assunto.h; sourceTree = "<group>"; };
 		91A986101962324500EA1074 /* Assunto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Assunto.m; path = Assuntos/Assunto.m; sourceTree = "<group>"; };
@@ -499,18 +499,6 @@
 		120E8F6A192FC0A200CDEF95 = {
 			isa = PBXGroup;
 			children = (
-				8492087B19C765C200D64AE8 /* MenuNode.h */,
-				8492087C19C765C200D64AE8 /* MenuNode.m */,
-				84960B7B19C8D7F500BC7808 /* SecaoMenu.h */,
-				84960B7C19C8D7F500BC7808 /* SecaoMenu.m */,
-				84BCF53219CB703B003D9F71 /* SecaoMenuOperador.h */,
-				84BCF53319CB703B003D9F71 /* SecaoMenuOperador.m */,
-				84960B7E19C8D9B900BC7808 /* SecaoMenuVariavel.h */,
-				84960B7F19C8D9B900BC7808 /* SecaoMenuVariavel.m */,
-				84960B7819C8B40000BC7808 /* IconeSecao.h */,
-				84960B7919C8B40000BC7808 /* IconeSecao.m */,
-				8487523C19C379E100A93120 /* CenaLivre.h */,
-				8487523D19C379E100A93120 /* CenaLivre.m */,
 				120E8F7C192FC0A200CDEF95 /* ProjetoFinal */,
 				120E8F9B192FC0A200CDEF95 /* ProjetoFinalTests */,
 				120E8F75192FC0A200CDEF95 /* Frameworks */,
@@ -772,6 +760,25 @@
 			name = Desafio;
 			sourceTree = "<group>";
 		};
+		849A4F0519D1E90A009E2070 /* Modo Livre */ = {
+			isa = PBXGroup;
+			children = (
+				8492087B19C765C200D64AE8 /* MenuNode.h */,
+				8492087C19C765C200D64AE8 /* MenuNode.m */,
+				84960B7B19C8D7F500BC7808 /* SecaoMenu.h */,
+				84960B7C19C8D7F500BC7808 /* SecaoMenu.m */,
+				84BCF53219CB703B003D9F71 /* SecaoMenuOperador.h */,
+				84BCF53319CB703B003D9F71 /* SecaoMenuOperador.m */,
+				84960B7E19C8D9B900BC7808 /* SecaoMenuVariavel.h */,
+				84960B7F19C8D9B900BC7808 /* SecaoMenuVariavel.m */,
+				84960B7819C8B40000BC7808 /* IconeSecao.h */,
+				84960B7919C8B40000BC7808 /* IconeSecao.m */,
+				8487523C19C379E100A93120 /* CenaLivre.h */,
+				8487523D19C379E100A93120 /* CenaLivre.m */,
+			);
+			name = "Modo Livre";
+			sourceTree = "<group>";
+		};
 		84B1B3DE197D6E4A00089FCB /* Condicionais */ = {
 			isa = PBXGroup;
 			children = (
@@ -850,6 +857,7 @@
 		91A9860D196231F500EA1074 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				849A4F0519D1E90A009E2070 /* Modo Livre */,
 				8487523819C3784000A93120 /* Desafio */,
 				846B738F197824AD009C2EB7 /* Objetos */,
 				91A98616196232DF00EA1074 /* Exercicios */,

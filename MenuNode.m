@@ -113,9 +113,6 @@
 }
 
 
-
-
-
 - (id)initWithPosicaoAbrir : (CGPoint)abrir PosicaoFechar:(CGPoint)fechar tamanho:(CGSize)tamanho{
     
    self = [super init];
@@ -159,7 +156,7 @@
         
         [novaSecao setPosition:posicaoInicial];
         
-        [self addChild:novaSecao];
+        //[self addChild:novaSecao];
         
         [secoes addObject: novaSecao];
         
