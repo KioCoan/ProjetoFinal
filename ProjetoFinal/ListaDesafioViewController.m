@@ -89,4 +89,9 @@
 - (IBAction)acaoBtnDesafio:(id)sender {
     [gerenciadorDesafios instanciaTarefas];
 }
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 200;
+}
 @end
