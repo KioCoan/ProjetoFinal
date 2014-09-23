@@ -22,6 +22,7 @@
     return self;
 }
 
+
 -(id)initWithConteudo:(NSString*)conteudo nome:(NSString*)nome tipo:(NSString*)tipo tamanho:(CGSize)tamanho{
     self = [super init];
     
@@ -225,8 +226,19 @@
     
 }
 
+
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+
+    UITouch *touch = [touches anyObject];
+    
+    NSLog(@"numeros taps %d",touch.tapCount);
+    
+    if (touch.tapCount == 2) {
+        NSLog(@"dois taps");
+    }
     [self executaSprite];
+
+    
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -247,6 +259,7 @@
 
 
 -(void)fecharCaixa{
+    
     //INICIA A SKACTION QUE FECHA A CAIXA
     [lblConteudo setHidden:YES];
     [self runAction:somCaixaFechar];
@@ -259,6 +272,7 @@
 
 
 -(void)abrirCaixa{
+   
     //INICIA A SKACTION QUE ABRE A CAIXA
     [lblConteudo setHidden:YES];
     [self runAction:somCaixaAbrir];
@@ -272,6 +286,7 @@
 
 
 -(void)inicializaAnimacaoFecharCaixa{
+    
     //CRIO UMA ANIMAÇÃO EM ORDEM INVERSA (CAIXA FECHANDO)
     animacaoFechar = [animacaoAbrir reversedAction];
 }

@@ -59,8 +59,8 @@
 
 - (void) esconderNavigationController:(BOOL)esconder{
     
-    
-    [self.navigationController setNavigationBarHidden:esconder animated:YES];
+    //ESCONDE A NAVIGATION CONTROLLER
+    //[self.navigationController setNavigationBarHidden:esconder animated:NO];
     
     
 }

@@ -16,6 +16,13 @@
     MenuNode *menu;
     SKNode *conteudoAtivo;
     SKSpriteNode *botaoMenu;
+    SKSpriteNode *menuConfiguracao;
+    NSMutableArray *vetorTextField;
+    UITextField *textField1;
+    UITextField *textField2;
+    UITextField *textField3;
+    
+    
 }
 
 
@@ -25,7 +32,7 @@
     
     if (self) {
         
-        self.backgroundColor = [SKColor lightGrayColor];
+        self.backgroundColor = [SKColor whiteColor];
         self.name = @"fundo";
         botaoMenu = [[SKSpriteNode alloc]initWithImageNamed:@"modo livre-09.png"];
         botaoMenu.position = CGPointMake(100, 100);
@@ -41,10 +48,79 @@
         [self addChild:menu];
         
         
+        [self criaMenuConfiguracao];
+        
+        //ALOCANDO TEXTFIELD
+        vetorTextField = [NSMutableArray array];
+        
+        
         
         
     }
     return self;
+}
+
+- (void)criaMenuConfiguracao{
+    
+    menuConfiguracao = [[SKSpriteNode alloc] initWithImageNamed:@"livre-menu.png"];
+    [menuConfiguracao setSize:CGSizeMake(600, 230)];
+    [menuConfiguracao setPosition:CGPointMake(250, 850)];
+    [self addChild:menuConfiguracao];
+    
+    SKSpriteNode *botaoOK = [[SKSpriteNode alloc]initWithImageNamed:@"icone-iniciar.png"];
+    botaoOK.name = @"botaoOK";
+    
+    [botaoOK setPosition:CGPointMake(170, -10)];
+    [botaoOK setSize:CGSizeMake(150, 150)];
+    [menuConfiguracao addChild:botaoOK];
+
+}
+
+- (void)criandoTodosTextFields{
+    
+    CGRect bounds = CGRectMake(self.size.width * 0.05, self.size.height * 0.10, 250, 40);
+    
+    for (int i = 0; i < 3; i++) {
+        UITextField *textField = [self criaTextFieldBounds:bounds];
+        
+        [self.view addSubview:textField];
+        [vetorTextField addObject:textField];
+        
+        bounds.origin.y += bounds.size.height * 1.5;
+    }
+    
+    
+    
+}
+
+- (UITextField *)criaTextFieldBounds:(CGRect)bounds{
+    
+    UITextField *textField = [[UITextField alloc] initWithFrame:bounds];
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.textColor = [UIColor blackColor];
+    textField.font = [UIFont systemFontOfSize:25.0];
+    textField.placeholder = @"Insira o valor";
+    textField.backgroundColor = [UIColor whiteColor];
+    textField.autocorrectionType = UITextAutocorrectionTypeNo;
+    textField.keyboardType = UIKeyboardTypeDefault;
+    textField.returnKeyType = UIReturnKeyDone;
+    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    
+    textField.clearsContextBeforeDrawing = YES;
+    textField.delegate = self;
+    textField.hidden = NO;
+    
+    
+    return textField;
+    
+}
+
+- (void)didMoveToView:(SKView *)view{
+    
+    
+    [self criandoTodosTextFields];
+    
+    
 }
 
 - (void)rodaeMuda{

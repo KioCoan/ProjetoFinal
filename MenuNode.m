@@ -22,6 +22,7 @@
     return aberto;
 }
 
+
 //METODO DO PROTOCOLO SecaoMenuDELEGATE
 - (void)fuiClicado:(NSString *)titulo{
     
@@ -156,7 +157,7 @@
         
         [novaSecao setPosition:posicaoInicial];
         
-        //[self addChild:novaSecao];
+        [self addChild:novaSecao];
         
         [secoes addObject: novaSecao];
         

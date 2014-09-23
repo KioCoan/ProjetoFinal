@@ -18,7 +18,7 @@
 @end
 
 
-@interface CenaLivre : SKScene
+@interface CenaLivre : SKScene <UITextFieldDelegate>
 
 @property id<CenaLivreDelegate> myDelegate;
 
