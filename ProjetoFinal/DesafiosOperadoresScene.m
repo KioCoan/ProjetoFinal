@@ -29,11 +29,32 @@
         lblParte2 = [[SKLabelNode alloc] initWithFontNamed:FONT_THIN];
         lblResultado = [[SKLabelNode alloc] initWithFontNamed:FONT_THIN];
         
+        UIColor *cor = [UIColor colorWithRed:(76.0/255.0) green:(95.0/255.0) blue:(138.0/255.0) alpha:1];
+        //UIColor *cor2 = [UIColor colorWithHue:<#(CGFloat)#> saturation:<#(CGFloat)#> brightness:<#(CGFloat)#> alpha:<#(CGFloat)#>]
+        [lblParte1 setFontColor:cor];
+        [lblParte2 setFontColor:cor];
+        [lblResultado setFontColor:cor];
+        
+        [lblParte1 setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeRight];
+        [lblParte2 setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+        [lblResultado setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
         
         
         btn1 = [[BotaoDesafiosNode alloc] init];
         btn2 = [[BotaoDesafiosNode alloc] init];
-        fundo = [[SKSpriteNode alloc] initWithImageNamed:@"livre-menu.png"];
+        fundo = [[SKSpriteNode alloc] initWithImageNamed:@"Desafio-Operadores-Fundo.png"];
+        
+        [btn1 setTexture:[SKTexture textureWithImageNamed:@"Desafio-Operadores-btn1.png"]];
+        [btn2 setTexture:[SKTexture textureWithImageNamed:@"Desafio-Operadores-btn2.png"]];
+        
+        
+        
+        [fundo setPosition:CGPointMake(384, 512)];
+        [lblParte1 setPosition:CGPointMake(300, 600)];
+        [lblParte2 setPosition:CGPointMake(450, 600)];
+        [lblResultado setPosition:CGPointMake(250, 500)];
+        
+        
         
         [self addChild:fundo];
         [self addChild:lblParte1];
@@ -43,9 +64,6 @@
         [self addChild:btn2];
         
         
-        [lblParte1 setPosition:CGPointMake(200, 600)];
-        [lblParte2 setPosition:CGPointMake(300, 600)];
-        [lblResultado setPosition:CGPointMake(250, 500)];
         
         
         

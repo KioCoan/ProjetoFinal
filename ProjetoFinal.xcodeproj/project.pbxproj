@@ -90,6 +90,10 @@
 		A597F0F71960A7A6006429C7 /* ConteudoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A597F0F31960A7A6006429C7 /* ConteudoViewController.m */; };
 		A5BE095F19C223AF00F7110E /* MenuPrincipalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BE095E19C223AF00F7110E /* MenuPrincipalViewController.m */; };
 		A5BE096919C5E87100F7110E /* ParteDaExpressao.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BE096819C5E87100F7110E /* ParteDaExpressao.m */; };
+		A5CBEB8C19D20CCC00AC879D /* Desafio-Operadores-Fundo.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CBEB8B19D20CCC00AC879D /* Desafio-Operadores-Fundo.png */; };
+		A5CBEB9019D20E1B00AC879D /* Desafio-Operadores-btn1.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CBEB8D19D20E1B00AC879D /* Desafio-Operadores-btn1.png */; };
+		A5CBEB9119D20E1B00AC879D /* Desafio-Operadores-btn2.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CBEB8E19D20E1B00AC879D /* Desafio-Operadores-btn2.png */; };
+		A5CBEB9219D20E1B00AC879D /* Desafio-Operadores-Operador.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CBEB8F19D20E1B00AC879D /* Desafio-Operadores-Operador.png */; };
 		A5F38EFA19C5F6B700D337A4 /* Expressao.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F38EF919C5F6B700D337A4 /* Expressao.m */; };
 		A5F38EFD19C711C900D337A4 /* Desafio.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F38EFC19C711C900D337A4 /* Desafio.m */; };
 		BD01DE051983566100AEAAA8 /* AnimaCondSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */; };
@@ -345,6 +349,10 @@
 		A5BE095E19C223AF00F7110E /* MenuPrincipalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuPrincipalViewController.m; sourceTree = "<group>"; };
 		A5BE096719C5E87100F7110E /* ParteDaExpressao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParteDaExpressao.h; path = Tools/Desafios/ParteDaExpressao.h; sourceTree = "<group>"; };
 		A5BE096819C5E87100F7110E /* ParteDaExpressao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParteDaExpressao.m; path = Tools/Desafios/ParteDaExpressao.m; sourceTree = "<group>"; };
+		A5CBEB8B19D20CCC00AC879D /* Desafio-Operadores-Fundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Desafio-Operadores-Fundo.png"; sourceTree = "<group>"; };
+		A5CBEB8D19D20E1B00AC879D /* Desafio-Operadores-btn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Desafio-Operadores-btn1.png"; sourceTree = "<group>"; };
+		A5CBEB8E19D20E1B00AC879D /* Desafio-Operadores-btn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Desafio-Operadores-btn2.png"; sourceTree = "<group>"; };
+		A5CBEB8F19D20E1B00AC879D /* Desafio-Operadores-Operador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Desafio-Operadores-Operador.png"; sourceTree = "<group>"; };
 		A5D0427819910A370064663B /* AlteraAnimacaoDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AlteraAnimacaoDelegate.h; path = Assuntos/AlteraAnimacaoDelegate.h; sourceTree = "<group>"; };
 		A5F38EF819C5F6B700D337A4 /* Expressao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Expressao.h; path = Tools/Desafios/Expressao.h; sourceTree = "<group>"; };
 		A5F38EF919C5F6B700D337A4 /* Expressao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Expressao.m; path = Tools/Desafios/Expressao.m; sourceTree = "<group>"; };
@@ -991,6 +999,25 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		A5CBEB8919D1F6A700AC879D /* Desafios */ = {
+			isa = PBXGroup;
+			children = (
+				A5CBEB8A19D1F6AF00AC879D /* Operadores */,
+			);
+			name = Desafios;
+			sourceTree = "<group>";
+		};
+		A5CBEB8A19D1F6AF00AC879D /* Operadores */ = {
+			isa = PBXGroup;
+			children = (
+				A5CBEB8D19D20E1B00AC879D /* Desafio-Operadores-btn1.png */,
+				A5CBEB8E19D20E1B00AC879D /* Desafio-Operadores-btn2.png */,
+				A5CBEB8F19D20E1B00AC879D /* Desafio-Operadores-Operador.png */,
+				A5CBEB8B19D20CCC00AC879D /* Desafio-Operadores-Fundo.png */,
+			);
+			name = Operadores;
+			sourceTree = "<group>";
+		};
 		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
 			isa = PBXGroup;
 			children = (
@@ -1168,6 +1195,7 @@
 		E501FA69192FCD1600B56B5C /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				A5CBEB8919D1F6A700AC879D /* Desafios */,
 				8492087E19C7756400D64AE8 /* menuIcon.png */,
 				8431DA5D19CA12C50076EBBA /* Modo Livre */,
 				BDD22F0619A6F4A70043AA02 /* Tutorial */,
@@ -1283,6 +1311,7 @@
 				91C8EF6B197D871200CA01DE /* ConceitosOperadores.txt in Resources */,
 				BDBE769D197A3B69004EA926 /* parte-operador.png in Resources */,
 				BDC757A8196787E700DB8380 /* abrir-caixa11.png in Resources */,
+				A5CBEB8C19D20CCC00AC879D /* Desafio-Operadores-Fundo.png in Resources */,
 				BD4E5F2619987A020082632B /* refresh.mp3 in Resources */,
 				BDE82C2619916E1F00610D96 /* sprite-exclamacao.png in Resources */,
 				BDF8ADF4197B255C00BA5B8A /* parte-resultado7.png in Resources */,
@@ -1300,6 +1329,7 @@
 				120E8F8F192FC0A200CDEF95 /* Images.xcassets in Resources */,
 				BDC757A0196787E700DB8380 /* abrir-caixa3.png in Resources */,
 				BD5A552C198C972000D8722F /* senaoSe-verde.png in Resources */,
+				A5CBEB9019D20E1B00AC879D /* Desafio-Operadores-btn1.png in Resources */,
 				BDF8ADF6197B255C00BA5B8A /* parte-resultado9.png in Resources */,
 				BD1AC843199AB5EC00CB7C5C /* spark.png in Resources */,
 				BDCCE535199D322C0063DF2B /* item-em breve.png in Resources */,
@@ -1318,6 +1348,7 @@
 				A521FEF21994203000D28627 /* valores-verdadeiro.png in Resources */,
 				BDC757A1196787E700DB8380 /* abrir-caixa4.png in Resources */,
 				120E8F81192FC0A200CDEF95 /* InfoPlist.strings in Resources */,
+				A5CBEB9119D20E1B00AC879D /* Desafio-Operadores-btn2.png in Resources */,
 				BD325A4C1995EB7D00D15DBF /* slider.mp3 in Resources */,
 				BD9DF27019A171A2003938C9 /* item-Variáveis.png in Resources */,
 				8431DA6419CA12C50076EBBA /* modo livre-11.png in Resources */,
@@ -1375,6 +1406,7 @@
 				BD4E5F2A19987BB60082632B /* operadores.mp3 in Resources */,
 				BDEE047019A0224D00EAC8ED /* fundo-descricao.png in Resources */,
 				BDD22F0E19A6F4A70043AA02 /* img-tutorial4.png in Resources */,
+				A5CBEB9219D20E1B00AC879D /* Desafio-Operadores-Operador.png in Resources */,
 				BDF8AE02197B258C00BA5B8A /* parte-valores2.png in Resources */,
 				BDD22F0F19A6F4A70043AA02 /* img-tutorial5.png in Resources */,
 				8431DA7219CA28FD0076EBBA /* livre-menu.png in Resources */,
