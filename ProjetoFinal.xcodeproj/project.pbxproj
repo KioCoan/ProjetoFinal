@@ -62,6 +62,8 @@
 		84B1B3E3197D881900089FCB /* CondicaoSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E2197D881900089FCB /* CondicaoSimples.m */; };
 		84B1B3E6197D8AE500089FCB /* ExeCondSimples1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E5197D8AE500089FCB /* ExeCondSimples1.m */; };
 		84B1B3E9197D8BEF00089FCB /* CenaExercicioCondSimples1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E8197D8BEF00089FCB /* CenaExercicioCondSimples1.m */; };
+		84B237B319D352F3003EC749 /* MenuEditarBotao.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B237B119D352F3003EC749 /* MenuEditarBotao.png */; };
+		84B237B419D352F3003EC749 /* MenuEditarFundo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B237B219D352F3003EC749 /* MenuEditarFundo.png */; };
 		84BCF53419CB703B003D9F71 /* SecaoMenuOperador.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BCF53319CB703B003D9F71 /* SecaoMenuOperador.m */; };
 		91A7A956198F56DC009A5EB1 /* ConceitosCondicionais.txt in Resources */ = {isa = PBXBuildFile; fileRef = 91A7A955198F56DC009A5EB1 /* ConceitosCondicionais.txt */; };
 		91A986111962324500EA1074 /* Assunto.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A986101962324500EA1074 /* Assunto.m */; };
@@ -301,6 +303,8 @@
 		84B1B3E5197D8AE500089FCB /* ExeCondSimples1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExeCondSimples1.m; path = Exercicios/ExeCondSimples1.m; sourceTree = "<group>"; };
 		84B1B3E7197D8BEF00089FCB /* CenaExercicioCondSimples1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CenaExercicioCondSimples1.h; path = Exercicios/CenaExercicioCondSimples1.h; sourceTree = "<group>"; };
 		84B1B3E8197D8BEF00089FCB /* CenaExercicioCondSimples1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CenaExercicioCondSimples1.m; path = Exercicios/CenaExercicioCondSimples1.m; sourceTree = "<group>"; };
+		84B237B119D352F3003EC749 /* MenuEditarBotao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MenuEditarBotao.png; path = "Menu Editar/MenuEditarBotao.png"; sourceTree = "<group>"; };
+		84B237B219D352F3003EC749 /* MenuEditarFundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MenuEditarFundo.png; path = "Menu Editar/MenuEditarFundo.png"; sourceTree = "<group>"; };
 		84BCF53219CB703B003D9F71 /* SecaoMenuOperador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecaoMenuOperador.h; path = ../SecaoMenuOperador.h; sourceTree = "<group>"; };
 		84BCF53319CB703B003D9F71 /* SecaoMenuOperador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecaoMenuOperador.m; path = ../SecaoMenuOperador.m; sourceTree = "<group>"; };
 		91A7A955198F56DC009A5EB1 /* ConceitosCondicionais.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConceitosCondicionais.txt; sourceTree = "<group>"; };
@@ -644,6 +648,7 @@
 		8431DA5D19CA12C50076EBBA /* Modo Livre */ = {
 			isa = PBXGroup;
 			children = (
+				84B237B019D352E6003EC749 /* MenuEditar */,
 				84E81EA819D0A7AB0022F557 /* botaoMenu */,
 				8431DA6619CA28FD0076EBBA /* Menu */,
 			);
@@ -836,6 +841,15 @@
 				846B73911978255B009C2EB7 /* CenaExercicioOperadores1.m */,
 			);
 			name = Exe1;
+			sourceTree = "<group>";
+		};
+		84B237B019D352E6003EC749 /* MenuEditar */ = {
+			isa = PBXGroup;
+			children = (
+				84B237B119D352F3003EC749 /* MenuEditarBotao.png */,
+				84B237B219D352F3003EC749 /* MenuEditarFundo.png */,
+			);
+			name = MenuEditar;
 			sourceTree = "<group>";
 		};
 		84E81EA819D0A7AB0022F557 /* botaoMenu */ = {
@@ -1389,6 +1403,7 @@
 				8431DA7419CA28FD0076EBBA /* livre-variavel.png in Resources */,
 				BDF8ADF2197B255C00BA5B8A /* parte-resultado5.png in Resources */,
 				BDF8ADF1197B255C00BA5B8A /* parte-resultado4.png in Resources */,
+				84B237B419D352F3003EC749 /* MenuEditarFundo.png in Resources */,
 				BDA68F3D199819C400BD0527 /* valores-errado.png in Resources */,
 				8492087F19C7756400D64AE8 /* menuIcon.png in Resources */,
 				BDC757A5196787E700DB8380 /* abrir-caixa8.png in Resources */,
@@ -1397,6 +1412,7 @@
 				BDC757A2196787E700DB8380 /* abrir-caixa5.png in Resources */,
 				BD325A461995EB7D00D15DBF /* correto.aiff in Resources */,
 				BDC4073E199B1E18006CD7AE /* sprite-introducao1.png in Resources */,
+				84B237B319D352F3003EC749 /* MenuEditarBotao.png in Resources */,
 				BDE82C2419916E1F00610D96 /* senao-normal.png in Resources */,
 				8431DA6219CA12C50076EBBA /* modo livre-09.png in Resources */,
 				BDC40742199B1E18006CD7AE /* sprite-introducao5.png in Resources */,

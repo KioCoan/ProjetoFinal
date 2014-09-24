@@ -114,7 +114,9 @@
 }
 
 
-- (id)initWithPosicaoAbrir : (CGPoint)abrir PosicaoFechar:(CGPoint)fechar tamanho:(CGSize)tamanho{
+- (id)initWithPosicaoAbrir : (CGPoint)abrir tamanho:(CGSize)tamanho{
+    
+    CGPoint fechar = CGPointMake(abrir.x * (-1), abrir.y);
     
    self = [super init];
     
@@ -146,7 +148,7 @@
 
 - (void)criarTodasSecoes{
     
-    CGPoint posicaoInicial = CGPointMake(-220, 450);
+    CGPoint posicaoInicial = CGPointMake(-220, 405);
     
     for (int i = 0; i < nSecoes; i++) {
         

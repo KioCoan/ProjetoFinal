@@ -229,13 +229,7 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
 
-    UITouch *touch = [touches anyObject];
     
-    NSLog(@"numeros taps %d",touch.tapCount);
-    
-    if (touch.tapCount == 2) {
-        NSLog(@"dois taps");
-    }
     [self executaSprite];
 
     

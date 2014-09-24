@@ -18,7 +18,7 @@
 @interface MenuNode : SKSpriteNode <SecaoMenuDelegate>
 
 - (void)abrirFechar;
-- (id)initWithPosicaoAbrir : (CGPoint)abrir PosicaoFechar:(CGPoint)fechar tamanho:(CGSize)tamanho;
+- (id)initWithPosicaoAbrir : (CGPoint)abrir  tamanho:(CGSize)tamanho;
 - (BOOL)getAberto;
 
 @end
