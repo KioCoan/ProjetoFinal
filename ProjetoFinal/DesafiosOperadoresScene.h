@@ -17,7 +17,7 @@
 @interface DesafiosOperadoresScene : SKScene
 
 {
-    SKLabelNode *lblParte1, *lblParte2, *lblResultado;
+    SKLabelNode *lblParte1, *lblParte2, *lblResultado, *lblIgual;
     
     SKSpriteNode *fundo;
     

@@ -37,6 +37,10 @@
     return valor.text;
 }
 
-
+//-(void)setName:(NSString *)name{
+//    [super setName:name];
+//    [valor setName:name];
+//    
+//}
 
 @end
