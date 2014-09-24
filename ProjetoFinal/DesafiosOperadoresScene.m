@@ -13,6 +13,7 @@
 {
     GerenciadorDesafios *gerenciadorDesafios;
     BotaoDesafiosNode *btn1, *btn2;
+    OperadorDesafiosNode *operador;
 }
 
 -(id)init{
@@ -27,34 +28,39 @@
         
         lblParte1 = [[SKLabelNode alloc] initWithFontNamed:FONT_THIN];
         lblParte2 = [[SKLabelNode alloc] initWithFontNamed:FONT_THIN];
-        lblResultado = [[SKLabelNode alloc] initWithFontNamed:FONT_THIN];
+        lblResultado = [[SKLabelNode alloc] initWithFontNamed:FONT_REGULAR];
+        
+        CGFloat fontSize = 68.0;
+        
+        [lblParte1 setFontSize:fontSize];
+        [lblParte2 setFontSize:fontSize];
+        [lblResultado setFontSize:fontSize+20.0];
         
         UIColor *cor = [UIColor colorWithRed:(76.0/255.0) green:(95.0/255.0) blue:(138.0/255.0) alpha:1];
-        //UIColor *cor2 = [UIColor colorWithHue:<#(CGFloat)#> saturation:<#(CGFloat)#> brightness:<#(CGFloat)#> alpha:<#(CGFloat)#>]
+        
         [lblParte1 setFontColor:cor];
         [lblParte2 setFontColor:cor];
         [lblResultado setFontColor:cor];
         
-        [lblParte1 setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeRight];
-        [lblParte2 setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeLeft];
+        [lblParte1 setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
+        [lblParte2 setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
         [lblResultado setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
         
         
-        btn1 = [[BotaoDesafiosNode alloc] init];
-        btn2 = [[BotaoDesafiosNode alloc] init];
+        btn1 = [[BotaoDesafiosNode alloc] initWithImageNamed:@"Desafio-Operadores-btn1.png"];
+        btn2 = [[BotaoDesafiosNode alloc] initWithImageNamed:@"Desafio-Operadores-btn2.png"];
         fundo = [[SKSpriteNode alloc] initWithImageNamed:@"Desafio-Operadores-Fundo.png"];
-        
-        [btn1 setTexture:[SKTexture textureWithImageNamed:@"Desafio-Operadores-btn1.png"]];
-        [btn2 setTexture:[SKTexture textureWithImageNamed:@"Desafio-Operadores-btn2.png"]];
+        operador = [[OperadorDesafiosNode alloc] initWithImageNamed:@"Desafio-Operadores-Operador.png"];
         
         
         
         [fundo setPosition:CGPointMake(384, 512)];
-        [lblParte1 setPosition:CGPointMake(300, 600)];
-        [lblParte2 setPosition:CGPointMake(450, 600)];
-        [lblResultado setPosition:CGPointMake(250, 500)];
-        
-        
+        [lblParte1 setPosition:CGPointMake(384, 720)];
+        [lblParte2 setPosition:CGPointMake(384, 450)];
+        [lblResultado setPosition:CGPointMake(384, 250)];
+        [btn1 setPosition:CGPointMake(192, 80)];
+        [btn2 setPosition:CGPointMake(576, 80)];
+        [operador setPosition:CGPointMake(384, 605)];
         
         [self addChild:fundo];
         [self addChild:lblParte1];
@@ -62,7 +68,7 @@
         [self addChild:lblResultado];
         [self addChild:btn1];
         [self addChild:btn2];
-        
+        [self addChild:operador];
         
         
         

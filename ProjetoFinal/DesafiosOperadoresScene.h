@@ -12,7 +12,7 @@
 #import "BotaoDesafiosNode.h"
 #import "Gerador.h"
 #import "GerenciadorDesafios.h"
-
+#import "OperadorDesafiosNode.h"
 
 @interface DesafiosOperadoresScene : SKScene
 

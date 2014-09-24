@@ -94,6 +94,7 @@
 		A5CBEB9019D20E1B00AC879D /* Desafio-Operadores-btn1.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CBEB8D19D20E1B00AC879D /* Desafio-Operadores-btn1.png */; };
 		A5CBEB9119D20E1B00AC879D /* Desafio-Operadores-btn2.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CBEB8E19D20E1B00AC879D /* Desafio-Operadores-btn2.png */; };
 		A5CBEB9219D20E1B00AC879D /* Desafio-Operadores-Operador.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CBEB8F19D20E1B00AC879D /* Desafio-Operadores-Operador.png */; };
+		A5CBEB9519D3595900AC879D /* OperadorDesafiosNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CBEB9419D3595900AC879D /* OperadorDesafiosNode.m */; };
 		A5F38EFA19C5F6B700D337A4 /* Expressao.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F38EF919C5F6B700D337A4 /* Expressao.m */; };
 		A5F38EFD19C711C900D337A4 /* Desafio.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F38EFC19C711C900D337A4 /* Desafio.m */; };
 		BD01DE051983566100AEAAA8 /* AnimaCondSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */; };
@@ -353,6 +354,8 @@
 		A5CBEB8D19D20E1B00AC879D /* Desafio-Operadores-btn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Desafio-Operadores-btn1.png"; sourceTree = "<group>"; };
 		A5CBEB8E19D20E1B00AC879D /* Desafio-Operadores-btn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Desafio-Operadores-btn2.png"; sourceTree = "<group>"; };
 		A5CBEB8F19D20E1B00AC879D /* Desafio-Operadores-Operador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Desafio-Operadores-Operador.png"; sourceTree = "<group>"; };
+		A5CBEB9319D3595900AC879D /* OperadorDesafiosNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperadorDesafiosNode.h; sourceTree = "<group>"; };
+		A5CBEB9419D3595900AC879D /* OperadorDesafiosNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperadorDesafiosNode.m; sourceTree = "<group>"; };
 		A5D0427819910A370064663B /* AlteraAnimacaoDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AlteraAnimacaoDelegate.h; path = Assuntos/AlteraAnimacaoDelegate.h; sourceTree = "<group>"; };
 		A5F38EF819C5F6B700D337A4 /* Expressao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Expressao.h; path = Tools/Desafios/Expressao.h; sourceTree = "<group>"; };
 		A5F38EF919C5F6B700D337A4 /* Expressao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Expressao.m; path = Tools/Desafios/Expressao.m; sourceTree = "<group>"; };
@@ -591,6 +594,8 @@
 			children = (
 				12719D4A19CB5FB5006B1374 /* BotaoDesafiosNode.h */,
 				12719D4B19CB5FB5006B1374 /* BotaoDesafiosNode.m */,
+				A5CBEB9319D3595900AC879D /* OperadorDesafiosNode.h */,
+				A5CBEB9419D3595900AC879D /* OperadorDesafiosNode.m */,
 			);
 			name = Animacoes;
 			sourceTree = "<group>";
@@ -1456,6 +1461,7 @@
 				A505740F1978243A00F68932 /* Geral.m in Sources */,
 				120E8F8D192FC0A200CDEF95 /* ViewController.m in Sources */,
 				84B1B3E9197D8BEF00089FCB /* CenaExercicioCondSimples1.m in Sources */,
+				A5CBEB9519D3595900AC879D /* OperadorDesafiosNode.m in Sources */,
 				8487523E19C379E100A93120 /* CenaLivre.m in Sources */,
 				A521FEF01993FE9900D28627 /* SaidaDeDados.m in Sources */,
 				BDBE7696197A39E0004EA926 /* SpriteOperadorNode.m in Sources */,
