@@ -11,6 +11,8 @@
 
 #import "SpriteCaixaNode.h"
 
+
+
 @protocol CenaLivreDelegate <NSObject>
 
 - (void)esconderNavigationController:(BOOL)esconder;
@@ -18,7 +20,7 @@
 @end
 
 
-@interface CenaLivre : SKScene <UITextFieldDelegate,CaixaPosicaoDelegate>
+@interface CenaLivre : SKScene <UITextFieldDelegate,SKPhysicsContactDelegate>
 
 @property id<CenaLivreDelegate> myDelegate;
 

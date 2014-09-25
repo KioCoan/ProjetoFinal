@@ -10,6 +10,9 @@
 #import "SpriteOperadorNode.h"
 #import "MenuNode.h"
 
+static const uint32_t categoriaBotaoMenu = 0x1 << 0;
+static const uint32_t categoriaCaixa = 0x1 << 1;
+
 @implementation CenaLivre{
     
     MenuNode *menu;
@@ -33,6 +36,8 @@
         //CONFIGURANDO CENA
         self.backgroundColor = [SKColor whiteColor];
         self.name = @"fundo";
+        self.physicsWorld.contactDelegate = self;
+        self.physicsWorld.gravity = CGVectorMake(0, 0);
         
         //CRIANDO BOTAO QUE ABRE MENU
         botaoMenu = [[SKSpriteNode alloc]initWithImageNamed:@"modo livre-09.png"];
@@ -40,6 +45,14 @@
         botaoMenu.name = @"botaoMenu";
         botaoMenu.zPosition = -2;
         [self addChild:botaoMenu];
+        
+        botaoMenu.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:botaoMenu.frame.size];
+        botaoMenu.physicsBody.dynamic = NO;
+        botaoMenu.physicsBody.categoryBitMask = categoriaBotaoMenu;
+        botaoMenu.physicsBody.contactTestBitMask = categoriaCaixa;
+        botaoMenu.physicsBody.density = 1000;
+        botaoMenu.physicsBody.usesPreciseCollisionDetection = YES;
+
         
         
         //CRIANDO MENU
@@ -165,45 +178,83 @@
     
 }
 
-- (void)rodaeMuda{
+- (void)botaoMenuCresci:(BOOL)cresci{
     
     //ANIMACAO BOTAO MENU
     
-    SKAction *rodaBotao = [SKAction rotateByAngle:-M_PI duration:0.5];
-    
-    
-    
-    [botaoMenu runAction:rodaBotao completion:^{
+    if (cresci) {
+        SKAction *rodaBotao = [SKAction rotateByAngle:M_PI duration:0.5];
+        SKAction *trocaTexture1 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-10.png"]];
+        SKAction *trocaTexture2 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-11.png"]];
+        SKAction *trocaTexture3 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-12.png"]];
         
-        botaoMenu.texture = [SKTexture textureWithImageNamed:@"modo livre-10.png"];
-        botaoMenu.texture = [SKTexture textureWithImageNamed:@"modo livre-11.png"];
-        botaoMenu.size = botaoMenu.texture.size;
-        botaoMenu.texture = [SKTexture textureWithImageNamed:@"modo livre-12.png"];
+        [botaoMenu runAction:rodaBotao completion:^{
+            
+            [botaoMenu runAction:trocaTexture1 completion:^{
+                
+                [botaoMenu runAction:trocaTexture2 completion:^{
+                    
+                    [botaoMenu runAction:[SKAction resizeToWidth:150 height:150 duration:0.5] completion:^{
+                        
+                        [botaoMenu runAction:trocaTexture3];
+                        
+                    }];
+                    
+                }];
+                
+                
+            }];
+            
+            
+            
+            
+        }];
+
+    }else{
         
-    }];
+        //DIMINUI
+        
+        //ANIMACAO BOTAO MENU
+        
+        SKAction *rodaBotao = [SKAction rotateByAngle:-M_PI -0.8 duration:0.5];
+        SKAction *trocaTexture1 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-11.png"]];
+        SKAction *trocaTexture2 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-10.png"]];
+        SKAction *trocaTexture3 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-09.png"]];
+        
+        
+            
+            [botaoMenu runAction:trocaTexture1 completion:^{
+                
+                [botaoMenu runAction:trocaTexture2 completion:^{
+                    
+                    NSLog(@"size %f",botaoMenu.texture.size.height);
+                    [botaoMenu runAction:[SKAction resizeToWidth:51 height:51 duration:0.5] completion:^{
+                        
+                        [botaoMenu runAction:rodaBotao completion:^{
+                        
+                        [botaoMenu runAction:trocaTexture3];
+                    }];
+                    }];
+                    
+                }];
+                
+                
+            }];
+            
+            
+            
+            
+        
+
+        
+        
+        
+    }
+    
     
 }
 
-- (void)desrodaeDesmuda{
-    
-    //ANIMACAO BOTAO MENU
-    
-    SKAction *rodaBotao = [SKAction rotateByAngle:M_PI duration:0.5];
-    
-    
-    
-    [botaoMenu runAction:rodaBotao completion:^{
-        
-        botaoMenu.texture = [SKTexture textureWithImageNamed:@"modo livre-11.png"];
-        botaoMenu.texture = [SKTexture textureWithImageNamed:@"modo livre-10.png"];
-        botaoMenu.size = botaoMenu.texture.size;
-        botaoMenu.texture = [SKTexture textureWithImageNamed:@"modo livre-09.png"];
-        
-    }];
-    
-    
-    
-}
+
 
 
 - (SKAction *)retornaCrescerDiminuir:(BOOL)aumenta{
@@ -219,36 +270,6 @@
     
 }
 
--(void)tomaMinhaPosicao:(CGRect)posicaoCaixa{
-    
-    float xInicio = botaoMenu.frame.origin.x;
-    float xFim = xInicio + botaoMenu.frame.size.width;
-    float yInicio = botaoMenu.frame.origin.y;
-    float yFim = yInicio + botaoMenu.frame.size.height;
-    
-    float xCaixaInicio = posicaoCaixa.origin.x;
-    float xCaixaFim = xCaixaInicio + posicaoCaixa.size.width;
-    float yCaixaInicio = posicaoCaixa.origin.y;
-    float yCaixaFim = yCaixaInicio + posicaoCaixa.size.height;
-    
-    if (((xCaixaInicio >= xInicio && xCaixaInicio <= xFim) || (xCaixaFim >= xInicio && xCaixaInicio <= xFim)) && ((yCaixaInicio >= yInicio && yCaixaInicio <= yFim) || (yCaixaFim >= yInicio && yCaixaFim <= yFim))) {
-        
-        if (caixaDentroExcluir == NO) {
-            caixaDentroExcluir = YES;
-            [self rodaeMuda];
-            return;
-        }
-        
-    }else{
-        if (caixaDentroExcluir == YES) {
-            caixaDentroExcluir = NO;
-            [self desrodaeDesmuda];
-            return;
-        }
-    }
-    
-}
-
 -(void)criarVariavelTipo:(NSString *)tipo posicao:(CGPoint)posicao{
     
     SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]init];
@@ -257,13 +278,19 @@
     [caixa setDono:self];
     [caixa setPosition:posicao];
     caixa.name = @"variavel";
-    [caixa setMyDelegate:self];
-    //caixa.size = CGSizeMake(50, 50);
     caixa.zPosition = -1;
     [caixa setLabelTipo:tipo];
     [caixa setLabelEndereco:++contadorVariavel];
+    [caixa setBotaoMenu:botaoMenu.frame];
     [self addChild:caixa];
     
+    //CRIA CORPO DA CAIXA
+    caixa.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:caixa.frame.size];
+    caixa.physicsBody.dynamic = YES;
+    caixa.physicsBody.categoryBitMask = categoriaCaixa;
+    caixa.physicsBody.collisionBitMask = 0;
+    caixa.physicsBody.density = 0;
+    caixa.physicsBody.usesPreciseCollisionDetection = YES;
 }
 
 -(void)criarOperadorNaPosicao:(CGPoint)posicao{
@@ -314,6 +341,20 @@
 
     
     
+}
+
+- (void)didBeginContact:(SKPhysicsContact *)contact{
+    
+    NSLog(@"entrou contato");
+    
+    [self botaoMenuCresci:YES];
+    
+    
+}
+
+- (void)didEndContact:(SKPhysicsContact *)contact{
+    
+    [self botaoMenuCresci:NO];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
