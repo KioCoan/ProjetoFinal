@@ -9,7 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import <UIKit/UIKit.h>
 
-
+#import "SpriteCaixaNode.h"
 
 @protocol CenaLivreDelegate <NSObject>
 
@@ -18,7 +18,7 @@
 @end
 
 
-@interface CenaLivre : SKScene <UITextFieldDelegate>
+@interface CenaLivre : SKScene <UITextFieldDelegate,CaixaPosicaoDelegate>
 
 @property id<CenaLivreDelegate> myDelegate;
 

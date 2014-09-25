@@ -245,6 +245,7 @@
     if (self.dono != nil) {
         CGPoint location = [touch locationInNode:self.dono];
         [self setPosition:location];
+        [self.myDelegate tomaMinhaPosicao:self.frame];
     }
 
     

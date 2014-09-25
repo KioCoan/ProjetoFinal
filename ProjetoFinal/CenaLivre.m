@@ -7,7 +7,6 @@
 //
 
 #import "CenaLivre.h"
-#import "SpriteCaixaNode.h"
 #import "SpriteOperadorNode.h"
 #import "MenuNode.h"
 
@@ -21,6 +20,7 @@
     NSMutableArray *vetorTextField;
     BOOL menuEditarAberto;
     int contadorVariavel;
+    BOOL caixaDentroExcluir;
 }
 
 
@@ -38,6 +38,7 @@
         botaoMenu = [[SKSpriteNode alloc]initWithImageNamed:@"modo livre-09.png"];
         botaoMenu.position = CGPointMake(100, 100);
         botaoMenu.name = @"botaoMenu";
+        botaoMenu.zPosition = -2;
         [self addChild:botaoMenu];
         
         
@@ -170,12 +171,40 @@
     
     SKAction *rodaBotao = [SKAction rotateByAngle:-M_PI duration:0.5];
     
+    
+    
     [botaoMenu runAction:rodaBotao completion:^{
+        
         botaoMenu.texture = [SKTexture textureWithImageNamed:@"modo livre-10.png"];
+        botaoMenu.texture = [SKTexture textureWithImageNamed:@"modo livre-11.png"];
+        botaoMenu.size = botaoMenu.texture.size;
+        botaoMenu.texture = [SKTexture textureWithImageNamed:@"modo livre-12.png"];
+        
+    }];
+    
+}
+
+- (void)desrodaeDesmuda{
+    
+    //ANIMACAO BOTAO MENU
+    
+    SKAction *rodaBotao = [SKAction rotateByAngle:M_PI duration:0.5];
+    
+    
+    
+    [botaoMenu runAction:rodaBotao completion:^{
+        
+        botaoMenu.texture = [SKTexture textureWithImageNamed:@"modo livre-11.png"];
+        botaoMenu.texture = [SKTexture textureWithImageNamed:@"modo livre-10.png"];
+        botaoMenu.size = botaoMenu.texture.size;
+        botaoMenu.texture = [SKTexture textureWithImageNamed:@"modo livre-09.png"];
+        
     }];
     
     
+    
 }
+
 
 - (SKAction *)retornaCrescerDiminuir:(BOOL)aumenta{
     
@@ -190,6 +219,36 @@
     
 }
 
+-(void)tomaMinhaPosicao:(CGRect)posicaoCaixa{
+    
+    float xInicio = botaoMenu.frame.origin.x;
+    float xFim = xInicio + botaoMenu.frame.size.width;
+    float yInicio = botaoMenu.frame.origin.y;
+    float yFim = yInicio + botaoMenu.frame.size.height;
+    
+    float xCaixaInicio = posicaoCaixa.origin.x;
+    float xCaixaFim = xCaixaInicio + posicaoCaixa.size.width;
+    float yCaixaInicio = posicaoCaixa.origin.y;
+    float yCaixaFim = yCaixaInicio + posicaoCaixa.size.height;
+    
+    if (((xCaixaInicio >= xInicio && xCaixaInicio <= xFim) || (xCaixaFim >= xInicio && xCaixaInicio <= xFim)) && ((yCaixaInicio >= yInicio && yCaixaInicio <= yFim) || (yCaixaFim >= yInicio && yCaixaFim <= yFim))) {
+        
+        if (caixaDentroExcluir == NO) {
+            caixaDentroExcluir = YES;
+            [self rodaeMuda];
+            return;
+        }
+        
+    }else{
+        if (caixaDentroExcluir == YES) {
+            caixaDentroExcluir = NO;
+            [self desrodaeDesmuda];
+            return;
+        }
+    }
+    
+}
+
 -(void)criarVariavelTipo:(NSString *)tipo posicao:(CGPoint)posicao{
     
     SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]init];
@@ -198,7 +257,8 @@
     [caixa setDono:self];
     [caixa setPosition:posicao];
     caixa.name = @"variavel";
-    //caixa.size = CGSizeMake(200, 200);
+    [caixa setMyDelegate:self];
+    //caixa.size = CGSizeMake(50, 50);
     caixa.zPosition = -1;
     [caixa setLabelTipo:tipo];
     [caixa setLabelEndereco:++contadorVariavel];

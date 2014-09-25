@@ -14,6 +14,11 @@
 //-(void)spriteCaixaClicado:(SKSpriteNode*)spriteCaixa;
 //@end
 
+@protocol CaixaPosicaoDelegate <NSObject>
+
+- (void)tomaMinhaPosicao:(CGRect)posicaoCaixa;
+
+@end
 
 @interface SpriteCaixaNode : SKSpriteNode
 {
@@ -31,7 +36,7 @@
     BOOL caixaAberta;
 }
 @property SKScene *dono;
-//@property id <SpriteCaixaNodeDelegate> myDelegate;
+@property id <CaixaPosicaoDelegate> myDelegate;
 
 -(id)initWithConteudo:(NSString*)conteudo nome:(NSString*)nome tipo:(NSString*)tipo tamanho:(CGSize)tamanho;
 
