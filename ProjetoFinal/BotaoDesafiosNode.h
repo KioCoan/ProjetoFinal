@@ -17,7 +17,7 @@
 
 
 -(void)setValor:(NSString*)texto;
--(NSString*)getValor;
+-(NSString*)text;
 
 
 @end

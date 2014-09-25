@@ -33,14 +33,14 @@
     valor.fontSize = 90.0;
 }
 
--(NSString*)getValor{
+-(NSString*)text{
     return valor.text;
 }
 
-//-(void)setName:(NSString *)name{
-//    [super setName:name];
-//    [valor setName:name];
-//    
-//}
+-(void)setName:(NSString *)name{
+    [super setName:name];
+    [valor setName:name];
+    
+}
 
 @end

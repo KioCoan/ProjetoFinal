@@ -30,4 +30,10 @@ extern NSString* const FONT_REGULAR;
 -(Desafio*)retornaTarefasParaDesafio;
 -(BOOL)corrige:(NSString*)opcao;
 -(SKScene*)retornaCenaAtual;
+-(void)finalizaDesafio;
+-(BOOL)desafioFinalizado;
+-(void)restartDesafio;
+-(void)resetaCena;
+-(int)retornaAcertosDesafioAtual;
+-(int)retornaErrosDesafioAtual;
 @end

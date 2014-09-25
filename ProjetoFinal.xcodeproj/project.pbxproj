@@ -97,6 +97,10 @@
 		A5CBEB9119D20E1B00AC879D /* Desafio-Operadores-btn2.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CBEB8E19D20E1B00AC879D /* Desafio-Operadores-btn2.png */; };
 		A5CBEB9219D20E1B00AC879D /* Desafio-Operadores-Operador.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CBEB8F19D20E1B00AC879D /* Desafio-Operadores-Operador.png */; };
 		A5CBEB9519D3595900AC879D /* OperadorDesafiosNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CBEB9419D3595900AC879D /* OperadorDesafiosNode.m */; };
+		A5CBEB9C19D4AFF200AC879D /* ProgressoDesafioBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CBEB9B19D4AFF200AC879D /* ProgressoDesafioBar.m */; };
+		A5CBEBA019D4B0EE00AC879D /* Desafio-Andamento-Correto.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CBEB9D19D4B0EE00AC879D /* Desafio-Andamento-Correto.png */; };
+		A5CBEBA119D4B0EE00AC879D /* Desafio-Andamento-Errado.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CBEB9E19D4B0EE00AC879D /* Desafio-Andamento-Errado.png */; };
+		A5CBEBA219D4B0EE00AC879D /* Desafio-Andamento-Vazio.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CBEB9F19D4B0EE00AC879D /* Desafio-Andamento-Vazio.png */; };
 		A5F38EFA19C5F6B700D337A4 /* Expressao.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F38EF919C5F6B700D337A4 /* Expressao.m */; };
 		A5F38EFD19C711C900D337A4 /* Desafio.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F38EFC19C711C900D337A4 /* Desafio.m */; };
 		BD01DE051983566100AEAAA8 /* AnimaCondSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */; };
@@ -360,6 +364,11 @@
 		A5CBEB8F19D20E1B00AC879D /* Desafio-Operadores-Operador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Desafio-Operadores-Operador.png"; sourceTree = "<group>"; };
 		A5CBEB9319D3595900AC879D /* OperadorDesafiosNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperadorDesafiosNode.h; sourceTree = "<group>"; };
 		A5CBEB9419D3595900AC879D /* OperadorDesafiosNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperadorDesafiosNode.m; sourceTree = "<group>"; };
+		A5CBEB9A19D4AFF200AC879D /* ProgressoDesafioBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressoDesafioBar.h; sourceTree = "<group>"; };
+		A5CBEB9B19D4AFF200AC879D /* ProgressoDesafioBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressoDesafioBar.m; sourceTree = "<group>"; };
+		A5CBEB9D19D4B0EE00AC879D /* Desafio-Andamento-Correto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Desafio-Andamento-Correto.png"; sourceTree = "<group>"; };
+		A5CBEB9E19D4B0EE00AC879D /* Desafio-Andamento-Errado.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Desafio-Andamento-Errado.png"; sourceTree = "<group>"; };
+		A5CBEB9F19D4B0EE00AC879D /* Desafio-Andamento-Vazio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Desafio-Andamento-Vazio.png"; sourceTree = "<group>"; };
 		A5D0427819910A370064663B /* AlteraAnimacaoDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AlteraAnimacaoDelegate.h; path = Assuntos/AlteraAnimacaoDelegate.h; sourceTree = "<group>"; };
 		A5F38EF819C5F6B700D337A4 /* Expressao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Expressao.h; path = Tools/Desafios/Expressao.h; sourceTree = "<group>"; };
 		A5F38EF919C5F6B700D337A4 /* Expressao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Expressao.m; path = Tools/Desafios/Expressao.m; sourceTree = "<group>"; };
@@ -621,6 +630,8 @@
 				A5F38EFC19C711C900D337A4 /* Desafio.m */,
 				12428D4319C9FC240012B2B6 /* GerenciadorDesafios.h */,
 				12428D4419C9FC240012B2B6 /* GerenciadorDesafios.m */,
+				A5CBEB9A19D4AFF200AC879D /* ProgressoDesafioBar.h */,
+				A5CBEB9B19D4AFF200AC879D /* ProgressoDesafioBar.m */,
 			);
 			name = Engine;
 			sourceTree = "<group>";
@@ -1021,6 +1032,9 @@
 		A5CBEB8919D1F6A700AC879D /* Desafios */ = {
 			isa = PBXGroup;
 			children = (
+				A5CBEB9D19D4B0EE00AC879D /* Desafio-Andamento-Correto.png */,
+				A5CBEB9E19D4B0EE00AC879D /* Desafio-Andamento-Errado.png */,
+				A5CBEB9F19D4B0EE00AC879D /* Desafio-Andamento-Vazio.png */,
 				A5CBEB8A19D1F6AF00AC879D /* Operadores */,
 			);
 			name = Desafios;
@@ -1354,6 +1368,7 @@
 				BDCCE535199D322C0063DF2B /* item-em breve.png in Resources */,
 				BDF8ADF0197B255C00BA5B8A /* parte-resultado3.png in Resources */,
 				BDC757A4196787E700DB8380 /* abrir-caixa7.png in Resources */,
+				A5CBEBA019D4B0EE00AC879D /* Desafio-Andamento-Correto.png in Resources */,
 				BD510FE11989E8200052B6E5 /* lousa-teoria.jpg in Resources */,
 				BD325A471995EB7D00D15DBF /* errado.wav in Resources */,
 				8431DA7319CA28FD0076EBBA /* livre-operador.png in Resources */,
@@ -1380,6 +1395,7 @@
 				BDF8ADF3197B255C00BA5B8A /* parte-resultado6.png in Resources */,
 				BD42E0F41985E2090007181F /* simbolo-atualizar.png in Resources */,
 				BDBE769E197A3B69004EA926 /* parte-resultado1.png in Resources */,
+				A5CBEBA219D4B0EE00AC879D /* Desafio-Andamento-Vazio.png in Resources */,
 				BD511002198A142E0052B6E5 /* parte-resultado.png in Resources */,
 				8431DA7119CA28FD0076EBBA /* livre-laco.png in Resources */,
 				BDC40744199B1E18006CD7AE /* sprite-introducao7.png in Resources */,
@@ -1388,6 +1404,7 @@
 				BDF8ADEF197B255C00BA5B8A /* parte-resultado2.png in Resources */,
 				BDC4073F199B1E18006CD7AE /* sprite-introducao2.png in Resources */,
 				BD5A552B198C972000D8722F /* senao-verde.png in Resources */,
+				A5CBEBA119D4B0EE00AC879D /* Desafio-Andamento-Errado.png in Resources */,
 				BDF8AE06197B258C00BA5B8A /* parte-valores6.png in Resources */,
 				A55F2B4419648C0600111BEB /* ConceitosVariaveis.txt in Resources */,
 				BD24C40719A984BA00F2CBE1 /* img-tutorial6.png in Resources */,
@@ -1493,6 +1510,7 @@
 				120E8F87192FC0A200CDEF95 /* AppDelegate.m in Sources */,
 				84BCF53419CB703B003D9F71 /* SecaoMenuOperador.m in Sources */,
 				BDB48111196CB89400D5901A /* AnimaOperadores.m in Sources */,
+				A5CBEB9C19D4AFF200AC879D /* ProgressoDesafioBar.m in Sources */,
 				BD5DE21419972335007849DB /* SpriteAtualizarNode.m in Sources */,
 				91A98619196232F800EA1074 /* Exercicio.m in Sources */,
 				1551BFE119C36BFC00CBDB86 /* EnciclopediaViewController.m in Sources */,

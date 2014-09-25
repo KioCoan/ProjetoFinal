@@ -13,15 +13,16 @@
 #import "Gerador.h"
 #import "GerenciadorDesafios.h"
 #import "OperadorDesafiosNode.h"
+#import "ProgressoDesafioBar.h"
 
 @interface DesafiosOperadoresScene : SKScene
 
 {
-    SKLabelNode *lblParte1, *lblParte2, *lblResultado, *lblIgual;
+    SKLabelNode *lblParte1, *lblParte2, *lblResultado, *lblIgual, *lblNAcertos, *lblNErros;
     
     SKSpriteNode *fundo;
     
-    
+    ProgressoDesafioBar *progresso;
     Desafio *desafioAtual;
     Gerador *gerador;
     

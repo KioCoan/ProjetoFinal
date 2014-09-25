@@ -146,5 +146,24 @@ NSString* const FONT_REGULAR = @"Colaborate-Regular";
     return [[meusDesafios objectAtIndex:desafioAtual]corrige:opcao];
 }
 
+-(void)finalizaDesafio{
+    [[meusDesafios objectAtIndex:desafioAtual]finalizaDesafio];
+}
+-(BOOL)desafioFinalizado{
+    return [[meusDesafios objectAtIndex:desafioAtual]desafioFinalizado];
+}
+-(void)resetaCena{
+    [self retornaCenaAtual];
+}
+-(void)restartDesafio{
+    [[meusDesafios objectAtIndex:desafioAtual]restart];
+}
+-(int)retornaAcertosDesafioAtual{
+    return [[meusDesafios objectAtIndex:desafioAtual]acertos];
+}
+-(int)retornaErrosDesafioAtual{
+    return [[meusDesafios objectAtIndex:desafioAtual]erros];
+}
+
 
 @end

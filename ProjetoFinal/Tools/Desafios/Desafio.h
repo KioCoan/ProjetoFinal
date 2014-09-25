@@ -14,6 +14,7 @@
     int nTasks, nivel, tarefaAtual, nAcertos, nErros;
     NSMutableArray *listaTarefas;
     NSString *tipo;
+    BOOL desafioConcluido;
 }
 @property NSString *tituloDesafio, *descricaoDesafio;
 
@@ -32,5 +33,9 @@
 -(void)montaDesafioNivel:(int)level tipo:(NSString*)type nTarefas:(int)nTarefas;
 -(BOOL)respostaDupla;
 -(BOOL)corrige:(NSString*)opcao;
-
+-(void)finalizaDesafio;
+-(BOOL)desafioFinalizado;
+-(void)restart;
+-(int)acertos;
+-(int)erros;
 @end

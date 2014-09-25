@@ -25,6 +25,7 @@
     self = [super init];
     if (self) {
         listaTarefas = [[NSMutableArray alloc] init];
+        desafioConcluido = NO;
     }
     return self;
 }
@@ -32,7 +33,7 @@
     nivel = level;
     tipo = type;
     nTasks = nTarefas;
-    tarefaAtual = -1;
+    tarefaAtual = 0;
 }
 
 -(int)nTarefas{
@@ -55,8 +56,10 @@
     tarefaAtual++;
     if (tarefaAtual >= nTasks) {
         tarefaAtual--;
+        [self finalizaDesafio];
         return NO;
     }else{
+        
         return YES;
     }
 }
@@ -95,7 +98,21 @@
 }
 
 -(void)finalizaDesafio{
-    // salvar como desafio concluido, nAcertos e nErros no NSDefalts
+    desafioConcluido = YES;
 }
-
+-(BOOL)desafioFinalizado{
+    return desafioConcluido;
+}
+-(void)restart{
+    tarefaAtual = 0;
+    desafioConcluido = NO;
+    nAcertos = 0;
+    nErros = 0;
+}
+-(int)acertos{
+    return nAcertos;
+}
+-(int)erros{
+    return nErros;
+}
 @end
