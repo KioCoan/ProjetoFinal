@@ -191,8 +191,6 @@
 }
 
 
-
-
 - (void)abrirFechar{
     
     if (aberto) {

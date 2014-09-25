@@ -16,10 +16,11 @@
     MenuNode *menu;
     SKNode *conteudoAtivo;
     SKSpriteNode *botaoMenu;
-    SKSpriteNode *menuConfiguracao;
+    SKSpriteNode *menuEdicao;
     NSArray *vetorTiposObjetos;
     NSMutableArray *vetorTextField;
     BOOL menuEditarAberto;
+    int contadorVariavel;
 }
 
 
@@ -29,27 +30,29 @@
     
     if (self) {
         
+        //CONFIGURANDO CENA
         self.backgroundColor = [SKColor whiteColor];
         self.name = @"fundo";
+        
+        //CRIANDO BOTAO QUE ABRE MENU
         botaoMenu = [[SKSpriteNode alloc]initWithImageNamed:@"modo livre-09.png"];
         botaoMenu.position = CGPointMake(100, 100);
         botaoMenu.name = @"botaoMenu";
         [self addChild:botaoMenu];
         
         
-        //ALOCANDO MENU
-        
-        
+        //CRIANDO MENU
         menu = [[MenuNode alloc]initWithPosicaoAbrir:CGPointMake(245, 480) tamanho:CGSizeMake(490, 960)];
         
         [self addChild:menu];
         
         
-        [self criaMenuConfiguracao];
+        [self criaMenuEdicao];
         
-        //ALOCANDO TEXTFIELD
+        //ALLOCANDO VETOR TEXTFILED
         vetorTextField = [NSMutableArray array];
         
+        //VETOR TIPOS OBJETOS
         vetorTiposObjetos = [NSArray arrayWithObjects:@"variavel",@"operadores", nil];
         
         
@@ -57,29 +60,29 @@
     return self;
 }
 
-- (void)criaMenuConfiguracao{
+- (void)criaMenuEdicao{
     
-    menuConfiguracao = [[SKSpriteNode alloc] initWithImageNamed:@"MenuEditarFundo.png"];
-    [menuConfiguracao setSize:CGSizeMake(770, 70)];
-    [menuConfiguracao setPosition:CGPointMake(385, 925)];
-    //[self addChild:menuConfiguracao];
-    
+    menuEdicao = [[SKSpriteNode alloc] initWithImageNamed:@"MenuEditarFundo.png"];
+    [menuEdicao setSize:CGSizeMake(770, 70)];
+    [menuEdicao setPosition:CGPointMake(385, 925)];
     
     
+    //CRIANDO BOTAO OK
     SKSpriteNode *botaoOK = [[SKSpriteNode alloc]initWithImageNamed:@"MenuEditarBotao.png"];
     botaoOK.name = @"botaoOK";
-    
     [botaoOK setPosition:CGPointMake(300, -3)];
     [botaoOK setSize:CGSizeMake(110, 50)];
-    [menuConfiguracao addChild:botaoOK];
+    [menuEdicao addChild:botaoOK];
     
+    
+    //CRIANDO LABEL DO BOTAO OK
     SKLabelNode *lblOk = [[SKLabelNode alloc]initWithFontNamed:@"Helvetica"];
     lblOk.name = @"botaoOK";
     lblOk.fontColor = [SKColor whiteColor];
     lblOk.text = @"OK";
     lblOk.zPosition = 1;
     [lblOk setPosition:CGPointMake(botaoOK.position.x, botaoOK.position.y - 10)];
-    [menuConfiguracao addChild:lblOk];
+    [menuEdicao addChild:lblOk];
 }
 
 - (void)criandoTodosTextFields{
@@ -100,6 +103,7 @@
 
 - (UITextField *)criaTextFieldBounds:(CGRect)bounds{
     
+    //CRIA E RETORNA APENAS UM TEXTFIELD
     UITextField *textField = [[UITextField alloc] initWithFrame:bounds];
     textField.borderStyle = UITextBorderStyleRoundedRect;
     textField.textColor = [UIColor blackColor];
@@ -120,20 +124,17 @@
     
 }
 
--(void)mostraMenuEdicao{
+-(void)moveMenuEdicao{
     
-    [self addChild:menuConfiguracao];
-    
-    
-    if ([conteudoAtivo.name isEqualToString:@"variavel"]) {
-        
-        
-        
-        
-        
-    }else if ([conteudoAtivo.name isEqualToString:@"operador"]){
-        
+    if (menuEditarAberto) {
+        [menuEdicao removeFromParent];
+        menuEditarAberto = NO;
+    }else{
+        [self addChild:menuEdicao];
+        menuEditarAberto = YES;
     }
+    
+    
     
 }
 
@@ -165,6 +166,7 @@
 
 - (void)rodaeMuda{
     
+    //ANIMACAO BOTAO MENU
     
     SKAction *rodaBotao = [SKAction rotateByAngle:-M_PI duration:0.5];
     
@@ -177,6 +179,7 @@
 
 - (SKAction *)retornaCrescerDiminuir:(BOOL)aumenta{
     
+    //ANIMACAO QUE OCORRE QUANDO USUARIO CLICA NO ICONE
     
     if (aumenta) {
      return [SKAction scaleTo:1.1 duration:0.1];
@@ -191,11 +194,14 @@
     
     SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]init];
     
+    
     [caixa setDono:self];
     [caixa setPosition:posicao];
     caixa.name = @"variavel";
     //caixa.size = CGSizeMake(200, 200);
     caixa.zPosition = -1;
+    [caixa setLabelTipo:tipo];
+    [caixa setLabelEndereco:++contadorVariavel];
     [self addChild:caixa];
     
 }
@@ -230,20 +236,11 @@
     
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    
-    UITouch *touch = [touches anyObject];
-    CGPoint location =  [touch locationInNode:self];
-    conteudoAtivo = [self nodeAtPoint:location];
-    
-    
-    NSLog(@"nome objeto clicado %@",conteudoAtivo.name);
+- (void)identificaNodeGeraAcao{
     
     if ([conteudoAtivo.name isEqualToString:@"botaoMenu"]) {
         [menu abrirFechar];
         [self.myDelegate esconderNavigationController: [menu getAberto]];
-        
         
         
     }else if ([menu getAberto] && [conteudoAtivo.name isEqualToString:@"fundo"]){
@@ -252,8 +249,23 @@
     }else if ([conteudoAtivo.name isEqualToString:@"iconeMenu"]){
         [conteudoAtivo runAction:[self retornaCrescerDiminuir:YES]];
     }else if ([conteudoAtivo.name isEqualToString:@"variavel"] && menuEditarAberto){
-        [self mostraMenuEdicao];
+        [self moveMenuEdicao];
     }
+
+    
+    
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint location =  [touch locationInNode:self];
+    
+    conteudoAtivo = [self nodeAtPoint:location];
+    
+    [self identificaNodeGeraAcao];
+    
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
