@@ -12,7 +12,7 @@
 
 {
     int nTasks, nivel, tarefaAtual, nAcertos, nErros;
-    NSMutableArray *listaTarefas, *acertos, *erros;
+    NSMutableArray *listaTarefas;
     NSString *tipo;
     BOOL desafioConcluido;
     

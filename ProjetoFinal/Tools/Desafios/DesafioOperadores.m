@@ -15,8 +15,6 @@
     self = [super init];
     if (self) {
         listaTarefas = [[NSMutableArray alloc] init];
-        acertos = [[NSMutableArray alloc] init];
-        erros = [[NSMutableArray alloc] init];
         [self montaDesafioNivel:level tipo:type nTarefas:tasks];
     }
     return self;
@@ -86,7 +84,6 @@
 }
 -(BOOL)corrige:(NSString*)opcao{
     if ([self respostaDupla] || [[self operador]isEqualToString:opcao]) {
-        //[self acertou:YES];
         nAcertos++;
         return YES;
     }else{
@@ -95,31 +92,9 @@
     }
 }
 
-//-(void)acertou:(BOOL)acertou{
-//    if (acertou) {
-//        for (int i=0;i<acertos.count; i++) {
-//            if ([acertos objectAtIndex:i] == [NSNumber numberWithInt:tarefaAtual]) {
-//                NSLog(@"Passou");
-//                return;
-//            }
-//        }
-//        [acertos addObject:[NSNumber numberWithInt: tarefaAtual]];
-//    }else{
-//        for (int i=0;i<erros.count; i++) {
-//            if ([erros objectAtIndex:i] == [NSNumber numberWithInt:tarefaAtual]) {
-//                NSLog(@"Passou");
-//                return;
-//            }
-//        }
-//        [erros addObject:[NSNumber numberWithInt: tarefaAtual]];
-//    }
-//}
-
 
 -(void)finalizaDesafio{
     desafioConcluido = YES;
-//    nAcertos = 0;
-//    nErros = 0;
 }
 -(BOOL)desafioFinalizado{
     return desafioConcluido;
@@ -129,8 +104,6 @@
     desafioConcluido = NO;
     nAcertos = 0;
     nErros = 0;
-//    [acertos removeAllObjects];
-//    [erros removeAllObjects];
 }
 -(int)acertos{
     return nAcertos;
