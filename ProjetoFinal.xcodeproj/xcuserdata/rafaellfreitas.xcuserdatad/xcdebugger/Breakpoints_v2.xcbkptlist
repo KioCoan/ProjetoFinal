@@ -311,12 +311,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ProjetoFinal/Tools/Desafios/Desafio.m"
-            timestampString = "433358237.422914"
+            filePath = "ProjetoFinal/Tools/Desafios/DesafioOperadores.m"
+            timestampString = "433432803.487879"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "-init"
             landmarkType = "5">
          </BreakpointContent>
@@ -327,13 +327,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ProjetoFinal/Tools/Desafios/Desafio.m"
+            filePath = "ProjetoFinal/Tools/Desafios/DesafioOperadores.m"
             timestampString = "432482158.001189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
             endingLineNumber = "13"
-            landmarkName = "@implementation Desafio"
+            landmarkName = "@implementation DesafioOperadores"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
@@ -376,11 +376,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetoFinal/DesafiosOperadoresScene.m"
-            timestampString = "433428597.22575"
+            timestampString = "433434494.384079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
             landmarkName = "-ajustaBotoes"
             landmarkType = "5">
          </BreakpointContent>
@@ -408,11 +408,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetoFinal/DesafiosOperadoresScene.m"
-            timestampString = "433428597.22575"
+            timestampString = "433434494.384079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "-alteraTarefa"
             landmarkType = "5">
          </BreakpointContent>
@@ -423,12 +423,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ProjetoFinal/Tools/Desafios/Desafio.m"
-            timestampString = "433358434.840457"
+            filePath = "ProjetoFinal/Tools/Desafios/DesafioOperadores.m"
+            timestampString = "433432803.487879"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "-incrementaTarefa"
             landmarkType = "5">
          </BreakpointContent>
@@ -440,11 +440,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetoFinal/DesafiosOperadoresScene.m"
-            timestampString = "433428597.22575"
+            timestampString = "433431593.12222"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "-init"
             landmarkType = "5">
          </BreakpointContent>
@@ -456,11 +456,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetoFinal/DesafiosOperadoresScene.m"
-            timestampString = "433428597.22575"
+            timestampString = "433434224.637094"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "-montaTela"
             landmarkType = "5">
          </BreakpointContent>
@@ -478,6 +478,22 @@
             startingLineNumber = "29"
             endingLineNumber = "29"
             landmarkName = "-initWithBolinhas:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjetoFinal/DesafiosOperadoresScene.m"
+            timestampString = "433434494.384079"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "-corrige:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

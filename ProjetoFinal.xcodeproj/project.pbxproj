@@ -102,7 +102,7 @@
 		A5CBEBA119D4B0EE00AC879D /* Desafio-Andamento-Errado.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CBEB9E19D4B0EE00AC879D /* Desafio-Andamento-Errado.png */; };
 		A5CBEBA219D4B0EE00AC879D /* Desafio-Andamento-Vazio.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CBEB9F19D4B0EE00AC879D /* Desafio-Andamento-Vazio.png */; };
 		A5F38EFA19C5F6B700D337A4 /* Expressao.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F38EF919C5F6B700D337A4 /* Expressao.m */; };
-		A5F38EFD19C711C900D337A4 /* Desafio.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F38EFC19C711C900D337A4 /* Desafio.m */; };
+		A5F38EFD19C711C900D337A4 /* DesafioOperadores.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F38EFC19C711C900D337A4 /* DesafioOperadores.m */; };
 		BD01DE051983566100AEAAA8 /* AnimaCondSimples.m in Sources */ = {isa = PBXBuildFile; fileRef = BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */; };
 		BD1AC842199AB5EC00CB7C5C /* AnimaVariavel.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD1AC840199AB5EC00CB7C5C /* AnimaVariavel.sks */; };
 		BD1AC843199AB5EC00CB7C5C /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1AC841199AB5EC00CB7C5C /* spark.png */; };
@@ -372,8 +372,8 @@
 		A5D0427819910A370064663B /* AlteraAnimacaoDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AlteraAnimacaoDelegate.h; path = Assuntos/AlteraAnimacaoDelegate.h; sourceTree = "<group>"; };
 		A5F38EF819C5F6B700D337A4 /* Expressao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Expressao.h; path = Tools/Desafios/Expressao.h; sourceTree = "<group>"; };
 		A5F38EF919C5F6B700D337A4 /* Expressao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Expressao.m; path = Tools/Desafios/Expressao.m; sourceTree = "<group>"; };
-		A5F38EFB19C711C900D337A4 /* Desafio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Desafio.h; path = Tools/Desafios/Desafio.h; sourceTree = "<group>"; };
-		A5F38EFC19C711C900D337A4 /* Desafio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Desafio.m; path = Tools/Desafios/Desafio.m; sourceTree = "<group>"; };
+		A5F38EFB19C711C900D337A4 /* DesafioOperadores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DesafioOperadores.h; path = Tools/Desafios/DesafioOperadores.h; sourceTree = "<group>"; };
+		A5F38EFC19C711C900D337A4 /* DesafioOperadores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DesafioOperadores.m; path = Tools/Desafios/DesafioOperadores.m; sourceTree = "<group>"; };
 		BD01DE031983566100AEAAA8 /* AnimaCondSimples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimaCondSimples.h; sourceTree = "<group>"; };
 		BD01DE041983566100AEAAA8 /* AnimaCondSimples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimaCondSimples.m; sourceTree = "<group>"; };
 		BD1AC840199AB5EC00CB7C5C /* AnimaVariavel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = AnimaVariavel.sks; path = "Partículas/AnimaVariavel.sks"; sourceTree = "<group>"; };
@@ -626,8 +626,8 @@
 			isa = PBXGroup;
 			children = (
 				12719D4519CB5734006B1374 /* Operadores */,
-				A5F38EFB19C711C900D337A4 /* Desafio.h */,
-				A5F38EFC19C711C900D337A4 /* Desafio.m */,
+				A5F38EFB19C711C900D337A4 /* DesafioOperadores.h */,
+				A5F38EFC19C711C900D337A4 /* DesafioOperadores.m */,
 				12428D4319C9FC240012B2B6 /* GerenciadorDesafios.h */,
 				12428D4419C9FC240012B2B6 /* GerenciadorDesafios.m */,
 				A5CBEB9A19D4AFF200AC879D /* ProgressoDesafioBar.h */,
@@ -1305,7 +1305,7 @@
 				ORGANIZATIONNAME = "SENAC - iOS";
 				TargetAttributes = {
 					120E8F72192FC0A200CDEF95 = {
-						DevelopmentTeam = 4G4476R5CJ;
+						DevelopmentTeam = AAXRVGUSKH;
 					};
 					120E8F93192FC0A200CDEF95 = {
 						TestTargetID = 120E8F72192FC0A200CDEF95;
@@ -1535,7 +1535,7 @@
 				8446A4CF1994021800C92785 /* ExeVariavel2.m in Sources */,
 				84B1B3E3197D881900089FCB /* CondicaoSimples.m in Sources */,
 				A50B33401972BF2E00BDD473 /* ListaDeExerciciosViewController.m in Sources */,
-				A5F38EFD19C711C900D337A4 /* Desafio.m in Sources */,
+				A5F38EFD19C711C900D337A4 /* DesafioOperadores.m in Sources */,
 				A500C2B519743C1D00D6BE83 /* ExeVariavel1.m in Sources */,
 				BDD22EF619A6F29C0043AA02 /* TutorialViewController.m in Sources */,
 				BDBE7695197A39E0004EA926 /* OperadorValoresNode.m in Sources */,

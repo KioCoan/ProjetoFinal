@@ -33,9 +33,11 @@
 }
 -(void)insereAcerto:(int)index{
     [[bolinhas objectAtIndex:index]setTexture:[SKTexture textureWithImageNamed:@"Desafio-Andamento-Correto.png"]];
+    [[bolinhas objectAtIndex:index]runAction:[SKAction playSoundFileNamed:@"correto.aiff" waitForCompletion:NO]];
 }
 -(void)insereErro:(int)index{
     [[bolinhas objectAtIndex:index]setTexture:[SKTexture textureWithImageNamed:@"Desafio-Andamento-Errado.png"]];
+    [[bolinhas objectAtIndex:index]runAction:[SKAction playSoundFileNamed:@"errado.wav" waitForCompletion:NO]];
 }
 -(void)reset{
     for (int i = 0; i<bolinhas.count; i++) {

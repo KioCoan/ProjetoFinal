@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Desafio.h"
+#import "DesafioOperadores.h"
 #import "GerenciadorDesafios.h"
 #import "Gerador.h"
 @interface TempViewController : UIViewController
@@ -18,7 +18,7 @@
     GerenciadorDesafios *gerenciadorDesafios;
     Gerador *gerador;
 }
-@property Desafio *desafioAtual;
+@property DesafioOperadores *desafioAtual;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblParte1;
 @property (weak, nonatomic) IBOutlet UILabel *lblOperador;

@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Desafio : NSObject
+@interface DesafioOperadores : NSObject
 
 {
     int nTasks, nivel, tarefaAtual, nAcertos, nErros;
-    NSMutableArray *listaTarefas;
+    NSMutableArray *listaTarefas, *acertos, *erros;
     NSString *tipo;
     BOOL desafioConcluido;
+    
 }
 @property NSString *tituloDesafio, *descricaoDesafio;
 

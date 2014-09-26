@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Desafio.h"
+#import "DesafioOperadores.h"
 #import "GerenciadorDesafios.h"
 #import "Gerador.h"
 @interface DesafioViewController : UIViewController
@@ -19,7 +19,7 @@
     Gerador *gerador;
     SKView *viewDesafioAtual;
 }
-@property Desafio *desafioAtual;
+@property DesafioOperadores *desafioAtual;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblParte1;
 @property (weak, nonatomic) IBOutlet UILabel *lblOperador;

@@ -49,9 +49,9 @@ NSString* const FONT_REGULAR = @"Colaborate-Regular";
 }
 
 
--(Desafio*)retornaDesafioNivel:(int)level tipo:(NSString*)type nTarefas:(int)nTarefas{
+-(DesafioOperadores*)retornaDesafioNivel:(int)level tipo:(NSString*)type nTarefas:(int)nTarefas{
     
-    Desafio *d = [[Desafio alloc] initWithLevel:level andType:type andTasks:nTarefas];
+    DesafioOperadores *d = [[DesafioOperadores alloc] initWithLevel:level andType:type andTasks:nTarefas];
     switch (meusDesafios.count+1) {
         case 1:
             [d setTituloDesafio:@"Desafio 1"];
@@ -138,7 +138,7 @@ NSString* const FONT_REGULAR = @"Colaborate-Regular";
     return titulosEDescricoes;
 }
 
--(Desafio*)retornaTarefasParaDesafio{
+-(DesafioOperadores*)retornaTarefasParaDesafio{
     return [meusDesafios objectAtIndex:desafioAtual];
     
 }

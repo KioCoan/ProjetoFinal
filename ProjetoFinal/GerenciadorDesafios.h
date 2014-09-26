@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Desafio.h"
+#import "DesafioOperadores.h"
 #import "DesafiosOperadoresScene.h"
 extern NSString* const FONT_THIN;
 extern NSString* const FONT_REGULAR;
@@ -27,7 +27,7 @@ extern NSString* const FONT_REGULAR;
 -(NSMutableArray*)retornaDesafioSelacionado;
 -(void)instanciaTarefas;
 -(NSMutableArray*)retornaTitulosEDescricoesDesafios;
--(Desafio*)retornaTarefasParaDesafio;
+-(DesafioOperadores*)retornaTarefasParaDesafio;
 -(BOOL)corrige:(NSString*)opcao;
 -(SKScene*)retornaCenaAtual;
 -(void)finalizaDesafio;

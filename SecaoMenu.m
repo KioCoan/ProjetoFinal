@@ -23,7 +23,7 @@
 }
 
 - (int)retornaNumeroIcones{
-    return  icones.count;
+    return  (int)icones.count;
 }
 
 

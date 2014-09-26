@@ -15,6 +15,7 @@
     BotaoDesafiosNode *btn1, *btn2, *btnRestart;
     OperadorDesafiosNode *operador;
     SKNode *conteudoAtivo;
+    
 }
 
 -(id)init{
@@ -22,7 +23,7 @@
     if (self = [super init]) {
         gerenciadorDesafios = [GerenciadorDesafios sharedGerenciador];
         gerador = [[Gerador alloc] init];
-        desafioAtual = [[Desafio alloc] init];
+        desafioAtual = [[DesafioOperadores alloc] init];
         desafioAtual = [gerenciadorDesafios retornaTarefasParaDesafio];
         progresso = [[ProgressoDesafioBar alloc] initWithBolinhas:[desafioAtual nTarefas]];
         //progresso = [[ProgressoDesafioBar alloc] initWithBolinhas:3];
@@ -35,7 +36,7 @@
             [self exibePlacarFinal:[gerenciadorDesafios desafioFinalizado]];
         }else{
             [self montaTela];
-            [self addChild:progresso];
+            
         }
         
        
@@ -53,6 +54,9 @@
     //(768-progresso.size.width)/2
     [progresso setPosition:CGPointMake((768-progresso.size.width)/2, 850)];
     
+    if (![[self children]containsObject:progresso]) {
+        [self addChild:progresso];
+    }
     
     
     
@@ -130,34 +134,47 @@
 }
 
 -(void)corrige:(NSString*)opcao{
+    SKAction *temp = [SKAction waitForDuration:1.0];
     
     if ([gerenciadorDesafios corrige:opcao]) {
         [progresso insereAcerto:[desafioAtual retornaTarefaAtual]];
+        
+        
+        [operador setValor:[(BotaoDesafiosNode*)conteudoAtivo text]]; // FAZ UM CAST DO CONTEÚDO ATIVO PARA TER ACESSO À PROPRIEDADE "TEXT"
+        
     }else{
         [progresso insereErro:[desafioAtual retornaTarefaAtual]];
+        [operador setValor:[desafioAtual operador]];
     }
+    //[self nomeiaBotao];
+    [operador runAction:temp completion:^{[operador removeAllActions];
+        [self alteraTarefa];
+        
+    }];
     
-    [self alteraTarefa];
     
 }
-
+//-(void)nomeiaBotao{
+//    if ([@"??" isEqualToString:btn1.name]) {
+//        btn1.name = nomeBotaoAtivo;
+//    }else{
+//        btn2.name = nomeBotaoAtivo;
+//    }
+//}
 
 -(void)alteraTarefa{
     
     if ([desafioAtual incrementaTarefa]) {
+        [operador setValor:@"?"];
         lblParte1.text = [desafioAtual parte1];
         lblParte2.text = [desafioAtual parte2];
         lblResultado.text = [desafioAtual resultado];
         [self ajustaBotoes];
-        //        if ([self.desafioAtual respostaDupla]) {
-        //            NSLog(@"Dupla");
-        //        }
+        
     }else{
-        //[gerenciadorDesafios finalizaDesafio];
-    }
-    if ([gerenciadorDesafios desafioFinalizado]) {
         [self fimDesafioAtual];
     }
+
 }
 
 -(void)ajustaBotoes{
@@ -178,15 +195,21 @@
     CGPoint location = [touch locationInNode:self];
     conteudoAtivo = [self nodeAtPoint:location];
     
-    if ([@"btn1" isEqualToString:conteudoAtivo.name] || [@"btn2" isEqualToString:conteudoAtivo.name]) {
-        BotaoDesafiosNode *temp = (BotaoDesafiosNode*)conteudoAtivo ;
-        [self corrige:[temp text]];
-        NSLog(@"%@",[temp text]);
-    }else if ([@"restart"isEqualToString:conteudoAtivo.name]){
-        [desafioAtual restart];
-        [self exibePlacarFinal:NO];
-        [progresso reset];
+    if (![operador hasActions]) {
+        if ([@"btn1" isEqualToString:conteudoAtivo.name] || [@"btn2" isEqualToString:conteudoAtivo.name]) {
+//            nomeBotaoAtivo = conteudoAtivo.name;
+//            [conteudoAtivo setName:@"??"];
+            BotaoDesafiosNode *temp = (BotaoDesafiosNode*)conteudoAtivo ;
+            [self corrige:[temp text]];
+            
+        }else if ([@"restart"isEqualToString:conteudoAtivo.name]){
+            [desafioAtual restart];
+            [self exibePlacarFinal:NO];
+            [progresso reset];
+        }
+
     }
+    
     
     
 }
