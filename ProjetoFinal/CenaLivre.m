@@ -183,9 +183,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
 }
 
-
-
-
 - (void)botaoMenuCresci:(BOOL)cresci{
     
     //ANIMACAO BOTAO MENU
@@ -377,7 +374,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 - (void)identificaNodeGeraAcao{
     
-    NSLog(@"nome clicado %@",conteudoAtivo.name);
     
     if ([conteudoAtivo.name isEqualToString:@"botaoMenu"]) {
         [menu abrirFechar];
@@ -420,6 +416,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 - (void)insereValores{
     
+    //INSERE VALOR VARIAVEIS
     if ([objetoAnimando.name isEqualToString:@"variavel"]) {
         SpriteCaixaNode *variavel = (SpriteCaixaNode *)objetoAnimando;
         
@@ -438,6 +435,30 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
                     break;
             }
         }
+      
+        // INSERE VALOR NO OPERADOR
+        
+    }else if ([objetoAnimando.name isEqualToString:@"operador"]){
+        
+        SpriteOperadorNode *operador = (SpriteOperadorNode *)objetoAnimando;
+        
+        for (int i = 0; i < vetorTextField.count;i++) {
+            
+            UITextField *textField = [vetorTextField objectAtIndex:i];
+            
+            
+            switch (i) {
+                case 0:
+                    [operador setLabelValor1:textField.text];
+                    break;
+                    
+                case 1:
+                    [operador setLabelValor2:textField.text];
+                    break;
+            }
+        }
+
+        
         
     }
     

@@ -37,6 +37,7 @@
 		8418F87D1970817000781F82 /* CenaExercicioVariavel1.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F87B1970817000781F82 /* CenaExercicioVariavel1.m */; };
 		8418F88119708B0900781F82 /* ExercicioVIewContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418F88019708B0900781F82 /* ExercicioVIewContoller.m */; };
 		8423FA3F199AC1BF00C447FF /* CenaExercicioVariavel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8423FA3E199AC1BF00C447FF /* CenaExercicioVariavel2.m */; };
+		842D431719D611D7009FAC93 /* Validador.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D431619D611D7009FAC93 /* Validador.m */; };
 		8431DA6219CA12C50076EBBA /* modo livre-09.png in Resources */ = {isa = PBXBuildFile; fileRef = 8431DA5E19CA12C50076EBBA /* modo livre-09.png */; };
 		8431DA6319CA12C50076EBBA /* modo livre-10.png in Resources */ = {isa = PBXBuildFile; fileRef = 8431DA5F19CA12C50076EBBA /* modo livre-10.png */; };
 		8431DA6419CA12C50076EBBA /* modo livre-11.png in Resources */ = {isa = PBXBuildFile; fileRef = 8431DA6019CA12C50076EBBA /* modo livre-11.png */; };
@@ -270,6 +271,8 @@
 		8418F88019708B0900781F82 /* ExercicioVIewContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExercicioVIewContoller.m; sourceTree = "<group>"; };
 		8423FA3D199AC1BF00C447FF /* CenaExercicioVariavel2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenaExercicioVariavel2.h; sourceTree = "<group>"; };
 		8423FA3E199AC1BF00C447FF /* CenaExercicioVariavel2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenaExercicioVariavel2.m; sourceTree = "<group>"; };
+		842D431519D611D7009FAC93 /* Validador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Validador.h; sourceTree = "<group>"; };
+		842D431619D611D7009FAC93 /* Validador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Validador.m; sourceTree = "<group>"; };
 		8431DA5E19CA12C50076EBBA /* modo livre-09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "modo livre-09.png"; path = "../modo livre-09.png"; sourceTree = "<group>"; };
 		8431DA5F19CA12C50076EBBA /* modo livre-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "modo livre-10.png"; path = "../modo livre-10.png"; sourceTree = "<group>"; };
 		8431DA6019CA12C50076EBBA /* modo livre-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "modo livre-11.png"; path = "../modo livre-11.png"; sourceTree = "<group>"; };
@@ -656,6 +659,15 @@
 			name = Variaveis;
 			sourceTree = "<group>";
 		};
+		842D431819D611EE009FAC93 /* Validador */ = {
+			isa = PBXGroup;
+			children = (
+				842D431519D611D7009FAC93 /* Validador.h */,
+				842D431619D611D7009FAC93 /* Validador.m */,
+			);
+			name = Validador;
+			sourceTree = "<group>";
+		};
 		8431DA5D19CA12C50076EBBA /* Modo Livre */ = {
 			isa = PBXGroup;
 			children = (
@@ -963,6 +975,7 @@
 		A521FEE51993B83400D28627 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				842D431819D611EE009FAC93 /* Validador */,
 				A521FEE61993B84200D28627 /* Gerador */,
 				A529DF0A1965DB2200A3D9FB /* Calculador */,
 			);
@@ -1512,6 +1525,7 @@
 				BDB48111196CB89400D5901A /* AnimaOperadores.m in Sources */,
 				A5CBEB9C19D4AFF200AC879D /* ProgressoDesafioBar.m in Sources */,
 				BD5DE21419972335007849DB /* SpriteAtualizarNode.m in Sources */,
+				842D431719D611D7009FAC93 /* Validador.m in Sources */,
 				91A98619196232F800EA1074 /* Exercicio.m in Sources */,
 				1551BFE119C36BFC00CBDB86 /* EnciclopediaViewController.m in Sources */,
 				BDB4810B196CB7FC00D5901A /* Operadores.m in Sources */,
