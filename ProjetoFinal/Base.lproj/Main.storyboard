@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="tHn-97-uZ9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="tHn-97-uZ9">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Tutorial View Controller-->
@@ -289,42 +289,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh1-Nb-TYU">
-                                <rect key="frame" x="328" y="216" width="113" height="30"/>
-                                <state key="normal" title="Conceitos">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fundo-menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="WDO-Yx-5jz">
+                                <rect key="frame" x="-11" y="0.0" width="787" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh1-Nb-TYU">
+                                <rect key="frame" x="504" y="481" width="134" height="172"/>
+                                <state key="normal" image="botao-enciclopedia.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="push" id="1hd-Wz-ogZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qh-yf-dgl">
-                                <rect key="frame" x="328" y="284" width="113" height="30"/>
-                                <state key="normal" title="Enciclopédia">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="l7v-hr-0yC" kind="push" id="VbD-D7-efk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGj-ui-aDF">
-                                <rect key="frame" x="328" y="330" width="113" height="30"/>
-                                <state key="normal" title="Desafios">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGj-ui-aDF">
+                                <rect key="frame" x="319" y="484" width="131" height="169"/>
+                                <state key="normal" image="botao-treinamento.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="Laj-yx-eaG" kind="push" id="IYm-DI-mLR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulY-Jv-kL4">
-                                <rect key="frame" x="328" y="389" width="113" height="30"/>
-                                <state key="normal" title="Livre">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulY-Jv-kL4">
+                                <rect key="frame" x="132" y="482" width="121" height="171"/>
+                                <state key="normal" image="botao-livre.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="fMn-6K-qgM" kind="push" id="aqI-NM-3Fp"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tedra-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="SQT-cy-6EN">
+                                <rect key="frame" x="146" y="252" width="477" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="direitos.png" translatesAutoresizingMaskIntoConstraints="NO" id="yzs-a7-8So">
+                                <rect key="frame" x="176" y="878" width="417" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkL-vY-5RQ">
+                                <rect key="frame" x="360" y="739" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="botao-preferencias.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="preferencias.png" translatesAutoresizingMaskIntoConstraints="NO" id="jWA-DP-Ura">
+                                <rect key="frame" x="334" y="795" width="96" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -560,11 +574,19 @@
         </scene>
     </scenes>
     <resources>
+        <image name="botao-enciclopedia.png" width="134" height="172"/>
+        <image name="botao-livre.png" width="121" height="171"/>
+        <image name="botao-preferencias.png" width="48" height="48"/>
+        <image name="botao-treinamento.png" width="131" height="169"/>
+        <image name="direitos.png" width="417" height="23"/>
         <image name="fundo-descricao.png" width="529" height="193"/>
+        <image name="fundo-menu.png" width="769" height="1024"/>
         <image name="icone-exercicio.png" width="100" height="100"/>
         <image name="icone-iniciar.png" width="300" height="304"/>
         <image name="icone-teoria.png" width="100" height="100"/>
         <image name="imagem-teoria.png" width="768" height="350"/>
+        <image name="preferencias.png" width="96" height="21"/>
+        <image name="tedra-logo.png" width="477" height="93"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>

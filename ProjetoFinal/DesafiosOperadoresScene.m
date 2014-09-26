@@ -60,10 +60,10 @@
     
     
     
-    lblParte1 = [[SKLabelNode alloc] initWithFontNamed:FONT_THIN];
-    lblParte2 = [[SKLabelNode alloc] initWithFontNamed:FONT_THIN];
-    lblResultado = [[SKLabelNode alloc] initWithFontNamed:FONT_REGULAR];
-    lblIgual = [[SKLabelNode alloc] initWithFontNamed:FONT_THIN];
+    lblParte1 = [[SKLabelNode alloc] initWithFontNamed:FONT_LIGHT];
+    lblParte2 = [[SKLabelNode alloc] initWithFontNamed:FONT_LIGHT];
+    lblResultado = [[SKLabelNode alloc] initWithFontNamed:FONT_MEDIUM];
+    lblIgual = [[SKLabelNode alloc] initWithFontNamed:FONT_LIGHT];
     
     CGFloat fontSize = 68.0;
     
@@ -242,7 +242,7 @@
     CGFloat fontSize = 68.0;
     UIColor *cor = [UIColor colorWithRed:(76.0/255.0) green:(95.0/255.0) blue:(138.0/255.0) alpha:1];
     
-    lblNAcertos = [[SKLabelNode alloc] initWithFontNamed:FONT_THIN];
+    lblNAcertos = [[SKLabelNode alloc] initWithFontNamed:FONT_LIGHT];
     [lblNAcertos setFontSize:fontSize];
     [lblNAcertos setFontColor:cor];
     [lblNAcertos setPosition:CGPointMake(384, 605)];

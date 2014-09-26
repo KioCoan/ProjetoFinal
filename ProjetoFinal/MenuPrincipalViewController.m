@@ -28,7 +28,24 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-  }
+    
+    
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    
+    [self.navigationController setNavigationBarHidden:YES];
+    
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -49,6 +66,8 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+ "CooperHewitt-Light",
+ "CooperHewitt-Medium"
 }
 */
 

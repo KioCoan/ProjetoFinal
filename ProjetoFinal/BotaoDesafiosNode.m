@@ -16,7 +16,7 @@
     
     self = [super initWithImageNamed:name];
     if (self) {
-        valor = [[SKLabelNode alloc] initWithFontNamed:FONT_THIN];
+        valor = [[SKLabelNode alloc] initWithFontNamed:FONT_LIGHT];
         valor.fontSize = self.size.width / valor.frame.size.width + 20;
         [valor setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
         [valor setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];

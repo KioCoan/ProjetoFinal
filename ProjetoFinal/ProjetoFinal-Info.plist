@@ -4,6 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>CooperHewitt-Medium.otf</string>
+		<string>CooperHewitt-Light.otf</string>
 		<string>ColabReg.otf</string>
 		<string>ColabThi.otf</string>
 	</array>

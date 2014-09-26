@@ -28,6 +28,22 @@
 		12719D4919CB5DBF006B1374 /* ColabThi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 12719D4719CB5B16006B1374 /* ColabThi.otf */; };
 		12719D4C19CB5FB5006B1374 /* BotaoDesafiosNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 12719D4B19CB5FB5006B1374 /* BotaoDesafiosNode.m */; };
 		12719D4F19CB6CCD006B1374 /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12719D4E19CB6CCD006B1374 /* TempViewController.m */; };
+		12C02BC419D60B9B0015AF10 /* botao-livre-imagem.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C02BC119D60B9B0015AF10 /* botao-livre-imagem.png */; };
+		12C02BC519D60B9B0015AF10 /* botao-treinamento-imagem.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C02BC219D60B9B0015AF10 /* botao-treinamento-imagem.png */; };
+		12C02BC619D60B9B0015AF10 /* botao-enciclopedia-imagem.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C02BC319D60B9B0015AF10 /* botao-enciclopedia-imagem.png */; };
+		12C02BCA19D60BAA0015AF10 /* botao-lire-texto.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C02BC719D60BAA0015AF10 /* botao-lire-texto.png */; };
+		12C02BCB19D60BAA0015AF10 /* botao-treinamento-texto.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C02BC819D60BAA0015AF10 /* botao-treinamento-texto.png */; };
+		12C02BCC19D60BAA0015AF10 /* botao-enciclopedia-texto.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C02BC919D60BAA0015AF10 /* botao-enciclopedia-texto.png */; };
+		12C02BD019D60F290015AF10 /* botao-livre.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C02BCD19D60F290015AF10 /* botao-livre.png */; };
+		12C02BD119D60F290015AF10 /* botao-treinamento.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C02BCE19D60F290015AF10 /* botao-treinamento.png */; };
+		12C02BD219D60F290015AF10 /* botao-enciclopedia.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C02BCF19D60F290015AF10 /* botao-enciclopedia.png */; };
+		12C02BD419D611B20015AF10 /* tedra-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C02BD319D611B20015AF10 /* tedra-logo.png */; };
+		12C02BD619D612180015AF10 /* preferencias.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C02BD519D612180015AF10 /* preferencias.png */; };
+		12C02BD819D612F60015AF10 /* fundo-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C02BD719D612F60015AF10 /* fundo-menu.png */; };
+		12C02BDA19D6132E0015AF10 /* direitos.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C02BD919D6132E0015AF10 /* direitos.png */; };
+		12C02BDC19D6135D0015AF10 /* botao-preferencias.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C02BDB19D6135D0015AF10 /* botao-preferencias.png */; };
+		12C787C519D5FEC6006D3D11 /* CooperHewitt-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 12C787C319D5FE7B006D3D11 /* CooperHewitt-Light.otf */; };
+		12C787C619D5FEDF006D3D11 /* CooperHewitt-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 12C787C419D5FE7B006D3D11 /* CooperHewitt-Medium.otf */; };
 		1551BFE119C36BFC00CBDB86 /* EnciclopediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1551BFE019C36BFC00CBDB86 /* EnciclopediaViewController.m */; };
 		1551BFE419C36C3000CBDB86 /* ListaDesafioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1551BFE319C36C3000CBDB86 /* ListaDesafioViewController.m */; };
 		1551BFE719C36C3C00CBDB86 /* DesafioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1551BFE619C36C3C00CBDB86 /* DesafioViewController.m */; };
@@ -253,6 +269,22 @@
 		12719D4B19CB5FB5006B1374 /* BotaoDesafiosNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BotaoDesafiosNode.m; sourceTree = "<group>"; };
 		12719D4D19CB6CCD006B1374 /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempViewController.h; sourceTree = "<group>"; };
 		12719D4E19CB6CCD006B1374 /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempViewController.m; sourceTree = "<group>"; };
+		12C02BC119D60B9B0015AF10 /* botao-livre-imagem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botao-livre-imagem.png"; sourceTree = "<group>"; };
+		12C02BC219D60B9B0015AF10 /* botao-treinamento-imagem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botao-treinamento-imagem.png"; sourceTree = "<group>"; };
+		12C02BC319D60B9B0015AF10 /* botao-enciclopedia-imagem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botao-enciclopedia-imagem.png"; sourceTree = "<group>"; };
+		12C02BC719D60BAA0015AF10 /* botao-lire-texto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botao-lire-texto.png"; sourceTree = "<group>"; };
+		12C02BC819D60BAA0015AF10 /* botao-treinamento-texto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botao-treinamento-texto.png"; sourceTree = "<group>"; };
+		12C02BC919D60BAA0015AF10 /* botao-enciclopedia-texto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botao-enciclopedia-texto.png"; sourceTree = "<group>"; };
+		12C02BCD19D60F290015AF10 /* botao-livre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botao-livre.png"; sourceTree = "<group>"; };
+		12C02BCE19D60F290015AF10 /* botao-treinamento.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botao-treinamento.png"; sourceTree = "<group>"; };
+		12C02BCF19D60F290015AF10 /* botao-enciclopedia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botao-enciclopedia.png"; sourceTree = "<group>"; };
+		12C02BD319D611B20015AF10 /* tedra-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tedra-logo.png"; sourceTree = "<group>"; };
+		12C02BD519D612180015AF10 /* preferencias.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = preferencias.png; sourceTree = "<group>"; };
+		12C02BD719D612F60015AF10 /* fundo-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-menu.png"; sourceTree = "<group>"; };
+		12C02BD919D6132E0015AF10 /* direitos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direitos.png; sourceTree = "<group>"; };
+		12C02BDB19D6135D0015AF10 /* botao-preferencias.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botao-preferencias.png"; sourceTree = "<group>"; };
+		12C787C319D5FE7B006D3D11 /* CooperHewitt-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Light.otf"; sourceTree = "<group>"; };
+		12C787C419D5FE7B006D3D11 /* CooperHewitt-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Medium.otf"; sourceTree = "<group>"; };
 		1551BFDF19C36BFC00CBDB86 /* EnciclopediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnciclopediaViewController.h; sourceTree = "<group>"; };
 		1551BFE019C36BFC00CBDB86 /* EnciclopediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnciclopediaViewController.m; sourceTree = "<group>"; };
 		1551BFE219C36C3000CBDB86 /* ListaDesafioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaDesafioViewController.h; sourceTree = "<group>"; };
@@ -577,6 +609,8 @@
 		120E8F7D192FC0A200CDEF95 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				12C787C319D5FE7B006D3D11 /* CooperHewitt-Light.otf */,
+				12C787C419D5FE7B006D3D11 /* CooperHewitt-Medium.otf */,
 				12719D4619CB5B16006B1374 /* ColabReg.otf */,
 				12719D4719CB5B16006B1374 /* ColabThi.otf */,
 				120E8F7E192FC0A200CDEF95 /* ProjetoFinal-Info.plist */,
@@ -648,6 +682,27 @@
 				A5F38EF919C5F6B700D337A4 /* Expressao.m */,
 			);
 			name = Operadores;
+			sourceTree = "<group>";
+		};
+		12C02BC019D60AFB0015AF10 /* Menu Principal */ = {
+			isa = PBXGroup;
+			children = (
+				12C02BD319D611B20015AF10 /* tedra-logo.png */,
+				12C02BD719D612F60015AF10 /* fundo-menu.png */,
+				12C02BCD19D60F290015AF10 /* botao-livre.png */,
+				12C02BCE19D60F290015AF10 /* botao-treinamento.png */,
+				12C02BDB19D6135D0015AF10 /* botao-preferencias.png */,
+				12C02BCF19D60F290015AF10 /* botao-enciclopedia.png */,
+				12C02BC719D60BAA0015AF10 /* botao-lire-texto.png */,
+				12C02BC819D60BAA0015AF10 /* botao-treinamento-texto.png */,
+				12C02BC919D60BAA0015AF10 /* botao-enciclopedia-texto.png */,
+				12C02BC119D60B9B0015AF10 /* botao-livre-imagem.png */,
+				12C02BC219D60B9B0015AF10 /* botao-treinamento-imagem.png */,
+				12C02BC319D60B9B0015AF10 /* botao-enciclopedia-imagem.png */,
+				12C02BD919D6132E0015AF10 /* direitos.png */,
+				12C02BD519D612180015AF10 /* preferencias.png */,
+			);
+			name = "Menu Principal";
 			sourceTree = "<group>";
 		};
 		8418F87E1970895500781F82 /* Variaveis */ = {
@@ -728,7 +783,7 @@
 				BD5DE21319972335007849DB /* SpriteAtualizarNode.m */,
 				BDBE7698197A3A00004EA926 /* Variavel */,
 				BDBE7697197A39EF004EA926 /* Operadores */,
-				BD01DDFA19834E7C00AEAAA8 /* Condição */,
+				BD01DDFA19834E7C00AEAAA8 /* Condição */,
 			);
 			name = Objetos;
 			sourceTree = "<group>";
@@ -996,12 +1051,12 @@
 			children = (
 				A529DF1E1965DB8A00A3D9FB /* Calculador.h */,
 				A529DF1F1965DB8A00A3D9FB /* Calculador.m */,
-				A529DF0B1965DB3800A3D9FB /* Operações */,
+				A529DF0B1965DB3800A3D9FB /* Operações */,
 			);
 			name = Calculador;
 			sourceTree = "<group>";
 		};
-		A529DF0B1965DB3800A3D9FB /* Operações */ = {
+		A529DF0B1965DB3800A3D9FB /* Operações */ = {
 			isa = PBXGroup;
 			children = (
 				A529DF151965DB7500A3D9FB /* Relacional.h */,
@@ -1064,7 +1119,7 @@
 			name = Operadores;
 			sourceTree = "<group>";
 		};
-		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
+		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
 			isa = PBXGroup;
 			children = (
 				BDE82C271991778700610D96 /* SpriteCondicaoNode.h */,
@@ -1075,7 +1130,7 @@
 			name = "Condição";
 			sourceTree = "<group>";
 		};
-		BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */ = {
+		BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */ = {
 			isa = PBXGroup;
 			children = (
 				BD1AC840199AB5EC00CB7C5C /* AnimaVariavel.sks */,
@@ -1121,7 +1176,7 @@
 		BDBE7698197A3A00004EA926 /* Variavel */ = {
 			isa = PBXGroup;
 			children = (
-				BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */,
+				BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */,
 				BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */,
 				BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */,
 			);
@@ -1241,6 +1296,7 @@
 		E501FA69192FCD1600B56B5C /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				12C02BC019D60AFB0015AF10 /* Menu Principal */,
 				A5CBEB8919D1F6A700AC879D /* Desafios */,
 				8492087E19C7756400D64AE8 /* menuIcon.png */,
 				8431DA5D19CA12C50076EBBA /* Modo Livre */,
@@ -1349,6 +1405,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12C787C619D5FEDF006D3D11 /* CooperHewitt-Medium.otf in Resources */,
+				12C787C519D5FEC6006D3D11 /* CooperHewitt-Light.otf in Resources */,
 				BD1AC842199AB5EC00CB7C5C /* AnimaVariavel.sks in Resources */,
 				BDF8AE08197B258C00BA5B8A /* parte-valores8.png in Resources */,
 				BDC7579F196787E700DB8380 /* abrir-caixa2.png in Resources */,
@@ -1362,11 +1420,13 @@
 				BDE82C2619916E1F00610D96 /* sprite-exclamacao.png in Resources */,
 				BDF8ADF4197B255C00BA5B8A /* parte-resultado7.png in Resources */,
 				91A7A956198F56DC009A5EB1 /* ConceitosCondicionais.txt in Resources */,
+				12C02BCC19D60BAA0015AF10 /* botao-enciclopedia-texto.png in Resources */,
 				BD325A491995EB7D00D15DBF /* exclamacao.mp3 in Resources */,
 				BDD22F0D19A6F4A70043AA02 /* img-tutorial3.png in Resources */,
 				8431DA6F19CA28FD0076EBBA /* livre-condicional.png in Resources */,
 				BD5DE21119972138007849DB /* bt-play.png in Resources */,
 				BD325A451995EB7D00D15DBF /* abrirCaixa.mp3 in Resources */,
+				12C02BD819D612F60015AF10 /* fundo-menu.png in Resources */,
 				BD66B651197F6F16000BB548 /* atualizar-dados.png in Resources */,
 				BDE82C2319916E1F00610D96 /* se-normal.png in Resources */,
 				BDF8AE0B197B258C00BA5B8A /* parte-valores11.png in Resources */,
@@ -1383,8 +1443,10 @@
 				BDC757A4196787E700DB8380 /* abrir-caixa7.png in Resources */,
 				A5CBEBA019D4B0EE00AC879D /* Desafio-Andamento-Correto.png in Resources */,
 				BD510FE11989E8200052B6E5 /* lousa-teoria.jpg in Resources */,
+				12C02BD419D611B20015AF10 /* tedra-logo.png in Resources */,
 				BD325A471995EB7D00D15DBF /* errado.wav in Resources */,
 				8431DA7319CA28FD0076EBBA /* livre-operador.png in Resources */,
+				12C02BD219D60F290015AF10 /* botao-enciclopedia.png in Resources */,
 				BDEE046A199FEC7E00EAC8ED /* icone-teoria.png in Resources */,
 				BDEE046C19A00BF000EAC8ED /* icone-exercicio.png in Resources */,
 				BDEE046E19A0162000EAC8ED /* icone-iniciar.png in Resources */,
@@ -1401,8 +1463,10 @@
 				8431DA6419CA12C50076EBBA /* modo livre-11.png in Resources */,
 				BDF8AE04197B258C00BA5B8A /* parte-valores4.png in Resources */,
 				BD5A552A198C972000D8722F /* se-verde.png in Resources */,
+				12C02BD119D60F290015AF10 /* botao-treinamento.png in Resources */,
 				BDEE0468199FE5E000EAC8ED /* imagem-teoria.png in Resources */,
 				BDC757A9196787E700DB8380 /* abrir-caixa12.png in Resources */,
+				12C02BD019D60F290015AF10 /* botao-livre.png in Resources */,
 				BDC7579E196787E700DB8380 /* abrir-caixa1.png in Resources */,
 				BDC757A7196787E700DB8380 /* abrir-caixa10.png in Resources */,
 				BDF8ADF3197B255C00BA5B8A /* parte-resultado6.png in Resources */,
@@ -1415,6 +1479,7 @@
 				BDF8AE0A197B258C00BA5B8A /* parte-valores10.png in Resources */,
 				BDF8AE03197B258C00BA5B8A /* parte-valores3.png in Resources */,
 				BDF8ADEF197B255C00BA5B8A /* parte-resultado2.png in Resources */,
+				12C02BC419D60B9B0015AF10 /* botao-livre-imagem.png in Resources */,
 				BDC4073F199B1E18006CD7AE /* sprite-introducao2.png in Resources */,
 				BD5A552B198C972000D8722F /* senao-verde.png in Resources */,
 				A5CBEBA119D4B0EE00AC879D /* Desafio-Andamento-Errado.png in Resources */,
@@ -1425,6 +1490,7 @@
 				BDC757AA196787E700DB8380 /* abrir-caixa13.png in Resources */,
 				BD66B653197F9327000BB548 /* fundo-transparente.png in Resources */,
 				8431DA6E19CA28FD0076EBBA /* livre-array.png in Resources */,
+				12C02BC519D60B9B0015AF10 /* botao-treinamento-imagem.png in Resources */,
 				A521FEEB1993F6B200D28627 /* valor2-amarelo.png in Resources */,
 				BDC757A3196787E700DB8380 /* abrir-caixa6.png in Resources */,
 				BDC580FC19A690CE003A1EAF /* fundo-animaVariavel.png in Resources */,
@@ -1432,8 +1498,10 @@
 				BDD22F0C19A6F4A70043AA02 /* img-tutorial2.png in Resources */,
 				8431DA7419CA28FD0076EBBA /* livre-variavel.png in Resources */,
 				BDF8ADF2197B255C00BA5B8A /* parte-resultado5.png in Resources */,
+				12C02BC619D60B9B0015AF10 /* botao-enciclopedia-imagem.png in Resources */,
 				BDF8ADF1197B255C00BA5B8A /* parte-resultado4.png in Resources */,
 				84B237B419D352F3003EC749 /* MenuEditarFundo.png in Resources */,
+				12C02BCB19D60BAA0015AF10 /* botao-treinamento-texto.png in Resources */,
 				BDA68F3D199819C400BD0527 /* valores-errado.png in Resources */,
 				8492087F19C7756400D64AE8 /* menuIcon.png in Resources */,
 				BDC757A5196787E700DB8380 /* abrir-caixa8.png in Resources */,
@@ -1443,6 +1511,7 @@
 				BD325A461995EB7D00D15DBF /* correto.aiff in Resources */,
 				BDC4073E199B1E18006CD7AE /* sprite-introducao1.png in Resources */,
 				84B237B319D352F3003EC749 /* MenuEditarBotao.png in Resources */,
+				12C02BD619D612180015AF10 /* preferencias.png in Resources */,
 				BDE82C2419916E1F00610D96 /* senao-normal.png in Resources */,
 				8431DA6219CA12C50076EBBA /* modo livre-09.png in Resources */,
 				BDC40742199B1E18006CD7AE /* sprite-introducao5.png in Resources */,
@@ -1457,12 +1526,15 @@
 				BD4E5F2A19987BB60082632B /* operadores.mp3 in Resources */,
 				BDEE047019A0224D00EAC8ED /* fundo-descricao.png in Resources */,
 				BDD22F0E19A6F4A70043AA02 /* img-tutorial4.png in Resources */,
+				12C02BDA19D6132E0015AF10 /* direitos.png in Resources */,
 				A5CBEB9219D20E1B00AC879D /* Desafio-Operadores-Operador.png in Resources */,
 				BDF8AE02197B258C00BA5B8A /* parte-valores2.png in Resources */,
+				12C02BDC19D6135D0015AF10 /* botao-preferencias.png in Resources */,
 				BDD22F0F19A6F4A70043AA02 /* img-tutorial5.png in Resources */,
 				8431DA7219CA28FD0076EBBA /* livre-menu.png in Resources */,
 				BD6D7C0119A7E5AB0022DF2A /* img-tutorial.png in Resources */,
 				BDE82C2519916E1F00610D96 /* senaoSe-normal.png in Resources */,
+				12C02BCA19D60BAA0015AF10 /* botao-lire-texto.png in Resources */,
 				BDC40745199B1E18006CD7AE /* sprite-introducao8.png in Resources */,
 				BDBE769F197A3B69004EA926 /* parte-valores1.png in Resources */,
 				A521FEED1993FE1E00D28627 /* saida-texto.png in Resources */,

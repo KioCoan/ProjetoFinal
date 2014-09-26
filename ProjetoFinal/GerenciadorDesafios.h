@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "DesafioOperadores.h"
 #import "DesafiosOperadoresScene.h"
-extern NSString* const FONT_THIN;
-extern NSString* const FONT_REGULAR;
+extern NSString* const FONT_LIGHT;
+extern NSString* const FONT_MEDIUM;
 
 @interface GerenciadorDesafios : NSObject
 

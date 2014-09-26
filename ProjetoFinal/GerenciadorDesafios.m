@@ -8,8 +8,8 @@
 
 #import "GerenciadorDesafios.h"
 
-NSString* const FONT_THIN = @"Colaborate-Thin";
-NSString* const FONT_REGULAR = @"Colaborate-Regular";
+NSString* const FONT_LIGHT = @"CooperHewitt-Light";
+NSString* const FONT_MEDIUM = @"CooperHewitt-Medium";
 
 @implementation GerenciadorDesafios
 
@@ -43,9 +43,9 @@ NSString* const FONT_REGULAR = @"Colaborate-Regular";
     [meusDesafios addObject:[self retornaDesafioNivel:1 tipo:@"logico" nTarefas:10]]; // DESAFIO 1 - LÓGICO FÁCIL
     [meusDesafios addObject:[self retornaDesafioNivel:1 tipo:@"relacional" nTarefas:10]]; // DESAFIO 2 - RELACIONAL FÁCIL
     [meusDesafios addObject:[self retornaDesafioNivel:2 tipo:@"logico" nTarefas:15]]; // DESAFIO 3 - LOGICO MÉDIO
-    [meusDesafios addObject:[self retornaDesafioNivel:2 tipo:@"relacionais" nTarefas:15]]; // DESAFIO 4 - RELACIONAL MÉDIO
+    [meusDesafios addObject:[self retornaDesafioNivel:2 tipo:@"relacional" nTarefas:15]]; // DESAFIO 4 - RELACIONAL MÉDIO
     [meusDesafios addObject:[self retornaDesafioNivel:3 tipo:@"logico" nTarefas:10]]; // DESAFIO 5 - LOGICO DIFÍCIL
-    [meusDesafios addObject:[self retornaDesafioNivel:2 tipo:@"relacionais" nTarefas:10]]; // DESAFIO 6 - RELACIONAL DIFÍCIL
+    [meusDesafios addObject:[self retornaDesafioNivel:2 tipo:@"relacional" nTarefas:10]]; // DESAFIO 6 - RELACIONAL DIFÍCIL
 }
 
 
