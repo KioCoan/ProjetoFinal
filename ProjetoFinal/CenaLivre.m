@@ -19,11 +19,11 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     SKNode *conteudoAtivo;
     SKSpriteNode *botaoMenu;
     SKSpriteNode *menuEdicao;
-    NSArray *vetorTiposObjetos;
     NSMutableArray *vetorTextField;
     BOOL menuEditarAberto;
     int contadorVariavel;
-    BOOL caixaDentroExcluir;
+    BOOL estaEmContato;
+    SKNode *objetoAnimando;
 }
 
 
@@ -63,15 +63,28 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         [self criaMenuEdicao];
         
-        //ALLOCANDO VETOR TEXTFILED
-        vetorTextField = [NSMutableArray array];
+        /*
         
-        //VETOR TIPOS OBJETOS
-        vetorTiposObjetos = [NSArray arrayWithObjects:@"variavel",@"operadores", nil];
+         TRIM e TIRAR ESPACOS DA STRING
+         
+        NSString *testando = @"    eu sei que e hj";
+        NSString *nova2 = [testando stringByReplacingOccurrencesOfString:@" " withString:@""];
+        NSString *nova = [testando stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         
+        
+        
+        NSLog(@"nova string %@",testando);
+        
+        */
         
     }
     return self;
+}
+
+- (void)didMoveToView:(SKView *)view{
+    
+    [self criandoTodosTextFields];
+    
 }
 
 - (void)criaMenuEdicao{
@@ -101,6 +114,9 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 - (void)criandoTodosTextFields{
     
+    //ALLOCANDO VETOR TEXTFILED
+    vetorTextField = [NSMutableArray array];
+    
     CGRect bounds = CGRectMake(self.size.width * 0.05, self.size.height * 0.08, 250, 40);
 
     for (int i = 0; i < 2; i++) {
@@ -125,7 +141,8 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     textField.placeholder = @"Insira o valor";
     textField.backgroundColor = [UIColor whiteColor];
     textField.autocorrectionType = UITextAutocorrectionTypeNo;
-    textField.keyboardType = UIKeyboardTypeDefault;
+    //textField.keyboardType = UIKeyboardTypeDefault;
+    textField.keyboardAppearance = UIKeyboardAppearanceDark;
     textField.returnKeyType = UIReturnKeyDone;
     textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     
@@ -138,45 +155,36 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
 }
 
+-(void)mostraEscondeTextField:(BOOL)mostra{
+    
+    for (UITextField *textField in vetorTextField) {
+        if (!mostra) {
+            [self limpaTextField:textField];
+        }
+        
+        textField.hidden = mostra;
+    }
+}
+
+
 -(void)moveMenuEdicao{
     
     if (menuEditarAberto) {
-        [menuEdicao removeFromParent];
         menuEditarAberto = NO;
+        [menuEdicao removeFromParent];
+        
     }else{
-        [self addChild:menuEdicao];
         menuEditarAberto = YES;
+        [self addChild:menuEdicao];
+        
     }
     
-    
+    [self mostraEscondeTextField:!menuEditarAberto];
     
 }
 
--(void)preparaTextField{
-   /*
-    int objeto;
-    
-    
-    switch (objeto) {
-        case 1:
-            // Variavel
-            [[vetorTiposObjetos objectAtIndex:0] setPlaceholder:[NSString stringWithFormat:@"insira nome"]];
-            
-            [vetorTiposObjetos objectAtIndex:0];
-            break;
-            
-        default:
-            break;
-    }
-    
-    */
-}
 
-- (void)didMoveToView:(SKView *)view{
-    
-    [self criandoTodosTextFields];
-    
-}
+
 
 - (void)botaoMenuCresci:(BOOL)cresci{
     
@@ -240,21 +248,11 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
                 
                 
             }];
-            
-            
-            
-            
-        
-
-        
-        
         
     }
     
     
 }
-
-
 
 
 - (SKAction *)retornaCrescerDiminuir:(BOOL)aumenta{
@@ -282,6 +280,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     [caixa setLabelTipo:tipo];
     [caixa setLabelEndereco:++contadorVariavel];
     [caixa setBotaoMenu:botaoMenu.frame];
+    [caixa setMyDelegate:self];
     [self addChild:caixa];
     
     //CRIA CORPO DA CAIXA
@@ -323,7 +322,62 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
 }
 
+- (UIKeyboardType)variavelNumerica :(SpriteCaixaNode *)variavel{
+    
+    NSArray *tiposVariaveis = [NSArray arrayWithObjects:@"inteiro",@"real",@"caractere",@"logico", nil];
+    
+    
+    int i = 0;
+    
+    for (i = 0; i < tiposVariaveis.count; i++) {
+        
+        if ([[variavel retornaTipo] isEqualToString:[tiposVariaveis objectAtIndex:i]]) {
+            
+            break;
+        
+        }
+        
+    }
+    
+    switch (i) {
+        case 0:
+        case 1:
+            return  UIKeyboardTypeNumberPad;
+            break;
+            
+        default:
+            return UIKeyboardTypeDefault;
+            break;
+    }
+    
+}
+
+- (void)preparaTextFieldsVariavel{
+    
+    SpriteCaixaNode *variavel = (SpriteCaixaNode *)objetoAnimando;
+    
+    for (int i = 0; i < vetorTextField.count;i++) {
+        
+        UITextField *textField = [vetorTextField objectAtIndex:i];
+        textField.keyboardType = UIKeyboardTypeNumberPad;
+        
+        
+        switch (i) {
+            case 0:
+                textField.placeholder = @"insira nome";
+                break;
+                
+            case 1:
+                textField.placeholder = @"insira conteúdo";
+                textField.keyboardType = [self variavelNumerica:variavel];
+                break;
+        }
+    }
+}
+
 - (void)identificaNodeGeraAcao{
+    
+    NSLog(@"nome clicado %@",conteudoAtivo.name);
     
     if ([conteudoAtivo.name isEqualToString:@"botaoMenu"]) {
         [menu abrirFechar];
@@ -335,17 +389,74 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         [self.myDelegate esconderNavigationController: [menu getAberto]];
     }else if ([conteudoAtivo.name isEqualToString:@"iconeMenu"]){
         [conteudoAtivo runAction:[self retornaCrescerDiminuir:YES]];
-    }else if ([conteudoAtivo.name isEqualToString:@"variavel"] && menuEditarAberto){
+    }else if ([conteudoAtivo.name isEqualToString:@"variavel"]){
+        objetoAnimando = conteudoAtivo;
+        
+        [self preparaTextFieldsVariavel];
         [self moveMenuEdicao];
+    }else if ([conteudoAtivo.name isEqualToString:@"botaoOK"]){
+        [self insereValores];
     }
 
     
     
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+- (void)limpaTextField:(UITextField *)textField{
+    
+    //LIMPA A TEXTFIELD
+    
+    [textField resignFirstResponder];
+    
+    textField.text = nil;
+}
+
+
+- (void)insereValores{
+    
+    if ([objetoAnimando.name isEqualToString:@"variavel"]) {
+        SpriteCaixaNode *variavel = (SpriteCaixaNode *)objetoAnimando;
+        
+        for (int i = 0; i < vetorTextField.count;i++) {
+            
+            UITextField *textField = [vetorTextField objectAtIndex:i];
+            
+            
+            switch (i) {
+                case 0:
+                    [variavel setLabelNome:textField.text];
+                    break;
+                    
+                case 1:
+                    [variavel setLabelConteudo:textField.text];
+                    break;
+            }
+        }
+        
+    }
+    
+    [self moveMenuEdicao];
+    
+}
+
+-(void)terminouGestureCaixa:(SKNode *)caixa{
+    
+    if (estaEmContato) {
+        [caixa removeFromParent];
+        [self didEndContact:nil];
+    }
+}
+
 - (void)didBeginContact:(SKPhysicsContact *)contact{
     
     NSLog(@"entrou contato");
+    estaEmContato = YES;
     
     [self botaoMenuCresci:YES];
     
@@ -353,7 +464,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 }
 
 - (void)didEndContact:(SKPhysicsContact *)contact{
-    
+    estaEmContato = NO;
     [self botaoMenuCresci:NO];
 }
 
@@ -362,6 +473,8 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     UITouch *touch = [touches anyObject];
     CGPoint location =  [touch locationInNode:self];
+    
+    NSLog(@"nome clicado %@",conteudoAtivo.name);
     
     conteudoAtivo = [self nodeAtPoint:location];
     
@@ -380,7 +493,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         CGPoint location = [touch locationInNode:menu];
         [conteudoAtivo setPosition:location];
-        
         
     }
     

@@ -14,6 +14,11 @@
 //-(void)spriteCaixaClicado:(SKSpriteNode*)spriteCaixa;
 //@end
 
+@protocol SpriteCaixaDelegate <NSObject>
+
+- (void)terminouGestureCaixa : (SKNode*)caixa;
+
+@end
 
 @interface SpriteCaixaNode : SKSpriteNode
 {
@@ -34,6 +39,7 @@
 }
 @property SKScene *dono;
 @property CGRect botaoMenu;
+@property id<SpriteCaixaDelegate> myDelegate;
 
 -(id)initWithConteudo:(NSString*)conteudo nome:(NSString*)nome tipo:(NSString*)tipo tamanho:(CGSize)tamanho;
 

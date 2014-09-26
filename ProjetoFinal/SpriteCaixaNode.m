@@ -229,7 +229,7 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
 
-    
+    [self.myDelegate terminouGestureCaixa:self];
     [self executaSprite];
 
     
