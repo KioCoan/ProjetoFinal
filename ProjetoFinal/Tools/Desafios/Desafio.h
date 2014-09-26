@@ -38,4 +38,5 @@
 -(void)restart;
 -(int)acertos;
 -(int)erros;
+-(int)retornaTarefaAtual;
 @end

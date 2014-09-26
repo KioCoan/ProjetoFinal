@@ -34,7 +34,8 @@
         if ([desafioAtual desafioFinalizado]) {
             [self exibePlacarFinal:[gerenciadorDesafios desafioFinalizado]];
         }else{
-             [self montaTela];
+            [self montaTela];
+            [self addChild:progresso];
         }
         
        
@@ -50,10 +51,10 @@
 
 -(void)montaTela{
     //(768-progresso.size.width)/2
-    [progresso setPosition:CGPointMake((768-progresso.size.width)/2, 800)];
+    [progresso setPosition:CGPointMake((768-progresso.size.width)/2, 850)];
     
-    NSLog(@"%f",progresso.size.width);
-    [self addChild:progresso];
+    
+    
     
     lblParte1 = [[SKLabelNode alloc] initWithFontNamed:FONT_THIN];
     lblParte2 = [[SKLabelNode alloc] initWithFontNamed:FONT_THIN];
@@ -130,8 +131,12 @@
 
 -(void)corrige:(NSString*)opcao{
     
+    if ([gerenciadorDesafios corrige:opcao]) {
+        [progresso insereAcerto:[desafioAtual retornaTarefaAtual]];
+    }else{
+        [progresso insereErro:[desafioAtual retornaTarefaAtual]];
+    }
     
-    NSLog(@"%d",[gerenciadorDesafios corrige:opcao]);
     [self alteraTarefa];
     
 }
@@ -180,6 +185,7 @@
     }else if ([@"restart"isEqualToString:conteudoAtivo.name]){
         [desafioAtual restart];
         [self exibePlacarFinal:NO];
+        [progresso reset];
     }
     
     
@@ -201,7 +207,7 @@
     [btn1 runAction:fadeOut completion:^{[btn1 removeFromParent];}];
     [btn2 runAction:fadeOut completion:^{[btn2 removeFromParent];}];
     [operador runAction:fadeOut completion:^{[operador removeFromParent];}];
-    
+    //[progresso removeFromParent];
     
     
     [self exibePlacarFinal:YES];

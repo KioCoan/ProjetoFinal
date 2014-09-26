@@ -31,6 +31,15 @@
     }
     return self;
 }
-
-
+-(void)insereAcerto:(int)index{
+    [[bolinhas objectAtIndex:index]setTexture:[SKTexture textureWithImageNamed:@"Desafio-Andamento-Correto.png"]];
+}
+-(void)insereErro:(int)index{
+    [[bolinhas objectAtIndex:index]setTexture:[SKTexture textureWithImageNamed:@"Desafio-Andamento-Errado.png"]];
+}
+-(void)reset{
+    for (int i = 0; i<bolinhas.count; i++) {
+        [[bolinhas objectAtIndex:i]setTexture:[SKTexture textureWithImageNamed:@"Desafio-Andamento-Vazio.png"]];
+    }
+}
 @end

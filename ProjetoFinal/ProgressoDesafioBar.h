@@ -14,5 +14,7 @@
 }
 
 -(id)initWithBolinhas:(int)nBolinhas;
-
+-(void)insereAcerto:(int)index;
+-(void)insereErro:(int)index;
+-(void)reset;
 @end

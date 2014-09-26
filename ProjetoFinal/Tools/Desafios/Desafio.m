@@ -115,4 +115,7 @@
 -(int)erros{
     return nErros;
 }
+-(int)retornaTarefaAtual{
+    return tarefaAtual;
+}
 @end
