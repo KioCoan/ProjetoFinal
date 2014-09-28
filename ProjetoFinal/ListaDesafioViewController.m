@@ -37,30 +37,18 @@
     [self.navigationItem setTitle:@"Desafios"];
     [[self.navigationItem backBarButtonItem]setTitle:@""];
     
-    
-    NSShadow *shadow = [NSShadow new];
-    [shadow setShadowColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0]];
-    [shadow setShadowOffset:CGSizeMake(0, 1)];
-    
+   
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:234.0/255.0 green:175.0/255.0 blue:59.0/255.0 alpha:1.0];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-//    [self.navigationController.navigationBar
-//     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor],
-//                              [UIFont fontWithName:FONT_LIGHT size:12]: NSFontAttributeName
-//                              
-//                              }];
-    
     
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
                           [UIColor whiteColor],NSForegroundColorAttributeName, // Cor
-                          [UIFont fontWithName:FONT_LIGHT size:21],NSFontAttributeName, // Font Style
+                          [UIFont fontWithName:FONT_MEDIUM size:25],NSFontAttributeName, // Font Style
                           
                           nil];
     
     [self.navigationController.navigationBar setTitleTextAttributes:dict];
     
-    
-    self.navigationController.navigationBar.translucent = NO;
 
 
 }
