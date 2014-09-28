@@ -33,16 +33,36 @@
     [super viewWillAppear:animated];
     
     titulosDescricoes = [gerenciadorDesafios retornaTitulosEDescricoesDesafios];
-    [[self.navigationController navigationBar] setBarTintColor:[UIColor colorWithRed:234.0/255.0 green:175.0/255.0 blue:59.0/255.0 alpha:1.0]];
+    
+    [self.navigationItem setTitle:@"Desafios"];
+    [[self.navigationItem backBarButtonItem]setTitle:@""];
     
     
+    NSShadow *shadow = [NSShadow new];
+    [shadow setShadowColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0]];
+    [shadow setShadowOffset:CGSizeMake(0, 1)];
     
-    NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                               [UIColor whiteColor],,
-                                               [UIColor blackColor], UITextAttributeTextShadowColor,
-                                               [NSValue valueWithUIOffset:UIOffsetMake(-1, 0)], UITextAttributeTextShadowOffset, nil];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:234.0/255.0 green:175.0/255.0 blue:59.0/255.0 alpha:1.0];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+//    [self.navigationController.navigationBar
+//     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor],
+//                              [UIFont fontWithName:FONT_LIGHT size:12]: NSFontAttributeName
+//                              
+//                              }];
     
-    [self.navigationController.navigationBar setTitleTextAttributes:navbarTitleTextAttributes];
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+                          [UIColor whiteColor],NSForegroundColorAttributeName, // Cor
+                          [UIFont fontWithName:FONT_LIGHT size:21],NSFontAttributeName, // Font Style
+                          
+                          nil];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:dict];
+    
+    
+    self.navigationController.navigationBar.translucent = NO;
+
+
 }
 
 - (void)didReceiveMemoryWarning
