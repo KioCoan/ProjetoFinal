@@ -11,6 +11,7 @@
 @interface DesafioVariavel : NSObject
 {
     float tempoDeResposta;
+    BOOL desafioConcluido;
 }
 
 @property NSString *tituloDesafio, *descricaoDesafio;
@@ -18,4 +19,5 @@
 
 -(id)initWithTempoDeResposta:(float)segundos;
 -(void)instanciaTarefas;
+-(UIColor*)retornaMinhaCor;
 @end

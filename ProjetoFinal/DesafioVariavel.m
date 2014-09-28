@@ -25,5 +25,14 @@
 -(void)instanciaTarefas{
     
 }
+-(UIColor*)retornaMinhaCor{
+    UIColor *minhaCor;
+    if (desafioConcluido) {
+        minhaCor = [UIColor colorWithRed:201/255 green:195/255 blue:191/255 alpha:1];
+    }else{
+        minhaCor = [UIColor colorWithRed:76/255 green:160/255 blue:164/255 alpha:1];
+    }
+    return minhaCor;
+}
 
 @end
