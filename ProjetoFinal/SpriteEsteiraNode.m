@@ -162,14 +162,14 @@
             //MOVE AS CAIXAS, APÓS, LEVANTA A ESTEIRA E ASSIM INICIA O DESAFIO
             [c runAction:mover completion:^{
                 [c removeAllActions];
-                [c setPosition:CGPointMake(posicaoInicial + posicaoFinal, c.position.y)];
+                //[c setPosition:CGPointMake(posicaoInicial + posicaoFinal, c.position.y)];
                 [[self myDelegate] caixasPosicionadasParaDesafio];
             }];
         
         }else{
             [c runAction:mover completion:^{
                 [c removeAllActions];
-                [c setPosition:CGPointMake(posicaoInicial + posicaoFinal, c.position.y)];
+                //[c setPosition:CGPointMake(posicaoInicial + posicaoFinal, c.position.y)];
             }];
         }
         
