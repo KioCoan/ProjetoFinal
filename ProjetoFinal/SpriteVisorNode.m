@@ -7,6 +7,7 @@
 //
 
 #import "SpriteVisorNode.h"
+#import "GerenciadorDesafios.h"
 
 @implementation SpriteVisorNode
 
@@ -16,7 +17,7 @@
     if(self){
         [self setSize:CGSizeMake(245, 245)];
         
-        lblValor = [[SKLabelNode alloc] init];
+        lblValor = [[SKLabelNode alloc] initWithFontNamed:FONT_MEDIUM];
         [lblValor setFontColor:[SKColor blackColor]];
         [lblValor setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
         [lblValor setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];

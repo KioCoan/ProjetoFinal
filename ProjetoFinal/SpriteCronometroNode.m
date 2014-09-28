@@ -25,7 +25,7 @@
     if(self){
         
         //INICIALMENTE A BARRA DE TEMPO COMEÇA BEM PEQUENA MAS EM SEGUIDA JÁ INICIA UMA ANIMAÇÃO PRA FICAR TOTALMENTE PREENCHIDA
-        [self setSize:CGSizeMake(1, self.size.height)];
+        [self setSize:CGSizeMake(0, self.size.height)];
         
         tempoTotal = tempo;
         widthSize = 768;
@@ -39,7 +39,7 @@
 
 -(SKAction*)gerarAnimacaoPrepararCronometro{
     //CÁLCULO PARA MANTER A BARRINHA SEMPRE NO CANTO DIREITO
-    int posicaoFinal = -((widthSize - self.size.width) / 2);
+    float posicaoFinal = -((widthSize - self.size.width) / 2);
     
     SKAction *mover = [SKAction moveByX:posicaoFinal y:0 duration:1];
     SKAction *resize = [SKAction resizeToWidth:widthSize duration:1];
@@ -50,7 +50,7 @@
 
 -(void)inicializarAnimacaoIniciarContagem{
     SKAction *mover = [SKAction moveByX:widthSize / 2 y:0 duration:tempoTotal];
-    SKAction *resize = [SKAction resizeToWidth:1 duration:tempoTotal];
+    SKAction *resize = [SKAction resizeToWidth:0 duration:tempoTotal];
     
     //ANIMAÇÃO DO TIPO GROUP, EXECUTA UM VETOR DE ANIMAÇÕES AO MESMO TEMPO
     acaoIniciarContagem = [SKAction group:@[mover, resize]];

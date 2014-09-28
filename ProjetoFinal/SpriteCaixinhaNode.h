@@ -8,6 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+
 @protocol SpriteCaixinhaDelegate <NSObject>
 -(void)caixaFoiClicada;
 -(void)caixaClicadaDoTipo:(NSString*)tipo;

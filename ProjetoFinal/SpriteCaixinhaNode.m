@@ -7,7 +7,7 @@
 //
 
 #import "SpriteCaixinhaNode.h"
-
+#import "GerenciadorDesafios.h"
 
 @implementation SpriteCaixinhaNode
 
@@ -17,7 +17,7 @@
     if(self){
         meuIndex = posicao;
         
-        lblTipo = [[SKLabelNode alloc] init];
+        lblTipo = [[SKLabelNode alloc] initWithFontNamed:FONT_LIGHT];
         [lblTipo setText:tipo];
         [lblTipo setFontColor:[SKColor blackColor]];
         [lblTipo setFontSize:self.size.width / lblTipo.frame.size.width + 25];

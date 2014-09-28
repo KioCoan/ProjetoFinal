@@ -37,7 +37,7 @@
         [self addChild:nodeEsteira];
         
         nodeCronometro = [[SpriteCronometroNode alloc] initWithTempoTotalEmSegundos:6];
-        [nodeCronometro setPosition:CGPointMake(self.size.width - 4, self.size.height - 70)];
+        [nodeCronometro setPosition:CGPointMake(self.size.width, self.size.height - 70)];
         [nodeCronometro setMyDelegate:self];
         [self addChild:nodeCronometro];
         

@@ -9,6 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "Gerador.h"
 
+
 @protocol SpriteVisorDelegate <NSObject>
 -(void)respostaCorretaFinalizado;
 -(void)respostaErradaFinalizado;
