@@ -39,6 +39,7 @@ NSString* const FONT_MEDIUM = @"CooperHewitt-Medium";
 
 -(void)criaDesafios{
     
+    [meusDesafios addObject:[[DesafioVariavel alloc] initWithTempoDeResposta:5]]; // DESAFIO 1 - LÓGICO FÁCIL
     
     [meusDesafios addObject:[self retornaDesafioNivel:1 tipo:@"logico" nTarefas:10]]; // DESAFIO 1 - LÓGICO FÁCIL
     [meusDesafios addObject:[self retornaDesafioNivel:1 tipo:@"relacional" nTarefas:10]]; // DESAFIO 2 - RELACIONAL FÁCIL
@@ -91,6 +92,8 @@ NSString* const FONT_MEDIUM = @"CooperHewitt-Medium";
     
     switch (desafioAtual) {
         case 0:
+            self.cenaAtual = [[DesafioVariavelScene alloc] initWithSize:CGSizeMake(768, 1024)];
+            break;
         case 1:
         case 2:
         case 3:
@@ -111,10 +114,12 @@ NSString* const FONT_MEDIUM = @"CooperHewitt-Medium";
     desafioAtual = desafio;
     NSLog(@"%d", desafioAtual);
 }
--(NSMutableArray*)retornaDesafioSelacionado{
-    
-    return [[meusDesafios objectAtIndex:desafioAtual] retornaTarefas];
-}
+
+//NÃO É UTILIZADO
+//-(NSMutableArray*)retornaDesafioSelacionado{
+//    
+//    return [[meusDesafios objectAtIndex:desafioAtual] retornaTarefas];
+//}
 
 -(void)instanciaTarefas{
     [[meusDesafios objectAtIndex:desafioAtual] instanciaTarefas];
@@ -164,6 +169,10 @@ NSString* const FONT_MEDIUM = @"CooperHewitt-Medium";
 -(int)retornaErrosDesafioAtual{
     return [[meusDesafios objectAtIndex:desafioAtual]erros];
 }
-
-
+-(NSString*)retornaTipoDesafioAtual{
+    return [[meusDesafios objectAtIndex:desafioAtual]tipo];
+}
+-(UIColor*)retornaCorDesafioAtual{
+    return [[meusDesafios objectAtIndex:desafioAtual]retornaMinhaCor];
+}
 @end

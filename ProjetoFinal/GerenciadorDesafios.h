@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DesafioVariavel.h"
+#import "DesafioVariavelScene.h"
 #import "DesafioOperadores.h"
 #import "DesafiosOperadoresScene.h"
 extern NSString* const FONT_LIGHT;
@@ -23,8 +25,11 @@ extern NSString* const FONT_MEDIUM;
 + (GerenciadorDesafios*)sharedGerenciador;
 + (id)allocWithZone:(struct _NSZone *)zone;
 
+
+//NÃO É UTILIZADO
+//-(NSMutableArray*)retornaDesafioSelacionado;
+
 -(void)selecionaDesafio:(int)desafio;
--(NSMutableArray*)retornaDesafioSelacionado;
 -(void)instanciaTarefas;
 -(NSMutableArray*)retornaTitulosEDescricoesDesafios;
 -(DesafioOperadores*)retornaTarefasParaDesafio;
@@ -36,4 +41,9 @@ extern NSString* const FONT_MEDIUM;
 -(void)resetaCena;
 -(int)retornaAcertosDesafioAtual;
 -(int)retornaErrosDesafioAtual;
+-(NSString*)retornaTipoDesafioAtual;
+-(UIColor*)retornaCorDesafioAtual;
+
+
+
 @end

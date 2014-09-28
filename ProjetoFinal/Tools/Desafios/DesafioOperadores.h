@@ -13,31 +13,41 @@
 {
     int nTasks, nivel, tarefaAtual, nAcertos, nErros;
     NSMutableArray *listaTarefas;
-    NSString *tipo;
     BOOL desafioConcluido;
     
 }
 @property NSString *tituloDesafio, *descricaoDesafio;
-
+@property NSString *tipo;
 
 
 -(id)initWithLevel:(int)nivel andType:(NSString*)tipo andTasks:(int)tasks;
 -(int)nTarefas;
--(NSString*)parte1;
--(NSString*)operador;
--(NSString*)parte2;
--(NSString*)resultado;
 -(BOOL)incrementaTarefa;
 -(BOOL)decrementaTarefa;
 -(NSMutableArray*)retornaTarefas;
 -(void)instanciaTarefas;
 -(void)montaDesafioNivel:(int)level tipo:(NSString*)type nTarefas:(int)nTarefas;
--(BOOL)respostaDupla;
--(BOOL)corrige:(NSString*)opcao;
 -(void)finalizaDesafio;
 -(BOOL)desafioFinalizado;
 -(void)restart;
 -(int)acertos;
 -(int)erros;
 -(int)retornaTarefaAtual;
+<<<<<<< HEAD
+=======
+-(UIColor*)retornaMinhaCor;
+
+>>>>>>> FETCH_HEAD
+
+
+-(NSString*)parte1;
+-(NSString*)operador;
+-(NSString*)parte2;
+-(NSString*)resultado;
+
+
+
+-(BOOL)respostaDupla;
+-(BOOL)corrige:(NSString*)opcao;
+
 @end

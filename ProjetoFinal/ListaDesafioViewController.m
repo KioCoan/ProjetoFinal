@@ -7,7 +7,7 @@
 //
 
 #import "ListaDesafioViewController.h"
-
+#import "CustomizadaTableViewCell.h"
 @interface ListaDesafioViewController ()
 
 @end
@@ -43,13 +43,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    cell.textLabel.text = [[titulosDescricoes objectAtIndex:indexPath.row]valueForKey:@"titulo"];
-    cell.detailTextLabel.text = [[titulosDescricoes objectAtIndex:indexPath.row]valueForKey:@"descricao"];
+    CustomizadaTableViewCell *cell = (CustomizadaTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    //NSLog(@"%@", cell.name.text);
+    
+    cell.titulo.text = [[titulosDescricoes objectAtIndex:indexPath.row]valueForKey:@"titulo"];
+    cell.descricao.text = [[titulosDescricoes objectAtIndex:indexPath.row]valueForKey:@"descricao"];
+    
+    
+//    cell.textLabel.text = [[titulosDescricoes objectAtIndex:indexPath.row]valueForKey:@"titulo"];
+//    cell.detailTextLabel.text = [[titulosDescricoes objectAtIndex:indexPath.row]valueForKey:@"descricao"];
+    
     
     //VERIFICA SE A O EXERCÍCIO DA LINHA SELECIONADA FOI COMPLETADO PARA INSERIR OU NÃO A IMAGEM
 //    if([self verificarExercicioCompleto:(int)indexPath.row]){
@@ -57,6 +66,10 @@
 //        [imageView setFrame:CGRectMake(cell.frame.size.width - 50, 15, 35, 35)];
 //        [cell addSubview:imageView];
 //    }
+    
+    
+    
+    
     
     return cell;
     
@@ -94,4 +107,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 200;
 }
+
+
 @end
