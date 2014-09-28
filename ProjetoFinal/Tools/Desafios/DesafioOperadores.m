@@ -30,7 +30,7 @@
 }
 -(void)montaDesafioNivel:(int)level tipo:(NSString*)type nTarefas:(int)nTarefas{
     nivel = level;
-    tipo = type;
+    self.tipo = type;
     nTasks = nTarefas;
     tarefaAtual = 0;
 }
@@ -75,7 +75,7 @@
 }
 -(void)instanciaTarefas{
     for (int i = 0; i<nTasks; i++) {
-        [listaTarefas addObject:[[Expressao alloc] initWithNivel:nivel andOperator:tipo]];
+        [listaTarefas addObject:[[Expressao alloc] initWithNivel:nivel andOperator:self.tipo]];
     }
 }
 -(BOOL)respostaDupla{
@@ -113,5 +113,14 @@
 }
 -(int)retornaTarefaAtual{
     return tarefaAtual;
+}
+-(UIColor*)retornaMinhaCor{
+    UIColor *minhaCor;
+    if (desafioConcluido) {
+        minhaCor = [UIColor colorWithRed:201/255 green:195/255 blue:191/255 alpha:1];
+    }else{
+        minhaCor = [UIColor colorWithRed:76/255 green:160/255 blue:164/255 alpha:1];
+    }
+    return minhaCor;
 }
 @end

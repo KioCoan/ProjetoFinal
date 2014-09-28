@@ -164,6 +164,10 @@ NSString* const FONT_MEDIUM = @"CooperHewitt-Medium";
 -(int)retornaErrosDesafioAtual{
     return [[meusDesafios objectAtIndex:desafioAtual]erros];
 }
-
-
+-(NSString*)retornaTipoDesafioAtual{
+    return [[meusDesafios objectAtIndex:desafioAtual]tipo];
+}
+-(UIColor*)retornaCorDesafioAtual{
+    return [[meusDesafios objectAtIndex:desafioAtual]retornaMinhaCor];
+}
 @end

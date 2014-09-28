@@ -13,12 +13,11 @@
 {
     int nTasks, nivel, tarefaAtual, nAcertos, nErros;
     NSMutableArray *listaTarefas;
-    NSString *tipo;
     BOOL desafioConcluido;
     
 }
 @property NSString *tituloDesafio, *descricaoDesafio;
-
+@property NSString *tipo;
 
 
 -(id)initWithLevel:(int)nivel andType:(NSString*)tipo andTasks:(int)tasks;
@@ -34,6 +33,8 @@
 -(int)acertos;
 -(int)erros;
 -(int)retornaTarefaAtual;
+-(UIColor*)retornaMinhaCor;
+
 
 
 -(NSString*)parte1;

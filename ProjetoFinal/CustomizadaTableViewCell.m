@@ -9,7 +9,6 @@
 #import "CustomizadaTableViewCell.h"
 #import "GerenciadorDesafios.h"
 @implementation CustomizadaTableViewCell
-
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -27,10 +26,11 @@
 
 -(void)setNeedsLayout{
     [super setNeedsLayout];
+    GerenciadorDesafios *gerenciador = [GerenciadorDesafios sharedGerenciador];
     [[self titulo]setFont:[UIFont fontWithName:FONT_LIGHT size:40]];
     [[self descricao]setFont:[UIFont fontWithName:FONT_LIGHT size:25]];
-    
-    
+    self.contentView.backgroundColor = [gerenciador retornaCorDesafioAtual];
+    NSLog(@"%@",[gerenciador retornaCorDesafioAtual]);
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
