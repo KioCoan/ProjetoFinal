@@ -763,8 +763,6 @@
 			children = (
 				BD6B556419D7D6CE00BC0E5F /* Variavel */,
 				12719D4519CB5734006B1374 /* Operadores */,
-				A5F38EFB19C711C900D337A4 /* DesafioOperadores.h */,
-				A5F38EFC19C711C900D337A4 /* DesafioOperadores.m */,
 				12428D4319C9FC240012B2B6 /* GerenciadorDesafios.h */,
 				12428D4419C9FC240012B2B6 /* GerenciadorDesafios.m */,
 				A5CBEB9A19D4AFF200AC879D /* ProgressoDesafioBar.h */,
@@ -776,6 +774,8 @@
 		12719D4519CB5734006B1374 /* Operadores */ = {
 			isa = PBXGroup;
 			children = (
+				A5F38EFB19C711C900D337A4 /* DesafioOperadores.h */,
+				A5F38EFC19C711C900D337A4 /* DesafioOperadores.m */,
 				A5BE096719C5E87100F7110E /* ParteDaExpressao.h */,
 				A5BE096819C5E87100F7110E /* ParteDaExpressao.m */,
 				A5F38EF819C5F6B700D337A4 /* Expressao.h */,

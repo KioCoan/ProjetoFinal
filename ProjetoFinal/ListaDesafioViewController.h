@@ -13,11 +13,9 @@
 {
     GerenciadorDesafios* gerenciadorDesafios;
     NSMutableArray* titulosDescricoes;
-    __weak IBOutlet UITextView *txtDescricao;
-    __weak IBOutlet UIButton *btnDesafio;
 }
 
-- (IBAction)acaoBtnDesafio:(id)sender;
+
 
 
 @end

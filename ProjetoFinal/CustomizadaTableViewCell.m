@@ -28,14 +28,8 @@
 -(void)setNeedsLayout{
     [super setNeedsLayout];
 
-    [[self titulo]setFont:[UIFont fontWithName:FONT_LIGHT size:40]];
-    [[self descricao]setFont:[UIFont fontWithName:FONT_LIGHT size:25]];
-
-    GerenciadorDesafios *gerenciador = [GerenciadorDesafios sharedGerenciador];
-    [[self titulo]setFont:[UIFont fontWithName:FONT_LIGHT size:40]];
-    [[self descricao]setFont:[UIFont fontWithName:FONT_LIGHT size:25]];
-    //self.contentView.backgroundColor = [gerenciador retornaCorDesafioAtual];
-    NSLog(@"%@",[gerenciador retornaCorDesafioAtual]);
+    
+        
 
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -43,6 +37,24 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (IBAction)acaoBtnGo:(id)sender {
+    GerenciadorDesafios *gerenciador = [GerenciadorDesafios sharedGerenciador];
+    [gerenciador instanciaTarefas];
+}
+
+-(void)mudaCorDeFundo:(int)index{
+    
+    GerenciadorDesafios *gerenciador = [GerenciadorDesafios sharedGerenciador];
+    UIColor *cor = [gerenciador retornaCorDesafio:index];
+    [[self titulo]setFont:[UIFont fontWithName:FONT_LIGHT size:40]];
+    self.titulo.textColor = [UIColor whiteColor];
+    [[self descricao]setFont:[UIFont fontWithName:FONT_LIGHT size:25]];
+    self.descricao.textColor = [UIColor whiteColor];
+    self.contentView.backgroundColor = cor;
+    
+    
 }
 
 @end

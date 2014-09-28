@@ -112,7 +112,6 @@ NSString* const FONT_MEDIUM = @"CooperHewitt-Medium";
 
 -(void)selecionaDesafio:(int)desafio{
     desafioAtual = desafio;
-    NSLog(@"%d", desafioAtual);
 }
 
 //NÃO É UTILIZADO
@@ -172,7 +171,8 @@ NSString* const FONT_MEDIUM = @"CooperHewitt-Medium";
 -(NSString*)retornaTipoDesafioAtual{
     return [[meusDesafios objectAtIndex:desafioAtual]tipo];
 }
--(UIColor*)retornaCorDesafioAtual{
-    return [[meusDesafios objectAtIndex:desafioAtual]retornaMinhaCor];
+-(UIColor*)retornaCorDesafio:(int)index{
+    UIColor *cor = [[meusDesafios objectAtIndex:index]retornaMinhaCor];
+    return cor;
 }
 @end

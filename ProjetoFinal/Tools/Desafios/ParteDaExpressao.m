@@ -19,7 +19,6 @@
         [self montaParte];
         
     }
-   // NSLog(@"%@ = %@",[self saida],[self resultado]);
     return self;
 }
 

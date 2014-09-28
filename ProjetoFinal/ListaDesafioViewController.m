@@ -33,8 +33,16 @@
     [super viewWillAppear:animated];
     
     titulosDescricoes = [gerenciadorDesafios retornaTitulosEDescricoesDesafios];
+    [[self.navigationController navigationBar] setBarTintColor:[UIColor colorWithRed:234.0/255.0 green:175.0/255.0 blue:59.0/255.0 alpha:1.0]];
     
     
+    
+    NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                               [UIColor whiteColor],,
+                                               [UIColor blackColor], UITextAttributeTextShadowColor,
+                                               [NSValue valueWithUIOffset:UIOffsetMake(-1, 0)], UITextAttributeTextShadowOffset, nil];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:navbarTitleTextAttributes];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,30 +55,14 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
     CustomizadaTableViewCell *cell = (CustomizadaTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    //NSLog(@"%@", cell.name.text);
     
     cell.titulo.text = [[titulosDescricoes objectAtIndex:indexPath.row]valueForKey:@"titulo"];
     cell.descricao.text = [[titulosDescricoes objectAtIndex:indexPath.row]valueForKey:@"descricao"];
-    
-    
-//    cell.textLabel.text = [[titulosDescricoes objectAtIndex:indexPath.row]valueForKey:@"titulo"];
-//    cell.detailTextLabel.text = [[titulosDescricoes objectAtIndex:indexPath.row]valueForKey:@"descricao"];
-    
-    
-    //VERIFICA SE A O EXERCÍCIO DA LINHA SELECIONADA FOI COMPLETADO PARA INSERIR OU NÃO A IMAGEM
-//    if([self verificarExercicioCompleto:(int)indexPath.row]){
-//        UIImageView* imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"check.png"]];
-//        [imageView setFrame:CGRectMake(cell.frame.size.width - 50, 15, 35, 35)];
-//        [cell addSubview:imageView];
-//    }
-    
-    
-    
-    
-    
+    [cell mudaCorDeFundo:(int)indexPath.row];
+    //tableView.separatorColor = [cell cor];
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     return cell;
     
 }
@@ -79,29 +71,18 @@
     return [titulosDescricoes count];
 }
 
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CustomizadaTableViewCell *cell = (CustomizadaTableViewCell*) [tableView cellForRowAtIndexPath:indexPath] ;
+    [cell.btnGo setHidden:YES];
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    txtDescricao.text = [[titulosDescricoes objectAtIndex:indexPath.row]valueForKey:@"descricao"];
-    
-    
-    [btnDesafio setHidden:NO];
-    
-    //VERIFICA SE A O EXERCÍCIO DA LINHA SELECIONADA FOI COMPLETADO PARA DEFINIR O TEXTO CORRETO
-//    if([self verificarExercicioCompleto:(int)indexPath.row]){
-//        [btnExercitar setTitle:@"Refazer" forState:UIControlStateNormal];
-//        
-//    }else{
-//        [btnExercitar setTitle:@"Iniciar" forState:UIControlStateNormal];
-//    }
-    
     [gerenciadorDesafios selecionaDesafio:(int)indexPath.row];
+    CustomizadaTableViewCell *cell = (CustomizadaTableViewCell*) [tableView cellForRowAtIndexPath:indexPath] ;
+    [cell.btnGo setHidden:NO];
     
 }
 
-
-- (IBAction)acaoBtnDesafio:(id)sender {
-    [gerenciadorDesafios instanciaTarefas];
-}
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

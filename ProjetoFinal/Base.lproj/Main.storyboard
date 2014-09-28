@@ -185,7 +185,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="sH3-ai-SFe">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="745"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="200" id="00d-pL-g7a" customClass="CustomizadaTableViewCell">
@@ -201,8 +201,8 @@
                                                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="40"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descricao" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="288" translatesAutoresizingMaskIntoConstraints="NO" id="Oq8-uN-v45">
-                                                    <rect key="frame" x="166" y="93" width="288" height="77"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descricao" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="404" translatesAutoresizingMaskIntoConstraints="NO" id="Oq8-uN-v45">
+                                                    <rect key="frame" x="166" y="94" width="404" height="77"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
@@ -211,21 +211,26 @@
                                                     <rect key="frame" x="11" y="20" width="120" height="128"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="divisoria.png" translatesAutoresizingMaskIntoConstraints="NO" id="JZk-iu-Z6Q">
-                                                    <rect key="frame" x="0.0" y="179" width="768" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tY4-e7-UOG">
-                                                    <rect key="frame" x="586" y="-4" width="182" height="183"/>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tY4-e7-UOG">
+                                                    <rect key="frame" x="586" y="-1" width="182" height="183"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="botao-go.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="acaoBtnGo:" destination="00d-pL-g7a" eventType="touchUpInside" id="oxh-m7-305"/>
+                                                        <segue destination="cL3-ra-kgk" kind="push" id="nuM-W4-NUT"/>
+                                                    </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="divisoria.png" translatesAutoresizingMaskIntoConstraints="NO" id="JZk-iu-Z6Q">
+                                                    <rect key="frame" x="0.0" y="180" width="768" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="btnGo" destination="tY4-e7-UOG" id="QeV-Bw-nhe"/>
                                             <outlet property="descricao" destination="Oq8-uN-v45" id="6Py-0n-Ahg"/>
                                             <outlet property="titulo" destination="Vch-oV-TkW" id="Gih-Rs-rQf"/>
                                         </connections>
@@ -236,43 +241,12 @@
                                     <outlet property="delegate" destination="Laj-yx-eaG" id="O2H-2y-A2Z"/>
                                 </connections>
                             </tableView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8U-cK-P8X">
-                                <rect key="frame" x="557" y="801" width="191" height="193"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="35"/>
-                                <state key="normal" backgroundImage="icone-iniciar.png">
-                                    <color key="titleColor" red="0.97722833809999998" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="acaoBtnDesafio:" destination="Laj-yx-eaG" eventType="touchUpInside" id="nTl-I8-rhj"/>
-                                    <segue destination="cL3-ra-kgk" kind="push" id="gY3-HG-1DO"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icone-exercicio.png" translatesAutoresizingMaskIntoConstraints="NO" id="UZ9-iQ-tPY">
-                                <rect key="frame" x="20" y="761" width="55" height="55"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fundo-descricao.png" translatesAutoresizingMaskIntoConstraints="NO" id="qWN-Pb-L2h">
-                                <rect key="frame" x="20" y="801" width="529" height="193"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WjA-N2-cyD">
-                                <rect key="frame" x="37" y="814" width="495" height="180"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descrição" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7m-nc-pQk">
-                                <rect key="frame" x="54" y="767" width="148" height="44"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Desafios" id="iHi-iQ-lw0"/>
-                    <connections>
-                        <outlet property="btnDesafio" destination="I8U-cK-P8X" id="lke-GF-XFd"/>
-                        <outlet property="txtDescricao" destination="WjA-N2-cyD" id="MZm-T0-I11"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Desafios" id="iHi-iQ-lw0">
+                        <barButtonItem key="backBarButtonItem" title="   " id="CuO-PB-wST"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOL-iF-5NB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

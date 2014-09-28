@@ -28,9 +28,9 @@
 -(UIColor*)retornaMinhaCor{
     UIColor *minhaCor;
     if (desafioConcluido) {
-        minhaCor = [UIColor colorWithRed:201/255 green:195/255 blue:191/255 alpha:1];
+        minhaCor = [UIColor colorWithRed:201.0/255.0 green:195.0/255.0 blue:191.0/255.0 alpha:1.0];
     }else{
-        minhaCor = [UIColor colorWithRed:76/255 green:160/255 blue:164/255 alpha:1];
+        minhaCor = [UIColor colorWithRed:64.0/255.0 green:94.0/255.0 blue:143.0/255.0 alpha:1.0];
     }
     return minhaCor;
 }

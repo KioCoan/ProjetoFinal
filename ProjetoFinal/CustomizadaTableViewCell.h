@@ -13,8 +13,10 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *descricao;
 @property (strong, nonatomic) IBOutlet UILabel *titulo;
+@property (weak, nonatomic) IBOutlet UIButton *btnGo;
 
-
+- (IBAction)acaoBtnGo:(id)sender;
+-(void)mudaCorDeFundo:(int)index;
 
 
 @end

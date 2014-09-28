@@ -42,7 +42,7 @@ extern NSString* const FONT_MEDIUM;
 -(int)retornaAcertosDesafioAtual;
 -(int)retornaErrosDesafioAtual;
 -(NSString*)retornaTipoDesafioAtual;
--(UIColor*)retornaCorDesafioAtual;
+-(UIColor*)retornaCorDesafio:(int)index;
 
 
 
