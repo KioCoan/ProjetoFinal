@@ -33,7 +33,7 @@
 }
 
 -(void)inicializarSpritesVisor{
-    acaoCorreto = [self gerarActionComSpritesDeNome:@"animation_correct-" quantidade:11];
+    acaoCorreto = [self gerarActionComSpritesDeNome:@"animation_correct-" quantidade:14];
     [acaoCorreto setTimingMode:SKActionTimingEaseIn];
     acaoErrado = [self gerarActionComSpritesDeNome:@"animation_wrong-" quantidade:11];
     [acaoErrado setTimingMode:SKActionTimingEaseOut];

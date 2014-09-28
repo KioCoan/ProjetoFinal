@@ -248,6 +248,9 @@
 		BDEE046E19A0162000EAC8ED /* icone-iniciar.png in Resources */ = {isa = PBXBuildFile; fileRef = BDEE046D19A0162000EAC8ED /* icone-iniciar.png */; };
 		BDEE047019A0224D00EAC8ED /* fundo-descricao.png in Resources */ = {isa = PBXBuildFile; fileRef = BDEE046F19A0224D00EAC8ED /* fundo-descricao.png */; };
 		BDEE047219A06C9900EAC8ED /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = BDEE047119A06C9900EAC8ED /* check.png */; };
+		BDF1A4E219D87FFF009A2C31 /* animation_correct-12.png in Resources */ = {isa = PBXBuildFile; fileRef = BDF1A4DF19D87FFF009A2C31 /* animation_correct-12.png */; };
+		BDF1A4E319D87FFF009A2C31 /* animation_correct-13.png in Resources */ = {isa = PBXBuildFile; fileRef = BDF1A4E019D87FFF009A2C31 /* animation_correct-13.png */; };
+		BDF1A4E419D87FFF009A2C31 /* animation_correct-14.png in Resources */ = {isa = PBXBuildFile; fileRef = BDF1A4E119D87FFF009A2C31 /* animation_correct-14.png */; };
 		BDF8ADEF197B255C00BA5B8A /* parte-resultado2.png in Resources */ = {isa = PBXBuildFile; fileRef = BDF8ADE7197B255C00BA5B8A /* parte-resultado2.png */; };
 		BDF8ADF0197B255C00BA5B8A /* parte-resultado3.png in Resources */ = {isa = PBXBuildFile; fileRef = BDF8ADE8197B255C00BA5B8A /* parte-resultado3.png */; };
 		BDF8ADF1197B255C00BA5B8A /* parte-resultado4.png in Resources */ = {isa = PBXBuildFile; fileRef = BDF8ADE9197B255C00BA5B8A /* parte-resultado4.png */; };
@@ -603,6 +606,9 @@
 		BDEE046D19A0162000EAC8ED /* icone-iniciar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icone-iniciar.png"; path = "Imagens/icone-iniciar.png"; sourceTree = "<group>"; };
 		BDEE046F19A0224D00EAC8ED /* fundo-descricao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fundo-descricao.png"; path = "Imagens/fundo-descricao.png"; sourceTree = "<group>"; };
 		BDEE047119A06C9900EAC8ED /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = check.png; path = Imagens/check.png; sourceTree = "<group>"; };
+		BDF1A4DF19D87FFF009A2C31 /* animation_correct-12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_correct-12.png"; sourceTree = "<group>"; };
+		BDF1A4E019D87FFF009A2C31 /* animation_correct-13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_correct-13.png"; sourceTree = "<group>"; };
+		BDF1A4E119D87FFF009A2C31 /* animation_correct-14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_correct-14.png"; sourceTree = "<group>"; };
 		BDF8ADE7197B255C00BA5B8A /* parte-resultado2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parte-resultado2.png"; path = "Imagens/Sprites/operadores/Parte Resultado/parte-resultado2.png"; sourceTree = "<group>"; };
 		BDF8ADE8197B255C00BA5B8A /* parte-resultado3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parte-resultado3.png"; path = "Imagens/Sprites/operadores/Parte Resultado/parte-resultado3.png"; sourceTree = "<group>"; };
 		BDF8ADE9197B255C00BA5B8A /* parte-resultado4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parte-resultado4.png"; path = "Imagens/Sprites/operadores/Parte Resultado/parte-resultado4.png"; sourceTree = "<group>"; };
@@ -1289,6 +1295,9 @@
 		BD6B553419D7D29400BC0E5F /* Sprites Correto */ = {
 			isa = PBXGroup;
 			children = (
+				BDF1A4DF19D87FFF009A2C31 /* animation_correct-12.png */,
+				BDF1A4E019D87FFF009A2C31 /* animation_correct-13.png */,
+				BDF1A4E119D87FFF009A2C31 /* animation_correct-14.png */,
 				BD6B556219D7D67700BC0E5F /* animation_correct-11.png */,
 				BD6B553519D7D29400BC0E5F /* animation_correct-1.png */,
 				BD6B553619D7D29400BC0E5F /* animation_correct-10.png */,
@@ -1564,7 +1573,7 @@
 				ORGANIZATIONNAME = "SENAC - iOS";
 				TargetAttributes = {
 					120E8F72192FC0A200CDEF95 = {
-						DevelopmentTeam = AAXRVGUSKH;
+						DevelopmentTeam = RB36YDUG62;
 					};
 					120E8F93192FC0A200CDEF95 = {
 						TestTargetID = 120E8F72192FC0A200CDEF95;
@@ -1708,6 +1717,7 @@
 				A521FEEB1993F6B200D28627 /* valor2-amarelo.png in Resources */,
 				BDC757A3196787E700DB8380 /* abrir-caixa6.png in Resources */,
 				BD6B552C19D7D26600BC0E5F /* caixa3-cheia.png in Resources */,
+				BDF1A4E319D87FFF009A2C31 /* animation_correct-13.png in Resources */,
 				BDC580FC19A690CE003A1EAF /* fundo-animaVariavel.png in Resources */,
 				BDC40741199B1E18006CD7AE /* sprite-introducao4.png in Resources */,
 				BDD22F0C19A6F4A70043AA02 /* img-tutorial2.png in Resources */,
@@ -1725,6 +1735,7 @@
 				BDD22F1019A6F4A70043AA02 /* img-tutorial7.png in Resources */,
 				BDC757A2196787E700DB8380 /* abrir-caixa5.png in Resources */,
 				BD325A461995EB7D00D15DBF /* correto.aiff in Resources */,
+				BDF1A4E419D87FFF009A2C31 /* animation_correct-14.png in Resources */,
 				BDC4073E199B1E18006CD7AE /* sprite-introducao1.png in Resources */,
 				84B237B319D352F3003EC749 /* MenuEditarBotao.png in Resources */,
 				12C02BD619D612180015AF10 /* preferencias.png in Resources */,
@@ -1755,6 +1766,7 @@
 				A5CBEB9219D20E1B00AC879D /* Desafio-Operadores-Operador.png in Resources */,
 				BDF8AE02197B258C00BA5B8A /* parte-valores2.png in Resources */,
 				12C02BDC19D6135D0015AF10 /* botao-preferencias.png in Resources */,
+				BDF1A4E219D87FFF009A2C31 /* animation_correct-12.png in Resources */,
 				BDD22F0F19A6F4A70043AA02 /* img-tutorial5.png in Resources */,
 				8431DA7219CA28FD0076EBBA /* livre-menu.png in Resources */,
 				BD6D7C0119A7E5AB0022DF2A /* img-tutorial.png in Resources */,
