@@ -65,11 +65,7 @@
     [self runAction:moverEsteira completion:^{
         [[self myDelegate] animacaoEsteiraDeEntradaFinalizado];
         
-        [nodePistao runAction:moverPistao completion:^{
-            [nodeEsteira removeAllActions];
-            [nodePistao removeAllActions];
-            
-        }];
+        [nodePistao runAction:moverPistao];
     }];
     
 }
@@ -80,6 +76,7 @@
     
     for (SpriteCaixinhaNode *c in vtCaixas) {
         [c setPosition:posicaoCaixa];
+        
         
         //DISTANCIA PADRÃO ENTRE AS CAIXAS
         posicaoCaixa.x += 245;
@@ -95,34 +92,10 @@
 -(void)testeAntiBug{
     SpriteCaixinhaNode *caixa = [vtCaixas objectAtIndex:1];
     
-    NSLog(@"x: %f - y: %f", caixa.position.x, caixa.position.y);
+    NSLog(@"x: %f", caixa.position.x);
 }
 
--(void)iniciarAnimacaoFimDoDesafio{
-    int posicaoFinal = 710;
-    int contador = 0;
-    SKAction *mover;
-    
-    for (SpriteCaixinhaNode *c in vtCaixas) {
-        mover = [SKAction moveToX:c.position.x + posicaoFinal duration:1.3];
-        [mover setTimingMode:SKActionTimingEaseIn];
-        contador++;
-        
-        if(contador == 3){
-            [c runAction:mover completion:^{
-                [c removeAllActions];
-                [self posicionarCaixasInicialmente];
-                [[self myDelegate] desafioAtualTerminou];
-            }];
-        
-        }else{
-            [c runAction:mover completion:^{
-                [c removeAllActions];
-            }];
-        }
-        
-    }
-}
+
 
 //ESTE MÉTODO PEGA OS TIPOS DE DADOS QUE FORAM SORTEADOS PELAS CAIXAS  PARA ENVIÁ-LAS PARA O DELEGATE
 -(void)iniciarAnimacaoDesafio{
@@ -144,37 +117,39 @@
 }
 
 
--(void)posicionarCaixasParaDesafio{
-    int posicaoFinal = 695;
-    int posicaoInicial;
-    int contador = 0;
-    
-    SKAction *mover;
-    
+-(void)iniciarAnimacaoFimDoDesafio{
+    int posicaoFinal = 710;
+
+    //ANIMAÇÃO QUE MOVE AS CAIXAS PARA QUE ELAS SAIAM DA TELA
     for (SpriteCaixinhaNode *c in vtCaixas) {
-        //ANIMAÇÃO QUE MOVE AS CAIXAS PARA QUE ELAS APAREÇAM NA TELA
-        mover = [SKAction moveToX:c.position.x + posicaoFinal duration:1.3];
-        [mover setTimingMode:SKActionTimingEaseOut];
-        posicaoInicial = c.position.x;
-        contador++;
         
-        if(contador == 3){
-            //MOVE AS CAIXAS, APÓS, LEVANTA A ESTEIRA E ASSIM INICIA O DESAFIO
-            [c runAction:mover completion:^{
-                [c removeAllActions];
-                //[c setPosition:CGPointMake(posicaoInicial + posicaoFinal, c.position.y)];
-                [[self myDelegate] caixasPosicionadasParaDesafio];
-            }];
-        
-        }else{
-            [c runAction:mover completion:^{
-                [c removeAllActions];
-                //[c setPosition:CGPointMake(posicaoInicial + posicaoFinal, c.position.y)];
-            }];
-        }
-        
+        //É PASSADO PRA CAIA APENAS A POSIÇÃO A QUAL ELA DEVE IR E "YES" PQ É UMA ANIMAÇÃO DE FIM DO CICLO ATUAL
+        [c iniciarAnimacaoMoverCaixaPara:posicaoFinal fimDesafio:YES];
     }
     
+}
+
+-(void)posicionarCaixasParaDesafio{
+    int posicaoFinal = 695;
+
+    //ANIMAÇÃO QUE MOVE AS CAIXAS PARA QUE ELAS APAREÇAM NA TELA
+    for (SpriteCaixinhaNode *c in vtCaixas) {
+        
+        //É PASSADO PRA CAIA APENAS A POSIÇÃO A QUAL ELA DEVE IR E "NO" PQ É UMA ANIMAÇÃO DE INICIO DO DESAFIO
+        [c iniciarAnimacaoMoverCaixaPara:posicaoFinal fimDesafio:NO];
+    }
+    
+}
+
+-(void)animacaoMoverCaixaFinalizado:(BOOL)fimDesafio{
+    //VERIFICA SE A ANIMAÇÃO DA CAIXA FINALIZADA FOI DE FIM DO DESAFIO
+    if (fimDesafio) {
+        [self posicionarCaixasInicialmente];
+        [[self myDelegate] desafioAtualTerminou];
+    
+    }else{
+        [[self myDelegate] caixasPosicionadasParaDesafio];
+    }
     
 }
 
@@ -218,7 +193,6 @@
     SKAction *mover = [self criarAnimacaoMoverEsteira];
     
     [nodeEsteira runAction:mover completion:^{
-        [nodeEsteira removeAllActions];
         [[self myDelegate] spriteEsteiraLevantado:esteiraLevantada tiposVariavelGerados:tipos];
     }];
 }

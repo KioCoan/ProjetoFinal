@@ -23,13 +23,19 @@
         [lblValor setAlpha:0];
         [self addChild:lblValor];
         
-        acaoCorreto = [self gerarActionComSpritesDeNome:@"fundo-visor-correto" quantidade:10];
-        [acaoCorreto setTimingMode:SKActionTimingEaseIn];
-        acaoErrado = [self gerarActionComSpritesDeNome:@"fundo-visor-errado" quantidade:10];
-        [acaoErrado setTimingMode:SKActionTimingEaseOut];
+        gerador = [[Gerador alloc] init];
+        [self inicializarSpritesVisor];
+        
     }
     
     return self;
+}
+
+-(void)inicializarSpritesVisor{
+    acaoCorreto = [self gerarActionComSpritesDeNome:@"animation_correct-" quantidade:11];
+    [acaoCorreto setTimingMode:SKActionTimingEaseIn];
+    acaoErrado = [self gerarActionComSpritesDeNome:@"animation_wrong-" quantidade:11];
+    [acaoErrado setTimingMode:SKActionTimingEaseOut];
 }
 
 -(SKAction*)gerarActionComSpritesDeNome:(NSString*)nomeImagem quantidade:(int)nSprites{
@@ -41,7 +47,7 @@
     }
     
     
-    return [SKAction animateWithTextures:vtSprites timePerFrame:0.1];
+    return [SKAction animateWithTextures:vtSprites timePerFrame:0.08];
 }
 
 -(void)ajustarValorSize{
@@ -77,18 +83,8 @@
 }
 
 -(NSString*)gerarValorDoTipo:(NSString*)tipo{
-    if([tipo isEqualToString:@"inteiro"]){
-        return @"35";
-    
-    }else if([tipo isEqualToString:@"caractere"]){
-        return @"\"Felipe\"";
-        
-    }else if ([tipo isEqualToString:@"real"]){
-        return @"40.5";
-        
-    }else{
-        return @"verdadeiro";
-    }
+
+    return [gerador retornaValorAleatorioDoTipo:tipo];
 }
 
 

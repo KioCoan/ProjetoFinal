@@ -16,7 +16,9 @@
 
 @interface SpriteCronometroNode : SKSpriteNode
 {
+    int widthSize;
     float tempoTotal;
+    SKAction *acaoIniciarContagem;
 }
 
 @property id<SpriteCronometroDelegate> myDelegate;

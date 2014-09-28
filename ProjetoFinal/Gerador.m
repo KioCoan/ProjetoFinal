@@ -83,8 +83,24 @@
     
     return [self valoresCaracteres];
     
-    
 }
+
+-(NSString*)retornaValorAleatorioDoTipo:(NSString*)tipo{
+    if([tipo isEqualToString:@"inteiro"]){
+        return [self retornaValorInteiro:20 ate:540];
+        
+    }else if([tipo isEqualToString:@"caractere"]){
+        return [self retornaValorCaractere];
+        
+    }else if ([tipo isEqualToString:@"real"]){
+        return [self retornaValorFloat:10 ate:490];
+        
+    }else{
+        return [self retornaValorLogico];
+    }
+}
+
+
 
 -(NSString*)retornaValorAleatorioParaOperador:(NSString*)operador{
     if([operador isEqualToString:@"LÓGICO"]){

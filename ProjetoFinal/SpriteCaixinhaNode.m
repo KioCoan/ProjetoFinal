@@ -15,6 +15,7 @@
     self = [super initWithImageNamed:[NSString stringWithFormat:@"caixa%d-vazia.png", posicao]];
     
     if(self){
+        meuIndex = posicao;
         
         lblTipo = [[SKLabelNode alloc] init];
         [lblTipo setText:tipo];
@@ -22,14 +23,37 @@
         [lblTipo setFontSize:self.size.width / lblTipo.frame.size.width + 25];
         [lblTipo setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
         [lblTipo setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
-        
         [self addChild:lblTipo];
+        
+        [self inicializarAnimacaoMoverX];
+        [self inicializarAnimacaoPular];
         
         [self setUserInteractionEnabled:NO];
     }
     
     
     return self;
+}
+
+
+-(void)inicializarAnimacaoPular{
+    int distancia = 15;
+    float duracao = 0.2;
+    
+    //É CRIADO A ANIMAÇÃO QUE FAZ COM QUE A CAIXA SUBA
+    SKAction *subir = [SKAction moveByX:0 y:distancia duration:duracao];
+    [subir setTimingMode:SKActionTimingEaseOut];
+    
+    //É CRIADO A ANIMAÇÃO QUE FAZ COM QUE A CAIXA DESÇA
+    SKAction *descer = [SKAction moveByX:0 y:-distancia duration:duracao];
+    [descer setTimingMode:SKActionTimingEaseIn];
+    
+    acaoPular = [SKAction sequence:@[subir, descer]];
+}
+
+-(void)inicializarAnimacaoMoverX{
+    moverX = [SKAction moveByX:695 y:0 duration:1.3];
+    [moverX setTimingMode:SKActionTimingEaseOut];
 }
 
 
@@ -42,33 +66,27 @@
 
 
 -(void)iniciarAnimacaoToque{
-    int distanciaSubir = self.position.y + 15;
-    int distanciaDescer = distanciaSubir - 15;
-    float duracao = 0.2;
-    
-    //É CRIADO A ANIMAÇÃO QUE FAZ COM QUE A CAIXA SUBA
-    SKAction *subir = [SKAction moveToY:distanciaSubir duration:duracao];
-    [subir setTimingMode:SKActionTimingEaseOut];
-    
-    //É CRIADO A ANIMAÇÃO QUE FAZ COM QUE A CAIXA DESÇA
-    SKAction *descer = [SKAction moveToY:distanciaDescer duration:duracao];
-    [descer setTimingMode:SKActionTimingEaseIn];
-    
-    
-    //PRIMEIRO É EXECUTADO A ANIMAÇÃO DE SUBIR A CAIXA
-    [self runAction:subir completion:^{
+    //APÓS A CAIXA SUBIR É EXECUTADO A ANIMAÇÃO PARA DESCER A CAIXA
+    [self runAction:acaoPular completion:^{
         
-        //APÓS A CAIXA SUBIR É EXECUTADO A ANIMAÇÃO PARA DESCER A CAIXA
-        [self runAction:descer completion:^{
-            
-            [self removeAllActions];
-            
-            //AVISA AO DELEGATE QUE A CAIXA QUE FOI CLICADA É A QUE ESTÁ SENDO PASSADA POR PARÂMETRO
-            [[self myDelegate] caixaClicadaDoTipo:[lblTipo text]];
-        }];
+        //AVISA AO DELEGATE QUE A CAIXA QUE FOI CLICADA É A QUE ESTÁ SENDO PASSADA POR PARÂMETRO
+        [[self myDelegate] caixaClicadaDoTipo:[lblTipo text]];
     }];
 }
 
+
+-(void)iniciarAnimacaoMoverCaixaPara:(int)posicaoFinal fimDesafio:(BOOL)resposta{
+    //ESTA CONDIÇÃO É USADA PARA QUE APENAS 1 CAIXA AVISE O DELEGATE QUE A ANIMAÇÃO TERMINOU
+    if (meuIndex == 3) {
+        [self runAction:moverX completion:^{
+            [[self myDelegate] animacaoMoverCaixaFinalizado:resposta];
+        }];
+    
+    }else{
+        [self runAction:moverX];
+    }
+    
+}
 
 
 -(NSString*)getTipo{

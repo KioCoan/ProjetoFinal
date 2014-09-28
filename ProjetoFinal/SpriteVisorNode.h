@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "Gerador.h"
 
 @protocol SpriteVisorDelegate <NSObject>
 -(void)respostaCorretaFinalizado;
@@ -21,6 +22,8 @@
     NSString *respostaAtual;
     SKAction *acaoCorreto;
     SKAction *acaoErrado;
+    
+    Gerador *gerador;
 }
 
 @property id <SpriteVisorDelegate> myDelegate;

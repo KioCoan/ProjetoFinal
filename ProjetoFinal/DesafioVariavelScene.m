@@ -13,6 +13,8 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         
+        NSLog(@"%f, %f", size.width, size.height);
+        
         nodeFundo = [[SKSpriteNode alloc] initWithTexture:[SKTexture textureWithImageNamed:@"fundo-desafio.png"]];
         //[nodeFundo setSize:CGSizeMake(500, 500)];
         [nodeFundo setPosition:CGPointMake(self.size.width / 2, self.size.height / 2)];
@@ -35,7 +37,7 @@
         [self addChild:nodeEsteira];
         
         nodeCronometro = [[SpriteCronometroNode alloc] initWithTempoTotalEmSegundos:6];
-        [nodeCronometro setPosition:CGPointMake(self.size.width - 5, self.size.height - 40)];
+        [nodeCronometro setPosition:CGPointMake(self.size.width - 4, self.size.height - 70)];
         [nodeCronometro setMyDelegate:self];
         [self addChild:nodeCronometro];
         

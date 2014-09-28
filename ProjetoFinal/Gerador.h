@@ -15,6 +15,7 @@
 -(NSString*)retornaValorFloat:(int)inicio ate:(int)fim;
 -(NSString*)retornaValorLogico;
 -(NSString *)retornaValorCaractere;
+-(NSString*)retornaValorAleatorioDoTipo:(NSString*)tipo;
 
 -(NSString*)retornaOperadorDoTipo:(NSString*)tipoOperador;
 -(NSString*)retornaOperadorRelacional;

@@ -155,37 +155,40 @@
 		BD6B54D519D7987300BC0E5F /* SpriteCronometroNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD6B54CF19D7987300BC0E5F /* SpriteCronometroNode.m */; };
 		BD6B54D619D7987300BC0E5F /* SpriteEsteiraNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD6B54D119D7987300BC0E5F /* SpriteEsteiraNode.m */; };
 		BD6B54D719D7987300BC0E5F /* SpriteVisorNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD6B54D319D7987300BC0E5F /* SpriteVisorNode.m */; };
-		BD6B54E519D79C8A00BC0E5F /* fundo-visor-errado1.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54DB19D79C8A00BC0E5F /* fundo-visor-errado1.png */; };
-		BD6B54E619D79C8A00BC0E5F /* fundo-visor-errado2.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54DC19D79C8A00BC0E5F /* fundo-visor-errado2.png */; };
-		BD6B54E719D79C8A00BC0E5F /* fundo-visor-errado3.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54DD19D79C8A00BC0E5F /* fundo-visor-errado3.png */; };
-		BD6B54E819D79C8A00BC0E5F /* fundo-visor-errado4.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54DE19D79C8A00BC0E5F /* fundo-visor-errado4.png */; };
-		BD6B54E919D79C8A00BC0E5F /* fundo-visor-errado5.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54DF19D79C8A00BC0E5F /* fundo-visor-errado5.png */; };
-		BD6B54EA19D79C8A00BC0E5F /* fundo-visor-errado6.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54E019D79C8A00BC0E5F /* fundo-visor-errado6.png */; };
-		BD6B54EB19D79C8A00BC0E5F /* fundo-visor-errado7.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54E119D79C8A00BC0E5F /* fundo-visor-errado7.png */; };
-		BD6B54EC19D79C8A00BC0E5F /* fundo-visor-errado8.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54E219D79C8A00BC0E5F /* fundo-visor-errado8.png */; };
-		BD6B54ED19D79C8A00BC0E5F /* fundo-visor-errado9.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54E319D79C8A00BC0E5F /* fundo-visor-errado9.png */; };
-		BD6B54EE19D79C8A00BC0E5F /* fundo-visor-errado10.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54E419D79C8A00BC0E5F /* fundo-visor-errado10.png */; };
-		BD6B54FA19D79CA900BC0E5F /* fundo-visor-correto1.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54F019D79CA900BC0E5F /* fundo-visor-correto1.png */; };
-		BD6B54FB19D79CA900BC0E5F /* fundo-visor-correto2.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54F119D79CA900BC0E5F /* fundo-visor-correto2.png */; };
-		BD6B54FC19D79CA900BC0E5F /* fundo-visor-correto3.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54F219D79CA900BC0E5F /* fundo-visor-correto3.png */; };
-		BD6B54FD19D79CA900BC0E5F /* fundo-visor-correto4.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54F319D79CA900BC0E5F /* fundo-visor-correto4.png */; };
-		BD6B54FE19D79CA900BC0E5F /* fundo-visor-correto5.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54F419D79CA900BC0E5F /* fundo-visor-correto5.png */; };
-		BD6B54FF19D79CA900BC0E5F /* fundo-visor-correto6.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54F519D79CA900BC0E5F /* fundo-visor-correto6.png */; };
-		BD6B550019D79CA900BC0E5F /* fundo-visor-correto7.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54F619D79CA900BC0E5F /* fundo-visor-correto7.png */; };
-		BD6B550119D79CA900BC0E5F /* fundo-visor-correto8.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54F719D79CA900BC0E5F /* fundo-visor-correto8.png */; };
-		BD6B550219D79CA900BC0E5F /* fundo-visor-correto9.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54F819D79CA900BC0E5F /* fundo-visor-correto9.png */; };
-		BD6B550319D79CA900BC0E5F /* fundo-visor-correto10.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B54F919D79CA900BC0E5F /* fundo-visor-correto10.png */; };
-		BD6B550F19D79CD200BC0E5F /* caixa1-cheia.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B550419D79CD200BC0E5F /* caixa1-cheia.png */; };
-		BD6B551019D79CD200BC0E5F /* caixa1-vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B550519D79CD200BC0E5F /* caixa1-vazia.png */; };
-		BD6B551119D79CD200BC0E5F /* caixa2-cheia.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B550619D79CD200BC0E5F /* caixa2-cheia.png */; };
-		BD6B551219D79CD200BC0E5F /* caixa2-vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B550719D79CD200BC0E5F /* caixa2-vazia.png */; };
-		BD6B551319D79CD200BC0E5F /* caixa3-cheia.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B550819D79CD200BC0E5F /* caixa3-cheia.png */; };
-		BD6B551419D79CD200BC0E5F /* caixa3-vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B550919D79CD200BC0E5F /* caixa3-vazia.png */; };
-		BD6B551519D79CD200BC0E5F /* cronometro.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B550A19D79CD200BC0E5F /* cronometro.png */; };
-		BD6B551619D79CD200BC0E5F /* fundo-desafio.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B550B19D79CD200BC0E5F /* fundo-desafio.png */; };
-		BD6B551719D79CD200BC0E5F /* fundo-visor.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B550C19D79CD200BC0E5F /* fundo-visor.png */; };
-		BD6B551819D79CD200BC0E5F /* maquina.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B550D19D79CD200BC0E5F /* maquina.png */; };
-		BD6B551919D79CD200BC0E5F /* pistao.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B550E19D79CD200BC0E5F /* pistao.png */; };
+		BD6B552819D7D26600BC0E5F /* caixa1-cheia.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B551C19D7D26600BC0E5F /* caixa1-cheia.png */; };
+		BD6B552919D7D26600BC0E5F /* caixa1-vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B551D19D7D26600BC0E5F /* caixa1-vazia.png */; };
+		BD6B552A19D7D26600BC0E5F /* caixa2-cheia.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B551E19D7D26600BC0E5F /* caixa2-cheia.png */; };
+		BD6B552B19D7D26600BC0E5F /* caixa2-vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B551F19D7D26600BC0E5F /* caixa2-vazia.png */; };
+		BD6B552C19D7D26600BC0E5F /* caixa3-cheia.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B552019D7D26600BC0E5F /* caixa3-cheia.png */; };
+		BD6B552D19D7D26600BC0E5F /* caixa3-vazia.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B552119D7D26600BC0E5F /* caixa3-vazia.png */; };
+		BD6B552E19D7D26600BC0E5F /* cronometro.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B552219D7D26600BC0E5F /* cronometro.png */; };
+		BD6B553019D7D26600BC0E5F /* esteira.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B552419D7D26600BC0E5F /* esteira.png */; };
+		BD6B553119D7D26600BC0E5F /* fundo-desafio.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B552519D7D26600BC0E5F /* fundo-desafio.png */; };
+		BD6B553219D7D26600BC0E5F /* maquina.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B552619D7D26600BC0E5F /* maquina.png */; };
+		BD6B553319D7D26600BC0E5F /* pistao.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B552719D7D26600BC0E5F /* pistao.png */; };
+		BD6B554A19D7D29400BC0E5F /* animation_correct-1.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B553519D7D29400BC0E5F /* animation_correct-1.png */; };
+		BD6B554B19D7D29400BC0E5F /* animation_correct-10.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B553619D7D29400BC0E5F /* animation_correct-10.png */; };
+		BD6B554C19D7D29400BC0E5F /* animation_correct-2.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B553719D7D29400BC0E5F /* animation_correct-2.png */; };
+		BD6B554D19D7D29400BC0E5F /* animation_correct-3.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B553819D7D29400BC0E5F /* animation_correct-3.png */; };
+		BD6B554E19D7D29400BC0E5F /* animation_correct-4.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B553919D7D29400BC0E5F /* animation_correct-4.png */; };
+		BD6B554F19D7D29400BC0E5F /* animation_correct-5.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B553A19D7D29400BC0E5F /* animation_correct-5.png */; };
+		BD6B555019D7D29400BC0E5F /* animation_correct-6.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B553B19D7D29400BC0E5F /* animation_correct-6.png */; };
+		BD6B555119D7D29400BC0E5F /* animation_correct-7.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B553C19D7D29400BC0E5F /* animation_correct-7.png */; };
+		BD6B555219D7D29400BC0E5F /* animation_correct-8.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B553D19D7D29400BC0E5F /* animation_correct-8.png */; };
+		BD6B555319D7D29400BC0E5F /* animation_correct-9.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B553E19D7D29400BC0E5F /* animation_correct-9.png */; };
+		BD6B555419D7D29400BC0E5F /* animation_wrong-1.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B554019D7D29400BC0E5F /* animation_wrong-1.png */; };
+		BD6B555519D7D29400BC0E5F /* animation_wrong-10.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B554119D7D29400BC0E5F /* animation_wrong-10.png */; };
+		BD6B555619D7D29400BC0E5F /* animation_wrong-2.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B554219D7D29400BC0E5F /* animation_wrong-2.png */; };
+		BD6B555719D7D29400BC0E5F /* animation_wrong-3.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B554319D7D29400BC0E5F /* animation_wrong-3.png */; };
+		BD6B555819D7D29400BC0E5F /* animation_wrong-4.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B554419D7D29400BC0E5F /* animation_wrong-4.png */; };
+		BD6B555919D7D29400BC0E5F /* animation_wrong-5.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B554519D7D29400BC0E5F /* animation_wrong-5.png */; };
+		BD6B555A19D7D29400BC0E5F /* animation_wrong-6.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B554619D7D29400BC0E5F /* animation_wrong-6.png */; };
+		BD6B555B19D7D29400BC0E5F /* animation_wrong-7.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B554719D7D29400BC0E5F /* animation_wrong-7.png */; };
+		BD6B555C19D7D29400BC0E5F /* animation_wrong-8.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B554819D7D29400BC0E5F /* animation_wrong-8.png */; };
+		BD6B555D19D7D29400BC0E5F /* animation_wrong-9.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B554919D7D29400BC0E5F /* animation_wrong-9.png */; };
+		BD6B555F19D7D3F500BC0E5F /* fundo-visor.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B555E19D7D3F500BC0E5F /* fundo-visor.png */; };
+		BD6B556119D7D67000BC0E5F /* animation_wrong-11.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B556019D7D67000BC0E5F /* animation_wrong-11.png */; };
+		BD6B556319D7D67700BC0E5F /* animation_correct-11.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B556219D7D67700BC0E5F /* animation_correct-11.png */; };
 		BD6D7C0119A7E5AB0022DF2A /* img-tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6D7C0019A7E5AB0022DF2A /* img-tutorial.png */; };
 		BD9DF26E19A171A2003938C9 /* item-Condicionais.png in Resources */ = {isa = PBXBuildFile; fileRef = BD9DF26B19A171A2003938C9 /* item-Condicionais.png */; };
 		BD9DF26F19A171A2003938C9 /* item-Operadores.png in Resources */ = {isa = PBXBuildFile; fileRef = BD9DF26C19A171A2003938C9 /* item-Operadores.png */; };
@@ -496,37 +499,40 @@
 		BD6B54D119D7987300BC0E5F /* SpriteEsteiraNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteEsteiraNode.m; sourceTree = "<group>"; };
 		BD6B54D219D7987300BC0E5F /* SpriteVisorNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteVisorNode.h; sourceTree = "<group>"; };
 		BD6B54D319D7987300BC0E5F /* SpriteVisorNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteVisorNode.m; sourceTree = "<group>"; };
-		BD6B54DB19D79C8A00BC0E5F /* fundo-visor-errado1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-errado1.png"; sourceTree = "<group>"; };
-		BD6B54DC19D79C8A00BC0E5F /* fundo-visor-errado2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-errado2.png"; sourceTree = "<group>"; };
-		BD6B54DD19D79C8A00BC0E5F /* fundo-visor-errado3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-errado3.png"; sourceTree = "<group>"; };
-		BD6B54DE19D79C8A00BC0E5F /* fundo-visor-errado4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-errado4.png"; sourceTree = "<group>"; };
-		BD6B54DF19D79C8A00BC0E5F /* fundo-visor-errado5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-errado5.png"; sourceTree = "<group>"; };
-		BD6B54E019D79C8A00BC0E5F /* fundo-visor-errado6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-errado6.png"; sourceTree = "<group>"; };
-		BD6B54E119D79C8A00BC0E5F /* fundo-visor-errado7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-errado7.png"; sourceTree = "<group>"; };
-		BD6B54E219D79C8A00BC0E5F /* fundo-visor-errado8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-errado8.png"; sourceTree = "<group>"; };
-		BD6B54E319D79C8A00BC0E5F /* fundo-visor-errado9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-errado9.png"; sourceTree = "<group>"; };
-		BD6B54E419D79C8A00BC0E5F /* fundo-visor-errado10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-errado10.png"; sourceTree = "<group>"; };
-		BD6B54F019D79CA900BC0E5F /* fundo-visor-correto1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-correto1.png"; sourceTree = "<group>"; };
-		BD6B54F119D79CA900BC0E5F /* fundo-visor-correto2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-correto2.png"; sourceTree = "<group>"; };
-		BD6B54F219D79CA900BC0E5F /* fundo-visor-correto3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-correto3.png"; sourceTree = "<group>"; };
-		BD6B54F319D79CA900BC0E5F /* fundo-visor-correto4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-correto4.png"; sourceTree = "<group>"; };
-		BD6B54F419D79CA900BC0E5F /* fundo-visor-correto5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-correto5.png"; sourceTree = "<group>"; };
-		BD6B54F519D79CA900BC0E5F /* fundo-visor-correto6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-correto6.png"; sourceTree = "<group>"; };
-		BD6B54F619D79CA900BC0E5F /* fundo-visor-correto7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-correto7.png"; sourceTree = "<group>"; };
-		BD6B54F719D79CA900BC0E5F /* fundo-visor-correto8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-correto8.png"; sourceTree = "<group>"; };
-		BD6B54F819D79CA900BC0E5F /* fundo-visor-correto9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-correto9.png"; sourceTree = "<group>"; };
-		BD6B54F919D79CA900BC0E5F /* fundo-visor-correto10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor-correto10.png"; sourceTree = "<group>"; };
-		BD6B550419D79CD200BC0E5F /* caixa1-cheia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "caixa1-cheia.png"; sourceTree = "<group>"; };
-		BD6B550519D79CD200BC0E5F /* caixa1-vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "caixa1-vazia.png"; sourceTree = "<group>"; };
-		BD6B550619D79CD200BC0E5F /* caixa2-cheia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "caixa2-cheia.png"; sourceTree = "<group>"; };
-		BD6B550719D79CD200BC0E5F /* caixa2-vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "caixa2-vazia.png"; sourceTree = "<group>"; };
-		BD6B550819D79CD200BC0E5F /* caixa3-cheia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "caixa3-cheia.png"; sourceTree = "<group>"; };
-		BD6B550919D79CD200BC0E5F /* caixa3-vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "caixa3-vazia.png"; sourceTree = "<group>"; };
-		BD6B550A19D79CD200BC0E5F /* cronometro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cronometro.png; sourceTree = "<group>"; };
-		BD6B550B19D79CD200BC0E5F /* fundo-desafio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-desafio.png"; sourceTree = "<group>"; };
-		BD6B550C19D79CD200BC0E5F /* fundo-visor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fundo-visor.png"; sourceTree = "<group>"; };
-		BD6B550D19D79CD200BC0E5F /* maquina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maquina.png; sourceTree = "<group>"; };
-		BD6B550E19D79CD200BC0E5F /* pistao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pistao.png; sourceTree = "<group>"; };
+		BD6B551C19D7D26600BC0E5F /* caixa1-cheia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "caixa1-cheia.png"; path = "Imagens/Desafios/Variavel/caixa1-cheia.png"; sourceTree = "<group>"; };
+		BD6B551D19D7D26600BC0E5F /* caixa1-vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "caixa1-vazia.png"; path = "Imagens/Desafios/Variavel/caixa1-vazia.png"; sourceTree = "<group>"; };
+		BD6B551E19D7D26600BC0E5F /* caixa2-cheia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "caixa2-cheia.png"; path = "Imagens/Desafios/Variavel/caixa2-cheia.png"; sourceTree = "<group>"; };
+		BD6B551F19D7D26600BC0E5F /* caixa2-vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "caixa2-vazia.png"; path = "Imagens/Desafios/Variavel/caixa2-vazia.png"; sourceTree = "<group>"; };
+		BD6B552019D7D26600BC0E5F /* caixa3-cheia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "caixa3-cheia.png"; path = "Imagens/Desafios/Variavel/caixa3-cheia.png"; sourceTree = "<group>"; };
+		BD6B552119D7D26600BC0E5F /* caixa3-vazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "caixa3-vazia.png"; path = "Imagens/Desafios/Variavel/caixa3-vazia.png"; sourceTree = "<group>"; };
+		BD6B552219D7D26600BC0E5F /* cronometro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cronometro.png; path = Imagens/Desafios/Variavel/cronometro.png; sourceTree = "<group>"; };
+		BD6B552419D7D26600BC0E5F /* esteira.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = esteira.png; path = Imagens/Desafios/Variavel/esteira.png; sourceTree = "<group>"; };
+		BD6B552519D7D26600BC0E5F /* fundo-desafio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fundo-desafio.png"; path = "Imagens/Desafios/Variavel/fundo-desafio.png"; sourceTree = "<group>"; };
+		BD6B552619D7D26600BC0E5F /* maquina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = maquina.png; path = Imagens/Desafios/Variavel/maquina.png; sourceTree = "<group>"; };
+		BD6B552719D7D26600BC0E5F /* pistao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pistao.png; path = Imagens/Desafios/Variavel/pistao.png; sourceTree = "<group>"; };
+		BD6B553519D7D29400BC0E5F /* animation_correct-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_correct-1.png"; sourceTree = "<group>"; };
+		BD6B553619D7D29400BC0E5F /* animation_correct-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_correct-10.png"; sourceTree = "<group>"; };
+		BD6B553719D7D29400BC0E5F /* animation_correct-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_correct-2.png"; sourceTree = "<group>"; };
+		BD6B553819D7D29400BC0E5F /* animation_correct-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_correct-3.png"; sourceTree = "<group>"; };
+		BD6B553919D7D29400BC0E5F /* animation_correct-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_correct-4.png"; sourceTree = "<group>"; };
+		BD6B553A19D7D29400BC0E5F /* animation_correct-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_correct-5.png"; sourceTree = "<group>"; };
+		BD6B553B19D7D29400BC0E5F /* animation_correct-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_correct-6.png"; sourceTree = "<group>"; };
+		BD6B553C19D7D29400BC0E5F /* animation_correct-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_correct-7.png"; sourceTree = "<group>"; };
+		BD6B553D19D7D29400BC0E5F /* animation_correct-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_correct-8.png"; sourceTree = "<group>"; };
+		BD6B553E19D7D29400BC0E5F /* animation_correct-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_correct-9.png"; sourceTree = "<group>"; };
+		BD6B554019D7D29400BC0E5F /* animation_wrong-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_wrong-1.png"; sourceTree = "<group>"; };
+		BD6B554119D7D29400BC0E5F /* animation_wrong-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_wrong-10.png"; sourceTree = "<group>"; };
+		BD6B554219D7D29400BC0E5F /* animation_wrong-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_wrong-2.png"; sourceTree = "<group>"; };
+		BD6B554319D7D29400BC0E5F /* animation_wrong-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_wrong-3.png"; sourceTree = "<group>"; };
+		BD6B554419D7D29400BC0E5F /* animation_wrong-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_wrong-4.png"; sourceTree = "<group>"; };
+		BD6B554519D7D29400BC0E5F /* animation_wrong-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_wrong-5.png"; sourceTree = "<group>"; };
+		BD6B554619D7D29400BC0E5F /* animation_wrong-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_wrong-6.png"; sourceTree = "<group>"; };
+		BD6B554719D7D29400BC0E5F /* animation_wrong-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_wrong-7.png"; sourceTree = "<group>"; };
+		BD6B554819D7D29400BC0E5F /* animation_wrong-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_wrong-8.png"; sourceTree = "<group>"; };
+		BD6B554919D7D29400BC0E5F /* animation_wrong-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_wrong-9.png"; sourceTree = "<group>"; };
+		BD6B555E19D7D3F500BC0E5F /* fundo-visor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fundo-visor.png"; path = "Imagens/Desafios/Variavel/fundo-visor.png"; sourceTree = "<group>"; };
+		BD6B556019D7D67000BC0E5F /* animation_wrong-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_wrong-11.png"; sourceTree = "<group>"; };
+		BD6B556219D7D67700BC0E5F /* animation_correct-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_correct-11.png"; sourceTree = "<group>"; };
 		BD6D7C0019A7E5AB0022DF2A /* img-tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-tutorial.png"; sourceTree = "<group>"; };
 		BD9DF26B19A171A2003938C9 /* item-Condicionais.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-Condicionais.png"; path = "Imagens/item-Condicionais.png"; sourceTree = "<group>"; };
 		BD9DF26C19A171A2003938C9 /* item-Operadores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-Operadores.png"; path = "Imagens/item-Operadores.png"; sourceTree = "<group>"; };
@@ -732,14 +738,7 @@
 		12719D3C19CB558A006B1374 /* Animacoes */ = {
 			isa = PBXGroup;
 			children = (
-				BD6B54CC19D7987300BC0E5F /* SpriteCaixinhaNode.h */,
-				BD6B54CD19D7987300BC0E5F /* SpriteCaixinhaNode.m */,
-				BD6B54CE19D7987300BC0E5F /* SpriteCronometroNode.h */,
-				BD6B54CF19D7987300BC0E5F /* SpriteCronometroNode.m */,
-				BD6B54D019D7987300BC0E5F /* SpriteEsteiraNode.h */,
-				BD6B54D119D7987300BC0E5F /* SpriteEsteiraNode.m */,
-				BD6B54D219D7987300BC0E5F /* SpriteVisorNode.h */,
-				BD6B54D319D7987300BC0E5F /* SpriteVisorNode.m */,
+				BD6B556519D7DB2200BC0E5F /* Variavel */,
 				12719D4A19CB5FB5006B1374 /* BotaoDesafiosNode.h */,
 				12719D4B19CB5FB5006B1374 /* BotaoDesafiosNode.m */,
 				A5CBEB9319D3595900AC879D /* OperadorDesafiosNode.h */,
@@ -751,8 +750,6 @@
 		12719D4019CB5656006B1374 /* Cenas */ = {
 			isa = PBXGroup;
 			children = (
-				BD6B54C619D7985800BC0E5F /* DesafioVariavel.h */,
-				BD6B54C719D7985800BC0E5F /* DesafioVariavel.m */,
 				BD6B54C819D7985800BC0E5F /* DesafioVariavelScene.h */,
 				BD6B54C919D7985800BC0E5F /* DesafioVariavelScene.m */,
 				12719D4119CB5683006B1374 /* DesafiosOperadoresScene.h */,
@@ -764,6 +761,7 @@
 		12719D4419CB569E006B1374 /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				BD6B556419D7D6CE00BC0E5F /* Variavel */,
 				12719D4519CB5734006B1374 /* Operadores */,
 				A5F38EFB19C711C900D337A4 /* DesafioOperadores.h */,
 				A5F38EFC19C711C900D337A4 /* DesafioOperadores.m */,
@@ -1270,55 +1268,84 @@
 		BD6B54D819D79C5600BC0E5F /* Variavel */ = {
 			isa = PBXGroup;
 			children = (
-				BD6B550419D79CD200BC0E5F /* caixa1-cheia.png */,
-				BD6B550519D79CD200BC0E5F /* caixa1-vazia.png */,
-				BD6B550619D79CD200BC0E5F /* caixa2-cheia.png */,
-				BD6B550719D79CD200BC0E5F /* caixa2-vazia.png */,
-				BD6B550819D79CD200BC0E5F /* caixa3-cheia.png */,
-				BD6B550919D79CD200BC0E5F /* caixa3-vazia.png */,
-				BD6B550A19D79CD200BC0E5F /* cronometro.png */,
-				BD6B550B19D79CD200BC0E5F /* fundo-desafio.png */,
-				BD6B550C19D79CD200BC0E5F /* fundo-visor.png */,
-				BD6B550D19D79CD200BC0E5F /* maquina.png */,
-				BD6B550E19D79CD200BC0E5F /* pistao.png */,
-				BD6B54DA19D79C7200BC0E5F /* Sprites Errado */,
-				BD6B54D919D79C6800BC0E5F /* Sprites Correto */,
+				BD6B553419D7D29400BC0E5F /* Sprites Correto */,
+				BD6B553F19D7D29400BC0E5F /* Sprites errado */,
+				BD6B551C19D7D26600BC0E5F /* caixa1-cheia.png */,
+				BD6B551D19D7D26600BC0E5F /* caixa1-vazia.png */,
+				BD6B551E19D7D26600BC0E5F /* caixa2-cheia.png */,
+				BD6B551F19D7D26600BC0E5F /* caixa2-vazia.png */,
+				BD6B552019D7D26600BC0E5F /* caixa3-cheia.png */,
+				BD6B552119D7D26600BC0E5F /* caixa3-vazia.png */,
+				BD6B555E19D7D3F500BC0E5F /* fundo-visor.png */,
+				BD6B552219D7D26600BC0E5F /* cronometro.png */,
+				BD6B552419D7D26600BC0E5F /* esteira.png */,
+				BD6B552519D7D26600BC0E5F /* fundo-desafio.png */,
+				BD6B552619D7D26600BC0E5F /* maquina.png */,
+				BD6B552719D7D26600BC0E5F /* pistao.png */,
 			);
 			name = Variavel;
 			sourceTree = "<group>";
 		};
-		BD6B54D919D79C6800BC0E5F /* Sprites Correto */ = {
+		BD6B553419D7D29400BC0E5F /* Sprites Correto */ = {
 			isa = PBXGroup;
 			children = (
-				BD6B54F019D79CA900BC0E5F /* fundo-visor-correto1.png */,
-				BD6B54F119D79CA900BC0E5F /* fundo-visor-correto2.png */,
-				BD6B54F219D79CA900BC0E5F /* fundo-visor-correto3.png */,
-				BD6B54F319D79CA900BC0E5F /* fundo-visor-correto4.png */,
-				BD6B54F419D79CA900BC0E5F /* fundo-visor-correto5.png */,
-				BD6B54F519D79CA900BC0E5F /* fundo-visor-correto6.png */,
-				BD6B54F619D79CA900BC0E5F /* fundo-visor-correto7.png */,
-				BD6B54F719D79CA900BC0E5F /* fundo-visor-correto8.png */,
-				BD6B54F819D79CA900BC0E5F /* fundo-visor-correto9.png */,
-				BD6B54F919D79CA900BC0E5F /* fundo-visor-correto10.png */,
+				BD6B556219D7D67700BC0E5F /* animation_correct-11.png */,
+				BD6B553519D7D29400BC0E5F /* animation_correct-1.png */,
+				BD6B553619D7D29400BC0E5F /* animation_correct-10.png */,
+				BD6B553719D7D29400BC0E5F /* animation_correct-2.png */,
+				BD6B553819D7D29400BC0E5F /* animation_correct-3.png */,
+				BD6B553919D7D29400BC0E5F /* animation_correct-4.png */,
+				BD6B553A19D7D29400BC0E5F /* animation_correct-5.png */,
+				BD6B553B19D7D29400BC0E5F /* animation_correct-6.png */,
+				BD6B553C19D7D29400BC0E5F /* animation_correct-7.png */,
+				BD6B553D19D7D29400BC0E5F /* animation_correct-8.png */,
+				BD6B553E19D7D29400BC0E5F /* animation_correct-9.png */,
 			);
 			name = "Sprites Correto";
+			path = "Imagens/Desafios/Variavel/Sprites Correto";
 			sourceTree = "<group>";
 		};
-		BD6B54DA19D79C7200BC0E5F /* Sprites Errado */ = {
+		BD6B553F19D7D29400BC0E5F /* Sprites errado */ = {
 			isa = PBXGroup;
 			children = (
-				BD6B54DB19D79C8A00BC0E5F /* fundo-visor-errado1.png */,
-				BD6B54DC19D79C8A00BC0E5F /* fundo-visor-errado2.png */,
-				BD6B54DD19D79C8A00BC0E5F /* fundo-visor-errado3.png */,
-				BD6B54DE19D79C8A00BC0E5F /* fundo-visor-errado4.png */,
-				BD6B54DF19D79C8A00BC0E5F /* fundo-visor-errado5.png */,
-				BD6B54E019D79C8A00BC0E5F /* fundo-visor-errado6.png */,
-				BD6B54E119D79C8A00BC0E5F /* fundo-visor-errado7.png */,
-				BD6B54E219D79C8A00BC0E5F /* fundo-visor-errado8.png */,
-				BD6B54E319D79C8A00BC0E5F /* fundo-visor-errado9.png */,
-				BD6B54E419D79C8A00BC0E5F /* fundo-visor-errado10.png */,
+				BD6B556019D7D67000BC0E5F /* animation_wrong-11.png */,
+				BD6B554019D7D29400BC0E5F /* animation_wrong-1.png */,
+				BD6B554119D7D29400BC0E5F /* animation_wrong-10.png */,
+				BD6B554219D7D29400BC0E5F /* animation_wrong-2.png */,
+				BD6B554319D7D29400BC0E5F /* animation_wrong-3.png */,
+				BD6B554419D7D29400BC0E5F /* animation_wrong-4.png */,
+				BD6B554519D7D29400BC0E5F /* animation_wrong-5.png */,
+				BD6B554619D7D29400BC0E5F /* animation_wrong-6.png */,
+				BD6B554719D7D29400BC0E5F /* animation_wrong-7.png */,
+				BD6B554819D7D29400BC0E5F /* animation_wrong-8.png */,
+				BD6B554919D7D29400BC0E5F /* animation_wrong-9.png */,
 			);
-			name = "Sprites Errado";
+			name = "Sprites errado";
+			path = "Imagens/Desafios/Variavel/Sprites errado";
+			sourceTree = "<group>";
+		};
+		BD6B556419D7D6CE00BC0E5F /* Variavel */ = {
+			isa = PBXGroup;
+			children = (
+				BD6B54C619D7985800BC0E5F /* DesafioVariavel.h */,
+				BD6B54C719D7985800BC0E5F /* DesafioVariavel.m */,
+			);
+			name = Variavel;
+			sourceTree = "<group>";
+		};
+		BD6B556519D7DB2200BC0E5F /* Variavel */ = {
+			isa = PBXGroup;
+			children = (
+				BD6B54CE19D7987300BC0E5F /* SpriteCronometroNode.h */,
+				BD6B54CF19D7987300BC0E5F /* SpriteCronometroNode.m */,
+				BD6B54CC19D7987300BC0E5F /* SpriteCaixinhaNode.h */,
+				BD6B54CD19D7987300BC0E5F /* SpriteCaixinhaNode.m */,
+				BD6B54D019D7987300BC0E5F /* SpriteEsteiraNode.h */,
+				BD6B54D119D7987300BC0E5F /* SpriteEsteiraNode.m */,
+				BD6B54D219D7987300BC0E5F /* SpriteVisorNode.h */,
+				BD6B54D319D7987300BC0E5F /* SpriteVisorNode.m */,
+			);
+			name = Variavel;
 			sourceTree = "<group>";
 		};
 		BDBE7697197A39EF004EA926 /* Operadores */ = {
@@ -1568,54 +1595,60 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD6B553019D7D26600BC0E5F /* esteira.png in Resources */,
 				12C787C619D5FEDF006D3D11 /* CooperHewitt-Medium.otf in Resources */,
 				12C787C519D5FEC6006D3D11 /* CooperHewitt-Light.otf in Resources */,
 				BD1AC842199AB5EC00CB7C5C /* AnimaVariavel.sks in Resources */,
 				BDF8AE08197B258C00BA5B8A /* parte-valores8.png in Resources */,
 				BDC7579F196787E700DB8380 /* abrir-caixa2.png in Resources */,
 				E5DDB3621993F45200B0061A /* valor1-amarelo.png in Resources */,
-				BD6B551919D79CD200BC0E5F /* pistao.png in Resources */,
 				BDF8AE07197B258C00BA5B8A /* parte-valores7.png in Resources */,
 				91C8EF6B197D871200CA01DE /* ConceitosOperadores.txt in Resources */,
 				A52D87A219D782DA008079AF /* botao-go.png in Resources */,
+				BD6B555019D7D29400BC0E5F /* animation_correct-6.png in Resources */,
 				BDBE769D197A3B69004EA926 /* parte-operador.png in Resources */,
-				BD6B54EE19D79C8A00BC0E5F /* fundo-visor-errado10.png in Resources */,
 				BDC757A8196787E700DB8380 /* abrir-caixa11.png in Resources */,
-				BD6B54E719D79C8A00BC0E5F /* fundo-visor-errado3.png in Resources */,
 				A5CBEB8C19D20CCC00AC879D /* Desafio-Operadores-Fundo.png in Resources */,
 				BD4E5F2619987A020082632B /* refresh.mp3 in Resources */,
 				BDE82C2619916E1F00610D96 /* sprite-exclamacao.png in Resources */,
+				BD6B553219D7D26600BC0E5F /* maquina.png in Resources */,
 				BDF8ADF4197B255C00BA5B8A /* parte-resultado7.png in Resources */,
 				91A7A956198F56DC009A5EB1 /* ConceitosCondicionais.txt in Resources */,
+				BD6B555519D7D29400BC0E5F /* animation_wrong-10.png in Resources */,
 				12C02BCC19D60BAA0015AF10 /* botao-enciclopedia-texto.png in Resources */,
 				BD325A491995EB7D00D15DBF /* exclamacao.mp3 in Resources */,
 				BDD22F0D19A6F4A70043AA02 /* img-tutorial3.png in Resources */,
 				8431DA6F19CA28FD0076EBBA /* livre-condicional.png in Resources */,
+				BD6B554B19D7D29400BC0E5F /* animation_correct-10.png in Resources */,
 				BD5DE21119972138007849DB /* bt-play.png in Resources */,
-				BD6B551219D79CD200BC0E5F /* caixa2-vazia.png in Resources */,
+				BD6B552B19D7D26600BC0E5F /* caixa2-vazia.png in Resources */,
 				BD325A451995EB7D00D15DBF /* abrirCaixa.mp3 in Resources */,
+				BD6B555119D7D29400BC0E5F /* animation_correct-7.png in Resources */,
 				12C02BD819D612F60015AF10 /* fundo-menu.png in Resources */,
 				BD66B651197F6F16000BB548 /* atualizar-dados.png in Resources */,
-				BD6B550319D79CA900BC0E5F /* fundo-visor-correto10.png in Resources */,
 				BDE82C2319916E1F00610D96 /* se-normal.png in Resources */,
-				BD6B54E819D79C8A00BC0E5F /* fundo-visor-errado4.png in Resources */,
 				BDF8AE0B197B258C00BA5B8A /* parte-valores11.png in Resources */,
+				BD6B554E19D7D29400BC0E5F /* animation_correct-4.png in Resources */,
 				BD325A481995EB7D00D15DBF /* fecharCaixa.mp3 in Resources */,
-				BD6B551619D79CD200BC0E5F /* fundo-desafio.png in Resources */,
 				BD4E5F2819987AEF0082632B /* refresh2.mp3 in Resources */,
 				120E8F8F192FC0A200CDEF95 /* Images.xcassets in Resources */,
 				BDC757A0196787E700DB8380 /* abrir-caixa3.png in Resources */,
+				BD6B555819D7D29400BC0E5F /* animation_wrong-4.png in Resources */,
+				BD6B553319D7D26600BC0E5F /* pistao.png in Resources */,
 				BD5A552C198C972000D8722F /* senaoSe-verde.png in Resources */,
 				A5CBEB9019D20E1B00AC879D /* Desafio-Operadores-btn1.png in Resources */,
 				BDF8ADF6197B255C00BA5B8A /* parte-resultado9.png in Resources */,
 				BD1AC843199AB5EC00CB7C5C /* spark.png in Resources */,
+				BD6B554D19D7D29400BC0E5F /* animation_correct-3.png in Resources */,
 				BDCCE535199D322C0063DF2B /* item-em breve.png in Resources */,
 				BDF8ADF0197B255C00BA5B8A /* parte-resultado3.png in Resources */,
 				BDC757A4196787E700DB8380 /* abrir-caixa7.png in Resources */,
 				A5CBEBA019D4B0EE00AC879D /* Desafio-Andamento-Correto.png in Resources */,
 				BD510FE11989E8200052B6E5 /* lousa-teoria.jpg in Resources */,
+				BD6B554C19D7D29400BC0E5F /* animation_correct-2.png in Resources */,
 				12C02BD419D611B20015AF10 /* tedra-logo.png in Resources */,
 				BD325A471995EB7D00D15DBF /* errado.wav in Resources */,
+				BD6B555719D7D29400BC0E5F /* animation_wrong-3.png in Resources */,
 				8431DA7319CA28FD0076EBBA /* livre-operador.png in Resources */,
 				12C02BD219D60F290015AF10 /* botao-enciclopedia.png in Resources */,
 				BDEE046A199FEC7E00EAC8ED /* icone-teoria.png in Resources */,
@@ -1623,66 +1656,63 @@
 				BDEE046E19A0162000EAC8ED /* icone-iniciar.png in Resources */,
 				BDC40740199B1E18006CD7AE /* sprite-introducao3.png in Resources */,
 				BDEE047219A06C9900EAC8ED /* check.png in Resources */,
-				BD6B54EA19D79C8A00BC0E5F /* fundo-visor-errado6.png in Resources */,
 				E501FA6B192FCD3800B56B5C /* item-memoria.png in Resources */,
 				BDC40747199B29FD006CD7AE /* sprite-introducao9.png in Resources */,
+				BD6B554A19D7D29400BC0E5F /* animation_correct-1.png in Resources */,
 				A521FEF21994203000D28627 /* valores-verdadeiro.png in Resources */,
 				BDC757A1196787E700DB8380 /* abrir-caixa4.png in Resources */,
-				BD6B550019D79CA900BC0E5F /* fundo-visor-correto7.png in Resources */,
-				BD6B54FF19D79CA900BC0E5F /* fundo-visor-correto6.png in Resources */,
 				120E8F81192FC0A200CDEF95 /* InfoPlist.strings in Resources */,
 				A5CBEB9119D20E1B00AC879D /* Desafio-Operadores-btn2.png in Resources */,
+				BD6B555319D7D29400BC0E5F /* animation_correct-9.png in Resources */,
 				BD325A4C1995EB7D00D15DBF /* slider.mp3 in Resources */,
-				BD6B551519D79CD200BC0E5F /* cronometro.png in Resources */,
+				BD6B555D19D7D29400BC0E5F /* animation_wrong-9.png in Resources */,
+				BD6B555419D7D29400BC0E5F /* animation_wrong-1.png in Resources */,
+				BD6B552E19D7D26600BC0E5F /* cronometro.png in Resources */,
 				BD9DF27019A171A2003938C9 /* item-Variáveis.png in Resources */,
+				BD6B555A19D7D29400BC0E5F /* animation_wrong-6.png in Resources */,
 				8431DA6419CA12C50076EBBA /* modo livre-11.png in Resources */,
 				BDF8AE04197B258C00BA5B8A /* parte-valores4.png in Resources */,
 				BD5A552A198C972000D8722F /* se-verde.png in Resources */,
-				BD6B54FE19D79CA900BC0E5F /* fundo-visor-correto5.png in Resources */,
 				12C02BD119D60F290015AF10 /* botao-treinamento.png in Resources */,
 				BDEE0468199FE5E000EAC8ED /* imagem-teoria.png in Resources */,
 				BDC757A9196787E700DB8380 /* abrir-caixa12.png in Resources */,
 				12C02BD019D60F290015AF10 /* botao-livre.png in Resources */,
+				BD6B555619D7D29400BC0E5F /* animation_wrong-2.png in Resources */,
+				BD6B555219D7D29400BC0E5F /* animation_correct-8.png in Resources */,
 				BDC7579E196787E700DB8380 /* abrir-caixa1.png in Resources */,
 				BDC757A7196787E700DB8380 /* abrir-caixa10.png in Resources */,
 				BDF8ADF3197B255C00BA5B8A /* parte-resultado6.png in Resources */,
-				BD6B54E519D79C8A00BC0E5F /* fundo-visor-errado1.png in Resources */,
 				BD42E0F41985E2090007181F /* simbolo-atualizar.png in Resources */,
 				BDBE769E197A3B69004EA926 /* parte-resultado1.png in Resources */,
 				A5CBEBA219D4B0EE00AC879D /* Desafio-Andamento-Vazio.png in Resources */,
-				BD6B54FD19D79CA900BC0E5F /* fundo-visor-correto4.png in Resources */,
 				BD511002198A142E0052B6E5 /* parte-resultado.png in Resources */,
 				8431DA7119CA28FD0076EBBA /* livre-laco.png in Resources */,
-				BD6B550219D79CA900BC0E5F /* fundo-visor-correto9.png in Resources */,
 				BDC40744199B1E18006CD7AE /* sprite-introducao7.png in Resources */,
 				BDF8AE0A197B258C00BA5B8A /* parte-valores10.png in Resources */,
 				BDF8AE03197B258C00BA5B8A /* parte-valores3.png in Resources */,
 				BDF8ADEF197B255C00BA5B8A /* parte-resultado2.png in Resources */,
-				BD6B54FB19D79CA900BC0E5F /* fundo-visor-correto2.png in Resources */,
-				BD6B551819D79CD200BC0E5F /* maquina.png in Resources */,
 				12C02BC419D60B9B0015AF10 /* botao-livre-imagem.png in Resources */,
 				BDC4073F199B1E18006CD7AE /* sprite-introducao2.png in Resources */,
 				BD5A552B198C972000D8722F /* senao-verde.png in Resources */,
 				A5CBEBA119D4B0EE00AC879D /* Desafio-Andamento-Errado.png in Resources */,
-				BD6B54E919D79C8A00BC0E5F /* fundo-visor-errado5.png in Resources */,
+				BD6B556119D7D67000BC0E5F /* animation_wrong-11.png in Resources */,
 				BDF8AE06197B258C00BA5B8A /* parte-valores6.png in Resources */,
 				A55F2B4419648C0600111BEB /* ConceitosVariaveis.txt in Resources */,
-				BD6B54E619D79C8A00BC0E5F /* fundo-visor-errado2.png in Resources */,
 				BD24C40719A984BA00F2CBE1 /* img-tutorial6.png in Resources */,
 				846B738E19782427009C2EB7 /* fundo-cinza.png in Resources */,
 				BDC757AA196787E700DB8380 /* abrir-caixa13.png in Resources */,
 				BD66B653197F9327000BB548 /* fundo-transparente.png in Resources */,
+				BD6B556319D7D67700BC0E5F /* animation_correct-11.png in Resources */,
 				8431DA6E19CA28FD0076EBBA /* livre-array.png in Resources */,
 				12C02BC519D60B9B0015AF10 /* botao-treinamento-imagem.png in Resources */,
 				A521FEEB1993F6B200D28627 /* valor2-amarelo.png in Resources */,
 				BDC757A3196787E700DB8380 /* abrir-caixa6.png in Resources */,
-				BD6B551319D79CD200BC0E5F /* caixa3-cheia.png in Resources */,
+				BD6B552C19D7D26600BC0E5F /* caixa3-cheia.png in Resources */,
 				BDC580FC19A690CE003A1EAF /* fundo-animaVariavel.png in Resources */,
 				BDC40741199B1E18006CD7AE /* sprite-introducao4.png in Resources */,
 				BDD22F0C19A6F4A70043AA02 /* img-tutorial2.png in Resources */,
 				8431DA7419CA28FD0076EBBA /* livre-variavel.png in Resources */,
 				BDF8ADF2197B255C00BA5B8A /* parte-resultado5.png in Resources */,
-				BD6B550119D79CA900BC0E5F /* fundo-visor-correto8.png in Resources */,
 				12C02BC619D60B9B0015AF10 /* botao-enciclopedia-imagem.png in Resources */,
 				BDF8ADF1197B255C00BA5B8A /* parte-resultado4.png in Resources */,
 				84B237B419D352F3003EC749 /* MenuEditarFundo.png in Resources */,
@@ -1690,7 +1720,7 @@
 				BDA68F3D199819C400BD0527 /* valores-errado.png in Resources */,
 				8492087F19C7756400D64AE8 /* menuIcon.png in Resources */,
 				BDC757A5196787E700DB8380 /* abrir-caixa8.png in Resources */,
-				BD6B551119D79CD200BC0E5F /* caixa2-cheia.png in Resources */,
+				BD6B552A19D7D26600BC0E5F /* caixa2-cheia.png in Resources */,
 				8431DA6319CA12C50076EBBA /* modo livre-10.png in Resources */,
 				BDD22F1019A6F4A70043AA02 /* img-tutorial7.png in Resources */,
 				BDC757A2196787E700DB8380 /* abrir-caixa5.png in Resources */,
@@ -1701,32 +1731,32 @@
 				BDE82C2419916E1F00610D96 /* senao-normal.png in Resources */,
 				8431DA6219CA12C50076EBBA /* modo livre-09.png in Resources */,
 				BDC40742199B1E18006CD7AE /* sprite-introducao5.png in Resources */,
-				BD6B551019D79CD200BC0E5F /* caixa1-vazia.png in Resources */,
+				BD6B552919D7D26600BC0E5F /* caixa1-vazia.png in Resources */,
+				BD6B554F19D7D29400BC0E5F /* animation_correct-5.png in Resources */,
+				BD6B555B19D7D29400BC0E5F /* animation_wrong-7.png in Resources */,
 				BDC40743199B1E18006CD7AE /* sprite-introducao6.png in Resources */,
+				BD6B555C19D7D29400BC0E5F /* animation_wrong-8.png in Resources */,
 				8431DA7019CA28FD0076EBBA /* livre-funcao.png in Resources */,
-				BD6B551719D79CD200BC0E5F /* fundo-visor.png in Resources */,
+				BD6B555F19D7D3F500BC0E5F /* fundo-visor.png in Resources */,
 				BD24C40519A9516300F2CBE1 /* img-tutorial1.png in Resources */,
 				BDC40749199B2F70006CD7AE /* caixaEncostaChao.mp3 in Resources */,
 				8431DA6519CA12C50076EBBA /* modo livre-12.png in Resources */,
 				BDF8ADF5197B255C00BA5B8A /* parte-resultado8.png in Resources */,
-				BD6B550F19D79CD200BC0E5F /* caixa1-cheia.png in Resources */,
+				BD6B552819D7D26600BC0E5F /* caixa1-cheia.png in Resources */,
+				BD6B553119D7D26600BC0E5F /* fundo-desafio.png in Resources */,
 				A52D87A019D78235008079AF /* divisoria.png in Resources */,
+				BD6B555919D7D29400BC0E5F /* animation_wrong-5.png in Resources */,
 				BD9DF26F19A171A2003938C9 /* item-Operadores.png in Resources */,
 				120E8F8A192FC0A200CDEF95 /* Main.storyboard in Resources */,
 				BD4E5F2A19987BB60082632B /* operadores.mp3 in Resources */,
 				BDEE047019A0224D00EAC8ED /* fundo-descricao.png in Resources */,
 				BDD22F0E19A6F4A70043AA02 /* img-tutorial4.png in Resources */,
 				12C02BDA19D6132E0015AF10 /* direitos.png in Resources */,
-				BD6B54FA19D79CA900BC0E5F /* fundo-visor-correto1.png in Resources */,
 				A5CBEB9219D20E1B00AC879D /* Desafio-Operadores-Operador.png in Resources */,
 				BDF8AE02197B258C00BA5B8A /* parte-valores2.png in Resources */,
 				12C02BDC19D6135D0015AF10 /* botao-preferencias.png in Resources */,
-				BD6B54FC19D79CA900BC0E5F /* fundo-visor-correto3.png in Resources */,
-				BD6B54ED19D79C8A00BC0E5F /* fundo-visor-errado9.png in Resources */,
 				BDD22F0F19A6F4A70043AA02 /* img-tutorial5.png in Resources */,
 				8431DA7219CA28FD0076EBBA /* livre-menu.png in Resources */,
-				BD6B54EB19D79C8A00BC0E5F /* fundo-visor-errado7.png in Resources */,
-				BD6B54EC19D79C8A00BC0E5F /* fundo-visor-errado8.png in Resources */,
 				BD6D7C0119A7E5AB0022DF2A /* img-tutorial.png in Resources */,
 				BDE82C2519916E1F00610D96 /* senaoSe-normal.png in Resources */,
 				12C02BCA19D60BAA0015AF10 /* botao-lire-texto.png in Resources */,
@@ -1737,7 +1767,7 @@
 				BDF8AE0D197B417500BA5B8A /* parte-resultado10.png in Resources */,
 				BD9DF26E19A171A2003938C9 /* item-Condicionais.png in Resources */,
 				BDC757A6196787E700DB8380 /* abrir-caixa9.png in Resources */,
-				BD6B551419D79CD200BC0E5F /* caixa3-vazia.png in Resources */,
+				BD6B552D19D7D26600BC0E5F /* caixa3-vazia.png in Resources */,
 				BDF8AE09197B258C00BA5B8A /* parte-valores9.png in Resources */,
 				12719D4919CB5DBF006B1374 /* ColabThi.otf in Resources */,
 				12719D4819CB5DB9006B1374 /* ColabReg.otf in Resources */,
