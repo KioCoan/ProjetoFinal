@@ -34,7 +34,7 @@
     GerenciadorDesafios *gerenciador = [GerenciadorDesafios sharedGerenciador];
     [[self titulo]setFont:[UIFont fontWithName:FONT_LIGHT size:40]];
     [[self descricao]setFont:[UIFont fontWithName:FONT_LIGHT size:25]];
-    self.contentView.backgroundColor = [gerenciador retornaCorDesafioAtual];
+    //self.contentView.backgroundColor = [gerenciador retornaCorDesafioAtual];
     NSLog(@"%@",[gerenciador retornaCorDesafioAtual]);
 
 }
