@@ -149,6 +149,12 @@
 		BD5DE21419972335007849DB /* SpriteAtualizarNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5DE21319972335007849DB /* SpriteAtualizarNode.m */; };
 		BD66B651197F6F16000BB548 /* atualizar-dados.png in Resources */ = {isa = PBXBuildFile; fileRef = BD66B650197F6F16000BB548 /* atualizar-dados.png */; };
 		BD66B653197F9327000BB548 /* fundo-transparente.png in Resources */ = {isa = PBXBuildFile; fileRef = BD66B652197F9327000BB548 /* fundo-transparente.png */; };
+		BD6B54CA19D7985800BC0E5F /* DesafioVariavel.m in Sources */ = {isa = PBXBuildFile; fileRef = BD6B54C719D7985800BC0E5F /* DesafioVariavel.m */; };
+		BD6B54CB19D7985800BC0E5F /* DesafioVariavelScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BD6B54C919D7985800BC0E5F /* DesafioVariavelScene.m */; };
+		BD6B54D419D7987300BC0E5F /* SpriteCaixinhaNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD6B54CD19D7987300BC0E5F /* SpriteCaixinhaNode.m */; };
+		BD6B54D519D7987300BC0E5F /* SpriteCronometroNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD6B54CF19D7987300BC0E5F /* SpriteCronometroNode.m */; };
+		BD6B54D619D7987300BC0E5F /* SpriteEsteiraNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD6B54D119D7987300BC0E5F /* SpriteEsteiraNode.m */; };
+		BD6B54D719D7987300BC0E5F /* SpriteVisorNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD6B54D319D7987300BC0E5F /* SpriteVisorNode.m */; };
 		BD6D7C0119A7E5AB0022DF2A /* img-tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6D7C0019A7E5AB0022DF2A /* img-tutorial.png */; };
 		BD9DF26E19A171A2003938C9 /* item-Condicionais.png in Resources */ = {isa = PBXBuildFile; fileRef = BD9DF26B19A171A2003938C9 /* item-Condicionais.png */; };
 		BD9DF26F19A171A2003938C9 /* item-Operadores.png in Resources */ = {isa = PBXBuildFile; fileRef = BD9DF26C19A171A2003938C9 /* item-Operadores.png */; };
@@ -447,6 +453,18 @@
 		BD5DE21319972335007849DB /* SpriteAtualizarNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteAtualizarNode.m; sourceTree = "<group>"; };
 		BD66B650197F6F16000BB548 /* atualizar-dados.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "atualizar-dados.png"; path = "Imagens/atualizar-dados.png"; sourceTree = "<group>"; };
 		BD66B652197F9327000BB548 /* fundo-transparente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fundo-transparente.png"; path = "Imagens/fundo-transparente.png"; sourceTree = "<group>"; };
+		BD6B54C619D7985800BC0E5F /* DesafioVariavel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesafioVariavel.h; sourceTree = "<group>"; };
+		BD6B54C719D7985800BC0E5F /* DesafioVariavel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesafioVariavel.m; sourceTree = "<group>"; };
+		BD6B54C819D7985800BC0E5F /* DesafioVariavelScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesafioVariavelScene.h; sourceTree = "<group>"; };
+		BD6B54C919D7985800BC0E5F /* DesafioVariavelScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesafioVariavelScene.m; sourceTree = "<group>"; };
+		BD6B54CC19D7987300BC0E5F /* SpriteCaixinhaNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteCaixinhaNode.h; sourceTree = "<group>"; };
+		BD6B54CD19D7987300BC0E5F /* SpriteCaixinhaNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteCaixinhaNode.m; sourceTree = "<group>"; };
+		BD6B54CE19D7987300BC0E5F /* SpriteCronometroNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteCronometroNode.h; sourceTree = "<group>"; };
+		BD6B54CF19D7987300BC0E5F /* SpriteCronometroNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteCronometroNode.m; sourceTree = "<group>"; };
+		BD6B54D019D7987300BC0E5F /* SpriteEsteiraNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteEsteiraNode.h; sourceTree = "<group>"; };
+		BD6B54D119D7987300BC0E5F /* SpriteEsteiraNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteEsteiraNode.m; sourceTree = "<group>"; };
+		BD6B54D219D7987300BC0E5F /* SpriteVisorNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteVisorNode.h; sourceTree = "<group>"; };
+		BD6B54D319D7987300BC0E5F /* SpriteVisorNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteVisorNode.m; sourceTree = "<group>"; };
 		BD6D7C0019A7E5AB0022DF2A /* img-tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-tutorial.png"; sourceTree = "<group>"; };
 		BD9DF26B19A171A2003938C9 /* item-Condicionais.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-Condicionais.png"; path = "Imagens/item-Condicionais.png"; sourceTree = "<group>"; };
 		BD9DF26C19A171A2003938C9 /* item-Operadores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-Operadores.png"; path = "Imagens/item-Operadores.png"; sourceTree = "<group>"; };
@@ -652,6 +670,14 @@
 		12719D3C19CB558A006B1374 /* Animacoes */ = {
 			isa = PBXGroup;
 			children = (
+				BD6B54CC19D7987300BC0E5F /* SpriteCaixinhaNode.h */,
+				BD6B54CD19D7987300BC0E5F /* SpriteCaixinhaNode.m */,
+				BD6B54CE19D7987300BC0E5F /* SpriteCronometroNode.h */,
+				BD6B54CF19D7987300BC0E5F /* SpriteCronometroNode.m */,
+				BD6B54D019D7987300BC0E5F /* SpriteEsteiraNode.h */,
+				BD6B54D119D7987300BC0E5F /* SpriteEsteiraNode.m */,
+				BD6B54D219D7987300BC0E5F /* SpriteVisorNode.h */,
+				BD6B54D319D7987300BC0E5F /* SpriteVisorNode.m */,
 				12719D4A19CB5FB5006B1374 /* BotaoDesafiosNode.h */,
 				12719D4B19CB5FB5006B1374 /* BotaoDesafiosNode.m */,
 				A5CBEB9319D3595900AC879D /* OperadorDesafiosNode.h */,
@@ -663,6 +689,10 @@
 		12719D4019CB5656006B1374 /* Cenas */ = {
 			isa = PBXGroup;
 			children = (
+				BD6B54C619D7985800BC0E5F /* DesafioVariavel.h */,
+				BD6B54C719D7985800BC0E5F /* DesafioVariavel.m */,
+				BD6B54C819D7985800BC0E5F /* DesafioVariavelScene.h */,
+				BD6B54C919D7985800BC0E5F /* DesafioVariavelScene.m */,
 				12719D4119CB5683006B1374 /* DesafiosOperadoresScene.h */,
 				12719D4219CB5683006B1374 /* DesafiosOperadoresScene.m */,
 			);
@@ -1605,9 +1635,12 @@
 				A5BE095F19C223AF00F7110E /* MenuPrincipalViewController.m in Sources */,
 				8418F87C1970817000781F82 /* SpriteLabelNode.m in Sources */,
 				BDD2C07E19995B78003D557E /* Animacao.m in Sources */,
+				BD6B54D619D7987300BC0E5F /* SpriteEsteiraNode.m in Sources */,
+				BD6B54CB19D7985800BC0E5F /* DesafioVariavelScene.m in Sources */,
 				84960B7A19C8B40000BC7808 /* IconeSecao.m in Sources */,
 				A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */,
 				BDBE7693197A39E0004EA926 /* OperadorNode.m in Sources */,
+				BD6B54D719D7987300BC0E5F /* SpriteVisorNode.m in Sources */,
 				8423FA3F199AC1BF00C447FF /* CenaExercicioVariavel2.m in Sources */,
 				1551BFE419C36C3000CBDB86 /* ListaDesafioViewController.m in Sources */,
 				84960B7D19C8D7F500BC7808 /* SecaoMenu.m in Sources */,
@@ -1631,6 +1664,7 @@
 				A529DF1D1965DB7500A3D9FB /* Logico.m in Sources */,
 				120E8F83192FC0A200CDEF95 /* main.m in Sources */,
 				BD01DE051983566100AEAAA8 /* AnimaCondSimples.m in Sources */,
+				BD6B54D419D7987300BC0E5F /* SpriteCaixinhaNode.m in Sources */,
 				846B73921978255B009C2EB7 /* CenaExercicioOperadores1.m in Sources */,
 				BDD22EF919A6F31C0043AA02 /* FilhoViewController.m in Sources */,
 				BDB893D719677B3A009C105C /* AnimaVariavel.m in Sources */,
@@ -1638,10 +1672,12 @@
 				A597F0F51960A7A6006429C7 /* SubViewConteudoFilho.m in Sources */,
 				BDBE7694197A39E0004EA926 /* OperadorResultadoNode.m in Sources */,
 				A529DF1C1965DB7500A3D9FB /* Aritimetico.m in Sources */,
+				BD6B54CA19D7985800BC0E5F /* DesafioVariavel.m in Sources */,
 				8446A4CF1994021800C92785 /* ExeVariavel2.m in Sources */,
 				84B1B3E3197D881900089FCB /* CondicaoSimples.m in Sources */,
 				A50B33401972BF2E00BDD473 /* ListaDeExerciciosViewController.m in Sources */,
 				A5F38EFD19C711C900D337A4 /* DesafioOperadores.m in Sources */,
+				BD6B54D519D7987300BC0E5F /* SpriteCronometroNode.m in Sources */,
 				A500C2B519743C1D00D6BE83 /* ExeVariavel1.m in Sources */,
 				BDD22EF619A6F29C0043AA02 /* TutorialViewController.m in Sources */,
 				BDBE7695197A39E0004EA926 /* OperadorValoresNode.m in Sources */,

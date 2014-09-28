@@ -33,11 +33,9 @@
 -(int)acertos;
 -(int)erros;
 -(int)retornaTarefaAtual;
-<<<<<<< HEAD
-=======
+
 -(UIColor*)retornaMinhaCor;
 
->>>>>>> FETCH_HEAD
 
 
 -(NSString*)parte1;
