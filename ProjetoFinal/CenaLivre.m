@@ -143,33 +143,27 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     //ANIMACAO BOTAO MENU
     
+    
+    
+    
     if (cresci) {
-        SKAction *rodaBotao = [SKAction rotateByAngle:M_PI duration:0.5];
-        SKAction *trocaTexture1 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-10.png"]];
-        SKAction *trocaTexture2 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-11.png"]];
-        SKAction *trocaTexture3 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-12.png"]];
         
-        [botaoMenu runAction:rodaBotao completion:^{
-            
-            [botaoMenu runAction:trocaTexture1 completion:^{
-                
-                [botaoMenu runAction:trocaTexture2 completion:^{
-                    
-                    [botaoMenu runAction:[SKAction resizeToWidth:150 height:150 duration:0.5] completion:^{
-                        
-                        [botaoMenu runAction:trocaTexture3];
-                        
-                    }];
-                    
-                }];
-                
-                
-            }];
-            
-            
-            
-            
-        }];
+        
+        SKAction *rodaBotao = [SKAction rotateToAngle: (M_PI / 4) duration:0.5];
+        SKAction *rodaBotao2 = [SKAction rotateToAngle: (M_PI / 4) duration:0.0];
+        SKTexture *texture1 = [SKTexture textureWithImageNamed:@"modo livre-10.png"];
+        SKTexture *texture2 = [SKTexture textureWithImageNamed:@"modo livre-11.png"];
+        SKTexture *texture3 = [SKTexture textureWithImageNamed:@"modo livre-12.png"];
+        SKAction *aumenta = [SKAction resizeToWidth:150 height:150 duration:0.5];
+        
+        SKAction *texturas = [SKAction animateWithTextures:@[texture1,texture2,texture3] timePerFrame:0.1];
+        
+        SKAction *animacao = [SKAction sequence:@[rodaBotao,texturas,aumenta,rodaBotao2]];
+        
+        
+        
+        [botaoMenu runAction:animacao];
+        
         
     }else{
         
@@ -177,34 +171,43 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         //ANIMACAO BOTAO MENU
         
-        SKAction *rodaBotao = [SKAction rotateByAngle:-M_PI -0.8 duration:0.5];
-        SKAction *trocaTexture1 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-11.png"]];
-        SKAction *trocaTexture2 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-10.png"]];
-        SKAction *trocaTexture3 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-09.png"]];
+        //SKAction *rodaBotao = [SKAction rotateToAngle:M_PI + (-M_PI / 4) duration:0.5];
+
         
+        SKTexture *texture1 = [SKTexture textureWithImageNamed:@"modo livre-11.png"];
+        SKTexture *texture2 = [SKTexture textureWithImageNamed:@"modo livre-10.png"];
+        SKTexture *texture3 = [SKTexture textureWithImageNamed:@"modo livre-09.png"];
         
+        SKAction *texturas = [SKAction animateWithTextures:@[texture1,texture2,texture3] timePerFrame:0.1];
+        SKAction *diminui = [SKAction resizeToWidth:51 height:51 duration:0.5];
+//        SKAction *animacao = [SKAction sequence:@[texturas,rodaBotao,diminui]];
+////
+//        [botaoMenu runAction:diminui];
         
-        [botaoMenu runAction:trocaTexture1 completion:^{
-            
-            [botaoMenu runAction:trocaTexture2 completion:^{
-                
-                NSLog(@"size %f",botaoMenu.texture.size.height);
-                [botaoMenu runAction:[SKAction resizeToWidth:51 height:51 duration:0.5] completion:^{
-                    
-                    [botaoMenu runAction:rodaBotao completion:^{
-                        
-                        [botaoMenu runAction:trocaTexture3];
-                    }];
-                }];
-                
-            }];
-            
-            
-        }];
-        
+//        [botaoMenu runAction:trocaTexture1 completion:^{
+//            
+//            [botaoMenu runAction:trocaTexture2 completion:^{
+//                
+//                NSLog(@"size %f",botaoMenu.texture.size.height);
+//                [botaoMenu runAction:[SKAction resizeToWidth:51 height:51 duration:0.5] completion:^{
+//                    
+//                    [botaoMenu runAction:rodaBotao completion:^{
+//                        
+//                        [botaoMenu runAction:trocaTexture3];
+//                        
+//                    }];
+//                    
+//                    
+//                }];
+//                
+//            }];
+//            
+//            
+//        }];
+//        
     }
-    
-    
+//    
+//    
 }
 
 
