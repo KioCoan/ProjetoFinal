@@ -92,4 +92,17 @@
 -(NSString*)getOperador{
     return [lblOperador text];
 }
+
+-(void)criarCorpo{
+    
+    self.physicsBody = self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.size.height / 2];
+    self.physicsBody.dynamic = YES;
+    self.physicsBody.categoryBitMask = 0x1 << 1;
+    self.physicsBody.collisionBitMask = 0;
+    self.physicsBody.density = 0;
+    self.physicsBody.usesPreciseCollisionDetection = YES;
+
+    
+    
+}
 @end

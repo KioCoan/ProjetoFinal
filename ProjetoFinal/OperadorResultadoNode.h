@@ -25,4 +25,5 @@
 -(SKAction*)getAnimacaoDescer;
 -(void)iniciarAnimacao;
 -(NSString *)getLabelResultado;
+-(void)criarCorpo;
 @end

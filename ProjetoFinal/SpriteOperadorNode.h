@@ -15,8 +15,7 @@
 
 @protocol OperadorNodeGesture <NSObject>
 
-- (void)terminouGestureOperador : (SKNode*)caixa;
-- (void)mePega:(id)operador;
+- (void)terminouGestureOperador : (SKNode*)operador;
 
 @end
 
@@ -48,5 +47,7 @@
 -(void)iniciarAnimacaoAbrir;
 -(void)iniciarAnimacaoFechar;
 -(BOOL)partesVisiveis;
-
+- (void)criarCorpos;
+//- (void)setDonoOperadorNode;
+- (void)setDelegate;
 @end

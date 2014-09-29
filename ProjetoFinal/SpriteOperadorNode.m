@@ -10,6 +10,7 @@
 
 @implementation SpriteOperadorNode
 
+
 -(id)init{
     self = [super init];
     
@@ -148,8 +149,10 @@
     
     UITouch *touch = [touches anyObject];
     
-    if (self.dono != nil) {
-        CGPoint location = [touch locationInNode:self.dono];
+    if (self.myDelegateGesture != nil) {
+        SKScene *cena = (SKScene *)self.myDelegateGesture;
+        
+        CGPoint location = [touch locationInNode:cena];
         [self setPosition:location];
     }
     
@@ -157,11 +160,9 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    UITouch *touch = [touches anyObject];
-    
-    if (self.dono != nil) {
+    if (self.myDelegateGesture != nil) {
         
-        [self.myDelegateGesture mePega:self];
+        [self.myDelegateGesture terminouGestureOperador:self];
     }
     
     
@@ -216,7 +217,19 @@
     return nodeOperador;
 }
 
+- (void)criarCorpos{
+    
+    [nodeOperador criarCorpo];
+    [nodeResultado criarCorpo];
+}
 
 
+//- (void)setDonoOperadorNode{
+//    [nodeOperador setDono:self];
+//}
+
+- (void)pegaMinhaPosicao:(CGPoint)posicao{
+    self.position = posicao;
+}
 
 @end

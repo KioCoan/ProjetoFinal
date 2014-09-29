@@ -7,7 +7,6 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-
 //PROTOCOLO QUE AVISA AO SEU DELEGATE QUANDO O SPRITE QUE CONTEM O OPERADOR FOI CLICADO
 
 
@@ -17,6 +16,8 @@
 @end
 
 
+
+
 @interface OperadorNode : SKSpriteNode
 {
     SKLabelNode *lblOperador;
@@ -24,8 +25,8 @@
 
 @property id <OperadorNodeDelegate> myDelegate;
 
-
 -(id)initWithOperador:(NSString*)operador;
 -(void)setLabelOperador:(NSString*)operador;
 -(NSString*)getOperador;
+-(void)criarCorpo;
 @end

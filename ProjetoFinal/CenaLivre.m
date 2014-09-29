@@ -10,6 +10,7 @@
 #import "SpriteOperadorNode.h"
 #import "MenuNode.h"
 #import "Calculador.h"
+#import "OperadorNode.h"
 static const uint32_t categoriaBotaoMenu = 0x1 << 0;
 static const uint32_t categoriaCaixa = 0x1 << 1;
 
@@ -20,20 +21,18 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     SKSpriteNode *botaoMenu;
     SKSpriteNode *menuEdicao;
     NSMutableArray *vetorTextField;
+    NSMutableArray *vetorOperadores;
+    NSMutableArray *vetorVariaveis;
     BOOL menuEditarAberto;
     int contadorVariavel;
     BOOL estaEmContato;
-    SKNode *objetoAnimando;
+    SKNode *objetoEditando;
     SpriteOperadorNode *operadorEditando;
+    
 }
 
-- (void)mePega:(id)operador{
-    if (!menuEditarAberto) {
-        NSLog(@"recebi operador");
-        operadorEditando = operador;
-    }
-}
 
+// METODOS DE INICIACAO
 
 -(id)init{
     
@@ -86,6 +85,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         */
         
         
+        
     }
     return self;
 }
@@ -95,6 +95,8 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     [self criandoTodosTextFields];
     
 }
+
+//METODOS MENU
 
 - (void)criaMenuEdicao{
     
@@ -120,6 +122,106 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     [lblOk setPosition:CGPointMake(botaoOK.position.x, botaoOK.position.y - 10)];
     [menuEdicao addChild:lblOk];
 }
+
+-(void)moveMenuEdicao{
+    
+    if (menuEditarAberto) {
+        menuEditarAberto = NO;
+        [menuEdicao removeFromParent];
+        
+    }else{
+        menuEditarAberto = YES;
+        [self addChild:menuEdicao];
+        
+    }
+    
+    [self mostraEscondeTextField:!menuEditarAberto];
+    
+}
+
+- (void)botaoMenuCresci:(BOOL)cresci{
+    
+    //ANIMACAO BOTAO MENU
+    
+    if (cresci) {
+        SKAction *rodaBotao = [SKAction rotateByAngle:M_PI duration:0.5];
+        SKAction *trocaTexture1 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-10.png"]];
+        SKAction *trocaTexture2 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-11.png"]];
+        SKAction *trocaTexture3 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-12.png"]];
+        
+        [botaoMenu runAction:rodaBotao completion:^{
+            
+            [botaoMenu runAction:trocaTexture1 completion:^{
+                
+                [botaoMenu runAction:trocaTexture2 completion:^{
+                    
+                    [botaoMenu runAction:[SKAction resizeToWidth:150 height:150 duration:0.5] completion:^{
+                        
+                        [botaoMenu runAction:trocaTexture3];
+                        
+                    }];
+                    
+                }];
+                
+                
+            }];
+            
+            
+            
+            
+        }];
+        
+    }else{
+        
+        //DIMINUI
+        
+        //ANIMACAO BOTAO MENU
+        
+        SKAction *rodaBotao = [SKAction rotateByAngle:-M_PI -0.8 duration:0.5];
+        SKAction *trocaTexture1 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-11.png"]];
+        SKAction *trocaTexture2 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-10.png"]];
+        SKAction *trocaTexture3 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-09.png"]];
+        
+        
+        
+        [botaoMenu runAction:trocaTexture1 completion:^{
+            
+            [botaoMenu runAction:trocaTexture2 completion:^{
+                
+                NSLog(@"size %f",botaoMenu.texture.size.height);
+                [botaoMenu runAction:[SKAction resizeToWidth:51 height:51 duration:0.5] completion:^{
+                    
+                    [botaoMenu runAction:rodaBotao completion:^{
+                        
+                        [botaoMenu runAction:trocaTexture3];
+                    }];
+                }];
+                
+            }];
+            
+            
+        }];
+        
+    }
+    
+    
+}
+
+
+- (SKAction *)retornaCrescerDiminuir:(BOOL)aumenta{
+    
+    //ANIMACAO QUE OCORRE QUANDO USUARIO CLICA NO ICONE
+    
+    if (aumenta) {
+        return [SKAction scaleTo:1.1 duration:0.1];
+    }
+    
+    return [SKAction scaleTo:1 duration:0.1];
+    
+    
+}
+
+// METODO TEXTFIELD
 
 - (void)criandoTodosTextFields{
     
@@ -175,202 +277,14 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     }
 }
 
-
--(void)moveMenuEdicao{
-    
-    if (menuEditarAberto) {
-        menuEditarAberto = NO;
-        [menuEdicao removeFromParent];
-        
-    }else{
-        menuEditarAberto = YES;
-        [self addChild:menuEdicao];
-        
-    }
-    
-    [self mostraEscondeTextField:!menuEditarAberto];
-    
-}
-
-- (void)botaoMenuCresci:(BOOL)cresci{
-    
-    //ANIMACAO BOTAO MENU
-    
-    if (cresci) {
-        SKAction *rodaBotao = [SKAction rotateByAngle:M_PI duration:0.5];
-        SKAction *trocaTexture1 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-10.png"]];
-        SKAction *trocaTexture2 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-11.png"]];
-        SKAction *trocaTexture3 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-12.png"]];
-        
-        [botaoMenu runAction:rodaBotao completion:^{
-            
-            [botaoMenu runAction:trocaTexture1 completion:^{
-                
-                [botaoMenu runAction:trocaTexture2 completion:^{
-                    
-                    [botaoMenu runAction:[SKAction resizeToWidth:150 height:150 duration:0.5] completion:^{
-                        
-                        [botaoMenu runAction:trocaTexture3];
-                        
-                    }];
-                    
-                }];
-                
-                
-            }];
-            
-            
-            
-            
-        }];
-
-    }else{
-        
-        //DIMINUI
-        
-        //ANIMACAO BOTAO MENU
-        
-        SKAction *rodaBotao = [SKAction rotateByAngle:-M_PI -0.8 duration:0.5];
-        SKAction *trocaTexture1 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-11.png"]];
-        SKAction *trocaTexture2 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-10.png"]];
-        SKAction *trocaTexture3 = [SKAction setTexture:[SKTexture textureWithImageNamed:@"modo livre-09.png"]];
-        
-        
-            
-            [botaoMenu runAction:trocaTexture1 completion:^{
-                
-                [botaoMenu runAction:trocaTexture2 completion:^{
-                    
-                    NSLog(@"size %f",botaoMenu.texture.size.height);
-                    [botaoMenu runAction:[SKAction resizeToWidth:51 height:51 duration:0.5] completion:^{
-                        
-                        [botaoMenu runAction:rodaBotao completion:^{
-                        
-                        [botaoMenu runAction:trocaTexture3];
-                    }];
-                    }];
-                    
-                }];
-                
-                
-            }];
-        
-    }
-    
-    
-}
-
-
-- (SKAction *)retornaCrescerDiminuir:(BOOL)aumenta{
-    
-    //ANIMACAO QUE OCORRE QUANDO USUARIO CLICA NO ICONE
-    
-    if (aumenta) {
-     return [SKAction scaleTo:1.1 duration:0.1];
-    }
-    
-    return [SKAction scaleTo:1 duration:0.1];
-    
-    
-}
-
--(void)criarVariavelTipo:(NSString *)tipo posicao:(CGPoint)posicao{
-    
-    SpriteCaixaNode *caixa = [[SpriteCaixaNode alloc]init];
-    
-    
-    [caixa setDono:self];
-    [caixa setPosition:posicao];
-    caixa.name = @"variavel";
-    caixa.zPosition = -1;
-    [caixa setLabelTipo:tipo];
-    [caixa setLabelEndereco:++contadorVariavel];
-    [caixa setBotaoMenu:botaoMenu.frame];
-    [caixa setMyDelegate:self];
-    [self addChild:caixa];
-    
-    //CRIA CORPO DA CAIXA
-    caixa.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:caixa.frame.size];
-    caixa.physicsBody.dynamic = YES;
-    caixa.physicsBody.categoryBitMask = categoriaCaixa;
-    caixa.physicsBody.collisionBitMask = 0;
-    caixa.physicsBody.density = 0;
-    caixa.physicsBody.usesPreciseCollisionDetection = YES;
-}
-
--(void)criarOperadorNaPosicao:(CGPoint)posicao tipo:(NSString *)tipo{
-    
-    SpriteOperadorNode *novoOperador = [[SpriteOperadorNode alloc]initWithValor1:nil operador:tipo valor2:nil resultado:nil];
-    
-    [novoOperador setDono:self];
-    [novoOperador setPosition:posicao];
-    //caixa.size = CGSizeMake(200, 200);
-    novoOperador.zPosition = -1;
-    novoOperador.name = @"operador";
-    novoOperador.myDelegateGesture = self;
-    
-    [self addChild:novoOperador];
-    
-}
-
-
-
--(void)criaObjetoPosicao:(CGPoint)posicao{
-    
-    IconeSecao *icone = (IconeSecao *)conteudoAtivo;
-    
-    [icone runAction:[SKAction moveTo:icone.posicaoAnterior duration:0]];
-    
-    
-    if ([icone.secao isEqualToString:@"variavel"]) {
-        
-        [self criarVariavelTipo:icone.tipo posicao:posicao];
-    }else if ([icone.secao isEqualToString:@"operador"]){
-        
-        
-        [self criarOperadorNaPosicao:posicao tipo:icone.tipo];
-    }
-    
-}
-
-- (UIKeyboardType)variavelNumerica :(SpriteCaixaNode *)variavel{
-    
-    NSArray *tiposVariaveis = [NSArray arrayWithObjects:@"inteiro",@"real",@"caractere",@"logico", nil];
-    
-    
-    int i = 0;
-    
-    for (i = 0; i < tiposVariaveis.count; i++) {
-        
-        if ([[variavel retornaTipo] isEqualToString:[tiposVariaveis objectAtIndex:i]]) {
-            
-            break;
-        
-        }
-        
-    }
-    
-    switch (i) {
-        case 0:
-        case 1:
-            return  UIKeyboardTypeNumberPad;
-            break;
-            
-        default:
-            return UIKeyboardTypeDefault;
-            break;
-    }
-    
-}
-
 - (void)preparaTextFieldsVariavel{
     
-    SpriteCaixaNode *variavel = (SpriteCaixaNode *)objetoAnimando;
+    SpriteCaixaNode *variavel = (SpriteCaixaNode *)objetoEditando;
     
     for (int i = 0; i < vetorTextField.count;i++) {
         
         UITextField *textField = [vetorTextField objectAtIndex:i];
-                
+        
         switch (i) {
             case 0:
                 textField.placeholder = @"insira nome";
@@ -406,6 +320,220 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     }
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+- (void)limpaTextField:(UITextField *)textField{
+    
+    //LIMPA A TEXTFIELD
+    
+    [textField resignFirstResponder];
+    
+    textField.text = nil;
+}
+
+
+
+// METODOS VARIAVEIS
+
+
+-(void)criarVariavelTipo:(NSString *)tipo posicao:(CGPoint)posicao{
+    
+    if (vetorVariaveis == nil) {
+        vetorVariaveis = [NSMutableArray array];
+    }
+    
+    
+    SpriteCaixaNode *variavel = [[SpriteCaixaNode alloc]init];
+    
+    
+    [variavel setDono:self];
+    [variavel setPosition:posicao];
+    variavel.name = @"variavel";
+    variavel.zPosition = -1;
+    [variavel setLabelTipo:tipo];
+    [variavel setLabelEndereco:++contadorVariavel];
+    [variavel setBotaoMenu:botaoMenu.frame];
+    [variavel setMyDelegate:self];
+    [self addChild:variavel];
+    
+    
+    //CRIA CORPO DA CAIXA
+    variavel.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:variavel.frame.size];
+    variavel.physicsBody.dynamic = YES;
+    variavel.physicsBody.categoryBitMask = categoriaCaixa;
+    variavel.physicsBody.collisionBitMask = 0;
+    variavel.physicsBody.density = 0;
+    variavel.physicsBody.usesPreciseCollisionDetection = YES;
+    
+    [vetorVariaveis addObject:variavel];
+}
+
+- (UIKeyboardType)variavelNumerica :(SpriteCaixaNode *)variavel{
+    
+    NSArray *tiposVariaveis = [NSArray arrayWithObjects:@"inteiro",@"real",@"caractere",@"logico", nil];
+    
+    
+    int i = 0;
+    
+    for (i = 0; i < tiposVariaveis.count; i++) {
+        
+        if ([[variavel retornaTipo] isEqualToString:[tiposVariaveis objectAtIndex:i]]) {
+            
+            break;
+            
+        }
+        
+    }
+    
+    switch (i) {
+        case 0:
+        case 1:
+            return  UIKeyboardTypeNumberPad;
+            break;
+            
+        default:
+            return UIKeyboardTypeDefault;
+            break;
+    }
+    
+}
+
+-(void)terminouGestureCaixa:(SKNode *)caixa{
+    
+    if (estaEmContato) {
+        [caixa removeFromParent];
+        [self didEndContact:nil];
+    }
+}
+
+
+// METODOS OPERADORES
+
+-(void)criarOperadorNaPosicao:(CGPoint)posicao tipo:(NSString *)tipo{
+    
+    if (vetorOperadores == nil) {
+        vetorOperadores = [NSMutableArray array];
+    }
+    
+    SpriteOperadorNode *novoOperador = [[SpriteOperadorNode alloc]initWithValor1:nil operador:tipo valor2:nil resultado:nil];
+    
+    [novoOperador setDono:self];
+    [novoOperador setPosition:posicao];
+    //caixa.size = CGSizeMake(200, 200);
+    novoOperador.zPosition = -1;
+    novoOperador.name = @"operador";
+    novoOperador.myDelegateGesture = self;
+    
+    [novoOperador criarCorpos];
+    
+    [self addChild:novoOperador];
+    [vetorOperadores addObject:novoOperador];
+}
+
+-(void)criaObjetoPosicao:(CGPoint)posicao{
+    
+    IconeSecao *icone = (IconeSecao *)conteudoAtivo;
+    
+    [icone runAction:[SKAction moveTo:icone.posicaoAnterior duration:0]];
+    
+    
+    if ([icone.secao isEqualToString:@"variavel"]) {
+        
+        [self criarVariavelTipo:icone.tipo posicao:posicao];
+    }else if ([icone.secao isEqualToString:@"operador"]){
+        
+        
+        [self criarOperadorNaPosicao:posicao tipo:icone.tipo];
+    }
+    
+}
+
+- (void)terminouGestureOperador:(SKNode *)operador{
+    
+    
+    if (estaEmContato) {
+        [operador removeFromParent];
+        [self didEndContact:nil];
+    }
+    
+    
+}
+
+- (SpriteOperadorNode *)retornaOperadorNode{
+    
+    for (SpriteOperadorNode *node in vetorOperadores) {
+        
+        
+        
+        if ([objetoEditando isEqual:[node retornaOperadorNode]]) {
+            return node;
+        }
+    }
+    
+    return nil;
+}
+
+
+
+// METODOS OBJETOS
+
+- (void)insereValores{
+    
+    //INSERE VALOR VARIAVEIS
+    if ([objetoEditando.name isEqualToString:@"variavel"]) {
+        SpriteCaixaNode *variavel = (SpriteCaixaNode *)objetoEditando;
+        
+        for (int i = 0; i < vetorTextField.count;i++) {
+            
+            UITextField *textField = [vetorTextField objectAtIndex:i];
+            
+            
+            switch (i) {
+                case 0:
+                    [variavel setLabelNome:textField.text];
+                    break;
+                    
+                case 1:
+                    [variavel setLabelConteudo:textField.text];
+                    break;
+            }
+        }
+        
+        // INSERE VALOR NO OPERADOR
+        
+    }else if ([objetoEditando.name isEqualToString:@"operador"]){
+        
+        SpriteOperadorNode *operador = [self retornaOperadorNode];
+        
+        for (int i = 0; i < vetorTextField.count;i++) {
+            
+            UITextField *textField = [vetorTextField objectAtIndex:i];
+            switch (i) {
+                case 0:
+                    [operador setLabelValor1:textField.text];
+                    
+                    break;
+                    
+                case 1:
+                    [operador setLabelValor2:textField.text];
+                    break;
+            }
+        }
+        
+        Calculador *calculador = [[Calculador alloc]init];
+        
+        
+        [operador setLabelResultado:[calculador calculaOperador:[operador getOperador] numero1:[operador getValor1] numero2:[operador getValor2]]];
+        
+    }
+    
+    [self moveMenuEdicao];
+    objetoEditando = nil;
+}
 
 - (void)identificaNodeETap:(int)tap{
     
@@ -423,13 +551,12 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     }else if (tap == 2){
         
         if ([conteudoAtivo.name isEqualToString:@"variavel"]) {
-            objetoAnimando = conteudoAtivo;
+            objetoEditando = conteudoAtivo;
             
             [self preparaTextFieldsVariavel];
             [self moveMenuEdicao];
         }else if ([conteudoAtivo.name isEqualToString:@"operador"]){
-            
-            //operadorEditando = (SpriteOperadorNode *) conteudoAtivo;
+            objetoEditando = conteudoAtivo;
             [self preparaTextFieldsOperador];
             [self moveMenuEdicao];
 
@@ -456,84 +583,11 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
-    
-    return YES;
-}
-
-- (void)limpaTextField:(UITextField *)textField{
-    
-    //LIMPA A TEXTFIELD
-    
-    [textField resignFirstResponder];
-    
-    textField.text = nil;
-}
 
 
-- (void)insereValores{
-    
-    //INSERE VALOR VARIAVEIS
-    if ([objetoAnimando.name isEqualToString:@"variavel"]) {
-        SpriteCaixaNode *variavel = (SpriteCaixaNode *)objetoAnimando;
-        
-        for (int i = 0; i < vetorTextField.count;i++) {
-            
-            UITextField *textField = [vetorTextField objectAtIndex:i];
-            
-            
-            switch (i) {
-                case 0:
-                    [variavel setLabelNome:textField.text];
-                    break;
-                    
-                case 1:
-                    [variavel setLabelConteudo:textField.text];
-                    break;
-            }
-        }
-      
-        // INSERE VALOR NO OPERADOR
-        
-    }else if ([operadorEditando.name isEqualToString:@"operador"]){
-        
-        SpriteOperadorNode *operador = (SpriteOperadorNode *)objetoAnimando;
-        
-        for (int i = 0; i < vetorTextField.count;i++) {
-            
-            UITextField *textField = [vetorTextField objectAtIndex:i];
-            NSString *nova = textField.text;
-            switch (i) {
-                case 0:
-                    [operadorEditando setLabelValor1:textField.text];
-                    
-                    break;
-                    
-                case 1:
-                    [operadorEditando setLabelValor2:textField.text];
-                    break;
-            }
-        }
-        
-        Calculador *calculador = [[Calculador alloc]init];
-        
 
-        [operadorEditando setLabelResultado:[calculador calculaOperador:[operadorEditando getOperador] numero1:[operadorEditando getValor1] numero2:[operadorEditando getValor2]]];
-        
-    }
-    
-    [self moveMenuEdicao];
-    
-}
 
--(void)terminouGestureCaixa:(SKNode *)caixa{
-    
-    if (estaEmContato) {
-        [caixa removeFromParent];
-        [self didEndContact:nil];
-    }
-}
+// METODOS CONTATOS
 
 - (void)didBeginContact:(SKPhysicsContact *)contact{
     
@@ -550,19 +604,20 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     [self botaoMenuCresci:NO];
 }
 
+
+
+// METODOS TOUCHES
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     
     UITouch *touch = [touches anyObject];
     CGPoint location =  [touch locationInNode:self];
     
-    if ([touch tapCount] == 2) {
-        NSLog(@"dois taps");
-    }
-    
-    NSLog(@"nome clicado %@",conteudoAtivo.name);
     
     conteudoAtivo = [self nodeAtPoint:location];
+    
+    
     
     [self identificaNodeETap:[touch tapCount]];
     
