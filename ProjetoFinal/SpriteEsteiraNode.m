@@ -57,9 +57,9 @@
 -(void)iniciarAnimacaoDeEntrada{
     int posicaoFinal = self.position.x + nodeEsteira.size.width;
     
-    SKAction *moverEsteira = [SKAction moveToX:posicaoFinal duration:1.5];
+    SKAction *moverEsteira = [SKAction moveToX:posicaoFinal duration:1.3];
     [moverEsteira setTimingMode:SKActionTimingEaseOut];
-    SKAction *moverPistao = [SKAction moveToY:nodePistao.position.y + nodePistao.size.height duration:1.5];
+    SKAction *moverPistao = [SKAction moveToY:nodePistao.position.y + nodePistao.size.height duration:1.3];
     [moverPistao setTimingMode:SKActionTimingEaseOut];
     
     [self runAction:moverEsteira completion:^{

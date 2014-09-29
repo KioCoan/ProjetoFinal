@@ -35,7 +35,7 @@
 -(void)inicializarSpritesVisor{
     acaoCorreto = [self gerarActionComSpritesDeNome:@"animation_correct-" quantidade:14];
     [acaoCorreto setTimingMode:SKActionTimingEaseIn];
-    acaoErrado = [self gerarActionComSpritesDeNome:@"animation_wrong-" quantidade:11];
+    acaoErrado = [self gerarActionComSpritesDeNome:@"animation_wrong-" quantidade:14];
     [acaoErrado setTimingMode:SKActionTimingEaseOut];
 }
 
@@ -48,7 +48,7 @@
     }
     
     
-    return [SKAction animateWithTextures:vtSprites timePerFrame:0.08];
+    return [SKAction animateWithTextures:vtSprites timePerFrame:0.04];
 }
 
 -(void)ajustarValorSize{
@@ -93,7 +93,7 @@
 
     if (resposta) {
         //ANIMAÇÃO FAZ COM QUE O TEXTO DESAPAREÇA
-        [lblValor runAction:[SKAction fadeOutWithDuration:0.5]];
+        [lblValor runAction:[SKAction fadeOutWithDuration:0.4]];
 
     }else{
         //ANIMAÇÃO FAZ COM QUE O TEXTO APAREÇA
@@ -119,7 +119,7 @@
     SKAction *actionReversa = [action reversedAction];
     
     [self runAction:action completion:^{
-        [self runAction:[SKAction waitForDuration:0.5] completion:^{
+        [self runAction:[SKAction waitForDuration:0.8] completion:^{
             [self enviarMensagemAoDelegate:resposta];
             
             [self runAction:actionReversa completion:^{
