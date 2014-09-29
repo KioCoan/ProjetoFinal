@@ -12,6 +12,14 @@
 #import "OperadorResultadoNode.h"
 #import "MenuNode.h"
 
+
+@protocol OperadorNodeGesture <NSObject>
+
+- (void)terminouGestureOperador : (SKNode*)caixa;
+- (void)mePega:(id)operador;
+
+@end
+
 @interface SpriteOperadorNode : SKSpriteNode <OperadorNodeDelegate>
 {
     OperadorNode *nodeOperador;
@@ -23,6 +31,7 @@
     BOOL partesVisiveis;
 }
 
+@property id <OperadorNodeGesture> myDelegateGesture;
 @property SKScene *dono;
 
 -(id)initWithValor1:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 resultado:(NSString*)resultado;
@@ -39,4 +48,5 @@
 -(void)iniciarAnimacaoAbrir;
 -(void)iniciarAnimacaoFechar;
 -(BOOL)partesVisiveis;
+
 @end

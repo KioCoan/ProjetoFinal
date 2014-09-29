@@ -75,6 +75,9 @@
 }
 
 
+
+
+
 -(void)iniciarAnimacaoDiminuir{
     [lblOperador setFontSize:lblOperador.fontSize - 10];
     [self setSize:CGSizeMake(self.size.width - 10, self.size.height - 10)];

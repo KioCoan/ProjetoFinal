@@ -9,7 +9,7 @@
 #import "CenaLivre.h"
 #import "SpriteOperadorNode.h"
 #import "MenuNode.h"
-
+#import "Calculador.h"
 static const uint32_t categoriaBotaoMenu = 0x1 << 0;
 static const uint32_t categoriaCaixa = 0x1 << 1;
 
@@ -24,6 +24,14 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     int contadorVariavel;
     BOOL estaEmContato;
     SKNode *objetoAnimando;
+    SpriteOperadorNode *operadorEditando;
+}
+
+- (void)mePega:(id)operador{
+    if (!menuEditarAberto) {
+        NSLog(@"recebi operador");
+        operadorEditando = operador;
+    }
 }
 
 
@@ -76,6 +84,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         NSLog(@"nova string %@",testando);
         
         */
+        
         
     }
     return self;
@@ -289,17 +298,22 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     caixa.physicsBody.usesPreciseCollisionDetection = YES;
 }
 
--(void)criarOperadorNaPosicao:(CGPoint)posicao{
+-(void)criarOperadorNaPosicao:(CGPoint)posicao tipo:(NSString *)tipo{
     
-    SpriteOperadorNode *operador = [[SpriteOperadorNode alloc]init];
+    SpriteOperadorNode *novoOperador = [[SpriteOperadorNode alloc]initWithValor1:nil operador:tipo valor2:nil resultado:nil];
     
-    [operador setDono:self];
-    [operador setPosition:posicao];
+    [novoOperador setDono:self];
+    [novoOperador setPosition:posicao];
     //caixa.size = CGSizeMake(200, 200);
-    operador.zPosition = -1;
-    [self addChild:operador];
+    novoOperador.zPosition = -1;
+    novoOperador.name = @"operador";
+    novoOperador.myDelegateGesture = self;
+    
+    [self addChild:novoOperador];
     
 }
+
+
 
 -(void)criaObjetoPosicao:(CGPoint)posicao{
     
@@ -312,10 +326,10 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         [self criarVariavelTipo:icone.tipo posicao:posicao];
     }else if ([icone.secao isEqualToString:@"operador"]){
-        [self criarOperadorNaPosicao:posicao];
+        
+        
+        [self criarOperadorNaPosicao:posicao tipo:icone.tipo];
     }
-    
-    
     
 }
 
@@ -356,9 +370,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     for (int i = 0; i < vetorTextField.count;i++) {
         
         UITextField *textField = [vetorTextField objectAtIndex:i];
-        textField.keyboardType = UIKeyboardTypeNumberPad;
-        
-        
+                
         switch (i) {
             case 0:
                 textField.placeholder = @"insira nome";
@@ -372,7 +384,30 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     }
 }
 
-- (void)identificaNodeGeraAcao{
+- (void)preparaTextFieldsOperador{
+    
+    
+    
+    for (int i = 0; i < vetorTextField.count;i++) {
+        
+        UITextField *textField = [vetorTextField objectAtIndex:i];
+        textField.keyboardType = UIKeyboardTypeNumberPad;
+        
+        
+        switch (i) {
+            case 0:
+                textField.placeholder = @"insira valor1";
+                break;
+                
+            case 1:
+                textField.placeholder = @"insira valor2";
+                break;
+        }
+    }
+}
+
+
+- (void)identificaNodeETap:(int)tap{
     
     
     if ([conteudoAtivo.name isEqualToString:@"botaoMenu"]) {
@@ -385,12 +420,35 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         [self.myDelegate esconderNavigationController: [menu getAberto]];
     }else if ([conteudoAtivo.name isEqualToString:@"iconeMenu"]){
         [conteudoAtivo runAction:[self retornaCrescerDiminuir:YES]];
-    }else if ([conteudoAtivo.name isEqualToString:@"variavel"]){
+    }else if (tap == 2){
+        
+        if ([conteudoAtivo.name isEqualToString:@"variavel"]) {
+            objetoAnimando = conteudoAtivo;
+            
+            [self preparaTextFieldsVariavel];
+            [self moveMenuEdicao];
+        }else if ([conteudoAtivo.name isEqualToString:@"operador"]){
+            
+            //operadorEditando = (SpriteOperadorNode *) conteudoAtivo;
+            [self preparaTextFieldsOperador];
+            [self moveMenuEdicao];
+
+            
+            
+        }
+        
+    }
+    
+    
+    
+    
+    
+   /* else if ([conteudoAtivo.name isEqualToString:@"variavel"] || [conteudoAtivo.name isEqualToString:@"operador"]){
         objetoAnimando = conteudoAtivo;
         
         [self preparaTextFieldsVariavel];
         [self moveMenuEdicao];
-    }else if ([conteudoAtivo.name isEqualToString:@"botaoOK"]){
+    }*/  else if ([conteudoAtivo.name isEqualToString:@"botaoOK"]){
         [self insereValores];
     }
 
@@ -438,27 +496,30 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
       
         // INSERE VALOR NO OPERADOR
         
-    }else if ([objetoAnimando.name isEqualToString:@"operador"]){
+    }else if ([operadorEditando.name isEqualToString:@"operador"]){
         
         SpriteOperadorNode *operador = (SpriteOperadorNode *)objetoAnimando;
         
         for (int i = 0; i < vetorTextField.count;i++) {
             
             UITextField *textField = [vetorTextField objectAtIndex:i];
-            
-            
+            NSString *nova = textField.text;
             switch (i) {
                 case 0:
-                    [operador setLabelValor1:textField.text];
+                    [operadorEditando setLabelValor1:textField.text];
+                    
                     break;
                     
                 case 1:
-                    [operador setLabelValor2:textField.text];
+                    [operadorEditando setLabelValor2:textField.text];
                     break;
             }
         }
-
         
+        Calculador *calculador = [[Calculador alloc]init];
+        
+
+        [operadorEditando setLabelResultado:[calculador calculaOperador:[operadorEditando getOperador] numero1:[operadorEditando getValor1] numero2:[operadorEditando getValor2]]];
         
     }
     
@@ -495,11 +556,15 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     UITouch *touch = [touches anyObject];
     CGPoint location =  [touch locationInNode:self];
     
+    if ([touch tapCount] == 2) {
+        NSLog(@"dois taps");
+    }
+    
     NSLog(@"nome clicado %@",conteudoAtivo.name);
     
     conteudoAtivo = [self nodeAtPoint:location];
     
-    [self identificaNodeGeraAcao];
+    [self identificaNodeETap:[touch tapCount]];
     
 }
 

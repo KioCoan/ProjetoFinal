@@ -9,6 +9,9 @@
 #import <SpriteKit/SpriteKit.h>
 
 //PROTOCOLO QUE AVISA AO SEU DELEGATE QUANDO O SPRITE QUE CONTEM O OPERADOR FOI CLICADO
+
+
+
 @protocol OperadorNodeDelegate <NSObject>
 -(void)spriteOperadorClicado;
 @end
@@ -20,6 +23,7 @@
 }
 
 @property id <OperadorNodeDelegate> myDelegate;
+
 
 -(id)initWithOperador:(NSString*)operador;
 -(void)setLabelOperador:(NSString*)operador;

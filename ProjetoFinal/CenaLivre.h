@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 #import "SpriteCaixaNode.h"
-
+#import "SpriteOperadorNode.h"
 
 
 @protocol CenaLivreDelegate <NSObject>
@@ -20,7 +20,7 @@
 @end
 
 
-@interface CenaLivre : SKScene <UITextFieldDelegate,SKPhysicsContactDelegate,SpriteCaixaDelegate>
+@interface CenaLivre : SKScene <UITextFieldDelegate,SKPhysicsContactDelegate,OperadorNodeGesture,SpriteCaixaDelegate>
 
 @property id<CenaLivreDelegate> myDelegate;
 

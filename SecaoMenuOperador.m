@@ -34,12 +34,12 @@
 
 - (void)criarTodosIcones{
     
-    NSArray *tiposVariaveis = [NSArray arrayWithObjects:@"operador",nil];
+    NSArray *tiposOperadores = [NSArray arrayWithObjects:@"+",@"-",@"/",@"*",nil];
     
-    for (int i = 0; i < tiposVariaveis.count; i++) {
+    for (int i = 0; i < tiposOperadores.count; i++) {
         
         
-        [icones addObject:[self criarIconeSecao:self.titulo tipo:[tiposVariaveis objectAtIndex:i] imagem:@"parte-operador.png"]];
+        [icones addObject:[self criarIconeSecao:self.titulo tipo:[tiposOperadores objectAtIndex:i] imagem:@"parte-operador.png"]];
         
     }
     

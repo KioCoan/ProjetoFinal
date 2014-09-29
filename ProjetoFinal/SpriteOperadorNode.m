@@ -46,6 +46,7 @@
     
     //POR FIM É INSERIDO A PARTE QUE MOSTRA O OPERADOR
     nodeOperador = [[OperadorNode alloc] initWithOperador:operador];
+    nodeOperador.name = @"operador";
     [nodeOperador setMyDelegate:self];
     [nodeValores addChild:nodeOperador];
     
@@ -73,7 +74,6 @@
 //        [nodeOperador iniciarAnimacaoDiminuir];
 //    }
 //}
-
 
 
 -(void)iniciarAnimacoes{
@@ -144,6 +144,30 @@
 }
 
 
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    UITouch *touch = [touches anyObject];
+    
+    if (self.dono != nil) {
+        CGPoint location = [touch locationInNode:self.dono];
+        [self setPosition:location];
+    }
+    
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    UITouch *touch = [touches anyObject];
+    
+    if (self.dono != nil) {
+        
+        [self.myDelegateGesture mePega:self];
+    }
+    
+    
+}
+
+
 -(void)setLabelValor1:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 resultado:(NSString*)resultado{
     [self setLabelValor1:valor1];
     [self setLabelOperador:operador];
@@ -192,19 +216,7 @@
     return nodeOperador;
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    UITouch *touch = [touches anyObject];
-    
-    if (self.dono != nil) {
-        CGPoint location = [touch locationInNode:self.dono];
-        [self setPosition:location];
-    }
-    
-    
-    
-    
-}
+
 
 
 @end

@@ -16,6 +16,7 @@
     SKAction *fecharMenu;
     int nSecoes;
     NSString *secaoAtivo;
+    SKLabelNode *lbltitulo;
 }
 
 - (BOOL)getAberto{
@@ -29,8 +30,6 @@
     if (![secaoAtivo isEqualToString:titulo]) {
         
         
-        
-        
         if (secaoAtivo != nil) {
             SecaoMenu *secaoAntiga = [self retornaSecaoPorTitulo:secaoAtivo];
             [secaoAntiga removeTodosIcones];
@@ -38,11 +37,12 @@
         
         SecaoMenu *secao = [self retornaSecaoPorTitulo:titulo];
         secaoAtivo = secao.titulo;
-        
+        lbltitulo.text = titulo;
+        lbltitulo.alpha = 1;
         
         CGPoint posicaoInicial;
         CGPoint posicaoMutavel;
-        posicaoInicial = CGPointMake(0, 350);
+        posicaoInicial = CGPointMake(0, 270);
         posicaoMutavel = posicaoInicial;
         
         
@@ -141,6 +141,13 @@
     nSecoes = 2;
     
     [self criarTodasSecoes];
+    
+    lbltitulo = [[SKLabelNode alloc]initWithFontNamed:@"Helvetica"];
+    lbltitulo.fontColor = [SKColor whiteColor];
+    lbltitulo.fontSize = 60;
+    lbltitulo.position = CGPointMake(-40, 390);
+    lbltitulo.alpha = 0;
+    [self addChild:lbltitulo];
     
     
     return self;
