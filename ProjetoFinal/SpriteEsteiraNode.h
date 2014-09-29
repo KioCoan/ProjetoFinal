@@ -12,7 +12,7 @@
 @protocol SpriteEsteiraDelegate <NSObject>
 -(void)spriteEsteiraLevantado:(BOOL)resultado tiposVariavelGerados:(NSMutableArray*)tipos;
 -(void)caixaFoiClicada;
--(void)respostaSelecionada:(NSString*)tipo;
+-(BOOL)respostaSelecionada:(NSString*)tipo;
 -(void)caixasPosicionadasParaDesafio;
 -(void)desafioAtualTerminou;
 -(void)animacaoEsteiraDeEntradaFinalizado;

@@ -136,6 +136,30 @@
 		BD325A491995EB7D00D15DBF /* exclamacao.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD325A411995EB7D00D15DBF /* exclamacao.mp3 */; };
 		BD325A4C1995EB7D00D15DBF /* slider.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD325A441995EB7D00D15DBF /* slider.mp3 */; };
 		BD42E0F41985E2090007181F /* simbolo-atualizar.png in Resources */ = {isa = PBXBuildFile; fileRef = BD42E0F31985E2090007181F /* simbolo-atualizar.png */; };
+		BD447ADE19D9D84600AF6E15 /* animation_green_box-1.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447AC119D9D84600AF6E15 /* animation_green_box-1.png */; };
+		BD447ADF19D9D84600AF6E15 /* animation_green_box-2.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447AC219D9D84600AF6E15 /* animation_green_box-2.png */; };
+		BD447AE019D9D84600AF6E15 /* animation_green_box-3.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447AC319D9D84600AF6E15 /* animation_green_box-3.png */; };
+		BD447AE119D9D84600AF6E15 /* animation_green_box-4.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447AC419D9D84600AF6E15 /* animation_green_box-4.png */; };
+		BD447AE219D9D84600AF6E15 /* animation_green_box-5.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447AC519D9D84600AF6E15 /* animation_green_box-5.png */; };
+		BD447AE319D9D84600AF6E15 /* animation_green_box-6.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447AC619D9D84600AF6E15 /* animation_green_box-6.png */; };
+		BD447AE419D9D84600AF6E15 /* animation_green_box-7.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447AC719D9D84600AF6E15 /* animation_green_box-7.png */; };
+		BD447AE519D9D84600AF6E15 /* animation_green_box-8.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447AC819D9D84600AF6E15 /* animation_green_box-8.png */; };
+		BD447AE719D9D84600AF6E15 /* animation_red_box-1.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447ACB19D9D84600AF6E15 /* animation_red_box-1.png */; };
+		BD447AE819D9D84600AF6E15 /* animation_red_box-2.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447ACC19D9D84600AF6E15 /* animation_red_box-2.png */; };
+		BD447AE919D9D84600AF6E15 /* animation_red_box-3.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447ACD19D9D84600AF6E15 /* animation_red_box-3.png */; };
+		BD447AEA19D9D84600AF6E15 /* animation_red_box-4.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447ACE19D9D84600AF6E15 /* animation_red_box-4.png */; };
+		BD447AEB19D9D84600AF6E15 /* animation_red_box-5.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447ACF19D9D84600AF6E15 /* animation_red_box-5.png */; };
+		BD447AEC19D9D84600AF6E15 /* animation_red_box-6.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447AD019D9D84600AF6E15 /* animation_red_box-6.png */; };
+		BD447AED19D9D84600AF6E15 /* animation_red_box-7.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447AD119D9D84600AF6E15 /* animation_red_box-7.png */; };
+		BD447AEE19D9D84600AF6E15 /* animation_red_box-8.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447AD219D9D84600AF6E15 /* animation_red_box-8.png */; };
+		BD447AF019D9D84600AF6E15 /* animation_yellow_box-1.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447AD519D9D84600AF6E15 /* animation_yellow_box-1.png */; };
+		BD447AF119D9D84600AF6E15 /* animation_yellow_box-2.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447AD619D9D84600AF6E15 /* animation_yellow_box-2.png */; };
+		BD447AF219D9D84600AF6E15 /* animation_yellow_box-3.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447AD719D9D84600AF6E15 /* animation_yellow_box-3.png */; };
+		BD447AF319D9D84600AF6E15 /* animation_yellow_box-4.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447AD819D9D84600AF6E15 /* animation_yellow_box-4.png */; };
+		BD447AF419D9D84600AF6E15 /* animation_yellow_box-5.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447AD919D9D84600AF6E15 /* animation_yellow_box-5.png */; };
+		BD447AF519D9D84600AF6E15 /* animation_yellow_box-6.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447ADA19D9D84600AF6E15 /* animation_yellow_box-6.png */; };
+		BD447AF619D9D84600AF6E15 /* animation_yellow_box-7.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447ADB19D9D84600AF6E15 /* animation_yellow_box-7.png */; };
+		BD447AF719D9D84600AF6E15 /* animation_yellow_box-8.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447ADC19D9D84600AF6E15 /* animation_yellow_box-8.png */; };
 		BD4B4BDB197075BD00D6E839 /* SpriteCaixaNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */; };
 		BD4E5F2619987A020082632B /* refresh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD4E5F2519987A020082632B /* refresh.mp3 */; };
 		BD4E5F2819987AEF0082632B /* refresh2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD4E5F2719987AEF0082632B /* refresh2.mp3 */; };
@@ -478,6 +502,30 @@
 		BD325A411995EB7D00D15DBF /* exclamacao.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = exclamacao.mp3; path = Sons/exclamacao.mp3; sourceTree = "<group>"; };
 		BD325A441995EB7D00D15DBF /* slider.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = slider.mp3; path = Sons/slider.mp3; sourceTree = "<group>"; };
 		BD42E0F31985E2090007181F /* simbolo-atualizar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "simbolo-atualizar.png"; path = "Imagens/simbolo-atualizar.png"; sourceTree = "<group>"; };
+		BD447AC119D9D84600AF6E15 /* animation_green_box-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_green_box-1.png"; sourceTree = "<group>"; };
+		BD447AC219D9D84600AF6E15 /* animation_green_box-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_green_box-2.png"; sourceTree = "<group>"; };
+		BD447AC319D9D84600AF6E15 /* animation_green_box-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_green_box-3.png"; sourceTree = "<group>"; };
+		BD447AC419D9D84600AF6E15 /* animation_green_box-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_green_box-4.png"; sourceTree = "<group>"; };
+		BD447AC519D9D84600AF6E15 /* animation_green_box-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_green_box-5.png"; sourceTree = "<group>"; };
+		BD447AC619D9D84600AF6E15 /* animation_green_box-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_green_box-6.png"; sourceTree = "<group>"; };
+		BD447AC719D9D84600AF6E15 /* animation_green_box-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_green_box-7.png"; sourceTree = "<group>"; };
+		BD447AC819D9D84600AF6E15 /* animation_green_box-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_green_box-8.png"; sourceTree = "<group>"; };
+		BD447ACB19D9D84600AF6E15 /* animation_red_box-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_red_box-1.png"; sourceTree = "<group>"; };
+		BD447ACC19D9D84600AF6E15 /* animation_red_box-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_red_box-2.png"; sourceTree = "<group>"; };
+		BD447ACD19D9D84600AF6E15 /* animation_red_box-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_red_box-3.png"; sourceTree = "<group>"; };
+		BD447ACE19D9D84600AF6E15 /* animation_red_box-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_red_box-4.png"; sourceTree = "<group>"; };
+		BD447ACF19D9D84600AF6E15 /* animation_red_box-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_red_box-5.png"; sourceTree = "<group>"; };
+		BD447AD019D9D84600AF6E15 /* animation_red_box-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_red_box-6.png"; sourceTree = "<group>"; };
+		BD447AD119D9D84600AF6E15 /* animation_red_box-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_red_box-7.png"; sourceTree = "<group>"; };
+		BD447AD219D9D84600AF6E15 /* animation_red_box-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_red_box-8.png"; sourceTree = "<group>"; };
+		BD447AD519D9D84600AF6E15 /* animation_yellow_box-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_yellow_box-1.png"; sourceTree = "<group>"; };
+		BD447AD619D9D84600AF6E15 /* animation_yellow_box-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_yellow_box-2.png"; sourceTree = "<group>"; };
+		BD447AD719D9D84600AF6E15 /* animation_yellow_box-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_yellow_box-3.png"; sourceTree = "<group>"; };
+		BD447AD819D9D84600AF6E15 /* animation_yellow_box-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_yellow_box-4.png"; sourceTree = "<group>"; };
+		BD447AD919D9D84600AF6E15 /* animation_yellow_box-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_yellow_box-5.png"; sourceTree = "<group>"; };
+		BD447ADA19D9D84600AF6E15 /* animation_yellow_box-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_yellow_box-6.png"; sourceTree = "<group>"; };
+		BD447ADB19D9D84600AF6E15 /* animation_yellow_box-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_yellow_box-7.png"; sourceTree = "<group>"; };
+		BD447ADC19D9D84600AF6E15 /* animation_yellow_box-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_yellow_box-8.png"; sourceTree = "<group>"; };
 		BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteCaixaNode.h; sourceTree = "<group>"; };
 		BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteCaixaNode.m; sourceTree = "<group>"; };
 		BD4E5F2519987A020082632B /* refresh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = refresh.mp3; path = Sons/refresh.mp3; sourceTree = "<group>"; };
@@ -1258,6 +1306,54 @@
 			name = "Partícula Variavel";
 			sourceTree = "<group>";
 		};
+		BD447AC019D9D84600AF6E15 /* green */ = {
+			isa = PBXGroup;
+			children = (
+				BD447AC119D9D84600AF6E15 /* animation_green_box-1.png */,
+				BD447AC219D9D84600AF6E15 /* animation_green_box-2.png */,
+				BD447AC319D9D84600AF6E15 /* animation_green_box-3.png */,
+				BD447AC419D9D84600AF6E15 /* animation_green_box-4.png */,
+				BD447AC519D9D84600AF6E15 /* animation_green_box-5.png */,
+				BD447AC619D9D84600AF6E15 /* animation_green_box-6.png */,
+				BD447AC719D9D84600AF6E15 /* animation_green_box-7.png */,
+				BD447AC819D9D84600AF6E15 /* animation_green_box-8.png */,
+			);
+			name = green;
+			path = Imagens/Desafios/Variavel/animation_box/green;
+			sourceTree = "<group>";
+		};
+		BD447ACA19D9D84600AF6E15 /* Red */ = {
+			isa = PBXGroup;
+			children = (
+				BD447ACB19D9D84600AF6E15 /* animation_red_box-1.png */,
+				BD447ACC19D9D84600AF6E15 /* animation_red_box-2.png */,
+				BD447ACD19D9D84600AF6E15 /* animation_red_box-3.png */,
+				BD447ACE19D9D84600AF6E15 /* animation_red_box-4.png */,
+				BD447ACF19D9D84600AF6E15 /* animation_red_box-5.png */,
+				BD447AD019D9D84600AF6E15 /* animation_red_box-6.png */,
+				BD447AD119D9D84600AF6E15 /* animation_red_box-7.png */,
+				BD447AD219D9D84600AF6E15 /* animation_red_box-8.png */,
+			);
+			name = Red;
+			path = Imagens/Desafios/Variavel/animation_box/Red;
+			sourceTree = "<group>";
+		};
+		BD447AD419D9D84600AF6E15 /* yellow */ = {
+			isa = PBXGroup;
+			children = (
+				BD447AD519D9D84600AF6E15 /* animation_yellow_box-1.png */,
+				BD447AD619D9D84600AF6E15 /* animation_yellow_box-2.png */,
+				BD447AD719D9D84600AF6E15 /* animation_yellow_box-3.png */,
+				BD447AD819D9D84600AF6E15 /* animation_yellow_box-4.png */,
+				BD447AD919D9D84600AF6E15 /* animation_yellow_box-5.png */,
+				BD447ADA19D9D84600AF6E15 /* animation_yellow_box-6.png */,
+				BD447ADB19D9D84600AF6E15 /* animation_yellow_box-7.png */,
+				BD447ADC19D9D84600AF6E15 /* animation_yellow_box-8.png */,
+			);
+			name = yellow;
+			path = Imagens/Desafios/Variavel/animation_box/yellow;
+			sourceTree = "<group>";
+		};
 		BD510FE4198A035B0052B6E5 /* Condicionais */ = {
 			isa = PBXGroup;
 			children = (
@@ -1280,6 +1376,9 @@
 		BD6B54D819D79C5600BC0E5F /* Variavel */ = {
 			isa = PBXGroup;
 			children = (
+				BD447AC019D9D84600AF6E15 /* green */,
+				BD447ACA19D9D84600AF6E15 /* Red */,
+				BD447AD419D9D84600AF6E15 /* yellow */,
 				BD6B553419D7D29400BC0E5F /* Sprites Correto */,
 				BD6B553F19D7D29400BC0E5F /* Sprites errado */,
 				BD6B551C19D7D26600BC0E5F /* caixa1-cheia.png */,
@@ -1622,6 +1721,7 @@
 				E5DDB3621993F45200B0061A /* valor1-amarelo.png in Resources */,
 				BDF8AE07197B258C00BA5B8A /* parte-valores7.png in Resources */,
 				91C8EF6B197D871200CA01DE /* ConceitosOperadores.txt in Resources */,
+				BD447AF219D9D84600AF6E15 /* animation_yellow_box-3.png in Resources */,
 				A52D87A219D782DA008079AF /* botao-go.png in Resources */,
 				BD6B555019D7D29400BC0E5F /* animation_correct-6.png in Resources */,
 				BDBE769D197A3B69004EA926 /* parte-operador.png in Resources */,
@@ -1629,6 +1729,7 @@
 				A5CBEB8C19D20CCC00AC879D /* Desafio-Operadores-Fundo.png in Resources */,
 				BD4E5F2619987A020082632B /* refresh.mp3 in Resources */,
 				BDE82C2619916E1F00610D96 /* sprite-exclamacao.png in Resources */,
+				BD447AF119D9D84600AF6E15 /* animation_yellow_box-2.png in Resources */,
 				BD6B553219D7D26600BC0E5F /* maquina.png in Resources */,
 				BDF8ADF4197B255C00BA5B8A /* parte-resultado7.png in Resources */,
 				91A7A956198F56DC009A5EB1 /* ConceitosCondicionais.txt in Resources */,
@@ -1641,6 +1742,7 @@
 				BD5DE21119972138007849DB /* bt-play.png in Resources */,
 				BD6B552B19D7D26600BC0E5F /* caixa2-vazia.png in Resources */,
 				BD325A451995EB7D00D15DBF /* abrirCaixa.mp3 in Resources */,
+				BD447AF419D9D84600AF6E15 /* animation_yellow_box-5.png in Resources */,
 				BD6B555119D7D29400BC0E5F /* animation_correct-7.png in Resources */,
 				12C02BD819D612F60015AF10 /* fundo-menu.png in Resources */,
 				BD66B651197F6F16000BB548 /* atualizar-dados.png in Resources */,
@@ -1648,10 +1750,13 @@
 				BDF8AE0B197B258C00BA5B8A /* parte-valores11.png in Resources */,
 				BD6B554E19D7D29400BC0E5F /* animation_correct-4.png in Resources */,
 				BD325A481995EB7D00D15DBF /* fecharCaixa.mp3 in Resources */,
+				BD447ADF19D9D84600AF6E15 /* animation_green_box-2.png in Resources */,
+				BD447AE119D9D84600AF6E15 /* animation_green_box-4.png in Resources */,
 				BD4E5F2819987AEF0082632B /* refresh2.mp3 in Resources */,
 				120E8F8F192FC0A200CDEF95 /* Images.xcassets in Resources */,
 				BDC757A0196787E700DB8380 /* abrir-caixa3.png in Resources */,
 				BD6B555819D7D29400BC0E5F /* animation_wrong-4.png in Resources */,
+				BD447AE919D9D84600AF6E15 /* animation_red_box-3.png in Resources */,
 				BD6B553319D7D26600BC0E5F /* pistao.png in Resources */,
 				BD5A552C198C972000D8722F /* senaoSe-verde.png in Resources */,
 				A5CBEB9019D20E1B00AC879D /* Desafio-Operadores-btn1.png in Resources */,
@@ -1665,14 +1770,17 @@
 				A5CBEBA019D4B0EE00AC879D /* Desafio-Andamento-Correto.png in Resources */,
 				BD510FE11989E8200052B6E5 /* lousa-teoria.jpg in Resources */,
 				BD6B554C19D7D29400BC0E5F /* animation_correct-2.png in Resources */,
+				BD447AF319D9D84600AF6E15 /* animation_yellow_box-4.png in Resources */,
 				12C02BD419D611B20015AF10 /* tedra-logo.png in Resources */,
 				BD325A471995EB7D00D15DBF /* errado.wav in Resources */,
 				BD6B555719D7D29400BC0E5F /* animation_wrong-3.png in Resources */,
 				8431DA7319CA28FD0076EBBA /* livre-operador.png in Resources */,
+				BD447AF519D9D84600AF6E15 /* animation_yellow_box-6.png in Resources */,
 				BDF1A4E919D89E3F009A2C31 /* animation_wrong-13.png in Resources */,
 				12C02BD219D60F290015AF10 /* botao-enciclopedia.png in Resources */,
 				BDEE046A199FEC7E00EAC8ED /* icone-teoria.png in Resources */,
 				BDEE046C19A00BF000EAC8ED /* icone-exercicio.png in Resources */,
+				BD447AED19D9D84600AF6E15 /* animation_red_box-7.png in Resources */,
 				BDEE046E19A0162000EAC8ED /* icone-iniciar.png in Resources */,
 				BDC40740199B1E18006CD7AE /* sprite-introducao3.png in Resources */,
 				BDEE047219A06C9900EAC8ED /* check.png in Resources */,
@@ -1687,9 +1795,11 @@
 				BD325A4C1995EB7D00D15DBF /* slider.mp3 in Resources */,
 				BD6B555D19D7D29400BC0E5F /* animation_wrong-9.png in Resources */,
 				BD6B555419D7D29400BC0E5F /* animation_wrong-1.png in Resources */,
+				BD447AF019D9D84600AF6E15 /* animation_yellow_box-1.png in Resources */,
 				BD6B552E19D7D26600BC0E5F /* cronometro.png in Resources */,
 				BD9DF27019A171A2003938C9 /* item-Variáveis.png in Resources */,
 				BD6B555A19D7D29400BC0E5F /* animation_wrong-6.png in Resources */,
+				BD447AF619D9D84600AF6E15 /* animation_yellow_box-7.png in Resources */,
 				8431DA6419CA12C50076EBBA /* modo livre-11.png in Resources */,
 				BDF8AE04197B258C00BA5B8A /* parte-valores4.png in Resources */,
 				BD5A552A198C972000D8722F /* se-verde.png in Resources */,
@@ -1699,8 +1809,10 @@
 				12C02BD019D60F290015AF10 /* botao-livre.png in Resources */,
 				BD6B555619D7D29400BC0E5F /* animation_wrong-2.png in Resources */,
 				BD6B555219D7D29400BC0E5F /* animation_correct-8.png in Resources */,
+				BD447AE819D9D84600AF6E15 /* animation_red_box-2.png in Resources */,
 				BDC7579E196787E700DB8380 /* abrir-caixa1.png in Resources */,
 				BDC757A7196787E700DB8380 /* abrir-caixa10.png in Resources */,
+				BD447AF719D9D84600AF6E15 /* animation_yellow_box-8.png in Resources */,
 				BDF8ADF3197B255C00BA5B8A /* parte-resultado6.png in Resources */,
 				BD42E0F41985E2090007181F /* simbolo-atualizar.png in Resources */,
 				BDBE769E197A3B69004EA926 /* parte-resultado1.png in Resources */,
@@ -1725,16 +1837,21 @@
 				BD66B653197F9327000BB548 /* fundo-transparente.png in Resources */,
 				BD6B556319D7D67700BC0E5F /* animation_correct-11.png in Resources */,
 				8431DA6E19CA28FD0076EBBA /* livre-array.png in Resources */,
+				BD447AE319D9D84600AF6E15 /* animation_green_box-6.png in Resources */,
+				BD447AEE19D9D84600AF6E15 /* animation_red_box-8.png in Resources */,
 				12C02BC519D60B9B0015AF10 /* botao-treinamento-imagem.png in Resources */,
+				BD447AE519D9D84600AF6E15 /* animation_green_box-8.png in Resources */,
 				A521FEEB1993F6B200D28627 /* valor2-amarelo.png in Resources */,
 				BDC757A3196787E700DB8380 /* abrir-caixa6.png in Resources */,
 				BD6B552C19D7D26600BC0E5F /* caixa3-cheia.png in Resources */,
 				BDF1A4E319D87FFF009A2C31 /* animation_correct-13.png in Resources */,
 				BDC580FC19A690CE003A1EAF /* fundo-animaVariavel.png in Resources */,
+				BD447AE219D9D84600AF6E15 /* animation_green_box-5.png in Resources */,
 				BDC40741199B1E18006CD7AE /* sprite-introducao4.png in Resources */,
 				BDD22F0C19A6F4A70043AA02 /* img-tutorial2.png in Resources */,
 				8431DA7419CA28FD0076EBBA /* livre-variavel.png in Resources */,
 				BDF8ADF2197B255C00BA5B8A /* parte-resultado5.png in Resources */,
+				BD447ADE19D9D84600AF6E15 /* animation_green_box-1.png in Resources */,
 				12C02BC619D60B9B0015AF10 /* botao-enciclopedia-imagem.png in Resources */,
 				BDF8ADF1197B255C00BA5B8A /* parte-resultado4.png in Resources */,
 				84B237B419D352F3003EC749 /* MenuEditarFundo.png in Resources */,
@@ -1742,9 +1859,11 @@
 				BDA68F3D199819C400BD0527 /* valores-errado.png in Resources */,
 				8492087F19C7756400D64AE8 /* menuIcon.png in Resources */,
 				BDC757A5196787E700DB8380 /* abrir-caixa8.png in Resources */,
+				BD447AEB19D9D84600AF6E15 /* animation_red_box-5.png in Resources */,
 				BD6B552A19D7D26600BC0E5F /* caixa2-cheia.png in Resources */,
 				8431DA6319CA12C50076EBBA /* modo livre-10.png in Resources */,
 				BDD22F1019A6F4A70043AA02 /* img-tutorial7.png in Resources */,
+				BD447AEC19D9D84600AF6E15 /* animation_red_box-6.png in Resources */,
 				BDC757A2196787E700DB8380 /* abrir-caixa5.png in Resources */,
 				BD325A461995EB7D00D15DBF /* correto.aiff in Resources */,
 				BDF1A4E419D87FFF009A2C31 /* animation_correct-14.png in Resources */,
@@ -1752,6 +1871,8 @@
 				84B237B319D352F3003EC749 /* MenuEditarBotao.png in Resources */,
 				12C02BD619D612180015AF10 /* preferencias.png in Resources */,
 				BDE82C2419916E1F00610D96 /* senao-normal.png in Resources */,
+				BD447AEA19D9D84600AF6E15 /* animation_red_box-4.png in Resources */,
+				BD447AE419D9D84600AF6E15 /* animation_green_box-7.png in Resources */,
 				8431DA6219CA12C50076EBBA /* modo livre-09.png in Resources */,
 				BDC40742199B1E18006CD7AE /* sprite-introducao5.png in Resources */,
 				BD6B552919D7D26600BC0E5F /* caixa1-vazia.png in Resources */,
@@ -1768,6 +1889,7 @@
 				BD6B552819D7D26600BC0E5F /* caixa1-cheia.png in Resources */,
 				BD6B553119D7D26600BC0E5F /* fundo-desafio.png in Resources */,
 				A52D87A019D78235008079AF /* divisoria.png in Resources */,
+				BD447AE719D9D84600AF6E15 /* animation_red_box-1.png in Resources */,
 				BD6B555919D7D29400BC0E5F /* animation_wrong-5.png in Resources */,
 				BD9DF26F19A171A2003938C9 /* item-Operadores.png in Resources */,
 				120E8F8A192FC0A200CDEF95 /* Main.storyboard in Resources */,
@@ -1776,6 +1898,7 @@
 				BDD22F0E19A6F4A70043AA02 /* img-tutorial4.png in Resources */,
 				12C02BDA19D6132E0015AF10 /* direitos.png in Resources */,
 				A5CBEB9219D20E1B00AC879D /* Desafio-Operadores-Operador.png in Resources */,
+				BD447AE019D9D84600AF6E15 /* animation_green_box-3.png in Resources */,
 				BDF8AE02197B258C00BA5B8A /* parte-valores2.png in Resources */,
 				12C02BDC19D6135D0015AF10 /* botao-preferencias.png in Resources */,
 				BDF1A4E219D87FFF009A2C31 /* animation_correct-12.png in Resources */,

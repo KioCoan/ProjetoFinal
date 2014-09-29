@@ -11,7 +11,7 @@
 
 @protocol SpriteCaixinhaDelegate <NSObject>
 -(void)caixaFoiClicada;
--(void)caixaClicadaDoTipo:(NSString*)tipo;
+-(BOOL)caixaClicadaDoTipo:(NSString*)tipo;
 -(void)animacaoMoverCaixaFinalizado:(BOOL)fimDesafio;
 @end
 
@@ -20,8 +20,11 @@
 {
     SKLabelNode *lblTipo;
     int meuIndex;
-    SKAction *moverX;
+    NSString *minhaCor;
+    
+    SKAction *acaoMoverX;
     SKAction *acaoPular;
+    SKAction *acaoEncherCaixa;
 }
 
 @property id <SpriteCaixinhaDelegate> myDelegate;

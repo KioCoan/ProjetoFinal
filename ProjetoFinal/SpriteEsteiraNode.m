@@ -164,8 +164,8 @@
 
 
 //ESTE MÉTODO RECEBE O TIPO DE DADO QUE ESTAVA NA CAIXA CLICADA E ENVIA PARA O DELEGATE
--(void)caixaClicadaDoTipo:(NSString *)tipo{
-    [[self myDelegate] respostaSelecionada:tipo];
+-(BOOL)caixaClicadaDoTipo:(NSString *)tipo{
+    return [[self myDelegate] respostaSelecionada:tipo];
 }
 
 -(void)caixaFoiClicada{

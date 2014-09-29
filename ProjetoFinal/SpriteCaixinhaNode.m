@@ -9,6 +9,10 @@
 #import "SpriteCaixinhaNode.h"
 #import "GerenciadorDesafios.h"
 
+static const int GREEN = 1;
+static const int RED = 2;
+static const int YELLOW = 3;
+
 @implementation SpriteCaixinhaNode
 
 -(id)initWithTipoVariavel:(NSString*)tipo indexPosição:(int)posicao{
@@ -16,6 +20,7 @@
     
     if(self){
         meuIndex = posicao;
+        minhaCor = [self retornaMinhaCor:posicao];
         
         lblTipo = [[SKLabelNode alloc] initWithFontNamed:FONT_LIGHT];
         [lblTipo setText:tipo];
@@ -27,6 +32,7 @@
         
         [self inicializarAnimacaoMoverX];
         [self inicializarAnimacaoPular];
+        [self inicializarAnimacaoEncherCaixa];
         
         [self setUserInteractionEnabled:NO];
     }
@@ -52,8 +58,23 @@
 }
 
 -(void)inicializarAnimacaoMoverX{
-    moverX = [SKAction moveByX:695 y:0 duration:1.3];
-    [moverX setTimingMode:SKActionTimingEaseOut];
+    acaoMoverX = [SKAction moveByX:695 y:0 duration:1.3];
+    [acaoMoverX setTimingMode:SKActionTimingEaseOut];
+}
+
+-(void)inicializarAnimacaoEncherCaixa{
+    int numTexturas = 8;
+    NSMutableArray *vtTexturas = [[NSMutableArray alloc] init];
+    
+    for (int i=1; i <= numTexturas; i++) {
+        SKTexture *textura = [SKTexture textureWithImageNamed:[NSString stringWithFormat:@"animation_%@_box-%i", minhaCor, i]];
+        
+        [vtTexturas addObject:textura];
+    }
+    
+    acaoEncherCaixa = [SKAction animateWithTextures:vtTexturas timePerFrame:0.05];
+    [acaoEncherCaixa setTimingMode:SKActionTimingEaseOut];
+    
 }
 
 
@@ -70,7 +91,7 @@
     [self runAction:acaoPular completion:^{
         
         //AVISA AO DELEGATE QUE A CAIXA QUE FOI CLICADA É A QUE ESTÁ SENDO PASSADA POR PARÂMETRO
-        [[self myDelegate] caixaClicadaDoTipo:[lblTipo text]];
+        [self iniciarAnimacaoEncherCaixa:[[self myDelegate] caixaClicadaDoTipo:[lblTipo text]]];
     }];
 }
 
@@ -78,14 +99,22 @@
 -(void)iniciarAnimacaoMoverCaixaPara:(int)posicaoFinal fimDesafio:(BOOL)resposta{
     //ESTA CONDIÇÃO É USADA PARA QUE APENAS 1 CAIXA AVISE O DELEGATE QUE A ANIMAÇÃO TERMINOU
     if (meuIndex == 3) {
-        [self runAction:moverX completion:^{
+        [self runAction:acaoMoverX completion:^{
             [[self myDelegate] animacaoMoverCaixaFinalizado:resposta];
         }];
     
     }else{
-        [self runAction:moverX];
+        [self runAction:acaoMoverX];
     }
     
+}
+
+
+
+-(void)iniciarAnimacaoEncherCaixa:(BOOL)resposta{
+    if (resposta) {
+        [self runAction:acaoEncherCaixa];
+    }
 }
 
 
@@ -95,6 +124,22 @@
 
 -(void)setTipo:(NSString*)tipo{
     [lblTipo setText:tipo];
+}
+
+-(NSString*)retornaMinhaCor:(int)index{
+    switch (index) {
+        case GREEN:
+            return @"green";
+            
+        case RED:
+            return @"red";
+            
+        case YELLOW:
+            return @"yellow";
+            
+        default:
+            return @"Erro";
+    }
 }
 
 @end

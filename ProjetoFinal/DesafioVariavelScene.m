@@ -101,9 +101,10 @@
 }
 
 //QUANDO O USUÁRIO RESPONDE O DESAFIO, QUEM CRIOU ESTE PROTOCÓLO IRÁ CHAMAR ESTE MÉTODO, QUE POR SUA VEZ MANDA PARAR O CRONÔMETRO E VERIFICA A RESPOSTA
--(void)respostaSelecionada:(NSString *)tipo{
+-(BOOL)respostaSelecionada:(NSString *)tipo{
     [nodeCronometro pararContagem];
-    [nodeVisor validarResposta:tipo];
+    
+    return [nodeVisor validarResposta:tipo];
     
 }
 
