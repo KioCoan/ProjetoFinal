@@ -160,6 +160,7 @@
 		BD447AF519D9D84600AF6E15 /* animation_yellow_box-6.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447ADA19D9D84600AF6E15 /* animation_yellow_box-6.png */; };
 		BD447AF619D9D84600AF6E15 /* animation_yellow_box-7.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447ADB19D9D84600AF6E15 /* animation_yellow_box-7.png */; };
 		BD447AF719D9D84600AF6E15 /* animation_yellow_box-8.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447ADC19D9D84600AF6E15 /* animation_yellow_box-8.png */; };
+		BD447AFA19D9F84F00AF6E15 /* main_menu-animation.png in Resources */ = {isa = PBXBuildFile; fileRef = BD447AF919D9F84F00AF6E15 /* main_menu-animation.png */; };
 		BD4B4BDB197075BD00D6E839 /* SpriteCaixaNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */; };
 		BD4E5F2619987A020082632B /* refresh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD4E5F2519987A020082632B /* refresh.mp3 */; };
 		BD4E5F2819987AEF0082632B /* refresh2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BD4E5F2719987AEF0082632B /* refresh2.mp3 */; };
@@ -526,6 +527,7 @@
 		BD447ADA19D9D84600AF6E15 /* animation_yellow_box-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_yellow_box-6.png"; sourceTree = "<group>"; };
 		BD447ADB19D9D84600AF6E15 /* animation_yellow_box-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_yellow_box-7.png"; sourceTree = "<group>"; };
 		BD447ADC19D9D84600AF6E15 /* animation_yellow_box-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_yellow_box-8.png"; sourceTree = "<group>"; };
+		BD447AF919D9F84F00AF6E15 /* main_menu-animation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main_menu-animation.png"; path = "Imagens/main_menu-animation.png"; sourceTree = "<group>"; };
 		BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteCaixaNode.h; sourceTree = "<group>"; };
 		BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteCaixaNode.m; sourceTree = "<group>"; };
 		BD4E5F2519987A020082632B /* refresh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = refresh.mp3; path = Sons/refresh.mp3; sourceTree = "<group>"; };
@@ -847,6 +849,7 @@
 		12C02BC019D60AFB0015AF10 /* Menu Principal */ = {
 			isa = PBXGroup;
 			children = (
+				BD447AF919D9F84F00AF6E15 /* main_menu-animation.png */,
 				12C02BD319D611B20015AF10 /* tedra-logo.png */,
 				12C02BD719D612F60015AF10 /* fundo-menu.png */,
 				12C02BCD19D60F290015AF10 /* botao-livre.png */,
@@ -1780,6 +1783,7 @@
 				12C02BD219D60F290015AF10 /* botao-enciclopedia.png in Resources */,
 				BDEE046A199FEC7E00EAC8ED /* icone-teoria.png in Resources */,
 				BDEE046C19A00BF000EAC8ED /* icone-exercicio.png in Resources */,
+				BD447AFA19D9F84F00AF6E15 /* main_menu-animation.png in Resources */,
 				BD447AED19D9D84600AF6E15 /* animation_red_box-7.png in Resources */,
 				BDEE046E19A0162000EAC8ED /* icone-iniciar.png in Resources */,
 				BDC40740199B1E18006CD7AE /* sprite-introducao3.png in Resources */,

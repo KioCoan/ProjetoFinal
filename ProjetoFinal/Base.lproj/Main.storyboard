@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="tHn-97-uZ9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="tHn-97-uZ9">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -338,10 +338,17 @@
                                 <rect key="frame" x="334" y="795" width="96" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_menu-animation.png" translatesAutoresizingMaskIntoConstraints="NO" id="tR8-09-FTt">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="2050"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="scW-gx-mLE"/>
+                    <connections>
+                        <outlet property="imgTransition" destination="tR8-09-FTt" id="vEn-Mg-hzk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LW7-7o-K3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -586,6 +593,7 @@
         <image name="icone-iniciar.png" width="300" height="304"/>
         <image name="icone-teoria.png" width="100" height="100"/>
         <image name="imagem-teoria.png" width="768" height="350"/>
+        <image name="main_menu-animation.png" width="768" height="2050"/>
         <image name="preferencias.png" width="96" height="21"/>
         <image name="tedra-logo.png" width="477" height="93"/>
     </resources>

@@ -10,4 +10,5 @@
 
 @interface MenuPrincipalViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *imgTransition;
 @end

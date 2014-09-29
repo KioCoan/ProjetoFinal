@@ -29,7 +29,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    CGPoint posicaoAtual = self.imgTransition.frame.origin;
     
+    CABasicAnimation *anima = [CABasicAnimation animationWithKeyPath:@"position.y"];
+    anima.fromValue = [NSValue valueWithCGPoint:posicaoAtual];
+    
+    posicaoAtual.y = posicaoAtual.y + (self.imgTransition.frame.size.height / 2);
+    
+    anima.toValue    = [NSValue valueWithCGPoint:posicaoAtual];
+    anima.duration   = 1.5f;
+    anima.repeatCount =1;
+    anima.removedOnCompletion = YES;
+    
+    [[self.imgTransition layer] addAnimation:anima forKey:nil];
     
 }
 
