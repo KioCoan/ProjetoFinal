@@ -156,10 +156,11 @@
     
     [operador runAction:temp completion:^{
         [operador runAction:[operador acaoReversa] completion:^{
-            [operador removeAllActions];
+            [self alteraTarefa];
         }];
+        
     }];
-    [self alteraTarefa];
+    
     
 }
 //-(void)nomeiaBotao{
