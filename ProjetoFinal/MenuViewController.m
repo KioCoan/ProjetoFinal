@@ -8,7 +8,7 @@
 
 #import "MenuViewController.h"
 #import "Calculador.h"
-
+#import "GerenciadorDesafios.h"
 @interface MenuViewController ()
 
 @end
@@ -39,7 +39,19 @@ static const int ESPACAMENTO_BOTOES = 50;
     return self;
 }
 
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:.0/255.0 green:175.0/255.0 blue:59.0/255.0 alpha:1.0];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+                          [UIColor whiteColor],NSForegroundColorAttributeName, // Cor
+                          [UIFont fontWithName:FONT_MEDIUM size:25],NSFontAttributeName, // Font Style
+                          
+                          nil];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:dict];
+}
 
 - (void)viewDidLoad
 {

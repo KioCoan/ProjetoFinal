@@ -7,7 +7,7 @@
 //
 
 #import "LivreViewController.h"
-
+#import "GerenciadorDesafios.h"
 @interface LivreViewController (){
 
     SKView *viewLivre;
@@ -41,6 +41,24 @@
     [self.view addSubview:viewLivre];
     
     
+    
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:109.0/255.0 green:157.0/255.0 blue:132.0/255.0 alpha:1.0];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+                          [UIColor whiteColor],NSForegroundColorAttributeName, // Cor
+                          [UIFont fontWithName:FONT_MEDIUM size:25],NSFontAttributeName, // Font Style
+                          
+                          nil];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:dict];
     
     
 }
