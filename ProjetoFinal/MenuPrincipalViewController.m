@@ -32,9 +32,12 @@
     //CGPoint posicaoAtual = self.imgTransition.frame.origin;
     
     
+    [self performSelector:@selector(iniciarAnimacaoDeEntrada) withObject:nil afterDelay:0.5];
     
-    //CORE ANIMATION MALDITO ----------
     
+}
+
+-(void)iniciarAnimacaoDeEntrada{
     CABasicAnimation *moveUp;
     moveUp = [CABasicAnimation animationWithKeyPath:@"position.y"];
     moveUp.byValue  = @(-self.imgTransition.frame.size.height / 2); // or [NSNumber numberWithFloat:-50.0f] if you really need to
@@ -42,21 +45,6 @@
     moveUp.removedOnCompletion = NO;
     moveUp.fillMode = kCAFillModeBoth;
     moveUp.delegate = self;
-    //moveUp.beginTime = 0;
-    
-    
-    
-//     CABasicAnimation *fadeInAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-//     fadeInAnimation.fromValue = [NSNumber numberWithFloat:1.0];
-//     fadeInAnimation.toValue = [NSNumber numberWithFloat:0.0];
-//     //fadeInAnimation.additive = NO;
-//     fadeInAnimation.removedOnCompletion = NO;
-//     fadeInAnimation.duration = 2.0;
-//     fadeInAnimation.delegate = self;
-//     fadeInAnimation.fillMode = kCAFillModeForwards;
-    
-    
-    
     
     [CATransaction begin];{
         [CATransaction setCompletionBlock:^{
@@ -66,9 +54,9 @@
         }];
         [self.imgTransition.layer addAnimation:moveUp forKey:nil];
     }[CATransaction commit];
-    
-    
 }
+
+
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
