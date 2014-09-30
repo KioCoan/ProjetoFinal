@@ -20,5 +20,5 @@
 - (void)abrirFechar;
 - (id)initWithPosicaoAbrir : (CGPoint)abrir  tamanho:(CGSize)tamanho;
 - (BOOL)getAberto;
-
+- (void)removeTudo;
 @end

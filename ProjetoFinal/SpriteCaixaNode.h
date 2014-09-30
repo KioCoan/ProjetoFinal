@@ -37,8 +37,6 @@
     BOOL toDentro;
     
 }
-@property SKScene *dono;
-@property CGRect botaoMenu;
 @property id<SpriteCaixaDelegate> myDelegate;
 
 -(id)initWithConteudo:(NSString*)conteudo nome:(NSString*)nome tipo:(NSString*)tipo tamanho:(CGSize)tamanho;

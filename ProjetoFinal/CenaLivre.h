@@ -24,5 +24,6 @@
 
 @property id<CenaLivreDelegate> myDelegate;
 
+- (void)removeDelegates;
 
 @end

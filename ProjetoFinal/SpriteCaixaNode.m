@@ -243,8 +243,9 @@
     
     //SE A POSIÇÃO QUE FOI CLICADA É A MESMA DO SPRITE DA CAIXA, O SPRITE É MOVIDO
     
-    if (self.dono != nil) {
-        CGPoint location = [touch locationInNode:self.dono];
+    if (self.myDelegate != nil) {
+        SKScene *cena = (SKScene *)self.myDelegate;
+        CGPoint location = [touch locationInNode:cena];
         [self setPosition:location];
         
         
