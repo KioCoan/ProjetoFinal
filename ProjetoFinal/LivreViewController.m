@@ -12,7 +12,7 @@
 
     SKView *viewLivre;
     UIView *novaView;
-    
+    CenaLivre *cena;
 }
 
 @end
@@ -65,12 +65,22 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     
-    CenaLivre *cena = [[CenaLivre alloc]init];
+    cena = [[CenaLivre alloc]init];
     
     [cena setSize: viewLivre.frame.size];
     //[cena setSize: viewExercicio.frame.size];
     [cena setMyDelegate:self];
     [viewLivre presentScene:cena];
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    
+    [super viewDidDisappear:animated];
+    
+    [cena removeDelegates];
+    cena = nil;
+    
     
 }
 

@@ -223,4 +223,17 @@
     aberto = NO;
 }
 
+- (void)removeTudo{
+    
+    for (int i = 0; i < secoes.count; i++) {
+        SecaoMenu *secao = [secoes objectAtIndex:i];
+        secao.myDelegate = nil;
+    }
+    
+    [secoes removeAllObjects];
+    [self removeAllChildren];
+    [self removeAllActions];
+    
+}
+
 @end

@@ -33,5 +33,6 @@
 -(id)initWithTipoVariavel:(NSString*)tipo indexPosição:(int)posicao;
 -(void)iniciarAnimacaoMoverCaixaPara:(int)posicaoFinal fimDesafio:(BOOL)resposta;
 -(NSString*)getTipo;
+-(void)resetarTextura;
 
 @end

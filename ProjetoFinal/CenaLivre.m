@@ -24,7 +24,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     NSMutableArray *vetorOperadores;
     NSMutableArray *vetorVariaveis;
     BOOL menuEditarAberto;
-    int contadorVariavel;
     BOOL estaEmContato;
     SKNode *objetoEditando;
     SpriteOperadorNode *operadorEditando;
@@ -149,15 +148,15 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     if (cresci) {
         
         
-        SKAction *rodaBotao = [SKAction rotateToAngle: M_PI + (M_PI / 4) duration:0.5];
+        SKAction *rodaBotao = [SKAction rotateToAngle: M_PI + (M_PI / 4) duration:0.4];
         SKTexture *texture1 = [SKTexture textureWithImageNamed:@"modo livre-10.png"];
         SKTexture *texture2 = [SKTexture textureWithImageNamed:@"modo livre-11.png"];
         SKTexture *texture3 = [SKTexture textureWithImageNamed:@"modo livre-12.png"];
-        SKAction *aumenta = [SKAction resizeToWidth:150 height:150 duration:0.5];
+        SKAction *aumenta = [SKAction resizeToWidth:150 height:150 duration:0.4];
         
         SKAction *texturas = [SKAction animateWithTextures:@[texture1,texture2,texture3] timePerFrame:0.1];
         
-        SKAction *animacao = [SKAction sequence:@[rodaBotao,texturas,aumenta]];
+        SKAction *animacao = [SKAction group:@[rodaBotao,texturas,aumenta]];
         
         
         
@@ -170,7 +169,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         //ANIMACAO BOTAO MENU
         
-        SKAction *rodaBotao = [SKAction rotateToAngle:-M_PI - M_PI duration:0.5];
+        SKAction *rodaBotao = [SKAction rotateToAngle:-M_PI - M_PI duration:0.4];
 
         SKTexture *texture1 = [SKTexture textureWithImageNamed:@"modo livre-11.png"];
         SKTexture *texture2 = [SKTexture textureWithImageNamed:@"modo livre-10.png"];
@@ -178,8 +177,8 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         SKAction *texturas = [SKAction animateWithTextures:@[texture1] timePerFrame:0.1];
         SKAction *outraTextura = [SKAction animateWithTextures:@[texture2,texture3] timePerFrame:0.1];
-        SKAction *diminui = [SKAction resizeToWidth:51 height:51 duration:0.5];
-        SKAction *animacao = [SKAction sequence:@[texturas,rodaBotao,diminui,outraTextura]];
+        SKAction *diminui = [SKAction resizeToWidth:51 height:51 duration:0.4];
+        SKAction *animacao = [SKAction group:@[texturas,rodaBotao,diminui,outraTextura]];
         
         [botaoMenu runAction:animacao];
         
@@ -187,7 +186,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     }
    
 }
-
 
 - (SKAction *)retornaCrescerDiminuir:(BOOL)aumenta{
     
@@ -201,6 +199,8 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     
 }
+
+
 
 // METODO TEXTFIELD
 
@@ -330,14 +330,11 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     SpriteCaixaNode *variavel = [[SpriteCaixaNode alloc]init];
     
-    
-    [variavel setDono:self];
     [variavel setPosition:posicao];
     variavel.name = @"variavel";
     variavel.zPosition = -1;
     [variavel setLabelTipo:tipo];
-    [variavel setLabelEndereco:++contadorVariavel];
-    [variavel setBotaoMenu:botaoMenu.frame];
+    [variavel setLabelEndereco:vetorVariaveis.count+1];
     [variavel setMyDelegate:self];
     [self addChild:variavel];
     
@@ -516,6 +513,14 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     objetoEditando = nil;
 }
 
+- (void)escondeMenuEdicao{
+    
+    if (menuEditarAberto) {
+        [self moveMenuEdicao];
+    }
+    
+}
+
 - (void)identificaNodeETap:(int)tap{
     
     
@@ -536,36 +541,52 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
             
             [self preparaTextFieldsVariavel];
             [self moveMenuEdicao];
+            return;
         }else if ([conteudoAtivo.name isEqualToString:@"operador"]){
             objetoEditando = conteudoAtivo;
             [self preparaTextFieldsOperador];
             [self moveMenuEdicao];
-
+            return;
             
             
         }
         
-    }
-    
-    
-    
-    
-    
-   /* else if ([conteudoAtivo.name isEqualToString:@"variavel"] || [conteudoAtivo.name isEqualToString:@"operador"]){
-        objetoAnimando = conteudoAtivo;
-        
-        [self preparaTextFieldsVariavel];
-        [self moveMenuEdicao];
-    }*/  else if ([conteudoAtivo.name isEqualToString:@"botaoOK"]){
+    }else if ([conteudoAtivo.name isEqualToString:@"botaoOK"]){
         [self insereValores];
+        return;
     }
 
-    
+    [self escondeMenuEdicao];
     
 }
 
 
-
+- (void)removeDelegates{
+    
+    for (int i = 0;i < vetorVariaveis.count;i++) {
+        SpriteCaixaNode *variavel = [vetorVariaveis objectAtIndex:i];
+        variavel.myDelegate = nil;
+        variavel.physicsBody = nil;
+    }
+    
+    [vetorVariaveis removeAllObjects];
+    
+    
+    for (int i = 0;i < vetorOperadores.count;i++) {
+        
+        SpriteOperadorNode *operador = [vetorOperadores objectAtIndex:i];
+        operador.myDelegateGesture = nil;
+    }
+    
+    [vetorOperadores removeAllObjects];
+    
+    [menu removeTudo];
+    
+    [self removeAllChildren];
+    [self removeAllActions];
+    self.myDelegate = nil;
+    
+}
 
 
 // METODOS CONTATOS

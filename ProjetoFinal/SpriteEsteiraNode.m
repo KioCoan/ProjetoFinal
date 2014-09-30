@@ -144,6 +144,7 @@
 -(void)animacaoMoverCaixaFinalizado:(BOOL)fimDesafio{
     //VERIFICA SE A ANIMAÇÃO DA CAIXA FINALIZADA FOI DE FIM DO DESAFIO
     if (fimDesafio) {
+        [self resetarTexturasDasCaixas];
         [self posicionarCaixasInicialmente];
         [[self myDelegate] desafioAtualTerminou];
     
@@ -151,6 +152,12 @@
         [[self myDelegate] caixasPosicionadasParaDesafio];
     }
     
+}
+
+-(void)resetarTexturasDasCaixas{
+    for (SpriteCaixinhaNode *c in vtCaixas) {
+        [c resetarTextura];
+    }
 }
 
 //CRIO UM VETOR COM TODOS OS POSSÍVEIS TIPOS DE VARIÁVEL
