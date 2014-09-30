@@ -112,6 +112,7 @@ static const int YELLOW = 3;
 
 
 
+
 -(void)iniciarAnimacaoEncherCaixa:(BOOL)resposta{
     if (resposta) {
         [self runAction:acaoEncherCaixa];

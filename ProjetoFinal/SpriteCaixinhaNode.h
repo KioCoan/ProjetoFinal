@@ -21,7 +21,7 @@
     SKLabelNode *lblTipo;
     int meuIndex;
     NSString *minhaCor;
-    
+
     SKAction *acaoMoverX;
     SKAction *acaoPular;
     SKAction *acaoEncherCaixa;
