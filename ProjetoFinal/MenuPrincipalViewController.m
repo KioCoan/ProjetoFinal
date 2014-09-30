@@ -29,19 +29,40 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    CGPoint posicaoAtual = self.imgTransition.frame.origin;
+    //CGPoint posicaoAtual = self.imgTransition.frame.origin;
     
-    CABasicAnimation *anima = [CABasicAnimation animationWithKeyPath:@"position.y"];
-    anima.fromValue = [NSValue valueWithCGPoint:posicaoAtual];
     
-    posicaoAtual.y = posicaoAtual.y + (self.imgTransition.frame.size.height / 2);
     
-    anima.toValue    = [NSValue valueWithCGPoint:posicaoAtual];
-    anima.duration   = 1.5f;
-    anima.repeatCount =1;
-    anima.removedOnCompletion = YES;
+    //CORE ANIMATION MALDITO ----------
     
-    [[self.imgTransition layer] addAnimation:anima forKey:nil];
+//    CABasicAnimation *moveUp;
+//    moveUp          = [CABasicAnimation animationWithKeyPath:@"position.y"];
+//    moveUp.byValue  = @(-self.imgTransition.frame.size.height / 2); // or [NSNumber numberWithFloat:-50.0f] if you really need to
+//    moveUp.duration = 2.0;
+//    moveUp.removedOnCompletion = NO;
+//    moveUp.fillMode = kCAFillModeBoth;
+//    moveUp.delegate = self;
+//    moveUp.beginTime = 0;
+//    [self.imgTransition.layer addAnimation:moveUp forKey:nil];
+//    
+//    CABasicAnimation *fadeInAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+//    fadeInAnimation.fromValue = [NSNumber numberWithFloat:1.0];
+//    fadeInAnimation.toValue = [NSNumber numberWithFloat:0.0];
+//    fadeInAnimation.additive = NO;
+//    fadeInAnimation.removedOnCompletion = YES;
+//    fadeInAnimation.beginTime = 2.0;
+//    fadeInAnimation.duration = 2.0;
+//    fadeInAnimation.delegate = self;
+//    fadeInAnimation.fillMode = kCAFillModeForwards;
+//    [self.imgTransition.layer addAnimation:fadeInAnimation forKey:nil];
+    
+    //void (^testBlock)(void) = ^{
+    
+        //[[self imgTransition] setHidden:YES];
+    //};
+
+    
+    //testBlock();
     
 }
 

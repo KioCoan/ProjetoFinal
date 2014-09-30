@@ -100,7 +100,9 @@ static const int YELLOW = 3;
     //ESTA CONDIÇÃO É USADA PARA QUE APENAS 1 CAIXA AVISE O DELEGATE QUE A ANIMAÇÃO TERMINOU
     if (meuIndex == 3) {
         [self runAction:acaoMoverX completion:^{
-            [self setTexture:[SKTexture textureWithImageNamed:[NSString stringWithFormat:@"caixa%d-vazia.png", meuIndex]]];
+    
+            
+            [self removeAllActions];
             [[self myDelegate] animacaoMoverCaixaFinalizado:resposta];
         }];
     
@@ -116,6 +118,7 @@ static const int YELLOW = 3;
 -(void)iniciarAnimacaoEncherCaixa:(BOOL)resposta{
     if (resposta) {
         [self runAction:acaoEncherCaixa];
+        [lblTipo setFontColor:[UIColor whiteColor]];
     }
 }
 
@@ -126,6 +129,11 @@ static const int YELLOW = 3;
 
 -(void)setTipo:(NSString*)tipo{
     [lblTipo setText:tipo];
+}
+
+-(void)resetarTextura{
+    [lblTipo setFontColor:[UIColor blackColor]];
+    [self setTexture:[SKTexture textureWithImageNamed:[NSString stringWithFormat:@"caixa%d-vazia.png", meuIndex]]];
 }
 
 -(NSString*)retornaMinhaCor:(int)index{
