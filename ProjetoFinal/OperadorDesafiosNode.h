@@ -12,12 +12,17 @@
 @interface OperadorDesafiosNode : SKSpriteNode
 {
     SKLabelNode *valor;
+    SKAction *acaoCorreto;
+    SKAction *acaoErrado;
+    SKAction *atual;
+    SKAction *acaoReversa;
 }
 
 
 -(void)setValor:(NSString*)texto;
 -(NSString*)getValor;
-
-
+-(void)acertou;
+-(void)errou;
+-(SKAction*)acaoReversa;
 
 @end

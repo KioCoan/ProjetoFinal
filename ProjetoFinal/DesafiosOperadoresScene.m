@@ -134,24 +134,32 @@
 }
 
 -(void)corrige:(NSString*)opcao{
-    SKAction *temp = [SKAction waitForDuration:1.0];
+    SKAction *temp = [SKAction waitForDuration:0.8];
     
     if ([gerenciadorDesafios corrige:opcao]) {
+        [operador acertou];
         [progresso insereAcerto:[desafioAtual retornaTarefaAtual]];
         
         
         [operador setValor:[(BotaoDesafiosNode*)conteudoAtivo text]]; // FAZ UM CAST DO CONTEÚDO ATIVO PARA TER ACESSO À PROPRIEDADE "TEXT"
         
     }else{
+        [operador errou];
         [progresso insereErro:[desafioAtual retornaTarefaAtual]];
         [operador setValor:[desafioAtual operador]];
     }
     //[self nomeiaBotao];
-    [operador runAction:temp completion:^{[operador removeAllActions];
-        [self alteraTarefa];
-        
-    }];
     
+    
+    
+    
+    
+    [operador runAction:temp completion:^{
+        [operador runAction:[operador acaoReversa] completion:^{
+            [operador removeAllActions];
+        }];
+    }];
+    [self alteraTarefa];
     
 }
 //-(void)nomeiaBotao{

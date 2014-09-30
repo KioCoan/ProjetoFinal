@@ -11,6 +11,7 @@
 @interface ProgressoDesafioBar : SKSpriteNode
 {
     NSMutableArray *bolinhas;
+    SKAction *somAcerto, *somErro;
 }
 
 -(id)initWithBolinhas:(int)nBolinhas;

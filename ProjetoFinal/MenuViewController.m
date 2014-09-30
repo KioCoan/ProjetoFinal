@@ -41,7 +41,7 @@ static const int ESPACAMENTO_BOTOES = 50;
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:208.0/255.0 green:86.0/255.0 blue:92.0/255.0 alpha:1.0];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:180.0/255.0 green:77.0/255.0 blue:84.0/255.0 alpha:1.0];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:

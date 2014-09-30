@@ -20,6 +20,8 @@
         CGFloat posY = 0;
         CGFloat posX = 17;
         
+        somAcerto = [SKAction playSoundFileNamed:@"correto.aiff" waitForCompletion:NO];
+        somErro = [SKAction playSoundFileNamed:@"errado.wav" waitForCompletion:NO];
         for (int i=0; i<nBolinhas; i++) {
             [bolinhas addObject:[[SKSpriteNode alloc] initWithImageNamed:@"Desafio-Andamento-Vazio.png"]];
             [[bolinhas objectAtIndex:i]setPosition:CGPointMake(posX, posY)];
@@ -33,11 +35,11 @@
 }
 -(void)insereAcerto:(int)index{
     [[bolinhas objectAtIndex:index]setTexture:[SKTexture textureWithImageNamed:@"Desafio-Andamento-Correto.png"]];
-    [[bolinhas objectAtIndex:index]runAction:[SKAction playSoundFileNamed:@"correto.aiff" waitForCompletion:NO]];
+    [[bolinhas objectAtIndex:index]runAction:somAcerto];
 }
 -(void)insereErro:(int)index{
     [[bolinhas objectAtIndex:index]setTexture:[SKTexture textureWithImageNamed:@"Desafio-Andamento-Errado.png"]];
-    [[bolinhas objectAtIndex:index]runAction:[SKAction playSoundFileNamed:@"errado.wav" waitForCompletion:NO]];
+    [[bolinhas objectAtIndex:index]runAction:somErro];
 }
 -(void)reset{
     for (int i = 0; i<bolinhas.count; i++) {
