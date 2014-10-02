@@ -30,7 +30,7 @@
     // Do any additional setup after loading the view.
     
     //CGPoint posicaoAtual = self.imgTransition.frame.origin;
-    
+    [[self view] setUserInteractionEnabled:NO];
     
     [self performSelector:@selector(iniciarAnimacaoDeEntrada) withObject:nil afterDelay:0.5];
     
@@ -38,6 +38,7 @@
 }
 
 -(void)iniciarAnimacaoDeEntrada{
+    
     CABasicAnimation *moveUp;
     moveUp = [CABasicAnimation animationWithKeyPath:@"position.y"];
     moveUp.byValue  = @(-self.imgTransition.frame.size.height / 2); // or [NSNumber numberWithFloat:-50.0f] if you really need to
@@ -51,6 +52,7 @@
             
             //[self.imgTransition.layer addAnimation:fadeInAnimation forKey:nil];
             [self.imgTransition removeFromSuperview];
+            [[self view] setUserInteractionEnabled:YES];
         }];
         [self.imgTransition.layer addAnimation:moveUp forKey:nil];
     }[CATransaction commit];
