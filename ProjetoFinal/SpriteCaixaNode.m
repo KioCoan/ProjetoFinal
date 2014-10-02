@@ -214,7 +214,8 @@
 }
 
 -(void)executaSprite{
-    [self setUserInteractionEnabled:NO];
+    [self setUserInteractionEnabled: !self.userInteractionEnabled];
+    
     
     //VERIFICA O ESTADO DA CAIXA, SE ELA ESTÁ ABERTA OU FECHADA PARA ACIONAR A SKACTION CORRETA
     if(caixaAberta){
@@ -229,8 +230,11 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
 
-    [self.myDelegate terminouGestureCaixa:self];
-    [self executaSprite];
+    if (self.myDelegate == nil) {
+        [self.myDelegate terminouGestureCaixa:self];
+        [self executaSprite];
+    }
+    
 
     
 }
@@ -265,7 +269,7 @@
     [self runAction:animacaoFechar completion:^{
         [self removeAllActions];
         caixaAberta = NO;
-        [self setUserInteractionEnabled:YES];
+        [self setUserInteractionEnabled:!self.userInteractionEnabled];
     }];
 }
 
@@ -279,7 +283,7 @@
         [self removeAllActions];
         caixaAberta = YES;
         [lblConteudo setHidden:NO];
-        [self setUserInteractionEnabled:YES];
+        [self setUserInteractionEnabled:!self.userInteractionEnabled];
     }];
 }
 

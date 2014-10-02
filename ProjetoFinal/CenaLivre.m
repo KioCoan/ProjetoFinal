@@ -25,6 +25,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     NSMutableArray *vetorVariaveis;
     BOOL menuEditarAberto;
     BOOL estaEmContato;
+    BOOL movendoObjeto;
     SKNode *objetoEditando;
     SpriteOperadorNode *operadorEditando;
     
@@ -92,6 +93,34 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 - (void)didMoveToView:(SKView *)view{
     
     [self criandoTodosTextFields];
+    [self criaGesture];
+    
+}
+
+- (void)criaGesture{
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressGestureRecognizer:)];
+    //[longPress setMinimumPressDuration:1.5];
+    //[longPress setNumberOfTouchesRequired:2];
+    [longPress setNumberOfTouchesRequired:1];
+    [longPress setMinimumPressDuration:1];
+    [self.view addGestureRecognizer:longPress];
+    
+}
+
+- (void)longPressGestureRecognizer:(UILongPressGestureRecognizer *)recognizer{
+    
+    //RECONHECE O GESTURE DE LONGPRESS
+    
+    
+    if (recognizer.state == UIGestureRecognizerStateBegan && [conteudoAtivo.name isEqualToString:@"variavel"]){
+        
+        [self preparaTextFieldsVariavel];
+        [self moveMenuEdicao];
+        objetoEditando = conteudoAtivo;
+    }
+    
+    
     
 }
 
@@ -135,6 +164,31 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     }
     
     [self mostraEscondeTextField:!menuEditarAberto];
+    [self botaoMenuRoda];
+}
+
+- (void)botaoMenuRoda{
+    
+    SKAction *rodaBotao;
+    SKTexture *texture1;
+    
+    
+    if (menuEditarAberto) {
+        rodaBotao = [SKAction rotateToAngle: M_PI + (M_PI / 4) duration:0.4];
+        texture1 = [SKTexture textureWithImageNamed:@"modo livre-10.png"];
+        
+        
+        
+    }else{
+        
+        rodaBotao = [SKAction rotateToAngle:-M_PI - M_PI duration:0.4];
+        texture1 = [SKTexture textureWithImageNamed:@"modo livre-09.png"];
+        
+    }
+    
+    [botaoMenu runAction:rodaBotao completion:^{
+        [botaoMenu setTexture:texture1];
+    }];
     
 }
 
@@ -149,12 +203,12 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         
         SKAction *rodaBotao = [SKAction rotateToAngle: M_PI + (M_PI / 4) duration:0.4];
-        SKTexture *texture1 = [SKTexture textureWithImageNamed:@"modo livre-10.png"];
+        //SKTexture *texture1 = [SKTexture textureWithImageNamed:@"modo livre-10.png"];
         SKTexture *texture2 = [SKTexture textureWithImageNamed:@"modo livre-11.png"];
         SKTexture *texture3 = [SKTexture textureWithImageNamed:@"modo livre-12.png"];
         SKAction *aumenta = [SKAction resizeToWidth:150 height:150 duration:0.4];
         
-        SKAction *texturas = [SKAction animateWithTextures:@[texture1,texture2,texture3] timePerFrame:0.1];
+        SKAction *texturas = [SKAction animateWithTextures:@[texture2,texture3] timePerFrame:0.1];
         
         SKAction *animacao = [SKAction group:@[rodaBotao,texturas,aumenta]];
         
@@ -335,8 +389,10 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     variavel.zPosition = -1;
     [variavel setLabelTipo:tipo];
     [variavel setLabelEndereco:vetorVariaveis.count+1];
+    [variavel setUserInteractionEnabled:NO];
     [variavel setMyDelegate:self];
     [self addChild:variavel];
+    //[variavel iniciarAnimacaoIntroducao];
     
     
     //CRIA CORPO DA CAIXA
@@ -523,6 +579,9 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 - (void)identificaNodeETap:(int)tap{
     
+    if ([conteudoAtivo isEqual:objetoEditando]) {
+        return;
+    }
     
     if ([conteudoAtivo.name isEqualToString:@"botaoMenu"]) {
         [menu abrirFechar];
@@ -534,7 +593,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         [self.myDelegate esconderNavigationController: [menu getAberto]];
     }else if ([conteudoAtivo.name isEqualToString:@"iconeMenu"]){
         [conteudoAtivo runAction:[self retornaCrescerDiminuir:YES]];
-    }else if (tap == 2){
+    }/*else if (tap == 2){
         
         if ([conteudoAtivo.name isEqualToString:@"variavel"]) {
             objetoEditando = conteudoAtivo;
@@ -551,7 +610,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
             
         }
         
-    }else if ([conteudoAtivo.name isEqualToString:@"botaoOK"]){
+    }*/else if ([conteudoAtivo.name isEqualToString:@"botaoOK"]){
         [self insereValores];
         return;
     }
@@ -619,7 +678,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     conteudoAtivo = [self nodeAtPoint:location];
     
-    
+    NSLog(@"nome objeto %@",conteudoAtivo.name);
     
     [self identificaNodeETap:[touch tapCount]];
     
@@ -637,11 +696,35 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         CGPoint location = [touch locationInNode:menu];
         [conteudoAtivo setPosition:location];
         
+    }else if ([conteudoAtivo.name isEqualToString:@"variavel"]){
+        CGPoint location = [touch locationInNode:self];
+        [conteudoAtivo setPosition:location];
+        movendoObjeto = YES;
     }
     
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    if (estaEmContato) {
+        [conteudoAtivo removeFromParent];
+        [self didEndContact:nil];
+        if (menuEditarAberto) {
+            [self moveMenuEdicao];
+        }
+        return;
+    }
+    
+    if ([conteudoAtivo.name isEqualToString:@"variavel"] && !movendoObjeto) {
+        
+        
+            SpriteCaixaNode *variavel = (SpriteCaixaNode *)conteudoAtivo;
+            [variavel executaSprite];
+
+        
+        
+    }
+    
     
     if ([conteudoAtivo.name isEqualToString:@"iconeMenu"]) {
         
@@ -676,7 +759,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
     }
     conteudoAtivo = nil;
-    
+    movendoObjeto = NO;
 }
 
 @end
