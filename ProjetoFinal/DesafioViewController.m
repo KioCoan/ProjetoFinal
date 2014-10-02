@@ -35,7 +35,9 @@
 
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    [gerenciadorDesafios resetaCena];
+    
+    //COMANDO SEM LÓGICA
+    //[gerenciadorDesafios resetaCena];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewDidAppear:animated];

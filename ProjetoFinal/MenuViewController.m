@@ -59,7 +59,7 @@ static const int ESPACAMENTO_BOTOES = 50;
     // Do any additional setup after loading the view.
     
     //COMANDO PARA MUDAR A COR DA NAVIGATION CONTROLLER
-    [[self.navigationController navigationBar] setBarTintColor:[UIColor whiteColor]];
+    //[[self.navigationController navigationBar] setBarTintColor:[UIColor whiteColor]];
     
     //É DEFINIDO O TAMANHO E A POSIÇÃO DA SCROLLVIEW EM RELAÇÃO O TAMANHO DO NAVIGATION CONTROLLER
     CGRect frame = self.view.frame;

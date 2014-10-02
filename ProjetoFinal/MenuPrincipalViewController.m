@@ -46,6 +46,7 @@
     moveUp.removedOnCompletion = NO;
     moveUp.fillMode = kCAFillModeBoth;
     moveUp.delegate = self;
+    [moveUp setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
     
     [CATransaction begin];{
         [CATransaction setCompletionBlock:^{
