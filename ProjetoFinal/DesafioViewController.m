@@ -41,7 +41,6 @@
     [super viewDidAppear:animated];
     
     viewDesafioAtual = [[SKView alloc] initWithFrame:self.view.frame];
-    viewDesafioAtual.showsFPS = YES;
     [self.view addSubview:viewDesafioAtual];
     [viewDesafioAtual presentScene:[gerenciadorDesafios retornaCenaAtual]];
     [[viewDesafioAtual scene]setSize:viewDesafioAtual.frame.size];

@@ -13,10 +13,11 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         
-        NSLog(@"%f, %f", size.width, size.height);
+        
         
         nodeFundo = [[SKSpriteNode alloc] initWithTexture:[SKTexture textureWithImageNamed:@"fundo-desafio.png"]];
         //[nodeFundo setSize:CGSizeMake(500, 500)];
+        NSLog(@"%f, %f", nodeFundo.size.width, nodeFundo.size.height);
         [nodeFundo setPosition:CGPointMake(self.size.width / 2, self.size.height / 2)];
         [nodeFundo setAlpha:0];
         [self addChild:nodeFundo];
