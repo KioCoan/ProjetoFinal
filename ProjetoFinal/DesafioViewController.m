@@ -31,6 +31,11 @@
     gerenciadorDesafios = [GerenciadorDesafios sharedGerenciador];
     gerador = [[Gerador alloc]init];
     
+    viewDesafioAtual = [[SKView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:viewDesafioAtual];
+    [viewDesafioAtual presentScene:[gerenciadorDesafios retornaCenaAtual]];
+    [[viewDesafioAtual scene]setSize:viewDesafioAtual.frame.size];
+    
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -42,10 +47,10 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    viewDesafioAtual = [[SKView alloc] initWithFrame:self.view.frame];
-    [self.view addSubview:viewDesafioAtual];
-    [viewDesafioAtual presentScene:[gerenciadorDesafios retornaCenaAtual]];
-    [[viewDesafioAtual scene]setSize:viewDesafioAtual.frame.size];
+//    viewDesafioAtual = [[SKView alloc] initWithFrame:self.view.frame];
+//    [self.view addSubview:viewDesafioAtual];
+//    [viewDesafioAtual presentScene:[gerenciadorDesafios retornaCenaAtual]];
+//    [[viewDesafioAtual scene]setSize:viewDesafioAtual.frame.size];
     
 }
 

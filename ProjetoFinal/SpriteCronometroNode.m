@@ -28,6 +28,7 @@
         [self setSize:CGSizeMake(0, self.size.height)];
         
         tempoTotal = tempo;
+        
         widthSize = 768;
         
         [self inicializarAnimacaoIniciarContagem];
