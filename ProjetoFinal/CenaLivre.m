@@ -389,8 +389,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     variavel.zPosition = -1;
     [variavel setLabelTipo:tipo];
     [variavel setLabelEndereco:vetorVariaveis.count+1];
-    [variavel setUserInteractionEnabled:NO];
-    [variavel setMyDelegate:self];
+    [variavel controlarPelaCena:YES];
     [self addChild:variavel];
     //[variavel iniciarAnimacaoIntroducao];
     
@@ -436,13 +435,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
 }
 
--(void)terminouGestureCaixa:(SKNode *)caixa{
-    
-    if (estaEmContato) {
-        [caixa removeFromParent];
-        [self didEndContact:nil];
-    }
-}
 
 
 // METODOS OPERADORES
@@ -622,11 +614,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 - (void)removeDelegates{
     
-    for (int i = 0;i < vetorVariaveis.count;i++) {
-        SpriteCaixaNode *variavel = [vetorVariaveis objectAtIndex:i];
-        variavel.myDelegate = nil;
-        variavel.physicsBody = nil;
-    }
     
     [vetorVariaveis removeAllObjects];
     

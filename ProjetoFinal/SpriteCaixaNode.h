@@ -14,11 +14,7 @@
 //-(void)spriteCaixaClicado:(SKSpriteNode*)spriteCaixa;
 //@end
 
-@protocol SpriteCaixaDelegate <NSObject>
 
-- (void)terminouGestureCaixa : (SKNode*)caixa;
-
-@end
 
 @interface SpriteCaixaNode : SKSpriteNode
 {
@@ -35,9 +31,10 @@
     
     BOOL caixaAberta;
     BOOL toDentro;
+    BOOL controladoPelaCena;
     
 }
-@property id<SpriteCaixaDelegate> myDelegate;
+
 
 -(id)initWithConteudo:(NSString*)conteudo nome:(NSString*)nome tipo:(NSString*)tipo tamanho:(CGSize)tamanho;
 
@@ -50,4 +47,5 @@
 -(NSString *)retornaConteudo;
 -(void)executaSprite;
 -(void)iniciarAnimacaoIntroducao;
+- (void)controlarPelaCena:(BOOL)controlar;
 @end

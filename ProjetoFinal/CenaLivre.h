@@ -20,7 +20,7 @@
 @end
 
 
-@interface CenaLivre : SKScene <UITextFieldDelegate,SKPhysicsContactDelegate,OperadorNodeGesture,SpriteCaixaDelegate>
+@interface CenaLivre : SKScene <UITextFieldDelegate,SKPhysicsContactDelegate,OperadorNodeGesture>
 
 @property id<CenaLivreDelegate> myDelegate;
 

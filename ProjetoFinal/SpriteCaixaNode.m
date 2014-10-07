@@ -41,6 +41,12 @@
     return self;
 }
 
+- (void)controlarPelaCena:(BOOL)controlar{
+    
+    controladoPelaCena = controlar;
+    [self setUserInteractionEnabled:!controlar];
+}
+
 -(void)inicializarClasse{
     //THREAD PARA CRIAR A ANIMAÇÃO COM SOM
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
@@ -230,8 +236,7 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
 
-    if (self.myDelegate == nil) {
-        [self.myDelegate terminouGestureCaixa:self];
+    if (!controladoPelaCena) {
         [self executaSprite];
     }
     
@@ -239,25 +244,6 @@
     
 }
 
-
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    UITouch *touch = [touches anyObject];
-    
-    
-    //SE A POSIÇÃO QUE FOI CLICADA É A MESMA DO SPRITE DA CAIXA, O SPRITE É MOVIDO
-    
-    if (self.myDelegate != nil) {
-        SKScene *cena = (SKScene *)self.myDelegate;
-        CGPoint location = [touch locationInNode:cena];
-        [self setPosition:location];
-        
-        
-        
-    }
-
-    
-}
 
 
 
