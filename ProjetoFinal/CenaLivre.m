@@ -453,7 +453,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     [novoOperador setDono:self];
     [novoOperador setPosition:posicao];
     novoOperador.zPosition = -1;
-    novoOperador.name = @"operador";
+    novoOperador.name = @"operadorSprite";
     novoOperador.myDelegateGesture = self;
     [novoOperador controladoPelaCena:YES];
     [novoOperador criarCorpos];
@@ -491,13 +491,15 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
 }
 
-- (SpriteOperadorNode *)retornaOperadorNode{
+
+
+- (SpriteOperadorNode *)retornaOperadorNode :(SKNode *)operadorNode{
     
     for (SpriteOperadorNode *node in vetorOperadores) {
         
         
         
-        if ([objetoEditando isEqual:[node retornaOperadorNode]]) {
+        if ([operadorNode isEqual:[node retornaOperadorNode]]) {
             return node;
         }
     }
@@ -535,7 +537,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
     }else if ([objetoEditando.name isEqualToString:@"operador"]){
         
-        SpriteOperadorNode *operador = [self retornaOperadorNode];
+        SpriteOperadorNode *operador = [self retornaOperadorNode:objetoEditando];
         
         for (int i = 0; i < vetorTextField.count;i++) {
             
@@ -587,26 +589,11 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         [self.myDelegate esconderNavigationController: [menu getAberto]];
     }else if ([conteudoAtivo.name isEqualToString:@"iconeMenu"]){
         [conteudoAtivo runAction:[self retornaCrescerDiminuir:YES]];
-    }/*else if (tap == 2){
-        
-        if ([conteudoAtivo.name isEqualToString:@"variavel"]) {
-            objetoEditando = conteudoAtivo;
-            
-            [self preparaTextFieldsVariavel];
-            [self moveMenuEdicao];
-            return;
-        }else if ([conteudoAtivo.name isEqualToString:@"operador"]){
-            objetoEditando = conteudoAtivo;
-            [self preparaTextFieldsOperador];
-            [self moveMenuEdicao];
-            return;
-            
-            
-        }
-        
-    }*/else if ([conteudoAtivo.name isEqualToString:@"botaoOK"]){
+    }else if ([conteudoAtivo.name isEqualToString:@"botaoOK"]){
         [self insereValores];
         return;
+    }else if ([conteudoAtivo.name isEqualToString:@"operador"]){
+        conteudoAtivo = (SKNode *)[self retornaOperadorNode:conteudoAtivo];
     }
 
     [self escondeMenuEdicao];
@@ -684,7 +671,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         CGPoint location = [touch locationInNode:menu];
         [conteudoAtivo setPosition:location];
         
-    }else if ([conteudoAtivo.name isEqualToString:@"variavel"] || [conteudoAtivo.name isEqualToString:@"operador"]){
+    }else if ([conteudoAtivo.name isEqualToString:@"variavel"] || [conteudoAtivo.name isEqualToString:@"operadorSprite"]){
         CGPoint location = [touch locationInNode:self];
         [conteudoAtivo setPosition:location];
         movendoObjeto = YES;
