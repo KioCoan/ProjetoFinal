@@ -30,6 +30,12 @@
     return self;
 }
 
+- (void)controladoPelaCena:(BOOL)controlar{
+    controladoPelaCena = controlar;
+    [self setUserInteractionEnabled:!controlar];
+    [nodeOperador controlarPelaCena:controlar];
+}
+
 -(void)inicializaClasse:(NSString*)valor1 operador:(NSString*)operador valor2:(NSString*)valor2 resultado:(NSString*)resultado{
     
     //THREAD PARA CRIAR A ANIMAÇÃO COM SOM
@@ -149,12 +155,12 @@
     
     UITouch *touch = [touches anyObject];
     
-    if (self.myDelegateGesture != nil) {
-        SKScene *cena = (SKScene *)self.myDelegateGesture;
-        
-        CGPoint location = [touch locationInNode:cena];
-        [self setPosition:location];
-    }
+//    if (self.myDelegateGesture != nil) {
+//        SKScene *cena = (SKScene *)self.myDelegateGesture;
+//        
+//        CGPoint location = [touch locationInNode:cena];
+//        [self setPosition:location];
+//    }
     
 }
 

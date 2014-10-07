@@ -51,6 +51,12 @@
     [self addChild:lblOperador];
 }
 
+- (void)controlarPelaCena:(BOOL)controlar{
+    
+    controladoPelaCena = controlar;
+    [self setUserInteractionEnabled:!controlar];
+    
+}
 
 -(void)setLabelOperador:(NSString*)operador{
     

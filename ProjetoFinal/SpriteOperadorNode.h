@@ -26,7 +26,7 @@
     OperadorResultadoNode *nodeResultado;
     
     SKAction *somOperador;
-    
+    BOOL controladoPelaCena;
     BOOL partesVisiveis;
 }
 
@@ -50,4 +50,5 @@
 - (void)criarCorpos;
 //- (void)setDonoOperadorNode;
 - (void)setDelegate;
+- (void)controladoPelaCena:(BOOL)controlar;
 @end

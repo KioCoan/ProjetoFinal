@@ -21,6 +21,7 @@
 @interface OperadorNode : SKSpriteNode
 {
     SKLabelNode *lblOperador;
+    BOOL controladoPelaCena;
 }
 
 @property id <OperadorNodeDelegate> myDelegate;
@@ -29,4 +30,5 @@
 -(void)setLabelOperador:(NSString*)operador;
 -(NSString*)getOperador;
 -(void)criarCorpo;
+- (void)controlarPelaCena:(BOOL)controlar;
 @end

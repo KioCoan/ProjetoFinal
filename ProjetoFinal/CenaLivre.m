@@ -11,6 +11,7 @@
 #import "MenuNode.h"
 #import "Calculador.h"
 #import "OperadorNode.h"
+
 static const uint32_t categoriaBotaoMenu = 0x1 << 0;
 static const uint32_t categoriaCaixa = 0x1 << 1;
 
@@ -123,6 +124,8 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     
 }
+
+
 
 //METODOS MENU
 
@@ -449,11 +452,10 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     [novoOperador setDono:self];
     [novoOperador setPosition:posicao];
-    //caixa.size = CGSizeMake(200, 200);
     novoOperador.zPosition = -1;
     novoOperador.name = @"operador";
     novoOperador.myDelegateGesture = self;
-    
+    [novoOperador controladoPelaCena:YES];
     [novoOperador criarCorpos];
     
     [self addChild:novoOperador];
@@ -611,7 +613,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
 }
 
-
 - (void)removeDelegates{
     
     
@@ -683,7 +684,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         CGPoint location = [touch locationInNode:menu];
         [conteudoAtivo setPosition:location];
         
-    }else if ([conteudoAtivo.name isEqualToString:@"variavel"]){
+    }else if ([conteudoAtivo.name isEqualToString:@"variavel"] || [conteudoAtivo.name isEqualToString:@"operador"]){
         CGPoint location = [touch locationInNode:self];
         [conteudoAtivo setPosition:location];
         movendoObjeto = YES;
