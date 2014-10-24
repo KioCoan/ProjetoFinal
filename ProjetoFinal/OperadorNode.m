@@ -42,7 +42,7 @@
 
 -(void)inicializarLabelOperador:(NSString*)operador{
     lblOperador = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-    [lblOperador setName:@"operador"];
+    [lblOperador setName:@"labelOperador"];
     [self setLabelOperador:operador];
     [lblOperador setFontColor:[SKColor whiteColor]];
     [lblOperador setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
@@ -58,6 +58,7 @@
     
 }
 
+
 -(void)setLabelOperador:(NSString*)operador{
     
     if([operador isEqualToString:@"&&"]){
@@ -68,6 +69,10 @@
     }
     
     [lblOperador setText:operador];
+}
+
+- (SKLabelNode *)retornaLabelOperador{
+    return lblOperador;
 }
 
 

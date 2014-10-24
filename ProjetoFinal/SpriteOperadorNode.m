@@ -53,7 +53,7 @@
     
     //POR FIM É INSERIDO A PARTE QUE MOSTRA O OPERADOR
     nodeOperador = [[OperadorNode alloc] initWithOperador:operador];
-    nodeOperador.name = @"operador";
+    nodeOperador.name = @"operadorNode";
     [nodeOperador setMyDelegate:self];
     [nodeValores addChild:nodeOperador];
     
@@ -105,7 +105,8 @@
 
 
 -(void)iniciarAnimacaoAbrir{
-    [self setUserInteractionEnabled:NO];
+    
+    [self setUserInteractionEnabled:!self.userInteractionEnabled];
     
     //MANDA O NODE VALORES INICIAR A ANIMAÇÃO DAS LABELS DELE
     [nodeValores iniciarAnimacao];
@@ -118,10 +119,12 @@
         [nodeResultado runAction:[nodeResultado getAnimacaoDescer] completion:^{
             
             partesVisiveis = !partesVisiveis;
-            [self setUserInteractionEnabled:YES];
+            [self setUserInteractionEnabled:!self.userInteractionEnabled];
             [nodeResultado removeAllActions];
             [nodeValores removeAllActions];
-            [nodeOperador setUserInteractionEnabled:YES];
+            [nodeOperador setUserInteractionEnabled:self.userInteractionEnabled];
+            
+            
         }];
     }];
 
@@ -129,7 +132,7 @@
 
 
 -(void)iniciarAnimacaoFechar{
-    [self setUserInteractionEnabled:NO];
+    [self setUserInteractionEnabled:!self.userInteractionEnabled];
     
     //MANDA O NODE RESULTADO INICIAR A ANIMAÇÃO DA LABEL DELE
     [nodeResultado iniciarAnimacao];
@@ -142,10 +145,11 @@
         [nodeValores runAction:[nodeValores getAnimacaoDiminuir] completion:^{
             
             partesVisiveis = !partesVisiveis;
-            [self setUserInteractionEnabled:YES];
+            [self setUserInteractionEnabled:!self.userInteractionEnabled];
             [nodeResultado removeAllActions];
             [nodeValores removeAllActions];
-            [nodeOperador setUserInteractionEnabled:YES];
+            [nodeOperador setUserInteractionEnabled:self.userInteractionEnabled];
+            
         }];
     }];
 }

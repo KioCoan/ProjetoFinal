@@ -493,16 +493,34 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 
 
-- (SpriteOperadorNode *)retornaOperadorNode :(SKNode *)operadorNode{
+- (SpriteOperadorNode *)retornaOperadorNode :(SKNode *)objeto{
     
-    for (SpriteOperadorNode *node in vetorOperadores) {
+    //Esse metodo e usado e chamado no Touches Moved e Touches Ended
+    
+    // Retorna um operador Sprite Operador quando a labelOperador e clicada pelo usuario
+    
+    if ([objeto.name isEqualToString:@"labelOperador"]) {
         
-        
-        
-        if ([operadorNode isEqual:[node retornaOperadorNode]]) {
-            return node;
+        for (SpriteOperadorNode *spriteOperador in vetorOperadores) {
+            OperadorNode *operadorNode = [spriteOperador retornaOperadorNode];
+            if ([objeto isEqual:[operadorNode retornaLabelOperador]]) {
+                return spriteOperador;
+            }
         }
+        
+        
+        // Retorna um operador Sprite Operador quando o operadorNode e clicada pelo usuario
+        
+    }else if ([objeto.name isEqualToString:@"operadorNode"]){
+        for (SpriteOperadorNode *spriteOperador in vetorOperadores) {
+            
+            if ([objeto isEqual:[spriteOperador retornaOperadorNode]]) {
+                return spriteOperador;
+            }
+        }
+
     }
+    
     
     return nil;
 }
@@ -535,7 +553,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         // INSERE VALOR NO OPERADOR
         
-    }else if ([objetoEditando.name isEqualToString:@"operador"]){
+    }else if ([objetoEditando.name isEqualToString:@"operadorNode"]){
         
         SpriteOperadorNode *operador = [self retornaOperadorNode:objetoEditando];
         
@@ -592,7 +610,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     }else if ([conteudoAtivo.name isEqualToString:@"botaoOK"]){
         [self insereValores];
         return;
-    }else if ([conteudoAtivo.name isEqualToString:@"operador"]){
+    }else if ([conteudoAtivo.name isEqualToString:@"operadorNode"]){
         //conteudoAtivo = (SKNode *)[self retornaOperadorNode:conteudoAtivo];
     }
 
@@ -664,7 +682,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     //SE A POSIÇÃO QUE FOI CLICADA É A MESMA DO SPRITE DA CAIXA, O SPRITE É MOVIDO
     
-    if (!movendoObjeto && [conteudoAtivo.name isEqualToString:@"operador"]) {
+    if (!movendoObjeto && ([conteudoAtivo.name isEqualToString:@"operadorNode"] || [conteudoAtivo.name isEqualToString:@"labelOperador"])) {
         conteudoAtivo = (SKNode *)[self retornaOperadorNode:conteudoAtivo];
     }
     
@@ -698,11 +716,13 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
             SpriteCaixaNode *variavel = (SpriteCaixaNode *)conteudoAtivo;
             [variavel executaSprite];
         
-    }else if ([conteudoAtivo.name isEqualToString:@"operador"] && !movendoObjeto){
+    }else if (([conteudoAtivo.name isEqualToString:@"operadorNode"] || [conteudoAtivo.name isEqualToString:@"labelOperador"]) && !movendoObjeto){
         SpriteOperadorNode *spriteOperador = [self retornaOperadorNode:conteudoAtivo];
         NSLog(@"nome objeto: %@",spriteOperador.name);
-        BOOL seila = [spriteOperador isKindOfClass:[SpriteOperadorNode class]];
-        [spriteOperador iniciarAnimacoes];
+        if ([spriteOperador isKindOfClass:[SpriteOperadorNode class]]) {
+            [spriteOperador iniciarAnimacoes];
+        };
+        
     }
     
     

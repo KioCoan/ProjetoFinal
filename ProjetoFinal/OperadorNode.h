@@ -31,4 +31,5 @@
 -(NSString*)getOperador;
 -(void)criarCorpo;
 - (void)controlarPelaCena:(BOOL)controlar;
+- (SKLabelNode *)retornaLabelOperador;
 @end
