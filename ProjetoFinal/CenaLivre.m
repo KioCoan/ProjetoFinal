@@ -448,7 +448,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         vetorOperadores = [NSMutableArray array];
     }
     
-    SpriteOperadorNode *novoOperador = [[SpriteOperadorNode alloc]initWithValor1:nil operador:tipo valor2:nil resultado:nil];
+    SpriteOperadorNode *novoOperador = [[SpriteOperadorNode alloc]initWithValor1:@"1" operador:tipo valor2:@"1" resultado:@"1"];
     
     [novoOperador setDono:self];
     [novoOperador setPosition:posicao];
@@ -573,7 +573,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
 }
 
-- (void)identificaNodeETap:(int)tap{
+- (void)identificaNode{
     
     if ([conteudoAtivo isEqual:objetoEditando]) {
         return;
@@ -593,7 +593,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         [self insereValores];
         return;
     }else if ([conteudoAtivo.name isEqualToString:@"operador"]){
-        conteudoAtivo = (SKNode *)[self retornaOperadorNode:conteudoAtivo];
+        //conteudoAtivo = (SKNode *)[self retornaOperadorNode:conteudoAtivo];
     }
 
     [self escondeMenuEdicao];
@@ -653,9 +653,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     conteudoAtivo = [self nodeAtPoint:location];
     
-    NSLog(@"nome objeto %@",conteudoAtivo.name);
-    
-    [self identificaNodeETap:[touch tapCount]];
+    [self identificaNode];
     
 }
 
@@ -665,6 +663,10 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     
     //SE A POSIÇÃO QUE FOI CLICADA É A MESMA DO SPRITE DA CAIXA, O SPRITE É MOVIDO
+    
+    if (!movendoObjeto && [conteudoAtivo.name isEqualToString:@"operador"]) {
+        conteudoAtivo = (SKNode *)[self retornaOperadorNode:conteudoAtivo];
+    }
     
     if ([conteudoAtivo.name isEqualToString:@"iconeMenu"]) {
         
@@ -695,9 +697,12 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
             SpriteCaixaNode *variavel = (SpriteCaixaNode *)conteudoAtivo;
             [variavel executaSprite];
-
         
-        
+    }else if ([conteudoAtivo.name isEqualToString:@"operador"] && !movendoObjeto){
+        SpriteOperadorNode *spriteOperador = [self retornaOperadorNode:conteudoAtivo];
+        NSLog(@"nome objeto: %@",spriteOperador.name);
+        BOOL seila = [spriteOperador isKindOfClass:[SpriteOperadorNode class]];
+        [spriteOperador iniciarAnimacoes];
     }
     
     
