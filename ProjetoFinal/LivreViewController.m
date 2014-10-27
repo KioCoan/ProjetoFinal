@@ -40,14 +40,12 @@
     viewLivre = [[SKView alloc]initWithFrame:self.view.frame];
     [self.view addSubview:viewLivre];
     
+    cena = [[CenaLivre alloc]init];
     
-    
-    
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
+    [cena setSize: viewLivre.frame.size];
+    //[cena setSize: viewExercicio.frame.size];
+    [cena setMyDelegate:self];
+    [viewLivre presentScene:cena];
     
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:109.0/255.0 green:157.0/255.0 blue:132.0/255.0 alpha:1.0];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
@@ -59,20 +57,38 @@
                           nil];
     
     [self.navigationController.navigationBar setTitleTextAttributes:dict];
-    
+
     
 }
 
-- (void)viewDidAppear:(BOOL)animated{
+//-(void)viewWillAppear:(BOOL)animated{
+    //[super viewWillAppear:animated];
     
-    cena = [[CenaLivre alloc]init];
     
-    [cena setSize: viewLivre.frame.size];
-    //[cena setSize: viewExercicio.frame.size];
-    [cena setMyDelegate:self];
-    [viewLivre presentScene:cena];
+//    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:109.0/255.0 green:157.0/255.0 blue:132.0/255.0 alpha:1.0];
+//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+//    
+//    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+//                          [UIColor whiteColor],NSForegroundColorAttributeName, // Cor
+//                          [UIFont fontWithName:FONT_MEDIUM size:25],NSFontAttributeName, // Font Style
+//                          
+//                          nil];
+//    
+//    [self.navigationController.navigationBar setTitleTextAttributes:dict];
     
-}
+    
+//}
+
+//- (void)viewDidAppear:(BOOL)animated{
+    
+//    cena = [[CenaLivre alloc]init];
+//    
+//    [cena setSize: viewLivre.frame.size];
+//    //[cena setSize: viewExercicio.frame.size];
+//    [cena setMyDelegate:self];
+//    [viewLivre presentScene:cena];
+    
+//}
 
 - (void)viewDidDisappear:(BOOL)animated{
     

@@ -27,17 +27,7 @@
 {
     [super viewDidLoad];
 	gerenciadorDesafios = [GerenciadorDesafios sharedGerenciador];
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
     
-    titulosDescricoes = [gerenciadorDesafios retornaTitulosEDescricoesDesafios];
-    
-    [self.navigationItem setTitle:@"Desafios"];
-    [[self.navigationItem backBarButtonItem]setTitle:@""];
-    
-   
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:234.0/255.0 green:175.0/255.0 blue:59.0/255.0 alpha:1.0];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
@@ -48,6 +38,18 @@
                           nil];
     
     [self.navigationController.navigationBar setTitleTextAttributes:dict];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    titulosDescricoes = [gerenciadorDesafios retornaTitulosEDescricoesDesafios];
+    
+    //[self.navigationItem setTitle:@"Desafios"];
+    //[[self.navigationItem backBarButtonItem]setTitle:@""];
+    
+   
+    
     
 
 

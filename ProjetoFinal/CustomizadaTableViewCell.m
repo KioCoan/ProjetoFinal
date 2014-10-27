@@ -28,10 +28,8 @@
 -(void)setNeedsLayout{
     [super setNeedsLayout];
 
-    
-        
-
 }
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
@@ -42,6 +40,7 @@
 - (IBAction)acaoBtnGo:(id)sender {
     GerenciadorDesafios *gerenciador = [GerenciadorDesafios sharedGerenciador];
     [gerenciador instanciaTarefas];
+    
 }
 
 -(void)mudaCorDeFundo:(int)index{

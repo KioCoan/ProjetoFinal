@@ -36,6 +36,11 @@
     [viewDesafioAtual presentScene:[gerenciadorDesafios retornaCenaAtual]];
     [[viewDesafioAtual scene]setSize:viewDesafioAtual.frame.size];
     
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 100, 50)];
+    [btn setBackgroundColor:[UIColor blueColor]];
+    [btn addTarget:self action:@selector(voltar:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [[self view] addSubview:btn];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -44,6 +49,16 @@
     //COMANDO SEM LÓGICA
     //[gerenciadorDesafios resetaCena];
 }
+
+-(void)voltar:(id)sender{
+    
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    
+}
+
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     

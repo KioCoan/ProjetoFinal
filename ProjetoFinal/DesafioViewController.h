@@ -31,4 +31,7 @@
 - (IBAction)acaoBotao1:(id)sender;
 - (IBAction)acaoBotao2:(id)sender;
 
+
+@property (weak, nonatomic) IBOutlet UIButton *botaoVoltar;
+
 @end

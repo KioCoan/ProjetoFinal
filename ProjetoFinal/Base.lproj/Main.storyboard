@@ -84,6 +84,7 @@
             <objects>
                 <navigationController storyboardIdentifier="navigationController" definesPresentationContext="YES" id="tHn-97-uZ9" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rr3-4G-eh8">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -119,7 +120,6 @@
         <!--View Controller - Enciclopédia-->
         <scene sceneID="237-fs-HyQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YVg-HU-I1R" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="l7v-hr-0yC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o7N-fn-plz"/>
@@ -132,6 +132,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Enciclopédia" id="zZV-gv-64b"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YVg-HU-I1R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="464" y="-186"/>
         </scene>
@@ -164,15 +165,27 @@
                     <view key="view" contentMode="scaleToFill" id="0Q2-bZ-4fJ">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSQ-tJ-bpg">
+                                <rect key="frame" x="41" y="19" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="10P-QS-Aw3"/>
+                    <connections>
+                        <outlet property="botaoVoltar" destination="lSQ-tJ-bpg" id="WAs-Nf-DhB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQl-by-gRK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1432" y="1032"/>
         </scene>
-        <!--Lista Desafio View Controller-->
+        <!--Lista Desafio View Controller - Desafios-->
         <scene sceneID="86r-1f-ydU">
             <objects>
                 <viewController storyboardIdentifier="listaDesafio" id="Laj-yx-eaG" customClass="ListaDesafioViewController" sceneMemberID="viewController">
@@ -219,7 +232,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="acaoBtnGo:" destination="00d-pL-g7a" eventType="touchUpInside" id="oxh-m7-305"/>
-                                                        <segue destination="cL3-ra-kgk" kind="push" id="nuM-W4-NUT"/>
+                                                        <segue destination="cL3-ra-kgk" kind="modal" id="nuM-W4-NUT"/>
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="divisoria.png" translatesAutoresizingMaskIntoConstraints="NO" id="JZk-iu-Z6Q">
@@ -244,7 +257,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="iHi-iQ-lw0">
+                    <navigationItem key="navigationItem" title="Desafios" id="iHi-iQ-lw0">
                         <barButtonItem key="backBarButtonItem" title="   " id="CuO-PB-wST"/>
                     </navigationItem>
                 </viewController>
