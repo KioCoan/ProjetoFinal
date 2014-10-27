@@ -971,11 +971,11 @@
 			children = (
 				8487523719C3755D00A93120 /* Exercicio */,
 				A597F0EE1960A7A6006429C7 /* SubViewConteudoFilho.h */,
+				A597F0EF1960A7A6006429C7 /* SubViewConteudoFilho.m */,
 				A597F0EC1960A7A6006429C7 /* SubViewConteudo.h */,
+				A597F0ED1960A7A6006429C7 /* SubViewConteudo.m */,
 				A597F0F01960A7A6006429C7 /* MenuViewController.h */,
 				A597F0F11960A7A6006429C7 /* MenuViewController.m */,
-				A597F0EF1960A7A6006429C7 /* SubViewConteudoFilho.m */,
-				A597F0ED1960A7A6006429C7 /* SubViewConteudo.m */,
 				A597F0F21960A7A6006429C7 /* ConteudoViewController.h */,
 				A597F0F31960A7A6006429C7 /* ConteudoViewController.m */,
 			);

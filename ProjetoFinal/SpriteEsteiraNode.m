@@ -117,7 +117,7 @@
 }
 
 
--(void)iniciarAnimacaoFimDoDesafio{
+-(void)iniciarAnimacaoFimDaRodada{
     int posicaoFinal = 710;
 
     //ANIMAÇÃO QUE MOVE AS CAIXAS PARA QUE ELAS SAIAM DA TELA

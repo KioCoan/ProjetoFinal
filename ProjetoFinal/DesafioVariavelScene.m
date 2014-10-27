@@ -45,6 +45,13 @@
         //[nodeEsteira posicionarCaixasParaDesafio];
         
         [self iniciarAnimacaoFundo];
+        
+        progresso = [[ProgressoDesafioBar alloc] initWithBolinhas:15];
+        CGPoint posicao;
+        posicao.y = self.size.height - progresso.size.height;
+        posicao.x = (self.size.width / 2) - (progresso.size.width / 2);
+        [progresso setPosition:posicao];
+        [self addChild:progresso];
     }
     
     
@@ -90,7 +97,7 @@
         [nodeCronometro iniciarContagem];
         
     }else{
-        [nodeEsteira iniciarAnimacaoFimDoDesafio];
+        [nodeEsteira iniciarAnimacaoFimDaRodada];
         [nodeCronometro prepararCronometro];
     }
 }
@@ -105,14 +112,28 @@
 -(BOOL)respostaSelecionada:(NSString *)tipo{
     [nodeCronometro pararContagem];
     
-    return [nodeVisor validarResposta:tipo];
+    BOOL resposta = [nodeVisor validarResposta:tipo];
+    [self mudarProgresso:resposta];
+    return resposta;
     
+}
+
+
+-(void)mudarProgresso:(BOOL)resposta{
+    if (resposta) {
+        [progresso insereAcerto];
+    
+    }else{
+        [progresso insereErro];
+    }
 }
 
 
 -(void)respostaCorretaFinalizado{
     [nodeEsteira iniciarAnimacaoMoverEsteira];
     [nodeVisor esconderValorDaTela:YES];
+
+    
     NSLog(@"Resposta Correta");
 }
 
@@ -120,6 +141,8 @@
 -(void)respostaErradaFinalizado{
     [nodeEsteira iniciarAnimacaoMoverEsteira];
     [nodeVisor esconderValorDaTela:YES];
+    
+    
     NSLog(@"Resposta Errada");
 }
 
@@ -140,6 +163,8 @@
     [nodeEsteira habilitarToqueNasCaixas:NO];
     [nodeVisor esconderValorDaTela:YES];
     [nodeEsteira iniciarAnimacaoMoverEsteira];
+    
+    [progresso insereErro];
 }
 
 

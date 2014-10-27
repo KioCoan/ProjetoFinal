@@ -33,7 +33,7 @@
 @property id <SpriteEsteiraDelegate> myDelegate;
 
 -(void)iniciarAnimacaoDesafio;
--(void)iniciarAnimacaoFimDoDesafio;
+-(void)iniciarAnimacaoFimDaRodada;
 -(void)iniciarAnimacaoMoverEsteira;
 -(void)posicionarCaixasParaDesafio;
 -(void)habilitarToqueNasCaixas:(BOOL)resultado;

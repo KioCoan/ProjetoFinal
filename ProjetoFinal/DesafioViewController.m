@@ -36,7 +36,7 @@
     [viewDesafioAtual presentScene:[gerenciadorDesafios retornaCenaAtual]];
     [[viewDesafioAtual scene]setSize:viewDesafioAtual.frame.size];
     
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 100, 50)];
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(10, 50, 100, 50)];
     [btn setBackgroundColor:[UIColor blueColor]];
     [btn addTarget:self action:@selector(voltar:) forControlEvents:UIControlEventTouchUpInside];
     

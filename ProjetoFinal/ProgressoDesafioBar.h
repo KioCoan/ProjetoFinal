@@ -8,14 +8,19 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+
+
 @interface ProgressoDesafioBar : SKSpriteNode
 {
     NSMutableArray *bolinhas;
     SKAction *somAcerto, *somErro;
+    int posAtual;
 }
 
 -(id)initWithBolinhas:(int)nBolinhas;
 -(void)insereAcerto:(int)index;
 -(void)insereErro:(int)index;
+-(void)insereAcerto;
+-(void)insereErro;
 -(void)reset;
 @end

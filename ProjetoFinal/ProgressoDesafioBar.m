@@ -29,6 +29,8 @@
             [self addChild:[bolinhas objectAtIndex:i]];
         }
         [self setSize:CGSizeMake(posX-33, 33)];
+        
+        posAtual = 0;
     
     }
     return self;
@@ -45,5 +47,21 @@
     for (int i = 0; i<bolinhas.count; i++) {
         [[bolinhas objectAtIndex:i]setTexture:[SKTexture textureWithImageNamed:@"Desafio-Andamento-Vazio.png"]];
     }
+    
+    posAtual = 0;
+}
+
+-(void)insereAcerto{
+    if (posAtual >= bolinhas.count) {
+        return;
+    }
+    [self insereAcerto:posAtual++];
+}
+
+-(void)insereErro{
+    if (posAtual >= bolinhas.count) {
+        return;
+    }
+    [self insereErro:posAtual++];
 }
 @end
