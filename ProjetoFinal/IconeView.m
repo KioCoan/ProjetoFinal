@@ -10,13 +10,6 @@
 
 @implementation IconeView
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    
-    NSLog(@"icone Clicado");
-    
-    
-    
-}
+
 
 @end

@@ -11,7 +11,8 @@
 
 @interface IconeView : UIImageView
 
-
+@property NSString *categoria;
+@property NSString *tipo;
 
 
 

@@ -23,7 +23,7 @@
         self.name = @"secao";
         self.titulo = @"operador";
         
-        icones = [NSMutableArray array];
+       
         
         [self criarTodosIcones];
         
@@ -38,7 +38,7 @@
     
     for (int i = 0; i < tiposOperadores.count; i++) {
         
-        [icones addObject:[self criaIconeSecaoImagem:@"parte-operador.png"]];
+        //[icones addObject:[self criaIconeSecaoImagem:@"parte-operador.png"]];
         
         //[icones addObject:[self criarIconeSecao:self.titulo tipo:[tiposOperadores objectAtIndex:i] imagem:@"parte-operador.png"]];
         

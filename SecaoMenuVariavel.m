@@ -23,35 +23,44 @@
         self.size = self.texture.size;
         self.name = @"secao";
         self.titulo = @"variavel";
-        
-        icones = [NSMutableArray array];
-        
-        [self criarTodosIcones];
-        
+        self.tiposIcones = [NSArray arrayWithObjects:@"inteiro", @"real",@"caractere",@"logico",nil];
     }
     
     return self;
 }
 
-- (void)criarTodosIcones{
-    
-    NSArray *tiposVariaveis = [NSArray arrayWithObjects:@"inteiro", @"real",@"caractere",@"logico",nil];
-    
-    
+
+
+- (NSMutableArray *)criarTodosIcones{
     
     
-    for (int i = 0; i < tiposVariaveis.count; i++) {
+    
+    NSMutableArray *icones = [NSMutableArray array];
+    
+    
+    for (int i = 0; i < self.tiposIcones.count; i++) {
         
         
-        [icones addObject:[self criaIconeSecaoImagem:@"abrir-caixa1.png"]];
+        IconeView *icone = [self criaIconeSecaoImagem:@"abrir-caixa1.png"];
+        [icone setTipo: [self.tiposIcones objectAtIndex:i]];
         
-//        [icones addObject:[self criarIconeSecao:self.titulo tipo:[tiposVariaveis objectAtIndex:i] imagem:@"abrir-caixa1.png"]];
-        
-        
+        [icones addObject:icone];
+       
     }
+    
+    return icones;
 
 }
 
+- (IconeView *)criaIconeSecaoImagem:(NSString *)imagem{
+    
+    IconeView *iconeView = [[IconeView alloc]initWithImage:[UIImage imageNamed:imagem]];
+    [iconeView setUserInteractionEnabled:YES];
+    [iconeView setCategoria:self.titulo];
+    
+    return iconeView;
+    
+}
 
 
 

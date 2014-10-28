@@ -8,19 +8,24 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "IconeSecao.h"
-#import "SecaoMenu.h"
+#import "SessaoMenu.h"
 #import "SecaoMenuVariavel.h"
 #import "SecaoMenuOperador.h"
 
 
 
 
-@interface MenuNode : SKSpriteNode <SecaoMenuDelegate>
+@interface MenuNode : SKSpriteNode <SessaoMenuDelegate>
+
+
+@property UIScrollView *menuScroll;
+@property UIGestureRecognizer *panGesture;
+@property NSMutableArray *imagensIcones;
+
 
 - (void)abrirFechar;
 - (id)initWithPosicaoAbrir : (CGPoint)abrir  tamanho:(CGSize)tamanho;
 - (BOOL)getAberto;
 - (void)removeTudo;
-- (void)iniciarScroll;
-- (UIScrollView *)retornaMenuScroll;
+- (void)posiciona;
 @end

@@ -10,94 +10,146 @@
 
 
 @implementation MenuNode{
-    NSMutableArray *secoes;
+    NSMutableArray *sessoes;
     BOOL aberto;
     SKAction *abrirMenu;
     SKAction *fecharMenu;
     int nSecoes;
     NSString *secaoAtivo;
     SKLabelNode *lbltitulo;
-    UIScrollView *menuScroll;
-    UIGestureRecognizer *panGesture;
+    
 }
+
+
+- (id)initWithPosicaoAbrir : (CGPoint)abrir tamanho:(CGSize)tamanho{
+    
+   
+    
+    self = [super init];
+    
+    if (self) {
+        
+        
+        // CONFIGURANDO POSICOES DO MENU
+        
+        
+       CGPoint fechar = CGPointMake(abrir.x * (-1), abrir.y);
+        
+        abrirMenu = [SKAction moveToX:abrir.x duration:0.2];
+        fecharMenu = [SKAction moveToX:fechar.x duration:0.2];
+        
+        self.position = fechar;
+        
+        // SETANDO TEXTURE, TAMANHO E NOME
+        
+        [self setTexture:[SKTexture textureWithImageNamed:@"livre-menu.png"]];
+        self.size = tamanho;
+        self.name = @"menu";
+        
+        // MENU INICIA FECHADO
+        aberto = NO;
+        
+        
+        // CONFIGURANDO SESSOES
+        
+        sessoes = [NSMutableArray array];
+        
+        nSecoes = 1;
+        
+        [self criarTodasSessoes];
+        
+//        lbltitulo = [[SKLabelNode alloc]initWithFontNamed:@"Helvetica"];
+//        lbltitulo.fontColor = [SKColor whiteColor];
+//        lbltitulo.fontSize = 60;
+//        lbltitulo.position = CGPointMake(-40, 390);
+//        lbltitulo.alpha = 0;
+//        [self addChild:lbltitulo];
+        
+        
+        
+    }
+    
+    
+    
+    return self;
+}
+
 
 - (BOOL)getAberto{
     return aberto;
 }
 
-- (UIScrollView *)retornaMenuScroll{
-    
-    
-    return menuScroll;
-    
-}
 
-- (void)iniciarPanGesture{
+- (void)posiciona{
     
-    panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(acaoDoGesture:)];
-    
-    
-    
-    
-}
-
--(IBAction)acaoDoGesture:(UIPanGestureRecognizer*)recognizer{
-    
-    SecaoMenu *secao = [self retornaSecaoPorTitulo:secaoAtivo];
-    
-    CGPoint point = [recognizer locationInView:menuScroll];
-    //[self insereNode:point];
-    //[ setCenter:point];
+    // metodo teste
+    /*
+    CGRect minhaPosicao = CGRectMake(120, 20, 200, 200);
     
     
-    if (recognizer.state == UIGestureRecognizerStateEnded) {
-       // lblNode.center = CGPointMake(50, 100);
+    for (UIImageView *imagem in self.imagensIcones) {
+        
+        imagem.frame = minhaPosicao;
+        [imagem addGestureRecognizer:self.panGesture];
+        [self.menuScroll addSubview:imagem];
+        
+        minhaPosicao.origin.y *= 2;
     }
+
+   */
+    
 }
 
-- (void)iniciarScroll{
-
-    menuScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(70, 100, 400, 900)];
-    [menuScroll setBackgroundColor:[UIColor blueColor]];
-    [menuScroll setContentSize:CGSizeMake(menuScroll.frame.size.width, menuScroll.frame.size.height * 2)];
+- (void)removeTodosIcones{
+    
+    for (UIView *iconeView in self.menuScroll.subviews) {
+        [iconeView removeFromSuperview];
+    }
+    
+    
 }
+
 
 //METODO DO PROTOCOLO SecaoMenuDELEGATE
-- (void)fuiClicado:(NSString *)titulo{
+- (void)sessaoAtivada:(NSString *)titulo{
     
     // VERIFICA SE A SECAO CLICADA É A MESMA
     if (![secaoAtivo isEqualToString:titulo]) {
         
         //SETA A SECAO CLICADA COMO SECAO ATIVA
-        
         if (secaoAtivo != nil) {
-            SecaoMenu *secaoAntiga = [self retornaSecaoPorTitulo:secaoAtivo];
+            [self removeTodosIcones];
             
-            
-            [secaoAntiga removeTodosIcones2];
         }
         
-        SecaoMenu *secao = [self retornaSecaoPorTitulo:titulo];
-        secaoAtivo = secao.titulo;
-        lbltitulo.text = titulo;
-        lbltitulo.alpha = 1;
         
-        CGPoint posicaoInicial;
-        CGPoint posicaoMutavel;
-        posicaoInicial = CGPointMake(0, 270);
-        posicaoMutavel = posicaoInicial;
+        // PEGANDO SESSAO SELECIONADA PELO USUARIO
+        SessaoMenu *sessaoSelecionada = [self retornaSessaoPorTitulo:titulo];
+        secaoAtivo = sessaoSelecionada.titulo;
+//        lbltitulo.text = titulo;
+//        lbltitulo.alpha = 1;
         
-      CGRect minhaPosicao = CGRectMake(120, 20, 200, 200);
+        // PEGANDO ICONES DA SESSAO
+        
+        NSMutableArray *icones = [sessaoSelecionada criarTodosIcones];
+        
+//        CGPoint posicaoInicial;
+//        CGPoint posicaoMutavel;
+//        posicaoInicial = CGPointMake(0, 270);
+//        posicaoMutavel = posicaoInicial;
+        
+      CGRect posicaoInicial = CGRectMake(120, 20, 200, 200);
         
         
-        for (int i = 0; i < [secao retornaNumeroIcones];i++) {
+        for (IconeView *icone in icones) {
             
-            UIImageView *iconeView = [secao retornaIconeIndice2:i];
-            [iconeView setFrame:minhaPosicao];
             
-            [menuScroll addSubview: iconeView];
+            [icone setFrame:posicaoInicial];
+            [icone addGestureRecognizer:self.panGesture];
             
-            minhaPosicao.origin.y += minhaPosicao.size.height;
+            [self.menuScroll addSubview:icone];
+            
+            posicaoInicial.origin.y += posicaoInicial.size.height;
             
             /*  IconeSecao *icone = [secao retornaIconeIndice:i];
             
@@ -134,7 +186,7 @@
     
     //for (SecaoMenu *secao in secoes){
         
-        NSLog(@"titulo %@ -- tituloParametro %@",secao.titulo,titulo);
+        NSLog(@"titulo %@ -- tituloParametro %@",sessaoSelecionada.titulo,titulo);
         
         //if ([secao.titulo isEqualToString:titulo]) {
             
@@ -154,10 +206,10 @@
     
 }
 
-- (SecaoMenu *)retornaSecaoPorTitulo:(NSString *)titulo{
+- (SessaoMenu *)retornaSessaoPorTitulo:(NSString *)titulo{
     
     
-    for (SecaoMenu *secao in secoes) {
+    for (SessaoMenu *secao in sessoes) {
         
         if ([secao.titulo isEqualToString:titulo]) {
             return secao;
@@ -171,53 +223,14 @@
 }
 
 
-- (id)initWithPosicaoAbrir : (CGPoint)abrir tamanho:(CGSize)tamanho{
-    
-    CGPoint fechar = CGPointMake(abrir.x * (-1), abrir.y);
-    
-   self = [super init];
-    
-    // CONFIGURANDO MENU
-    
-    abrirMenu = [SKAction moveToX:abrir.x duration:0.2];
-    fecharMenu = [SKAction moveToX:fechar.x duration:0.2];
-    
-    self.position = fechar;
-    
-    [self setTexture:[SKTexture textureWithImageNamed:@"livre-menu.png"]];
-    self.size = tamanho;
-    self.name = @"menu";
-    
-    aberto = NO;
-    
-    
-    // CRIANDO SECOES
-    
-    secoes = [NSMutableArray array];
-    
-    nSecoes = 2;
-    
-    [self criarTodasSecoes];
-    
-    lbltitulo = [[SKLabelNode alloc]initWithFontNamed:@"Helvetica"];
-    lbltitulo.fontColor = [SKColor whiteColor];
-    lbltitulo.fontSize = 60;
-    lbltitulo.position = CGPointMake(-40, 390);
-    lbltitulo.alpha = 0;
-    [self addChild:lbltitulo];
-    
-    
-    return self;
-}
-
-- (void)criarTodasSecoes{
+- (void)criarTodasSessoes{
     
     CGPoint posicaoInicial = CGPointMake(-220, 405);
     
     for (int i = 0; i < nSecoes; i++) {
         
         
-        SecaoMenu *novaSecao = [self criaSecaoIndice:i];
+        SessaoMenu *novaSecao = [self criaSecaoIndice:i];
         [novaSecao setMyDelegate:self];
         [novaSecao runAction:[SKAction rotateToAngle: -M_PI / 2 duration:0]];
         
@@ -225,7 +238,7 @@
         
         [self addChild:novaSecao];
         
-        [secoes addObject: novaSecao];
+        [sessoes addObject: novaSecao];
         
         posicaoInicial.y -= novaSecao.size.width;
     }
@@ -234,7 +247,7 @@
 }
 
 // CRIA SECOES DO MENU CONFORME O INDICE
-- (SecaoMenu *)criaSecaoIndice:(int)indice{
+- (SessaoMenu *)criaSecaoIndice:(int)indice{
     
     
     switch (indice) {
@@ -282,12 +295,12 @@
 
 - (void)removeTudo{
     
-    for (int i = 0; i < secoes.count; i++) {
-        SecaoMenu *secao = [secoes objectAtIndex:i];
+    for (int i = 0; i < sessoes.count; i++) {
+        SessaoMenu *secao = [sessoes objectAtIndex:i];
         secao.myDelegate = nil;
     }
     
-    [secoes removeAllObjects];
+    [sessoes removeAllObjects];
     [self removeAllChildren];
     [self removeAllActions];
     

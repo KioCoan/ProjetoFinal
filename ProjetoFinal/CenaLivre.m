@@ -63,10 +63,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
         
         
-        //CRIANDO MENU
-        menu = [[MenuNode alloc]initWithPosicaoAbrir:CGPointMake(245, 480) tamanho:CGSizeMake(490, 960)];
         
-        [self addChild:menu];
         
         
         [self criaMenuEdicao];
@@ -95,12 +92,52 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     [self criandoTodosTextFields];
     [self criaGesture];
-    [menu iniciarScroll];
     
-    [self.view addSubview:[menu retornaMenuScroll]];
+    //CRIANDO MENU
+    menu = [[MenuNode alloc]initWithPosicaoAbrir:CGPointMake(245, 480) tamanho:CGSizeMake(490, 960)];
+    
+    
+    // ALLOCANDO SCROLL
+    
+    UIScrollView *menuScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(70, 100, 400, 900)];
+    [menuScroll setBackgroundColor:[UIColor blueColor]];
+    [menuScroll setContentSize:CGSizeMake(menuScroll.frame.size.width, menuScroll.frame.size.height * 2)];
+    
+    [menu setMenuScroll:menuScroll];
+    
+    // ALLOCANDO GESTURE PAN
+    [menu setPanGesture:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ativouPanGesture:)]];
+    
+    [self addChild:menu];
+    
+    
+    [self.view addSubview:[menu menuScroll]];
+    
+    [menu setImagensIcones:[self criarImagens]];
+    [menu posiciona];
     
     
 }
+
+-(IBAction)ativouPanGesture:(UIPanGestureRecognizer*)recognizer{
+    
+    NSLog(@"funcionou");
+    
+}
+
+- (NSMutableArray *)criarImagens{
+    
+    NSMutableArray *imagens = [NSMutableArray array];
+    
+    for (int i = 0; i < 4; i++) {
+       UIImageView *imagem = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"abrir-caixa1.png"]];
+        [imagem setUserInteractionEnabled:YES];
+        [imagens addObject:imagem];
+    }
+    
+    return imagens;
+}
+
 
 - (void)criaGesture{
     

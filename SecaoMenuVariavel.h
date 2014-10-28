@@ -6,10 +6,12 @@
 //  Copyright (c) 2014 SENAC - iOS. All rights reserved.
 //
 
-#import "SecaoMenu.h"
+#import "SessaoMenu.h"
 #import "IconeSecao.h"
 
-@interface SecaoMenuVariavel : SecaoMenu
+@interface SecaoMenuVariavel : SessaoMenu
 
+
+- (IconeView *)criaIconeSecaoImagem:(NSString *)imagem;
 
 @end

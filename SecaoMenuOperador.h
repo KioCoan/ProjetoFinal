@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 SENAC - iOS. All rights reserved.
 //
 
-#import "SecaoMenu.h"
+#import "SessaoMenu.h"
 
-@interface SecaoMenuOperador : SecaoMenu
+@interface SecaoMenuOperador : SessaoMenu
 
 @end
