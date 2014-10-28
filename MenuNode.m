@@ -47,11 +47,11 @@
     
     CGPoint point = [recognizer locationInView:menuScroll];
     //[self insereNode:point];
-    [ setCenter:point];
+    //[ setCenter:point];
     
     
     if (recognizer.state == UIGestureRecognizerStateEnded) {
-        lblNode.center = CGPointMake(50, 100);
+       // lblNode.center = CGPointMake(50, 100);
     }
 }
 
