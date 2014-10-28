@@ -17,22 +17,64 @@
     int nSecoes;
     NSString *secaoAtivo;
     SKLabelNode *lbltitulo;
+    UIScrollView *menuScroll;
+    UIGestureRecognizer *panGesture;
 }
 
 - (BOOL)getAberto{
     return aberto;
 }
 
+- (UIScrollView *)retornaMenuScroll{
+    
+    
+    return menuScroll;
+    
+}
+
+- (void)iniciarPanGesture{
+    
+    panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(acaoDoGesture:)];
+    
+    
+    
+    
+}
+
+-(IBAction)acaoDoGesture:(UIPanGestureRecognizer*)recognizer{
+    
+    SecaoMenu *secao = [self retornaSecaoPorTitulo:secaoAtivo];
+    
+    CGPoint point = [recognizer locationInView:menuScroll];
+    //[self insereNode:point];
+    [ setCenter:point];
+    
+    
+    if (recognizer.state == UIGestureRecognizerStateEnded) {
+        lblNode.center = CGPointMake(50, 100);
+    }
+}
+
+- (void)iniciarScroll{
+
+    menuScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(70, 100, 400, 900)];
+    [menuScroll setBackgroundColor:[UIColor blueColor]];
+    [menuScroll setContentSize:CGSizeMake(menuScroll.frame.size.width, menuScroll.frame.size.height * 2)];
+}
 
 //METODO DO PROTOCOLO SecaoMenuDELEGATE
 - (void)fuiClicado:(NSString *)titulo{
     
+    // VERIFICA SE A SECAO CLICADA É A MESMA
     if (![secaoAtivo isEqualToString:titulo]) {
         
+        //SETA A SECAO CLICADA COMO SECAO ATIVA
         
         if (secaoAtivo != nil) {
             SecaoMenu *secaoAntiga = [self retornaSecaoPorTitulo:secaoAtivo];
-            [secaoAntiga removeTodosIcones];
+            
+            
+            [secaoAntiga removeTodosIcones2];
         }
         
         SecaoMenu *secao = [self retornaSecaoPorTitulo:titulo];
@@ -45,17 +87,32 @@
         posicaoInicial = CGPointMake(0, 270);
         posicaoMutavel = posicaoInicial;
         
+      CGRect minhaPosicao = CGRectMake(120, 20, 200, 200);
+        
         
         for (int i = 0; i < [secao retornaNumeroIcones];i++) {
             
-            IconeSecao *icone = [secao retornaIconeIndice:i];
+            UIImageView *iconeView = [secao retornaIconeIndice2:i];
+            [iconeView setFrame:minhaPosicao];
+            
+            [menuScroll addSubview: iconeView];
+            
+            minhaPosicao.origin.y += minhaPosicao.size.height;
+            
+            /*  IconeSecao *icone = [secao retornaIconeIndice:i];
             
             [icone setSize:CGSizeMake(200, 200)];
             
             [icone setPosition:posicaoMutavel];
             [icone setPosicaoAnterior:posicaoMutavel];
+           
             
             [self addChild:icone];
+            
+           
+            
+            
+            
             
             //if ((i % 2) == 0) {
 //                posicaoMutavel.x += icone.size.width - 10;
@@ -64,7 +121,7 @@
                 posicaoMutavel.y -= icone.size.height - 10;
             //}
 
-        
+      descomentar  */
         
     }
     

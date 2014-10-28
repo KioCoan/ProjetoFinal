@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "IconeSecao.h"
-
+#import "IconeView.h"
 
 @protocol SecaoMenuDelegate <NSObject>
 
@@ -37,6 +37,9 @@
 - (void)removeTodosIcones;
 - (id)init;
 - (void)criarTodosIcones;
+- (IconeView *)criaIconeSecaoImagem:(NSString *)imagem;
+- (UIImageView *)retornaIconeIndice2:(int)indice;
+- (void)removeTodosIcones2;
 
     
     

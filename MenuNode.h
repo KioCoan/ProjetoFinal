@@ -21,4 +21,6 @@
 - (id)initWithPosicaoAbrir : (CGPoint)abrir  tamanho:(CGSize)tamanho;
 - (BOOL)getAberto;
 - (void)removeTudo;
+- (void)iniciarScroll;
+- (UIScrollView *)retornaMenuScroll;
 @end

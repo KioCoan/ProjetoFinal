@@ -22,6 +22,14 @@
     
 }
 
+- (UIImageView *)retornaIconeIndice2:(int)indice{
+    
+    return [icones objectAtIndex:indice];
+    
+}
+
+
+
 - (int)retornaNumeroIcones{
     return  (int)icones.count;
 }
@@ -31,6 +39,14 @@
     
     for (IconeSecao *icone in icones) {
         [icone removeFromParent];
+    }
+    
+}
+
+- (void)removeTodosIcones2{
+    
+    for (UIImageView *iconeView in icones) {
+        [iconeView removeFromSuperview];
     }
     
 }
@@ -58,6 +74,14 @@
     [icone setTexture:[SKTexture textureWithImageNamed:imagem]];
     
     return icone;
+    
+}
+
+- (IconeView *)criaIconeSecaoImagem:(NSString *)imagem{
+    
+    IconeView *iconeView = [[IconeView alloc]initWithImage:[UIImage imageNamed:imagem]];
+    
+    return iconeView;
     
 }
 

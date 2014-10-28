@@ -37,10 +37,16 @@
     
     NSArray *tiposVariaveis = [NSArray arrayWithObjects:@"inteiro", @"real",@"caractere",@"logico",nil];
     
+    
+    
+    
     for (int i = 0; i < tiposVariaveis.count; i++) {
         
         
-        [icones addObject:[self criarIconeSecao:self.titulo tipo:[tiposVariaveis objectAtIndex:i] imagem:@"abrir-caixa1.png"]];
+        [icones addObject:[self criaIconeSecaoImagem:@"abrir-caixa1.png"]];
+        
+//        [icones addObject:[self criarIconeSecao:self.titulo tipo:[tiposVariaveis objectAtIndex:i] imagem:@"abrir-caixa1.png"]];
+        
         
     }
 

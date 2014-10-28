@@ -14,7 +14,7 @@
 		<string>https://github.com/rafaellfreitas/ProjetoFinal.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ProjetoFinal.xcodeproj/project.xcworkspace</string>
+	<string>ProjetoFinal.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>F2E9D857D4768766048D2BE8407553D8F052A425</key>

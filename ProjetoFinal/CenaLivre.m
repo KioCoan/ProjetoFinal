@@ -49,7 +49,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         //CRIANDO BOTAO QUE ABRE MENU
         botaoMenu = [[SKSpriteNode alloc]initWithImageNamed:@"modo livre-09.png"];
-        botaoMenu.position = CGPointMake(100, 100);
+        botaoMenu.position = CGPointMake(700, 100);
         botaoMenu.name = @"botaoMenu";
         botaoMenu.zPosition = -2;
         [self addChild:botaoMenu];
@@ -95,6 +95,10 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     [self criandoTodosTextFields];
     [self criaGesture];
+    [menu iniciarScroll];
+    
+    [self.view addSubview:[menu retornaMenuScroll]];
+    
     
 }
 
