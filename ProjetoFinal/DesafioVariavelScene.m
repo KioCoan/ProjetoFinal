@@ -13,7 +13,7 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         
-        
+        fimDesafio = NO;
         
         nodeFundo = [[SKSpriteNode alloc] initWithTexture:[SKTexture textureWithImageNamed:@"fundo-desafio.png"]];
         //[nodeFundo setSize:CGSizeMake(500, 500)];
@@ -47,6 +47,7 @@
         [self iniciarAnimacaoFundo];
         
         progresso = [[ProgressoDesafioBar alloc] initWithBolinhas:15];
+        [progresso setMyDelegate:self];
         CGPoint posicao;
         posicao.y = self.size.height - progresso.size.height;
         posicao.x = (self.size.width / 2) - (progresso.size.width / 2);
@@ -126,6 +127,12 @@
     }else{
         [progresso insereErro];
     }
+}
+
+
+//AQUI------------------------------------
+-(void)progressBarCompletado{
+    fimDesafio = YES;
 }
 
 

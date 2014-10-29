@@ -52,16 +52,30 @@
 }
 
 -(void)insereAcerto{
-    if (posAtual >= bolinhas.count) {
+    if ([self verificarProgressBarCompletado]) {
         return;
     }
     [self insereAcerto:posAtual++];
 }
 
 -(void)insereErro{
-    if (posAtual >= bolinhas.count) {
+    if ([self verificarProgressBarCompletado]) {
         return;
     }
     [self insereErro:posAtual++];
+}
+
+
+//VERIFICA SE CHEGOU AO FINAL DO PROGRESS BAR, RETORNA YES CASO TENHA CHEGADO
+-(BOOL)verificarProgressBarCompletado{
+    if(posAtual == (bolinhas.count - 1)){
+        [[self myDelegate] progressBarCompletado];
+        return NO;
+    
+    }else if(posAtual >= bolinhas.count){
+        return YES;
+    }
+    
+    return NO;
 }
 @end

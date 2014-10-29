@@ -123,7 +123,7 @@
     //ANIMAÇÃO QUE MOVE AS CAIXAS PARA QUE ELAS SAIAM DA TELA
     for (SpriteCaixinhaNode *c in vtCaixas) {
         
-        //É PASSADO PRA CAIA APENAS A POSIÇÃO A QUAL ELA DEVE IR E "YES" PQ É UMA ANIMAÇÃO DE FIM DO CICLO ATUAL
+        //É PASSADO PRA CAIXA APENAS A POSIÇÃO A QUAL ELA DEVE IR E "YES" PQ É UMA ANIMAÇÃO DE FIM DO CICLO ATUAL
         [c iniciarAnimacaoMoverCaixaPara:posicaoFinal fimDesafio:YES];
     }
     

@@ -8,6 +8,9 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+@protocol ProgressDesafioBarDelegate <NSObject>
+-(void)progressBarCompletado;
+@end
 
 
 @interface ProgressoDesafioBar : SKSpriteNode
@@ -16,6 +19,8 @@
     SKAction *somAcerto, *somErro;
     int posAtual;
 }
+
+@property id<ProgressDesafioBarDelegate> myDelegate;
 
 -(id)initWithBolinhas:(int)nBolinhas;
 -(void)insereAcerto:(int)index;

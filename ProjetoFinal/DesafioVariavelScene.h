@@ -13,8 +13,10 @@
 #import "SpriteCronometroNode.h"
 #import "ProgressoDesafioBar.h"
 
-@interface DesafioVariavelScene : SKScene <SpriteEsteiraDelegate, SpriteCronometroDelegate, SpriteVisorDelegate>
+@interface DesafioVariavelScene : SKScene <SpriteEsteiraDelegate, SpriteCronometroDelegate, SpriteVisorDelegate, ProgressDesafioBarDelegate>
 {
+    BOOL fimDesafio;
+    
     SKSpriteNode *nodeFundo;
     
     SKSpriteNode *nodeMaquina;
