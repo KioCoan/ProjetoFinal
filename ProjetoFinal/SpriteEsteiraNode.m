@@ -146,7 +146,7 @@
     if (fimDesafio) {
         [self resetarTexturasDasCaixas];
         [self posicionarCaixasInicialmente];
-        [[self myDelegate] desafioAtualTerminou];
+        [[self myDelegate] rodadaAtualTerminou];
     
     }else{
         [[self myDelegate] caixasPosicionadasParaDesafio];

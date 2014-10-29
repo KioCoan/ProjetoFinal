@@ -14,7 +14,7 @@
 -(void)caixaFoiClicada;
 -(BOOL)respostaSelecionada:(NSString*)tipo;
 -(void)caixasPosicionadasParaDesafio;
--(void)desafioAtualTerminou;
+-(void)rodadaAtualTerminou;
 -(void)animacaoEsteiraDeEntradaFinalizado;
 @end
 

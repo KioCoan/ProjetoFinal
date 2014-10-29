@@ -42,17 +42,17 @@
         [nodeCronometro setMyDelegate:self];
         [self addChild:nodeCronometro];
         
-        //[nodeEsteira posicionarCaixasParaDesafio];
-        
-        [self iniciarAnimacaoFundo];
-        
-        progresso = [[ProgressoDesafioBar alloc] initWithBolinhas:15];
+        progresso = [[ProgressoDesafioBar alloc] initWithBolinhas:2];
         [progresso setMyDelegate:self];
         CGPoint posicao;
         posicao.y = self.size.height - progresso.size.height;
         posicao.x = (self.size.width / 2) - (progresso.size.width / 2);
         [progresso setPosition:posicao];
         [self addChild:progresso];
+        
+        
+        [self iniciarAnimacaoFundo];
+        
     }
     
     
@@ -130,7 +130,6 @@
 }
 
 
-//AQUI------------------------------------
 -(void)progressBarCompletado{
     fimDesafio = YES;
 }
@@ -160,7 +159,12 @@
 }
 
 //QUANDO O DESAFIO TERMINAR, QUEM CRIOU ESTE PROTOCÓLO IRÁ CHAMAR ESTE MÉTODO, QUE POR SUA VEZ MANDA MODIFICAR O TIPO DAS CAIXAS E DEPOIS MANDA POSICIONA-LAS PARA INICIAR O DESAFIO
--(void)desafioAtualTerminou{
+-(void)rodadaAtualTerminou{
+    if (fimDesafio) {
+        NSLog(@"Acabou o desafio!");
+        
+        return;
+    }
     [nodeEsteira modificarTipoDasCaixas];
     [nodeEsteira posicionarCaixasParaDesafio];
 }
