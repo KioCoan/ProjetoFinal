@@ -15,7 +15,7 @@
 
 @protocol MenuNodeDelegate <NSObject>
 
-- (NSMutableArray *)criarIconesNSMutableArray:(NSMutableArray *)vetorTipos;
+- (NSMutableArray *)criarIconesVetorInfo:(NSMutableArray *)vetorInfoIcones categoria:(NSString *)categoria;
 
 @end
 

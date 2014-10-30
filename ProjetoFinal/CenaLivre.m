@@ -110,11 +110,11 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     [menu setMyDelegate:self];
     
     // ALLOCANDO GESTURE PAN
-    UIGestureRecognizer *gesturePan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ativouPanGesture:)];
+    
     //[menu setPanGesture:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ativouPanGesture:)]];
     
 
-    
+   /*
     // CRIA ICONES DAS SESSOES
     NSMutableArray *sessoes = [menu retornaSessoes];
     
@@ -123,6 +123,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         for (int i = 0; i < [sessao retornaNumeroIcones]; i++) {
             
             NSDictionary *dict = [sessao retornaDictionaryPorIndice:i];
+            UIGestureRecognizer *gesturePan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ativouPanGesture:)];
             //IconeView *icone = [[IconeView alloc]initWithCategoria:sessao.titulo tipo:[dict objectForKey:@"tipo"] imagem:[dict objectForKey:@"imagem"]];
             UIImageView *icone = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[dict objectForKey:@"imagem"]]  ];
 //            icone.categoria = sessao.titulo;
@@ -135,7 +136,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         
     }
-    
+    */
     
     [self addChild:menu];
     
@@ -154,24 +155,27 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
 }
 
-/*
-- (NSMutableArray *)criarIconesNSMutableArray:(NSMutableArray *)vetorTipos{
+- (NSMutableArray *)criarIconesVetorInfo:(NSMutableArray *)vetorInfoIcones categoria:(NSString *)categoria{
     
     NSMutableArray *vetorIcones = [NSMutableArray array];
     
-    for (NSDictionary *dict in vetorTipos) {
+    for (NSDictionary *dict in vetorInfoIcones) {
         
         NSString *tipo = [dict objectForKey:@"tipo"];
         NSString *imagem = [dict objectForKey:@"imagem"];
         
-        [vetorIcones addObject:[[IconeView alloc]initWithTipo:tipo imagem:imagem]];
+        IconeView *novoIcone = [[IconeView alloc] initWithCategoria:categoria tipo:tipo imagem:imagem];
+        UIGestureRecognizer *gesturePan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ativouPanGesture:)];
+        [novoIcone addGestureRecognizer:gesturePan];
+        [vetorIcones addObject:novoIcone];
         
     }
     
     return vetorIcones;
     
+    
 }
-*/
+
 - (NSMutableArray *)criarImagens{
     
     NSMutableArray *imagens = [NSMutableArray array];

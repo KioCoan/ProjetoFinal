@@ -12,7 +12,7 @@
 
 @protocol SessaoMenuDelegate <NSObject>
 
-- (void)sessaoAtivada:(NSString*)tipo;
+- (void)sessaoAtivada:(NSString*)tipo infoIcones:(NSMutableArray *)vetorInfoIcones;
 
 @end
 
@@ -31,7 +31,7 @@
 
 - (NSMutableArray *)retornaIcones;
 - (id)init;
-- (NSMutableArray *)criarTodosIcones;
+- (void)criarTodosIcones;
 - (int)retornaNumeroIcones;
 - (NSMutableArray *)retornaInfoIcones;
 - (void)adicionaIcone:(UIImageView *)icone;

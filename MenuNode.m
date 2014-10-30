@@ -115,7 +115,8 @@
 
 
 //METODO DO PROTOCOLO SecaoMenuDELEGATE
-- (void)sessaoAtivada:(NSString *)titulo{
+
+- (void)sessaoAtivada:(NSString *)titulo infoIcones:(NSMutableArray *)vetorInfoIcones{
     
     // VERIFICA SE A SECAO CLICADA É A MESMA
     if (![secaoAtivo isEqualToString:titulo]) {
@@ -127,13 +128,12 @@
         }
         
         
-        // PEGANDO SESSAO SELECIONADA PELO USUARIO
-        SessaoMenu *sessaoSelecionada = [self retornaSessaoPorTitulo:titulo];
-        secaoAtivo = sessaoSelecionada.titulo;
+        // SETANDO A NOVA VERSAO ATIVA
+        secaoAtivo = titulo;
         
-        // PEGANDO ICONES DA SESSAO
+        // DELEGA A CRIACAO DE ICONES PARA A CENA
         
-        NSMutableArray *icones = [sessaoSelecionada retornaIcones];
+        NSMutableArray *icones = [self.myDelegate criarIconesVetorInfo:vetorInfoIcones categoria:titulo];
         
 //        CGPoint posicaoInicial;
 //        CGPoint posicaoMutavel;
@@ -143,7 +143,7 @@
       CGRect posicaoInicial = CGRectMake(120, 20, 200, 200);
         
         
-        for (UIImageView *icone in icones) {
+        for (IconeView *icone in icones) {
             
             
             [icone setFrame:posicaoInicial];
@@ -189,7 +189,7 @@
     
     //for (SecaoMenu *secao in secoes){
         
-        NSLog(@"titulo %@ -- tituloParametro %@",sessaoSelecionada.titulo,titulo);
+
         
         //if ([secao.titulo isEqualToString:titulo]) {
             
