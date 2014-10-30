@@ -61,16 +61,6 @@
         nSecoes = 1;
         
         [self criarTodasSessoes];
-        
-//        lbltitulo = [[SKLabelNode alloc]initWithFontNamed:@"Helvetica"];
-//        lbltitulo.fontColor = [SKColor whiteColor];
-//        lbltitulo.fontSize = 60;
-//        lbltitulo.position = CGPointMake(-40, 390);
-//        lbltitulo.alpha = 0;
-//        [self addChild:lbltitulo];
-        
-        
-        
     }
     
     
@@ -83,26 +73,6 @@
     return aberto;
 }
 
-
-- (void)posiciona{
-    
-    // metodo teste
-    /*
-    CGRect minhaPosicao = CGRectMake(120, 20, 200, 200);
-    
-    
-    for (UIImageView *imagem in self.imagensIcones) {
-        
-        imagem.frame = minhaPosicao;
-        [imagem addGestureRecognizer:self.panGesture];
-        [self.menuScroll addSubview:imagem];
-        
-        minhaPosicao.origin.y *= 2;
-    }
-
-   */
-    
-}
 
 - (void)removeTodosIcones{
     

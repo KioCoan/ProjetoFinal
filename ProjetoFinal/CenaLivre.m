@@ -25,11 +25,14 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     NSMutableArray *vetorTextField;
     NSMutableArray *vetorOperadores;
     NSMutableArray *vetorVariaveis;
+    IconeView *iconeMovimentado;
+    SKSpriteNode *iconeNode;
     BOOL menuEditarAberto;
     BOOL estaEmContato;
     BOOL movendoObjeto;
     SKNode *objetoEditando;
     SpriteOperadorNode *operadorEditando;
+    IconeView *iconeTeste;
     
 }
 
@@ -151,9 +154,44 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 -(IBAction)ativouPanGesture:(UIPanGestureRecognizer*)recognizer{
     
-    NSLog(@"funcionou");
+    CGPoint point = [recognizer locationInView:menu.menuScroll];
+    
+    iconeMovimentado = (IconeView *) recognizer.view;
+    iconeMovimentado.center = point;
+    if (iconeNode == nil) {
+        iconeNode = [[SKSpriteNode alloc]initWithImageNamed:@"abrir-caixa1.png"];
+        iconeTeste = [[IconeView alloc] initWithImage:[UIImage imageNamed:@"abrir-caixa1.png"]];
+        iconeTeste.frame = iconeMovimentado.frame;
+//        iconeNode.zPosition = 100;
+//        iconeNode.position = point;
+//        [self addChild:iconeNode];
+//        iconeNode.size = iconeMovimentado.frame.size;
+        NSLog(@"entrou");
+    }
+    //[self insereNode:point];
+    //NSLog(@"tipo %@",iconeMovimentado.tipo);
+    [self.view addSubview:iconeTeste];
+    iconeTeste.center = point;
+    if (recognizer.state == UIGestureRecognizerStateEnded) {
+        NSLog(@"terminou gesture");
+        iconeNode = nil;
+        
+        
+    }
     
 }
+
+- (void)insereNode:(CGPoint)location{
+    
+    
+    location.y = self.view.frame.size.height - location.y;
+    iconeNode.position = location;
+    
+    
+    
+}
+
+
 
 - (NSMutableArray *)criarIconesVetorInfo:(NSMutableArray *)vetorInfoIcones categoria:(NSString *)categoria{
     
@@ -176,18 +214,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
 }
 
-- (NSMutableArray *)criarImagens{
-    
-    NSMutableArray *imagens = [NSMutableArray array];
-    
-    for (int i = 0; i < 4; i++) {
-       UIImageView *imagem = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"abrir-caixa1.png"]];
-        [imagem setUserInteractionEnabled:YES];
-        [imagens addObject:imagem];
-    }
-    
-    return imagens;
-}
 
 
 - (void)criaGesture{
