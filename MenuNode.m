@@ -9,6 +9,7 @@
 #import "MenuNode.h"
 
 
+
 @implementation MenuNode{
     NSMutableArray *sessoes;
     BOOL aberto;
@@ -20,6 +21,9 @@
     
 }
 
+- (NSMutableArray *)retornaSessoes{
+    return sessoes;
+}
 
 - (id)initWithPosicaoAbrir : (CGPoint)abrir tamanho:(CGSize)tamanho{
     
@@ -126,12 +130,10 @@
         // PEGANDO SESSAO SELECIONADA PELO USUARIO
         SessaoMenu *sessaoSelecionada = [self retornaSessaoPorTitulo:titulo];
         secaoAtivo = sessaoSelecionada.titulo;
-//        lbltitulo.text = titulo;
-//        lbltitulo.alpha = 1;
         
         // PEGANDO ICONES DA SESSAO
         
-        NSMutableArray *icones = [sessaoSelecionada criarTodosIcones];
+        NSMutableArray *icones = [sessaoSelecionada retornaIcones];
         
 //        CGPoint posicaoInicial;
 //        CGPoint posicaoMutavel;
@@ -141,11 +143,12 @@
       CGRect posicaoInicial = CGRectMake(120, 20, 200, 200);
         
         
-        for (IconeView *icone in icones) {
+        for (UIImageView *icone in icones) {
             
             
             [icone setFrame:posicaoInicial];
-            [icone addGestureRecognizer:self.panGesture];
+            
+            //[icone addGestureRecognizer:self.panGesture];
             
             [self.menuScroll addSubview:icone];
             
@@ -232,8 +235,8 @@
         
         SessaoMenu *novaSecao = [self criaSecaoIndice:i];
         [novaSecao setMyDelegate:self];
-        [novaSecao runAction:[SKAction rotateToAngle: -M_PI / 2 duration:0]];
         
+        [novaSecao runAction:[SKAction rotateToAngle: -M_PI / 2 duration:0]];
         [novaSecao setPosition:posicaoInicial];
         
         [self addChild:novaSecao];

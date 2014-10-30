@@ -13,7 +13,11 @@
 #import "SecaoMenuOperador.h"
 
 
+@protocol MenuNodeDelegate <NSObject>
 
+- (NSMutableArray *)criarIconesNSMutableArray:(NSMutableArray *)vetorTipos;
+
+@end
 
 @interface MenuNode : SKSpriteNode <SessaoMenuDelegate>
 
@@ -21,6 +25,7 @@
 @property UIScrollView *menuScroll;
 @property UIGestureRecognizer *panGesture;
 @property NSMutableArray *imagensIcones;
+@property id <MenuNodeDelegate> myDelegate;
 
 
 - (void)abrirFechar;
@@ -28,4 +33,5 @@
 - (BOOL)getAberto;
 - (void)removeTudo;
 - (void)posiciona;
+- (NSMutableArray *)retornaSessoes;
 @end

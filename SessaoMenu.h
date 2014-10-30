@@ -23,17 +23,19 @@
 
 
 
-@property NSArray *tiposIcones;
+@property NSMutableArray *tiposIcones;
 @property id<SessaoMenuDelegate> myDelegate;
-@property NSString *titulo; 
+@property NSString *titulo;
+@property NSMutableArray *iconesProntos;
 
 
 - (NSMutableArray *)retornaIcones;
 - (id)init;
 - (NSMutableArray *)criarTodosIcones;
-- (IconeView *)criaIconeSecaoImagem:(NSString *)imagem;
 - (int)retornaNumeroIcones;
-
+- (NSMutableArray *)retornaInfoIcones;
+- (void)adicionaIcone:(UIImageView *)icone;
+- (NSDictionary *)retornaDictionaryPorIndice:(int)indice;
     
     
 

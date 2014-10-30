@@ -12,6 +12,6 @@
 @interface SecaoMenuVariavel : SessaoMenu
 
 
-- (IconeView *)criaIconeSecaoImagem:(NSString *)imagem;
+
 
 @end

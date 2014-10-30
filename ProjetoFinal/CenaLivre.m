@@ -11,6 +11,7 @@
 #import "MenuNode.h"
 #import "Calculador.h"
 #import "OperadorNode.h"
+#import "IconeView.h"
 
 static const uint32_t categoriaBotaoMenu = 0x1 << 0;
 static const uint32_t categoriaCaixa = 0x1 << 1;
@@ -105,16 +106,44 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     [menu setMenuScroll:menuScroll];
     
+    // SETANDO DELEGATE
+    [menu setMyDelegate:self];
+    
     // ALLOCANDO GESTURE PAN
-    [menu setPanGesture:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ativouPanGesture:)]];
+    UIGestureRecognizer *gesturePan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ativouPanGesture:)];
+    //[menu setPanGesture:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ativouPanGesture:)]];
+    
+
+    
+    // CRIA ICONES DAS SESSOES
+    NSMutableArray *sessoes = [menu retornaSessoes];
+    
+    for (SessaoMenu *sessao in sessoes) {
+        
+        for (int i = 0; i < [sessao retornaNumeroIcones]; i++) {
+            
+            NSDictionary *dict = [sessao retornaDictionaryPorIndice:i];
+            //IconeView *icone = [[IconeView alloc]initWithCategoria:sessao.titulo tipo:[dict objectForKey:@"tipo"] imagem:[dict objectForKey:@"imagem"]];
+            UIImageView *icone = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[dict objectForKey:@"imagem"]]  ];
+//            icone.categoria = sessao.titulo;
+//            icone.tipo = [dict objectForKey:@"tipo"];
+            [icone addGestureRecognizer:gesturePan];
+            [icone setUserInteractionEnabled:YES];
+            [sessao adicionaIcone:icone];
+        }
+        
+        
+        
+    }
+    
     
     [self addChild:menu];
     
     
     [self.view addSubview:[menu menuScroll]];
     
-    [menu setImagensIcones:[self criarImagens]];
-    [menu posiciona];
+    //[menu setImagensIcones:[self criarImagens]];
+    //[menu posiciona];
     
     
 }
@@ -125,6 +154,24 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
 }
 
+/*
+- (NSMutableArray *)criarIconesNSMutableArray:(NSMutableArray *)vetorTipos{
+    
+    NSMutableArray *vetorIcones = [NSMutableArray array];
+    
+    for (NSDictionary *dict in vetorTipos) {
+        
+        NSString *tipo = [dict objectForKey:@"tipo"];
+        NSString *imagem = [dict objectForKey:@"imagem"];
+        
+        [vetorIcones addObject:[[IconeView alloc]initWithTipo:tipo imagem:imagem]];
+        
+    }
+    
+    return vetorIcones;
+    
+}
+*/
 - (NSMutableArray *)criarImagens{
     
     NSMutableArray *imagens = [NSMutableArray array];

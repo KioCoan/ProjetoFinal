@@ -13,15 +13,6 @@
 
 
 
-- (IconeView *)criaIconeSecaoImagem:(NSString *)imagem{
-    
-    IconeView *iconeView = [[IconeView alloc]initWithImage:[UIImage imageNamed:imagem]];
-    [iconeView setUserInteractionEnabled:YES];
-    [iconeView setCategoria:self.titulo];
-    
-    return iconeView;
-    
-}
 
 - (id)init{
     
@@ -39,7 +30,6 @@
     
 }
 
-
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     [self.myDelegate sessaoAtivada:self.titulo];
@@ -49,6 +39,27 @@
 - (int)retornaNumeroIcones{
     
     return self.tiposIcones.count;
+    
+}
+
+- (NSMutableArray *)retornaInfoIcones{
+    
+    return self.tiposIcones;
+    
+}
+
+- (NSMutableArray *)retornaIcones{
+    return  self.iconesProntos;
+}
+
+- (void)adicionaIcone:(UIImageView *)icone{
+    [self.iconesProntos addObject:icone];
+}
+
+- (NSDictionary *)retornaDictionaryPorIndice:(int)indice{
+    
+    return [self.tiposIcones objectAtIndex:indice];
+    
     
 }
 

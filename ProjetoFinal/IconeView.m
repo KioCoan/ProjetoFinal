@@ -11,5 +11,21 @@
 @implementation IconeView
 
 
+- (id)initWithCategoria:(NSString *)categoria tipo:(NSString *)tipo imagem:(NSString *)imagem{
+    
+    self = [super init];
+    
+    if (self) {
+        self.image = [UIImage imageNamed:imagem];
+        self.tipo = tipo;
+        self.categoria = categoria;
+        [self setUserInteractionEnabled:YES];
+    }
+    
+    return self;
+    
+    
+}
+
 
 @end

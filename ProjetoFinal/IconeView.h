@@ -15,6 +15,6 @@
 @property NSString *tipo;
 
 
-
+- (id)initWithCategoria:(NSString *)categoria tipo:(NSString *)tipo imagem:(NSString *)imagem;
 
 @end

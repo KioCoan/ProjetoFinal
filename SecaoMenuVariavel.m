@@ -23,45 +23,29 @@
         self.size = self.texture.size;
         self.name = @"secao";
         self.titulo = @"variavel";
-        self.tiposIcones = [NSArray arrayWithObjects:@"inteiro", @"real",@"caractere",@"logico",nil];
+        
+        self.tiposIcones = [NSMutableArray array];
+        self.iconesProntos = [NSMutableArray array];
+        
+        NSArray *vetorImagens = [NSArray arrayWithObjects:@"abrir-caixa1.png", @"abrir-caixa1.png", @"abrir-caixa1.png", @"abrir-caixa1.png",nil];
+        NSArray *vetorTipos = [NSArray arrayWithObjects:@"inteiro", @"real",@"caractere",@"logico",nil];
+        
+        for (int i = 0; i < vetorTipos.count; i++) {
+            
+            NSDictionary *dictInfoIcone = @{
+                                              @"tipo": [vetorTipos objectAtIndex:i],
+                                              @"imagem": [vetorImagens objectAtIndex:i]};
+            
+            
+            [self.tiposIcones addObject:dictInfoIcone];
+        }
+        
+        
+        
     }
     
     return self;
 }
-
-
-
-- (NSMutableArray *)criarTodosIcones{
-    
-    
-    
-    NSMutableArray *icones = [NSMutableArray array];
-    
-    
-    for (int i = 0; i < self.tiposIcones.count; i++) {
-        
-        
-        IconeView *icone = [self criaIconeSecaoImagem:@"abrir-caixa1.png"];
-        [icone setTipo: [self.tiposIcones objectAtIndex:i]];
-        
-        [icones addObject:icone];
-       
-    }
-    
-    return icones;
-
-}
-
-- (IconeView *)criaIconeSecaoImagem:(NSString *)imagem{
-    
-    IconeView *iconeView = [[IconeView alloc]initWithImage:[UIImage imageNamed:imagem]];
-    [iconeView setUserInteractionEnabled:YES];
-    [iconeView setCategoria:self.titulo];
-    
-    return iconeView;
-    
-}
-
 
 
 
