@@ -22,11 +22,15 @@
 }
 
 @property id<SpriteCronometroDelegate> myDelegate;
+@property float progressaoTempo;
 
+-(id)initWithTempoTotalEmSegundos:(float)tempo progressaoDeTempo:(float)progressao;
 -(id)initWithTempoTotalEmSegundos:(float)tempo;
 -(void)iniciarContagem;
 -(void)prepararCronometro;
 -(void)prepararCronometroComNovoTempo:(float)tempo;
 -(void)pararContagem;
 -(void)iniciarAnimacaoDeEntrada;
+-(void)aumentarTempoTotalConformeTempoDeProgresso;
+-(void)diminuirTempoTotalConformeTempoDeProgresso;
 @end

@@ -37,12 +37,12 @@
         [nodeEsteira setMyDelegate:self];
         [self addChild:nodeEsteira];
         
-        nodeCronometro = [[SpriteCronometroNode alloc] initWithTempoTotalEmSegundos:6];
+        nodeCronometro = [[SpriteCronometroNode alloc] initWithTempoTotalEmSegundos:6 progressaoDeTempo:0.5];
         [nodeCronometro setPosition:CGPointMake(self.size.width, self.size.height - 70)];
         [nodeCronometro setMyDelegate:self];
         [self addChild:nodeCronometro];
         
-        progresso = [[ProgressoDesafioBar alloc] initWithBolinhas:2];
+        progresso = [[ProgressoDesafioBar alloc] initWithBolinhas:12];
         [progresso setMyDelegate:self];
         CGPoint posicao;
         posicao.y = self.size.height - progresso.size.height;
@@ -130,6 +130,7 @@
 }
 
 
+//ESTE METODO É CHAMADO SOMENTE QUANDO O PROGRESSBAR CHEGA AO FIM
 -(void)progressBarCompletado{
     fimDesafio = YES;
 }
@@ -138,7 +139,7 @@
 -(void)respostaCorretaFinalizado{
     [nodeEsteira iniciarAnimacaoMoverEsteira];
     [nodeVisor esconderValorDaTela:YES];
-
+    [nodeCronometro diminuirTempoTotalConformeTempoDeProgresso];
     
     NSLog(@"Resposta Correta");
 }
@@ -147,7 +148,7 @@
 -(void)respostaErradaFinalizado{
     [nodeEsteira iniciarAnimacaoMoverEsteira];
     [nodeVisor esconderValorDaTela:YES];
-    
+    [nodeCronometro aumentarTempoTotalConformeTempoDeProgresso];
     
     NSLog(@"Resposta Errada");
 }
@@ -167,6 +168,7 @@
     }
     [nodeEsteira modificarTipoDasCaixas];
     [nodeEsteira posicionarCaixasParaDesafio];
+    
 }
 
 -(void)tempoEsgotado{
@@ -174,6 +176,7 @@
     [nodeEsteira habilitarToqueNasCaixas:NO];
     [nodeVisor esconderValorDaTela:YES];
     [nodeEsteira iniciarAnimacaoMoverEsteira];
+    [nodeCronometro aumentarTempoTotalConformeTempoDeProgresso];
     
     [progresso insereErro];
 }
