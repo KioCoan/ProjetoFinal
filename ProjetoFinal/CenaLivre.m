@@ -144,13 +144,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
 }
 
-- (void)insereNode:(CGPoint)location{
-    
-    
-    
-}
-
-
 
 - (NSMutableArray *)criarIconesVetorInfo:(NSMutableArray *)vetorInfoIcones categoria:(NSString *)categoria{
     
@@ -205,17 +198,29 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 - (void)verificaPosicaoIcone:(IconeView *)icone{
     
     float posicaoXMenu = menu.frame.size.width;
-    float posicaoXIcone = iconeTemp.frame.origin.x + (iconeTemp.frame.size.width / 2);
+    float posicaoXIcone = icone.frame.origin.x + (icone.frame.size.width / 2);
     
     
     
     if (posicaoXIcone < posicaoXMenu) {
         NSLog(@"esta dentro");
     }else{
-        NSLog(@"estou fora");
+        [self identificaIcone:icone];
     }
     
     
+    
+}
+
+- (void)identificaIcone:(IconeView *)icone{
+    
+    if ([icone.categoria isEqualToString:@"variavel"]) {
+        
+        CGPoint posicao = CGPointMake(icone.frame.origin.x, self.view.frame.size.height - icone.frame.origin.y );
+        
+        [self criarVariavelTipo:icone.tipo posicao:posicao];
+        
+    }
     
 }
 
