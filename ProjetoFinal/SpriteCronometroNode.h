@@ -3,7 +3,7 @@
 //  DesafioVariavel
 //
 //  Created by Felipe Costa Nascimento on 9/23/14.
-//  Copyright (c) 2014 Felipe Costa Nascimento. All rights reserved.
+//  Copyright (c) 2014 -(float)getTempoMedioDeRespostaFelipe Costa Nascimento. All rights reserved.
 //
 
 #import <SpriteKit/SpriteKit.h>
@@ -19,6 +19,7 @@
     int widthSize;
     float tempoTotal;
     SKAction *acaoIniciarContagem;
+    NSMutableArray *vtTempoDeResposta;
 }
 
 @property id<SpriteCronometroDelegate> myDelegate;
@@ -33,4 +34,5 @@
 -(void)iniciarAnimacaoDeEntrada;
 -(void)aumentarTempoTotalConformeTempoDeProgresso;
 -(void)diminuirTempoTotalConformeTempoDeProgresso;
+-(float)getTempoMedioDeResposta;
 @end

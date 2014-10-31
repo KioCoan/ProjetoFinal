@@ -17,12 +17,14 @@
 {
     NSMutableArray *bolinhas;
     SKAction *somAcerto, *somErro;
-    int posAtual;
+    int posAtual, nAcertos, nErros;
 }
 
 @property id<ProgressDesafioBarDelegate> myDelegate;
 
 -(id)initWithBolinhas:(int)nBolinhas;
+-(int)getNAcertos;
+-(int)getNErros;
 -(void)insereAcerto:(int)index;
 -(void)insereErro:(int)index;
 -(void)insereAcerto;

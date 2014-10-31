@@ -38,8 +38,8 @@
     //INICIALMENTE A BARRA DE TEMPO COMEÇA BEM PEQUENA MAS EM SEGUIDA JÁ INICIA UMA ANIMAÇÃO PRA FICAR TOTALMENTE PREENCHIDA
     [self setSize:CGSizeMake(0, self.size.height)];
     
+    vtTempoDeResposta = [[NSMutableArray alloc] init];
     tempoTotal = tempo;
-    
     widthSize = 768;
     
     [self inicializarAnimacaoIniciarContagem];
@@ -80,6 +80,7 @@
 
 -(void)prepararCronometro{
     [self removeAllActions];
+    [vtTempoDeResposta addObject:[self calcularTempoDeResposta]];
     [self runAction:[self gerarAnimacaoPrepararCronometro]];
 
 }
@@ -126,6 +127,34 @@
 
 -(void)pararContagem{
     [self removeAllActions];
+    
+}
+
+
+//CALCULA O TEMPO QUE DEMOROU PRO USUÁRIO RESPONDER
+-(NSNumber*)calcularTempoDeResposta{
+    float tempo = (self.size.width * tempoTotal) / widthSize;
+    tempo = tempoTotal - tempo;
+    
+    NSNumber *tempoMedio = [NSNumber numberWithFloat:tempo];
+    
+    if(tempoMedio.floatValue == 0){
+        tempoMedio = [NSNumber numberWithFloat:tempoTotal];
+    }
+    
+    return tempoMedio;
+}
+
+
+//RETORNA A MÉDIA DE TEMPO DE RESPOSTA NO GERAL COM BASE NO VETOR DE MÉDIAS DE TEMPO
+-(float)getTempoMedioDeResposta{
+    float tempoMedio = 0;
+    
+    for(int i=0; i<vtTempoDeResposta.count; i++){
+        tempoMedio += [[vtTempoDeResposta objectAtIndex:i] floatValue];
+    }
+    
+    return tempoMedio / vtTempoDeResposta.count;
 }
 
 @end
