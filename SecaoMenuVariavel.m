@@ -25,7 +25,6 @@
         self.titulo = @"variavel";
         
         self.tiposIcones = [NSMutableArray array];
-        self.iconesProntos = [NSMutableArray array];
         
         NSArray *vetorImagens = [NSArray arrayWithObjects:@"abrir-caixa1.png", @"abrir-caixa1.png", @"abrir-caixa1.png", @"abrir-caixa1.png",nil];
         NSArray *vetorTipos = [NSArray arrayWithObjects:@"inteiro", @"real",@"caractere",@"logico",nil];

@@ -27,5 +27,17 @@
     
 }
 
+- (id)copyWithZone:(NSZone *)zone{
+    
+    IconeView *iconeCopia = [[IconeView allocWithZone:zone] init];
+    
+    iconeCopia.tipo = self.tipo;
+    iconeCopia.categoria = self.categoria;
+    iconeCopia.image = self.image;
+    iconeCopia.frame = self.frame;
+    return iconeCopia;
+    
+}
+
 
 @end

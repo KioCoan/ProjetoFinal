@@ -24,28 +24,25 @@
         self.titulo = @"operador";
         
        
+        self.tiposIcones = [NSMutableArray array];
         
-        [self criarTodosIcones];
+        NSArray *vetorImagens = [NSArray arrayWithObjects:@"parte-operador.png", @"parte-operador.png", @"parte-operador.png", @"parte-operador.png",nil];
+        NSArray *vetorTipos = [NSArray arrayWithObjects:@"soma", @"subtracao",@"multiplicacao",@"divisao",nil];
+        
+        for (int i = 0; i < vetorTipos.count; i++) {
+            
+            NSDictionary *dictInfoIcone = @{
+                                            @"tipo": [vetorTipos objectAtIndex:i],
+                                            @"imagem": [vetorImagens objectAtIndex:i]};
+            
+            
+            [self.tiposIcones addObject:dictInfoIcone];
+        }
         
     }
     
     return self;
 }
-
-- (void)criarTodosIcones{
-    
-    NSArray *tiposOperadores = [NSArray arrayWithObjects:@"+",@"-",@"/",@"*",nil];
-    
-    for (int i = 0; i < tiposOperadores.count; i++) {
-        
-        //[icones addObject:[self criaIconeSecaoImagem:@"parte-operador.png"]];
-        
-        //[icones addObject:[self criarIconeSecao:self.titulo tipo:[tiposOperadores objectAtIndex:i] imagem:@"parte-operador.png"]];
-        
-    }
-    
-}
-
 
 
 @end

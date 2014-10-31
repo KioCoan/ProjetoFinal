@@ -48,15 +48,6 @@
     
 }
 
-- (NSMutableArray *)retornaIcones{
-    
-    [self criarTodosIcones];
-    return  self.iconesProntos;
-}
-
-- (void)adicionaIcone:(UIImageView *)icone{
-    [self.iconesProntos addObject:icone];
-}
 
 - (NSDictionary *)retornaDictionaryPorIndice:(int)indice{
     
@@ -64,19 +55,5 @@
     
 }
 
-- (void)criarTodosIcones{
-    
-    
-        for (int i = 0; i < [self retornaNumeroIcones]; i++) {
-            
-            NSDictionary *dict = [self retornaDictionaryPorIndice:i];
-            
-            IconeView *icone = [[IconeView alloc]initWithCategoria:self.titulo tipo:[dict objectForKey:@"tipo"] imagem:[dict objectForKey:@"imagem"]];
-            [self.iconesProntos addObject:icone];
-        }
-
-    
-    
-}
 
 @end

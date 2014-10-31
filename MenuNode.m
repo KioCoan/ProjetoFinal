@@ -58,7 +58,7 @@
         
         sessoes = [NSMutableArray array];
         
-        nSecoes = 1;
+        nSecoes = 2;
         
         [self criarTodasSessoes];
     }
@@ -76,8 +76,12 @@
 
 - (void)removeTodosIcones{
     
-    for (UIView *iconeView in self.menuScroll.subviews) {
-        [iconeView removeFromSuperview];
+    for (IconeView *icone in self.scroll.subviews) {
+        
+        if ([icone isKindOfClass:[IconeView class]]) {
+            [icone removeFromSuperview];
+        }
+        
     }
     
     
@@ -87,6 +91,8 @@
 //METODO DO PROTOCOLO SecaoMenuDELEGATE
 
 - (void)sessaoAtivada:(NSString *)titulo infoIcones:(NSMutableArray *)vetorInfoIcones{
+    
+    NSLog(@"scroll %hhd",[self.scroll showsVerticalScrollIndicator]);
     
     // VERIFICA SE A SECAO CLICADA É A MESMA
     if (![secaoAtivo isEqualToString:titulo]) {
@@ -110,7 +116,11 @@
 //        posicaoInicial = CGPointMake(0, 270);
 //        posicaoMutavel = posicaoInicial;
         
-      CGRect posicaoInicial = CGRectMake(120, 20, 200, 200);
+       
+        
+        CGRect posicaoInicial = CGRectMake(120, 20, 200, 200);
+       
+        
         
         
         for (IconeView *icone in icones) {
@@ -118,26 +128,22 @@
             
             [icone setFrame:posicaoInicial];
             
-            //[icone addGestureRecognizer:self.panGesture];
-            
-            [self.menuScroll addSubview:icone];
+            [self.scroll addSubview:icone];
             
             posicaoInicial.origin.y += posicaoInicial.size.height;
             
+            
+            
             /*  IconeSecao *icone = [secao retornaIconeIndice:i];
-            
-            [icone setSize:CGSizeMake(200, 200)];
-            
-            [icone setPosition:posicaoMutavel];
-            [icone setPosicaoAnterior:posicaoMutavel];
-           
-            
-            [self addChild:icone];
-            
-           
-            
-            
-            
+             
+             [icone setSize:CGSizeMake(200, 200)];
+             
+             [icone setPosition:posicaoMutavel];
+             [icone setPosicaoAnterior:posicaoMutavel];
+             
+             
+             [self addChild:icone];
+
             
             //if ((i % 2) == 0) {
 //                posicaoMutavel.x += icone.size.width - 10;
@@ -169,13 +175,16 @@
                 
             //}
 
-            
-            
+        
+         self.scroll.contentSize = CGSizeMake(self.scroll.contentSize.width, (posicaoInicial.size.height * icones.count) + 30);
+        
+        
             return;
         //}
         
         
     }
+    
     
 }
 
@@ -252,6 +261,8 @@
         [self abrirMenu];
     }
     
+    // SETANDO HIDDEN DO MENU
+    [self.scroll setHidden:!aberto];
 }
 
 - (void)abrirMenu{

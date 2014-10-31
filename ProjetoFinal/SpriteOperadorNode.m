@@ -157,7 +157,7 @@
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    UITouch *touch = [touches anyObject];
+    //UITouch *touch = [touches anyObject];
     
 //    if (self.myDelegateGesture != nil) {
 //        SKScene *cena = (SKScene *)self.myDelegateGesture;

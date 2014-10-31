@@ -32,7 +32,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     BOOL movendoObjeto;
     SKNode *objetoEditando;
     SpriteOperadorNode *operadorEditando;
-    IconeView *iconeTeste;
+    IconeView *iconeTemp;
     
 }
 
@@ -104,10 +104,9 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     // ALLOCANDO SCROLL
     
     UIScrollView *menuScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(70, 100, 400, 900)];
-    [menuScroll setBackgroundColor:[UIColor blueColor]];
-    [menuScroll setContentSize:CGSizeMake(menuScroll.frame.size.width, menuScroll.frame.size.height * 2)];
-    
-    [menu setMenuScroll:menuScroll];
+    [menuScroll setBackgroundColor:[UIColor clearColor]];
+    [menuScroll setHidden:YES];
+    [menu setScroll:menuScroll];
     
     // SETANDO DELEGATE
     [menu setMyDelegate:self];
@@ -144,7 +143,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     [self addChild:menu];
     
     
-    [self.view addSubview:[menu menuScroll]];
+    [self.view addSubview:[menu scroll]];
     
     //[menu setImagensIcones:[self criarImagens]];
     //[menu posiciona];
@@ -154,27 +153,22 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 -(IBAction)ativouPanGesture:(UIPanGestureRecognizer*)recognizer{
     
-    CGPoint point = [recognizer locationInView:menu.menuScroll];
+    CGPoint point = [recognizer locationInView:menu.scroll];
     
-    iconeMovimentado = (IconeView *) recognizer.view;
-    iconeMovimentado.center = point;
-    if (iconeNode == nil) {
-        iconeNode = [[SKSpriteNode alloc]initWithImageNamed:@"abrir-caixa1.png"];
-        iconeTeste = [[IconeView alloc] initWithImage:[UIImage imageNamed:@"abrir-caixa1.png"]];
-        iconeTeste.frame = iconeMovimentado.frame;
-//        iconeNode.zPosition = 100;
-//        iconeNode.position = point;
-//        [self addChild:iconeNode];
-//        iconeNode.size = iconeMovimentado.frame.size;
-        NSLog(@"entrou");
+    if (iconeTemp == nil) {
+        IconeView *icone = (IconeView *)recognizer.view;
+        iconeTemp = [icone copy];
     }
-    //[self insereNode:point];
-    //NSLog(@"tipo %@",iconeMovimentado.tipo);
-    [self.view addSubview:iconeTeste];
-    iconeTeste.center = point;
+    
+    [self.view addSubview:iconeTemp];
+    [iconeTemp setFrame:CGRectMake(point.x, point.y, iconeTemp.frame.size.width, iconeTemp.frame.size.height)];
+    
+    
     if (recognizer.state == UIGestureRecognizerStateEnded) {
-        NSLog(@"terminou gesture");
-        iconeNode = nil;
+        //NSLog(@"terminou gesture");
+        [self verificaPosicaoIcone:iconeTemp];
+        [iconeTemp removeFromSuperview];
+        iconeTemp = nil;
         
         
     }
@@ -182,10 +176,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 }
 
 - (void)insereNode:(CGPoint)location{
-    
-    
-    location.y = self.view.frame.size.height - location.y;
-    iconeNode.position = location;
     
     
     
@@ -243,7 +233,22 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
 }
 
-
+- (void)verificaPosicaoIcone:(IconeView *)icone{
+    
+    float posicaoXMenu = menu.frame.size.width;
+    float posicaoXIcone = iconeTemp.frame.origin.x + (iconeTemp.frame.size.width / 2);
+    
+    
+    
+    if (posicaoXIcone < posicaoXMenu) {
+        NSLog(@"esta dentro");
+    }else{
+        NSLog(@"estou fora");
+    }
+    
+    
+    
+}
 
 //METODOS MENU
 

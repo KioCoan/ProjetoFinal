@@ -16,5 +16,6 @@
 
 
 - (id)initWithCategoria:(NSString *)categoria tipo:(NSString *)tipo imagem:(NSString *)imagem;
+- (id)copyWithZone:(NSZone *)zone;
 
 @end

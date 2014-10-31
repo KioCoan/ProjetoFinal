@@ -22,7 +22,7 @@
 @interface MenuNode : SKSpriteNode <SessaoMenuDelegate>
 
 
-@property UIScrollView *menuScroll;
+@property UIScrollView *scroll;
 @property UIGestureRecognizer *panGesture;
 @property NSMutableArray *imagensIcones;
 @property id <MenuNodeDelegate> myDelegate;
@@ -32,6 +32,5 @@
 - (id)initWithPosicaoAbrir : (CGPoint)abrir  tamanho:(CGSize)tamanho;
 - (BOOL)getAberto;
 - (void)removeTudo;
-- (void)posiciona;
 - (NSMutableArray *)retornaSessoes;
 @end
