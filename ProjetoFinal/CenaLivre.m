@@ -53,7 +53,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         //CRIANDO BOTAO QUE ABRE MENU
         botaoMenu = [[SKSpriteNode alloc]initWithImageNamed:@"modo livre-09.png"];
-        botaoMenu.position = CGPointMake(700, 100);
+        botaoMenu.position = CGPointMake(100, 100);
         botaoMenu.name = @"botaoMenu";
         botaoMenu.zPosition = -2;
         [self addChild:botaoMenu];
@@ -111,42 +111,11 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     // SETANDO DELEGATE
     [menu setMyDelegate:self];
     
-    // ALLOCANDO GESTURE PAN
-    
-    //[menu setPanGesture:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ativouPanGesture:)]];
-    
-
-   /*
-    // CRIA ICONES DAS SESSOES
-    NSMutableArray *sessoes = [menu retornaSessoes];
-    
-    for (SessaoMenu *sessao in sessoes) {
-        
-        for (int i = 0; i < [sessao retornaNumeroIcones]; i++) {
-            
-            NSDictionary *dict = [sessao retornaDictionaryPorIndice:i];
-            UIGestureRecognizer *gesturePan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ativouPanGesture:)];
-            //IconeView *icone = [[IconeView alloc]initWithCategoria:sessao.titulo tipo:[dict objectForKey:@"tipo"] imagem:[dict objectForKey:@"imagem"]];
-            UIImageView *icone = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[dict objectForKey:@"imagem"]]  ];
-//            icone.categoria = sessao.titulo;
-//            icone.tipo = [dict objectForKey:@"tipo"];
-            [icone addGestureRecognizer:gesturePan];
-            [icone setUserInteractionEnabled:YES];
-            [sessao adicionaIcone:icone];
-        }
-        
-        
-        
-    }
-    */
     
     [self addChild:menu];
     
     
     [self.view addSubview:[menu scroll]];
-    
-    //[menu setImagensIcones:[self criarImagens]];
-    //[menu posiciona];
     
     
 }
