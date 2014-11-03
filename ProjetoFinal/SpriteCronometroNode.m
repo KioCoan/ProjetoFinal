@@ -69,9 +69,13 @@
 
 //MODIFICA O TEMPO E INICIALIZA A ACTION COM A NOVA DURAÇAO DE TEMPO
 -(void)setTempoTotal:(float)tempo{
-    if (tempo == 0) {
+    if (tempo < 1) {
+        return;
+    
+    }else if(tempo > 15){
         return;
     }
+
     
     tempoTotal = tempo;
     [self inicializarAnimacaoIniciarContagem];
