@@ -49,7 +49,6 @@
 -(BOOL)partesVisiveis;
 - (void)criarCorpos;
 //- (void)setDonoOperadorNode;
-- (void)setDelegate;
 - (void)controladoPelaCena:(BOOL)controlar;
 -(void)iniciarAnimacoes;
 @end
