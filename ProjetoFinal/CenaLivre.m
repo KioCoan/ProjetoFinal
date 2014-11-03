@@ -12,6 +12,7 @@
 #import "Calculador.h"
 #import "OperadorNode.h"
 #import "IconeView.h"
+#import "Validador.h"
 
 static const uint32_t categoriaBotaoMenu = 0x1 << 0;
 static const uint32_t categoriaCaixa = 0x1 << 1;
@@ -33,7 +34,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     SKNode *objetoEditando;
     SpriteOperadorNode *operadorEditando;
     IconeView *iconeTemp;
-    
+    Validador *validador;
 }
 
 
@@ -72,19 +73,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         [self criaMenuEdicao];
         
-        /*
-        
-         TRIM e TIRAR ESPACOS DA STRING
-         
-        NSString *testando = @"    eu sei que e hj";
-        NSString *nova2 = [testando stringByReplacingOccurrencesOfString:@" " withString:@""];
-        NSString *nova = [testando stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        
-        
-        
-        NSLog(@"nova string %@",testando);
-        
-        */
         
         
         
@@ -165,7 +153,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     
 }
-
 
 
 - (void)criaGesture{
@@ -637,6 +624,61 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 // METODOS OBJETOS
 
+- (void)criarBordaTextField:(UITextField *)textField{
+    
+    textField.layer.cornerRadius = 8.0f;
+    textField.layer.masksToBounds = YES;
+    textField.layer.borderColor = [[UIColor redColor] CGColor];
+    textField.layer.borderWidth = 1.0f;
+    
+}
+
+- (void)retirarBordaTextFiels{
+    
+    for (UITextField *textField in vetorTextField) {
+        textField.layer.cornerRadius = 0.0f;
+        textField.layer.masksToBounds = NO;
+        textField.layer.borderWidth = 0.0f;
+        //textField.layer.borderColor = [[UIColor blackColor] CGColor];
+    }
+    
+}
+
+- (BOOL)validarDados{
+    
+    if (!validador) {
+        validador = [[Validador alloc]init];
+    }
+    
+    BOOL semErro;
+    
+    for (UITextField *textField in vetorTextField) {
+        NSString *novaString = [validador removeTodoEspaco:textField.text];
+        
+        if (!novaString) {
+            [self criarBordaTextField:textField];
+            semErro = NO;
+        }
+    }
+    
+    if (semErro) {
+        [self insereValores];
+        validador.numeroErros = 0;
+    }else{
+        validador.numeroErros += 1;
+        
+        if (validador.numeroErros > 1) {
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"erro" message:@"seu animal nao e assim, por favor desinstale o app" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            [alertView show];
+            validador.numeroErros = 0;
+        }
+        
+    }
+    
+    
+    return semErro;
+}
+
 - (void)insereValores{
     
     NSLog(@"objeto editando %@",objetoEditando.name);
@@ -697,6 +739,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     if (menuEditarAberto) {
         [self moveMenuEdicao];
+        [self retirarBordaTextFiels];
     }
     
 }
@@ -718,8 +761,9 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     }else if ([conteudoAtivo.name isEqualToString:@"iconeMenu"]){
         [conteudoAtivo runAction:[self retornaCrescerDiminuir:YES]];
     }else if ([conteudoAtivo.name isEqualToString:@"botaoOK"]){
-        [self insereValores];
-        return;
+        if (![self validarDados]) {
+            return;
+        }
     }
     
     [self escondeMenuEdicao];
@@ -777,6 +821,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     CGPoint location =  [touch locationInNode:self];
     
     
+    
     conteudoAtivo = [self nodeAtPoint:location];
     
     [self identificaNode];
@@ -785,24 +830,31 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    UITouch *touch = [touches anyObject];
-    
     
     //SE A POSIÇÃO QUE FOI CLICADA É A MESMA DO SPRITE DA CAIXA, O SPRITE É MOVIDO
     
     if (!movendoObjeto && ([conteudoAtivo.name isEqualToString:@"operadorNode"] || [conteudoAtivo.name isEqualToString:@"labelOperador"])) {
         conteudoAtivo = (SKNode *)[self retornaOperadorNode:conteudoAtivo];
-    }
-    
-    if ([conteudoAtivo.name isEqualToString:@"iconeMenu"]) {
         
-        CGPoint location = [touch locationInNode:menu];
-        [conteudoAtivo setPosition:location];
+        
         
     }else if ([conteudoAtivo.name isEqualToString:@"variavel"] || [conteudoAtivo.name isEqualToString:@"operadorSprite"]){
-        CGPoint location = [touch locationInNode:self];
-        [conteudoAtivo setPosition:location];
+        
+        UITouch *touch = [touches anyObject];
+        CGPoint scenePosition = [touch locationInNode:self];
+        CGPoint lastPosition = [touch previousLocationInNode:self];
+        
+        // CALCULO PARA ARRASTAR O NODE SEM CENTRALIZA-LO EM RELAÇÃO AO TOQUE
+        CGPoint novaPosicao = CGPointMake(conteudoAtivo.position.x + (scenePosition.x - lastPosition.x), conteudoAtivo.position.y + (scenePosition.y - lastPosition.y));
+        
+        conteudoAtivo.position = novaPosicao;
         movendoObjeto = YES;
+        
+        
+        /* Faz mover a view, fica bem dahora, sera util algum dia
+        [self.view setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, (location.x + self.view.frame.origin.x - dx), 0.0)];
+        
+        */
     }
     
 }

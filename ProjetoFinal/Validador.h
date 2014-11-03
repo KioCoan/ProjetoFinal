@@ -10,4 +10,9 @@
 
 @interface Validador : NSObject
 
+@property int numeroErros;
+
+- (NSString *)removeTodoEspaco:(NSString *)string;
+- (NSString *)removeEspacoDasPontas:(NSString *)string;
+
 @end
