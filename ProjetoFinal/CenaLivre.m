@@ -184,14 +184,19 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     //RECONHECE O GESTURE DE LONGPRESS
     
     
-    if (recognizer.state == UIGestureRecognizerStateBegan && [conteudoAtivo.name isEqualToString:@"variavel"]){
+    if (recognizer.state == UIGestureRecognizerStateBegan){
         
-        [self preparaTextFieldsVariavel];
-        [self moveMenuEdicao];
-        objetoEditando = conteudoAtivo;
+        
+        if ([conteudoAtivo.name isEqualToString:@"variavel"]) {
+            [self preparaTextFieldsVariavel];
+            [self moveMenuEdicao];
+            objetoEditando = conteudoAtivo;
+        }else if ([conteudoAtivo.name isEqualToString:@"operadorNode"] || [conteudoAtivo.name isEqualToString:@"labelOperador"]){
+            [self preparaTextFieldsOperador];
+            [self moveMenuEdicao];
+            objetoEditando = (SKNode *) conteudoAtivo;
+        }
     }
-    
-    
     
 }
 
@@ -206,6 +211,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         NSLog(@"esta dentro");
     }else{
         [self identificaIcone:icone];
+        [menu abrirFechar];
     }
     
     
@@ -214,11 +220,17 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 - (void)identificaIcone:(IconeView *)icone{
     
+    CGPoint posicao = CGPointMake(icone.frame.origin.x + 90, (self.view.frame.size.height - icone.frame.origin.y) - 55 );
+    
     if ([icone.categoria isEqualToString:@"variavel"]) {
         
-        CGPoint posicao = CGPointMake(icone.frame.origin.x, self.view.frame.size.height - icone.frame.origin.y );
-        
         [self criarVariavelTipo:icone.tipo posicao:posicao];
+        
+    }else if ([icone.categoria isEqualToString:@"operador"]){
+        
+        [self criarOperadorNaPosicao:posicao tipo:icone.tipo];
+        
+        
         
     }
     
@@ -482,8 +494,8 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     }
     
     
-    SpriteCaixaNode *variavel = [[SpriteCaixaNode alloc]init];
-    
+    //SpriteCaixaNode *variavel = [[SpriteCaixaNode alloc]init];
+    SpriteCaixaNode *variavel = [[SpriteCaixaNode alloc]initWithConteudo:nil nome:nil tipo:tipo tamanho:CGSizeMake(250, 267)];
     [variavel setPosition:posicao];
     variavel.name = @"variavel";
     variavel.zPosition = -1;
@@ -545,7 +557,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         vetorOperadores = [NSMutableArray array];
     }
     
-    SpriteOperadorNode *novoOperador = [[SpriteOperadorNode alloc]initWithValor1:@"1" operador:tipo valor2:@"1" resultado:@"1"];
+    SpriteOperadorNode *novoOperador = [[SpriteOperadorNode alloc]initWithValor1:nil operador:tipo valor2:nil resultado:nil];
     
     [novoOperador setDono:self];
     [novoOperador setPosition:posicao];
@@ -623,10 +635,11 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 }
 
 
-
 // METODOS OBJETOS
 
 - (void)insereValores{
+    
+    NSLog(@"objeto editando %@",objetoEditando.name);
     
     //INSERE VALOR VARIAVEIS
     if ([objetoEditando.name isEqualToString:@"variavel"]) {
@@ -650,7 +663,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         // INSERE VALOR NO OPERADOR
         
-    }else if ([objetoEditando.name isEqualToString:@"operadorNode"]){
+    }else if ([objetoEditando.name isEqualToString:@"operadorNode"] || [objetoEditando.name isEqualToString:@"labelOperador"]){
         
         SpriteOperadorNode *operador = [self retornaOperadorNode:objetoEditando];
         
@@ -707,10 +720,8 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     }else if ([conteudoAtivo.name isEqualToString:@"botaoOK"]){
         [self insereValores];
         return;
-    }else if ([conteudoAtivo.name isEqualToString:@"operadorNode"]){
-        //conteudoAtivo = (SKNode *)[self retornaOperadorNode:conteudoAtivo];
     }
-
+    
     [self escondeMenuEdicao];
     
 }
