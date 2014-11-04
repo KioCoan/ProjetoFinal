@@ -180,6 +180,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
             [self moveMenuEdicao];
             objetoEditando = conteudoAtivo;
         }else if ([conteudoAtivo.name isEqualToString:@"operadorNode"] || [conteudoAtivo.name isEqualToString:@"labelOperador"]){
+            conteudoAtivo = [self retornaOperadorNode:conteudoAtivo];
             [self tremeObjetoSelecionado:conteudoAtivo];
             [self preparaTextFieldsOperador];
             [self moveMenuEdicao];
