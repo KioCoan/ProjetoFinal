@@ -364,14 +364,13 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
-    NSArray *caracteres = [NSArray arrayWithObjects:@"@",@"!",@"`",@"~",@"#",@"$",@"%",@"^",@"&",@"*",@"(",@")",@"-",@"_",@"+",@"=",@"[",@"{"@"]",@"}",@"|" ,@"\\",@";",@":",@"'",nil];
-    /*
-    int ultimoIndice = textField.text.length - 1;
-    
-    if (ultimoIndice < 0) {
-        return YES;
+    if (textField.text.length < 1 && [string isEqualToString:@"."]) {
+        return NO;
     }
-    */
+    
+    
+    NSArray *caracteres = [NSArray arrayWithObjects:@"@",@"!",@"`",@"~",@"#",@"$",@"%",@"^",@"&",@"*",@"(",@")",@"-",@"_",@"+",@"=",@"[",@"{"@"]",@"}",@"|" ,@"\\",@";",@":",@"'",@"<",@",",@">",@"/",@"\"",@"?",nil];
+    
     NSString * nova =  string; //[textField.text substringFromIndex:ultimoIndice];
     
     NSLog(@"nova %@",nova);
@@ -389,25 +388,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 }
 
 
-/*
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    
-    NSArray *caracteres = [NSArray arrayWithObjects:@"@",@"!",@"`",@"~", nil];
-    
-    int ultimoIndice = textField.text.length - 1;
-    
-    if (ultimoIndice < 0) {
-        return YES;
-    }
-    
-    NSString * nova = [textField.text substringFromIndex:ultimoIndice];
-    
-    NSLog(@"nova %@",nova);
-    
-    return YES;
-
-}
-*/
 - (void)criandoTodosTextFields{
     
     //ALLOCANDO VETOR TEXTFILED
