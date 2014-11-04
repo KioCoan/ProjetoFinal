@@ -161,7 +161,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     //[longPress setMinimumPressDuration:1.5];
     //[longPress setNumberOfTouchesRequired:2];
     [longPress setNumberOfTouchesRequired:1];
-    [longPress setMinimumPressDuration:1];
+    [longPress setMinimumPressDuration:0.5];
     [self.view addGestureRecognizer:longPress];
     
 }
@@ -175,10 +175,12 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         
         if ([conteudoAtivo.name isEqualToString:@"variavel"]) {
+            [self tremeObjetoSelecionado:conteudoAtivo];
             [self preparaTextFieldsVariavel];
             [self moveMenuEdicao];
             objetoEditando = conteudoAtivo;
         }else if ([conteudoAtivo.name isEqualToString:@"operadorNode"] || [conteudoAtivo.name isEqualToString:@"labelOperador"]){
+            [self tremeObjetoSelecionado:conteudoAtivo];
             [self preparaTextFieldsOperador];
             [self moveMenuEdicao];
             objetoEditando = (SKNode *) conteudoAtivo;
@@ -623,6 +625,25 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 
 // METODOS OBJETOS
+
+- (void)tremeObjetoSelecionado:(SKNode *)objeto{
+    
+    SKAction *virarDireita = [SKAction rotateToAngle:0.2 duration:0.1];
+    SKAction *virarEsquerda = [SKAction rotateToAngle:-0.2 duration:0.1];
+    SKAction *sequencia = [SKAction sequence:@[virarDireita, virarEsquerda]];
+    //SKAction *animacaoTremer = [SKAction repeatActionForever:sequencia];
+    SKAction *animacaoTremer = [SKAction repeatAction:sequencia count:1];
+    SKAction *voltaPosicaoOriginal = [SKAction rotateToAngle:0.0 duration:0.1];
+    
+    //SKAction *animacaoTremer = [SKAction group:@[animacaoVirar,voltaPosicaoOriginal]];
+    //[objeto runAction:animacaoTremer];
+    
+    
+    [objeto runAction:animacaoTremer completion:^{
+        [objeto runAction:voltaPosicaoOriginal];
+    }];
+    
+}
 
 - (void)criarBordaTextField:(UITextField *)textField{
     
