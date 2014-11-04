@@ -360,6 +360,54 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 // METODO TEXTFIELD
 
+
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    
+    NSArray *caracteres = [NSArray arrayWithObjects:@"@",@"!",@"`",@"~",@"#",@"$",@"%",@"^",@"&",@"*",@"(",@")",@"-",@"_",@"+",@"=",@"[",@"{"@"]",@"}",@"|" ,@"\\",@";",@":",@"'",nil];
+    /*
+    int ultimoIndice = textField.text.length - 1;
+    
+    if (ultimoIndice < 0) {
+        return YES;
+    }
+    */
+    NSString * nova =  string; //[textField.text substringFromIndex:ultimoIndice];
+    
+    NSLog(@"nova %@",nova);
+    
+    for (NSString *caractere in caracteres) {
+        if ([nova isEqualToString:caractere]) {
+            return NO;
+        }
+    }
+    
+    return YES;
+
+    
+    
+}
+
+
+/*
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    
+    NSArray *caracteres = [NSArray arrayWithObjects:@"@",@"!",@"`",@"~", nil];
+    
+    int ultimoIndice = textField.text.length - 1;
+    
+    if (ultimoIndice < 0) {
+        return YES;
+    }
+    
+    NSString * nova = [textField.text substringFromIndex:ultimoIndice];
+    
+    NSLog(@"nova %@",nova);
+    
+    return YES;
+
+}
+*/
 - (void)criandoTodosTextFields{
     
     //ALLOCANDO VETOR TEXTFILED
