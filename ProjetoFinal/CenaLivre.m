@@ -429,7 +429,8 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
                 
             case 1:
                 textField.placeholder = @"insira conteúdo";
-                textField.keyboardType = [self variavelNumerica:variavel];
+                textField.keyboardType = UIKeyboardAppearanceDefault;
+                //textField.keyboardType = [self variavelNumerica:variavel];
                 break;
         }
     }
@@ -515,6 +516,8 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     int i = 0;
     
     for (i = 0; i < tiposVariaveis.count; i++) {
+        
+        
         
         if ([[variavel retornaTipo] isEqualToString:[tiposVariaveis objectAtIndex:i]]) {
             
