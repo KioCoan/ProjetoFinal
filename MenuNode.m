@@ -92,17 +92,18 @@
 
 - (void)sessaoAtivada:(NSString *)titulo infoIcones:(NSMutableArray *)vetorInfoIcones{
     
-    NSLog(@"scroll %hhd",[self.scroll showsVerticalScrollIndicator]);
     
     // VERIFICA SE A SECAO CLICADA É A MESMA
     if (![secaoAtivo isEqualToString:titulo]) {
         
         //SETA A SECAO CLICADA COMO SECAO ATIVA
         if (secaoAtivo != nil) {
+            [[self retornaSessaoPorTitulo:secaoAtivo] ativarAnimacaoSecaoDesativada];
             [self removeTodosIcones];
             
         }
         
+        [[self retornaSessaoPorTitulo:titulo] ativarAnimacaoSecaoAtivada];
         
         // SETANDO A NOVA VERSAO ATIVA
         secaoAtivo = titulo;
@@ -207,7 +208,7 @@
 
 - (void)criarTodasSessoes{
     
-    CGPoint posicaoInicial = CGPointMake(-220, 405);
+    CGPoint posicaoInicial = CGPointMake(-250, 405);
     
     for (int i = 0; i < nSecoes; i++) {
         
@@ -215,14 +216,14 @@
         SessaoMenu *novaSecao = [self criaSecaoIndice:i];
         [novaSecao setMyDelegate:self];
         
-        [novaSecao runAction:[SKAction rotateToAngle: -M_PI / 2 duration:0]];
+        //[novaSecao runAction:[SKAction rotateToAngle: -M_PI / 2 duration:0]];
         [novaSecao setPosition:posicaoInicial];
         
         [self addChild:novaSecao];
         
         [sessoes addObject: novaSecao];
         
-        posicaoInicial.y -= novaSecao.size.width;
+        posicaoInicial.y -= novaSecao.size.height;
     }
 
     

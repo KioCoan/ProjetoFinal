@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "GerenciadorDesafios.h"
 #import "IconeSecao.h"
 #import "IconeView.h"
 
@@ -20,7 +21,11 @@
 
 
 @interface SessaoMenu : SKSpriteNode
-
+{
+    SKLabelNode *lblSessao;
+    SKAction *moverDireita;
+    SKAction *moverEsquerda;
+}
 
 
 @property NSMutableArray *tiposIcones;
@@ -31,8 +36,8 @@
 - (int)retornaNumeroIcones;
 - (NSMutableArray *)retornaInfoIcones;
 - (NSDictionary *)retornaDictionaryPorIndice:(int)indice;
-    
-    
+-(void)ativarAnimacaoSecaoAtivada;
+-(void)ativarAnimacaoSecaoDesativada;
 
 
 

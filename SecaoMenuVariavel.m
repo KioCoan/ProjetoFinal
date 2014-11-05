@@ -24,6 +24,8 @@
         self.name = @"secao";
         self.titulo = @"variavel";
         
+        [lblSessao setText:@"variáveis"];
+        
         self.tiposIcones = [NSMutableArray array];
         
         NSArray *vetorImagens = [NSArray arrayWithObjects:@"abrir-caixa1.png", @"abrir-caixa1.png", @"abrir-caixa1.png", @"abrir-caixa1.png",nil];

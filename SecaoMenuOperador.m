@@ -23,7 +23,9 @@
         self.name = @"secao";
         self.titulo = @"operador";
         
-       
+        //[self inicializarLabelSessao];
+        [lblSessao setText:@"operadores"];
+
         self.tiposIcones = [NSMutableArray array];
         
         NSArray *vetorImagens = [NSArray arrayWithObjects:@"parte-operador.png", @"parte-operador.png", @"parte-operador.png", @"parte-operador.png",nil];
