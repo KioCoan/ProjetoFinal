@@ -14,5 +14,6 @@
 
 - (NSString *)removeTodoEspaco:(NSString *)string;
 - (NSString *)removeEspacoDasPontas:(NSString *)string;
+- (BOOL)tabelaAscii:(NSString *)string tamanho:(NSInteger)tamanhoString;
 
 @end
