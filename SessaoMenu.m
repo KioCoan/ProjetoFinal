@@ -22,11 +22,7 @@
     if  (self){
         
         [self setUserInteractionEnabled:YES];
-        moverDireita = [SKAction moveByX:20 y:0 duration:0.2];
-        [moverDireita setTimingMode:SKActionTimingEaseOut];
         
-        moverEsquerda = [moverDireita reversedAction];
-        [moverEsquerda setTimingMode:SKActionTimingEaseIn];
         
         [self inicializarLabelSessao];
         
@@ -36,6 +32,14 @@
     
 }
 
+
+-(void)inicializarAnimacoesMovimento{
+    moverDireita = [SKAction moveToX:self.position.x + 20 duration:0.2];
+    [moverDireita setTimingMode:SKActionTimingEaseOut];
+    
+    moverEsquerda = [SKAction moveToX:self.position.x duration:0.2];
+    [moverEsquerda setTimingMode:SKActionTimingEaseIn];
+}
 
 -(void)inicializarLabelSessao{
     lblSessao = [SKLabelNode labelNodeWithFontNamed:FONT_MEDIUM];

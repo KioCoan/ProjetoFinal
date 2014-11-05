@@ -38,7 +38,7 @@
 - (NSDictionary *)retornaDictionaryPorIndice:(int)indice;
 -(void)ativarAnimacaoSecaoAtivada;
 -(void)ativarAnimacaoSecaoDesativada;
-
+-(void)inicializarAnimacoesMovimento;
 
 
 

@@ -98,6 +98,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     // SETANDO DELEGATE
     [menu setMyDelegate:self];
+    [menu insereTodosIcones];
     
     
     [self addChild:menu];

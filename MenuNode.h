@@ -33,4 +33,5 @@
 - (BOOL)getAberto;
 - (void)removeTudo;
 - (NSMutableArray *)retornaSessoes;
+-(void)insereTodosIcones;
 @end

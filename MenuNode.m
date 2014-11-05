@@ -27,7 +27,7 @@
 
 - (id)initWithPosicaoAbrir : (CGPoint)abrir tamanho:(CGSize)tamanho{
     
-   
+    
     
     self = [super init];
     
@@ -37,7 +37,7 @@
         // CONFIGURANDO POSICOES DO MENU
         
         
-       CGPoint fechar = CGPointMake(abrir.x * (-1), abrir.y);
+        CGPoint fechar = CGPointMake(abrir.x * (-1), abrir.y);
         
         abrirMenu = [SKAction moveToX:abrir.x duration:0.2];
         fecharMenu = [SKAction moveToX:fechar.x duration:0.2];
@@ -61,6 +61,8 @@
         nSecoes = 2;
         
         [self criarTodasSessoes];
+        [self insereTodosIcones];
+        
     }
     
     
@@ -112,15 +114,15 @@
         
         NSMutableArray *icones = [self.myDelegate criarIconesVetorInfo:vetorInfoIcones categoria:titulo];
         
-//        CGPoint posicaoInicial;
-//        CGPoint posicaoMutavel;
-//        posicaoInicial = CGPointMake(0, 270);
-//        posicaoMutavel = posicaoInicial;
+        //        CGPoint posicaoInicial;
+        //        CGPoint posicaoMutavel;
+        //        posicaoInicial = CGPointMake(0, 270);
+        //        posicaoMutavel = posicaoInicial;
         
-       
+        
         
         CGRect posicaoInicial = CGRectMake(120, 20, 200, 200);
-       
+        
         
         
         
@@ -144,49 +146,52 @@
              
              
              [self addChild:icone];
-
+             
+             
+             //if ((i % 2) == 0) {
+             //                posicaoMutavel.x += icone.size.width - 10;
+             //            }else{
+             //                posicaoMutavel.x = posicaoInicial.x;
+             posicaoMutavel.y -= icone.size.height - 10;
+             //}
+             
+             descomentar  */
             
-            //if ((i % 2) == 0) {
-//                posicaoMutavel.x += icone.size.width - 10;
-//            }else{
-//                posicaoMutavel.x = posicaoInicial.x;
-                posicaoMutavel.y -= icone.size.height - 10;
-            //}
-
-      descomentar  */
+        }
+        
+        self.scroll.contentSize = CGSizeMake(self.scroll.contentSize.width, (posicaoInicial.size.height * icones.count) + 30);
+        
+    }else{
+        [[self retornaSessaoPorTitulo:titulo] ativarAnimacaoSecaoDesativada];
+        [self removeTodosIcones];
+        [self insereTodosIcones];
         
     }
     
-   
-    
-    
-    
-   
-    
-    
-    //for (SecaoMenu *secao in secoes){
-        
+}
 
-        
-        //if ([secao.titulo isEqualToString:titulo]) {
-            
-            
-    
-                
-                
-            //}
 
+-(void)insereTodosIcones{
+    CGRect posicaoInicial = CGRectMake(120, 20, 200, 200);
+    NSMutableArray *icones;
+    int nIcones = 0;
+    
+    for(SessaoMenu *s in sessoes){
+        icones = [self.myDelegate criarIconesVetorInfo:[s retornaInfoIcones] categoria:[s titulo]];
         
-         self.scroll.contentSize = CGSizeMake(self.scroll.contentSize.width, (posicaoInicial.size.height * icones.count) + 30);
-        
-        
-            return;
-        //}
-        
-        
+        for(IconeView *icone in icones){
+            [icone setFrame:posicaoInicial];
+            
+            [self.scroll addSubview:icone];
+            
+            posicaoInicial.origin.y += posicaoInicial.size.height;
+            
+            nIcones++;
+        }
     }
     
-    
+    self.scroll.contentSize = CGSizeMake(self.scroll.contentSize.width, (posicaoInicial.size.height * nIcones) + 30);
+
 }
 
 - (SessaoMenu *)retornaSessaoPorTitulo:(NSString *)titulo{
@@ -218,6 +223,7 @@
         
         //[novaSecao runAction:[SKAction rotateToAngle: -M_PI / 2 duration:0]];
         [novaSecao setPosition:posicaoInicial];
+        [novaSecao inicializarAnimacoesMovimento];
         
         [self addChild:novaSecao];
         
@@ -225,7 +231,7 @@
         
         posicaoInicial.y -= novaSecao.size.height;
     }
-
+    
     
 }
 
