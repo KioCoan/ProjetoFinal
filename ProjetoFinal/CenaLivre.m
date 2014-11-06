@@ -91,7 +91,8 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     // ALLOCANDO SCROLL
     
-    UIScrollView *menuScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(70, 100, 400, 900)];
+    
+    UIScrollView *menuScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(74, 80, 405, 928)];
     [menuScroll setBackgroundColor:[UIColor clearColor]];
     [menuScroll setHidden:YES];
     [menu setScroll:menuScroll];
@@ -99,28 +100,27 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     // SETANDO DELEGATE
     [menu setMyDelegate:self];
     [menu insereTodosIcones];
-    
-    
     [self addChild:menu];
     
     
-    [self.view addSubview:[menu scroll]];
+    
+    
+    [self.view addSubview:[menu getScroll]];
     
     
 }
 
 -(IBAction)ativouPanGesture:(UIPanGestureRecognizer*)recognizer{
     
-    CGPoint point = [recognizer locationInView:menu.scroll];
-    
+    CGPoint point = [recognizer locationInView:[menu getViewFundoScroll]];
     if (iconeTemp == nil) {
         IconeView *icone = (IconeView *)recognizer.view;
         iconeTemp = [icone copy];
     }
     
     [self.view addSubview:iconeTemp];
+    //[iconeTemp setFrame:CGRectMake(point.x, point.y, iconeTemp.frame.size.width, iconeTemp.frame.size.height)];
     [iconeTemp setFrame:CGRectMake(point.x, point.y, iconeTemp.frame.size.width, iconeTemp.frame.size.height)];
-    
     
     if (recognizer.state == UIGestureRecognizerStateEnded) {
         //NSLog(@"terminou gesture");

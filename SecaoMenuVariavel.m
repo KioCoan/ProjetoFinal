@@ -28,7 +28,7 @@
         
         self.tiposIcones = [NSMutableArray array];
         
-        NSArray *vetorImagens = [NSArray arrayWithObjects:@"abrir-caixa1.png", @"abrir-caixa1.png", @"abrir-caixa1.png", @"abrir-caixa1.png",nil];
+        NSArray *vetorImagens = [NSArray arrayWithObjects:@"caixa-tipo-inteiro.png", @"caixa-tipo-real.png", @"caixa-tipo-caractere.png", @"caixa-tipo-logico.png",nil];
         NSArray *vetorTipos = [NSArray arrayWithObjects:@"inteiro", @"real",@"caractere",@"logico",nil];
         
         for (int i = 0; i < vetorTipos.count; i++) {

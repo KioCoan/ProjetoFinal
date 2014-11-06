@@ -20,9 +20,11 @@
 @end
 
 @interface MenuNode : SKSpriteNode <SessaoMenuDelegate>
+{
+    UIScrollView *scroll;
+    UIView *viewFundoScroll;
+}
 
-
-@property UIScrollView *scroll;
 @property UIGestureRecognizer *panGesture;
 @property NSMutableArray *imagensIcones;
 @property id <MenuNodeDelegate> myDelegate;
@@ -34,4 +36,7 @@
 - (void)removeTudo;
 - (NSMutableArray *)retornaSessoes;
 -(void)insereTodosIcones;
+-(UIScrollView *)getScroll;
+-(void)setScroll:(UIScrollView *)scrollView;
+-(UIView*)getViewFundoScroll;
 @end

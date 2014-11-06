@@ -21,9 +21,6 @@
     
 }
 
-- (NSMutableArray *)retornaSessoes{
-    return sessoes;
-}
 
 - (id)initWithPosicaoAbrir : (CGPoint)abrir tamanho:(CGSize)tamanho{
     
@@ -70,6 +67,10 @@
     return self;
 }
 
+- (NSMutableArray *)retornaSessoes{
+    return sessoes;
+}
+
 
 - (BOOL)getAberto{
     return aberto;
@@ -78,7 +79,7 @@
 
 - (void)removeTodosIcones{
     
-    for (IconeView *icone in self.scroll.subviews) {
+    for (IconeView *icone in scroll.subviews) {
         
         if ([icone isKindOfClass:[IconeView class]]) {
             [icone removeFromSuperview];
@@ -97,11 +98,12 @@
     
     // VERIFICA SE A SECAO CLICADA É A MESMA
     if (![secaoAtivo isEqualToString:titulo]) {
+        [self removeTodosIcones];
         
         //SETA A SECAO CLICADA COMO SECAO ATIVA
         if (secaoAtivo != nil) {
             [[self retornaSessaoPorTitulo:secaoAtivo] ativarAnimacaoSecaoDesativada];
-            [self removeTodosIcones];
+            
             
         }
         
@@ -121,7 +123,7 @@
         
         
         
-        CGRect posicaoInicial = CGRectMake(120, 20, 200, 200);
+        CGRect posicaoInicial = CGRectMake(100, 5, 200, 200);
         
         
         
@@ -131,9 +133,9 @@
             
             [icone setFrame:posicaoInicial];
             
-            [self.scroll addSubview:icone];
+            [scroll addSubview:icone];
             
-            posicaoInicial.origin.y += posicaoInicial.size.height;
+            posicaoInicial.origin.y += posicaoInicial.size.height + 10;
             
             
             
@@ -159,10 +161,11 @@
             
         }
         
-        self.scroll.contentSize = CGSizeMake(self.scroll.contentSize.width, (posicaoInicial.size.height * icones.count) + 30);
+        scroll.contentSize = CGSizeMake(scroll.contentSize.width, (posicaoInicial.size.height * icones.count) + 80);
         
     }else{
         [[self retornaSessaoPorTitulo:titulo] ativarAnimacaoSecaoDesativada];
+        secaoAtivo = nil;
         [self removeTodosIcones];
         [self insereTodosIcones];
         
@@ -172,7 +175,9 @@
 
 
 -(void)insereTodosIcones{
-    CGRect posicaoInicial = CGRectMake(120, 20, 200, 200);
+    
+    
+    CGRect posicaoInicial = CGRectMake(100, 5, 200, 200);
     NSMutableArray *icones;
     int nIcones = 0;
     
@@ -182,15 +187,15 @@
         for(IconeView *icone in icones){
             [icone setFrame:posicaoInicial];
             
-            [self.scroll addSubview:icone];
+            [scroll addSubview:icone];
             
-            posicaoInicial.origin.y += posicaoInicial.size.height;
+            posicaoInicial.origin.y += posicaoInicial.size.height + 10;
             
             nIcones++;
         }
     }
     
-    self.scroll.contentSize = CGSizeMake(self.scroll.contentSize.width, (posicaoInicial.size.height * nIcones) + 30);
+    scroll.contentSize = CGSizeMake(scroll.contentSize.width, (posicaoInicial.size.height * nIcones) + 80);
 
 }
 
@@ -269,7 +274,7 @@
     }
     
     // SETANDO HIDDEN DO MENU
-    [self.scroll setHidden:!aberto];
+    [scroll setHidden:!aberto];
 }
 
 - (void)abrirMenu{
@@ -296,5 +301,19 @@
     [self removeAllActions];
     
 }
+
+-(UIScrollView *)getScroll{
+    return scroll;
+}
+
+-(void)setScroll:(UIScrollView *)scrollView{
+    scroll = scrollView;
+    viewFundoScroll = [[UIView alloc] initWithFrame:scrollView.frame];
+}
+
+-(UIView*)getViewFundoScroll{
+    return viewFundoScroll;
+}
+
 
 @end
