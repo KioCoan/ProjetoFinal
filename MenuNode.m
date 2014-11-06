@@ -265,28 +265,32 @@
 - (void)abrirFechar{
     
     if (aberto) {
-        
+        aberto = NO;
         [self fecharMenu];
         
         
     }else{
+        aberto = YES;
         [self abrirMenu];
     }
     
-    // SETANDO HIDDEN DO MENU
-    [scroll setHidden:!aberto];
+    
 }
 
 - (void)abrirMenu{
     
-    [self runAction:abrirMenu];
-    aberto = YES;
+    [self runAction:abrirMenu completion:^{
+        // SETANDO HIDDEN DO MENU
+        [scroll setHidden:!aberto];
+    }];
+    
+    
 }
 
 - (void)fecharMenu{
     
     [self runAction:fecharMenu];
-    aberto = NO;
+    [scroll setHidden:!aberto];
 }
 
 - (void)removeTudo{

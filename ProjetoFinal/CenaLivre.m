@@ -445,7 +445,9 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 - (void)preparaTextFieldsVariavel{
     
-    SpriteCaixaNode *variavel = (SpriteCaixaNode *)objetoEditando;
+    
+    //NAO ESTAVA SENDO USADO !!
+    //SpriteCaixaNode *variavel = (SpriteCaixaNode *)objetoEditando;
     
     for (int i = 0; i < vetorTextField.count;i++) {
         
