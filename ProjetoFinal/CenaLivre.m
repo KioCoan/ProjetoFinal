@@ -63,7 +63,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         botaoMenu.physicsBody.dynamic = NO;
         botaoMenu.physicsBody.categoryBitMask = categoriaBotaoMenu;
         botaoMenu.physicsBody.contactTestBitMask = categoriaCaixa;
-        botaoMenu.physicsBody.density = 1000;
         botaoMenu.physicsBody.usesPreciseCollisionDetection = YES;
 
         
