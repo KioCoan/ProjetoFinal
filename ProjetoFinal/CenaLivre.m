@@ -111,15 +111,16 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 -(IBAction)ativouPanGesture:(UIPanGestureRecognizer*)recognizer{
     
-    CGPoint point = [recognizer locationInView:[menu getViewFundoScroll]];
+    CGPoint point = [recognizer locationInView:self.view];
     if (iconeTemp == nil) {
         IconeView *icone = (IconeView *)recognizer.view;
         iconeTemp = [icone copy];
+        [self.view addSubview:iconeTemp];
     }
     
-    [self.view addSubview:iconeTemp];
+    
     //[iconeTemp setFrame:CGRectMake(point.x, point.y, iconeTemp.frame.size.width, iconeTemp.frame.size.height)];
-    [iconeTemp setFrame:CGRectMake(point.x, point.y, iconeTemp.frame.size.width, iconeTemp.frame.size.height)];
+    [iconeTemp setCenter:CGPointMake(point.x, point.y)];
     
     if (recognizer.state == UIGestureRecognizerStateEnded) {
         //NSLog(@"terminou gesture");
@@ -276,14 +277,16 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     
     if (menuEditarAberto) {
-        rodaBotao = [SKAction rotateToAngle: M_PI + (M_PI / 4) duration:0.4];
+        //rodaBotao = [SKAction rotateToAngle: M_PI + (M_PI / 4) duration:0.4];
+        rodaBotao = [SKAction rotateToAngle: -M_PI_4 duration:0.3];
         texture1 = [SKTexture textureWithImageNamed:@"modo livre-10.png"];
         
         
         
     }else{
         
-        rodaBotao = [SKAction rotateToAngle:-M_PI - M_PI duration:0.4];
+        //rodaBotao = [SKAction rotateToAngle:-M_PI - M_PI duration:0.4];
+        rodaBotao = [SKAction rotateToAngle: 0 duration:0.3];
         texture1 = [SKTexture textureWithImageNamed:@"modo livre-09.png"];
         
     }
@@ -304,11 +307,11 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     if (cresci) {
         
         
-        SKAction *rodaBotao = [SKAction rotateToAngle: M_PI + (M_PI / 4) duration:0.4];
+        SKAction *rodaBotao = [SKAction rotateToAngle: -M_PI_4 duration:0.3];
         //SKTexture *texture1 = [SKTexture textureWithImageNamed:@"modo livre-10.png"];
         SKTexture *texture2 = [SKTexture textureWithImageNamed:@"modo livre-11.png"];
         SKTexture *texture3 = [SKTexture textureWithImageNamed:@"modo livre-12.png"];
-        SKAction *aumenta = [SKAction resizeToWidth:150 height:150 duration:0.4];
+        SKAction *aumenta = [SKAction resizeToWidth:150 height:150 duration:0.3];
         
         SKAction *texturas = [SKAction animateWithTextures:@[texture2,texture3] timePerFrame:0.1];
         
@@ -325,7 +328,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         //ANIMACAO BOTAO MENU
         
-        SKAction *rodaBotao = [SKAction rotateToAngle:-M_PI - M_PI duration:0.4];
+        SKAction *rodaBotao = [SKAction rotateToAngle:0 duration:0.3];
 
         SKTexture *texture1 = [SKTexture textureWithImageNamed:@"modo livre-11.png"];
         SKTexture *texture2 = [SKTexture textureWithImageNamed:@"modo livre-10.png"];
@@ -333,7 +336,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         SKAction *texturas = [SKAction animateWithTextures:@[texture1] timePerFrame:0.1];
         SKAction *outraTextura = [SKAction animateWithTextures:@[texture2,texture3] timePerFrame:0.1];
-        SKAction *diminui = [SKAction resizeToWidth:51 height:51 duration:0.4];
+        SKAction *diminui = [SKAction resizeToWidth:51 height:51 duration:0.3];
         SKAction *animacao = [SKAction group:@[texturas,rodaBotao,diminui,outraTextura]];
         
         [botaoMenu runAction:animacao];
@@ -662,20 +665,12 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 - (void)tremeObjetoSelecionado:(SKNode *)objeto{
     
+    SKAction *posicaoOriginal = [SKAction rotateToAngle:0.0 duration:0.1];
     SKAction *virarDireita = [SKAction rotateToAngle:0.2 duration:0.1];
     SKAction *virarEsquerda = [SKAction rotateToAngle:-0.2 duration:0.1];
-    SKAction *sequencia = [SKAction sequence:@[virarDireita, virarEsquerda]];
-    //SKAction *animacaoTremer = [SKAction repeatActionForever:sequencia];
-    SKAction *animacaoTremer = [SKAction repeatAction:sequencia count:1];
-    SKAction *voltaPosicaoOriginal = [SKAction rotateToAngle:0.0 duration:0.1];
+    SKAction *sequencia = [SKAction sequence:@[virarDireita, virarEsquerda, posicaoOriginal]];
     
-    //SKAction *animacaoTremer = [SKAction group:@[animacaoVirar,voltaPosicaoOriginal]];
-    //[objeto runAction:animacaoTremer];
-    
-    
-    [objeto runAction:animacaoTremer completion:^{
-        [objeto runAction:voltaPosicaoOriginal];
-    }];
+    [objeto runAction:sequencia];
     
 }
 

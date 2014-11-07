@@ -293,4 +293,14 @@
 }
 
 
+-(void)setName:(NSString *)name{
+    [super setName:name];
+    
+//    [lblConteudo setName:name];
+//    [lblEndereco setName:name];
+//    [lblNome setName:name];
+//    [lblTipo setName:name];
+}
+
+
 @end
