@@ -242,4 +242,8 @@
     self.position = posicao;
 }
 
+-(CGSize)size{
+    return CGSizeMake(nodeOperador.size.width, nodeOperador.size.height);
+}
+
 @end

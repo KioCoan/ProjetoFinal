@@ -20,7 +20,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 @implementation CenaLivre{
     
     MenuNode *menu;
-    SKNode *conteudoAtivo;
+    SKSpriteNode *conteudoAtivo;
     SKSpriteNode *botaoMenu;
     SKSpriteNode *menuEdicao;
     NSMutableArray *vetorTextField;
@@ -31,7 +31,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     BOOL menuEditarAberto;
     BOOL estaEmContato;
     BOOL movendoObjeto;
-    SKNode *objetoEditando;
+    SKSpriteNode *objetoEditando;
     SpriteOperadorNode *operadorEditando;
     IconeView *iconeTemp;
     Validador *validador;
@@ -185,7 +185,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
             [self tremeObjetoSelecionado:conteudoAtivo];
             [self preparaTextFieldsOperador];
             [self moveMenuEdicao];
-            objetoEditando = (SKNode *) conteudoAtivo;
+            objetoEditando = (SKSpriteNode *) conteudoAtivo;
         }
     }
     
@@ -615,7 +615,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
 }
 
-- (void)terminouGestureOperador:(SKNode *)operador{
+- (void)terminouGestureOperador:(SKSpriteNode *)operador{
     
     
     if (estaEmContato) {
@@ -628,7 +628,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 
 
-- (SpriteOperadorNode *)retornaOperadorNode :(SKNode *)objeto{
+- (SpriteOperadorNode *)retornaOperadorNode :(SKSpriteNode *)objeto{
     
     //Esse metodo e usado e chamado no Touches Moved e Touches Ended
     
@@ -663,7 +663,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 // METODOS OBJETOS
 
-- (void)tremeObjetoSelecionado:(SKNode *)objeto{
+- (void)tremeObjetoSelecionado:(SKSpriteNode *)objeto{
     
     SKAction *posicaoOriginal = [SKAction rotateToAngle:0.0 duration:0.1];
     SKAction *virarDireita = [SKAction rotateToAngle:0.2 duration:0.1];
@@ -872,7 +872,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     
     
-    conteudoAtivo = [self nodeAtPoint:location];
+    conteudoAtivo = (SKSpriteNode*)[self nodeAtPoint:location];
     
     [self identificaNode];
     
@@ -884,7 +884,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     //SE A POSIÇÃO QUE FOI CLICADA É A MESMA DO SPRITE DA CAIXA, O SPRITE É MOVIDO
     
     if (!movendoObjeto && ([conteudoAtivo.name isEqualToString:@"operadorNode"] || [conteudoAtivo.name isEqualToString:@"labelOperador"])) {
-        conteudoAtivo = (SKNode *)[self retornaOperadorNode:conteudoAtivo];
+        conteudoAtivo = (SKSpriteNode *)[self retornaOperadorNode:conteudoAtivo];
         
         
         
@@ -896,6 +896,25 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         // CALCULO PARA ARRASTAR O NODE SEM CENTRALIZA-LO EM RELAÇÃO AO TOQUE
         CGPoint novaPosicao = CGPointMake(conteudoAtivo.position.x + (scenePosition.x - lastPosition.x), conteudoAtivo.position.y + (scenePosition.y - lastPosition.y));
+        
+        
+        
+        //MEXER DEPOIS !!!!!!!!!
+        float posicaoXInicio = novaPosicao.x - ([conteudoAtivo size].width / 3);
+        float posicaoXFim = novaPosicao.x + ([conteudoAtivo size].width / 3);
+//        int posicaoXInicio = novaPosicao.x - 50;
+//        int posicaoXFim = novaPosicao.x + 50;
+        if(posicaoXFim > self.view.frame.size.width || posicaoXInicio < 0){
+            return;
+        }
+        
+        float posicaoYInicio = novaPosicao.y - ([conteudoAtivo size].height / 3);
+        float posicaoYFim = novaPosicao.y + ([conteudoAtivo size].height / 3);
+//        int posicaoYInicio = novaPosicao.y - 50;
+//        int posicaoYFim = novaPosicao.y + 50;
+        if(posicaoYFim > self.view.frame.size.height || posicaoYInicio < 0){
+            return;
+        }
         
         conteudoAtivo.position = novaPosicao;
         movendoObjeto = YES;
