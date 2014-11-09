@@ -123,7 +123,7 @@
         
         
         
-        CGRect posicaoInicial = CGRectMake(100, 5, 200, 200);
+        CGRect posicaoInicial = CGRectMake(105, 5, 190, 190);
         
         
         
@@ -177,7 +177,7 @@
 -(void)insereTodosIcones{
     
     
-    CGRect posicaoInicial = CGRectMake(100, 5, 200, 200);
+    CGRect posicaoInicial = CGRectMake(105, 5, 190, 190);
     NSMutableArray *icones;
     int nIcones = 0;
     

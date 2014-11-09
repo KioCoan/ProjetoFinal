@@ -900,18 +900,19 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         
         //MEXER DEPOIS !!!!!!!!!
-        float posicaoXInicio = novaPosicao.x - ([conteudoAtivo size].width / 3);
-        float posicaoXFim = novaPosicao.x + ([conteudoAtivo size].width / 3);
+        float posicaoXInicio = novaPosicao.x - ([conteudoAtivo size].width / 2);
+        float posicaoXFim = novaPosicao.x + ([conteudoAtivo size].width / 2);
 //        int posicaoXInicio = novaPosicao.x - 50;
 //        int posicaoXFim = novaPosicao.x + 50;
         if(posicaoXFim > self.view.frame.size.width || posicaoXInicio < 0){
             return;
         }
         
-        float posicaoYInicio = novaPosicao.y - ([conteudoAtivo size].height / 3);
-        float posicaoYFim = novaPosicao.y + ([conteudoAtivo size].height / 3);
+        float posicaoYInicio = novaPosicao.y - ([conteudoAtivo size].height / 2);
+        float posicaoYFim = novaPosicao.y + ([conteudoAtivo size].height / 2);
 //        int posicaoYInicio = novaPosicao.y - 50;
 //        int posicaoYFim = novaPosicao.y + 50;
+        NSLog(@"%f", self.view.frame.size.height);
         if(posicaoYFim > self.view.frame.size.height || posicaoYInicio < 0){
             return;
         }

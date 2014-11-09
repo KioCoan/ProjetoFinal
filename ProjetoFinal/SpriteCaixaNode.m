@@ -293,13 +293,15 @@
 }
 
 
--(void)setName:(NSString *)name{
-    [super setName:name];
+-(CGSize)size{
+    //SOBREESCREVI O MÉTODO DE RETORNAR O TAMANHO, MAIS PARA SER USADO NO MODO LIVRE. DESTE MODO É POSSÍVEL RETORNAR
+    //APENAS O TAMANHO DA CAIXA, RETIRANDO O ESPAÇO TRANSPARENTE QUE HÁ EM VOLTA DA CAIXA
+    //OS VALORES USADOS RETORNAM O TAMANHO EXATO DA CAIXA, INDEPENDENTE DO TAMANHO DO FRAME
+    CGSize tamanho = [super size];
+    tamanho.width /= 1.46;
+    tamanho.height /= 1.41;
     
-//    [lblConteudo setName:name];
-//    [lblEndereco setName:name];
-//    [lblNome setName:name];
-//    [lblTipo setName:name];
+    return tamanho;
 }
 
 
