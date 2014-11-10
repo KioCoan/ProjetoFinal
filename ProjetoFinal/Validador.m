@@ -76,7 +76,7 @@
     
     int indice = [self transformaStringParaAscii:string];
     
-    if ([self isNumerico:indice]) {
+    if ([self naoIniciaComNumero:indice texto:texto]) {
         return YES;
     }else if ([self isLetraMaiuscula:indice]){
         return YES;
@@ -85,6 +85,15 @@
     }
     
     return NO;
+}
+
+- (BOOL) naoIniciaComNumero : (int)indice texto:(NSString *)texto{
+    
+    if (texto.length < 1) {
+        return NO;
+    }
+    
+    return [self isNumerico:indice];
 }
 
 - (BOOL)isNumerico:(int)indice{
