@@ -12,8 +12,16 @@
 
 @property int numeroErros;
 
+@property NSDictionary *dictNumerico;
+@property NSDictionary *dictLetrasMaiuscula;
+@property NSDictionary *dictLetrasMinuscula;
+
+
 - (NSString *)removeTodoEspaco:(NSString *)string;
 - (NSString *)removeEspacoDasPontas:(NSString *)string;
-- (BOOL)tabelaAscii:(NSString *)string tamanho:(NSInteger)tamanhoString;
+- (BOOL)validaDados:(int)tipo string:(NSString *)string texto:(NSString *)texto;
+- (id)init;
+
+
 
 @end

@@ -66,7 +66,9 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         botaoMenu.physicsBody.usesPreciseCollisionDetection = YES;
 
         
+        // alloca validador
         
+        validador = [[Validador alloc]init];
         
         
         
@@ -367,26 +369,32 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
-    if (textField.text.length < 1 && [string isEqualToString:@"."]) {
-        return NO;
-    }
-    
-    
-    NSArray *caracteres = [NSArray arrayWithObjects:@"@",@"!",@"`",@"~",@"#",@"$",@"%",@"^",@"&",@"*",@"(",@")",@"-",@"_",@"+",@"=",@"[",@"{"@"]",@"}",@"|" ,@"\\",@";",@":",@"'",@"<",@",",@">",@"/",@"\"",@"?",nil];
-    
-    NSString * nova =  string; //[textField.text substringFromIndex:ultimoIndice];
-    
-    NSLog(@"nova %@",nova);
-    
-    for (NSString *caractere in caracteres) {
-        if ([nova isEqualToString:caractere]) {
-            return NO;
-        }
-    }
-    
-    return YES;
 
     
+    //NSLog(@"nome objeto %@",[objetoEditando name]);
+
+    int tipoVerificacao = [self retornaIndiceParaVerificacao:objetoEditando textField:textField];
+    
+   BOOL valido = [validador validaDados:tipoVerificacao string:string texto:textField.text];
+    
+    
+    
+    
+    return valido;
+    
+}
+
+
+- (int)retornaIndiceParaVerificacao:(SKNode *)objeto textField:(UITextField *)textField{
+    
+    
+    if ([objetoEditando.name isEqualToString:@"variavel"]) {
+        
+        if ([textField.placeholder isEqualToString:@"insira o nome"]) {
+            return 1;
+        }
+    }
+    return 0;
     
 }
 
@@ -457,11 +465,11 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         switch (i) {
             case 0:
-                textField.placeholder = @"insira nome";
+                textField.placeholder = @"insira o nome";
                 break;
                 
             case 1:
-                textField.placeholder = @"insira conteúdo";
+                textField.placeholder = @"insira o conteúdo";
                 textField.keyboardType = UIKeyboardAppearanceDefault;
                 //textField.keyboardType = [self variavelNumerica:variavel];
                 break;
