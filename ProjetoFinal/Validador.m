@@ -28,7 +28,6 @@
     
     switch (tipo) {
         case 1:
-            
             return [self alfaNumerico:string texto:texto];
             break;
         case 2:
@@ -36,6 +35,9 @@
             break;
         case 3:
             return [self numericoSemPonto:string texto:texto];
+            break;
+        case 4:
+            return [self alfaNumericoSimples:string texto:texto];
             break;
         default:
             return NO;
@@ -63,6 +65,27 @@
     
     return NO;
 }
+
+- (BOOL)alfaNumericoSimples :(NSString *)string texto:(NSString *)texto{
+    
+    
+    
+    [self isCaracterNulo:string];
+    
+    int indice = [self transformaStringParaAscii:string];
+    
+    if ([self isNumerico:indice]) {
+        return YES;
+    }else if ([self isLetraMaiuscula:indice]){
+        return YES;
+    }else if ([self isLetraMinuscula:indice]){
+        return YES;
+    }
+    
+    return NO;
+}
+
+
 
 - (BOOL)numerico: (NSString *)string texto: (NSString *)texto{
     

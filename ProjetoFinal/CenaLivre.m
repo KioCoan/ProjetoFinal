@@ -406,6 +406,8 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
                 
             }else if ([[variavel retornaTipo] isEqualToString:@"inteiro"]){
                 return 3;
+            }else if ([[variavel retornaTipo] isEqualToString:@"caractere"]){
+                return 4;
             }
             
             
@@ -738,10 +740,25 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         if (!novaString) {
             [self criarBordaTextField:textField];
             semErro = NO;
+        }else{
+            if ([self retornaIndiceParaVerificacao:objetoEditando textField:textField] == 4) {
+                
+                char primeiro = [textField.text characterAtIndex:0];
+                char ultimo = [textField.text characterAtIndex:textField.text.length - 1];
+                
+                if (primeiro != '"' || ultimo != '"') {
+                    NSString *aspa = @"\"";
+                    textField.text = [aspa stringByAppendingFormat:@"%@%@",textField.text,aspa];
+                }
+                
+            }
         }
     }
     
     if (semErro) {
+        
+        
+        
         [self insereValores];
         validador.numeroErros = 0;
     }else{
