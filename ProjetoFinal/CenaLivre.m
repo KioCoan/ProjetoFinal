@@ -371,11 +371,14 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
 
     
-    //NSLog(@"nome objeto %@",[objetoEditando name]);
 
     int tipoVerificacao = [self retornaIndiceParaVerificacao:objetoEditando textField:textField];
     
-   BOOL valido = [validador validaDados:tipoVerificacao string:string texto:textField.text];
+    if (tipoVerificacao < 0) {
+        return YES;
+    }
+   
+    BOOL valido = [validador validaDados:tipoVerificacao string:string texto:textField.text];
     
     
     
@@ -392,8 +395,27 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         if ([textField.placeholder isEqualToString:@"insira o nome"]) {
             return 1;
+        }else if ([textField.placeholder isEqualToString:@"insira o conteúdo"]){
+            
+            SpriteCaixaNode *variavel = (SpriteCaixaNode *)objetoEditando;
+            
+            if ([[variavel retornaTipo] isEqualToString:@"real"]) {
+                
+                return 2;
+                
+                
+            }else if ([[variavel retornaTipo] isEqualToString:@"inteiro"]){
+                return 3;
+            }
+            
+            
+            
         }
+    }else if ([objetoEditando.name isEqualToString:@"operadorSprite"]){
+        
+        return 2;
     }
+
     return 0;
     
 }
@@ -739,7 +761,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 
 - (void)insereValores{
     
-    NSLog(@"objeto editando %@",objetoEditando.name);
     
     //INSERE VALOR VARIAVEIS
     if ([objetoEditando.name isEqualToString:@"variavel"]) {
@@ -763,10 +784,10 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         
         // INSERE VALOR NO OPERADOR
         
-    }else if ([objetoEditando.name isEqualToString:@"operadorNode"] || [objetoEditando.name isEqualToString:@"labelOperador"]){
+    }else if ([objetoEditando.name isEqualToString:@"operadorSprite"] || [objetoEditando.name isEqualToString:@"labelOperador"]){
         
-        SpriteOperadorNode *operador = [self retornaOperadorNode:objetoEditando];
-        
+        //SpriteOperadorNode *operador = [self retornaOperadorNode:objetoEditando];
+        SpriteOperadorNode *operador = (SpriteOperadorNode *)objetoEditando;
         for (int i = 0; i < vetorTextField.count;i++) {
             
             UITextField *textField = [vetorTextField objectAtIndex:i];

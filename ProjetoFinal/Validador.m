@@ -11,32 +11,6 @@
 @implementation Validador
 
 
-- (id)init{
-    
-    self = [super init];
-    
-    if (self) {
-        self.dictNumerico = @{
-                              @"inicio": [NSNumber numberWithInt:48],
-                              @"fim": [NSNumber numberWithInt:57]};
-        
-        
-        self.dictLetrasMaiuscula = @{
-                              @"inicio": [NSNumber numberWithInt:65],
-                              @"fim": [NSNumber numberWithInt:90]};
-        
-        self.dictLetrasMinuscula = @{
-                                     @"inicio": [NSNumber numberWithInt:97],
-                                     @"fim": [NSNumber numberWithInt:122]};
-        
-        
-        
-    }
-    
-    
-    return self;
-    
-}
 
 - (int)transformaStringParaAscii:(NSString *)string{
     
@@ -56,10 +30,13 @@
         case 1:
             
             return [self alfaNumerico:string texto:texto];
-            
-            
             break;
-            
+        case 2:
+            return [self numerico:string texto:texto];
+            break;
+        case 3:
+            return [self numericoSemPonto:string texto:texto];
+            break;
         default:
             return NO;
     }
@@ -85,6 +62,67 @@
     }
     
     return NO;
+}
+
+- (BOOL)numerico: (NSString *)string texto: (NSString *)texto{
+    
+    if ([self isCaracterNulo:string]) {
+        return YES;
+    }else{
+        
+        int indice = [self transformaStringParaAscii:string];
+        
+        if ([self limiteCaracteres:8 texto:texto]) {
+            
+            
+            if ([self isNumerico:indice]) {
+                
+                return YES;
+                
+            }else if ([self isPonto:indice texto:texto]){
+                return YES;
+            }
+            
+        }
+        
+                return NO;
+        
+    }
+    
+}
+
+- (BOOL)numericoSemPonto: (NSString *)string texto: (NSString *)texto{
+    
+    if ([self isCaracterNulo:string]) {
+        return YES;
+    }else{
+        
+        int indice = [self transformaStringParaAscii:string];
+        
+        if ([self limiteCaracteres:8 texto:texto]) {
+            
+            
+            if ([self isNumerico:indice]) {
+                
+                return YES;
+                
+            }
+            
+        }
+        
+        return NO;
+        
+    }
+    
+}
+
+
+- (BOOL)limiteCaracteres:(int)limite texto:(NSString *)texto{
+    
+    if (texto.length >= limite) {
+        return NO;
+    }
+    return YES;
 }
 
 - (BOOL) naoIniciaComNumero : (int)indice texto:(NSString *)texto{
