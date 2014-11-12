@@ -39,11 +39,31 @@
         case 4:
             return [self alfaNumericoSimples:string texto:texto];
             break;
+        case 5:
+            return [self apenasLetra:string texto:texto];
+            break;
         default:
             return NO;
     }
     
     
+    
+}
+
+- (BOOL)apenasLetra :(NSString *)string texto:(NSString *)texto{
+    
+    
+    [self isCaracterNulo:string];
+    
+    int indice = [self transformaStringParaAscii:string];
+    
+    if ([self isLetraMaiuscula:indice]){
+        return YES;
+    }else if ([self isLetraMinuscula:indice]){
+        return YES;
+    }
+    
+    return NO;
     
 }
 

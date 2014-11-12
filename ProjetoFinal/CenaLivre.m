@@ -111,6 +111,20 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
 }
 
+
+// Metodos Gestures
+
+- (void)criaGesture{
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressGestureRecognizer:)];
+    //[longPress setMinimumPressDuration:1.5];
+    //[longPress setNumberOfTouchesRequired:2];
+    [longPress setNumberOfTouchesRequired:1];
+    [longPress setMinimumPressDuration:0.5];
+    [self.view addGestureRecognizer:longPress];
+    
+}
+
 -(IBAction)ativouPanGesture:(UIPanGestureRecognizer*)recognizer{
     
     CGPoint point = [recognizer locationInView:self.view];
@@ -135,40 +149,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
 }
 
-
-- (NSMutableArray *)criarIconesVetorInfo:(NSMutableArray *)vetorInfoIcones categoria:(NSString *)categoria{
-    
-    NSMutableArray *vetorIcones = [NSMutableArray array];
-    
-    for (NSDictionary *dict in vetorInfoIcones) {
-        
-        NSString *tipo = [dict objectForKey:@"tipo"];
-        NSString *imagem = [dict objectForKey:@"imagem"];
-        
-        IconeView *novoIcone = [[IconeView alloc] initWithCategoria:categoria tipo:tipo imagem:imagem];
-        UIGestureRecognizer *gesturePan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ativouPanGesture:)];
-        [novoIcone addGestureRecognizer:gesturePan];
-        [vetorIcones addObject:novoIcone];
-        
-    }
-    
-    return vetorIcones;
-    
-    
-}
-
-
-- (void)criaGesture{
-    
-    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressGestureRecognizer:)];
-    //[longPress setMinimumPressDuration:1.5];
-    //[longPress setNumberOfTouchesRequired:2];
-    [longPress setNumberOfTouchesRequired:1];
-    [longPress setMinimumPressDuration:0.5];
-    [self.view addGestureRecognizer:longPress];
-    
-}
-
 - (void)longPressGestureRecognizer:(UILongPressGestureRecognizer *)recognizer{
     
     //RECONHECE O GESTURE DE LONGPRESS
@@ -190,6 +170,28 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
             objetoEditando = (SKSpriteNode *) conteudoAtivo;
         }
     }
+    
+}
+
+
+- (NSMutableArray *)criarIconesVetorInfo:(NSMutableArray *)vetorInfoIcones categoria:(NSString *)categoria{
+    
+    NSMutableArray *vetorIcones = [NSMutableArray array];
+    
+    for (NSDictionary *dict in vetorInfoIcones) {
+        
+        NSString *tipo = [dict objectForKey:@"tipo"];
+        NSString *imagem = [dict objectForKey:@"imagem"];
+        
+        IconeView *novoIcone = [[IconeView alloc] initWithCategoria:categoria tipo:tipo imagem:imagem];
+        UIGestureRecognizer *gesturePan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(ativouPanGesture:)];
+        [novoIcone addGestureRecognizer:gesturePan];
+        [vetorIcones addObject:novoIcone];
+        
+    }
+    
+    return vetorIcones;
+    
     
 }
 
@@ -408,6 +410,8 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
                 return 3;
             }else if ([[variavel retornaTipo] isEqualToString:@"caractere"]){
                 return 4;
+            }else if ([[variavel retornaTipo] isEqualToString:@"logico"]){
+                return 5;
             }
             
             
@@ -740,6 +744,13 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         if (!novaString) {
             [self criarBordaTextField:textField];
             semErro = NO;
+        }else if ([self retornaIndiceParaVerificacao:objetoEditando textField:textField] == 5){
+            
+            if (![textField.text isEqualToString:@"Verdadeiro"] && ![textField.text isEqualToString:@"Falso"]) {
+                [self criarBordaTextField:textField];
+                semErro = NO;
+            }
+            
         }else{
             if ([self retornaIndiceParaVerificacao:objetoEditando textField:textField] == 4) {
                 
