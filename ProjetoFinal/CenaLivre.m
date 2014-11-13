@@ -735,7 +735,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     if (!validador) {
         validador = [[Validador alloc]init];
     }
-    
+    NSString *mensagemErro;
     BOOL semErro;
     
     for (UITextField *textField in vetorTextField) {
@@ -744,11 +744,13 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         if (!novaString) {
             [self criarBordaTextField:textField];
             semErro = NO;
+            mensagemErro = @"Preencha corretamente o campo";
         }else if ([self retornaIndiceParaVerificacao:objetoEditando textField:textField] == 5){
             
             if (![textField.text isEqualToString:@"Verdadeiro"] && ![textField.text isEqualToString:@"Falso"]) {
                 [self criarBordaTextField:textField];
                 semErro = NO;
+                mensagemErro = @"Insira apenas Verdadeiro ou Falso";
             }
             
         }else{
@@ -776,7 +778,7 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         validador.numeroErros += 1;
         
         if (validador.numeroErros > 1) {
-            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"erro" message:@"seu animal nao e assim, por favor desinstale o app" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"erro" message:mensagemErro delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
             [alertView show];
             validador.numeroErros = 0;
         }
