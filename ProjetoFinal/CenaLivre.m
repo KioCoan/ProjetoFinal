@@ -474,7 +474,11 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
     
     for (UITextField *textField in vetorTextField) {
         if (!mostra) {
+            
             [self limpaTextField:textField];
+            
+        }else{
+            [textField resignFirstResponder];
         }
         
         textField.hidden = mostra;
