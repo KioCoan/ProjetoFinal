@@ -41,6 +41,8 @@
     vtTempoDeResposta = [[NSMutableArray alloc] init];
     tempoTotal = tempo;
     widthSize = 768;
+    nAcertos = 0;
+    nErros = 0;
     
     [self inicializarAnimacaoIniciarContagem];
 }
@@ -70,12 +72,13 @@
 //MODIFICA O TEMPO E INICIALIZA A ACTION COM A NOVA DURAÇAO DE TEMPO
 -(void)setTempoTotal:(float)tempo{
     if (tempo < 1) {
-        return;
+        tempo = 1;
     
     }else if(tempo > 15){
-        return;
+        tempo = 15;
     }
-
+    
+    NSLog(@"%f", tempo);
     
     tempoTotal = tempo;
     [self inicializarAnimacaoIniciarContagem];
@@ -90,14 +93,58 @@
 }
 
 
--(void)aumentarTempoTotalConformeTempoDeProgresso{
+-(void)usuarioErrouResposta{
+    float novoTempo = 0;
+    
+    switch (nErros) {
+        case 0:
+            nErros++;
+            nAcertos = 0;
+            novoTempo = tempoTotal;
+            break;
+            
+        case 1:
+            nErros++;
+            novoTempo = tempoTotal + self.progressaoTempo;
+            break;
+            
+        case 2:
+            self.progressaoTempo *= 2;
+            novoTempo = tempoTotal + self.progressaoTempo;
+            
+        default:
+            break;
+    }
+    
     //CHAMA METODO QUE AUMENTA O TEMPO DO CRONOMETRO COM BASE NA VARIAVEL progressaoTempo DEFINIDA ANTERIORMENTE
-    [self setTempoTotal:tempoTotal + self.progressaoTempo];
+    [self setTempoTotal:novoTempo];
 }
 
--(void)diminuirTempoTotalConformeTempoDeProgresso{
+-(void)usuarioAcertouResposta{
+    float novoTempo = 0;
+    
+    switch (nAcertos) {
+        case 0:
+            nAcertos++;
+            nErros = 0;
+            novoTempo = tempoTotal;
+            break;
+            
+        case 1:
+            nAcertos++;
+            novoTempo = tempoTotal - self.progressaoTempo;
+            break;
+            
+        case 2:
+            self.progressaoTempo *= 2;
+            novoTempo = tempoTotal - (self.progressaoTempo * 2);
+            
+        default:
+            break;
+    }
+    
     //CHAMA METODO QUE DIMINUI O TEMPO DO CRONOMETRO COM BASE NA VARIAVEL progressaoTempo DEFINIDA ANTERIORMENTE
-    [self setTempoTotal:tempoTotal - self.progressaoTempo];
+    [self setTempoTotal:novoTempo];
 }
 
 

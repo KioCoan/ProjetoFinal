@@ -985,7 +985,6 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
         float posicaoYFim = novaPosicao.y + ([conteudoAtivo size].height / 2);
 //        int posicaoYInicio = novaPosicao.y - 50;
 //        int posicaoYFim = novaPosicao.y + 50;
-        NSLog(@"%f", self.view.frame.size.height);
         if(posicaoYFim > self.view.frame.size.height || posicaoYInicio < 0){
             return;
         }

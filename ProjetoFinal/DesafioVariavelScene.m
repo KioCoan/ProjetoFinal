@@ -139,7 +139,7 @@
 -(void)respostaCorretaFinalizado{
     [nodeEsteira iniciarAnimacaoMoverEsteira];
     [nodeVisor esconderValorDaTela:YES];
-    [nodeCronometro diminuirTempoTotalConformeTempoDeProgresso];
+    [nodeCronometro usuarioAcertouResposta];
     
     NSLog(@"Resposta Correta");
 }
@@ -148,7 +148,7 @@
 -(void)respostaErradaFinalizado{
     [nodeEsteira iniciarAnimacaoMoverEsteira];
     [nodeVisor esconderValorDaTela:YES];
-    [nodeCronometro aumentarTempoTotalConformeTempoDeProgresso];
+    [nodeCronometro usuarioErrouResposta];
     
     NSLog(@"Resposta Errada");
 }
@@ -177,7 +177,7 @@
     [nodeEsteira habilitarToqueNasCaixas:NO];
     [nodeVisor esconderValorDaTela:YES];
     [nodeEsteira iniciarAnimacaoMoverEsteira];
-    [nodeCronometro aumentarTempoTotalConformeTempoDeProgresso];
+    [nodeCronometro usuarioErrouResposta];
     
     [progresso insereErro];
 }

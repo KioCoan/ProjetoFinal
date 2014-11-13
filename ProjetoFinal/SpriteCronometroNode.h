@@ -16,7 +16,7 @@
 
 @interface SpriteCronometroNode : SKSpriteNode
 {
-    int widthSize;
+    int widthSize, nAcertos, nErros;
     float tempoTotal;
     SKAction *acaoIniciarContagem;
     NSMutableArray *vtTempoDeResposta;
@@ -32,7 +32,7 @@
 -(void)prepararCronometroComNovoTempo:(float)tempo;
 -(void)pararContagem;
 -(void)iniciarAnimacaoDeEntrada;
--(void)aumentarTempoTotalConformeTempoDeProgresso;
--(void)diminuirTempoTotalConformeTempoDeProgresso;
+-(void)usuarioErrouResposta;
+-(void)usuarioAcertouResposta;
 -(float)getTempoMedioDeResposta;
 @end
