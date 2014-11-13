@@ -96,21 +96,26 @@
 -(void)usuarioErrouResposta{
     float novoTempo = 0;
     
+    //SISTEMA DE PROGRESSÃO DE TEMPO EM CASO DE ERRO
     switch (nErros) {
         case 0:
+            //NO PRIMEIRO CASO O TEMPO CONTINUA O MESMO
             nErros++;
             nAcertos = 0;
             novoTempo = tempoTotal;
             break;
             
         case 1:
+            //NO SEGUNDO CASO, O TEMPO É AUMENTADO COM BASE NO TEMPO DE PROGRESSÃO, DEFINIDO AO CRIAR ESTA CLASSE
             nErros++;
-            novoTempo = tempoTotal + self.progressaoTempo;
+            prograssaoTempoDinamica = self.progressaoTempo;
+            novoTempo = tempoTotal + prograssaoTempoDinamica;
             break;
             
         case 2:
-            self.progressaoTempo *= 2;
-            novoTempo = tempoTotal + self.progressaoTempo;
+            //NESTE ÚLTIMO CASO, O TEMPO É EXPONENCIALMENTE AUMENTADO DE 2 EM 2 VEZES
+            prograssaoTempoDinamica *= 2;
+            novoTempo = tempoTotal + prograssaoTempoDinamica;
             
         default:
             break;
@@ -123,21 +128,26 @@
 -(void)usuarioAcertouResposta{
     float novoTempo = 0;
     
+    //SISTEMA DE PROGRESSÃO DE TEMPO EM CASO DE ACERTO
     switch (nAcertos) {
         case 0:
+            //NO PRIMEIRO CASO O TEMPO CONTINUA O MESMO
             nAcertos++;
             nErros = 0;
             novoTempo = tempoTotal;
             break;
             
         case 1:
+            //NO SEGUNDO CASO, O TEMPO É DIMINUÍDO COM BASE NO TEMPO DE PROGRESSÃO, DEFINIDO AO CRIAR ESTA CLASSE
             nAcertos++;
-            novoTempo = tempoTotal - self.progressaoTempo;
+            prograssaoTempoDinamica = self.progressaoTempo;
+            novoTempo = tempoTotal - prograssaoTempoDinamica;
             break;
             
         case 2:
-            self.progressaoTempo *= 2;
-            novoTempo = tempoTotal - (self.progressaoTempo * 2);
+            //NESTE ÚLTIMO CASO, O TEMPO É EXPONENCIALMENTE DIMINUIDO DE 2 EM 2 VEZES
+            prograssaoTempoDinamica *= 2;
+            novoTempo = tempoTotal - prograssaoTempoDinamica;
             
         default:
             break;
