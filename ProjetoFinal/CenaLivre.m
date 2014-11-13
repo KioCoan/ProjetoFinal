@@ -532,6 +532,16 @@ static const uint32_t categoriaCaixa = 0x1 << 1;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    
+    if ([textField isEqual:[vetorTextField objectAtIndex:vetorTextField.count -1] ]) {
+        
+        if ([self validarDados]) {
+            [self escondeMenuEdicao];
+        }
+    }
+    
+    
     [textField resignFirstResponder];
     
     return YES;
