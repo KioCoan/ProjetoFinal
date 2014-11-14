@@ -27,7 +27,7 @@
     NSMutableArray *vtCaixas;
     NSMutableArray *vtTiposVariavel;
 
-    BOOL esteiraLevantada;
+    BOOL esteiraLevantada, ultimoResultado;
 }
 
 @property id <SpriteEsteiraDelegate> myDelegate;

@@ -19,7 +19,8 @@
 @interface SpriteCaixinhaNode : SKSpriteNode
 {
     SKLabelNode *lblTipo;
-    int meuIndex;
+    int meuIndex, nAcertos, nErros;
+    float progressaoDuracaoDinamica, duracaoAtual;
     NSString *minhaCor;
 
     SKAction *acaoMoverX;
@@ -28,11 +29,13 @@
 }
 
 @property id <SpriteCaixinhaDelegate> myDelegate;
+@property float progressaoDuracao;
 
 -(void)setTipo:(NSString*)tipo;
--(id)initWithTipoVariavel:(NSString*)tipo indexPosição:(int)posicao;
+-(id)initWithTipoVariavel:(NSString*)tipo indexPosição:(int)posicao progressaoDuracao:(float)progressao;
 -(void)iniciarAnimacaoMoverCaixaPara:(int)posicaoFinal fimDesafio:(BOOL)resposta;
 -(NSString*)getTipo;
 -(void)resetarTextura;
-
+-(void)diminuirAnimacaoDuracao;
+-(void)aumentarDuracaoAnimacao;
 @end

@@ -78,7 +78,6 @@
         tempo = 15;
     }
     
-    NSLog(@"%f", tempo);
     
     tempoTotal = tempo;
     [self inicializarAnimacaoIniciarContagem];

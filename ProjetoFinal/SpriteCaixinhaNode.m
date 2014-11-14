@@ -15,11 +15,12 @@ static const int YELLOW = 3;
 
 @implementation SpriteCaixinhaNode
 
--(id)initWithTipoVariavel:(NSString*)tipo indexPosição:(int)posicao{
+-(id)initWithTipoVariavel:(NSString*)tipo indexPosição:(int)posicao progressaoDuracao:(float)progressao{
     self = [super initWithImageNamed:[NSString stringWithFormat:@"caixa%d-vazia.png", posicao]];
     
     if(self){
         meuIndex = posicao;
+        self.progressaoDuracao = progressao;
         minhaCor = [self retornaMinhaCor:posicao];
         
         lblTipo = [[SKLabelNode alloc] initWithFontNamed:FONT_LIGHT];
@@ -60,6 +61,7 @@ static const int YELLOW = 3;
 -(void)inicializarAnimacaoMoverX{
     acaoMoverX = [SKAction moveByX:695 y:0 duration:1.3];
     [acaoMoverX setTimingMode:SKActionTimingEaseOut];
+    duracaoAtual = [acaoMoverX duration];
 }
 
 -(void)inicializarAnimacaoEncherCaixa{
@@ -97,6 +99,7 @@ static const int YELLOW = 3;
 
 
 -(void)iniciarAnimacaoMoverCaixaPara:(int)posicaoFinal fimDesafio:(BOOL)resposta{
+    
     //ESTA CONDIÇÃO É USADA PARA QUE APENAS 1 CAIXA AVISE O DELEGATE QUE A ANIMAÇÃO TERMINOU
     if (meuIndex == 3) {
         [self runAction:acaoMoverX completion:^{
@@ -113,7 +116,36 @@ static const int YELLOW = 3;
 }
 
 
+-(void)diminuirAnimacaoDuracao{
+    
+    duracaoAtual -= self.progressaoDuracao;
 
+    [self definirNovaDuracaoAnimacao:duracaoAtual];
+}
+
+
+-(void)aumentarDuracaoAnimacao{
+    
+    duracaoAtual += self.progressaoDuracao;
+    
+    [self definirNovaDuracaoAnimacao:duracaoAtual];
+}
+
+
+
+-(void)definirNovaDuracaoAnimacao:(float)duracao{
+    
+    if (duracao < 0.6) {
+        duracao = 0.6;
+    
+    }else if(duracao > 2){
+        duracao = 2;
+    }
+    
+    NSLog(@"%f", duracao);
+    
+    [acaoMoverX setDuration:duracao];
+}
 
 -(void)iniciarAnimacaoEncherCaixa:(BOOL)resposta{
     if (resposta) {

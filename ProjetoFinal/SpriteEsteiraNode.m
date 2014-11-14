@@ -45,7 +45,7 @@
     int nCaixas = 3;
     
     for (int i = 1; i <= nCaixas; i++) {
-        SpriteCaixinhaNode *caixa = [[SpriteCaixinhaNode alloc] initWithTipoVariavel:[self gerarTipoVariavel] indexPosição:i];
+        SpriteCaixinhaNode *caixa = [[SpriteCaixinhaNode alloc] initWithTipoVariavel:[self gerarTipoVariavel] indexPosição:i progressaoDuracao:0.08];
         [caixa setMyDelegate:self];
         
         [vtCaixas addObject:caixa];
@@ -83,16 +83,21 @@
         
     }
     
-    //MÉTODO MERAMENTE TESTADOR
-    //[self testeAntiBug];
     
-}
-
-
--(void)testeAntiBug{
-    SpriteCaixinhaNode *caixa = [vtCaixas objectAtIndex:1];
+    //CONTROLA A VELOCIDADE DAS CAIXAS
+    if (ultimoResultado) {
+        for (SpriteCaixinhaNode *c in vtCaixas) {
+            [c diminuirAnimacaoDuracao];
+            
+        }
     
-    NSLog(@"x: %f", caixa.position.x);
+    }else{
+        for (SpriteCaixinhaNode *c in vtCaixas) {
+            [c aumentarDuracaoAnimacao];
+            
+        }
+    }
+    
 }
 
 
@@ -172,7 +177,9 @@
 
 //ESTE MÉTODO RECEBE O TIPO DE DADO QUE ESTAVA NA CAIXA CLICADA E ENVIA PARA O DELEGATE
 -(BOOL)caixaClicadaDoTipo:(NSString *)tipo{
-    return [[self myDelegate] respostaSelecionada:tipo];
+    ultimoResultado = [[self myDelegate] respostaSelecionada:tipo];
+    
+    return  ultimoResultado;
 }
 
 -(void)caixaFoiClicada{
