@@ -7,10 +7,13 @@
 //
 
 #import "MenuPrincipalViewController.h"
+#import "MagicPieLayer.h"
+#import "EstatisticaPieView.h"
 #import "Expressao.h"
 
 @interface MenuPrincipalViewController ()
-
+@property EstatisticaPieView* pieView;
+@property EstatisticaPieView* pieView2;
 @end
 
 @implementation MenuPrincipalViewController
@@ -34,6 +37,14 @@
     
     [self performSelector:@selector(iniciarAnimacaoDeEntrada) withObject:nil afterDelay:0.5];
     
+    CGRect frame = CGRectMake(0, 0, 768, 500);
+    self.pieView = [[EstatisticaPieView alloc] initWithFrame:frame];
+    [self.pieView setBackgroundColor:[UIColor clearColor]];
+    [[self view] addSubview:self.pieView];
+    
+    self.pieView2 = [[EstatisticaPieView alloc] initWithFrame:frame];
+    [self.pieView2 setBackgroundColor:[UIColor clearColor]];
+    [[self view] addSubview:self.pieView2];
     
 }
 
@@ -94,4 +105,49 @@
 }
 */
 
+- (IBAction)iniciarEstatistica:(id)sender {
+    int totalExercicios = 14;
+    int nAcertos = 12;
+    
+    //CALCULA A PORCENTAGEM DE ACERTOS
+    float porcentagemAcertos = (nAcertos * 100) / totalExercicios;
+    
+    //CALCULA QUANTOS GRAUS REPRESENTA A PORCENTAGEM DE ACERTOS E ERROS
+    float grausAcerto = (porcentagemAcertos * 360) / 100;
+    float grausErro = 360 - grausAcerto;
+    
+    //CALCULA O GRAU EM QUE TERMINA OS GRAUS DE ACERTO
+    float grauAcertoEnd = 450 - grausAcerto;
+    float grauErroEnd = grauAcertoEnd - grausErro;
+    
+    float red = 145;
+    float green = 186;
+    float blue = 193;
+    
+    PieElement* newElem = [PieElement pieElementWithValue:(5 + arc4random() % 10) color:[UIColor colorWithRed:red / 255 green:green / 255 blue:blue / 255 alpha:1]];
+    
+    newElem.showTitle = YES;
+    int insertIndex = arc4random() % (self.pieView.layer.values.count + 1);
+    [self.pieView.layer insertValues:@[newElem] atIndexes:@[@(insertIndex)] animated:YES];
+    
+    self.pieView.layer.animationDuration = 0.6;
+    self.pieView.layer.startAngle = 450;
+    self.pieView.layer.endAngle = grauAcertoEnd;
+    
+    
+    
+    red = 157;
+    green = 78;
+    blue = 84;
+    
+    PieElement* newElem2 = [PieElement pieElementWithValue:(5 + arc4random() % 10) color:[UIColor colorWithRed:red / 255 green:green / 255 blue:blue / 255 alpha:1]];
+    newElem2.showTitle = YES;
+    int insertIndex2 = arc4random() % (self.pieView2.layer.values.count + 1);
+    [self.pieView2.layer insertValues:@[newElem2] atIndexes:@[@(insertIndex2)] animated:YES];
+    
+    self.pieView2.layer.animationDuration = 2.5;
+    self.pieView2.layer.startAngle = grauAcertoEnd;
+    self.pieView2.layer.endAngle = grauErroEnd;
+
+}
 @end

@@ -216,6 +216,12 @@
 		BD6B556119D7D67000BC0E5F /* animation_wrong-11.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B556019D7D67000BC0E5F /* animation_wrong-11.png */; };
 		BD6B556319D7D67700BC0E5F /* animation_correct-11.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6B556219D7D67700BC0E5F /* animation_correct-11.png */; };
 		BD6D7C0119A7E5AB0022DF2A /* img-tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = BD6D7C0019A7E5AB0022DF2A /* img-tutorial.png */; };
+		BD98DE891A1BD4AF00845D6B /* EstatisticaPieView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD98DE811A1BD4AF00845D6B /* EstatisticaPieView.m */; };
+		BD98DE8A1A1BD4AF00845D6B /* NSMutableArray+pieEx.m in Sources */ = {isa = PBXBuildFile; fileRef = BD98DE841A1BD4AF00845D6B /* NSMutableArray+pieEx.m */; };
+		BD98DE8B1A1BD4AF00845D6B /* PieElement.m in Sources */ = {isa = PBXBuildFile; fileRef = BD98DE861A1BD4AF00845D6B /* PieElement.m */; };
+		BD98DE8C1A1BD4AF00845D6B /* PieLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BD98DE881A1BD4AF00845D6B /* PieLayer.m */; };
+		BD98DE8F1A1BD4CB00845D6B /* Example1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = BD98DE8E1A1BD4CB00845D6B /* Example1Controller.m */; };
+		BD98DE931A1BD5AB00845D6B /* DesafioScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BD98DE921A1BD5AB00845D6B /* DesafioScene.m */; };
 		BD9DF26E19A171A2003938C9 /* item-Condicionais.png in Resources */ = {isa = PBXBuildFile; fileRef = BD9DF26B19A171A2003938C9 /* item-Condicionais.png */; };
 		BD9DF26F19A171A2003938C9 /* item-Operadores.png in Resources */ = {isa = PBXBuildFile; fileRef = BD9DF26C19A171A2003938C9 /* item-Operadores.png */; };
 		BD9DF27019A171A2003938C9 /* item-Variáveis.png in Resources */ = {isa = PBXBuildFile; fileRef = BD9DF26D19A171A2003938C9 /* item-Variáveis.png */; };
@@ -601,6 +607,19 @@
 		BD6B556019D7D67000BC0E5F /* animation_wrong-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_wrong-11.png"; sourceTree = "<group>"; };
 		BD6B556219D7D67700BC0E5F /* animation_correct-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_correct-11.png"; sourceTree = "<group>"; };
 		BD6D7C0019A7E5AB0022DF2A /* img-tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-tutorial.png"; sourceTree = "<group>"; };
+		BD98DE801A1BD4AF00845D6B /* EstatisticaPieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EstatisticaPieView.h; path = Estatisticas/EstatisticaPieView.h; sourceTree = "<group>"; };
+		BD98DE811A1BD4AF00845D6B /* EstatisticaPieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EstatisticaPieView.m; path = Estatisticas/EstatisticaPieView.m; sourceTree = "<group>"; };
+		BD98DE821A1BD4AF00845D6B /* MagicPieLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MagicPieLayer.h; path = Estatisticas/MagicPieLayer.h; sourceTree = "<group>"; };
+		BD98DE831A1BD4AF00845D6B /* NSMutableArray+pieEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+pieEx.h"; path = "Estatisticas/NSMutableArray+pieEx.h"; sourceTree = "<group>"; };
+		BD98DE841A1BD4AF00845D6B /* NSMutableArray+pieEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+pieEx.m"; path = "Estatisticas/NSMutableArray+pieEx.m"; sourceTree = "<group>"; };
+		BD98DE851A1BD4AF00845D6B /* PieElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PieElement.h; path = Estatisticas/PieElement.h; sourceTree = "<group>"; };
+		BD98DE861A1BD4AF00845D6B /* PieElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PieElement.m; path = Estatisticas/PieElement.m; sourceTree = "<group>"; };
+		BD98DE871A1BD4AF00845D6B /* PieLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PieLayer.h; path = Estatisticas/PieLayer.h; sourceTree = "<group>"; };
+		BD98DE881A1BD4AF00845D6B /* PieLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PieLayer.m; path = Estatisticas/PieLayer.m; sourceTree = "<group>"; };
+		BD98DE8D1A1BD4CB00845D6B /* Example1Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Example1Controller.h; path = Estatisticas/Example1Controller.h; sourceTree = "<group>"; };
+		BD98DE8E1A1BD4CB00845D6B /* Example1Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Example1Controller.m; path = Estatisticas/Example1Controller.m; sourceTree = "<group>"; };
+		BD98DE911A1BD5AB00845D6B /* DesafioScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesafioScene.h; sourceTree = "<group>"; };
+		BD98DE921A1BD5AB00845D6B /* DesafioScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesafioScene.m; sourceTree = "<group>"; };
 		BD9DF26B19A171A2003938C9 /* item-Condicionais.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-Condicionais.png"; path = "Imagens/item-Condicionais.png"; sourceTree = "<group>"; };
 		BD9DF26C19A171A2003938C9 /* item-Operadores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-Operadores.png"; path = "Imagens/item-Operadores.png"; sourceTree = "<group>"; };
 		BD9DF26D19A171A2003938C9 /* item-Variáveis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-Variáveis.png"; path = "Imagens/item-Variáveis.png"; sourceTree = "<group>"; };
@@ -831,6 +850,8 @@
 		12719D4019CB5656006B1374 /* Cenas */ = {
 			isa = PBXGroup;
 			children = (
+				BD98DE911A1BD5AB00845D6B /* DesafioScene.h */,
+				BD98DE921A1BD5AB00845D6B /* DesafioScene.m */,
 				BD6B54C819D7985800BC0E5F /* DesafioVariavelScene.h */,
 				BD6B54C919D7985800BC0E5F /* DesafioVariavelScene.m */,
 				12719D4119CB5683006B1374 /* DesafiosOperadoresScene.h */,
@@ -968,7 +989,7 @@
 				BD5DE21319972335007849DB /* SpriteAtualizarNode.m */,
 				BDBE7698197A3A00004EA926 /* Variavel */,
 				BDBE7697197A39EF004EA926 /* Operadores */,
-				BD01DDFA19834E7C00AEAAA8 /* Condição */,
+				BD01DDFA19834E7C00AEAAA8 /* Condição */,
 			);
 			name = Objetos;
 			sourceTree = "<group>";
@@ -1153,6 +1174,7 @@
 		91A9860D196231F500EA1074 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BD98DE7F1A1BD48F00845D6B /* Estatisticas */,
 				849A4F0519D1E90A009E2070 /* Modo Livre */,
 				8487523819C3784000A93120 /* Desafio */,
 				846B738F197824AD009C2EB7 /* Objetos */,
@@ -1242,12 +1264,12 @@
 			children = (
 				A529DF1E1965DB8A00A3D9FB /* Calculador.h */,
 				A529DF1F1965DB8A00A3D9FB /* Calculador.m */,
-				A529DF0B1965DB3800A3D9FB /* Operações */,
+				A529DF0B1965DB3800A3D9FB /* Operações */,
 			);
 			name = Calculador;
 			sourceTree = "<group>";
 		};
-		A529DF0B1965DB3800A3D9FB /* Operações */ = {
+		A529DF0B1965DB3800A3D9FB /* Operações */ = {
 			isa = PBXGroup;
 			children = (
 				A529DF151965DB7500A3D9FB /* Relacional.h */,
@@ -1275,6 +1297,7 @@
 		A597F0EB1960A78E006429C7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BD98DE901A1BD4D500845D6B /* Estatistica */,
 				A5BE095D19C223AF00F7110E /* MenuPrincipalViewController.h */,
 				A5BE095E19C223AF00F7110E /* MenuPrincipalViewController.m */,
 				BDD22EF319A6F2390043AA02 /* Introducao */,
@@ -1313,7 +1336,7 @@
 			name = Operadores;
 			sourceTree = "<group>";
 		};
-		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
+		BD01DDFA19834E7C00AEAAA8 /* Condição */ = {
 			isa = PBXGroup;
 			children = (
 				BDE82C271991778700610D96 /* SpriteCondicaoNode.h */,
@@ -1324,7 +1347,7 @@
 			name = "Condição";
 			sourceTree = "<group>";
 		};
-		BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */ = {
+		BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */ = {
 			isa = PBXGroup;
 			children = (
 				BD1AC840199AB5EC00CB7C5C /* AnimaVariavel.sks */,
@@ -1492,6 +1515,31 @@
 			name = Variavel;
 			sourceTree = "<group>";
 		};
+		BD98DE7F1A1BD48F00845D6B /* Estatisticas */ = {
+			isa = PBXGroup;
+			children = (
+				BD98DE801A1BD4AF00845D6B /* EstatisticaPieView.h */,
+				BD98DE811A1BD4AF00845D6B /* EstatisticaPieView.m */,
+				BD98DE821A1BD4AF00845D6B /* MagicPieLayer.h */,
+				BD98DE831A1BD4AF00845D6B /* NSMutableArray+pieEx.h */,
+				BD98DE841A1BD4AF00845D6B /* NSMutableArray+pieEx.m */,
+				BD98DE851A1BD4AF00845D6B /* PieElement.h */,
+				BD98DE861A1BD4AF00845D6B /* PieElement.m */,
+				BD98DE871A1BD4AF00845D6B /* PieLayer.h */,
+				BD98DE881A1BD4AF00845D6B /* PieLayer.m */,
+			);
+			name = Estatisticas;
+			sourceTree = "<group>";
+		};
+		BD98DE901A1BD4D500845D6B /* Estatistica */ = {
+			isa = PBXGroup;
+			children = (
+				BD98DE8D1A1BD4CB00845D6B /* Example1Controller.h */,
+				BD98DE8E1A1BD4CB00845D6B /* Example1Controller.m */,
+			);
+			name = Estatistica;
+			sourceTree = "<group>";
+		};
 		BDBE7697197A39EF004EA926 /* Operadores */ = {
 			isa = PBXGroup;
 			children = (
@@ -1510,7 +1558,7 @@
 		BDBE7698197A3A00004EA926 /* Variavel */ = {
 			isa = PBXGroup;
 			children = (
-				BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */,
+				BD1AC83F199AB57E00CB7C5C /* Partícula Variavel */,
 				BD4B4BD9197075BD00D6E839 /* SpriteCaixaNode.h */,
 				BD4B4BDA197075BD00D6E839 /* SpriteCaixaNode.m */,
 			);
@@ -2003,6 +2051,7 @@
 				1551BFEA19C36C8600CBDB86 /* LivreViewController.m in Sources */,
 				A529DF201965DB8A00A3D9FB /* Calculador.m in Sources */,
 				A5BE096919C5E87100F7110E /* ParteDaExpressao.m in Sources */,
+				BD98DE931A1BD5AB00845D6B /* DesafioScene.m in Sources */,
 				91A986111962324500EA1074 /* Assunto.m in Sources */,
 				A521FEE91993B87F00D28627 /* Gerador.m in Sources */,
 				A5F38EFA19C5F6B700D337A4 /* Expressao.m in Sources */,
@@ -2011,6 +2060,7 @@
 				120E8F8D192FC0A200CDEF95 /* ViewController.m in Sources */,
 				84B1B3E9197D8BEF00089FCB /* CenaExercicioCondSimples1.m in Sources */,
 				A5CBEB9519D3595900AC879D /* OperadorDesafiosNode.m in Sources */,
+				BD98DE891A1BD4AF00845D6B /* EstatisticaPieView.m in Sources */,
 				8487523E19C379E100A93120 /* CenaLivre.m in Sources */,
 				A521FEF01993FE9900D28627 /* SaidaDeDados.m in Sources */,
 				BDBE7696197A39E0004EA926 /* SpriteOperadorNode.m in Sources */,
@@ -2020,6 +2070,7 @@
 				BD6B54D619D7987300BC0E5F /* SpriteEsteiraNode.m in Sources */,
 				BD6B54CB19D7985800BC0E5F /* DesafioVariavelScene.m in Sources */,
 				84960B7A19C8B40000BC7808 /* IconeSecao.m in Sources */,
+				BD98DE8F1A1BD4CB00845D6B /* Example1Controller.m in Sources */,
 				A597F0F61960A7A6006429C7 /* MenuViewController.m in Sources */,
 				BDBE7693197A39E0004EA926 /* OperadorNode.m in Sources */,
 				BD6B54D719D7987300BC0E5F /* SpriteVisorNode.m in Sources */,
@@ -2043,6 +2094,7 @@
 				84960B8019C8D9B900BC7808 /* SecaoMenuVariavel.m in Sources */,
 				91A9861E1962392400EA1074 /* GerenciadorDeAssunto.m in Sources */,
 				BDE82C291991778700610D96 /* SpriteCondicaoNode.m in Sources */,
+				BD98DE8B1A1BD4AF00845D6B /* PieElement.m in Sources */,
 				A529DF1D1965DB7500A3D9FB /* Logico.m in Sources */,
 				120E8F83192FC0A200CDEF95 /* main.m in Sources */,
 				BD01DE051983566100AEAAA8 /* AnimaCondSimples.m in Sources */,
@@ -2057,9 +2109,11 @@
 				A529DF1C1965DB7500A3D9FB /* Aritimetico.m in Sources */,
 				BD6B54CA19D7985800BC0E5F /* DesafioVariavel.m in Sources */,
 				8446A4CF1994021800C92785 /* ExeVariavel2.m in Sources */,
+				BD98DE8A1A1BD4AF00845D6B /* NSMutableArray+pieEx.m in Sources */,
 				84B1B3E3197D881900089FCB /* CondicaoSimples.m in Sources */,
 				A50B33401972BF2E00BDD473 /* ListaDeExerciciosViewController.m in Sources */,
 				A5F38EFD19C711C900D337A4 /* DesafioOperadores.m in Sources */,
+				BD98DE8C1A1BD4AF00845D6B /* PieLayer.m in Sources */,
 				BD6B54D519D7987300BC0E5F /* SpriteCronometroNode.m in Sources */,
 				A500C2B519743C1D00D6BE83 /* ExeVariavel1.m in Sources */,
 				BDD22EF619A6F29C0043AA02 /* TutorialViewController.m in Sources */,
