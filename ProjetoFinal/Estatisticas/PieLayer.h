@@ -24,6 +24,12 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import "GerenciadorDesafios.h"
+
+@protocol PieLayerDelegate <NSObject>
+-(void)labelsPreparadas:(UILabel*)label1 label2:(UILabel*)label2;
+@end
+
 
 typedef enum ShowTitles
 {
@@ -34,6 +40,9 @@ typedef enum ShowTitles
 
 @class PieElement;
 @interface PieLayer : CALayer
+
+@property id <PieLayerDelegate> myDelegate;
+
 
 @property (nonatomic, strong, readonly) NSArray* values;
 - (void)addValues:(NSArray*)addingNewValues animated:(BOOL)animated;

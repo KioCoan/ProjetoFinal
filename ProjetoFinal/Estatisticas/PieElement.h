@@ -36,5 +36,5 @@
 @property (nonatomic, strong) UIColor* color;
 @property (nonatomic, assign) float centrOffset;
 @property (nonatomic, assign) BOOL showTitle;//default NO
-
+@property NSString *tipoDado;
 @end

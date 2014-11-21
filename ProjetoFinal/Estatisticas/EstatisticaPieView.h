@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MagicPieLayer.h"
 
 @class PieLayer, PieElement;
 
-@interface EstatisticaPieView : UIView
+@interface EstatisticaPieView : UIView <PieLayerDelegate>
 @property (nonatomic, copy) void(^elemTapped)(PieElement*);
+@property UIColor *corPadrao;
 @end
 
 @interface EstatisticaPieView (ex)
 @property(nonatomic,readonly,retain) PieLayer *layer;
+
 @end

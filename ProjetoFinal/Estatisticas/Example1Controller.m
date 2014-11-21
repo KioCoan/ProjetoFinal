@@ -53,6 +53,7 @@
 {
     int totalExercicios = 14;
     int nAcertos = 12;
+    int nErros = totalExercicios - nAcertos;
     
     //CALCULA A PORCENTAGEM DE ACERTOS
     float porcentagemAcertos = (nAcertos * 100) / totalExercicios;
@@ -69,7 +70,7 @@
     float green = 186;
     float blue = 193;
     
-    PieElement* newElem = [PieElement pieElementWithValue:(5 + arc4random() % 10) color:[UIColor colorWithRed:red / 255 green:green / 255 blue:blue / 255 alpha:1]];
+    PieElement* newElem = [PieElement pieElementWithValue:nAcertos color:[UIColor colorWithRed:red / 255 green:green / 255 blue:blue / 255 alpha:1]];
     
     newElem.showTitle = YES;
     int insertIndex = arc4random() % (self.pieView.layer.values.count + 1);
@@ -78,6 +79,7 @@
     self.pieView.layer.animationDuration = 0.6;
     self.pieView.layer.startAngle = 450;
     self.pieView.layer.endAngle = grauAcertoEnd;
+    self.pieView.layer.showTitles = ShowTitlesAlways;
     
     
     
@@ -85,7 +87,8 @@
     green = 78;
     blue = 84;
     
-    PieElement* newElem2 = [PieElement pieElementWithValue:(5 + arc4random() % 10) color:[UIColor colorWithRed:red / 255 green:green / 255 blue:blue / 255 alpha:1]];
+    PieElement* newElem2 = [PieElement pieElementWithValue:nErros color:[UIColor colorWithRed:red / 255 green:green / 255 blue:blue / 255 alpha:1]];
+    
     newElem2.showTitle = YES;
     int insertIndex2 = arc4random() % (self.pieView2.layer.values.count + 1);
     [self.pieView2.layer insertValues:@[newElem2] atIndexes:@[@(insertIndex2)] animated:YES];
@@ -93,6 +96,7 @@
     self.pieView2.layer.animationDuration = 2.5;
     self.pieView2.layer.startAngle = grauAcertoEnd;
     self.pieView2.layer.endAngle = grauErroEnd;
+    self.pieView2.layer.showTitles = ShowTitlesAlways;
     
 #ifdef LOG_ACTION
     NSLog(@"Insert values %@ to indixes %@", [self arrDesc:@[newElem]], [self arrDesc:@[@(insertIndex)]]);

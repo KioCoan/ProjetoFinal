@@ -57,7 +57,6 @@ static BOOL animateChanges;
 {
     PieElement *another = [[[self class] allocWithZone:zone] init];
     [another fillWithPieElement:self];
-    
     return another;
 }
 

@@ -107,7 +107,7 @@ static NSString * const _animationValuesKey = @"animationValues";
     self.endAngle = 90.0;
     self.animationDuration = 0.6;
     self.showTitles = ShowTitlesNever;
-    self.font = [UIFont systemFontOfSize:15];
+    self.font = [UIFont fontWithName:FONT_MEDIUM size:55];
     if ([self respondsToSelector:@selector(setContentsScale:)]){
         self.contentsScale = [[UIScreen mainScreen] scale];
     }
@@ -145,7 +145,7 @@ static NSString * const _animationValuesKey = @"animationValues";
         NSInteger delIdx = delIdxNum.integerValue;
         PieElement* elem = [currentValues[delIdx] copy];
         [elem setVal_:0.0];
-        elem.titleAlpha = 0.0;
+        elem.titleAlpha = 1.0;
         [animationEndState insertObject:elem atIndex:delIdx];
     }
     
@@ -178,6 +178,11 @@ static NSString * const _animationValuesKey = @"animationValues";
     }
     if(!self.presentValues) {
         self.presentValues = [[NSArray alloc] initWithArray:animationBeginState copyItems:YES];
+        
+        //LAÇO NECESSÁRIO PARA FAZER O TEXTO SER EXIBIDO
+        for(PieElement* elem in array){
+            elem.titleAlpha = 1.0;
+        }
     }
     self.values = [NSArray arrayWithArray:newValues];
     
@@ -185,7 +190,7 @@ static NSString * const _animationValuesKey = @"animationValues";
     NSMutableArray* copyInsertArr = [[NSMutableArray alloc] initWithArray:sortedArray copyItems:YES];
     for(PieElement* elem in copyInsertArr){
         [elem setVal_:0.0];
-        elem.titleAlpha = 0.0;
+        elem.titleAlpha = 1.0;
     }
     [animationBeginState insertSortedObjects:copyInsertArr indexes:sortedIndexes];
     [animationEndState insertSortedObjects:sortedArray indexes:sortedIndexes];
@@ -217,7 +222,7 @@ static NSString * const _animationValuesKey = @"animationValues";
             PieElement* copyElem = [elem copy];
             [animationDeletingIndexes addObject:@(i)];
             [copyElem setVal_:0.0];
-            copyElem.titleAlpha = 0.0;
+            copyElem.titleAlpha = 1.0;
             animationEndState[i] = copyElem;
         }
     }
@@ -276,7 +281,7 @@ static NSString * const _animationValuesKey = @"animationValues";
     }
     for(int valNum = 0; valNum < fromValues.count; valNum++){
         NSArray* changeValueAnimation = [fromValues[valNum] animationValuesToPieElement:toValues[valNum] arrayCapacity:keysCount];
-
+        
         for(int keyNum = 0; keyNum < keysCount; keyNum++){
             [animationKeys[keyNum] addObject:changeValueAnimation[keyNum]];
         }
@@ -334,7 +339,7 @@ static NSString * const _animationValuesKey = @"animationValues";
         return;
     
     BOOL isValuesAnimation = [anim isKindOfClass:[CAPropertyAnimation class]] &&
-                             [((CAPropertyAnimation*)anim).keyPath isEqualToString:@"values"];
+    [((CAPropertyAnimation*)anim).keyPath isEqualToString:@"values"];
     if(isValuesAnimation){
         self.deletingIndexes = nil;
     } else {//angle animation
@@ -492,7 +497,7 @@ static NSString * const _animationValuesKey = @"animationValues";
         angleStart = angleEnd;
     }
     CGContextRestoreGState(ctx);
-
+    
     if(self.showTitles != ShowTitlesNever)
         [self drawValuesText:ctx sumValues:sum];
 }
@@ -509,7 +514,7 @@ static NSString * const _animationValuesKey = @"animationValues";
 - (void)drawValuesText:(CGContextRef)ctx sumValues:(float)sum
 {
     NSArray *values = self.presentValues?: self.values;
-    CGContextSetShadowWithColor(ctx, CGSizeMake(0,1), 3, [UIColor blackColor].CGColor);
+    //CGContextSetShadowWithColor(ctx, CGSizeMake(0,1), 3, [UIColor blackColor].CGColor);
     
     float angleStart = self.startAngle * M_PI / 180.0;
     float angleInterval = (self.endAngle - self.startAngle) * M_PI / 180.0;
@@ -521,7 +526,7 @@ static NSString * const _animationValuesKey = @"animationValues";
             angleStart = angleEnd;
             continue;
         }
-        UIColor* color = elem.color?: [UIColor blackColor];
+        UIColor* color = elem.color?: elem.color;
         color = [color colorWithAlphaComponent:elem.titleAlpha];
         CGContextSetFillColorWithColor(ctx, color.CGColor);
         
@@ -529,16 +534,18 @@ static NSString * const _animationValuesKey = @"animationValues";
         float percent = 0.0;
         if(sum != 0.0)
             percent = 100.0 * elem.val / sum;
-        NSString* text = self.transformTitleBlock? self.transformTitleBlock(elem, percent) : [NSString stringWithFormat:@"%.2f", elem.val];
+        NSString* text = [NSString stringWithFormat:@"%.0f", elem.val];
         float radius = self.maxRadius + elem.centrOffset;
-        [self drawText:text angle:-angle radius:radius context:ctx];
+        [self drawText:text angle:-angle radius:radius context:ctx texto2:elem.tipoDado];
+        
         
         angleStart = angleEnd;
     }
 }
 
-- (void)drawText:(NSString*)text angle:(float)angle radius:(float)radius context:(CGContextRef)ctx
+- (void)drawText:(NSString*)text angle:(float)angle radius:(float)radius context:(CGContextRef)ctx texto2:(NSString*)texto2
 {
+    NSString *tipoDado = texto2;
     while (angle < -M_PI_4) {
         angle += M_PI*2;
     }
@@ -547,19 +554,25 @@ static NSString * const _animationValuesKey = @"animationValues";
     }
 #if (__IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0)
     CGSize textSize = [text sizeWithFont:self.font];
+    CGSize textSize2 = [tipoDado sizeWithFont:[UIFont fontWithName:FONT_LIGHT size:20]];
 #else
     CGSize textSize = [text sizeWithAttributes:@{NSFontAttributeName:self.font}];
+    CGSize textSize2 = [tipoDado sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:FONT_LIGHT size:20]}];
 #endif
     CGPoint anchorPoint;
     //clockwise
     if(angle >= -M_PI_4 && angle < M_PI_4){
-        anchorPoint = CGPointMake(0, easeInOut((M_PI_4-angle) / M_PI_2));
+        anchorPoint = CGPointMake(-1, easeInOut((M_PI_4-angle) / M_PI_2));
+    
     } else if(angle >= M_PI_4 && angle < M_PI_2+M_PI_4){
-        anchorPoint = CGPointMake(easeInOut((angle-M_PI_4) / M_PI_2), 0);
+        anchorPoint = CGPointMake(easeInOut((angle-M_PI_4) / M_PI_2), -0.5 );
+       
     } else if(angle >= M_PI_2+M_PI_4 && angle < M_PI+M_PI_4){
-        anchorPoint = CGPointMake(1, easeInOut((angle - (M_PI_2+M_PI_4)) / M_PI_2));
+        anchorPoint = CGPointMake(3, easeInOut((angle - (M_PI_2+M_PI_4)) / M_PI_2));
+        
     } else {
-        anchorPoint = CGPointMake(easeInOut(((2*M_PI - M_PI_4) - angle) / M_PI_2), 1);
+        anchorPoint = CGPointMake(easeInOut(((2*M_PI - M_PI_4) - angle) / M_PI_2), 1.5);
+        
     }
     
     CGPoint center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
@@ -568,12 +581,38 @@ static NSString * const _animationValuesKey = @"animationValues";
     CGRect frame = CGRectMake(pos.x - anchorPoint.x * textSize.width,
                               pos.y - anchorPoint.y * textSize.height,
                               textSize.width,
-                              textSize.height);
+                              textSize.height + 5);
+    
+    
+    
+    
+    CGRect frame2 = frame;
+    frame2.origin.y += frame.size.height + 5;
+    frame2.size.width = textSize2.width;
+    frame2.size.height = textSize2.height + 5;
+    
+    float diminuirX = (frame2.size.width - frame.size.width) / 2;
+    frame2.origin.x -= diminuirX;
+    
     UIGraphicsPushContext(ctx);
+    
+    
+    UILabel *label1 = [[UILabel alloc] initWithFrame:frame];
+    [label1 setFont:self.font];
+    [label1 setText:text];
+    
+    UILabel *label2 = [[UILabel alloc] initWithFrame:frame2];
+    [label2 setFont:[UIFont fontWithName:FONT_LIGHT size:20]];
+    [label2 setText:tipoDado];
+    
+    [[self myDelegate] labelsPreparadas:label1 label2:label2];
+    
 #if (__IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0)
-    [text drawInRect:frame withFont:self.font];
+    //[text drawInRect:frame withFont:self.font];
+    //[tipoDado drawInRect:frame2 withFont:[UIFont fontWithName:FONT_LIGHT size:20]];
 #else
-    [text drawInRect:frame withAttributes:@{NSFontAttributeName:self.font}];
+    //[text drawInRect:frame withAttributes:@{NSFontAttributeName:self.font}];
+    //[tipoDado drawInRect:frame2 withAttributes:@{NSFontAttributeName:[UIFont fontWithName:FONT_LIGHT size:20]}];
 #endif
     
     UIGraphicsPopContext();
@@ -629,7 +668,7 @@ static NSString * const _animationValuesKey = @"animationValues";
         realIdx++;
         angleStart = angleEnd;
     }
-
+    
     return nil;
 }
 

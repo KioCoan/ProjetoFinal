@@ -7,7 +7,6 @@
 //
 
 #import "EstatisticaPieView.h"
-#import "MagicPieLayer.h"
 
 @interface EstatisticaPieView ()
 {
@@ -15,6 +14,7 @@
     PieElement* panPieElem;
     float panStartCenterOffsetElem;
     float panStartDotProduct;
+    BOOL labelInseridas;
 }
 @end
 
@@ -48,6 +48,7 @@
     self = [super initWithFrame:frame];
     if(self){
         [self setup];
+        
     }
     return self;
 }
@@ -59,10 +60,12 @@
     self.layer.minRadius = 105;
     
     self.layer.animationDuration = 0.6;
-    self.layer.showTitles = ShowTitlesNever;
+    self.layer.showTitles = ShowTitlesIfEnable;
     if ([self.layer.self respondsToSelector:@selector(setContentsScale:)])
     {
         self.layer.contentsScale = [[UIScreen mainScreen] scale];
+        self.layer.myDelegate = self;
+        
     }
 
     
@@ -106,5 +109,18 @@
     } else if(pan.state == UIGestureRecognizerStateEnded){
         panPieElem = nil;
     }
+}
+
+
+-(void)labelsPreparadas:(UILabel *)label1 label2:(UILabel *)label2{
+    if (labelInseridas) {
+        return;
+    }
+    [label1 setTextColor:self.corPadrao];
+    //[label2 setTextColor:self.corPadrao];
+    
+    [self addSubview:label1];
+    [self addSubview:label2];
+    labelInseridas = YES;
 }
 @end
