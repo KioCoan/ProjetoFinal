@@ -207,14 +207,14 @@
 
 
 //RETORNA A MÉDIA DE TEMPO DE RESPOSTA NO GERAL COM BASE NO VETOR DE MÉDIAS DE TEMPO
--(float)getTempoMedioDeResposta{
+-(NSArray*)getVetorTempos{
     float tempoMedio = 0;
     
     for(int i=0; i<vtTempoDeResposta.count; i++){
         tempoMedio += [[vtTempoDeResposta objectAtIndex:i] floatValue];
     }
     
-    return tempoMedio / vtTempoDeResposta.count;
+    return vtTempoDeResposta;
 }
 
 @end

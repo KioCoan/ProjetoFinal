@@ -88,7 +88,7 @@ NSString* const FONT_MEDIUM = @"CooperHewitt-Medium";
     return d;
 }
 
--(SKScene*)retornaCenaAtual{
+-(DesafioScene*)retornaCenaAtual{
     
     switch (desafioAtual) {
         case 0:

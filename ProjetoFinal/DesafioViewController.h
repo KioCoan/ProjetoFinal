@@ -10,28 +10,17 @@
 #import "DesafioOperadores.h"
 #import "GerenciadorDesafios.h"
 #import "Gerador.h"
-@interface DesafioViewController : UIViewController
+#import "EstatisticaViewController.h"
+#import "JCRBlurView.h"
+@interface DesafioViewController : UIViewController <UIPageViewControllerDataSource, DesafioSceneDelegate>
 
 {
-    int nivel;
-    NSString *tipo;
     GerenciadorDesafios *gerenciadorDesafios;
     Gerador *gerador;
     SKView *viewDesafioAtual;
 }
-@property DesafioOperadores *desafioAtual;
 
-@property (weak, nonatomic) IBOutlet UILabel *lblParte1;
-@property (weak, nonatomic) IBOutlet UILabel *lblOperador;
-@property (weak, nonatomic) IBOutlet UILabel *lblParte2;
-@property (weak, nonatomic) IBOutlet UILabel *lblResultado;
-@property (weak, nonatomic) IBOutlet UIButton *btn1;
-@property (weak, nonatomic) IBOutlet UIButton *btn2;
-
-- (IBAction)acaoBotao1:(id)sender;
-- (IBAction)acaoBotao2:(id)sender;
-
-
+@property (strong, nonatomic) UIPageViewController *pageController;
 @property (weak, nonatomic) IBOutlet UIButton *botaoVoltar;
-
+@property (nonatomic,strong) JCRBlurView *blurView;
 @end

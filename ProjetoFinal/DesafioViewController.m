@@ -33,7 +33,10 @@
     
     viewDesafioAtual = [[SKView alloc] initWithFrame:self.view.frame];
     [self.view addSubview:viewDesafioAtual];
-    [viewDesafioAtual presentScene:[gerenciadorDesafios retornaCenaAtual]];
+    
+    DesafioScene *cenaAtual = [gerenciadorDesafios retornaCenaAtual];
+    [cenaAtual setMyDelegate:self];
+    [viewDesafioAtual presentScene: cenaAtual];
     [[viewDesafioAtual scene]setSize:viewDesafioAtual.frame.size];
     
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(10, 50, 100, 50)];
@@ -55,31 +58,14 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    
 }
 
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-//    viewDesafioAtual = [[SKView alloc] initWithFrame:self.view.frame];
-//    [self.view addSubview:viewDesafioAtual];
-//    [viewDesafioAtual presentScene:[gerenciadorDesafios retornaCenaAtual]];
-//    [[viewDesafioAtual scene]setSize:viewDesafioAtual.frame.size];
-    
 }
 
--(void)ajustaBotoes{
-    int aleatorio = arc4random() % 2;
-    if (aleatorio == 1) {
-        [self.btn1 setTitle:[self.desafioAtual operador] forState:UIControlStateNormal];
-        [self.btn2 setTitle:[gerador retornaOperadorInverso:[self.desafioAtual operador]] forState:UIControlStateNormal];
-    }else{
-        [self.btn2 setTitle:[self.desafioAtual operador] forState:UIControlStateNormal];
-        [self.btn1 setTitle:[gerador retornaOperadorInverso:[self.desafioAtual operador]] forState:UIControlStateNormal];
-    }
-    
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -87,34 +73,98 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)acaoBotao1:(id)sender {
-    [self alteraValores];
-    [self ajustaBotoes];
-}
 
-
-
-
-
-- (IBAction)acaoBotao2:(id)sender {
-}
-
--(void)alteraValores{
+-(void)inicializarPageViewController{
+    self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
-    if ([self.desafioAtual incrementaTarefa]) {
-        self.lblParte1.text = [self.desafioAtual parte1];
-        self.lblOperador.text = @"?";
-        self.lblParte2.text = [self.desafioAtual parte2];
-        self.lblResultado.text = [self.desafioAtual resultado];
-        
-//        if ([self.desafioAtual respostaDupla]) {
-//            NSLog(@"Dupla");
-//        }
-    }else{
-        NSLog(@"Fim");
+    self.pageController.dataSource = self;
+    [[self.pageController view] setFrame:CGRectMake(0, 0, 768, 800)];
+    
+    EstatisticaViewController *initialViewController = [self viewControllerAtIndex:0];
+    
+    NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
+    
+    
+    [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    [self addChildViewController:self.pageController];
+    [[self view] addSubview:[self.pageController view]];
+    [self.pageController didMoveToParentViewController:self];
+}
+
+
+-(void)exibirDadosEstatisticos:(NSArray *)tempos nAcertos:(int)nAcertos nErros:(int)nErros{
+    [self setBlurView:[JCRBlurView new]];
+    [[self blurView] setFrame:self.view.frame];
+    [[self blurView] setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
+    [self.blurView setBlurTintColor:[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1]];
+    [self.view addSubview:[self blurView]];
+    
+    [self inicializarPageViewController];
+}
+
+- (EstatisticaViewController *)viewControllerAtIndex:(NSUInteger)index {
+    
+    EstatisticaViewController *childViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"dadosEstatisticos"];
+    
+    
+//    childViewController.index = index;
+//    childViewController.imagemAtual = [imagens objectAtIndex:index];
+    
+//    if (index == [imagens count] -1) {
+//        childViewController.ultimaTela = YES;
+//    }else{
+//        childViewController.ultimaTela = NO;
+//    }
+    
+    return childViewController;
+}
+
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
+    
+    NSUInteger index = [(EstatisticaViewController *)viewController index];
+    
+    
+    if (index == 0) {
+        return nil;
+    }
+    
+    // Decrease the index by 1 to return
+    index--;
+    
+    return [self viewControllerAtIndex:index];
+    
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+    
+    NSUInteger index = [(EstatisticaViewController *)viewController index];
+    
+    index++;
+    
+//    if(index == [imagens count]){
+//        
+//    }
+//    
+    if (index == 1) {
+        return nil;
     }
     
     
-
+    
+    return [self viewControllerAtIndex:index];
+    
 }
+
+
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
+    // The number of items reflected in the page indicator.
+    return 1;
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
+    return 0;
+}
+
 @end

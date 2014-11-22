@@ -42,7 +42,7 @@
         [nodeCronometro setMyDelegate:self];
         [self addChild:nodeCronometro];
         
-        progresso = [[ProgressoDesafioBar alloc] initWithBolinhas:15];
+        progresso = [[ProgressoDesafioBar alloc] initWithBolinhas:1];
         [progresso setMyDelegate:self];
         CGPoint posicao;
         posicao.y = self.size.height - progresso.size.height;
@@ -164,7 +164,8 @@
     if (fimDesafio) {
         NSLog(@"Acabou o desafio!");
         NSLog(@"Acertos: %d - Erros: %d", [progresso getNAcertos], [progresso getNErros]);
-        NSLog(@"Tempo médio de resposta: %f", [nodeCronometro getTempoMedioDeResposta]);
+        
+        [[self myDelegate] exibirDadosEstatisticos:[nodeCronometro getVetorTempos] nAcertos:[progresso getNAcertos] nErros:[progresso getNErros]];
         return;
     }
     [nodeEsteira modificarTipoDasCaixas];

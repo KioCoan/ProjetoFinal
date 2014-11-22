@@ -34,6 +34,6 @@
 -(void)iniciarAnimacaoDeEntrada;
 -(void)usuarioErrouResposta;
 -(void)usuarioAcertouResposta;
--(float)getTempoMedioDeResposta;
+-(NSArray*)getVetorTempos;
 
 @end

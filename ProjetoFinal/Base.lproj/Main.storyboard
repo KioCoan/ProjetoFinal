@@ -185,6 +185,24 @@
             </objects>
             <point key="canvasLocation" x="1432" y="1032"/>
         </scene>
+        <!--Estatistica View Controller-->
+        <scene sceneID="qVr-cr-8wx">
+            <objects>
+                <viewController storyboardIdentifier="dadosEstatisticos" id="MPi-0G-CmQ" customClass="EstatisticaViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pQg-vL-6Rt"/>
+                        <viewControllerLayoutGuide type="bottom" id="uzK-Wc-57Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MIB-Fu-yVo">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DWt-OM-haX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2338" y="1032"/>
+        </scene>
         <!--Lista Desafio View Controller - Desafios-->
         <scene sceneID="86r-1f-ydU">
             <objects>
@@ -305,16 +323,6 @@
                                 <rect key="frame" x="-11" y="0.0" width="787" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1s-AY-7eU">
-                                <rect key="frame" x="359" y="777" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="iniciarEstatistica:" destination="uT6-X1-YJ1" eventType="touchUpInside" id="Gdi-OU-RYC"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh1-Nb-TYU">
                                 <rect key="frame" x="504" y="481" width="134" height="172"/>
                                 <state key="normal" image="botao-enciclopedia.png">

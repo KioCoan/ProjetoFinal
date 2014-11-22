@@ -15,7 +15,7 @@
 #import "OperadorDesafiosNode.h"
 #import "ProgressoDesafioBar.h"
 
-@interface DesafiosOperadoresScene : SKScene
+@interface DesafiosOperadoresScene : DesafioScene
 
 {
     SKLabelNode *lblParte1, *lblParte2, *lblResultado, *lblIgual, *lblNAcertos, *lblNErros;

@@ -12,8 +12,9 @@
 #import "SpriteEsteiraNode.h"
 #import "SpriteCronometroNode.h"
 #import "ProgressoDesafioBar.h"
+#import "DesafioScene.h"
 
-@interface DesafioVariavelScene : SKScene <SpriteEsteiraDelegate, SpriteCronometroDelegate, SpriteVisorDelegate, ProgressDesafioBarDelegate>
+@interface DesafioVariavelScene : DesafioScene <SpriteEsteiraDelegate, SpriteCronometroDelegate, SpriteVisorDelegate, ProgressDesafioBarDelegate>
 {
     BOOL fimDesafio;
     

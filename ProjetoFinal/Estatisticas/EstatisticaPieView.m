@@ -117,7 +117,7 @@
         return;
     }
     [label1 setTextColor:self.corPadrao];
-    //[label2 setTextColor:self.corPadrao];
+    [label2 setTextColor:[UIColor whiteColor]];
     
     [self addSubview:label1];
     [self addSubview:label2];

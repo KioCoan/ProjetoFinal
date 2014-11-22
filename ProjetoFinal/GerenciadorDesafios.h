@@ -20,7 +20,7 @@ extern NSString* const FONT_MEDIUM;
     NSMutableArray *meusDesafios;
     int desafioAtual;
 }
-@property SKScene *cenaAtual;
+@property DesafioScene *cenaAtual;
 
 + (GerenciadorDesafios*)sharedGerenciador;
 + (id)allocWithZone:(struct _NSZone *)zone;
@@ -34,7 +34,7 @@ extern NSString* const FONT_MEDIUM;
 -(NSMutableArray*)retornaTitulosEDescricoesDesafios;
 -(DesafioOperadores*)retornaTarefasParaDesafio;
 -(BOOL)corrige:(NSString*)opcao;
--(SKScene*)retornaCenaAtual;
+-(DesafioScene*)retornaCenaAtual;
 -(void)finalizaDesafio;
 -(BOOL)desafioFinalizado;
 -(void)restartDesafio;

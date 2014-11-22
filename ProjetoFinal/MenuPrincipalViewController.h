@@ -10,6 +10,5 @@
 
 @interface MenuPrincipalViewController : UIViewController
 
-- (IBAction)iniciarEstatistica:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *imgTransition;
 @end

@@ -9,11 +9,13 @@
 #import <SpriteKit/SpriteKit.h>
 
 @protocol DesafioSceneDelegate <NSObject>
-//IMPLEMENTAR DEPOIS
+-(void)exibirDadosEstatisticos:(NSArray*)tempos nAcertos:(int)nAcertos nErros:(int)nErros;
 @end
 
 
 
 @interface DesafioScene : SKScene
+
+@property id <DesafioSceneDelegate> myDelegate;
 
 @end
