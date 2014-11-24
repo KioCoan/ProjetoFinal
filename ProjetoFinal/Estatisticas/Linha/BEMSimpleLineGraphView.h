@@ -26,7 +26,7 @@
 @protocol BEMSimpleLineGraphDataSource;
 
 /// Simple line graph / chart UIView subclass for iOS apps. Creates beautiful line graphs (without huge memory impacts) using QuartzCore.
-@interface BEMSimpleLineGraphView : UIView <UIGestureRecognizerDelegate>
+@interface BEMSimpleLineGraphView : UIView <UIGestureRecognizerDelegate, BEMCircleDelegate>
 
 
 

@@ -99,6 +99,24 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
 
 @implementation BEMSimpleLineGraphView
 
+- (void)tapAtivo:(UITapGestureRecognizer *)recognizer{
+    
+    //[self.Mydelegate dotSelecionado:self];
+    NSLog(@"funcionou");
+}
+
+
+
+
+
+- (void)dotSelecionado:(id)dotCircle{
+    
+    BEMCircle *dotSelecionado = (BEMCircle *)dotCircle;
+    
+    [self setUpPopUpLabelAbovePoint:dotSelecionado];
+    
+}
+
 #pragma mark - Initialization
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -117,6 +135,8 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
 - (void)commonInit {
     // Do any initialization that's common to both -initWithFrame: and -initWithCoder: in this method
     
+    [self setUserInteractionEnabled:YES];
+    
     // Set the X Axis label font
     _labelFont = [UIFont fontWithName:DEFAULT_FONT_NAME size:13];
     
@@ -124,14 +144,29 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
     _animationGraphEntranceTime = 1.5;
     
     // Set Color Values
+    UIColor *corPadrao = [UIColor blackColor];
     _colorXaxisLabel = [UIColor blackColor];
     _colorYaxisLabel = [UIColor blackColor];
-    _colorTop = [UIColor colorWithRed:0 green:122.0/255.0 blue:255/255 alpha:1];
+    
+    self.backgroundColor = corPadrao;
+    _colorTop = corPadrao;
+    _colorBottom = corPadrao;
+    
+    
+    
+    
+    //_colorTop = [UIColor colorWithRed:0 green:122.0/255.0 blue:255/255 alpha:1];
+    
+    
+    
+    
     _colorLine = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1];
     _colorBottom = [UIColor colorWithRed:0 green:122.0/255.0 blue:255/255 alpha:1];
     _colorPoint = [UIColor yellowColor];
     _colorTouchInputLine = [UIColor grayColor];
     _colorBackgroundPopUplabel = [UIColor whiteColor];
+    _colorXaxisLabel = [UIColor whiteColor];
+    _colorYaxisLabel = [UIColor whiteColor];
     _alphaTouchInputLine = 0.2;
     _widthTouchInputLine = 1.0;
     _colorBackgroundXaxis = nil;
@@ -145,19 +180,24 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
     _alphaLine = 1.0;
     
     // Set Size Values
-    _widthLine = 1.0;
-    _sizePoint = 15.0;
+    _widthLine = 3.0;
+    _sizePoint = 30.0;
     
     // Set Default Feature Values
-    _enableTouchReport = NO;
-    _enablePopUpReport = NO;
+    _enableTouchReport = YES;
+    _enablePopUpReport = YES;
     _enableBezierCurve = NO;
-    _enableXAxisLabel = YES;
+    _enableXAxisLabel = NO;
     _enableYAxisLabel = NO;
+    _enableReferenceAxisFrame = YES;
+    _enableReferenceXAxisLines = NO;
+    _enableReferenceYAxisLines = NO;
+    _autoScaleYAxis = YES;
     _YAxisLabelXOffset = 0;
     _autoScaleYAxis = YES;
-    _alwaysDisplayDots = NO;
+    _alwaysDisplayDots = YES;
     _alwaysDisplayPopUpLabels = NO;
+    _animationGraphStyle = BEMLineAnimationDraw;
     
     // Initialize the various arrays
     xAxisValues = [NSMutableArray array];
@@ -391,6 +431,10 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
                 circleDot.center = CGPointMake(positionOnXAxis, positionOnYAxis);
                 circleDot.tag = i+ DotFirstTag100;
                 
+                UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAtivo:)];
+                [tap setNumberOfTapsRequired:1];
+                [circleDot addGestureRecognizer:tap];
+                
                 //////////////////////// hehehehhehehehehhehehehhe
                 
                 
@@ -403,12 +447,11 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
                 int teste = (int)(arc4random() % 2);
                 
                 if (teste == 1) {
-                    circleDot.Pointcolor = [UIColor redColor];
+                    circleDot.Pointcolor = [UIColor colorWithRed:145.0 / 255 green:186.0 / 255 blue:193.0 / 255 alpha:1];
                 }else{
-                    circleDot.Pointcolor = [UIColor greenColor];
+                    circleDot.Pointcolor = [UIColor colorWithRed:157.0 / 255 green:78.0 / 255 blue:84.0 / 255 alpha:1];
                 }
                 
-
                 [self addSubview:circleDot];
                 
                 if (self.alwaysDisplayPopUpLabels == YES) {
@@ -423,10 +466,10 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
                 if (self.animationGraphEntranceTime == 0) {
                     if (self.alwaysDisplayDots == NO) {
                         circleDot.alpha = 0;  // never reach here
-                    } else circleDot.alpha = 0.7;
+                    } else circleDot.alpha = 1.0;
                 } else {
                     [UIView animateWithDuration:(float)self.animationGraphEntranceTime/numberOfPoints delay:(float)i*((float)self.animationGraphEntranceTime/numberOfPoints) options:UIViewAnimationOptionCurveLinear animations:^{
-                        circleDot.alpha = 0.7;
+                        circleDot.alpha = 1.0;
                     } completion:^(BOOL finished) {
                         if (self.alwaysDisplayDots == NO) {
                             [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
@@ -436,6 +479,20 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
                     }];
                 }
             }
+        }
+    }
+    
+    
+    int i = 0;
+    for (UIView *view in self.subviews) {
+        if ([view isKindOfClass:[BEMCircle class]]) {
+            i++;
+            NSLog(@"numero %d",i);
+            //[circleDot addGestureRecognizer:tap];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAtivo:)];
+            [tap setNumberOfTapsRequired:1];
+            tap.delegate = self;
+            [view addGestureRecognizer:tap];
         }
     }
     
@@ -954,7 +1011,7 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
 
 - (void)handlePan:(UIPanGestureRecognizer *)recognizer {
     CGPoint translation = [recognizer locationInView:self.viewForBaselineLayout];
-    
+
     if (!((translation.x + self.frame.origin.x) <= self.frame.origin.x) && !((translation.x + self.frame.origin.x) >= self.frame.origin.x + self.frame.size.width)) { // To make sure the vertical line doesn't go beyond the frame of the graph.
         self.touchInputLine.frame = CGRectMake(translation.x - self.widthTouchInputLine/2, 0, self.widthTouchInputLine, self.frame.size.height);
     }

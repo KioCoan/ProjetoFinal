@@ -19,9 +19,16 @@
     #import <CoreGraphics/CoreGraphics.h>
 #endif
 
+@protocol BEMCircleDelegate <NSObject>
+
+- (void)dotSelecionado:(id)dotCircle;
+
+@end
 
 /// Class to draw the circle for the points.
-@interface BEMCircle : UIView
+@interface BEMCircle : UIView <UIGestureRecognizerDelegate>
+
+@property id <BEMCircleDelegate> Mydelegate;
 
 /// Set to YES if the data point circles should be constantly displayed. NO if they should only appear when relevant.
 @property (assign, nonatomic) BOOL shouldDisplayConstantly;

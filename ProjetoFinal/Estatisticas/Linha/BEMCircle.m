@@ -9,6 +9,9 @@
 
 #import "BEMCircle.h"
 
+
+
+
 @implementation BEMCircle
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -16,6 +19,7 @@
     if (self) {
         // Initialization code
         self.backgroundColor = [UIColor clearColor];
+        
     }
     return self;
 }
@@ -25,6 +29,8 @@
     CGContextAddEllipseInRect(ctx, rect);
     [self.Pointcolor set];
     CGContextFillPath(ctx);
+    [self setUserInteractionEnabled:YES];
+    
 }
 
 @end

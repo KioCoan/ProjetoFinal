@@ -24,13 +24,7 @@
     self.vetorValores = [NSMutableArray array];
     
     
-    for (int i = 0; i < 9; i++) {
-        [self.vetorValores addObject:@([self getRandomInteger])];
-        [self.vetorDesafios addObject:[NSString stringWithFormat:@"%@", @(2000 + i)]]; // Dates for the X-Axis of the graph
-        
-        totalNumber = [[self.vetorValores objectAtIndex:i] intValue];
-    }
-    
+    [self criandoDadosAleatorios];
     
     // Configurando o Grafico
     
@@ -43,32 +37,30 @@
     };
     self.myGraph.gradientBottom = CGGradientCreateWithColorComponents(colorspace, components, locations, num_locations);
     
-    UIColor *color = [UIColor colorWithRed:255.0/255 green:255.0/255 blue:255.0/255 alpha:1.0];
-    
     self.myGraph.dataSource = self;
     self.myGraph.delegate = self;
-    self.myGraph.backgroundColor = [UIColor blackColor];
-    self.myGraph.colorTop = color;
-    self.myGraph.colorBottom = color;
-    self.myGraph.colorLine = [UIColor whiteColor];
-    self.myGraph.colorXaxisLabel = [UIColor whiteColor];
-    self.myGraph.colorYaxisLabel = [UIColor whiteColor];
-    self.myGraph.widthLine = 3.0;
-    self.myGraph.enableTouchReport = YES;
-    self.myGraph.enablePopUpReport = YES;
-    self.myGraph.enableBezierCurve = NO;
-    self.myGraph.enableYAxisLabel = NO; // Retira Labels Vertical
-    self.myGraph.enableXAxisLabel = NO;
-    self.myGraph.autoScaleYAxis = YES;
-    self.myGraph.alwaysDisplayDots = YES;
-    self.myGraph.enableReferenceXAxisLines = NO;
-    self.myGraph.enableReferenceYAxisLines = NO;
-    self.myGraph.enableReferenceAxisFrame = YES;
-    self.myGraph.animationGraphStyle = BEMLineAnimationDraw;
     
     
-    self.myGraph.animationGraphStyle = BEMLineAnimationFade;
-    [self.myGraph reloadGraph];
+    //self.myGraph.backgroundColor = [UIColor blackColor];
+//    self.myGraph.colorTop = color;
+//    self.myGraph.colorBottom = color;
+//    self.myGraph.colorLine = [UIColor whiteColor];
+//    self.myGraph.colorXaxisLabel = [UIColor whiteColor];
+//    self.myGraph.colorYaxisLabel = [UIColor whiteColor];
+    
+    
+    //self.myGraph.widthLine = 3.0;
+//    self.myGraph.enableTouchReport = YES;
+//    self.myGraph.enablePopUpReport = YES;
+//    self.myGraph.enableBezierCurve = NO;
+//    self.myGraph.enableYAxisLabel = NO; // Retira Labels Vertical
+//    self.myGraph.enableXAxisLabel = NO;
+//    self.myGraph.autoScaleYAxis = YES;
+//    self.myGraph.alwaysDisplayDots = YES;
+//    self.myGraph.enableReferenceXAxisLines = NO;
+//    self.myGraph.enableReferenceYAxisLines = NO;
+//    self.myGraph.enableReferenceAxisFrame = YES;
+//    self.myGraph.animationGraphStyle = BEMLineAnimationDraw;
     
 }
 
@@ -83,6 +75,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)criandoDadosAleatorios{
+    
+    
+    for (int i = 0; i < 15; i++) {
+        [self.vetorValores addObject:@([self getRandomInteger])];
+        [self.vetorDesafios addObject:[NSString stringWithFormat:@"%@", @(2000 + i)]]; // Dates for the X-Axis of the graph
+        
+        totalNumber = [[self.vetorValores objectAtIndex:i] intValue];
+    }
+
+    
+    
 }
 
 
