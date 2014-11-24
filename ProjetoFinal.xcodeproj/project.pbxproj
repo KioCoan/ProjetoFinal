@@ -82,6 +82,9 @@
 		84B1B3E9197D8BEF00089FCB /* CenaExercicioCondSimples1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B3E8197D8BEF00089FCB /* CenaExercicioCondSimples1.m */; };
 		84B237B319D352F3003EC749 /* MenuEditarBotao.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B237B119D352F3003EC749 /* MenuEditarBotao.png */; };
 		84B237B419D352F3003EC749 /* MenuEditarFundo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B237B219D352F3003EC749 /* MenuEditarFundo.png */; };
+		84BCB1B01A236ED90011B2D8 /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BCB1AB1A236ED90011B2D8 /* BEMCircle.m */; };
+		84BCB1B11A236ED90011B2D8 /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BCB1AD1A236ED90011B2D8 /* BEMLine.m */; };
+		84BCB1B21A236ED90011B2D8 /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BCB1AF1A236ED90011B2D8 /* BEMSimpleLineGraphView.m */; };
 		84BCF53419CB703B003D9F71 /* SecaoMenuOperador.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BCF53319CB703B003D9F71 /* SecaoMenuOperador.m */; };
 		91A7A956198F56DC009A5EB1 /* ConceitosCondicionais.txt in Resources */ = {isa = PBXBuildFile; fileRef = 91A7A955198F56DC009A5EB1 /* ConceitosCondicionais.txt */; };
 		91A986111962324500EA1074 /* Assunto.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A986101962324500EA1074 /* Assunto.m */; };
@@ -437,6 +440,12 @@
 		84B1B3E8197D8BEF00089FCB /* CenaExercicioCondSimples1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CenaExercicioCondSimples1.m; path = Exercicios/CenaExercicioCondSimples1.m; sourceTree = "<group>"; };
 		84B237B119D352F3003EC749 /* MenuEditarBotao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MenuEditarBotao.png; path = "Menu Editar/MenuEditarBotao.png"; sourceTree = "<group>"; };
 		84B237B219D352F3003EC749 /* MenuEditarFundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MenuEditarFundo.png; path = "Menu Editar/MenuEditarFundo.png"; sourceTree = "<group>"; };
+		84BCB1AA1A236ED90011B2D8 /* BEMCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BEMCircle.h; path = Estatisticas/Linha/BEMCircle.h; sourceTree = "<group>"; };
+		84BCB1AB1A236ED90011B2D8 /* BEMCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEMCircle.m; path = Estatisticas/Linha/BEMCircle.m; sourceTree = "<group>"; };
+		84BCB1AC1A236ED90011B2D8 /* BEMLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BEMLine.h; path = Estatisticas/Linha/BEMLine.h; sourceTree = "<group>"; };
+		84BCB1AD1A236ED90011B2D8 /* BEMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEMLine.m; path = Estatisticas/Linha/BEMLine.m; sourceTree = "<group>"; };
+		84BCB1AE1A236ED90011B2D8 /* BEMSimpleLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BEMSimpleLineGraphView.h; path = Estatisticas/Linha/BEMSimpleLineGraphView.h; sourceTree = "<group>"; };
+		84BCB1AF1A236ED90011B2D8 /* BEMSimpleLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEMSimpleLineGraphView.m; path = Estatisticas/Linha/BEMSimpleLineGraphView.m; sourceTree = "<group>"; };
 		84BCF53219CB703B003D9F71 /* SecaoMenuOperador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecaoMenuOperador.h; path = ../SecaoMenuOperador.h; sourceTree = "<group>"; };
 		84BCF53319CB703B003D9F71 /* SecaoMenuOperador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecaoMenuOperador.m; path = ../SecaoMenuOperador.m; sourceTree = "<group>"; };
 		91A7A955198F56DC009A5EB1 /* ConceitosCondicionais.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConceitosCondicionais.txt; sourceTree = "<group>"; };
@@ -1145,6 +1154,19 @@
 			name = MenuEditar;
 			sourceTree = "<group>";
 		};
+		84BCB1A91A236DCB0011B2D8 /* Linha */ = {
+			isa = PBXGroup;
+			children = (
+				84BCB1AA1A236ED90011B2D8 /* BEMCircle.h */,
+				84BCB1AB1A236ED90011B2D8 /* BEMCircle.m */,
+				84BCB1AC1A236ED90011B2D8 /* BEMLine.h */,
+				84BCB1AD1A236ED90011B2D8 /* BEMLine.m */,
+				84BCB1AE1A236ED90011B2D8 /* BEMSimpleLineGraphView.h */,
+				84BCB1AF1A236ED90011B2D8 /* BEMSimpleLineGraphView.m */,
+			);
+			name = Linha;
+			sourceTree = "<group>";
+		};
 		84E81EA819D0A7AB0022F557 /* botaoMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1521,6 +1543,7 @@
 		BD98DE7F1A1BD48F00845D6B /* Estatisticas */ = {
 			isa = PBXGroup;
 			children = (
+				84BCB1A91A236DCB0011B2D8 /* Linha */,
 				BD98DE801A1BD4AF00845D6B /* EstatisticaPieView.h */,
 				BD98DE811A1BD4AF00845D6B /* EstatisticaPieView.m */,
 				BD98DE821A1BD4AF00845D6B /* MagicPieLayer.h */,
@@ -2066,12 +2089,15 @@
 				84B1B3E9197D8BEF00089FCB /* CenaExercicioCondSimples1.m in Sources */,
 				A5CBEB9519D3595900AC879D /* OperadorDesafiosNode.m in Sources */,
 				BD98DE891A1BD4AF00845D6B /* EstatisticaPieView.m in Sources */,
+				84BCB1B11A236ED90011B2D8 /* BEMLine.m in Sources */,
 				8487523E19C379E100A93120 /* CenaLivre.m in Sources */,
+				84BCB1B21A236ED90011B2D8 /* BEMSimpleLineGraphView.m in Sources */,
 				A521FEF01993FE9900D28627 /* SaidaDeDados.m in Sources */,
 				BDBE7696197A39E0004EA926 /* SpriteOperadorNode.m in Sources */,
 				A5BE095F19C223AF00F7110E /* MenuPrincipalViewController.m in Sources */,
 				8418F87C1970817000781F82 /* SpriteLabelNode.m in Sources */,
 				BDD2C07E19995B78003D557E /* Animacao.m in Sources */,
+				84BCB1B01A236ED90011B2D8 /* BEMCircle.m in Sources */,
 				BD6B54D619D7987300BC0E5F /* SpriteEsteiraNode.m in Sources */,
 				BD6B54CB19D7985800BC0E5F /* DesafioVariavelScene.m in Sources */,
 				84960B7A19C8B40000BC7808 /* IconeSecao.m in Sources */,
