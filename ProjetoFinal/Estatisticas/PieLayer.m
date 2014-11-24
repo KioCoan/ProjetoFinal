@@ -31,6 +31,9 @@
 //in [0..1], out [0..1]
 static inline float easeInOut(float x){
     //1/(1+e^((0.5-x)*12))
+    
+    //float resultado = 1/(1+powf(M_E, (0.5-x)*12));
+
     return 1/(1+powf(M_E, (0.5-x)*12));
 }
 
@@ -535,8 +538,9 @@ static NSString * const _animationValuesKey = @"animationValues";
         if(sum != 0.0)
             percent = 100.0 * elem.val / sum;
         NSString* text = [NSString stringWithFormat:@"%.0f", elem.val];
-        float radius = self.maxRadius + elem.centrOffset;
+        float radius = self.maxRadius+45 + elem.centrOffset;
         [self drawText:text angle:-angle radius:radius context:ctx texto2:elem.tipoDado];
+        
         
         
         angleStart = angleEnd;
@@ -554,40 +558,73 @@ static NSString * const _animationValuesKey = @"animationValues";
     }
 #if (__IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0)
     CGSize textSize = [text sizeWithFont:self.font];
-    CGSize textSize2 = [tipoDado sizeWithFont:[UIFont fontWithName:FONT_LIGHT size:20]];
+    CGSize textSize2 = [tipoDado sizeWithFont:[UIFont fontWithName:FONT_LIGHT size:32]];
 #else
     CGSize textSize = [text sizeWithAttributes:@{NSFontAttributeName:self.font}];
-    CGSize textSize2 = [tipoDado sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:FONT_LIGHT size:20]}];
+    CGSize textSize2 = [tipoDado sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:FONT_LIGHT size:32]}];
 #endif
     CGPoint anchorPoint;
     //clockwise
-    if(angle >= -M_PI_4 && angle < M_PI_4){
-        anchorPoint = CGPointMake(-1, easeInOut((M_PI_4-angle) / M_PI_2));
+//    if(angle >= -M_PI_4 && angle < M_PI_4){
+//        anchorPoint = CGPointMake(-1, easeInOut((M_PI_4-angle) / M_PI_2));
+//    
+//    
+//    } else if(angle >= M_PI_4 && angle < M_PI_2+M_PI_4){
+//        anchorPoint = CGPointMake(easeInOut((angle-M_PI_4) / M_PI_2), -0.5 );
+//       
+//    } else if(angle >= M_PI_2+M_PI_4 && angle < M_PI+M_PI_4){
+//        anchorPoint = CGPointMake(3, easeInOut((angle - (M_PI_2+M_PI_4)) / M_PI_2));
+//        
+//    } else {
+//        anchorPoint = CGPointMake(easeInOut(((2*M_PI - M_PI_4) - angle) / M_PI_2), 1.5);
+//        
+//    }
     
+    BOOL parteInferior = NO;
+    BOOL partSuperior = NO;
+    
+    
+    if(angle >= -M_PI_4 && angle < M_PI_4){
+        anchorPoint = CGPointMake(0, easeInOut((M_PI_4-angle) / M_PI_2));
+        partSuperior = YES;
     } else if(angle >= M_PI_4 && angle < M_PI_2+M_PI_4){
-        anchorPoint = CGPointMake(easeInOut((angle-M_PI_4) / M_PI_2), -0.5 );
-       
+        anchorPoint = CGPointMake(easeInOut((angle-M_PI_4) / M_PI_2), 0);
+        parteInferior = YES;
     } else if(angle >= M_PI_2+M_PI_4 && angle < M_PI+M_PI_4){
-        anchorPoint = CGPointMake(3, easeInOut((angle - (M_PI_2+M_PI_4)) / M_PI_2));
-        
+        anchorPoint = CGPointMake(1, easeInOut((angle - (M_PI_2+M_PI_4)) / M_PI_2));
+        partSuperior = YES;
     } else {
-        anchorPoint = CGPointMake(easeInOut(((2*M_PI - M_PI_4) - angle) / M_PI_2), 1.5);
-        
+        //NSLog(@"%f", angle);
+        parteInferior = YES;
+        anchorPoint = CGPointMake(easeInOut(((2*M_PI - M_PI_4) - angle) / M_PI_2), 1);
     }
     
     CGPoint center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
     CGPoint pos = CGPointMake(center.x + radius*cosf(angle), center.y + radius*sinf(angle));
-    
-    CGRect frame = CGRectMake(pos.x - anchorPoint.x * textSize.width,
-                              pos.y - anchorPoint.y * textSize.height,
-                              textSize.width,
-                              textSize.height + 5);
+
+    CGRect frame;
     
     
+    //if (parteInferior) {
+//        frame = CGRectMake(pos.x - (anchorPoint.x * textSize.width + 0),
+//                                  pos.y - anchorPoint.y * textSize.height,
+//                                  textSize.width,
+//                                  textSize.height + 5);
     
+    //}else{
+        frame = CGRectMake(pos.x - (anchorPoint.x * textSize.width + 0),
+                           pos.y - anchorPoint.y * textSize.height,
+                           textSize.width,
+                           textSize.height + 5);
+    //}
+    
+    
+    
+    
+    //NSLog(@"%f", pos.x - anchorPoint.x *textSize.width);
     
     CGRect frame2 = frame;
-    frame2.origin.y += frame.size.height + 5;
+    frame2.origin.y += frame.size.height;
     frame2.size.width = textSize2.width;
     frame2.size.height = textSize2.height + 5;
     
@@ -602,7 +639,7 @@ static NSString * const _animationValuesKey = @"animationValues";
     [label1 setText:text];
     
     UILabel *label2 = [[UILabel alloc] initWithFrame:frame2];
-    [label2 setFont:[UIFont fontWithName:FONT_LIGHT size:20]];
+    [label2 setFont:[UIFont fontWithName:FONT_LIGHT size:32]];
     [label2 setText:tipoDado];
     
     [[self myDelegate] labelsPreparadas:label1 label2:label2];

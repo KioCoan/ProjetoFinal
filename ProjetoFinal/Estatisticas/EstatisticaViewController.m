@@ -23,9 +23,6 @@
 {
     [super viewDidLoad];
     
-    
-    
-    
     float red = 145;
     float green = 186;
     float blue = 193;
@@ -53,7 +50,7 @@
 
 - (void)iniciarGrafico{
     int totalExercicios = 14;
-    int nAcertos = 10;
+    int nAcertos = 12;
     int nErros = totalExercicios - nAcertos;
     
     //CALCULA A PORCENTAGEM DE ACERTOS
@@ -68,6 +65,18 @@
     float grauErroEnd = grauAcertoEnd - grausErro;
     
     
+    //CONFIGURAÇÃO DA LAYER DA PRIMEIRA VIEW (ACERTOS)
+    self.pieView.layer.animationDuration = 0.6;
+    self.pieView.layer.startAngle = 450;
+    self.pieView.layer.endAngle = grauAcertoEnd;
+    self.pieView.layer.showTitles = ShowTitlesAlways;
+    
+    //CONFIGURAÇÃO DA LAYER DA SEGUNDA VIEW (ERROS)
+    self.pieView2.layer.animationDuration = 0.6;
+    self.pieView2.layer.startAngle = grauAcertoEnd;
+    self.pieView2.layer.endAngle = grauErroEnd;
+    self.pieView2.layer.showTitles = ShowTitlesAlways;
+    
     
     PieElement* newElem = [PieElement pieElementWithValue:nAcertos color:self.pieView.corPadrao];
     newElem.tipoDado = @"Acertos";
@@ -75,26 +84,22 @@
     int insertIndex = arc4random() % (self.pieView.layer.values.count + 1);
     [self.pieView.layer insertValues:@[newElem] atIndexes:@[@(insertIndex)] animated:YES];
     
-    self.pieView.layer.animationDuration = 0.6;
-    self.pieView.layer.startAngle = 450;
-    self.pieView.layer.endAngle = grauAcertoEnd;
-    self.pieView.layer.showTitles = ShowTitlesAlways;
-    
-    
-    
     
     PieElement* newElem2 = [PieElement pieElementWithValue:nErros color:self.pieView2.corPadrao];
     newElem2.tipoDado = @"Erros";
     newElem2.showTitle = YES;
+    
+    //USADO PARA CHAMAR A SEGUNDA VIEW APÓS CERTO DELAY
+    [self performSelector:@selector(exibirViewGrafico:) withObject:newElem2 afterDelay:0.4];
+    
+    
+    
+}
+
+-(void)exibirViewGrafico:(PieElement*)newElem2{
     int insertIndex2 = arc4random() % (self.pieView2.layer.values.count + 1);
     [self.pieView2.layer insertValues:@[newElem2] atIndexes:@[@(insertIndex2)] animated:YES];
-    
-    self.pieView2.layer.animationDuration = 2.5;
-    self.pieView2.layer.startAngle = grauAcertoEnd;
-    self.pieView2.layer.endAngle = grauErroEnd;
-    self.pieView2.layer.showTitles = ShowTitlesAlways;
-    
-    
+
 }
 
 

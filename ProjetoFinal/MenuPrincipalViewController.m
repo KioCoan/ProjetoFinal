@@ -7,9 +7,8 @@
 //
 
 #import "MenuPrincipalViewController.h"
-#import "MagicPieLayer.h"
-#import "EstatisticaPieView.h"
 #import "Expressao.h"
+
 
 @interface MenuPrincipalViewController ()
 @end
@@ -34,7 +33,6 @@
     [[self view] setUserInteractionEnabled:NO];
     
     [self performSelector:@selector(iniciarAnimacaoDeEntrada) withObject:nil afterDelay:0.5];
-
     
 }
 

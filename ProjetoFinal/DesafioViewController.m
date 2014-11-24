@@ -9,6 +9,9 @@
 #import "DesafioViewController.h"
 
 @interface DesafioViewController ()
+{
+    DesafioScene *cenaAtual;
+}
 
 @end
 
@@ -34,7 +37,7 @@
     viewDesafioAtual = [[SKView alloc] initWithFrame:self.view.frame];
     [self.view addSubview:viewDesafioAtual];
     
-    DesafioScene *cenaAtual = [gerenciadorDesafios retornaCenaAtual];
+    cenaAtual = [gerenciadorDesafios retornaCenaAtual];
     [cenaAtual setMyDelegate:self];
     [viewDesafioAtual presentScene: cenaAtual];
     [[viewDesafioAtual scene]setSize:viewDesafioAtual.frame.size];
@@ -55,7 +58,7 @@
 
 -(void)voltar:(id)sender{
     
-    
+    [cenaAtual setMyDelegate:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
@@ -78,7 +81,7 @@
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
     self.pageController.dataSource = self;
-    [[self.pageController view] setFrame:CGRectMake(0, 0, 768, 800)];
+    [[self.pageController view] setFrame:CGRectMake(0, 200, 768, 800)];
     
     EstatisticaViewController *initialViewController = [self viewControllerAtIndex:0];
     
