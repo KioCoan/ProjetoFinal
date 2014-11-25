@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetoFinal/Estatisticas/Linha/BEMSimpleLineGraphView.m"
-            timestampString = "438637793.167294"
+            timestampString = "438638255.782547"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "688"
-            endingLineNumber = "688"
+            startingLineNumber = "686"
+            endingLineNumber = "686"
             landmarkName = "-drawYAxis"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetoFinal/Estatisticas/Linha/BEMSimpleLineGraphView.m"
-            timestampString = "438637793.167294"
+            timestampString = "438638255.782547"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "800"
-            endingLineNumber = "800"
+            startingLineNumber = "798"
+            endingLineNumber = "798"
             landmarkName = "-offsetForXAxisWithNumberOfGaps:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetoFinal/Estatisticas/Linha/BEMSimpleLineGraphView.m"
-            timestampString = "438637793.167294"
+            timestampString = "438638255.782547"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "871"
-            endingLineNumber = "871"
+            startingLineNumber = "869"
+            endingLineNumber = "869"
             landmarkName = "-checkOverlapsForView:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjetoFinal/Estatisticas/Linha/BEMSimpleLineGraphView.m"
-            timestampString = "438637793.167294"
+            timestampString = "438638255.782547"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "883"
-            endingLineNumber = "883"
+            startingLineNumber = "881"
+            endingLineNumber = "881"
             landmarkName = "-graphSnapshotImage"
             landmarkType = "5">
          </BreakpointContent>

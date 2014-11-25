@@ -113,22 +113,20 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
 - (instancetype)initWithFrame:(CGRect)frame {
     
     self = [super initWithFrame:frame];
-    tamanhoX = self.frame.size.width - 20;
-    NSLog(@"%f",self.frame.size.width);
     if (self) [self commonInit];
     return self;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
-    tamanhoX = self.frame.size.width - 20;
-    NSLog(@"%f",self.frame.size.width);
     if (self) [self commonInit];
     return self;
 }
 
 - (void)commonInit {
     // Do any initialization that's common to both -initWithFrame: and -initWithCoder: in this method
+    
+    tamanhoX = self.frame.size.width - 35;
     
     // Set the X Axis label font
     _labelFont = [UIFont fontWithName:DEFAULT_FONT_NAME size:13];
