@@ -65,6 +65,44 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+    int i = self.myGraph.subviews.count;
+    
+    NSLog(@"numero vetor %d",i);
+    
+    for (UIView *view in self.myGraph.subviews) {
+        
+        if ([view isKindOfClass:[BEMCircle class]]) {
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(fuiClicado:)];
+            [tap setNumberOfTapsRequired:1];
+            [tap setNumberOfTouchesRequired:1];
+            //tap.delegate = self;
+            [view addGestureRecognizer:tap];
+        }
+        
+        
+    }
+
+    
+}
+
+- (void)fuiClicado:(UIGestureRecognizer *)recognizer{
+    
+    NSLog(@"fui clicado");
+    
+}
+
+
 - (NSInteger)getRandomInteger
 {
     NSInteger i1 = (int)(arc4random() % 10000);

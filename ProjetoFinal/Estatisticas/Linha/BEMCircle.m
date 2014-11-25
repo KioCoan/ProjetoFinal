@@ -19,7 +19,9 @@
     if (self) {
         // Initialization code
         self.backgroundColor = [UIColor clearColor];
-        
+        //[self addGestureRecognizer:[self criandoGesture]];
+        //[self criandoGesture];
+        //[self setUserInteractionEnabled:YES];
     }
     return self;
 }
@@ -32,5 +34,21 @@
     [self setUserInteractionEnabled:YES];
     
 }
+/*
+- (void)criandoGesture{
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(fuiClicado:)];
+    [tap setNumberOfTapsRequired:1];
+    [tap setNumberOfTouchesRequired:1];
+    tap.delegate = self;
+    [self addGestureRecognizer:tap];
+    //[tap release];
+}
 
+- (void)fuiClicado:(UIGestureRecognizer *)recognizer{
+    
+    NSLog(@"fui clicado");
+    
+}
+*/
 @end

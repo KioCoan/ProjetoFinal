@@ -99,7 +99,7 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
 
 @implementation BEMSimpleLineGraphView
 
-- (void)tapAtivo:(UITapGestureRecognizer *)recognizer{
+- (IBAction)tapAtivo:(UITapGestureRecognizer *)recognizer{
     
     //[self.Mydelegate dotSelecionado:self];
     NSLog(@"funcionou");
@@ -134,8 +134,6 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
 
 - (void)commonInit {
     // Do any initialization that's common to both -initWithFrame: and -initWithCoder: in this method
-    
-    [self setUserInteractionEnabled:YES];
     
     // Set the X Axis label font
     _labelFont = [UIFont fontWithName:DEFAULT_FONT_NAME size:13];
@@ -431,9 +429,7 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
                 circleDot.center = CGPointMake(positionOnXAxis, positionOnYAxis);
                 circleDot.tag = i+ DotFirstTag100;
                 
-                UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAtivo:)];
-                [tap setNumberOfTapsRequired:1];
-                [circleDot addGestureRecognizer:tap];
+                
                 
                 //////////////////////// hehehehhehehehehhehehehhe
                 
@@ -453,6 +449,7 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
                 }
                 
                 [self addSubview:circleDot];
+                [self bringSubviewToFront:circleDot];
                 
                 if (self.alwaysDisplayPopUpLabels == YES) {
                     if ([self.delegate respondsToSelector:@selector(lineGraph:alwaysDisplayPopUpAtIndex:)]) {
@@ -483,18 +480,6 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
     }
     
     
-    int i = 0;
-    for (UIView *view in self.subviews) {
-        if ([view isKindOfClass:[BEMCircle class]]) {
-            i++;
-            NSLog(@"numero %d",i);
-            //[circleDot addGestureRecognizer:tap];
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAtivo:)];
-            [tap setNumberOfTapsRequired:1];
-            tap.delegate = self;
-            [view addGestureRecognizer:tap];
-        }
-    }
     
     // CREATION OF THE LINE AND BOTTOM AND TOP FILL
     [self drawLine];
