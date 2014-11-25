@@ -39,8 +39,8 @@
     
     self.myGraph.dataSource = self;
     self.myGraph.delegate = self;
-    
-    
+    [self.view bringSubviewToFront:self.myGraph];
+    [self.view setUserInteractionEnabled:YES];
     //self.myGraph.backgroundColor = [UIColor blackColor];
 //    self.myGraph.colorTop = color;
 //    self.myGraph.colorBottom = color;
@@ -63,7 +63,6 @@
 //    self.myGraph.animationGraphStyle = BEMLineAnimationDraw;
     
 }
-
 
 - (NSInteger)getRandomInteger
 {

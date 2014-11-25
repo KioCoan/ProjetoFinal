@@ -97,23 +97,14 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
 
 @end
 
-@implementation BEMSimpleLineGraphView
-
-- (void)tapAtivo:(UITapGestureRecognizer *)recognizer{
-    
-    //[self.Mydelegate dotSelecionado:self];
-    NSLog(@"funcionou");
+@implementation BEMSimpleLineGraphView{
+    float tamanhoX;
 }
-
-
-
-
 
 - (void)dotSelecionado:(id)dotCircle{
     
-    BEMCircle *dotSelecionado = (BEMCircle *)dotCircle;
-    
-    [self setUpPopUpLabelAbovePoint:dotSelecionado];
+    closestDot = (BEMCircle *)dotCircle;
+    [self setUpPopUpLabelAbovePoint:closestDot];
     
 }
 
@@ -135,7 +126,7 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
 - (void)commonInit {
     // Do any initialization that's common to both -initWithFrame: and -initWithCoder: in this method
     
-    [self setUserInteractionEnabled:YES];
+    tamanhoX = self.frame.size.width - 35;
     
     // Set the X Axis label font
     _labelFont = [UIFont fontWithName:DEFAULT_FONT_NAME size:13];
@@ -188,7 +179,7 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
     _enablePopUpReport = YES;
     _enableBezierCurve = NO;
     _enableXAxisLabel = NO;
-    _enableYAxisLabel = NO;
+    _enableYAxisLabel = YES;
     _enableReferenceAxisFrame = YES;
     _enableReferenceXAxisLines = NO;
     _enableReferenceYAxisLines = NO;
@@ -305,14 +296,14 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
         self.touchInputLine.alpha = 0;
         [self addSubview:self.touchInputLine];
         
-        self.panView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, self.viewForBaselineLayout.frame.size.width, self.viewForBaselineLayout.frame.size.height)];
-        self.panView.backgroundColor = [UIColor clearColor];
-        [self.viewForBaselineLayout addSubview:self.panView];
-        
-        self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
-        self.panGesture.delegate = self;
-        [self.panGesture setMaximumNumberOfTouches:1];
-        [self.panView addGestureRecognizer:self.panGesture];
+//        self.panView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, self.viewForBaselineLayout.frame.size.width, self.viewForBaselineLayout.frame.size.height)];
+//        self.panView.backgroundColor = [UIColor clearColor];
+//        [self.viewForBaselineLayout addSubview:self.panView];
+//        
+//        self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+//        self.panGesture.delegate = self;
+//        [self.panGesture setMaximumNumberOfTouches:1];
+//        [self.panView addGestureRecognizer:self.panGesture];
         
         if (self.enablePopUpReport == YES && self.alwaysDisplayPopUpLabels == NO) {
             NSDictionary *labelAttributes = @{NSFontAttributeName: self.labelFont};
@@ -370,13 +361,13 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
     } else self.YAxisLabelXOffset = 0;
 
     // Draw the X-Axis
-    [self drawXAxis];
+    //[self drawXAxis];
 
     // Draw the graph
     [self drawDots];
 
     // Draw the Y-Axis
-    if (self.enableYAxisLabel) [self drawYAxis];
+    //if (self.enableYAxisLabel) [self drawYAxis];
 }
 
 - (void)drawDots {
@@ -421,7 +412,8 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
             
             [dataPoints addObject:[NSNumber numberWithFloat:dotValue]];
             
-            positionOnXAxis = (((self.frame.size.width - self.YAxisLabelXOffset) / (numberOfPoints - 1)) * i) + self.YAxisLabelXOffset;
+            // ALTEREI AKI
+            positionOnXAxis = (((tamanhoX - self.YAxisLabelXOffset) / (numberOfPoints - 1)) * i)+ self.YAxisLabelXOffset;
             positionOnYAxis = [self yPositionForDotValue:dotValue];
             
             [yAxisValues addObject:[NSNumber numberWithFloat:positionOnYAxis]];
@@ -430,11 +422,7 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
                 BEMCircle *circleDot = [[BEMCircle alloc] initWithFrame:CGRectMake(0, 0, self.sizePoint, self.sizePoint)];
                 circleDot.center = CGPointMake(positionOnXAxis, positionOnYAxis);
                 circleDot.tag = i+ DotFirstTag100;
-                
-                UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAtivo:)];
-                [tap setNumberOfTapsRequired:1];
-                [circleDot addGestureRecognizer:tap];
-                
+                circleDot.Mydelegate = self;
                 //////////////////////// hehehehhehehehehhehehehhe
                 
                 
@@ -453,6 +441,7 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
                 }
                 
                 [self addSubview:circleDot];
+                [self bringSubviewToFront:circleDot];
                 
                 if (self.alwaysDisplayPopUpLabels == YES) {
                     if ([self.delegate respondsToSelector:@selector(lineGraph:alwaysDisplayPopUpAtIndex:)]) {
@@ -483,18 +472,6 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
     }
     
     
-    int i = 0;
-    for (UIView *view in self.subviews) {
-        if ([view isKindOfClass:[BEMCircle class]]) {
-            i++;
-            NSLog(@"numero %d",i);
-            //[circleDot addGestureRecognizer:tap];
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAtivo:)];
-            [tap setNumberOfTapsRequired:1];
-            tap.delegate = self;
-            [view addGestureRecognizer:tap];
-        }
-    }
     
     // CREATION OF THE LINE AND BOTTOM AND TOP FILL
     [self drawLine];
@@ -506,7 +483,7 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
             [subview removeFromSuperview];
     }
     
-    BEMLine *line = [[BEMLine alloc] initWithFrame:CGRectMake(self.YAxisLabelXOffset, 0, self.frame.size.width - self.YAxisLabelXOffset, self.frame.size.height)];
+    BEMLine *line = [[BEMLine alloc] initWithFrame:CGRectMake(self.YAxisLabelXOffset, 0, tamanhoX - self.YAxisLabelXOffset, self.frame.size.height)];
     line.opaque = NO;
     line.alpha = 1;
     line.backgroundColor = [UIColor clearColor];
@@ -1072,6 +1049,8 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
 }
 
 - (void)setUpPopUpLabelAbovePoint:(BEMCircle *)closestPoint {
+
+    
     [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.popUpView.alpha = 0.7;
         self.popUpLabel.alpha = 1;
