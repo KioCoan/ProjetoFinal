@@ -20,8 +20,8 @@
         // Initialization code
         self.backgroundColor = [UIColor clearColor];
         //[self addGestureRecognizer:[self criandoGesture]];
-        //[self criandoGesture];
-        //[self setUserInteractionEnabled:YES];
+        [self criandoGesture];
+        [self setUserInteractionEnabled:YES];
     }
     return self;
 }
@@ -34,7 +34,7 @@
     [self setUserInteractionEnabled:YES];
     
 }
-/*
+
 - (void)criandoGesture{
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(fuiClicado:)];
@@ -47,8 +47,8 @@
 
 - (void)fuiClicado:(UIGestureRecognizer *)recognizer{
     
-    NSLog(@"fui clicado");
+    [self.Mydelegate dotSelecionado:self];
     
 }
-*/
+
 @end
