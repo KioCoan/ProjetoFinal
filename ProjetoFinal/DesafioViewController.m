@@ -56,6 +56,11 @@
     //[gerenciadorDesafios resetaCena];
 }
 
+
+-(BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
 -(void)voltar:(id)sender{
     
     [cenaAtual setMyDelegate:nil];
@@ -77,13 +82,15 @@
 }
 
 
--(void)inicializarPageViewController{
+-(void)inicializarPageViewController:(NSArray *)tempos nAcertos:(int)nAcertos{
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
     self.pageController.dataSource = self;
-    [[self.pageController view] setFrame:CGRectMake(0, 200, 768, 800)];
+    [[self.pageController view] setFrame:CGRectMake(0, 100, 768, 600)];
     
     EstatisticaViewController *initialViewController = [self viewControllerAtIndex:0];
+    initialViewController.vtTempos = tempos;
+    initialViewController.nAcertos = nAcertos;
     
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
     
@@ -97,28 +104,33 @@
 
 
 -(void)exibirDadosEstatisticos:(NSArray *)tempos nAcertos:(int)nAcertos nErros:(int)nErros{
+    
+    [self criarViewBackground];
+    [self inicializarPageViewController:tempos nAcertos:nAcertos];
+}
+
+
+-(void)criarViewBackground{
     [self setBlurView:[JCRBlurView new]];
     [[self blurView] setFrame:self.view.frame];
     [[self blurView] setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
     [self.blurView setBlurTintColor:[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1]];
     [self.view addSubview:[self blurView]];
     
-    [self inicializarPageViewController];
+    //LABEL DESEMPENHO
+    UILabel *txtDesempenho = [[UILabel alloc] init];
+    [txtDesempenho setText:@"Desempenho"];
+    [txtDesempenho setFont:[UIFont fontWithName:FONT_LIGHT size:80]];
+    [txtDesempenho setTextColor:[UIColor whiteColor]];
+    int width = 455;
+    float posX = (self.view.frame.size.width - width) / 2;
+    [txtDesempenho setFrame:CGRectMake(posX, 50, width, 88)];
+    [self.blurView addSubview:txtDesempenho];
 }
 
 - (EstatisticaViewController *)viewControllerAtIndex:(NSUInteger)index {
     
     EstatisticaViewController *childViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"dadosEstatisticos"];
-    
-    
-//    childViewController.index = index;
-//    childViewController.imagemAtual = [imagens objectAtIndex:index];
-    
-//    if (index == [imagens count] -1) {
-//        childViewController.ultimaTela = YES;
-//    }else{
-//        childViewController.ultimaTela = NO;
-//    }
     
     return childViewController;
 }

@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface EstatisticaViewController : UIViewController
+
 @property (assign, nonatomic) NSInteger index;
+@property NSArray *vtTempos;
+@property int nAcertos;
+
 @end

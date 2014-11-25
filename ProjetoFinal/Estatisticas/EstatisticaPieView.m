@@ -67,7 +67,7 @@
         self.layer.myDelegate = self;
         
     }
-
+    
     
     UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     tap.numberOfTapsRequired = 1;
@@ -112,6 +112,42 @@
 }
 
 
+-(void)exibirTempoTotal:(NSString*)tempoTotal corTexto:(UIColor*)cor{
+    
+    UILabel *labelTempo = [[UILabel alloc] init];
+    [labelTempo setText:tempoTotal];
+    [labelTempo setFont:[UIFont fontWithName:FONT_MEDIUM size:64]];
+    [labelTempo setTextColor:cor];
+    CGSize requiredSize = [tempoTotal sizeWithAttributes: @{NSFontAttributeName: labelTempo.font}];
+    
+    
+    CGRect frameTempo;
+    frameTempo.size.width = requiredSize.width;
+    frameTempo.size.height = requiredSize.height + 5;
+    frameTempo.origin.x = (self.frame.size.width - frameTempo.size.width) / 2;
+    frameTempo.origin.y = ((self.frame.size.height - frameTempo.size.height) / 2) - 15;
+    
+    [labelTempo setFrame:frameTempo];
+    [self addSubview:labelTempo];
+    
+    
+    //TEXTO "SEGUNDOS"
+    UILabel *labelSegundos = [[UILabel alloc] init];
+    [labelSegundos setText:@"segundos"];
+    [labelSegundos setFont:[UIFont fontWithName:FONT_LIGHT size:40]];
+    [labelSegundos setTextColor:[UIColor whiteColor]];
+    requiredSize = [@"segundos" sizeWithAttributes: @{NSFontAttributeName: labelSegundos.font}];
+    
+
+    frameTempo.size.width = requiredSize.width;
+    frameTempo.size.height = requiredSize.height + 5;
+    frameTempo.origin.x = (self.frame.size.width - frameTempo.size.width) / 2;
+    frameTempo.origin.y += 55;
+    
+    [labelSegundos setFrame:frameTempo];
+    [self addSubview:labelSegundos];
+}
+
 -(void)labelsPreparadas:(UILabel *)label1 label2:(UILabel *)label2{
     if (labelInseridas) {
         return;
@@ -122,5 +158,7 @@
     [self addSubview:label1];
     [self addSubview:label2];
     labelInseridas = YES;
+    
+    
 }
 @end

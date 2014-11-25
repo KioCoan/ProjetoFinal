@@ -19,4 +19,6 @@
 @interface EstatisticaPieView (ex)
 @property(nonatomic,readonly,retain) PieLayer *layer;
 
+
+-(void)exibirTempoTotal:(NSString*)tempoTotal corTexto:(UIColor*)cor;
 @end

@@ -27,7 +27,6 @@
     float green = 186;
     float blue = 193;
     
-    
     CGRect frame = CGRectMake(0, 0, 768, 550);
     self.pieView = [[EstatisticaPieView alloc] initWithFrame:frame];
     [self.pieView setBackgroundColor:[UIColor clearColor]];
@@ -43,18 +42,31 @@
     self.pieView2.corPadrao = [UIColor colorWithRed:red / 255 green:green / 255 blue:blue / 255 alpha:1];
     [[self view] addSubview:self.pieView2];
     
-    [self iniciarGrafico];
+    [self iniciarGraficoPizza];
 }
 
 
+-(float)calcularTempoTotalDesafio{
+    float tempoTotal = 0;
+    
+    for (int i = 0; i < self.vtTempos.count; i++) {
+        tempoTotal += [[self.vtTempos objectAtIndex:i] floatValue];
+    }
+    
+    return tempoTotal;
+}
 
-- (void)iniciarGrafico{
-    int totalExercicios = 14;
-    int nAcertos = 12;
-    int nErros = totalExercicios - nAcertos;
+-(BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
+
+- (void)iniciarGraficoPizza{
+    int totalExercicios = self.vtTempos.count;
+    int nErros = totalExercicios - self.nAcertos;
     
     //CALCULA A PORCENTAGEM DE ACERTOS
-    float porcentagemAcertos = (nAcertos * 100) / totalExercicios;
+    float porcentagemAcertos = (self.nAcertos * 100) / totalExercicios;
     
     //CALCULA QUANTOS GRAUS REPRESENTA A PORCENTAGEM DE ACERTOS E ERROS
     float grausAcerto = (porcentagemAcertos * 360) / 100;
@@ -78,7 +90,7 @@
     self.pieView2.layer.showTitles = ShowTitlesAlways;
     
     
-    PieElement* newElem = [PieElement pieElementWithValue:nAcertos color:self.pieView.corPadrao];
+    PieElement* newElem = [PieElement pieElementWithValue:self.nAcertos color:self.pieView.corPadrao];
     newElem.tipoDado = @"Acertos";
     newElem.showTitle = YES;
     int insertIndex = arc4random() % (self.pieView.layer.values.count + 1);
@@ -91,15 +103,14 @@
     
     //USADO PARA CHAMAR A SEGUNDA VIEW APÓS CERTO DELAY
     [self performSelector:@selector(exibirViewGrafico:) withObject:newElem2 afterDelay:0.4];
-    
-    
-    
+    //[self performSelector:<#(SEL)#> withObject:<#(id)#> afterDelay:<#(NSTimeInterval)#>]
+    [self.pieView exibirTempoTotal:[NSString stringWithFormat:@"%.1f", [self calcularTempoTotalDesafio]] corTexto:newElem.color];
 }
 
 -(void)exibirViewGrafico:(PieElement*)newElem2{
     int insertIndex2 = arc4random() % (self.pieView2.layer.values.count + 1);
     [self.pieView2.layer insertValues:@[newElem2] atIndexes:@[@(insertIndex2)] animated:YES];
-
+    
 }
 
 
