@@ -117,7 +117,8 @@
     UILabel *labelTempo = [[UILabel alloc] init];
     [labelTempo setText:tempoTotal];
     [labelTempo setFont:[UIFont fontWithName:FONT_MEDIUM size:64]];
-    [labelTempo setTextColor:cor];
+    //[labelTempo setTextColor:cor];
+    [labelTempo setTextColor:[UIColor whiteColor]];
     CGSize requiredSize = [tempoTotal sizeWithAttributes: @{NSFontAttributeName: labelTempo.font}];
     
     
