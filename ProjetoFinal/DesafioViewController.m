@@ -128,6 +128,29 @@
     float posX = (self.view.frame.size.width - width) / 2;
     [txtDesempenho setFrame:CGRectMake(posX, 50, width, 88)];
     [self.blurView addSubview:txtDesempenho];
+   
+    CGRect frameBotoes;
+    frameBotoes.size.width = 383;
+    frameBotoes.size.height = 90;
+    frameBotoes.origin.x = 0;
+    
+    frameBotoes.origin.y = self.view.frame.size.height - frameBotoes.size.height;
+    [self inserirBotao:@"menu principal" frame:frameBotoes];
+    
+    
+    frameBotoes.origin.x = self.view.frame.size.width - frameBotoes.size.width;
+    [self inserirBotao:@"reiniciar" frame:frameBotoes];
+    
+}
+
+-(void)inserirBotao:(NSString*)texto frame:(CGRect)frame{
+    UIButton *botaoMenu = [[UIButton alloc] initWithFrame:frame];
+    [botaoMenu setTitle:texto forState:UIControlStateNormal];
+    //[botaoMenu.viewForBaselineLayout setAlpha:0.4];
+    [botaoMenu.titleLabel setFont:[UIFont fontWithName:FONT_LIGHT size:30]];
+    [botaoMenu setBackgroundColor:[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.7]];
+    [botaoMenu setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.blurView addSubview:botaoMenu];
 }
 
 - (EstatisticaViewController *)viewControllerAtIndex:(NSUInteger)index {

@@ -190,8 +190,7 @@
     
     //USADO PARA CHAMAR A SEGUNDA VIEW APÓS CERTO DELAY
     [self performSelector:@selector(exibirViewGrafico:) withObject:newElem2 afterDelay:0.4];
-    //[self performSelector:<#(SEL)#> withObject:<#(id)#> afterDelay:<#(NSTimeInterval)#>]
-    [self.pieView exibirTempoTotal:[NSString stringWithFormat:@"%.1f", [self calcularTempoTotalDesafio]] corTexto:newElem.color];
+    [self.pieView exibirTempoTotal:[NSString stringWithFormat:@"%.1f", [self calcularTempoTotalDesafio]]];
 }
 
 -(void)exibirViewGrafico:(PieElement*)newElem2{

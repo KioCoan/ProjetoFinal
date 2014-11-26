@@ -112,7 +112,7 @@
 }
 
 
--(void)exibirTempoTotal:(NSString*)tempoTotal corTexto:(UIColor*)cor{
+-(void)exibirTempoTotal:(NSString*)tempoTotal{
     
     UILabel *labelTempo = [[UILabel alloc] init];
     [labelTempo setText:tempoTotal];
