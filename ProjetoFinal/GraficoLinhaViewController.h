@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BEMSimpleLineGraphView.h"
 
-@interface TestandoLinhaViewController : UIViewController <BEMSimpleLineGraphDataSource,BEMSimpleLineGraphDelegate>
+@interface GraficoLinhaViewController : UIViewController <BEMSimpleLineGraphDataSource,BEMSimpleLineGraphDelegate>
 
 @property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *myGraph;
 @property NSMutableArray *vetorValores;

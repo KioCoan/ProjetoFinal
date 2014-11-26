@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 SENAC - iOS. All rights reserved.
 //
 
-#import "TestandoLinhaViewController.h"
+#import "GraficoLinhaViewController.h"
 
-@interface TestandoLinhaViewController (){
+@interface GraficoLinhaViewController (){
     int totalNumber;
 }
 
 @end
 
-@implementation TestandoLinhaViewController
+@implementation GraficoLinhaViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

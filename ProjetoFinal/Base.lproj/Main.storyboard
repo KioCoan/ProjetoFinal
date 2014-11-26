@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="tHn-97-uZ9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="tHn-97-uZ9">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--Tutorial View Controller-->
@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="-3232" y="-186"/>
         </scene>
-        <!--Testando Linha View Controller-->
+        <!--Grafico Linha View Controller-->
         <scene sceneID="IF1-bB-9O0">
             <objects>
-                <viewController id="wAl-ml-W3N" customClass="TestandoLinhaViewController" sceneMemberID="viewController">
+                <viewController id="wAl-ml-W3N" customClass="GraficoLinhaViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mmc-Pg-T6M"/>
                         <viewControllerLayoutGuide type="bottom" id="hxa-XE-HGY"/>
@@ -121,7 +121,7 @@
             </objects>
             <point key="canvasLocation" x="-1550" y="-186"/>
         </scene>
-        <!--Menu View Controller - Assuntos-->
+        <!--Assuntos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="menu" id="BYZ-38-t0r" customClass="MenuViewController" sceneMemberID="viewController">
@@ -143,7 +143,7 @@
             </objects>
             <point key="canvasLocation" x="464" y="-1485"/>
         </scene>
-        <!--View Controller - Enciclopédia-->
+        <!--Enciclopédia-->
         <scene sceneID="237-fs-HyQ">
             <objects>
                 <viewController id="l7v-hr-0yC" sceneMemberID="viewController">
@@ -228,7 +228,7 @@
             </objects>
             <point key="canvasLocation" x="2338" y="1032"/>
         </scene>
-        <!--Lista Desafio View Controller - Desafios-->
+        <!--Desafios-->
         <scene sceneID="86r-1f-ydU">
             <objects>
                 <viewController storyboardIdentifier="listaDesafio" id="Laj-yx-eaG" customClass="ListaDesafioViewController" sceneMemberID="viewController">
@@ -303,7 +303,7 @@
             </objects>
             <point key="canvasLocation" x="464" y="1032"/>
         </scene>
-        <!--Livre View Controller - Livre-->
+        <!--Livre-->
         <scene sceneID="pvF-xX-eqf">
             <objects>
                 <viewController id="fMn-6K-qgM" customClass="LivreViewController" sceneMemberID="viewController">
@@ -589,7 +589,7 @@
             </objects>
             <point key="canvasLocation" x="2550" y="-2005"/>
         </scene>
-        <!--ExercicioV Iew Contoller - controlador q tem a lista de exercicios-->
+        <!--controlador q tem a lista de exercicios-->
         <scene sceneID="dzV-zg-u19">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="tQW-Gq-m4D" customClass="ExercicioVIewContoller" sceneMemberID="viewController">

@@ -92,6 +92,8 @@
     initialViewController.vtTempos = tempos;
     initialViewController.nAcertos = nAcertos;
     
+    
+    
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
     
     
@@ -131,7 +133,7 @@
 - (EstatisticaViewController *)viewControllerAtIndex:(NSUInteger)index {
     
     EstatisticaViewController *childViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"dadosEstatisticos"];
-    
+    [childViewController setIndex:index];
     return childViewController;
 }
 
@@ -163,10 +165,8 @@
 //    }
 //    
     if (index == 1) {
-        return nil;
+        //return nil;
     }
-    
-    
     
     return [self viewControllerAtIndex:index];
     
@@ -175,7 +175,7 @@
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
     // The number of items reflected in the page indicator.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {

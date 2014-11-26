@@ -85,7 +85,7 @@
 		84BCB1B01A236ED90011B2D8 /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BCB1AB1A236ED90011B2D8 /* BEMCircle.m */; };
 		84BCB1B11A236ED90011B2D8 /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BCB1AD1A236ED90011B2D8 /* BEMLine.m */; };
 		84BCB1B21A236ED90011B2D8 /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BCB1AF1A236ED90011B2D8 /* BEMSimpleLineGraphView.m */; };
-		84BCB1B51A236FA60011B2D8 /* TestandoLinhaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BCB1B41A236FA60011B2D8 /* TestandoLinhaViewController.m */; };
+		84BCB1B51A236FA60011B2D8 /* GraficoLinhaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BCB1B41A236FA60011B2D8 /* GraficoLinhaViewController.m */; };
 		84BCF53419CB703B003D9F71 /* SecaoMenuOperador.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BCF53319CB703B003D9F71 /* SecaoMenuOperador.m */; };
 		91A7A956198F56DC009A5EB1 /* ConceitosCondicionais.txt in Resources */ = {isa = PBXBuildFile; fileRef = 91A7A955198F56DC009A5EB1 /* ConceitosCondicionais.txt */; };
 		91A986111962324500EA1074 /* Assunto.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A986101962324500EA1074 /* Assunto.m */; };
@@ -447,8 +447,8 @@
 		84BCB1AD1A236ED90011B2D8 /* BEMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEMLine.m; path = Estatisticas/Linha/BEMLine.m; sourceTree = "<group>"; };
 		84BCB1AE1A236ED90011B2D8 /* BEMSimpleLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BEMSimpleLineGraphView.h; path = Estatisticas/Linha/BEMSimpleLineGraphView.h; sourceTree = "<group>"; };
 		84BCB1AF1A236ED90011B2D8 /* BEMSimpleLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEMSimpleLineGraphView.m; path = Estatisticas/Linha/BEMSimpleLineGraphView.m; sourceTree = "<group>"; };
-		84BCB1B31A236FA60011B2D8 /* TestandoLinhaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestandoLinhaViewController.h; sourceTree = "<group>"; };
-		84BCB1B41A236FA60011B2D8 /* TestandoLinhaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestandoLinhaViewController.m; sourceTree = "<group>"; };
+		84BCB1B31A236FA60011B2D8 /* GraficoLinhaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraficoLinhaViewController.h; sourceTree = "<group>"; };
+		84BCB1B41A236FA60011B2D8 /* GraficoLinhaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraficoLinhaViewController.m; sourceTree = "<group>"; };
 		84BCF53219CB703B003D9F71 /* SecaoMenuOperador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecaoMenuOperador.h; path = ../SecaoMenuOperador.h; sourceTree = "<group>"; };
 		84BCF53319CB703B003D9F71 /* SecaoMenuOperador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecaoMenuOperador.m; path = ../SecaoMenuOperador.m; sourceTree = "<group>"; };
 		91A7A955198F56DC009A5EB1 /* ConceitosCondicionais.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConceitosCondicionais.txt; sourceTree = "<group>"; };
@@ -809,8 +809,8 @@
 				120E8F85192FC0A200CDEF95 /* AppDelegate.h */,
 				120E8F86192FC0A200CDEF95 /* AppDelegate.m */,
 				120E8F88192FC0A200CDEF95 /* Main.storyboard */,
-				84BCB1B31A236FA60011B2D8 /* TestandoLinhaViewController.h */,
-				84BCB1B41A236FA60011B2D8 /* TestandoLinhaViewController.m */,
+				84BCB1B31A236FA60011B2D8 /* GraficoLinhaViewController.h */,
+				84BCB1B41A236FA60011B2D8 /* GraficoLinhaViewController.m */,
 				120E8F8B192FC0A200CDEF95 /* ViewController.h */,
 				120E8F8C192FC0A200CDEF95 /* ViewController.m */,
 				120E8F8E192FC0A200CDEF95 /* Images.xcassets */,
@@ -2096,7 +2096,7 @@
 				BD98DE891A1BD4AF00845D6B /* EstatisticaPieView.m in Sources */,
 				84BCB1B11A236ED90011B2D8 /* BEMLine.m in Sources */,
 				8487523E19C379E100A93120 /* CenaLivre.m in Sources */,
-				84BCB1B51A236FA60011B2D8 /* TestandoLinhaViewController.m in Sources */,
+				84BCB1B51A236FA60011B2D8 /* GraficoLinhaViewController.m in Sources */,
 				84BCB1B21A236ED90011B2D8 /* BEMSimpleLineGraphView.m in Sources */,
 				A521FEF01993FE9900D28627 /* SaidaDeDados.m in Sources */,
 				BDBE7696197A39E0004EA926 /* SpriteOperadorNode.m in Sources */,

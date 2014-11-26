@@ -11,17 +11,103 @@
 #import "EstatisticaPieView.h"
 
 
+
 @interface EstatisticaViewController()
 @property EstatisticaPieView* pieView;
 @property EstatisticaPieView* pieView2;
 @end
 
-@implementation EstatisticaViewController
+@implementation EstatisticaViewController{
+    int totalNumber;
+}
 @synthesize pieView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    if (self.index == 0) {
+        [self prepararGraficoPizza];
+    }else if (self.index == 1){
+        [self preparaGraficoLinha];
+    }
+}
+
+
+- (void)preparaGraficoLinha{
+    
+    self.vetorDesafios = [NSMutableArray array];
+    self.vetorValores = [NSMutableArray array];
+    
+    
+    [self criandoDadosAleatorios];
+    
+    // Configurando o Grafico
+    
+    CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
+    size_t num_locations = 2;
+    CGFloat locations[2] = { 0.0, 1.0 };
+    CGFloat components[8] = {
+        1.0, 1.0, 1.0, 1.0,
+        1.0, 1.0, 1.0, 0.0
+    };
+    
+    
+    self.myGraph = [[BEMSimpleLineGraphView alloc]initWithFrame:CGRectMake(0, 100, 768, 350)];
+    
+    self.myGraph.gradientBottom = CGGradientCreateWithColorComponents(colorspace, components, locations, num_locations);
+    
+    self.myGraph.dataSource = self;
+    self.myGraph.delegate = self;
+    self.myGraph.backgroundColor = [UIColor clearColor];
+    [self.view bringSubviewToFront:self.myGraph];
+    [self.view setUserInteractionEnabled:YES];
+    [self.view addSubview:self.myGraph];
+}
+
+#pragma mark - SimpleLineGraph Data Source
+
+- (NSInteger)numberOfPointsInLineGraph:(BEMSimpleLineGraphView *)graph {
+    return (int)[self.vetorValores count];
+}
+
+- (CGFloat)lineGraph:(BEMSimpleLineGraphView *)graph valueForPointAtIndex:(NSInteger)index {
+    return [[self.vetorValores objectAtIndex:index] floatValue];
+}
+
+
+#pragma mark - SimpleLineGraph Delegate
+
+- (NSInteger)numberOfGapsBetweenLabelsOnLineGraph:(BEMSimpleLineGraphView *)graph {
+    return 1;
+}
+
+- (NSString *)lineGraph:(BEMSimpleLineGraphView *)graph labelOnXAxisForIndex:(NSInteger)index {
+    NSString *label = [self.vetorDesafios objectAtIndex:index];
+    return [label stringByReplacingOccurrencesOfString:@" " withString:@"\n"];
+}
+
+- (void)criandoDadosAleatorios{
+    
+    
+    for (int i = 0; i < 15; i++) {
+        [self.vetorValores addObject:@([self getRandomInteger])];
+        [self.vetorDesafios addObject:[NSString stringWithFormat:@"%@", @(2000 + i)]]; // Dates for the X-Axis of the graph
+        
+        totalNumber = [[self.vetorValores objectAtIndex:i] intValue];
+    }
+}
+
+- (NSInteger)getRandomInteger
+{
+    NSInteger i1 = (int)(arc4random() % 10000);
+    return i1;
+}
+
+
+- (void)prepararGraficoPizza{
+    
     
     float red = 145;
     float green = 186;
@@ -43,8 +129,9 @@
     [[self view] addSubview:self.pieView2];
     
     [self iniciarGraficoPizza];
+    
+    
 }
-
 
 -(float)calcularTempoTotalDesafio{
     float tempoTotal = 0;

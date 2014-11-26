@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BEMSimpleLineGraphView.h"
 
-
-@interface EstatisticaViewController : UIViewController
+@interface EstatisticaViewController : UIViewController <BEMSimpleLineGraphDataSource, BEMSimpleLineGraphDelegate>
 
 @property (assign, nonatomic) NSInteger index;
 @property NSArray *vtTempos;
 @property int nAcertos;
-
+@property NSMutableArray *vetorValores;
+@property NSMutableArray *vetorDesafios;
+@property BEMSimpleLineGraphView *myGraph;
 @end
