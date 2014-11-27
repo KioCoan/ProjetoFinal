@@ -128,29 +128,52 @@
     float posX = (self.view.frame.size.width - width) / 2;
     [txtDesempenho setFrame:CGRectMake(posX, 50, width, 88)];
     [self.blurView addSubview:txtDesempenho];
+    
+    
+    //LABEL MENSAGEM AO USUÁRIO
+    UILabel *txtMensagem = [[UILabel alloc] init];
+    [txtMensagem setText:@"Incrível! Incrível como você é horrível, seu bosta!"];
+    [txtMensagem setFont:[UIFont fontWithName:FONT_LIGHT size:35]];
+    [txtMensagem setTextColor:[UIColor whiteColor]];
+    CGSize requiredSize = [txtMensagem.text sizeWithAttributes: @{NSFontAttributeName: txtMensagem.font}];
+    posX = (self.view.frame.size.width - requiredSize.width) / 2;
+    [txtMensagem setFrame:CGRectMake(posX, 770, requiredSize.width, requiredSize.height+5)];
+    [self.blurView addSubview:txtMensagem];
+    
    
     CGRect frameBotoes;
     frameBotoes.size.width = 383;
-    frameBotoes.size.height = 90;
+    frameBotoes.size.height = 100;
     frameBotoes.origin.x = 0;
     
     frameBotoes.origin.y = self.view.frame.size.height - frameBotoes.size.height;
-    [self inserirBotao:@"menu principal" frame:frameBotoes];
+    [self inserirBotao:@"menu principal" frame:frameBotoes seletor:@selector(botaoMenuPrincipalClicado:)];
     
     
     frameBotoes.origin.x = self.view.frame.size.width - frameBotoes.size.width;
-    [self inserirBotao:@"reiniciar" frame:frameBotoes];
+    [self inserirBotao:@"reiniciar" frame:frameBotoes seletor:@selector(botaoReiniciarClicado:)];
     
 }
 
--(void)inserirBotao:(NSString*)texto frame:(CGRect)frame{
+-(void)inserirBotao:(NSString*)texto frame:(CGRect)frame seletor:(SEL)selector{
     UIButton *botaoMenu = [[UIButton alloc] initWithFrame:frame];
     [botaoMenu setTitle:texto forState:UIControlStateNormal];
     //[botaoMenu.viewForBaselineLayout setAlpha:0.4];
     [botaoMenu.titleLabel setFont:[UIFont fontWithName:FONT_LIGHT size:30]];
     [botaoMenu setBackgroundColor:[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.7]];
     [botaoMenu setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [botaoMenu addTarget:self action:selector forControlEvents:UIControlEventTouchDown];
+    
     [self.blurView addSubview:botaoMenu];
+}
+
+
+-(IBAction)botaoMenuPrincipalClicado:(id)sender{
+    NSLog(@"menu principal");
+}
+
+-(IBAction)botaoReiniciarClicado:(id)sender{
+    NSLog(@"reiniciar");
 }
 
 - (EstatisticaViewController *)viewControllerAtIndex:(NSUInteger)index {

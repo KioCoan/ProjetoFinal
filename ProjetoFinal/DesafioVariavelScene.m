@@ -42,7 +42,7 @@
         [nodeCronometro setMyDelegate:self];
         [self addChild:nodeCronometro];
         
-        progresso = [[ProgressoDesafioBar alloc] initWithBolinhas:1];
+        progresso = [[ProgressoDesafioBar alloc] initWithBolinhas:10];
         [progresso setMyDelegate:self];
         CGPoint posicao;
         posicao.y = self.size.height - progresso.size.height;
