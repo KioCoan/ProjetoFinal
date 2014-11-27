@@ -200,6 +200,28 @@
 }
 
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    
+}
+
+
+-(void)finalizarEstatisticas{
+    self.myGraph.dataSource = nil;
+    self.myGraph.delegate = nil;
+    [self.myGraph reloadGraph];
+    [self.pieView removerDelegate];
+    [self.pieView2 removerDelegate];
+    [self.pieView removeFromSuperview];
+    [self.pieView2 removeFromSuperview];
+    [self.myGraph removeFromSuperview];
+    [[self vetorDesafios] removeAllObjects];
+    [[self vetorValores] removeAllObjects];
+    
+    [self removeFromParentViewController];
+}
+
 @end
 
 

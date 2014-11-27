@@ -21,4 +21,5 @@
 
 
 -(void)exibirTempoTotal:(NSString*)tempoTotal;
+-(void)removerDelegate;
 @end

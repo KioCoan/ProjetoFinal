@@ -241,15 +241,6 @@
 		BDBE769D197A3B69004EA926 /* parte-operador.png in Resources */ = {isa = PBXBuildFile; fileRef = BDBE769A197A3B69004EA926 /* parte-operador.png */; };
 		BDBE769E197A3B69004EA926 /* parte-resultado1.png in Resources */ = {isa = PBXBuildFile; fileRef = BDBE769B197A3B69004EA926 /* parte-resultado1.png */; };
 		BDBE769F197A3B69004EA926 /* parte-valores1.png in Resources */ = {isa = PBXBuildFile; fileRef = BDBE769C197A3B69004EA926 /* parte-valores1.png */; };
-		BDC4073E199B1E18006CD7AE /* sprite-introducao1.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC40736199B1E18006CD7AE /* sprite-introducao1.png */; };
-		BDC4073F199B1E18006CD7AE /* sprite-introducao2.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC40737199B1E18006CD7AE /* sprite-introducao2.png */; };
-		BDC40740199B1E18006CD7AE /* sprite-introducao3.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC40738199B1E18006CD7AE /* sprite-introducao3.png */; };
-		BDC40741199B1E18006CD7AE /* sprite-introducao4.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC40739199B1E18006CD7AE /* sprite-introducao4.png */; };
-		BDC40742199B1E18006CD7AE /* sprite-introducao5.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC4073A199B1E18006CD7AE /* sprite-introducao5.png */; };
-		BDC40743199B1E18006CD7AE /* sprite-introducao6.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC4073B199B1E18006CD7AE /* sprite-introducao6.png */; };
-		BDC40744199B1E18006CD7AE /* sprite-introducao7.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC4073C199B1E18006CD7AE /* sprite-introducao7.png */; };
-		BDC40745199B1E18006CD7AE /* sprite-introducao8.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC4073D199B1E18006CD7AE /* sprite-introducao8.png */; };
-		BDC40747199B29FD006CD7AE /* sprite-introducao9.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC40746199B29FD006CD7AE /* sprite-introducao9.png */; };
 		BDC40749199B2F70006CD7AE /* caixaEncostaChao.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BDC40748199B2F70006CD7AE /* caixaEncostaChao.mp3 */; };
 		BDC7579E196787E700DB8380 /* abrir-caixa1.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC75791196787E700DB8380 /* abrir-caixa1.png */; };
 		BDC7579F196787E700DB8380 /* abrir-caixa2.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC75792196787E700DB8380 /* abrir-caixa2.png */; };
@@ -265,6 +256,15 @@
 		BDC757A9196787E700DB8380 /* abrir-caixa12.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC7579C196787E700DB8380 /* abrir-caixa12.png */; };
 		BDC757AA196787E700DB8380 /* abrir-caixa13.png in Resources */ = {isa = PBXBuildFile; fileRef = BDC7579D196787E700DB8380 /* abrir-caixa13.png */; };
 		BDCCE535199D322C0063DF2B /* item-em breve.png in Resources */ = {isa = PBXBuildFile; fileRef = BDCCE534199D322C0063DF2B /* item-em breve.png */; };
+		BDCFC9881A26D7B700FF53FA /* sprite-introducao1.png in Resources */ = {isa = PBXBuildFile; fileRef = BDCFC97F1A26D7B700FF53FA /* sprite-introducao1.png */; };
+		BDCFC9891A26D7B700FF53FA /* sprite-introducao2.png in Resources */ = {isa = PBXBuildFile; fileRef = BDCFC9801A26D7B700FF53FA /* sprite-introducao2.png */; };
+		BDCFC98A1A26D7B700FF53FA /* sprite-introducao3.png in Resources */ = {isa = PBXBuildFile; fileRef = BDCFC9811A26D7B700FF53FA /* sprite-introducao3.png */; };
+		BDCFC98B1A26D7B700FF53FA /* sprite-introducao4.png in Resources */ = {isa = PBXBuildFile; fileRef = BDCFC9821A26D7B700FF53FA /* sprite-introducao4.png */; };
+		BDCFC98C1A26D7B700FF53FA /* sprite-introducao5.png in Resources */ = {isa = PBXBuildFile; fileRef = BDCFC9831A26D7B700FF53FA /* sprite-introducao5.png */; };
+		BDCFC98D1A26D7B700FF53FA /* sprite-introducao6.png in Resources */ = {isa = PBXBuildFile; fileRef = BDCFC9841A26D7B700FF53FA /* sprite-introducao6.png */; };
+		BDCFC98E1A26D7B700FF53FA /* sprite-introducao7.png in Resources */ = {isa = PBXBuildFile; fileRef = BDCFC9851A26D7B700FF53FA /* sprite-introducao7.png */; };
+		BDCFC98F1A26D7B700FF53FA /* sprite-introducao8.png in Resources */ = {isa = PBXBuildFile; fileRef = BDCFC9861A26D7B700FF53FA /* sprite-introducao8.png */; };
+		BDCFC9901A26D7B700FF53FA /* sprite-introducao9.png in Resources */ = {isa = PBXBuildFile; fileRef = BDCFC9871A26D7B700FF53FA /* sprite-introducao9.png */; };
 		BDD22EF619A6F29C0043AA02 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD22EF519A6F29C0043AA02 /* TutorialViewController.m */; };
 		BDD22EF919A6F31C0043AA02 /* FilhoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD22EF819A6F31C0043AA02 /* FilhoViewController.m */; };
 		BDD22F0C19A6F4A70043AA02 /* img-tutorial2.png in Resources */ = {isa = PBXBuildFile; fileRef = BDD22F0719A6F4A70043AA02 /* img-tutorial2.png */; };
@@ -656,15 +656,6 @@
 		BDBE769A197A3B69004EA926 /* parte-operador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parte-operador.png"; path = "Imagens/Sprites/operadores/parte-operador.png"; sourceTree = "<group>"; };
 		BDBE769B197A3B69004EA926 /* parte-resultado1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parte-resultado1.png"; path = "Imagens/Sprites/operadores/Parte Resultado/parte-resultado1.png"; sourceTree = "<group>"; };
 		BDBE769C197A3B69004EA926 /* parte-valores1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parte-valores1.png"; path = "Imagens/Sprites/operadores/Parte Valores/parte-valores1.png"; sourceTree = "<group>"; };
-		BDC40736199B1E18006CD7AE /* sprite-introducao1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao1.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao1.png"; sourceTree = "<group>"; };
-		BDC40737199B1E18006CD7AE /* sprite-introducao2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao2.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao2.png"; sourceTree = "<group>"; };
-		BDC40738199B1E18006CD7AE /* sprite-introducao3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao3.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao3.png"; sourceTree = "<group>"; };
-		BDC40739199B1E18006CD7AE /* sprite-introducao4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao4.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao4.png"; sourceTree = "<group>"; };
-		BDC4073A199B1E18006CD7AE /* sprite-introducao5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao5.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao5.png"; sourceTree = "<group>"; };
-		BDC4073B199B1E18006CD7AE /* sprite-introducao6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao6.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao6.png"; sourceTree = "<group>"; };
-		BDC4073C199B1E18006CD7AE /* sprite-introducao7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao7.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao7.png"; sourceTree = "<group>"; };
-		BDC4073D199B1E18006CD7AE /* sprite-introducao8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao8.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao8.png"; sourceTree = "<group>"; };
-		BDC40746199B29FD006CD7AE /* sprite-introducao9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao9.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao9.png"; sourceTree = "<group>"; };
 		BDC40748199B2F70006CD7AE /* caixaEncostaChao.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = caixaEncostaChao.mp3; path = Sons/caixaEncostaChao.mp3; sourceTree = "<group>"; };
 		BDC75791196787E700DB8380 /* abrir-caixa1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "abrir-caixa1.png"; path = "Imagens/Sprites/variavel/abrir-caixa1.png"; sourceTree = "<group>"; };
 		BDC75792196787E700DB8380 /* abrir-caixa2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "abrir-caixa2.png"; path = "Imagens/Sprites/variavel/abrir-caixa2.png"; sourceTree = "<group>"; };
@@ -680,6 +671,15 @@
 		BDC7579C196787E700DB8380 /* abrir-caixa12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "abrir-caixa12.png"; path = "Imagens/Sprites/variavel/abrir-caixa12.png"; sourceTree = "<group>"; };
 		BDC7579D196787E700DB8380 /* abrir-caixa13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "abrir-caixa13.png"; path = "Imagens/Sprites/variavel/abrir-caixa13.png"; sourceTree = "<group>"; };
 		BDCCE534199D322C0063DF2B /* item-em breve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "item-em breve.png"; path = "Imagens/item-em breve.png"; sourceTree = "<group>"; };
+		BDCFC97F1A26D7B700FF53FA /* sprite-introducao1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao1.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao1.png"; sourceTree = "<group>"; };
+		BDCFC9801A26D7B700FF53FA /* sprite-introducao2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao2.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao2.png"; sourceTree = "<group>"; };
+		BDCFC9811A26D7B700FF53FA /* sprite-introducao3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao3.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao3.png"; sourceTree = "<group>"; };
+		BDCFC9821A26D7B700FF53FA /* sprite-introducao4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao4.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao4.png"; sourceTree = "<group>"; };
+		BDCFC9831A26D7B700FF53FA /* sprite-introducao5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao5.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao5.png"; sourceTree = "<group>"; };
+		BDCFC9841A26D7B700FF53FA /* sprite-introducao6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao6.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao6.png"; sourceTree = "<group>"; };
+		BDCFC9851A26D7B700FF53FA /* sprite-introducao7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao7.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao7.png"; sourceTree = "<group>"; };
+		BDCFC9861A26D7B700FF53FA /* sprite-introducao8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao8.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao8.png"; sourceTree = "<group>"; };
+		BDCFC9871A26D7B700FF53FA /* sprite-introducao9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sprite-introducao9.png"; path = "Imagens/Sprites/variavel/Sprites Introdução/sprite-introducao9.png"; sourceTree = "<group>"; };
 		BDD22EF419A6F29C0043AA02 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		BDD22EF519A6F29C0043AA02 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		BDD22EF719A6F31C0043AA02 /* FilhoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilhoViewController.h; sourceTree = "<group>"; };
@@ -1611,15 +1611,15 @@
 		BDC40735199B1DED006CD7AE /* Introducao */ = {
 			isa = PBXGroup;
 			children = (
-				BDC40736199B1E18006CD7AE /* sprite-introducao1.png */,
-				BDC40737199B1E18006CD7AE /* sprite-introducao2.png */,
-				BDC40738199B1E18006CD7AE /* sprite-introducao3.png */,
-				BDC40739199B1E18006CD7AE /* sprite-introducao4.png */,
-				BDC4073A199B1E18006CD7AE /* sprite-introducao5.png */,
-				BDC4073B199B1E18006CD7AE /* sprite-introducao6.png */,
-				BDC4073C199B1E18006CD7AE /* sprite-introducao7.png */,
-				BDC4073D199B1E18006CD7AE /* sprite-introducao8.png */,
-				BDC40746199B29FD006CD7AE /* sprite-introducao9.png */,
+				BDCFC97F1A26D7B700FF53FA /* sprite-introducao1.png */,
+				BDCFC9801A26D7B700FF53FA /* sprite-introducao2.png */,
+				BDCFC9811A26D7B700FF53FA /* sprite-introducao3.png */,
+				BDCFC9821A26D7B700FF53FA /* sprite-introducao4.png */,
+				BDCFC9831A26D7B700FF53FA /* sprite-introducao5.png */,
+				BDCFC9841A26D7B700FF53FA /* sprite-introducao6.png */,
+				BDCFC9851A26D7B700FF53FA /* sprite-introducao7.png */,
+				BDCFC9861A26D7B700FF53FA /* sprite-introducao8.png */,
+				BDCFC9871A26D7B700FF53FA /* sprite-introducao9.png */,
 			);
 			name = Introducao;
 			sourceTree = "<group>";
@@ -1871,6 +1871,7 @@
 				BD6B554B19D7D29400BC0E5F /* animation_correct-10.png in Resources */,
 				BD5DE21119972138007849DB /* bt-play.png in Resources */,
 				BD6B552B19D7D26600BC0E5F /* caixa2-vazia.png in Resources */,
+				BDCFC98E1A26D7B700FF53FA /* sprite-introducao7.png in Resources */,
 				BD325A451995EB7D00D15DBF /* abrirCaixa.mp3 in Resources */,
 				BD447AF419D9D84600AF6E15 /* animation_yellow_box-5.png in Resources */,
 				BD6B555119D7D29400BC0E5F /* animation_correct-7.png in Resources */,
@@ -1892,6 +1893,7 @@
 				BD5A552C198C972000D8722F /* senaoSe-verde.png in Resources */,
 				A5CBEB9019D20E1B00AC879D /* Desafio-Operadores-btn1.png in Resources */,
 				BDF8ADF6197B255C00BA5B8A /* parte-resultado9.png in Resources */,
+				BDCFC9901A26D7B700FF53FA /* sprite-introducao9.png in Resources */,
 				BD1AC843199AB5EC00CB7C5C /* spark.png in Resources */,
 				BD6B554D19D7D29400BC0E5F /* animation_correct-3.png in Resources */,
 				BDF1A4E819D89E3F009A2C31 /* animation_wrong-12.png in Resources */,
@@ -1914,10 +1916,8 @@
 				BD447AFA19D9F84F00AF6E15 /* main_menu-animation.png in Resources */,
 				BD447AED19D9D84600AF6E15 /* animation_red_box-7.png in Resources */,
 				BDEE046E19A0162000EAC8ED /* icone-iniciar.png in Resources */,
-				BDC40740199B1E18006CD7AE /* sprite-introducao3.png in Resources */,
 				BDEE047219A06C9900EAC8ED /* check.png in Resources */,
 				E501FA6B192FCD3800B56B5C /* item-memoria.png in Resources */,
-				BDC40747199B29FD006CD7AE /* sprite-introducao9.png in Resources */,
 				BD6B554A19D7D29400BC0E5F /* animation_correct-1.png in Resources */,
 				A521FEF21994203000D28627 /* valores-verdadeiro.png in Resources */,
 				BDC757A1196787E700DB8380 /* abrir-caixa4.png in Resources */,
@@ -1934,6 +1934,7 @@
 				BD6B555A19D7D29400BC0E5F /* animation_wrong-6.png in Resources */,
 				BD447AF619D9D84600AF6E15 /* animation_yellow_box-7.png in Resources */,
 				8431DA6419CA12C50076EBBA /* modo livre-11.png in Resources */,
+				BDCFC98D1A26D7B700FF53FA /* sprite-introducao6.png in Resources */,
 				BDF8AE04197B258C00BA5B8A /* parte-valores4.png in Resources */,
 				BD5A552A198C972000D8722F /* se-verde.png in Resources */,
 				12C02BD119D60F290015AF10 /* botao-treinamento.png in Resources */,
@@ -1953,14 +1954,13 @@
 				A5CBEBA219D4B0EE00AC879D /* Desafio-Andamento-Vazio.png in Resources */,
 				BD511002198A142E0052B6E5 /* parte-resultado.png in Resources */,
 				8431DA7119CA28FD0076EBBA /* livre-laco.png in Resources */,
-				BDC40744199B1E18006CD7AE /* sprite-introducao7.png in Resources */,
 				BDF8AE0A197B258C00BA5B8A /* parte-valores10.png in Resources */,
+				BDCFC9881A26D7B700FF53FA /* sprite-introducao1.png in Resources */,
 				BDF8AE03197B258C00BA5B8A /* parte-valores3.png in Resources */,
 				E50F74DD1A0BE30A00E41615 /* caixa-tipo-inteiro.png in Resources */,
 				BDF1A4EA19D89E3F009A2C31 /* animation_wrong-14.png in Resources */,
 				BDF8ADEF197B255C00BA5B8A /* parte-resultado2.png in Resources */,
 				12C02BC419D60B9B0015AF10 /* botao-livre-imagem.png in Resources */,
-				BDC4073F199B1E18006CD7AE /* sprite-introducao2.png in Resources */,
 				BD5A552B198C972000D8722F /* senao-verde.png in Resources */,
 				E565944C1A0BFB0600E2EE5D /* operador-soma.png in Resources */,
 				A5CBEBA119D4B0EE00AC879D /* Desafio-Andamento-Errado.png in Resources */,
@@ -1970,6 +1970,8 @@
 				BD24C40719A984BA00F2CBE1 /* img-tutorial6.png in Resources */,
 				846B738E19782427009C2EB7 /* fundo-cinza.png in Resources */,
 				BDC757AA196787E700DB8380 /* abrir-caixa13.png in Resources */,
+				BDCFC98A1A26D7B700FF53FA /* sprite-introducao3.png in Resources */,
+				BDCFC98F1A26D7B700FF53FA /* sprite-introducao8.png in Resources */,
 				BD66B653197F9327000BB548 /* fundo-transparente.png in Resources */,
 				BD6B556319D7D67700BC0E5F /* animation_correct-11.png in Resources */,
 				8431DA6E19CA28FD0076EBBA /* livre-array.png in Resources */,
@@ -1983,7 +1985,6 @@
 				BD6B552C19D7D26600BC0E5F /* caixa3-cheia.png in Resources */,
 				BDF1A4E319D87FFF009A2C31 /* animation_correct-13.png in Resources */,
 				BD447AE219D9D84600AF6E15 /* animation_green_box-5.png in Resources */,
-				BDC40741199B1E18006CD7AE /* sprite-introducao4.png in Resources */,
 				E56594521A0BFC5F00E2EE5D /* operador-subtracao.png in Resources */,
 				BDD22F0C19A6F4A70043AA02 /* img-tutorial2.png in Resources */,
 				8431DA7419CA28FD0076EBBA /* livre-variavel.png in Resources */,
@@ -1996,6 +1997,7 @@
 				BDA68F3D199819C400BD0527 /* valores-errado.png in Resources */,
 				8492087F19C7756400D64AE8 /* menuIcon.png in Resources */,
 				BDC757A5196787E700DB8380 /* abrir-caixa8.png in Resources */,
+				BDCFC9891A26D7B700FF53FA /* sprite-introducao2.png in Resources */,
 				BD447AEB19D9D84600AF6E15 /* animation_red_box-5.png in Resources */,
 				BD6B552A19D7D26600BC0E5F /* caixa2-cheia.png in Resources */,
 				8431DA6319CA12C50076EBBA /* modo livre-10.png in Resources */,
@@ -2004,18 +2006,15 @@
 				BDC757A2196787E700DB8380 /* abrir-caixa5.png in Resources */,
 				BD325A461995EB7D00D15DBF /* correto.aiff in Resources */,
 				BDF1A4E419D87FFF009A2C31 /* animation_correct-14.png in Resources */,
-				BDC4073E199B1E18006CD7AE /* sprite-introducao1.png in Resources */,
 				84B237B319D352F3003EC749 /* MenuEditarBotao.png in Resources */,
 				12C02BD619D612180015AF10 /* preferencias.png in Resources */,
 				BDE82C2419916E1F00610D96 /* senao-normal.png in Resources */,
 				BD447AEA19D9D84600AF6E15 /* animation_red_box-4.png in Resources */,
 				BD447AE419D9D84600AF6E15 /* animation_green_box-7.png in Resources */,
 				8431DA6219CA12C50076EBBA /* modo livre-09.png in Resources */,
-				BDC40742199B1E18006CD7AE /* sprite-introducao5.png in Resources */,
 				BD6B552919D7D26600BC0E5F /* caixa1-vazia.png in Resources */,
 				BD6B554F19D7D29400BC0E5F /* animation_correct-5.png in Resources */,
 				BD6B555B19D7D29400BC0E5F /* animation_wrong-7.png in Resources */,
-				BDC40743199B1E18006CD7AE /* sprite-introducao6.png in Resources */,
 				BD6B555C19D7D29400BC0E5F /* animation_wrong-8.png in Resources */,
 				8431DA7019CA28FD0076EBBA /* livre-funcao.png in Resources */,
 				BD6B555F19D7D3F500BC0E5F /* fundo-visor.png in Resources */,
@@ -2034,6 +2033,7 @@
 				BD4E5F2A19987BB60082632B /* operadores.mp3 in Resources */,
 				BDEE047019A0224D00EAC8ED /* fundo-descricao.png in Resources */,
 				BDD22F0E19A6F4A70043AA02 /* img-tutorial4.png in Resources */,
+				BDCFC98C1A26D7B700FF53FA /* sprite-introducao5.png in Resources */,
 				12C02BDA19D6132E0015AF10 /* direitos.png in Resources */,
 				A5CBEB9219D20E1B00AC879D /* Desafio-Operadores-Operador.png in Resources */,
 				BD447AE019D9D84600AF6E15 /* animation_green_box-3.png in Resources */,
@@ -2045,7 +2045,6 @@
 				BD6D7C0119A7E5AB0022DF2A /* img-tutorial.png in Resources */,
 				BDE82C2519916E1F00610D96 /* senaoSe-normal.png in Resources */,
 				12C02BCA19D60BAA0015AF10 /* botao-lire-texto.png in Resources */,
-				BDC40745199B1E18006CD7AE /* sprite-introducao8.png in Resources */,
 				BDBE769F197A3B69004EA926 /* parte-valores1.png in Resources */,
 				A521FEED1993FE1E00D28627 /* saida-texto.png in Resources */,
 				BDF8AE05197B258C00BA5B8A /* parte-valores5.png in Resources */,
@@ -2054,6 +2053,7 @@
 				BDC757A6196787E700DB8380 /* abrir-caixa9.png in Resources */,
 				BD6B552D19D7D26600BC0E5F /* caixa3-vazia.png in Resources */,
 				BDF8AE09197B258C00BA5B8A /* parte-valores9.png in Resources */,
+				BDCFC98B1A26D7B700FF53FA /* sprite-introducao4.png in Resources */,
 				12719D4919CB5DBF006B1374 /* ColabThi.otf in Resources */,
 				12719D4819CB5DB9006B1374 /* ColabReg.otf in Resources */,
 			);

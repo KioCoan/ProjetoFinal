@@ -69,6 +69,11 @@
 }
 
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
@@ -88,13 +93,13 @@
     self.pageController.dataSource = self;
     [[self.pageController view] setFrame:CGRectMake(0, 100, 768, 600)];
     
-    EstatisticaViewController *initialViewController = [self viewControllerAtIndex:0];
-    initialViewController.vtTempos = tempos;
-    initialViewController.nAcertos = nAcertos;
+    estatisticas = [self viewControllerAtIndex:0];
+    estatisticas.vtTempos = tempos;
+    estatisticas.nAcertos = nAcertos;
     
     
     
-    NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
+    NSArray *viewControllers = [NSArray arrayWithObject:estatisticas];
     
     
     [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
@@ -147,7 +152,7 @@
     frameBotoes.origin.x = 0;
     
     frameBotoes.origin.y = self.view.frame.size.height - frameBotoes.size.height;
-    [self inserirBotao:@"menu principal" frame:frameBotoes seletor:@selector(botaoMenuPrincipalClicado:)];
+    [self inserirBotao:@"outros desafios" frame:frameBotoes seletor:@selector(botaoMenuPrincipalClicado:)];
     
     
     frameBotoes.origin.x = self.view.frame.size.width - frameBotoes.size.width;
@@ -158,29 +163,53 @@
 -(void)inserirBotao:(NSString*)texto frame:(CGRect)frame seletor:(SEL)selector{
     UIButton *botaoMenu = [[UIButton alloc] initWithFrame:frame];
     [botaoMenu setTitle:texto forState:UIControlStateNormal];
-    //[botaoMenu.viewForBaselineLayout setAlpha:0.4];
+    CGRect novoFrame = botaoMenu.titleLabel.frame;
+    novoFrame.size.height += 4;
     [botaoMenu.titleLabel setFont:[UIFont fontWithName:FONT_LIGHT size:30]];
+    CGRect novoFrame2 = botaoMenu.titleLabel.frame;
+    
+    [botaoMenu.titleLabel setFrame:novoFrame];
+    [botaoMenu.titleLabel setTextAlignment:NSTextAlignmentCenter];
     [botaoMenu setBackgroundColor:[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.7]];
     [botaoMenu setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [botaoMenu addTarget:self action:selector forControlEvents:UIControlEventTouchDown];
-    
+    CGRect novoFrame3 = botaoMenu.titleLabel.frame;
     [self.blurView addSubview:botaoMenu];
 }
 
 
 -(IBAction)botaoMenuPrincipalClicado:(id)sender{
     NSLog(@"menu principal");
+    
+    [self limparView];
+    [self voltar:nil];
 }
 
 -(IBAction)botaoReiniciarClicado:(id)sender{
     NSLog(@"reiniciar");
+    [self limparView];
+    
+    [cenaAtual reiniciarDesafio];
+}
+
+
+-(void)limparView{
+    [estatisticas finalizarEstatisticas];
+    estatisticas = nil;
+    
+    [self.pageController removeFromParentViewController];
+    [self.pageController.view removeFromSuperview];
+    self.pageController.dataSource = nil;
+    self.pageController = nil;
+    [self.blurView removeFromSuperview];
+    self.blurView = nil;
 }
 
 - (EstatisticaViewController *)viewControllerAtIndex:(NSUInteger)index {
     
-    EstatisticaViewController *childViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"dadosEstatisticos"];
-    [childViewController setIndex:index];
-    return childViewController;
+    estatisticas = [self.storyboard instantiateViewControllerWithIdentifier:@"dadosEstatisticos"];
+    [estatisticas setIndex:index];
+    return estatisticas;
 }
 
 

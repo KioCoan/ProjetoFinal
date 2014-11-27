@@ -22,7 +22,7 @@ static const int YELLOW = 3;
         meuIndex = posicao;
         self.progressaoDuracao = progressao;
         minhaCor = [self retornaMinhaCor:posicao];
-        
+        duracaoInicial = 1.3;
         lblTipo = [[SKLabelNode alloc] initWithFontNamed:FONT_LIGHT];
         [lblTipo setText:tipo];
         [lblTipo setFontColor:[SKColor blackColor]];
@@ -59,7 +59,7 @@ static const int YELLOW = 3;
 }
 
 -(void)inicializarAnimacaoMoverX{
-    acaoMoverX = [SKAction moveByX:695 y:0 duration:1.3];
+    acaoMoverX = [SKAction moveByX:695 y:0 duration:duracaoInicial];
     [acaoMoverX setTimingMode:SKActionTimingEaseOut];
     duracaoAtual = [acaoMoverX duration];
 }
@@ -182,6 +182,10 @@ static const int YELLOW = 3;
         default:
             return @"Erro";
     }
+}
+
+-(void)resetarValores{
+    [acaoMoverX setDuration:duracaoInicial];
 }
 
 @end

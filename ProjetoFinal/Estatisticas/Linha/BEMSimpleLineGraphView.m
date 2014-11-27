@@ -892,10 +892,18 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
 #pragma mark - Data Source
 
 - (void)reloadGraph {
-    for (UIView *subviews in self.subviews) {
-        [subviews removeFromSuperview];
-    }
+//    for (UIView *subviews in self.subviews) {
+//        [subviews removeFromSuperview];
+//    }
 
+    // Remove all dots that were previously on the graph
+    for (UIView *subview in [self subviews]) {
+        if ([subview isKindOfClass:[BEMCircle class]]){
+            [(BEMCircle*)subview setMydelegate:nil];
+        }
+        [subview removeFromSuperview];
+    }
+    
     [self setNeedsLayout];
 }
 

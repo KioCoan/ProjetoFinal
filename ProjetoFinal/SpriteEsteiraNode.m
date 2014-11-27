@@ -261,4 +261,10 @@
 }
 
 
+-(void)resetarValores{
+    for(SpriteCaixinhaNode *c in vtCaixas){
+        [c resetarValores];
+    }
+}
+
 @end

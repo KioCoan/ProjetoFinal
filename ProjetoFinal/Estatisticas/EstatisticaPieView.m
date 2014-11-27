@@ -162,4 +162,9 @@
     
     
 }
+
+
+-(void)removerDelegate{
+    self.layer.myDelegate = nil;
+}
 @end
